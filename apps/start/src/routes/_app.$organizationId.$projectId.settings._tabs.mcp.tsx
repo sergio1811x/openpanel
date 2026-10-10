@@ -193,7 +193,7 @@ function Component() {
         <h2 className="font-semibold text-lg">MCP-сервер</h2>
         <p className="text-muted-foreground text-sm">
           Подключите любой MCP-совместимый AI-клиент (Claude, Cursor,
-          Windsurf, …) к Вашим данным OpenPanel. Сервер работает только в
+          Windsurf, …) к Вашим данным Openpanel RU. Сервер работает только в
           режиме чтения и предоставляет 38 инструментов для запросов событий,
           сессий, профилей, воронок, удержания и многого другого.
         </p>

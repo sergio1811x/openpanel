@@ -25,12 +25,12 @@ export function baseOptions(): BaseLayoutProps {
 
 export const authors = [
   {
-    name: 'OpenPanel Team',
-    url: 'https://openpanel.dev',
+    name: 'Openpanel RU Team',
+    url: '#',
   },
   {
     name: 'Carl-Gerhard Lindesvärd',
-    url: 'https://openpanel.dev',
+    url: '#',
     image: '/twitter-carl.jpg',
   },
 ];

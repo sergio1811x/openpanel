@@ -19,7 +19,7 @@ export type Props = z.infer<typeof zOnboardingDashboards>;
 export default OnboardingDashboards;
 export function OnboardingDashboards({
   firstName,
-  dashboardUrl = 'https://dashboard.openpanel.dev',
+  dashboardUrl = 'http://localhost:3000',
   hasData = false,
   eventsCount,
   unsubscribeUrl,
@@ -34,11 +34,11 @@ export function OnboardingDashboards({
           пригодятся.
         </Text>
         <Text>
-          Если Вы всё ещё хотите попробовать OpenPanel, остаётся только
+          Если Вы всё ещё хотите попробовать Openpanel RU, остаётся только
           установка:{' '}
           <Link
             href={withUtm(
-              'https://openpanel.dev/docs/get-started/install-openpanel',
+              '#',
               'onboarding-dashboards',
             )}
           >
@@ -103,7 +103,7 @@ export function OnboardingDashboards({
 
 OnboardingDashboards.PreviewProps = {
   firstName: 'Alex',
-  dashboardUrl: 'https://dashboard.openpanel.dev/org-id',
+  dashboardUrl: 'http://localhost:3000/org-id',
   hasData: true,
   eventsCount: 48211,
 };

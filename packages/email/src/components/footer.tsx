@@ -24,42 +24,42 @@ export function Footer({ unsubscribeUrl }: { unsubscribeUrl?: string }) {
 
         <Row className="mt-4">
           <Column className="w-8">
-            <Link href="https://git.new/openpanel">
+            <Link href="#">
               <Img
                 src={`${baseUrl}/icons/github.png`}
                 width="22"
                 height="22"
-                alt="OpenPanel на GitHub"
+                alt="Openpanel RU на GitHub"
               />
             </Link>
           </Column>
           <Column className="w-8">
-            <Link href="https://x.com/openpaneldev">
+            <Link href="#">
               <Img
                 src={`${baseUrl}/icons/x.png`}
                 width="22"
                 height="22"
-                alt="OpenPanel на X"
+                alt="Openpanel RU на X"
               />
             </Link>
           </Column>
           <Column className="w-8">
-            <Link href="https://go.openpanel.dev/discord">
+            <Link href="#">
               <Img
                 src={`${baseUrl}/icons/discord.png`}
                 width="22"
                 height="22"
-                alt="OpenPanel на Discord"
+                alt="Openpanel RU на Discord"
               />
             </Link>
           </Column>
           <Column className="w-auto">
-            <Link href="mailto:hello@openpanel.dev">
+            <Link href="#">
               <Img
                 src={`${baseUrl}/icons/email.png`}
                 width="22"
                 height="22"
-                alt="Связаться с OpenPanel по email"
+                alt="Связаться с Openpanel RU по email"
               />
             </Link>
           </Column>
@@ -67,7 +67,7 @@ export function Footer({ unsubscribeUrl }: { unsubscribeUrl?: string }) {
 
         <Row>
           <Text className="text-[#B8B8B8] text-xs">
-            OpenPanel AB - Sankt Eriksgatan 100, 113 31, Stockholm, Sweden.
+            Openpanel RU
           </Text>
         </Row>
 

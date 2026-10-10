@@ -35,11 +35,11 @@ export function PublicPageCard({
           <div className="p-6 text-sm max-w-sm col gap-1 text-muted-foreground">
             <p>
               Powered by{' '}
-              <a href="https://openpanel.dev" className="font-medium">
-                OpenPanel.dev
+              <a href="/" className="font-medium">
+                Openpanel RU
               </a>
               {' · '}
-              <a href="https://dashboard.openpanel.dev/onboarding">
+              <a href="#">
                 Try it for free today!
               </a>
             </p>

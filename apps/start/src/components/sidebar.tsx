@@ -139,7 +139,7 @@ export function SidebarContainer({
               <FeedbackButton className="h-12 flex-1 whitespace-nowrap rounded-none border-border border-r px-4 text-muted-foreground outline-0 hover:bg-accent hover:text-accent-foreground" />
               <a
                 className="flex h-12 flex-1 items-center justify-center gap-2 border-border border-r font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-                href="https://openpanel.dev/docs"
+                href="#"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -163,7 +163,7 @@ export function SidebarContainer({
             {isSelfHosted && (
               <a
                 className="center-center flex h-12 cursor-pointer gap-2 border-border border-t px-4 font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-                href="https://openpanel.dev/supporter"
+                href="#"
               >
                 <span>Поддержать нас</span>
                 <span>Платите сколько хотите</span>

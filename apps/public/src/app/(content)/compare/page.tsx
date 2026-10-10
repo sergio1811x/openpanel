@@ -8,9 +8,9 @@ import type { Metadata } from 'next';
 import { CompareHero } from './[slug]/_components/compare-hero';
 import { CompareCard } from './_components/compare-card';
 
-const title = 'Сравнение OpenPanel с альтернативами';
+const title = 'Сравнение Openpanel RU с альтернативами';
 const description =
-  'Подробные сравнения функций и тарифов OpenPanel и популярных инструментов аналитики. Честный разбор: что у каждого инструмента получается хорошо и где OpenPanel даёт больше пользы.';
+  'Подробные сравнения функций и тарифов Openpanel RU и популярных инструментов аналитики. Честный разбор: что у каждого инструмента получается хорошо и где Openpanel RU даёт больше пользы.';
 
 export const metadata: Metadata = getPageMetadata({
   title,
@@ -20,9 +20,9 @@ export const metadata: Metadata = getPageMetadata({
 });
 
 const heroData = {
-  heading: 'Сравните OpenPanel с любой альтернативой',
+  heading: 'Сравните Openpanel RU с любой альтернативой',
   subheading:
-    'Подробные сравнения функций и тарифов OpenPanel и популярных инструментов аналитики. Честный разбор: что у каждого инструмента получается хорошо и где OpenPanel даёт больше пользы растущим командам.',
+    'Подробные сравнения функций и тарифов Openpanel RU и популярных инструментов аналитики. Честный разбор: что у каждого инструмента получается хорошо и где Openpanel RU даёт больше пользы растущим командам.',
   badges: ['30 дней бесплатно', 'Неограниченные пользователи', 'Настройка за 30 секунд'],
 };
 
@@ -39,7 +39,7 @@ export default async function CompareIndexPage() {
         <WindowImage
           srcDark="/screenshots/overview-dark.png"
           srcLight="/screenshots/overview-light.png"
-          alt="Обзор дашборда OpenPanel"
+          alt="Обзор дашборда Openpanel RU"
           caption="Это наш дашборд веб-аналитики — всё работает сразу после установки, так что вы можете начать понимать свой трафик и вовлечённость прямо сейчас."
         />
       </div>
@@ -47,7 +47,7 @@ export default async function CompareIndexPage() {
       <Section className="container">
         <SectionHeader
           title="Все сравнения продуктов"
-          description="Просмотрите наш полный список подробных сравнений. Узнайте, как OpenPanel выглядит на фоне каждого конкурента по функциям, тарифам и ценности."
+          description="Просмотрите наш полный список подробных сравнений. Узнайте, как Openpanel RU выглядит на фоне каждого конкурента по функциям, тарифам и ценности."
           variant="sm"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
@@ -64,9 +64,9 @@ export default async function CompareIndexPage() {
 
       <CtaBanner
         title="Готовы начать?"
-        description="Присоединяйтесь к тысячам команд, которые используют OpenPanel для своей аналитики."
+        description="Присоединяйтесь к тысячам команд, которые используют Openpanel RU для своей аналитики."
         ctaText="Начать бесплатно"
-        ctaLink="https://dashboard.openpanel.dev/onboarding"
+        ctaLink="#"
       />
     </div>
   );

@@ -22,7 +22,7 @@ export type Props = z.infer<typeof zWindDownBlocked>;
 export default WindDownBlocked;
 export function WindDownBlocked({
   firstName,
-  billingUrl = 'https://dashboard.openpanel.dev',
+  billingUrl = 'http://localhost:3000',
   deleteDate,
   hasData = true,
   stillTracking = false,
@@ -115,7 +115,7 @@ export function WindDownBlocked({
 
 WindDownBlocked.PreviewProps = {
   firstName: 'Alex',
-  billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
+  billingUrl: 'http://localhost:3000/org-id/billing',
   deleteDate: '10 апреля',
   hasData: true,
   stillTracking: true,

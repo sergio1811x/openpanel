@@ -71,7 +71,7 @@ export default async function FeaturePage({
     url: pageUrl,
     publisher: {
       '@type': 'Organization',
-      name: 'OpenPanel',
+      name: 'Openpanel RU',
       logo: {
         '@type': 'ImageObject',
         url: url('/logo.webp'),

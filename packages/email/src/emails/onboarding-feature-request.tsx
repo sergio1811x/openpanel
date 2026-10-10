@@ -21,13 +21,13 @@ export function OnboardingFeatureRequest({
       <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
       <Text>
         Пробный период уже наполовину пройден, поэтому короткий вопрос: есть
-        ли что-то, что Вы ожидали от OpenPanel, но не нашли?
+        ли что-то, что Вы ожидали от Openpanel RU, но не нашли?
       </Text>
       <Text>
         Просто ответьте на это письмо. Если предпочитаете публично, доска
         обратной связи находится здесь:{' '}
-        <Link href={withUtm('https://feedback.openpanel.dev', 'onboarding-feature-request')}>
-          feedback.openpanel.dev
+        <Link href="#">
+          Openpanel RU
         </Link>
         .
       </Text>

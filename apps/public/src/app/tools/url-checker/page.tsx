@@ -1226,7 +1226,7 @@ export default function SiteCheckerPage() {
               опыту.
             </p>
             <p className="text-muted-foreground">
-              <strong>Создано OpenPanel</strong> — платформой аналитики с
+              <strong>Создано Openpanel RU</strong> — платформой аналитики с
               открытым исходным кодом. Мы используем те же проверки, чтобы помогать
               тысячам сайтов понимать свой трафик и улучшать производительность.
             </p>

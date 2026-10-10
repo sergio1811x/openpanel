@@ -27,7 +27,7 @@ const featureIcons = [
 ];
 
 export function FeaturesShowcase({ featureComparison }: FeaturesShowcaseProps) {
-  // Get all features that OpenPanel has (true or string values)
+  // Get all features that Openpanel RU has (true or string values)
   const openpanelFeatures = featureComparison.groups
     .flatMap((group) => group.features)
     .filter(

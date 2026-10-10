@@ -1,22 +1,14 @@
 ![hero](apps/public/public/ogimage.png)
 
 <p align="center">
-        <h1 align="center"><b>Openpanel</b></h1>
+        <h1 align="center"><b>Openpanel RU</b></h1>
 <p align="center">
-    An open-source alternative to Mixpanel
+    Русский форк Openpanel — веб- и продуктовая аналитика на русском языке
     <br />
     <br />
-    <a href="https://openpanel.dev">Website</a>
+    <a href="https://github.com/sergio1811x/openpanel">GitHub</a>
     ·
-    <a href="https://openpanel.dev/docs">Docs</a>
-    ·
-    <a href="https://dashboard.openpanel.dev">Sign in</a>
-    ·
-    <a href="https://go.openpanel.dev/discord">Discord</a>
-    ·
-    <a href="https://twitter.com/OpenPanelDev">X/Twitter</a>
-    ·
-    <a href="https://twitter.com/CarlLindesvard">Creator</a>
+    <a href="AGENTS.md">Для агентов</a>
     ·
   </p>
   <br />
@@ -24,7 +16,7 @@
 </p>
 
 > [!NOTE]
-> **🇷🇺 Русский форк Openpanel** от [@sergio1811x](https://github.com/sergio1811x)
+> **🇷🇺 Русский форк Openpanel** под именем **Openpanel RU** от [@sergio1811x](https://github.com/sergio1811x)
 >
 > - **Весь интерфейс переведён на русский язык** — дашборды, отчёты, события, профили, сессии, настройки, письма и лендинг
 > - **Добавлена интеграция Яндекс Вебмастер** — подключается в настройках проекта рядом с Google Search Console и работает в разделе SEO: клики, показы, CTR, средняя позиция и топ запросов из поиска Яндекса
@@ -71,7 +63,7 @@ Openpanel is an open-source web and product analytics platform that combines the
 > ✅* GA4 has a free tier but often requires BigQuery (paid) for raw data access.
 > ❌** GA4 has faced GDPR bans in several EU countries due to data transfers to US-based servers.
 > ✅*** Plausible has simple goals
-> ✅**** Mixpanel session replay is limited to 5k sessions/month on free and 20k on paid. OpenPanel has no limit.
+> ✅**** Mixpanel session replay is limited to 5k sessions/month on free and 20k on paid. Openpanel RU has no limit.
 
 ## Stack
 
@@ -91,9 +83,9 @@ Openpanel is an open-source web and product analytics platform that combines the
 
 ## Self-hosting
 
-OpenPanel can be self-hosted and we have tried to make it as simple as possible.
+Openpanel RU can be self-hosted and we have tried to make it as simple as possible.
 
-You can find the how to [here](https://openpanel.dev/docs/self-hosting/self-hosting)
+You can find the how to [here](https://openpanel.dev/docs/self-hosting/self-hosting) (docs of the upstream project, fully applicable to this fork)
 
 **Give us a star if you like it!**
 

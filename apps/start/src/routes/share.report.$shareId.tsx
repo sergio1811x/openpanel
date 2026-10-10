@@ -38,7 +38,7 @@ export const Route = createFileRoute('/share/report/$shareId')({
       return {
         meta: [
           {
-            title: 'Публичная ссылка не найдена - OpenPanel.dev',
+            title: 'Публичная ссылка не найдена - Openpanel RU',
           },
         ],
       };
@@ -49,7 +49,7 @@ export const Route = createFileRoute('/share/report/$shareId')({
       return {
         meta: [
           {
-            title: `${share.organization?.name} - OpenPanel.dev`,
+            title: `${share.organization?.name} - Openpanel RU`,
           },
         ],
       };
@@ -58,7 +58,7 @@ export const Route = createFileRoute('/share/report/$shareId')({
     return {
       meta: [
         {
-          title: `${share.report.name || 'Отчёт'} - ${share.organization?.name} - OpenPanel.dev`,
+          title: `${share.report.name || 'Отчёт'} - ${share.organization?.name} - Openpanel RU`,
         },
       ],
     };

@@ -18,7 +18,7 @@ export function TrackingDataStopped({
   firstName,
   projectNames,
   lastEventDate,
-  dashboardUrl = 'https://dashboard.openpanel.dev',
+  dashboardUrl = 'http://localhost:3000',
   unsubscribeUrl,
 }: Props & { unsubscribeUrl?: string }) {
   const single = projectNames.length === 1;
@@ -49,12 +49,7 @@ export function TrackingDataStopped({
       </Text>
       <Text>
         В{' '}
-        <Link
-          href={withUtm(
-            'https://openpanel.dev/docs/get-started/install-openpanel',
-            'tracking-data-stopped'
-          )}
-        >
+        <Link href="#">
           руководстве по установке
         </Link>{' '}
         есть инструкции по переустановке для каждого фреймворка. Если события
@@ -70,5 +65,5 @@ TrackingDataStopped.PreviewProps = {
   firstName: 'Alex',
   projectNames: ['Мой сайт'],
   lastEventDate: '14 августа',
-  dashboardUrl: 'https://dashboard.openpanel.dev/org-id',
+  dashboardUrl: 'http://localhost:3000/org-id',
 };

@@ -23,7 +23,7 @@ export function HighlightsGrid({ highlights }: HighlightsGridProps) {
     <Section className="container">
       <SectionHeader
         title="Ключевые отличия"
-        description="Посмотрите, как OpenPanel сравнивается с первого взгляда"
+        description="Посмотрите, как Openpanel RU сравнивается с первого взгляда"
         align="center"
       />
       <div className="mt-12 border rounded-3xl overflow-hidden">

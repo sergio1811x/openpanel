@@ -50,18 +50,13 @@ export function OnboardingWhatToTrack({
       ) : (
         <>
           <Text>
-            Вы создали аккаунт OpenPanel два дня назад, но события пока не
+            Вы создали аккаунт Openpanel RU два дня назад, но события пока не
             поступали.
           </Text>
           <Text>
             Обычно это значит, что установка не выполнена или что-то блокирует
             скрипт. И то и другое быстро исправить:{' '}
-            <Link
-              href={withUtm(
-                'https://openpanel.dev/docs/get-started/install-openpanel',
-                'onboarding-what-to-track',
-              )}
-            >
+            <Link href="#">
               руководство по установке
             </Link>
             .

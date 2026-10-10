@@ -40,7 +40,7 @@ export function TechnicalComparison({
             <thead>
               <tr className="border-b bg-muted/30">
                 <th className="text-left p-4 font-semibold">Функция</th>
-                <th className="text-left p-4 font-semibold">OpenPanel</th>
+                <th className="text-left p-4 font-semibold">Openpanel RU</th>
                 <th className="text-left p-4 font-semibold">{competitorName}</th>
               </tr>
             </thead>

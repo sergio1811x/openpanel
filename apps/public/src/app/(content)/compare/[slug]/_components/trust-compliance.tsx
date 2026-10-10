@@ -18,7 +18,7 @@ export function TrustCompliance({ trust }: TrustComplianceProps) {
       />
       <div className="grid md:grid-cols-2 gap-6 mt-12">
         <FeatureCard
-          title="OpenPanel"
+          title="Openpanel RU"
           description=""
           className="border-green-500/20 bg-green-500/5"
         >

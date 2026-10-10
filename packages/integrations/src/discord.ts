@@ -23,8 +23,7 @@ export function sendDiscordNotification({
 }): Promise<WebhookResult> {
   return postWebhook(fetcher, webhookUrl, {
     content: message,
-    avatar_url: 'https://openpanel.dev/logo.jpg',
-    username: 'Уведомления OpenPanel',
+    username: 'Уведомления Openpanel RU',
   });
 }
 
@@ -36,6 +35,6 @@ export function sendTestDiscordNotification(
     webhookUrl,
     fetcher,
     message:
-      '**🧪 Тест [OpenPanel.dev](<https://openpanel.dev/>)**\nЕсли Вы видите это сообщение, Ваш вебхук работает корректно!\n',
+      '**🧪 Тест Openpanel RU**\nЕсли Вы видите это сообщение, Ваш вебхук работает корректно!\n',
   });
 }

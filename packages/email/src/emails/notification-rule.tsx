@@ -48,5 +48,5 @@ NotificationRule.PreviewProps = {
   title: 'Конверсия: регистрация завершена',
   message: 'Пользователь прошёл воронку регистрации.',
   projectName: 'Мой сайт',
-  dashboardUrl: 'https://dashboard.openpanel.dev/org-id/project-id',
+  dashboardUrl: 'http://localhost:3000/org-id/project-id',
 };

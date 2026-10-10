@@ -25,7 +25,7 @@ const testimonials = [
     avatarUrl: '/twitter-pontus.jpg',
     name: 'Pontus Abrahamsson - oss/acc',
     handle: 'pontusab',
-    content: ['Спасибо, OpenPanel — зверь, обожаю его!'],
+    content: ['Спасибо, Openpanel RU — зверь, обожаю его!'],
     replies: 25,
     retweets: 68,
     likes: 648,
@@ -36,7 +36,7 @@ const testimonials = [
     name: 'Piotr Kulpinski',
     handle: 'piotrkulpinski',
     content: [
-      'Вкладка Обзор в OpenPanel отличная. В ней есть всё, что мне нужно от аналитики: статистика, графики, источники трафика, география, устройства и т.д.',
+      'Вкладка Обзор в Openpanel RU отличная. В ней есть всё, что мне нужно от аналитики: статистика, графики, источники трафика, география, устройства и т.д.',
       'Интерфейс прекрасен ✨ Чистый, современный вид, очень приятный для глаз.',
     ],
     replies: 25,
@@ -59,8 +59,8 @@ const testimonials = [
     name: 'Jacob 🍀 Build in Public',
     handle: 'javayhuwx',
     content: [
-      '🤯 вау, потрясающе! Вчера вечером подключил @OpenPanelDev к http://indiehackers.site, и теперь вижу посетителей со всего мира.',
-      'У OpenPanel более красивый UI и гораздо более мощные возможности по сравнению с Umami.',
+      '🤯 вау, потрясающе! Вчера вечером подключил Openpanel RU к http://indiehackers.site, и теперь вижу посетителей со всего мира.',
+      'У Openpanel RU более красивый UI и гораздо более мощные возможности по сравнению с Umami.',
       '#buildinpublic #indiehackers',
     ],
     replies: 25,
@@ -76,7 +76,7 @@ const testimonials = [
       'Второй день маркетинга.',
       'Мне нравится этот восходящий тренд..',
       'P.S. сайт запустился в воскресенье',
-      'P.P.S. Openpanel от @CarlLindesvard — потрясающий.',
+      'P.P.S. Openpanel RU от @CarlLindesvard — потрясающий.',
     ],
     replies: 25,
     retweets: 68,
@@ -88,8 +88,8 @@ const testimonials = [
     name: 'Thomas Sanlis',
     handle: 'T_Zahil',
     content: [
-      `Теперь мы спонсируем @OpenPanelDev с Uneed 🥳`,
-      `Если ищете аналитику с открытым исходным кодом, OpenPanel — безусловно лучшая из всех, что я видел`,
+      `Теперь мы спонсируем Openpanel RU с Uneed 🥳`,
+      `Если ищете аналитику с открытым исходным кодом, Openpanel RU — безусловно лучшая из всех, что я видел`,
       'Бонус: установка в один клик на Coolify 🥰',
     ],
     replies: 8,
@@ -166,7 +166,7 @@ export function Testimonials() {
       <div className="container mb-16">
         <SectionHeader
           title="Пользователи в восторге"
-          description="От инди-хакеров до глобальных команд — OpenPanel помогает без усилий понять своих пользователей."
+          description="От инди-хакеров до глобальных команд — Openpanel RU помогает без усилий понять своих пользователей."
         />
       </div>
       <div className="relative -mx-4 px-4">

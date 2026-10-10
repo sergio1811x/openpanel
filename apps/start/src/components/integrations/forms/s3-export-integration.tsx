@@ -214,7 +214,7 @@ export function S3ExportIntegrationForm({
         />
         <p className="text-muted-foreground text-xs">
           {authMode === 'iam_role'
-            ? 'Рекомендуется для AWS S3. Создайте IAM-роль, предоставляющую OpenPanel доступ.'
+            ? 'Рекомендуется для AWS S3. Создайте IAM-роль, предоставляющую Openpanel RU доступ.'
             : 'Используйте ключи доступа для Cloudflare R2, MinIO, DigitalOcean Spaces или другого S3-совместимого хранилища.'}
         </p>
       </div>
@@ -224,7 +224,7 @@ export function S3ExportIntegrationForm({
         <>
           <InputWithLabel
             label="IAM Role ARN"
-            placeholder="arn:aws:iam::123456789012:role/OpenPanelExportRole"
+            placeholder="arn:aws:iam::123456789012:role/OpenpanelRUExportRole"
             {...form.register('config.roleArn')}
             error={path(['config', 'roleArn', 'message'], form.formState.errors)}
           />

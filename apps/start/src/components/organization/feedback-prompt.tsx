@@ -67,7 +67,7 @@ export default function FeedbackPrompt() {
       gradientColor="rgb(59 130 246)"
       onClose={handleClose}
       show={shouldShow}
-      subtitle="Помогите нам улучшить OpenPanel Вашими идеями"
+      subtitle="Помогите нам улучшить Openpanel RU Вашими идеями"
       title="Поделитесь отзывом"
     >
       <div className="col gap-4 px-6">

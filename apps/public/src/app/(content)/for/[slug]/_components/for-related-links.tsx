@@ -20,7 +20,7 @@ export function ForRelatedLinksSection({ relatedLinks }: ForRelatedLinksProps) {
   return (
     <Section className="container">
       <SectionHeader
-        description="Узнайте больше об OpenPanel и о том, как она может вам помочь."
+        description="Узнайте больше об Openpanel RU и о том, как она может вам помочь."
         title="Полезные материалы"
         variant="sm"
       />

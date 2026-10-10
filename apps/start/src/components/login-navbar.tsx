@@ -16,36 +16,12 @@ export function LoginNavbar({ className }: { className?: string }) {
         className
       )}
     >
-      <a className="row items-center gap-2" href="https://openpanel.dev">
+      <a className="row items-center gap-2" href="/">
         <LogoSquare className="size-8 shrink-0" />
         <span className="font-medium text-muted-foreground text-sm">
-          {isSelfHosted ? 'Self-hosted аналитика' : 'OpenPanel.dev'}
+          {isSelfHosted ? 'Self-hosted аналитика' : 'Openpanel RU'}
         </span>
       </a>
-      {isSelfHosted && (
-        <nav className="max-md:hidden">
-          <ul className="row items-center gap-4 [&>li>a]:text-muted-foreground [&>li>a]:text-sm [&>li>a]:hover:underline">
-            <li>
-              <a href="https://openpanel.dev">OpenPanel Cloud</a>
-            </li>
-            <li>
-              <a href="https://openpanel.dev/compare/mixpanel-alternative">
-                Альтернатива Mixpanel
-              </a>
-            </li>
-            <li>
-              <a href="https://openpanel.dev/compare/posthog-alternative">
-                Альтернатива Posthog
-              </a>
-            </li>
-            <li>
-              <a href="https://openpanel.dev/articles/open-source-web-analytics">
-                Аналитика с открытым кодом
-              </a>
-            </li>
-          </ul>
-        </nav>
-      )}
       <div className="relative md:hidden">
         <Button
           onClick={() => setMobileMenuOpen((prev) => !prev)}
@@ -66,37 +42,10 @@ export function LoginNavbar({ className }: { className?: string }) {
                 <li>
                   <a
                     className="block px-4 py-2 hover:bg-accent hover:text-accent-foreground"
-                    href="https://openpanel.dev"
+                    href="/"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    OpenPanel Cloud
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="block px-4 py-2 hover:bg-accent hover:text-accent-foreground"
-                    href="https://openpanel.dev/compare/mixpanel-alternative"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Альтернатива Posthog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="block px-4 py-2 hover:bg-accent hover:text-accent-foreground"
-                    href="https://openpanel.dev/compare/mixpanel-alternative"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Альтернатива Mixpanel
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="block px-4 py-2 hover:bg-accent hover:text-accent-foreground"
-                    href="https://openpanel.dev/articles/open-source-web-analytics"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Аналитика с открытым кодом
+                    Openpanel RU
                   </a>
                 </li>
               </ul>

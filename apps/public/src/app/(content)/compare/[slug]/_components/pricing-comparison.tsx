@@ -30,7 +30,7 @@ export function PricingComparison({
       />
       <div className="grid md:grid-cols-2 gap-6 mt-12">
         <FeatureCard
-          title="OpenPanel"
+          title="Openpanel RU"
           description={pricing.openpanel.model}
           icon={DollarSignIcon}
           className="border-green-500/20 bg-green-500/5"

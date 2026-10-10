@@ -15,14 +15,14 @@ export type Props = z.infer<typeof zOnboardingWelcome>;
 export default OnboardingWelcome;
 export function OnboardingWelcome({
   firstName,
-  dashboardUrl = 'https://dashboard.openpanel.dev',
+  dashboardUrl = 'http://localhost:3000',
   hasData = false,
   unsubscribeUrl,
 }: Props & { unsubscribeUrl?: string }) {
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
       <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
-      <Text>Меня зовут Carl, я создаю OpenPanel. Спасибо за регистрацию.</Text>
+      <Text>Спасибо за регистрацию в Openpanel RU.</Text>
       <Text>
         Ваш пробный период длится 30 дней и включает все возможности. Карта
         понадобится только тогда, когда Вы решите остаться.
@@ -50,7 +50,7 @@ export function OnboardingWelcome({
               <Link
                 key="install"
                 href={withUtm(
-                  'https://openpanel.dev/docs/get-started/install-openpanel',
+                  '#',
                   'onboarding-welcome',
                 )}
               >
@@ -59,7 +59,7 @@ export function OnboardingWelcome({
               <Link
                 key="track"
                 href={withUtm(
-                  'https://openpanel.dev/docs/get-started/track-events',
+                  '#',
                   'onboarding-welcome',
                 )}
               >
@@ -77,6 +77,6 @@ export function OnboardingWelcome({
 
 OnboardingWelcome.PreviewProps = {
   firstName: 'Alex',
-  dashboardUrl: 'https://dashboard.openpanel.dev/org-id',
+  dashboardUrl: 'http://localhost:3000/org-id',
   hasData: false,
 };

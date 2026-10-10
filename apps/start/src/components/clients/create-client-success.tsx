@@ -71,7 +71,7 @@ export function CreateClientSuccess({ id, secret, type }: Props) {
           Прочитайте нашу{' '}
           <a
             className="underline"
-            href="https://openpanel.dev/docs"
+            href="#"
             rel="noreferrer"
             target="_blank"
           >

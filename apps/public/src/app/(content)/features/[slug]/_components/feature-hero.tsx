@@ -26,7 +26,7 @@ export function FeatureHero({ hero }: FeatureHeroProps) {
           <GetStartedButton />
           <Button size="lg" variant="outline" asChild>
             <Link
-              href="https://demo.openpanel.dev"
+              href="#"
               target="_blank"
               rel="noreferrer noopener nofollow"
             >

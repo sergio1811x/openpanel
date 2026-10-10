@@ -49,7 +49,7 @@ export const templates = {
     schema: zEmailResetPassword,
   },
   'onboarding-welcome': {
-    subject: () => 'Добро пожаловать в OpenPanel',
+    subject: () => 'Добро пожаловать в Openpanel RU',
     Component: OnboardingWelcome,
     schema: zOnboardingWelcome,
     category: 'onboarding' as const,
@@ -77,8 +77,8 @@ export const templates = {
   'onboarding-trial-ending': {
     subject: (data: z.infer<typeof zOnboardingTrialEnding>) =>
       data.trialEndDate
-        ? `Пробный период OpenPanel заканчивается ${data.trialEndDate}`
-        : 'Пробный период OpenPanel скоро закончится',
+        ? `Пробный период Openpanel RU заканчивается ${data.trialEndDate}`
+        : 'Пробный период Openpanel RU скоро закончится',
     Component: OnboardingTrialEnding,
     schema: zOnboardingTrialEnding,
     // Without a category these bypassed unsubscribe entirely (no suppression

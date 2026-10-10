@@ -37,7 +37,7 @@ export default function BillingSuccess() {
           Подписка успешно обновлена
         </h2>
         <p className="text-center mb-12 max-w-md text-base leading-normal">
-          Спасибо за покупку! Теперь у Вас есть полный доступ к OpenPanel. Если
+          Спасибо за покупку! Теперь у Вас есть полный доступ к Openpanel RU. Если
           у Вас есть вопросы или пожелания, пожалуйста, свяжитесь с нами.
         </p>
       </div>

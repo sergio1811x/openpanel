@@ -392,7 +392,7 @@ function BadgeWidgetSection({ widget, dashboardUrl }: BadgeWidgetSectionProps) {
       : null;
   const badgeEmbedCode = badgeUrl
     ? `<a href="https://openpanel.dev" style="display: inline-block; overflow: hidden; border-radius: 8px;">
-  <iframe src="${badgeUrl}" height="48" width="250" style="border: none; overflow: hidden; pointer-events: none;" title="OpenPanel Analytics Badge"></iframe>
+  <iframe src="${badgeUrl}" height="48" width="250" style="border: none; overflow: hidden; pointer-events: none;" title="Openpanel RU"></iframe>
 </a>`
     : null;
 
@@ -408,7 +408,7 @@ function BadgeWidgetSection({ widget, dashboardUrl }: BadgeWidgetSectionProps) {
           <p className="text-muted-foreground">
             Бейдж в стиле Product Hunt, показывающий число уникальных
             посетителей за 30 дней. Отлично подходит, чтобы продемонстрировать
-            свою аналитику на базе OpenPanel.
+            свою аналитику на базе Openpanel RU.
           </p>
         </div>
       </WidgetHead>

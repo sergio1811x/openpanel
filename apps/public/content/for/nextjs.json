@@ -2,13 +2,13 @@
   "slug": "nextjs",
   "audience": "nextjs",
   "seo": {
-    "title": "Аналитика для Next.js — SDK OpenPanel для App Router и Pages Router",
-    "description": "Добавьте аналитику в Next.js-приложение за минуты. SDK OpenPanel для Next.js поддерживает App Router, Pages Router, серверные события и автоматическое отслеживание смены маршрутов. Открытый код, без cookies, от $2.50/месяц.",
+    "title": "Аналитика для Next.js — SDK Openpanel RU для App Router и Pages Router",
+    "description": "Добавьте аналитику в Next.js-приложение за минуты. SDK Openpanel RU для Next.js поддерживает App Router, Pages Router, серверные события и автоматическое отслеживание смены маршрутов. Открытый код, без cookies, от $2.50/месяц.",
     "noindex": false
   },
   "hero": {
     "heading": "Аналитика, созданная для Next.js",
-    "subheading": "Большинство инструментов аналитики воспринимают Next.js как статический сайт. OpenPanel создавалась с учётом гидрации и App Router.",
+    "subheading": "Большинство инструментов аналитики воспринимают Next.js как статический сайт. Openpanel RU создавалась с учётом гидрации и App Router.",
     "badges": [
       "Поддержка App Router",
       "Серверные события",
@@ -40,7 +40,7 @@
   },
   "features": {
     "title": "Аналитика, работающая так, как работает Next.js",
-    "intro": "SDK OpenPanel для Next.js спроектирован под современные паттерны Next.js — а не адаптирован из legacy клиентской библиотеки.",
+    "intro": "SDK Openpanel RU для Next.js спроектирован под современные паттерны Next.js — а не адаптирован из legacy клиентской библиотеки.",
     "items": [
       {
         "title": "SDK для Next.js с поддержкой App Router",
@@ -56,7 +56,7 @@
       },
       {
         "title": "Без cookies по умолчанию",
-        "description": "SDK OpenPanel не использует cookies. Ни библиотеки управления согласием, ни условной загрузки скриптов, ни GDPR-модалки — просто установите и отслеживайте."
+        "description": "SDK Openpanel RU не использует cookies. Ни библиотеки управления согласием, ни условной загрузки скриптов, ни GDPR-модалки — просто установите и отслеживайте."
       },
       {
         "title": "Идентификация пользователей между сессиями",
@@ -73,8 +73,8 @@
     ]
   },
   "benefits": {
-    "title": "Почему Next.js-разработчики выбирают OpenPanel",
-    "intro": "OpenPanel естественно вписывается в современную кодовую базу Next.js — не как запоздалое дополнение.",
+    "title": "Почему Next.js-разработчики выбирают Openpanel RU",
+    "intro": "Openpanel RU естественно вписывается в современную кодовую базу Next.js — не как запоздалое дополнение.",
     "items": [
       {
         "title": "Работает ровно так, как работает Next.js",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Открытый код и self-hosting",
-        "description": "Запустите OpenPanel на своей инфраструктуре. Аналитические данные Next.js-приложения никогда не покидают ваши серверы."
+        "description": "Запустите Openpanel RU на своей инфраструктуре. Аналитические данные Next.js-приложения никогда не покидают ваши серверы."
       },
       {
         "title": "От $2.50/месяц",
@@ -100,14 +100,14 @@
   },
   "faqs": {
     "title": "Часто задаваемые вопросы",
-    "intro": "Частые вопросы от Next.js-разработчиков, оценивающих OpenPanel.",
+    "intro": "Частые вопросы от Next.js-разработчиков, оценивающих Openpanel RU.",
     "items": [
       {
-        "question": "Как установить OpenPanel в Next.js-приложение?",
+        "question": "Как установить Openpanel RU в Next.js-приложение?",
         "answer": "Установите @openpanel/nextjs, добавьте <OpenPanelComponent clientId=\"...\" /> в корневой layout.tsx — и просмотры страниц уже отслеживаются. Для кастомных событий импортируйте и вызывайте op.track('event_name', { properties }) где угодно. Пошаговое руководство: /guides/nextjs-analytics."
       },
       {
-        "question": "Поддерживает ли OpenPanel Next.js App Router?",
+        "question": "Поддерживает ли Openpanel RU Next.js App Router?",
         "answer": "Да. <OpenPanelComponent> обрабатывает смену маршрутов App Router автоматически, используя хук usePathname. Никакой дополнительной настройки для отслеживания клиентской навигации не нужно."
       },
       {
@@ -115,16 +115,16 @@
         "answer": "Да. Импортируйте { openPanel } из @openpanel/nextjs/server и вызывайте openPanel.track() в любом серверном контексте, включая Server Components, Route Handlers и Server Actions."
       },
       {
-        "question": "Работает ли OpenPanel с NextAuth.js или Clerk?",
+        "question": "Работает ли Openpanel RU с NextAuth.js или Clerk?",
         "answer": "Да. Вызовите op.identify({ profileId: session.user.id, ... }) после аутентификации, чтобы связать события с личностью пользователя. Работает с любым решением, дающим ID пользователя."
       },
       {
-        "question": "Заметно ли увеличивает ли OpenPanel размер бандла Next.js-приложения?",
-        "answer": "Нет. Клиентский SDK весит 2.3 КБ в gzip. Для сравнения: GA4 добавляет 50+ КБ. Влияние OpenPanel на размер бандла и Core Web Vitals ничтожно."
+        "question": "Заметно ли увеличивает ли Openpanel RU размер бандла Next.js-приложения?",
+        "answer": "Нет. Клиентский SDK весит 2.3 КБ в gzip. Для сравнения: GA4 добавляет 50+ КБ. Влияние Openpanel RU на размер бандла и Core Web Vitals ничтожно."
       },
       {
-        "question": "Можно ли развернуть OpenPanel для своего Next.js-приложения самостоятельно?",
-        "answer": "Да. OpenPanel полностью open source и разворачивается через Docker. Ваше Next.js-приложение отправляет события на ваш сервер. Self-hosted версия без лимитов событий и бесплатна в эксплуатации."
+        "question": "Можно ли развернуть Openpanel RU для своего Next.js-приложения самостоятельно?",
+        "answer": "Да. Openpanel RU полностью open source и разворачивается через Docker. Ваше Next.js-приложение отправляет события на ваш сервер. Self-hosted версия без лимитов событий и бесплатна в эксплуатации."
       }
     ]
   },
@@ -151,23 +151,23 @@
     ],
     "comparisons": [
       {
-        "title": "OpenPanel против Google Analytics",
+        "title": "Openpanel RU против Google Analytics",
         "url": "/compare/google-analytics-alternative"
       },
       {
-        "title": "OpenPanel против PostHog",
+        "title": "Openpanel RU против PostHog",
         "url": "/compare/posthog-alternative"
       }
     ]
   },
   "ctas": {
     "primary": {
-      "label": "Попробуйте OpenPanel бесплатно",
-      "href": "https://dashboard.openpanel.dev/onboarding"
+      "label": "Попробуйте Openpanel RU бесплатно",
+      "href": "#"
     },
     "secondary": {
       "label": "Исходный код на GitHub",
-      "href": "https://github.com/Openpanel-dev/openpanel"
+      "href": "https://github.com/Openpanel RU-dev/openpanel"
     }
   }
 }

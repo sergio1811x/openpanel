@@ -21,8 +21,8 @@ const body = `# ${OPENPANEL_NAME}
 - [Contact](${OPENPANEL_BASE_URL}/contact)
 
 ## Core docs
-- [What is OpenPanel?](${OPENPANEL_BASE_URL}/docs)
-- [Install OpenPanel](${OPENPANEL_BASE_URL}/docs/get-started/install-openpanel)
+- [What is Openpanel RU?](${OPENPANEL_BASE_URL}/docs)
+- [Install Openpanel RU](${OPENPANEL_BASE_URL}/docs/get-started/install-openpanel)
 - [Track Events](${OPENPANEL_BASE_URL}/docs/get-started/track-events)
 - [Identify Users](${OPENPANEL_BASE_URL}/docs/get-started/identify-users)
 

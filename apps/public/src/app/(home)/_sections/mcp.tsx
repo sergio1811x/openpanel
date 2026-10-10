@@ -96,7 +96,7 @@ export function Mcp() {
 
           <p className="text-muted-foreground leading-relaxed">
             Подключите Claude, Cursor, Windsurf или собственного AI-агента к
-            данным OpenPanel через MCP. Больше не нужно переключать вкладки и
+            данным Openpanel RU через MCP. Больше не нужно переключать вкладки и
             строить графики — ответы уже у вашего AI.
           </p>
 
@@ -107,7 +107,7 @@ export function Mcp() {
           <div className="row items-center gap-4">
             <Link
               className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 font-semibold text-background text-sm transition-opacity hover:opacity-80"
-              href="https://dashboard.openpanel.dev/onboarding"
+              href="#"
             >
               Попробовать сейчас
               <ArrowRightIcon className="size-3.5" />

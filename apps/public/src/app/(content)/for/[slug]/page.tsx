@@ -62,7 +62,7 @@ export default async function ForPage({
     url: pageUrl,
     publisher: {
       '@type': 'Organization',
-      name: 'OpenPanel',
+      name: 'Openpanel RU',
       logo: {
         '@type': 'ImageObject',
         url: url('/logo.webp'),
@@ -82,7 +82,7 @@ export default async function ForPage({
 
       <div className="container my-16">
         <WindowImage
-          alt="Обзор дашборда OpenPanel"
+          alt="Обзор дашборда Openpanel RU"
           caption="Это наш дашборд веб-аналитики — всё работает сразу после установки, так что вы можете начать понимать свой трафик и вовлечённость прямо сейчас."
           srcDark="/screenshots/overview-dark.webp"
           srcLight="/screenshots/overview-light.webp"
@@ -99,7 +99,7 @@ export default async function ForPage({
 
       <div className="container my-16">
         <WindowImage
-          alt="Аналитика OpenPanel в реальном времени"
+          alt="Аналитика Openpanel RU в реальном времени"
           caption="Отслеживайте события в реальном времени по мере их появления — с мгновенными обновлениями и живым мониторингом."
           srcDark="/screenshots/realtime-dark.webp"
           srcLight="/screenshots/realtime-light.webp"
@@ -112,7 +112,7 @@ export default async function ForPage({
 
       <div className="container my-16">
         <WindowImage
-          alt="Дашборд OpenPanel"
+          alt="Дашборд Openpanel RU"
           caption="Многофункциональный дашборд аналитики с инсайтами в реальном времени и настраиваемыми представлениями."
           srcDark="/screenshots/dashboard-dark.webp"
           srcLight="/screenshots/dashboard-light.webp"
@@ -130,7 +130,7 @@ export default async function ForPage({
       <CtaBanner
         ctaLink={data.ctas.primary.href}
         ctaText={data.ctas.primary.label}
-        description="Протестируйте OpenPanel бесплатно 30 дней — с вас не возьмут ни копейки, пока вы не перейдёте на платный план."
+        description="Протестируйте Openpanel RU бесплатно 30 дней — с вас не возьмут ни копейки, пока вы не перейдёте на платный план."
         title="Готовы начать?"
       />
     </div>

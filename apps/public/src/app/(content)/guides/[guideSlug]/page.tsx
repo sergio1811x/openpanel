@@ -134,7 +134,7 @@ export default async function Page({
               )}
             </div>
             <div className="col flex-1">
-              <p className="font-medium">{author?.name || 'OpenPanel Team'}</p>
+              <p className="font-medium">{author?.name || 'Openpanel RU Team'}</p>
               <div className="row gap-4 items-center">
                 <p className="text-muted-foreground text-sm">
                   {guide?.data.date.toLocaleDateString()}
@@ -176,7 +176,7 @@ export default async function Page({
           <aside className="pl-12 pb-12 gap-8 col">
             <Toc toc={guide?.data.toc} />
             <FeatureCardContainer className="gap-2">
-              <span className="text-lg font-semibold">Попробуйте OpenPanel</span>
+              <span className="text-lg font-semibold">Попробуйте Openpanel RU</span>
               <p className="text-muted-foreground text-sm mb-4">
                 Попробуйте бесплатно. Без кредитной карты.
               </p>

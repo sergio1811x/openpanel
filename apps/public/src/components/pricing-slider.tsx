@@ -55,11 +55,7 @@ export function PricingSlider() {
         </div>
       ) : (
         <div className="text-lg">
-          Напишите нам на{' '}
-          <a className="underline" href="mailto:hello@openpanel.dev">
-            hello@openpanel.dev
-          </a>{' '}
-          чтобы получить индивидуальное предложение.
+          Напишите нам, чтобы получить индивидуальное предложение.
         </div>
       )}
     </>

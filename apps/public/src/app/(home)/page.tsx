@@ -24,7 +24,7 @@ const jsonLd = {
     {
       '@type': 'WebSite',
       name: OPENPANEL_SITE_NAME,
-      alternateName: ['OpenPanel', 'OpenPanel.dev'],
+      alternateName: ['Openpanel RU', 'OpenPanel'],
       url: OPENPANEL_BASE_URL,
     },
     {
@@ -33,7 +33,6 @@ const jsonLd = {
       url: OPENPANEL_BASE_URL,
       sameAs: [
         'https://github.com/Openpanel-dev/openpanel',
-        'https://x.com/OpenPanelDev',
       ],
       description: OPENPANEL_DESCRIPTION,
       keywords:

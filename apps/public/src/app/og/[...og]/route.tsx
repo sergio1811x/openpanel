@@ -26,14 +26,14 @@ async function getOgData(
       return {
         title: 'Стать спонсором',
         description:
-          'Поддержите OpenPanel и получите эксклюзивные бонусы: свежие Docker-образы, приоритетную поддержку и ранний доступ к новым функциям.',
+          'Поддержите Openpanel RU и получите эксклюзивные бонусы: свежие Docker-образы, приоритетную поддержку и ранний доступ к новым функциям.',
       };
     }
     case 'open-source': {
       return {
         title: 'Бесплатная аналитика для open source проектов',
         description:
-          'Получите бесплатную веб- и продуктовую аналитику для вашего open source проекта. До 2,5 млн событий в месяц. Подайте заявку в open source программу OpenPanel.',
+          'Получите бесплатную веб- и продуктовую аналитику для вашего open source проекта. До 2,5 млн событий в месяц. Подайте заявку в open source программу Openpanel RU.',
       };
     }
     case 'pricing': {
@@ -63,7 +63,7 @@ async function getOgData(
       if (!slug) {
         return {
           title: 'Сравнение альтернатив',
-          description: 'Сравните OpenPanel с другими инструментами аналитики',
+          description: 'Сравните Openpanel RU с другими инструментами аналитики',
         };
       }
       const data = await getCompareData(slug);
@@ -93,7 +93,7 @@ async function getOgData(
         return {
           title: 'Возможности продуктовой аналитики',
           description:
-            'Изучите возможности OpenPanel: отслеживание событий, воронки, удержание, профили пользователей и многое другое.',
+            'Изучите возможности Openpanel RU: отслеживание событий, воронки, удержание, профили пользователей и многое другое.',
         };
       }
       const featureData = await getFeatureData(slug);

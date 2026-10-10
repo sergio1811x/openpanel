@@ -53,7 +53,7 @@ export function Layout({ children, unsubscribeUrl }: Props) {
                 src={'https://openpanel.dev/logo.png'}
                 width="80"
                 height="80"
-                alt="Логотип OpenPanel"
+                alt="Логотип Openpanel RU"
                 style={{ borderRadius: 4 }}
               />
             </Section>

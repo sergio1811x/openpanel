@@ -22,7 +22,7 @@ export type Props = z.infer<typeof zWindDownFinalWarning>;
 export default WindDownFinalWarning;
 export function WindDownFinalWarning({
   firstName,
-  billingUrl = 'https://dashboard.openpanel.dev',
+  billingUrl = 'http://localhost:3000',
   deleteDate,
   hasData = true,
   stillTracking = false,
@@ -38,7 +38,7 @@ export function WindDownFinalWarning({
       </Text>
       <Text>
         <strong>
-          {deleteDate} Ваша организация OpenPanel и всё её содержимое будут
+          {deleteDate} Ваша организация Openpanel RU и всё её содержимое будут
           безвозвратно удалены.
         </strong>{' '}
         Это значит, что Ваши проекты, настройки и
@@ -81,7 +81,7 @@ export function WindDownFinalWarning({
 
 WindDownFinalWarning.PreviewProps = {
   firstName: 'Alex',
-  billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
+  billingUrl: 'http://localhost:3000/org-id/billing',
   deleteDate: '10 апреля',
   hasData: true,
   stillTracking: true,

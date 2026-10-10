@@ -72,12 +72,12 @@
       },
       {
         "title": "Self-hosting для неограниченных событий",
-        "description": "Запустите OpenPanel на своей инфраструктуре через Docker Compose за фиксированную стоимость хостинга — без оплаты за события. Скрипт установки — одна команда. Облако и self-hosted версия идентичны по функциям."
+        "description": "Запустите Openpanel RU на своей инфраструктуре через Docker Compose за фиксированную стоимость хостинга — без оплаты за события. Скрипт установки — одна команда. Облако и self-hosted версия идентичны по функциям."
       }
     ]
   },
   "benefits": {
-    "title": "Почему e-commerce команды переходят на OpenPanel",
+    "title": "Почему e-commerce команды переходят на Openpanel RU",
     "intro": "Компромиссы, ломающие e-commerce на других инструментах — отток из-за согласия, разгоняющиеся тарифы, поверхностные отчёты, — здесь не работают.",
     "items": [
       {
@@ -104,39 +104,39 @@
   },
   "faqs": {
     "title": "Часто задаваемые вопросы",
-    "intro": "Частые вопросы от e-commerce команд, оценивающих OpenPanel.",
+    "intro": "Частые вопросы от e-commerce команд, оценивающих Openpanel RU.",
     "items": [
       {
-        "question": "Может ли OpenPanel заменить GA4 для интернет-магазина?",
-        "answer": "Да. OpenPanel покрывает всю ключевую отчётность GA4 для e-commerce — просмотры страниц, источники трафика, UTM-атрибуцию, события конверсии, отслеживание выручки, воронки — и добавляет функции продуктовой аналитики (когорты, удержание, профили покупателей), которых в GA4 нет. Главное отличие: OpenPanel работает без cookies, поэтому баннер согласия можно убрать, а данные будут полными."
+        "question": "Может ли Openpanel RU заменить GA4 для интернет-магазина?",
+        "answer": "Да. Openpanel RU покрывает всю ключевую отчётность GA4 для e-commerce — просмотры страниц, источники трафика, UTM-атрибуцию, события конверсии, отслеживание выручки, воронки — и добавляет функции продуктовой аналитики (когорты, удержание, профили покупателей), которых в GA4 нет. Главное отличие: Openpanel RU работает без cookies, поэтому баннер согласия можно убрать, а данные будут полными."
       },
       {
-        "question": "Как установить OpenPanel на Shopify?",
-        "answer": "Добавьте тег скрипта OpenPanel в Shopify Admin → Online Store → Themes → Edit Code → theme.liquid перед </head>. Просмотры страниц отслеживаются автоматически. Для событий покупок добавьте небольшой скрипт на страницу подтверждения заказа, вызывающий op.track('Purchase', {revenue, currency, orderId, products}). Полное руководство — на [странице аналитики Shopify](/for/shopify)."
+        "question": "Как установить Openpanel RU на Shopify?",
+        "answer": "Добавьте тег скрипта Openpanel RU в Shopify Admin → Online Store → Themes → Edit Code → theme.liquid перед </head>. Просмотры страниц отслеживаются автоматически. Для событий покупок добавьте небольшой скрипт на страницу подтверждения заказа, вызывающий op.track('Purchase', {revenue, currency, orderId, products}). Полное руководство — на [странице аналитики Shopify](/for/shopify)."
       },
       {
-        "question": "Как установить OpenPanel на WooCommerce?",
-        "answer": "Два варианта. Простой: установите WordPress-плагин OpenPanel (или вариант Site Kit). Ручной: подпишитесь на действие woocommerce_thankyou, чтобы отправить op.track('Purchase') с объектом заказа, и добавьте скрипт OpenPanel в заголовок темы. События WooCommerce вроде add_to_cart и product_view также доступны как нативные хуки."
+        "question": "Как установить Openpanel RU на WooCommerce?",
+        "answer": "Два варианта. Простой: установите WordPress-плагин Openpanel RU (или вариант Site Kit). Ручной: подпишитесь на действие woocommerce_thankyou, чтобы отправить op.track('Purchase') с объектом заказа, и добавьте скрипт Openpanel RU в заголовок темы. События WooCommerce вроде add_to_cart и product_view также доступны как нативные хуки."
       },
       {
-        "question": "Работает ли OpenPanel со Stripe Checkout или Payment Links?",
+        "question": "Работает ли Openpanel RU со Stripe Checkout или Payment Links?",
         "answer": "Да. Отправьте op.track('CheckoutStarted') со страницы товара при клике на кнопку покупки, затем отправьте op.track('Purchase', {revenue, currency, orderId}) из обработчика вебхука Stripe при событии checkout.session.completed. Работает для Stripe Checkout, Payment Links, подписок и кастомных интеграций на Stripe Elements."
       },
       {
-        "question": "Понадобится ли баннер согласия на cookies с OpenPanel в магазине?",
-        "answer": "Для аналитики — нет. OpenPanel работает без cookies и не обрабатывает персональные данные — по GDPR и CCPA баннер согласия для аналитики не требуется. Для маркетинговых пикселей (Meta, Google Ads), если вы их используете, баннер может понадобиться, но для сайтов с одной аналитикой от него можно отказаться."
+        "question": "Понадобится ли баннер согласия на cookies с Openpanel RU в магазине?",
+        "answer": "Для аналитики — нет. Openpanel RU работает без cookies и не обрабатывает персональные данные — по GDPR и CCPA баннер согласия для аналитики не требуется. Для маркетинговых пикселей (Meta, Google Ads), если вы их используете, баннер может понадобиться, но для сайтов с одной аналитикой от него можно отказаться."
       },
       {
-        "question": "Замедлит ли OpenPanel мой checkout?",
-        "answer": "JavaScript SDK OpenPanel весит 2.3 КБ в gzip. GA4 — 50 КБ. Mixpanel — 60 КБ. Влияние на производительность checkout ничтожно — значительно ниже порога, влияющего на Core Web Vitals и конверсию."
+        "question": "Замедлит ли Openpanel RU мой checkout?",
+        "answer": "JavaScript SDK Openpanel RU весит 2.3 КБ в gzip. GA4 — 50 КБ. Mixpanel — 60 КБ. Влияние на производительность checkout ничтожно — значительно ниже порога, влияющего на Core Web Vitals и конверсию."
       },
       {
-        "question": "Как тарифы OpenPanel сравниваются с Mixpanel для загруженного магазина?",
-        "answer": "Магазин с 20 тыс. сессий в месяц и 50 событиями за сессию отправляет 1 млн событий. Mixpanel на таком объёме стоит примерно $200–300 в месяц. Heap — похоже. Облако OpenPanel стоит $90/мес за 1 млн событий или $0/мес при self-hosting. На пиках Чёрной пятницы разрыв растёт: Mixpanel масштабируется с доплатами за перерасход, OpenPanel остаётся на том же месячном тарифе."
+        "question": "Как тарифы Openpanel RU сравниваются с Mixpanel для загруженного магазина?",
+        "answer": "Магазин с 20 тыс. сессий в месяц и 50 событиями за сессию отправляет 1 млн событий. Mixpanel на таком объёме стоит примерно $200–300 в месяц. Heap — похоже. Облако Openpanel RU стоит $90/мес за 1 млн событий или $0/мес при self-hosting. На пиках Чёрной пятницы разрыв растёт: Mixpanel масштабируется с доплатами за перерасход, Openpanel RU остаётся на том же месячном тарифе."
       },
       {
         "question": "Можно ли отслеживать мультимагазинные конфигурации (Shopify Plus с несколькими магазинами)?",
-        "answer": "Да. OpenPanel поддерживает неограниченное число проектов в аккаунте: отслеживайте каждый магазин отдельным проектом или соберите всё в один проект с сегментацией по store_id. Оба подхода работают — выберите тот, что подходит под вашу отчётность."
+        "answer": "Да. Openpanel RU поддерживает неограниченное число проектов в аккаунте: отслеживайте каждый магазин отдельным проектом или соберите всё в один проект с сегментацией по store_id. Оба подхода работают — выберите тот, что подходит под вашу отчётность."
       }
     ]
   },
@@ -163,27 +163,27 @@
     ],
     "comparisons": [
       {
-        "title": "OpenPanel против Google Analytics",
+        "title": "Openpanel RU против Google Analytics",
         "url": "/compare/google-analytics-alternative"
       },
       {
-        "title": "OpenPanel против Mixpanel",
+        "title": "Openpanel RU против Mixpanel",
         "url": "/compare/mixpanel-alternative"
       },
       {
-        "title": "OpenPanel против Plausible",
+        "title": "Openpanel RU против Plausible",
         "url": "/compare/plausible-alternative"
       }
     ]
   },
   "ctas": {
     "primary": {
-      "label": "Попробуйте OpenPanel бесплатно",
-      "href": "https://dashboard.openpanel.dev/onboarding"
+      "label": "Попробуйте Openpanel RU бесплатно",
+      "href": "#"
     },
     "secondary": {
       "label": "Исходный код на GitHub",
-      "href": "https://github.com/Openpanel-dev/openpanel"
+      "href": "https://github.com/Openpanel RU-dev/openpanel"
     }
   }
 }

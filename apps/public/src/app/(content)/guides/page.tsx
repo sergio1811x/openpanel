@@ -12,7 +12,7 @@ import Script from 'next/script';
 export const metadata: Metadata = getPageMetadata({
   title: 'Руководства по внедрению',
   description:
-    'Пошаговые инструкции по подключению аналитики с приоритетом приватности к вашему приложению с помощью OpenPanel.',
+    'Пошаговые инструкции по подключению аналитики с приоритетом приватности к вашему приложению с помощью Openpanel RU.',
   url: url('/guides'),
   image: getOgImageUrl('/guides'),
 });
@@ -26,7 +26,7 @@ export default async function Page() {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'OpenPanel Implementation Guides',
+    name: 'Openpanel RU Implementation Guides',
     description: 'Step-by-step tutorials for adding analytics to your app',
     itemListElement: guides.map((guide, index) => {
       const slug = guide.url.replace(/^\/guides\//, '').replace(/\/$/, '');
@@ -47,7 +47,7 @@ export default async function Page() {
           align="center"
           className="flex-1"
           title="Руководства по внедрению"
-          description="Пошаговые инструкции по подключению аналитики с приоритетом приватности к вашему приложению с помощью OpenPanel."
+          description="Пошаговые инструкции по подключению аналитики с приоритетом приватности к вашему приложению с помощью Openpanel RU."
         />
       </HeroContainer>
 

@@ -12,7 +12,7 @@ export type Props = z.infer<typeof zEmailInvite>;
 export default EmailInvite;
 export function EmailInvite({
   organizationName = 'Acme Co',
-  url = 'https://openpanel.dev',
+  url = 'http://localhost:3000',
   unsubscribeUrl,
 }: Props & { unsubscribeUrl?: string }) {
   return (

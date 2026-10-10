@@ -32,7 +32,7 @@ export type Props = z.infer<typeof zWindDownExpired>;
 export default WindDownExpired;
 export function WindDownExpired({
   firstName,
-  billingUrl = 'https://dashboard.openpanel.dev',
+  billingUrl = 'http://localhost:3000',
   blockDate,
   trialEndedDate,
   recommendedPlan,
@@ -55,7 +55,7 @@ export function WindDownExpired({
     <Text>
       С момента Вашего пробного периода появилось много нового — в том числе
       наш{' '}
-      <Link href={withUtm('https://openpanel.dev/docs/mcp', 'wind-down-expired')}>
+      <Link href={withUtm('#', 'wind-down-expired')}>
         MCP-сервер
       </Link>
       : подключите Claude, Cursor или любой MCP-клиент и задавайте вопросы по
@@ -76,7 +76,7 @@ export function WindDownExpired({
       <Layout unsubscribeUrl={unsubscribeUrl}>
         {greeting}
         <Text>
-          Отслеживание OpenPanel всё ещё работает
+          Отслеживание Openpanel RU всё ещё работает
           {trialEndedDate ? `, хотя Ваш пробный период закончился ${trialEndedDate}` : ''}
           .
           {recentEventsCount
@@ -146,7 +146,7 @@ export function WindDownExpired({
     <Layout unsubscribeUrl={unsubscribeUrl}>
       {greeting}
       <Text>
-        Ваш пробный период OpenPanel закончился. События до нас так и не дошли,
+        Ваш пробный период Openpanel RU закончился. События до нас так и не дошли,
         поэтому хранить нечего и терять Вам нечего.
       </Text>
       <Text>
@@ -165,7 +165,7 @@ export function WindDownExpired({
 
 WindDownExpired.PreviewProps = {
   firstName: 'Alex',
-  billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
+  billingUrl: 'http://localhost:3000/org-id/billing',
   blockDate: '14 марта',
   trialEndedDate: '3 ноября 2025 г.',
   recommendedPlan: '100 000 событий в месяц за $20.00',

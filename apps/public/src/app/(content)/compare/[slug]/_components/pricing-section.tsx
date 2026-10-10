@@ -60,7 +60,7 @@ export function PricingSection({
         variants={containerVariants}
         className="grid md:grid-cols-2 gap-6 mt-12"
       >
-        {/* OpenPanel Card */}
+        {/* Openpanel RU Card */}
         <motion.div
           variants={cardVariants}
           className="col gap-4 p-6 rounded-2xl border bg-background group relative overflow-hidden hover:border-emerald-500/30 transition-all duration-300"
@@ -68,7 +68,7 @@ export function PricingSection({
           <div className="pointer-events-none absolute inset-0 bg-linear-to-br opacity-100 blur-2xl dark:from-emerald-500/5 dark:via-transparent dark:to-green-500/5 light:from-emerald-800/10 light:via-transparent light:to-green-900/10 group-hover:opacity-150 transition-opacity duration-500" />
           <div className="col gap-3 relative z-10">
             <div className="col gap-2">
-              <h3 className="text-xl font-semibold">OpenPanel</h3>
+              <h3 className="text-xl font-semibold">Openpanel RU</h3>
               <p className="text-sm text-muted-foreground font-medium">
                 {pricing.openpanel.model}
               </p>

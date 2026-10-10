@@ -15,7 +15,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { CompareCard } from '../compare/_components/compare-card';
 
-const title = 'Тарифы OpenPanel Cloud';
+const title = 'Тарифы Openpanel RU Cloud';
 const description =
   'Наши тарифы максимально просты: выберите, сколько событий вы хотите отслеживать каждый месяц, — всё остальное без ограничений. Никаких уровней и скрытых расходов.';
 
@@ -34,7 +34,7 @@ const jsonLd = {
   url: url('/pricing'),
   publisher: {
     '@type': 'Organization',
-    name: 'OpenPanel',
+    name: 'Openpanel RU',
     logo: {
       '@type': 'ImageObject',
       url: url('/logo.png'),
@@ -128,7 +128,7 @@ function ComparisonSection() {
         title="Чем мы отличаемся?"
         description={
           <>
-            Посмотрите, как OpenPanel сравнивается с другими инструментами аналитики, в{' '}
+            Посмотрите, как Openpanel RU сравнивается с другими инструментами аналитики, в{' '}
             <Link
               href="/articles/self-hosted-web-analytics"
               className="underline hover:text-primary transition-colors"
@@ -149,7 +149,7 @@ function ComparisonSection() {
           <CompareCard
             key={comparison.slug}
             url={comparison.url}
-            name={`OpenPanel против ${comparison.competitor.name}`}
+            name={`Openpanel RU против ${comparison.competitor.name}`}
             description={comparison.competitor.short_description}
           />
         ))}

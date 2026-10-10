@@ -25,7 +25,7 @@ export type Props = z.infer<typeof zWindDownStoppingSoon>;
 export default WindDownStoppingSoon;
 export function WindDownStoppingSoon({
   firstName,
-  billingUrl = 'https://dashboard.openpanel.dev',
+  billingUrl = 'http://localhost:3000',
   blockDate,
   recommendedPlan,
   hasData = true,
@@ -118,7 +118,7 @@ export function WindDownStoppingSoon({
 
 WindDownStoppingSoon.PreviewProps = {
   firstName: 'Alex',
-  billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
+  billingUrl: 'http://localhost:3000/org-id/billing',
   blockDate: '14 марта',
   recommendedPlan: '100 000 событий в месяц за $20.00',
   hasData: true,

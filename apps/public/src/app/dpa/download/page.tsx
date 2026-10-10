@@ -20,7 +20,7 @@ export default function DpaDownloadPage() {
         {/* Header */}
         <div className="mb-10 border-gray-300 border-b pb-8">
           <p className="mb-1 text-gray-500 text-xs uppercase tracking-widest">
-            OpenPanel AB
+            Openpanel RU
           </p>
           <h1 className="mb-2 font-bold text-3xl">
             Соглашение об обработке данных (DPA)
@@ -32,10 +32,10 @@ export default function DpaDownloadPage() {
 
         <p className="mb-8 text-gray-700 text-sm leading-relaxed">
           Настоящее соглашение об обработке данных («DPA») заключается между
-          OpenPanel AB («OpenPanel», «Обработчик») и клиентом, указанным в блоке
-          подписей ниже («Контролёр»). Оно применяется в случаях, когда OpenPanel
+          Openpanel RU («Openpanel RU», «Обработчик») и клиентом, указанным в блоке
+          подписей ниже («Контролёр»). Оно применяется в случаях, когда Openpanel RU
           обрабатывает персональные данные от имени Контролёра в рамках сервиса
-          OpenPanel Cloud, и является частью Условий использования OpenPanel.
+          Openpanel RU Cloud, и является частью Условий использования Openpanel RU.
         </p>
 
         <Section number="1" title="Определения">
@@ -49,7 +49,7 @@ export default function DpaDownloadPage() {
               средства обработки.
             </li>
             <li>
-              <strong>Обработчик</strong> — OpenPanel, обрабатывающая данные от
+              <strong>Обработчик</strong> — Openpanel RU, обрабатывающая данные от
               имени Контролёра.
             </li>
             <li>
@@ -60,14 +60,14 @@ export default function DpaDownloadPage() {
             </li>
             <li>
               <strong>Субобработчик</strong> — любая третья сторона, привлечённая
-              OpenPanel для обработки персональных данных в связи с сервисом.
+              Openpanel RU для обработки персональных данных в связи с сервисом.
             </li>
           </ul>
         </Section>
 
         <Section number="2" title="Наш подход к приватности">
           <p className="mb-3 text-gray-700 text-sm leading-relaxed">
-            OpenPanel создана так, чтобы минимизировать сбор персональных данных
+            Openpanel RU создана так, чтобы минимизировать сбор персональных данных
             на уровне архитектуры. Мы не используем cookies для аналитического
             отслеживания и не храним IP-адреса. Вместо этого мы генерируем
             ежедневно обновляемый анонимный идентификатор с помощью однонаправленного
@@ -92,7 +92,7 @@ export default function DpaDownloadPage() {
           <p className="mb-3 text-gray-700 text-sm">
             Никаких постоянных идентификаторов, никаких cookies, никакого
             межсайтового отслеживания. Благодаря этому подходу аналитические
-            данные, которые OpenPanel собирает в стандартном режиме отслеживания
+            данные, которые Openpanel RU собирает в стандартном режиме отслеживания
             сайтов, не являются персональными данными согласно GDPR, ст. 4(1).
             Мы предоставляем этот DPA Контролёрам, которым он нужен для
             собственных документов соответствия и реестров действий по обработке.
@@ -101,7 +101,7 @@ export default function DpaDownloadPage() {
             Session replay (опциональная функция)
           </p>
           <p className="mb-3 text-gray-700 text-sm">
-            OpenPanel опционально поддерживает session replay, который должен быть
+            Openpanel RU опционально поддерживает session replay, который должен быть
             явно включён Контролёром. При включении session replay записывает
             снимки DOM и взаимодействия пользователя (движения мыши, клики,
             скроллы) с помощью rrweb. Весь текстовый контент и поля форм по
@@ -113,7 +113,7 @@ export default function DpaDownloadPage() {
             AI-функции (опционально, по включению)
           </p>
           <p className="text-gray-700 text-sm">
-            OpenPanel предлагает опциональные AI-функции (например, запросы на
+            Openpanel RU предлагает опциональные AI-функции (например, запросы на
             естественном языке к аналитическим данным Контролёра, инсайты об
             аномалиях и отчёты с помощью AI), которые должны быть явно вызваны
             Контролёром. Когда Контролёр использует эти функции, промпт и
@@ -129,7 +129,7 @@ export default function DpaDownloadPage() {
 
         <Section number="3" title="Объём применения и роли">
           <p className="text-gray-700 text-sm leading-relaxed">
-            OpenPanel выступает Обработчиком при обработке данных от имени
+            Openpanel RU выступает Обработчиком при обработке данных от имени
             Контролёра. Контролёр отвечает за аналитические данные, собранные с
             посетителей его сайтов и приложений.
           </p>
@@ -137,7 +137,7 @@ export default function DpaDownloadPage() {
 
         <Section number="4" title="Обязанности Обработчика">
           <p className="mb-2 text-gray-700 text-sm">
-            OpenPanel обязуется:
+            Openpanel RU обязуется:
           </p>
           <ul className="list-disc space-y-1 pl-5 text-gray-700 text-sm">
             <li>
@@ -164,7 +164,7 @@ export default function DpaDownloadPage() {
             </li>
             <li>
               Уведомить Контролёра без неоправданной задержки (и не позднее 48
-              часов) после того, как OpenPanel узнает об утечке персональных
+              часов) после того, как Openpanel RU узнает об утечке персональных
               данных.
             </li>
             <li>
@@ -199,14 +199,14 @@ export default function DpaDownloadPage() {
             </li>
             <li>
               Отвечает за точность и законность данных, обработку которых он
-              поручает OpenPanel.
+              поручает Openpanel RU.
             </li>
           </ul>
         </Section>
 
         <Section number="6" title="Субобработчики">
           <p className="mb-3 text-gray-700 text-sm">
-            OpenPanel использует следующих субобработчиков для оказания сервиса:
+            Openpanel RU использует следующих субобработчиков для оказания сервиса:
           </p>
           <table className="mb-3 w-full border-collapse text-sm">
             <thead>
@@ -281,7 +281,7 @@ export default function DpaDownloadPage() {
             </tbody>
           </table>
           <p className="text-gray-700 text-sm">
-            OpenPanel уведомит Контролёра о любых планируемых изменениях этого
+            Openpanel RU уведомит Контролёра о любых планируемых изменениях этого
             списка с разумным сроком, дав Контролёру возможность возразить.
           </p>
         </Section>
@@ -361,7 +361,7 @@ export default function DpaDownloadPage() {
               <p className="mb-1 font-semibold">Открытый исходный код</p>
               <ul className="list-disc space-y-1 pl-5">
                 <li>
-                  Код OpenPanel публично доступен на GitHub, что позволяет
+                  Код Openpanel RU публично доступен на GitHub, что позволяет
                   независимо проверять наши практики работы с данными.
                 </li>
               </ul>
@@ -420,7 +420,7 @@ export default function DpaDownloadPage() {
             <li>
               Контролёр может в любой момент удалить отдельные проекты, все
               связанные данные или весь аккаунт прямо из дашборда. После
-              прекращения аккаунта OpenPanel удалит данные Контролёра в течение
+              прекращения аккаунта Openpanel RU удалит данные Контролёра в течение
               30 дней, если закон не требует сохранять их дольше.
             </li>
           </ul>
@@ -449,7 +449,7 @@ export default function DpaDownloadPage() {
               />
               <Row
                 label="Цель обработки"
-                value="Предоставление Контролёру веб- и продуктовой аналитики через дашборд OpenPanel Cloud. Session replay (если включён) используется, чтобы Контролёр мог просматривать сессии пользователей для UX-анализа и отладки."
+                value="Предоставление Контролёру веб- и продуктовой аналитики через дашборд Openpanel RU Cloud. Session replay (если включён) используется, чтобы Контролёр мог просматривать сессии пользователей для UX-анализа и отладки."
               />
               <Row
                 label="Срок обработки"
@@ -489,7 +489,7 @@ export default function DpaDownloadPage() {
                 <p className="font-semibold text-gray-500 text-xs uppercase tracking-widest">
                   Обработчик
                 </p>
-                <p className="font-semibold text-sm">OpenPanel AB</p>
+                <p className="font-semibold text-sm">Openpanel RU</p>
                 <p className="text-gray-500 text-xs">
                   Sankt Eriksgatan 100, 113 31 Stockholm, Sweden
                 </p>
@@ -528,7 +528,7 @@ export default function DpaDownloadPage() {
         </div>
 
         <div className="mt-12 border-gray-200 border-t pt-6 text-center text-gray-400 text-xs print:mt-4">
-          OpenPanel AB &middot; hello@openpanel.dev &middot; openpanel.dev/dpa
+          Openpanel RU &middot; hello@openpanel.dev &middot; Openpanel RU
         </div>
       </div>
     </div>

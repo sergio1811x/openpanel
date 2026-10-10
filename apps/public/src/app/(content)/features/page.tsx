@@ -41,7 +41,7 @@ const featureIcons: Record<string, LucideIcon> = {
 export const metadata: Metadata = getPageMetadata({
   title: 'Возможности продуктовой аналитики',
   description:
-    'Обзор возможностей OpenPanel: отслеживание событий, воронки, удержание, профили пользователей и многое другое. Продуктовая аналитика с приоритетом приватности, которая просто работает.',
+    'Обзор возможностей Openpanel RU: отслеживание событий, воронки, удержание, профили пользователей и многое другое. Продуктовая аналитика с приоритетом приватности, которая просто работает.',
   url: url('/features'),
   image: getOgImageUrl('/features'),
 });
@@ -62,7 +62,7 @@ export default async function FeaturesIndexPage() {
 
       <div className="container my-16">
         <WindowImage
-          alt="Обзор дашборда OpenPanel"
+          alt="Обзор дашборда Openpanel RU"
           caption="Наглядная картина продуктовой аналитики с инсайтами в реальном времени и настраиваемыми дашбордами."
           srcDark="/screenshots/overview-dark.webp"
           srcLight="/screenshots/overview-light.webp"
@@ -89,9 +89,9 @@ export default async function FeaturesIndexPage() {
       </Section>
 
       <CtaBanner
-        ctaLink="https://dashboard.openpanel.dev/onboarding"
+        ctaLink="#"
         ctaText="Начать бесплатно"
-        description="Присоединяйтесь к тысячам команд, которые используют OpenPanel для своей аналитики."
+        description="Присоединяйтесь к тысячам команд, которые используют Openpanel RU для своей аналитики."
         title="Готовы начать?"
       />
     </div>

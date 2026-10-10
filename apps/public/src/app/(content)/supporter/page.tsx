@@ -23,7 +23,7 @@ import Script from 'next/script';
 export const metadata: Metadata = getPageMetadata({
   title: 'Стать спонсором',
   description:
-    'Поддержите OpenPanel и получите эксклюзивные бонусы: свежие Docker-образы, приоритетную поддержку и ранний доступ к новым функциям.',
+    'Поддержите Openpanel RU и получите эксклюзивные бонусы: свежие Docker-образы, приоритетную поддержку и ранний доступ к новым функциям.',
   url: url('/supporter'),
   image: getOgImageUrl('/supporter'),
 });
@@ -33,11 +33,11 @@ const jsonLd = {
   '@type': 'WebPage',
   name: 'Become a Supporter',
   description:
-    'Support OpenPanel and get exclusive perks like latest Docker images, prioritized support, and early access to new features.',
+    'Support Openpanel RU and get exclusive perks like latest Docker images, prioritized support, and early access to new features.',
   url: url('/supporter'),
   publisher: {
     '@type': 'Organization',
-    name: 'OpenPanel',
+    name: 'Openpanel RU',
     logo: {
       '@type': 'ImageObject',
       url: url('/logo.png'),
@@ -92,7 +92,7 @@ export default function SupporterPage() {
             <Section className="my-0">
               <SectionHeader
                 title="Почему ваша поддержка важна"
-                description="Мы не большая корпорация — просто небольшая команда, увлечённая созданием полезного для разработчиков. OpenPanel появилась на свет, потому что мы верили: инструменты аналитики не должны быть сложными или спрятанными за дорогими enterprise-подписками."
+                description="Мы не большая корпорация — просто небольшая команда, увлечённая созданием полезного для разработчиков. Openpanel RU появилась на свет, потому что мы верили: инструменты аналитики не должны быть сложными или спрятанными за дорогими enterprise-подписками."
               />
               <div className="col gap-6 mt-8">
                 <p className="text-muted-foreground">
@@ -117,7 +117,7 @@ export default function SupporterPage() {
                 </div>
                 <p className="text-muted-foreground">
                   Никакого корпоративного языка и громких обещаний — просто честная
-                  работа над тем, чтобы OpenPanel стала лучше для всех. Каждый вклад,
+                  работа над тем, чтобы Openpanel RU стала лучше для всех. Каждый вклад,
                   каким бы он ни был, помогает нам оставаться независимыми и
                   сосредоточенными на важном.
                 </p>
@@ -150,7 +150,7 @@ export default function SupporterPage() {
                 />
                 <FeatureCard
                   title="Предложения по функциям"
-                  description="Ваши идеи и запросы функций получают приоритет в нашем роадмапе. Формируйте будущее OpenPanel."
+                  description="Ваши идеи и запросы функций получают приоритет в нашем роадмапе. Формируйте будущее Openpanel RU."
                   icon={SparklesIcon}
                 />
                 <FeatureCard
@@ -165,7 +165,7 @@ export default function SupporterPage() {
             <Section className="my-0">
               <SectionHeader
                 title="Ваш вклад"
-                description="Каждый доллар идёт напрямую в разработку, инфраструктуру и улучшение OpenPanel. Вот что делает возможной ваша поддержка:"
+                description="Каждый доллар идёт напрямую в разработку, инфраструктуру и улучшение Openpanel RU. Вот что делает возможной ваша поддержка:"
               />
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <FeatureCard
@@ -180,7 +180,7 @@ export default function SupporterPage() {
                 />
                 <FeatureCard
                   title="Self-hosting"
-                  description="Разверните OpenPanel где угодно — на своём сервере, в своём облаке или локально. Полная гибкость."
+                  description="Разверните Openpanel RU где угодно — на своём сервере, в своём облаке или локально. Полная гибкость."
                   icon={InfinityIcon}
                 />
               </div>
@@ -199,8 +199,8 @@ export default function SupporterPage() {
         </div>
 
         <CtaBanner
-          title="Готовы поддержать OpenPanel?"
-          description="Присоединяйтесь к сообществу спонсоров и помогите нам создать лучшую open-source альтернативу Mixpanel. Каждый вклад ускоряет разработку и делает OpenPanel лучше для всех."
+          title="Готовы поддержать Openpanel RU?"
+          description="Присоединяйтесь к сообществу спонсоров и помогите нам создать лучшую open-source альтернативу Mixpanel. Каждый вклад ускоряет разработку и делает Openpanel RU лучше для всех."
           ctaText="Стать спонсором"
           ctaLink="https://buy.polar.sh/polar_cl_Az1CruNFzQB2bYdMOZmGHqTevW317knWqV44W1FqZmV"
         />

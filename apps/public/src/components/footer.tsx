@@ -110,32 +110,16 @@ export async function Footer() {
           <div className="col md:row container justify-between gap-8">
             <div>
               <a
-                href="https://openpanel.dev"
-                style={{
-                  display: 'inline-block',
-                  overflow: 'hidden',
-                  borderRadius: '8px',
-                  width: '100%',
-                  height: '48px',
-                }}
+                className="font-semibold text-foreground text-lg"
+                href="/"
               >
-                <iframe
-                  height="48"
-                  src="https://dashboard.openpanel.dev/widget/badge?shareId=ancygl&color=%230B0B0B"
-                  style={{
-                    border: 'none',
-                    overflow: 'hidden',
-                    pointerEvents: 'none',
-                  }}
-                  title="Значок аналитики OpenPanel"
-                  width="100%"
-                />
+                Openpanel RU
               </a>
             </div>
             <Social />
           </div>
           <div className="md:row container flex flex-col-reverse justify-between gap-8">
-            <div>Copyright © {year} OpenPanel. Все права защищены.</div>
+            <div>Copyright © {year} Openpanel RU. Все права защищены.</div>
             <div className="col lg:row gap-2 md:gap-4">
               <Link href="/sitemap.xml">Карта сайта</Link>
               <Link href="/privacy">Политика конфиденциальности</Link>
@@ -188,7 +172,7 @@ function Social() {
           </svg>
         </Link>
         <Link
-          href="https://x.com/openpaneldev"
+          href="#"
           rel="noreferrer noopener nofollow"
           title="Перейти на X"
         >
@@ -203,7 +187,7 @@ function Social() {
           </svg>
         </Link>
         <Link
-          href="https://go.openpanel.dev/discord"
+          href="#"
           rel="noreferrer noopener nofollow"
           title="Присоединиться к Discord"
         >
@@ -218,7 +202,7 @@ function Social() {
           </svg>
         </Link>
         <Link
-          href="mailto:hello@openpanel.dev"
+          href="#"
           rel="noreferrer noopener nofollow"
           title="Отправить письмо"
         >
@@ -226,9 +210,8 @@ function Social() {
         </Link>
         <a
           className="row items-center gap-2 rounded-full border px-2 py-1 max-md:ml-auto max-md:self-start"
-          href="https://status.openpanel.dev"
+          href="#"
           rel="noreferrer noopener nofollow"
-          target="_blank"
         >
           <span>Работает</span>
           <div className="size-2 rounded-full bg-emerald-500" />

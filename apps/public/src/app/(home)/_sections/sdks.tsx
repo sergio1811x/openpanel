@@ -9,7 +9,7 @@ export function Sdks() {
     <Section className="container">
       <SectionHeader
         title="Начните за считанные минуты"
-        description="Подключите OpenPanel к любимому фреймворку с помощью наших легковесных SDK. Несколько строк кода — и отслеживание работает."
+        description="Подключите Openpanel RU к любимому фреймворку с помощью наших легковесных SDK. Несколько строк кода — и отслеживание работает."
         className="mb-16"
       />
       <div className="grid grid-cols-2 md:grid-cols-5 gap-6">

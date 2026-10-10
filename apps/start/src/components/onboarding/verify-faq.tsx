@@ -70,7 +70,7 @@ export function VerifyFaq({
     payload: {
       name: 'screen_view',
       properties: {
-        __title: `Testing OpenPanel - ${project.name}`,
+        __title: `Testing Openpanel RU - ${project.name}`,
         __path: `${project.domain}`,
         __referrer: `${context.dashboardUrl}`,
       },
@@ -165,7 +165,7 @@ export function VerifyFaq({
             </div>
             <p>
               Остались проблемы? Заходите в наш{' '}
-              <a className="underline" href="https://go.openpanel.dev/discord">
+              <a className="underline" href="#">
                 Discord-канал
               </a>{' '}
               или напишите на{' '}

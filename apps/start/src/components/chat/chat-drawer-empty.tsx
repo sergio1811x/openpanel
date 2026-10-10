@@ -62,7 +62,7 @@ export function ChatDrawerNotConfigured() {
         <CopyInput label="Anthropic" value="ANTHROPIC_API_KEY=sk-ant-..." />
       </div>
       <a
-        href="https://openpanel.dev/docs/self-hosting/environment-variables#ai-features"
+        href="#"
         target="_blank"
         rel="noopener"
         className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"

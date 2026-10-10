@@ -27,7 +27,7 @@ export function ForHero({ hero }: ForHeroProps) {
           <GetStartedButton />
           <Button asChild size="lg" variant="outline">
             <Link
-              href={'https://demo.openpanel.dev'}
+              href={'#'}
               rel="noreferrer noopener nofollow"
               target="_blank"
             >

@@ -70,7 +70,7 @@ export function ActiveIntegrations() {
             </IntegrationCardLogo>
           }
           name="Интеграций пока нет"
-          description="Интеграции позволяют подключить Ваши системы к OpenPanel. Добавить их можно в разделе доступных интеграций."
+          description="Интеграции позволяют подключить Ваши системы к Openpanel RU. Добавить их можно в разделе доступных интеграций."
         />
       )}
       <AnimatePresence mode="popLayout">

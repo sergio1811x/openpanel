@@ -18,7 +18,7 @@ export function SummaryComparison({ summary, competitorName }: SummaryComparison
       />
       <div className="grid md:grid-cols-2 gap-6 mt-12">
         <FeatureCard
-          title="OpenPanel лучше подходит, если"
+          title="Openpanel RU лучше подходит, если"
           description=""
           className="border-green-500/20 bg-green-500/5"
         >

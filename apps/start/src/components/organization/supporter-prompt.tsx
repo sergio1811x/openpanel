@@ -82,7 +82,7 @@ export default function SupporterPrompt() {
       onClose={() => setSupporterPromptClosed(true)}
       show={!supporterPromptClosed}
       subtitle="Помогите нам строить будущее открытой аналитики"
-      title="Поддержите OpenPanel"
+      title="Поддержите Openpanel RU"
     >
       <div className="col gap-3 px-6">
         {PERKS.map((perk) => (
@@ -106,7 +106,7 @@ export default function SupporterPrompt() {
           От $20 в месяц • Отмена в любой момент •{' '}
           <a
             className="text-primary underline-offset-4 hover:underline"
-            href="https://openpanel.dev/supporter"
+            href="#"
             rel="noreferrer"
             target="_blank"
           >

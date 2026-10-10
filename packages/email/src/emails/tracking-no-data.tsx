@@ -16,7 +16,7 @@ export default TrackingNoData;
 export function TrackingNoData({
   firstName,
   projectNames,
-  dashboardUrl = 'https://dashboard.openpanel.dev',
+  dashboardUrl = 'http://localhost:3000',
   unsubscribeUrl,
 }: Props & { unsubscribeUrl?: string }) {
   const single = projectNames.length === 1;
@@ -45,7 +45,7 @@ export function TrackingNoData({
         Инструкции для конкретных фреймворков есть в{' '}
         <Link
           href={withUtm(
-            'https://openpanel.dev/docs/get-started/install-openpanel',
+            '#',
             'tracking-no-data'
           )}
         >
@@ -62,5 +62,5 @@ export function TrackingNoData({
 TrackingNoData.PreviewProps = {
   firstName: 'Alex',
   projectNames: ['Мой сайт'],
-  dashboardUrl: 'https://dashboard.openpanel.dev/org-id',
+  dashboardUrl: 'http://localhost:3000/org-id',
 };

@@ -21,7 +21,7 @@ export type Props = z.infer<typeof zOnboardingTrialEnding>;
 export default OnboardingTrialEnding;
 export function OnboardingTrialEnding({
   firstName,
-  billingUrl = 'https://dashboard.openpanel.dev',
+  billingUrl = 'http://localhost:3000',
   recommendedPlan,
   trialEndDate,
   hasData = true,
@@ -40,13 +40,8 @@ export function OnboardingTrialEnding({
         </Text>
         <Text>
           Если время просто не подошло, можно установить скрипт сейчас и за
-          оставшиеся дни проверить, полезен ли OpenPanel:{' '}
-          <Link
-            href={withUtm(
-              'https://openpanel.dev/docs/get-started/install-openpanel',
-              'onboarding-trial-ending',
-            )}
-          >
+          оставшиеся дни проверить, полезен ли Openpanel RU:{' '}
+          <Link href="#">
             руководство по установке
           </Link>
           .
@@ -93,7 +88,7 @@ export function OnboardingTrialEnding({
 
 OnboardingTrialEnding.PreviewProps = {
   firstName: 'Alex',
-  billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
+  billingUrl: 'http://localhost:3000/org-id/billing',
   recommendedPlan: '100 000 событий в месяц за $20.00',
   trialEndDate: '16 июня',
   hasData: true,

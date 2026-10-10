@@ -55,7 +55,7 @@ export function ProjectMapper({
       </div>
       {fields.length === 0 && (
         <p className="text-sm text-muted-foreground leading-normal">
-          Сопоставьте ID исходных проектов с проектами OpenPanel. Если пропустить
+          Сопоставьте ID исходных проектов с проектами Openpanel RU. Если пропустить
           сопоставление, все данные будут импортированы в текущий проект.
         </p>
       )}
@@ -77,7 +77,7 @@ export function ProjectMapper({
                 </div>
                 <div className="flex-1">
                   <Label className="text-xs text-muted-foreground">
-                    Куда (проект OpenPanel)
+                    Куда (проект Openpanel RU)
                   </Label>
                   <Select
                     value={watch(`projectMapper.${index}.to`)}

@@ -61,7 +61,7 @@ function BadgeWidget({ visitors, isLoading, color }: BadgeWidgetProps) {
         <div className="text-[10px] font-medium uppercase tracking-wide text-white/80">
           АНАЛИТИКА ОТ
         </div>
-        <div className="font-semibold text-white leading-tight">OpenPanel</div>
+        <div className="font-semibold text-white leading-tight">Openpanel RU</div>
       </div>
 
       {/* Visitor count on the right */}

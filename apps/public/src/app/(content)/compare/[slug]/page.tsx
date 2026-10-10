@@ -69,7 +69,7 @@ export default async function ComparePage({
     url: pageUrl,
     publisher: {
       '@type': 'Organization',
-      name: 'OpenPanel',
+      name: 'Openpanel RU',
       logo: {
         '@type': 'ImageObject',
         url: url('/logo.webp'),
@@ -109,7 +109,7 @@ export default async function ComparePage({
 
       <div className="container my-16">
         <WindowImage
-          alt="Обзор дашборда OpenPanel"
+          alt="Обзор дашборда Openpanel RU"
           caption="Это наш дашборд веб-аналитики — всё работает сразу после установки, так что вы можете начать понимать свой трафик и вовлечённость прямо сейчас."
           srcDark="/screenshots/overview-dark.webp"
           srcLight="/screenshots/overview-light.webp"
@@ -131,7 +131,7 @@ export default async function ComparePage({
 
       <div className="container my-16">
         <WindowImage
-          alt="Дашборд OpenPanel"
+          alt="Дашборд Openpanel RU"
           caption="Многофункциональный дашборд аналитики с инсайтами в реальном времени и настраиваемыми представлениями."
           srcDark="/screenshots/dashboard-dark.webp"
           srcLight="/screenshots/dashboard-light.webp"
@@ -151,7 +151,7 @@ export default async function ComparePage({
 
       <div className="container my-16">
         <WindowImage
-          alt="Аналитика OpenPanel в реальном времени"
+          alt="Аналитика Openpanel RU в реальном времени"
           caption="Отслеживайте события в реальном времени по мере их появления — с мгновенными обновлениями и живым мониторингом."
           srcDark="/screenshots/realtime-dark.webp"
           srcLight="/screenshots/realtime-light.webp"
@@ -186,7 +186,7 @@ export default async function ComparePage({
 
       <div className="container my-16">
         <WindowImage
-          alt="Отчёты OpenPanel"
+          alt="Отчёты Openpanel RU"
           caption="Создавайте подробные отчёты и инсайты с настраиваемыми метриками и визуализациями."
           srcDark="/screenshots/report-dark.webp"
           srcLight="/screenshots/report-light.webp"
@@ -206,7 +206,7 @@ export default async function ComparePage({
           </div>
           <div className="container my-16">
             <WindowImage
-              alt="Профили пользователей OpenPanel"
+              alt="Профили пользователей Openpanel RU"
               caption="Погрузитесь в профиль каждого пользователя с полной историей событий и отслеживанием поведения."
               srcDark="/screenshots/profile-dark.webp"
               srcLight="/screenshots/profile-light.webp"
@@ -226,8 +226,8 @@ export default async function ComparePage({
       <CtaBanner
         ctaLink={data.ctas.primary.href}
         ctaText={data.ctas.primary.label}
-        description="Протестируйте OpenPanel бесплатно 30 дней — с вас не возьмут ни копейки, пока вы не перейдёте на платный план."
-        title={'Готовы перейти на OpenPanel?'}
+        description="Протестируйте Openpanel RU бесплатно 30 дней — с вас не возьмут ни копейки, пока вы не перейдёте на платный план."
+        title={'Готовы перейти на Openpanel RU?'}
       />
     </div>
   );

@@ -24,9 +24,9 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 export const metadata: Metadata = getPageMetadata({
-  title: 'Бесплатная аналитика для open source проектов | OpenPanel OSS Program',
+  title: 'Бесплатная аналитика для open source проектов | Openpanel RU OSS Program',
   description:
-    'Получите бесплатную веб- и продуктовую аналитику для вашего open source проекта. До 2,5 млн событий в месяц. Подайте заявку в open source программу OpenPanel.',
+    'Получите бесплатную веб- и продуктовую аналитику для вашего open source проекта. До 2,5 млн событий в месяц. Подайте заявку в open source программу Openpanel RU.',
   url: url('/open-source'),
   image: getOgImageUrl('/open-source'),
 });
@@ -34,13 +34,13 @@ export const metadata: Metadata = getPageMetadata({
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Free Analytics for Open Source Projects | OpenPanel OSS Program',
+  name: 'Free Analytics for Open Source Projects | Openpanel RU OSS Program',
   description:
-    "Get free web and product analytics for your open source project. Track up to 2.5M events/month. Apply to OpenPanel's open source program today.",
+    "Get free web and product analytics for your open source project. Track up to 2.5M events/month. Apply to Openpanel RU's open source program today.",
   url: url('/open-source'),
   publisher: {
     '@type': 'Organization',
-    name: 'OpenPanel',
+    name: 'Openpanel RU',
     logo: {
       '@type': 'ImageObject',
       url: url('/logo.png'),
@@ -130,11 +130,11 @@ export default function OpenSourcePage() {
           <Section className="my-0">
             <SectionHeader
               title="Почему мы это делаем"
-              description="OpenPanel создана open source сообществом и для него. Мы верим в то, что нужно отдавать."
+              description="Openpanel RU создана open source сообществом и для него. Мы верим в то, что нужно отдавать."
             />
             <div className="col gap-6 mt-8">
               <p className="text-muted-foreground">
-                Мы начали OpenPanel, потому что верили: инструменты аналитики не
+                Мы начали Openpanel RU, потому что верили: инструменты аналитики не
                 должны быть сложными или спрятанными за дорогими enterprise-подписками.
                 Будучи open source проектом сами, мы понимаем сложности создания и
                 развития проекта без ресурсов больших корпораций.
@@ -142,7 +142,7 @@ export default function OpenSourcePage() {
               <div className="grid md:grid-cols-3 gap-4">
                 <FeatureCard
                   title="Создано для OSS"
-                  description="OpenPanel — open source. Мы знаем, что значит разрабатывать открыто."
+                  description="Openpanel RU — open source. Мы знаем, что значит разрабатывать открыто."
                   icon={CodeIcon}
                 />
                 <FeatureCard
@@ -168,17 +168,17 @@ export default function OpenSourcePage() {
             <div className="row gap-6 mt-8">
               <div className="col gap-6">
                 <FeatureCard
-                  title="Обратная ссылка на OpenPanel"
-                  description="Простая ссылка на вашем сайте или в README поможет другим узнать об OpenPanel. Это выгодно всему сообществу."
+                  title="Обратная ссылка на Openpanel RU"
+                  description="Простая ссылка на вашем сайте или в README поможет другим узнать об Openpanel RU. Это выгодно всему сообществу."
                   icon={LinkIcon}
                 >
                   <p className="text-sm text-muted-foreground mt-2">
                     Пример: «Аналитика на движке{' '}
                     <Link
-                      href="https://openpanel.dev"
+                      href="#"
                       className="text-primary hover:underline"
                     >
-                      OpenPanel
+                      Openpanel RU
                     </Link>
                     »
                   </p>
@@ -189,7 +189,7 @@ export default function OpenSourcePage() {
                   icon={GlobeIcon}
                 >
                   <a
-                    href="https://openpanel.dev"
+                    href="#"
                     style={{
                       display: 'inline-block',
                       overflow: 'hidden',
@@ -199,7 +199,7 @@ export default function OpenSourcePage() {
                     }}
                   >
                     <iframe
-                      src="https://dashboard.openpanel.dev/widget/badge?shareId=ancygl&color=%231F1F1F"
+                      src="#"
                       height="48"
                       width="100%"
                       style={{
@@ -207,7 +207,7 @@ export default function OpenSourcePage() {
                         overflow: 'hidden',
                         pointerEvents: 'none',
                       }}
-                      title="Значок аналитики OpenPanel"
+                      title="Значок аналитики Openpanel RU"
                     />
                   </a>
                 </FeatureCard>
@@ -220,14 +220,14 @@ export default function OpenSourcePage() {
                 <div className="text-center text-xs text-muted-foreground">
                   <iframe
                     title="Виджет реального времени"
-                    src="https://dashboard.openpanel.dev/widget/realtime?shareId=26wVGY"
+                    src="#"
                     width="300"
                     height="400"
                     className="rounded-xl border mb-2"
                   />
                   Аналитика от{' '}
-                  <a className="underline" href="https://openpanel.dev">
-                    OpenPanel.dev
+                  <a className="underline" href="#">
+                    Openpanel RU
                   </a>
                 </div>
               </div>
@@ -376,7 +376,7 @@ export default function OpenSourcePage() {
                 </FaqItem>
                 <FaqItem question="Обязательно ли размещать виджет?">
                   Нет, виджет полностью опционален. Мы просим только обратную ссылку на
-                  OpenPanel на вашем сайте или в README. Виджет — просто приятный способ
+                  Openpanel RU на вашем сайте или в README. Виджет — просто приятный способ
                   показать вашу аналитику, если хотите.
                 </FaqItem>
                 <FaqItem question="А если мой проект совсем маленький или только стартует?">
@@ -391,7 +391,7 @@ export default function OpenSourcePage() {
 
           <CtaBanner
             title="Готовы получить бесплатную аналитику для вашего open source проекта?"
-            description="Присоединяйтесь к другим open source проектам, которые используют OpenPanel, чтобы понимать пользователей и развивать сообщества. Подайте заявку сегодня — настройка займёт считанные минуты."
+            description="Присоединяйтесь к другим open source проектам, которые используют Openpanel RU, чтобы понимать пользователей и развивать сообщества. Подайте заявку сегодня — настройка займёт считанные минуты."
             ctaText="Подать заявку на бесплатный доступ"
             ctaLink="mailto:oss@openpanel.dev?subject=Open Source Program Application"
           />

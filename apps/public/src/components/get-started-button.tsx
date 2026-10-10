@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 export function GetStartedButton({
   text,
-  href = 'https://dashboard.openpanel.dev/onboarding',
+  href = '/login',
   className,
 }: {
   text?: React.ReactNode;

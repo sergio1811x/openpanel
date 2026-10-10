@@ -61,7 +61,7 @@ function LandingPage() {
           <LogoSquare className="w-full max-w-14 md:max-w-24" />
           <PageHeader
             description="Лучший инструмент веб- и продуктовой аналитики (наше честное мнение)."
-            title="Добро пожаловать в OpenPanel.dev"
+            title="Добро пожаловать в Openpanel RU"
           />
         </div>
 

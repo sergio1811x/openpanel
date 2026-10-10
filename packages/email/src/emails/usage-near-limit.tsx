@@ -21,7 +21,7 @@ export default UsageNearLimit;
 export function UsageNearLimit({
   firstName,
   organizationName,
-  billingUrl = 'https://dashboard.openpanel.dev',
+  billingUrl = 'http://localhost:3000',
   eventsCount,
   eventsLimit,
   unsubscribeUrl,
@@ -58,7 +58,7 @@ export function UsageNearLimit({
 UsageNearLimit.PreviewProps = {
   firstName: 'Alex',
   organizationName: 'Acme',
-  billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
+  billingUrl: 'http://localhost:3000/org-id/billing',
   eventsCount: 4200,
   eventsLimit: 5000,
 };

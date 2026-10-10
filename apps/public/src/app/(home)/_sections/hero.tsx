@@ -102,7 +102,7 @@ export function Hero() {
           <GetStartedButton />
           <Button asChild className="px-6" size="lg" variant="outline">
             <Link
-              href="https://demo.openpanel.dev/demo/shoey"
+              href="#"
               rel="noreferrer noopener nofollow"
               target="_blank"
             >
@@ -132,12 +132,12 @@ export function Hero() {
             {/* URL bar */}
             <a
               className="group mx-4 flex flex-1 items-center gap-2 rounded-md border border-border bg-background/20 px-3 py-1 text-sm"
-              href="https://demo.openpanel.dev/demo/shoey"
+              href="#"
               rel="noreferrer noopener nofollow"
               target="_blank"
             >
               <span className="flex-1 text-muted-foreground">
-                https://demo.openpanel.dev
+                #
               </span>
               <ArrowRightIcon className="size-4 opacity-0 transition-opacity group-hover:opacity-100" />
             </a>
@@ -145,7 +145,7 @@ export function Hero() {
           <iframe
             className="h-full w-full"
             scrolling="no"
-            src={'https://demo.openpanel.dev/demo/shoey?range=lastHour'}
+            src={'#'}
             title="Живой предпросмотр"
           />
         </div>
