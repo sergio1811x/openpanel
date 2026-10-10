@@ -47,6 +47,7 @@ function ProjectDashboard() {
     { id: 'widgets', label: 'Виджеты' },
     { id: 'imports', label: 'Импорт' },
     { id: 'gsc', label: 'Google Search' },
+    { id: 'yandex', label: 'Яндекс Вебмастер' },
   ];
 
   const handleTabChange = (tabId: string) => {

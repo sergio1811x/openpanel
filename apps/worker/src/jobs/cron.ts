@@ -21,6 +21,7 @@ import { salt } from './cron.salt';
 import { sessionReaperCronJob } from './cron.session-reaper';
 import { sessionVacuumCronJob } from './cron.session-vacuum';
 import { gscSyncAllJob } from './gsc';
+import { yandexSyncAllJob } from './yandex';
 import { insightsDailyJob } from './insights';
 import { logger } from '@/utils/logger';
 
@@ -62,6 +63,9 @@ export async function cronJob(job: Job<CronQueuePayload>) {
     }
     case 'gscSync': {
       return await gscSyncAllJob();
+    }
+    case 'yandexSync': {
+      return await yandexSyncAllJob();
     }
     case 'cohortRefresh': {
       return await cohortRefreshCronJob();

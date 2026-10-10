@@ -347,6 +347,27 @@ export const gscQueue = guardQueue(
   'gsc'
 );
 
+export type YandexQueuePayloadSync = {
+  type: 'yandexProjectSync';
+  payload: { projectId: string };
+};
+export type YandexQueuePayloadBackfill = {
+  type: 'yandexProjectBackfill';
+  payload: { projectId: string };
+};
+export type YandexQueuePayload = YandexQueuePayloadSync | YandexQueuePayloadBackfill;
+
+export const yandexQueue = guardQueue(
+  new Queue<YandexQueuePayload>(getQueueName('yandex'), {
+    connection: getRedisQueue(),
+    defaultJobOptions: {
+      removeOnComplete: 50,
+      removeOnFail: 100,
+    },
+  }),
+  'yandex'
+);
+
 export type CohortComputePayload = {
   cohortId: string;
 };

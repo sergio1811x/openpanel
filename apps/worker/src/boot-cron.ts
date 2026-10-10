@@ -89,6 +89,11 @@ export async function bootCron() {
       pattern: '0 3 * * *',
     },
     {
+      name: 'yandexSync',
+      type: 'yandexSync',
+      pattern: '0 4 * * *',
+    },
+    {
       name: 'cohortRefresh',
       type: 'cohortRefresh',
       pattern: '*/30 * * * *',

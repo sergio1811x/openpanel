@@ -48,6 +48,7 @@ import {
 import eventRouter from './routes/event.router';
 import exportRouter from './routes/export.router';
 import gscCallbackRouter from './routes/gsc-callback.router';
+import yandexCallbackRouter from './routes/yandex-callback.router';
 import importRouter from './routes/import.router';
 import insightsRouter from './routes/insights.router';
 import liveRouter from './routes/live.router';
@@ -215,6 +216,7 @@ export async function buildApp(
     instance.register(webhookRouter, { prefix: '/webhook' });
     instance.register(oauthRouter, { prefix: '/oauth' });
     instance.register(gscCallbackRouter, { prefix: '/gsc' });
+    instance.register(yandexCallbackRouter, { prefix: '/yandex-webmaster' });
     instance.register(miscRouter, { prefix: '/misc' });
     // Better Agent chat, mounted under /ai/agents/*.
     //

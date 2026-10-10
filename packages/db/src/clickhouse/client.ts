@@ -63,6 +63,8 @@ export const TABLE_NAMES = {
   gsc_daily: 'gsc_daily',
   gsc_pages_daily: 'gsc_pages_daily',
   gsc_queries_daily: 'gsc_queries_daily',
+  yandex_daily: 'yandex_daily',
+  yandex_queries_daily: 'yandex_queries_daily',
   groups: 'groups',
   cohort_members: 'cohort_members',
   cohort_metadata: 'cohort_metadata',

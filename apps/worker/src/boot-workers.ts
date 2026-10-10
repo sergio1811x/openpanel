@@ -8,6 +8,7 @@ import {
   type EventsQueuePayloadIncomingEvent,
   eventsGroupQueues,
   gscQueue,
+  yandexQueue,
   importQueue,
   insightsQueue,
   isKafkaConfigured,
@@ -27,6 +28,7 @@ import {
   startKafkaEventsConsumer,
 } from './jobs/events.kafka-consumer';
 import { gscJob } from './jobs/gsc';
+import { yandexJob } from './jobs/yandex';
 import { importJob } from './jobs/import';
 import { insightsProjectJob } from './jobs/insights';
 import { notificationJob } from './jobs/notification';
@@ -71,6 +73,7 @@ function getEnabledQueues(): QueueName[] {
       'import',
       'insights',
       'gsc',
+      'yandex',
       'cohortCompute',
     ];
   }
@@ -269,6 +272,17 @@ export function bootWorkers() {
     });
     workers.push(gscWorker);
     logger.info({ concurrency }, 'Started worker for gsc');
+  }
+
+  // Start yandex worker
+  if (enabledQueues.includes('yandex')) {
+    const concurrency = getConcurrencyFor('yandex', 3);
+    const yandexWorker = new Worker(yandexQueue.name, yandexJob, {
+      ...workerOptions,
+      concurrency,
+    });
+    workers.push(yandexWorker);
+    logger.info({ concurrency }, 'Started worker for yandex');
   }
 
   // Start cohortCompute worker

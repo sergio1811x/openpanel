@@ -165,6 +165,10 @@ services:
       - GITHUB_REDIRECT_URI=${OPENPANEL_GITHUB_REDIRECT_URI}
       # Optional: Google Search Console (https://openpanel.dev/docs/self-hosting/google-search-console)
       - GSC_GOOGLE_REDIRECT_URI=${OPENPANEL_GSC_GOOGLE_REDIRECT_URI}
+      # Optional: Yandex Webmaster (create an OAuth app at oauth.yandex.ru)
+      - YANDEX_CLIENT_ID=${OPENPANEL_YANDEX_CLIENT_ID}
+      - YANDEX_CLIENT_SECRET=${OPENPANEL_YANDEX_CLIENT_SECRET}
+      - YANDEX_REDIRECT_URI=${OPENPANEL_YANDEX_REDIRECT_URI}
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:3000/healthcheck || exit 1"]
       interval: 10s
@@ -225,6 +229,9 @@ services:
       # Optional: Google Search Console sync needs the Google OAuth client
       - GOOGLE_CLIENT_ID=${OPENPANEL_GOOGLE_CLIENT_ID}
       - GOOGLE_CLIENT_SECRET=${OPENPANEL_GOOGLE_CLIENT_SECRET}
+      # Optional: Yandex Webmaster sync needs the Yandex OAuth client
+      - YANDEX_CLIENT_ID=${OPENPANEL_YANDEX_CLIENT_ID}
+      - YANDEX_CLIENT_SECRET=${OPENPANEL_YANDEX_CLIENT_SECRET}
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:3000/healthcheck || exit 1"]
       interval: 10s

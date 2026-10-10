@@ -85,6 +85,39 @@ const { TooltipProvider, Tooltip: GscTooltip } = createChartTooltip<
   );
 });
 
+interface YandexChartData {
+  date: string;
+  clicks: number;
+  impressions: number;
+}
+
+const { TooltipProvider: YandexTooltipProvider, Tooltip: YandexTooltip } =
+  createChartTooltip<YandexChartData, Record<string, unknown>>(({ data }) => {
+    const item = data[0];
+    if (!item) {
+      return null;
+    }
+    return (
+      <>
+        <ChartTooltipHeader>
+          <div>Яндекс — {item.date}</div>
+        </ChartTooltipHeader>
+        <ChartTooltipItem color={getChartColor(0)}>
+          <div className="flex justify-between gap-8 font-medium font-mono">
+            <span>Клики</span>
+            <span>{item.clicks.toLocaleString()}</span>
+          </div>
+        </ChartTooltipItem>
+        <ChartTooltipItem color={getChartColor(1)}>
+          <div className="flex justify-between gap-8 font-medium font-mono">
+            <span>Показы</span>
+            <span>{item.impressions.toLocaleString()}</span>
+          </div>
+        </ChartTooltipItem>
+      </>
+    );
+  });
+
 function SeoPage() {
   const { projectId, organizationId } = useAppParams();
   useRangePageContext('seo');
@@ -142,6 +175,35 @@ function SeoPage() {
     )
   );
 
+  const yandexConnectionQuery = useQuery(
+    trpc.yandex.getConnection.queryOptions({ projectId })
+  );
+
+  const yandexConnection = yandexConnectionQuery.data;
+  const yandexHostId = yandexConnection?.hostId;
+  const isYandexConnected = !!yandexHostId;
+
+  const yandexOverviewQuery = useQuery(
+    trpc.yandex.getOverview.queryOptions(
+      { projectId, ...dateInput, interval: interval ?? 'day' },
+      { enabled: !!isYandexConnected }
+    )
+  );
+
+  const yandexPreviousOverviewQuery = useQuery(
+    trpc.yandex.getPreviousOverview.queryOptions(
+      { projectId, ...dateInput, interval: interval ?? 'day' },
+      { enabled: !!isYandexConnected }
+    )
+  );
+
+  const yandexQueriesQuery = useQuery(
+    trpc.yandex.getQueries.queryOptions(
+      { projectId, ...dateInput, limit: 50 },
+      { enabled: !!isYandexConnected }
+    )
+  );
+
   const [pagesPage, setPagesPage] = useState(0);
   const [queriesPage, setQueriesPage] = useState(0);
   const pageSize = 15;
@@ -189,10 +251,10 @@ function SeoPage() {
   const pagesPageCount = Math.ceil(filteredPages.length / pageSize) || 1;
   const queriesPageCount = Math.ceil(filteredQueries.length / pageSize) || 1;
 
-  if (connectionQuery.isLoading) {
+  if (connectionQuery.isLoading || yandexConnectionQuery.isLoading) {
     return (
       <PageContainer>
-        <PageHeader description="Данные Google Search Console" title="SEO" />
+        <PageHeader description="Данные поисковых систем" title="SEO" />
         <div className="mt-8 space-y-4">
           <Skeleton className="h-64 w-full" />
           <Skeleton className="h-96 w-full" />
@@ -201,24 +263,36 @@ function SeoPage() {
     );
   }
 
-  if (!isConnected) {
+  if (!isConnected && !isYandexConnected) {
     return (
       <FullPageEmptyState
         className="pt-[20vh]"
-        description="Подключите Google Search Console, чтобы отслеживать поисковые показы, клики и позиции по ключевым словам."
+        description="Подключите Google Search Console или Яндекс Вебмастер, чтобы отслеживать поисковые показы, клики и позиции по ключевым словам."
         icon={SearchIcon}
         title="SEO-данных пока нет"
       >
-        <Button
-          onClick={() =>
-            navigate({
-              to: '/$organizationId/$projectId/settings/gsc',
-              params: { organizationId, projectId },
-            })
-          }
-        >
-          Подключить Google Search Console
-        </Button>
+        <div className="flex gap-2">
+          <Button
+            onClick={() =>
+              navigate({
+                to: '/$organizationId/$projectId/settings/gsc',
+                params: { organizationId, projectId },
+              })
+            }
+          >
+            Подключить Google Search Console
+          </Button>
+          <Button
+            onClick={() =>
+              navigate({
+                to: '/$organizationId/$projectId/settings/yandex',
+                params: { organizationId, projectId },
+              })
+            }
+          >
+            Подключить Яндекс Вебмастер
+          </Button>
+        </div>
       </FullPageEmptyState>
     );
   }
@@ -251,62 +325,76 @@ function SeoPage() {
             <OverviewInterval />
           </>
         }
-        description={`Эффективность поиска для ${connection.siteUrl}`}
+        description={
+          isConnected && isYandexConnected
+            ? 'Google Search Console + Яндекс Вебмастер'
+            : isConnected
+              ? `Эффективность поиска для ${connection.siteUrl}`
+              : `Эффективность поиска для ${yandexHostId}`
+        }
         title="SEO"
       />
 
       <div className="mt-8 space-y-8">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
-          <div className="card col-span-1 grid grid-cols-2 overflow-hidden rounded-md lg:col-span-2">
-            <OverviewMetricCard
-              data={overview.map((r) => ({ current: r.clicks, date: r.date }))}
-              id="clicks"
-              isLoading={overviewQuery.isLoading}
-              label="Клики"
-              metric={{ current: totals.clicks, previous: prevTotals.clicks }}
-            />
-            <OverviewMetricCard
-              data={overview.map((r) => ({
-                current: r.impressions,
-                date: r.date,
-              }))}
-              id="impressions"
-              isLoading={overviewQuery.isLoading}
-              label="Показы"
-              metric={{
-                current: totals.impressions,
-                previous: prevTotals.impressions,
-              }}
-            />
-            <OverviewMetricCard
-              data={overview.map((r) => ({
-                current: r.ctr * 100,
-                date: r.date,
-              }))}
-              id="ctr"
-              isLoading={overviewQuery.isLoading}
-              label="Ср. CTR"
-              metric={{
-                current: (totals.ctr / n) * 100,
-                previous: (prevTotals.ctr / pn) * 100,
-              }}
-              unit="%"
-            />
-            <OverviewMetricCard
-              data={overview.map((r) => ({
-                current: r.position,
-                date: r.date,
-              }))}
-              id="position"
-              inverted
-              isLoading={overviewQuery.isLoading}
-              label="Ср. позиция"
-              metric={{
-                current: totals.position / n,
-                previous: prevTotals.position / pn,
-              }}
-            />
-          </div>
+          {isConnected && (
+            <div className="card col-span-1 grid grid-cols-2 overflow-hidden rounded-md lg:col-span-2">
+              <OverviewMetricCard
+                data={overview.map((r) => ({
+                  current: r.clicks,
+                  date: r.date,
+                }))}
+                id="clicks"
+                isLoading={overviewQuery.isLoading}
+                label="Клики"
+                metric={{
+                  current: totals.clicks,
+                  previous: prevTotals.clicks,
+                }}
+              />
+              <OverviewMetricCard
+                data={overview.map((r) => ({
+                  current: r.impressions,
+                  date: r.date,
+                }))}
+                id="impressions"
+                isLoading={overviewQuery.isLoading}
+                label="Показы"
+                metric={{
+                  current: totals.impressions,
+                  previous: prevTotals.impressions,
+                }}
+              />
+              <OverviewMetricCard
+                data={overview.map((r) => ({
+                  current: r.ctr * 100,
+                  date: r.date,
+                }))}
+                id="ctr"
+                isLoading={overviewQuery.isLoading}
+                label="Ср. CTR"
+                metric={{
+                  current: (totals.ctr / n) * 100,
+                  previous: (prevTotals.ctr / pn) * 100,
+                }}
+                unit="%"
+              />
+              <OverviewMetricCard
+                data={overview.map((r) => ({
+                  current: r.position,
+                  date: r.date,
+                }))}
+                id="position"
+                inverted
+                isLoading={overviewQuery.isLoading}
+                label="Ср. позиция"
+                metric={{
+                  current: totals.position / n,
+                  previous: prevTotals.position / pn,
+                }}
+              />
+            </div>
+          )}
           <SearchEngines
             engines={searchEnginesQuery.data?.engines ?? []}
             isLoading={searchEnginesQuery.isLoading}
@@ -321,84 +409,348 @@ function SeoPage() {
           />
         </div>
 
-        <GscChart data={overview} isLoading={overviewQuery.isLoading} />
+        {isConnected && (
+          <GscChart data={overview} isLoading={overviewQuery.isLoading} />
+        )}
 
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <GscPositionChart
-            data={overview}
-            isLoading={overviewQuery.isLoading}
-          />
-          <GscCtrBenchmark
-            data={pagesQuery.data ?? []}
-            isLoading={pagesQuery.isLoading}
-          />
-        </div>
+        {isConnected && (
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <GscPositionChart
+              data={overview}
+              isLoading={overviewQuery.isLoading}
+            />
+            <GscCtrBenchmark
+              data={pagesQuery.data ?? []}
+              isLoading={pagesQuery.isLoading}
+            />
+          </div>
+        )}
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <GscTable
-            isLoading={pagesQuery.isLoading}
-            keyField="page"
-            keyLabel="Страница"
-            maxClicks={Math.max(...paginatedPages.map((p) => p.clicks), 1)}
-            onNextPage={() =>
-              setPagesPage((p) => Math.min(pagesPageCount - 1, p + 1))
-            }
-            onPreviousPage={() => setPagesPage((p) => Math.max(0, p - 1))}
-            onRowClick={(value) =>
-              pushModal('PageDetails', { type: 'page', projectId, value })
-            }
-            onSearchChange={(v) => {
-              setPagesSearch(v);
-              setPagesPage(0);
-            }}
-            pageCount={pagesPageCount}
-            pageIndex={pagesPage}
-            pageSize={pageSize}
-            rows={paginatedPages}
-            searchPlaceholder="Поиск страниц"
-            searchValue={pagesSearch}
-            title="Топ страниц"
-            totalCount={filteredPages.length}
-          />
-          <GscTable
-            isLoading={queriesQuery.isLoading}
-            keyField="query"
-            keyLabel="Запрос"
-            maxClicks={Math.max(...paginatedQueries.map((q) => q.clicks), 1)}
-            onNextPage={() =>
-              setQueriesPage((p) => Math.min(queriesPageCount - 1, p + 1))
-            }
-            onPreviousPage={() => setQueriesPage((p) => Math.max(0, p - 1))}
-            onRowClick={(value) =>
-              pushModal('PageDetails', { type: 'query', projectId, value })
-            }
-            onSearchChange={(v) => {
-              setQueriesSearch(v);
-              setQueriesPage(0);
-            }}
-            pageCount={queriesPageCount}
-            pageIndex={queriesPage}
-            pageSize={pageSize}
-            rows={paginatedQueries}
-            searchPlaceholder="Поиск запросов"
-            searchValue={queriesSearch}
-            title="Топ запросов"
-            totalCount={filteredQueries.length}
-          />
-        </div>
+        {isConnected && (
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <GscTable
+              isLoading={pagesQuery.isLoading}
+              keyField="page"
+              keyLabel="Страница"
+              maxClicks={Math.max(...paginatedPages.map((p) => p.clicks), 1)}
+              onNextPage={() =>
+                setPagesPage((p) => Math.min(pagesPageCount - 1, p + 1))
+              }
+              onPreviousPage={() => setPagesPage((p) => Math.max(0, p - 1))}
+              onRowClick={(value) =>
+                pushModal('PageDetails', { type: 'page', projectId, value })
+              }
+              onSearchChange={(v) => {
+                setPagesSearch(v);
+                setPagesPage(0);
+              }}
+              pageCount={pagesPageCount}
+              pageIndex={pagesPage}
+              pageSize={pageSize}
+              rows={paginatedPages}
+              searchPlaceholder="Поиск страниц"
+              searchValue={pagesSearch}
+              title="Топ страниц"
+              totalCount={filteredPages.length}
+            />
+            <GscTable
+              isLoading={queriesQuery.isLoading}
+              keyField="query"
+              keyLabel="Запрос"
+              maxClicks={Math.max(...paginatedQueries.map((q) => q.clicks), 1)}
+              onNextPage={() =>
+                setQueriesPage((p) => Math.min(queriesPageCount - 1, p + 1))
+              }
+              onPreviousPage={() => setQueriesPage((p) => Math.max(0, p - 1))}
+              onRowClick={(value) =>
+                pushModal('PageDetails', { type: 'query', projectId, value })
+              }
+              onSearchChange={(v) => {
+                setQueriesSearch(v);
+                setQueriesPage(0);
+              }}
+              pageCount={queriesPageCount}
+              pageIndex={queriesPage}
+              pageSize={pageSize}
+              rows={paginatedQueries}
+              searchPlaceholder="Поиск запросов"
+              searchValue={queriesSearch}
+              title="Топ запросов"
+              totalCount={filteredQueries.length}
+            />
+          </div>
+        )}
 
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <GscCannibalization
-            endDate={endDate ?? undefined}
-            interval={interval ?? 'day'}
-            projectId={projectId}
-            range={range}
-            startDate={startDate ?? undefined}
+        {isConnected && (
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <GscCannibalization
+              endDate={endDate ?? undefined}
+              interval={interval ?? 'day'}
+              projectId={projectId}
+              range={range}
+              startDate={startDate ?? undefined}
+            />
+            <PagesInsights projectId={projectId} />
+          </div>
+        )}
+
+        {isYandexConnected && (
+          <YandexSection
+            hostId={yandexHostId ?? ''}
+            isLoadingOverview={yandexOverviewQuery.isLoading}
+            isLoadingQueries={yandexQueriesQuery.isLoading}
+            overview={yandexOverviewQuery.data ?? []}
+            previousOverview={yandexPreviousOverviewQuery.data ?? []}
+            queries={yandexQueriesQuery.data ?? []}
           />
-          <PagesInsights projectId={projectId} />
-        </div>
+        )}
       </div>
     </PageContainer>
+  );
+}
+
+interface YandexOverviewRow {
+  date: string;
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
+function YandexChart({
+  data,
+  isLoading,
+}: {
+  data: Array<{ date: string; clicks: number; impressions: number }>;
+  isLoading: boolean;
+}) {
+  const color = getChartColor(0);
+  const yAxisProps = useYAxisProps();
+
+  return (
+    <div className="card p-4">
+      <h3 className="mb-4 font-medium text-sm">Клики и показы</h3>
+      {isLoading ? (
+        <Skeleton className="h-48 w-full" />
+      ) : (
+        <YandexTooltipProvider>
+          <ResponsiveContainer height={200} width="100%">
+            <ComposedChart data={data}>
+              <defs>
+                <filter
+                  height="140%"
+                  id="yandex-line-glow"
+                  width="140%"
+                  x="-20%"
+                  y="-20%"
+                >
+                  <feGaussianBlur result="blur" stdDeviation="5" />
+                  <feComponentTransfer in="blur" result="dimmedBlur">
+                    <feFuncA slope="0.5" type="linear" />
+                  </feComponentTransfer>
+                  <feComposite
+                    in="SourceGraphic"
+                    in2="dimmedBlur"
+                    operator="over"
+                  />
+                </filter>
+              </defs>
+              <CartesianGrid
+                className="stroke-border"
+                horizontal
+                strokeDasharray="3 3"
+                vertical={false}
+              />
+              <XAxis
+                {...X_AXIS_STYLE_PROPS}
+                dataKey="date"
+                tickFormatter={(v: string) => v.slice(5)}
+                type="category"
+              />
+              <YAxis {...yAxisProps} yAxisId="left" />
+              <YAxis {...yAxisProps} orientation="right" yAxisId="right" />
+              <YandexTooltip />
+              <Line
+                dataKey="clicks"
+                dot={false}
+                filter="url(#yandex-line-glow)"
+                isAnimationActive={false}
+                stroke={color}
+                strokeWidth={2}
+                type="monotone"
+                yAxisId="left"
+              />
+              <Line
+                dataKey="impressions"
+                dot={false}
+                filter="url(#yandex-line-glow)"
+                isAnimationActive={false}
+                stroke={getChartColor(1)}
+                strokeWidth={2}
+                type="monotone"
+                yAxisId="right"
+              />
+            </ComposedChart>
+          </ResponsiveContainer>
+        </YandexTooltipProvider>
+      )}
+    </div>
+  );
+}
+
+function YandexSection({
+  hostId,
+  overview,
+  previousOverview,
+  queries,
+  isLoadingOverview,
+  isLoadingQueries,
+}: {
+  hostId: string;
+  overview: YandexOverviewRow[];
+  previousOverview: YandexOverviewRow[];
+  queries: Array<{
+    query: string;
+    clicks: number;
+    impressions: number;
+    ctr: number;
+    position: number;
+  }>;
+  isLoadingOverview: boolean;
+  isLoadingQueries: boolean;
+}) {
+  const [queriesPage, setQueriesPage] = useState(0);
+  const [queriesSearch, setQueriesSearch] = useState('');
+  const pageSize = 15;
+
+  const sumYOverview = (rows: YandexOverviewRow[]) =>
+    rows.reduce(
+      (acc, row) => ({
+        clicks: acc.clicks + row.clicks,
+        impressions: acc.impressions + row.impressions,
+        ctr: acc.ctr + row.ctr,
+        position: acc.position + row.position,
+      }),
+      { clicks: 0, impressions: 0, ctr: 0, position: 0 }
+    );
+
+  const yOverview = overview;
+  const yPrevOverview = previousOverview;
+  const yTotals = sumYOverview(yOverview);
+  const yPrevTotals = sumYOverview(yPrevOverview);
+  const yn = Math.max(yOverview.length, 1);
+  const ypn = Math.max(yPrevOverview.length, 1);
+
+  const filteredYQueries = useMemo(() => {
+    if (!queriesSearch.trim()) {
+      return queries;
+    }
+    const q = queriesSearch.toLowerCase();
+    return queries.filter((row) => {
+      return String(row.query).toLowerCase().includes(q);
+    });
+  }, [queries, queriesSearch]);
+
+  const paginatedYQueries = useMemo(
+    () =>
+      filteredYQueries.slice(
+        queriesPage * pageSize,
+        (queriesPage + 1) * pageSize
+      ),
+    [filteredYQueries, queriesPage, pageSize]
+  );
+
+  const yQueriesPageCount =
+    Math.ceil(filteredYQueries.length / pageSize) || 1;
+
+  return (
+    <>
+      <div>
+        <h2 className="font-medium text-lg">Яндекс Вебмастер</h2>
+        <p className="mt-1 text-muted-foreground text-sm">
+          Эффективность в поиске Яндекса для{' '}
+          <span className="font-mono">{hostId}</span>
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
+        <div className="card col-span-1 grid grid-cols-2 overflow-hidden rounded-md lg:col-span-2">
+          <OverviewMetricCard
+            data={yOverview.map((r) => ({ current: r.clicks, date: r.date }))}
+            id="yandex-clicks"
+            isLoading={isLoadingOverview}
+            label="Клики"
+            metric={{ current: yTotals.clicks, previous: yPrevTotals.clicks }}
+          />
+          <OverviewMetricCard
+            data={yOverview.map((r) => ({
+              current: r.impressions,
+              date: r.date,
+            }))}
+            id="yandex-impressions"
+            isLoading={isLoadingOverview}
+            label="Показы"
+            metric={{
+              current: yTotals.impressions,
+              previous: yPrevTotals.impressions,
+            }}
+          />
+          <OverviewMetricCard
+            data={yOverview.map((r) => ({
+              current: r.ctr * 100,
+              date: r.date,
+            }))}
+            id="yandex-ctr"
+            isLoading={isLoadingOverview}
+            label="Ср. CTR"
+            metric={{
+              current: (yTotals.ctr / yn) * 100,
+              previous: (yPrevTotals.ctr / ypn) * 100,
+            }}
+            unit="%"
+          />
+          <OverviewMetricCard
+            data={yOverview.map((r) => ({
+              current: r.position,
+              date: r.date,
+            }))}
+            id="yandex-position"
+            inverted
+            isLoading={isLoadingOverview}
+            label="Ср. позиция"
+            metric={{
+              current: yTotals.position / yn,
+              previous: yPrevTotals.position / ypn,
+            }}
+          />
+        </div>
+      </div>
+
+      <YandexChart data={yOverview} isLoading={isLoadingOverview} />
+
+      <GscTable
+        isLoading={isLoadingQueries}
+        keyField="query"
+        keyLabel="Запрос"
+        maxClicks={Math.max(...paginatedYQueries.map((q) => q.clicks), 1)}
+        onNextPage={() =>
+          setQueriesPage((p) => Math.min(yQueriesPageCount - 1, p + 1))
+        }
+        onPreviousPage={() => setQueriesPage((p) => Math.max(0, p - 1))}
+        onSearchChange={(v) => {
+          setQueriesSearch(v);
+          setQueriesPage(0);
+        }}
+        pageCount={yQueriesPageCount}
+        pageIndex={queriesPage}
+        pageSize={pageSize}
+        rows={paginatedYQueries}
+        searchPlaceholder="Поиск запросов"
+        searchValue={queriesSearch}
+        title="Топ запросов"
+        totalCount={filteredYQueries.length}
+      />
+    </>
   );
 }
 

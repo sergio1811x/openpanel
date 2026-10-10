@@ -97,6 +97,9 @@ export const authRouter = createTRPCRouter({
     gsc: Boolean(
       process.env.GOOGLE_CLIENT_ID && process.env.GSC_GOOGLE_REDIRECT_URI
     ),
+    yandex: Boolean(
+      process.env.YANDEX_CLIENT_ID && process.env.YANDEX_REDIRECT_URI
+    ),
   })),
   signOut: publicProcedure.mutation(async ({ ctx }) => {
     deleteSessionTokenCookie(ctx.setCookie);

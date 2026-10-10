@@ -291,6 +291,7 @@ model Project {
   notifications     Notification[]
   imports           Import[]
   gscConnection     GscConnection?
+  yandexWebmasterConnection YandexWebmasterConnection?
   cohorts           Cohort[]
   exportWatermarks  ExportWatermark[]
   integrations      Integration[]
@@ -783,6 +784,25 @@ model GscConnection {
   updatedAt            DateTime  @default(now()) @updatedAt
 
   @@map("gsc_connections")
+}
+
+model YandexWebmasterConnection {
+  id                   String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  projectId            String    @unique
+  project              Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  hostId               String    @default("")
+  yandexUserId         String    @default("")
+  accessToken          String
+  refreshToken         String
+  accessTokenExpiresAt DateTime?
+  lastSyncedAt         DateTime?
+  lastSyncStatus       String?
+  lastSyncError        String?
+  backfillStatus       String?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @default(now()) @updatedAt
+
+  @@map("yandex_webmaster_connections")
 }
 
 model EmailUnsubscribe {
