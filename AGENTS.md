@@ -427,7 +427,14 @@ python3 -c "import json;json.load(open('apps/public/content/for/saas.json'))"
 - Directory-импорты пакетов резолвятся через `package.json` `main`
   (у большинства `src/index.ts` или `index.ts`).
 - `apps/start/ROUTING.md` местами устарел (упоминает `_auth.*`; фактически
-  `_login.*` / `_steps.*` / `_public.*`).
+  `_login.*` / `_steps.*`; layout `_public.*` удалён вместе с регистрацией).
+- FORK: публичная регистрация выпилена (`signUpEmail` всегда кидает ошибку,
+  `getIsRegistrationAllowed` всегда false, роут `/onboarding` удалён). Учётки
+  задаёт администратор: `docker compose exec op-api node /app/apps/api/scripts/create-user.mjs
+  <email> <пароль>` (argon2id, те же параметры что в packages/auth). Экран входа —
+  только email+пароль по центру (`_login.tsx`); OAuth-кнопки убраны, "Забыли пароль?"
+  убрано (сброс — тем же скриптом). Руководства по настройке GSC/Яндекса встроены
+  в панель: `components/integrations/setup-guides.tsx`.
 - Тесты Vitest требуют поднятой dev-инфры (`pnpm dock:up`, фикстуры в
   `test/global-setup.ts`, `TEST_PROJECT_ID='integration-test'`).
 - AI-суммари инсайтов (packages/ai) генерируются моделью и могут приходить

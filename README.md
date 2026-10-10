@@ -38,6 +38,20 @@
 - Теги: `latest` и `main-<sha>` для каждого пуша в `main`
 - После первого запуска CI сделайте пакеты публичными (Packages → пакет → Package settings → Change visibility → Public), чтобы тянуть образы без `docker login`
 
+## 👤 Пользователи и вход
+
+Регистрация в форке **полностью отключена** — это одноклиентский self-hosted режим:
+
+- Экран входа — только логин (email) и пароль, без OAuth-кнопок и ссылок на регистрацию
+- Учётные записи задаёт администратор напрямую в БД:
+
+```bash
+# создать пользователя (или сменить пароль существующему) — из каталога self-hosting:
+docker compose exec op-api node /app/apps/api/scripts/create-user.mjs <email> '<пароль>' [Имя] [Фамилия]
+```
+
+- Настройка интеграций Google Search Console и Яндекс Вебмастера — пошаговое руководство прямо в панели: **Настройки проекта → Google Search / Яндекс Вебмастер** → «Руководство по настройке»
+
 Openpanel is an open-source web and product analytics platform that combines the power of Mixpanel with the ease of Plausible and one of the best Google Analytics replacements.
 
 ## ✨ Features

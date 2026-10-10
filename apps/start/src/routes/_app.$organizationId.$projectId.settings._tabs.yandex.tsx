@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import { Skeleton } from '@/components/skeleton';
 import { Badge } from '@/components/ui/badge';
-import { Button, LinkButton } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Select,
   SelectContent,
@@ -16,15 +16,13 @@ import {
 } from '@/components/ui/select';
 import { useAppParams } from '@/hooks/use-app-params';
 import { useTRPC } from '@/integrations/trpc/react';
+import { YandexSetupGuide } from '@/components/integrations/setup-guides';
 
 export const Route = createFileRoute(
   '/_app/$organizationId/$projectId/settings/_tabs/yandex'
 )({
   component: YandexSettings,
 });
-
-const YANDEX_OAUTH_DOCS_URL =
-  'https://yandex.ru/dev/webmaster/doc/dg/concepts/authorize';
 
 function YandexSettings() {
   const { projectId } = useAppParams();
@@ -114,18 +112,10 @@ function YandexSettings() {
             Яндекс Вебмастер не настроен на этом экземпляре. Нужно создать
             OAuth-приложение в Яндекс ID (oauth.yandex.ru) с доступом к API
             Вебмастера и добавить YANDEX_CLIENT_ID, YANDEX_CLIENT_SECRET и
-            YANDEX_REDIRECT_URI в окружение API и воркера. Подробности — в
-            руководстве по настройке.
+            YANDEX_REDIRECT_URI в окружение API и воркера. Разверните
+            руководство ниже — все шаги выполняются без выхода из панели.
           </p>
-          <LinkButton
-            className="w-fit"
-            href={YANDEX_OAUTH_DOCS_URL}
-            rel="noopener"
-            target="_blank"
-            variant="outline"
-          >
-            Прочитать руководство по настройке
-          </LinkButton>
+          <YandexSetupGuide />
         </div>
       </div>
     );

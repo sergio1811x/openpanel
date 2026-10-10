@@ -20,7 +20,7 @@ export const Route = createFileRoute('/_steps/onboarding/$projectId/verify')({
   }),
   beforeLoad: ({ context }) => {
     if (!context.session?.session) {
-      throw redirect({ to: '/onboarding' });
+      throw redirect({ to: '/login' });
     }
   },
   component: Component,

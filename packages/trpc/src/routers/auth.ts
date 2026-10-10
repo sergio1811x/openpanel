@@ -30,7 +30,6 @@ import {
   db,
   decrypt,
   encrypt,
-  getIsRegistrationAllowed,
   getShareOverviewById,
   getUserAccount,
 } from '@openpanel/db';
@@ -160,6 +159,11 @@ export const authRouter = createTRPCRouter({
         url: url.toString(),
       };
     }),
+  /**
+   * FORK (Openpanel RU): public registration is removed. Accounts are
+   * provisioned by the administrator via apps/api/scripts/create-user.mjs,
+   * so this mutation is a hard no-op that always rejects.
+   */
   signUpEmail: publicProcedure
     .use(
       rateLimitMiddleware({
@@ -168,52 +172,10 @@ export const authRouter = createTRPCRouter({
       })
     )
     .input(zSignUpEmail)
-    .mutation(async ({ input, ctx }) => {
-      const isRegistrationAllowed = await getIsRegistrationAllowed(
-        input.inviteId
+    .mutation(async () => {
+      throw new TRPCAccessError(
+        'Регистрация отключена. Учётную запись создаёт администратор на сервере.'
       );
-
-      if (!isRegistrationAllowed) {
-        throw new TRPCAccessError('Registrations are not allowed');
-      }
-
-      const provider = 'email';
-      const user = await getUserAccount({
-        email: input.email,
-        provider,
-      });
-
-      if (user) {
-        throw new TRPCNotFoundError('User already exists');
-      }
-
-      const createdUser = await db.user.create({
-        data: {
-          id: generateSecureId('user'),
-          email: input.email,
-          firstName: input.firstName,
-          lastName: input.lastName,
-          accounts: {
-            create: {
-              provider,
-              password: await hashPassword(input.password),
-            },
-          },
-        },
-      });
-
-      if (input.inviteId) {
-        await connectUserToOrganization({
-          user: createdUser,
-          inviteId: input.inviteId,
-        });
-      }
-
-      const token = generateSessionToken();
-      const session = await createSession(token, createdUser.id);
-
-      setSessionTokenCookie(ctx.setCookie, token, session.expiresAt);
-      return session;
     }),
   signInEmail: publicProcedure
     .use(

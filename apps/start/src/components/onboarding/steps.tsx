@@ -14,11 +14,8 @@ type Props = {
 
 function useSteps(path: string) {
   const steps: Step[] = [
-    {
-      name: 'Создание аккаунта',
-      status: 'pending',
-      match: '/onboarding',
-    },
+    // FORK (Openpanel RU): регистрация выпилена, аккаунт создаёт
+    // администратор в БД — первый шаг онбординга теперь «Создание проекта».
     {
       name: 'Создание проекта',
       status: 'pending',

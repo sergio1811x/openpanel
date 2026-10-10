@@ -1,5 +1,4 @@
 import { useTRPC } from '@/integrations/trpc/react';
-import { pushModal } from '@/modals';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { zSignInEmail } from '@openpanel/validation';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -72,17 +71,8 @@ export function SignInEmailForm({
           </span>
         )}
       </div>
-      <button
-        type="button"
-        onClick={() =>
-          pushModal('RequestPasswordReset', {
-            email: form.getValues('email'),
-          })
-        }
-        className="text-sm text-muted-foreground hover:text-highlight hover:underline transition-colors duration-200 text-center mt-2"
-      >
-        Забыли пароль?
-      </button>
+      {/* FORK (Openpanel RU): восстановление пароля через письмо выпилено —
+          пароль задаёт/сбрасывает администратор скриптом create-user.mjs. */}
     </form>
   );
 }

@@ -3,39 +3,26 @@ import { db } from '../prisma-client';
 /**
  * Whether a *new* user may be created right now.
  *
- * This must only be consulted at the point where we know the account does not
- * exist yet. Calling it before an identity is known (e.g. when kicking off an
- * OAuth redirect) would reject returning users too, since we cannot tell a
- * sign-in from a sign-up at that stage.
+ * FORK (Openpanel RU): public registration has been removed entirely.
+ * Accounts are provisioned by the administrator directly in the database:
+ *
+ *   docker compose exec op-api node apps/api/scripts/create-user.mjs <email> <password>
+ *
+ * This always returns `false`, which blocks:
+ *   - the `signUpEmail` mutation,
+ *   - first-user creation through the UI,
+ *   - new-user creation through the OAuth callbacks.
+ * Existing users (created via the script) can always sign in.
  */
-export async function getIsRegistrationAllowed(inviteId?: string | null) {
-  // ALLOW_REGISTRATION is always undefined in cloud
-  if (process.env.ALLOW_REGISTRATION === undefined) {
-    return true;
-  }
+export async function getIsRegistrationAllowed(_inviteId?: string | null) {
+  void _inviteId;
+  return false;
+}
 
-  // Self-hosting logic
-  // 1. First user is always allowed
-  const count = await db.user.count();
-  if (count === 0) {
-    return true;
-  }
-
-  // 2. If there is an invite, check if it is valid
-  if (inviteId) {
-    if (process.env.ALLOW_INVITATION === 'false') {
-      return false;
-    }
-
-    const invite = await db.invite.findUnique({
-      where: {
-        id: inviteId,
-      },
-    });
-
-    return !!invite;
-  }
-
-  // 3. Otherwise, check if general registration is allowed
-  return process.env.ALLOW_REGISTRATION !== 'false';
+/**
+ * Kept for the (unused) self-hosting env contract; always `false` in this
+ * fork because registration no longer exists.
+ */
+export function isRegistrationFlagEnabled() {
+  return false;
 }

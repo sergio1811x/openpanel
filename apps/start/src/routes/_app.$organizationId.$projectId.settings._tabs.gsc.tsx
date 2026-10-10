@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import { Skeleton } from '@/components/skeleton';
 import { Badge } from '@/components/ui/badge';
-import { Button, LinkButton } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Select,
   SelectContent,
@@ -16,15 +16,13 @@ import {
 } from '@/components/ui/select';
 import { useAppParams } from '@/hooks/use-app-params';
 import { useTRPC } from '@/integrations/trpc/react';
+import { GscSetupGuide } from '@/components/integrations/setup-guides';
 
 export const Route = createFileRoute(
   '/_app/$organizationId/$projectId/settings/_tabs/gsc'
 )({
   component: GscSettings,
 });
-
-const GSC_SELF_HOSTING_DOCS_URL =
-  '#';
 
 function GscSettings() {
   const { projectId } = useAppParams();
@@ -113,17 +111,10 @@ function GscSettings() {
           <p className="text-muted-foreground text-sm">
             Google Search Console не настроен на этом экземпляре. Тому, кто его
             обслуживает, нужно создать Google OAuth-клиент и добавить его в
-            окружение API и воркера. Подробности — в руководстве по настройке.
+            окружение API и воркера. Разверните руководство ниже — все шаги
+            выполняются без выхода из панели.
           </p>
-          <LinkButton
-            className="w-fit"
-            href={GSC_SELF_HOSTING_DOCS_URL}
-            rel="noopener"
-            target="_blank"
-            variant="outline"
-          >
-            Прочитать руководство по настройке
-          </LinkButton>
+          <GscSetupGuide />
         </div>
       </div>
     );
