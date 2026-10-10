@@ -52,17 +52,17 @@ function OrganizationPage() {
   if (!projects?.length) {
     return (
       <FullPageEmptyState
-        title="No projects found"
+        title="Проекты не найдены"
         description={
           isAdmin
-            ? 'Create your first project to get started with analytics.'
-            : 'You do not have access to any projects in this organization yet. Ask an admin to grant you access.'
+            ? 'Создайте свой первый проект, чтобы начать работу с аналитикой.'
+            : 'У Вас пока нет доступа ни к одному проекту этой организации. Попросите администратора предоставить доступ.'
         }
         icon={BoxSelectIcon}
       >
         {isAdmin && (
           <Button icon={PlusIcon} onClick={() => pushModal('AddProject')}>
-            Create project
+            Создать проект
           </Button>
         )}
       </FullPageEmptyState>
@@ -72,14 +72,14 @@ function OrganizationPage() {
   return (
     <div className="container p-8">
       <PageHeader
-        title="Projects"
-        description="All your projects in this workspace"
+        title="Проекты"
+        description="Все Ваши проекты в этом рабочем пространстве"
         className="mb-8"
       />
 
       <TableButtons>
         <AnimatedSearchInput
-          placeholder="Search projects"
+          placeholder="Поиск проектов"
           value={search}
           onChange={setSearch}
         />

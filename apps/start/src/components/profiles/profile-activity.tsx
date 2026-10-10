@@ -59,10 +59,10 @@ const MonthCalendar = ({
                 <div className="font-medium">{format(date, 'EEEE, MMM d')}</div>
                 {hit ? (
                   <div className="text-muted-foreground">
-                    {hit.count} {hit.count === 1 ? 'event' : 'events'}
+                    Событий: {hit.count}
                   </div>
                 ) : (
-                  <div className="text-muted-foreground">No activity</div>
+                  <div className="text-muted-foreground">Нет активности</div>
                 )}
               </div>
             }
@@ -98,7 +98,7 @@ export const ProfileActivity = ({ data }: Props) => {
   return (
     <Widget className="w-full">
       <WidgetHead className="row justify-between relative">
-        <WidgetTitle icon={ActivityIcon}>Activity</WidgetTitle>
+        <WidgetTitle icon={ActivityIcon}>Активность</WidgetTitle>
         <WidgetAbsoluteButtons>
           <Button
             variant="outline"

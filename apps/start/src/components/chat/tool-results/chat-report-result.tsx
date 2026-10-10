@@ -47,7 +47,7 @@ function ChatReportInner({
     return (
       <ResultCard>
         <div className="px-3 py-2 text-sm text-muted-foreground">
-          {value?.error ?? 'No data'}
+          {value?.error ?? 'Нет данных'}
         </div>
       </ResultCard>
     );
@@ -56,9 +56,9 @@ function ChatReportInner({
   const report = value.report;
   if (!report || !report.chartType) {
     return (
-      <ResultCard title={value.name ?? 'Report'}>
+      <ResultCard title={value.name ?? 'Отчёт'}>
         <div className="px-3 py-2 text-sm text-muted-foreground">
-          Report data returned but no renderable config.
+          Данные отчёта получены, но конфигурация для отображения отсутствует.
         </div>
       </ResultCard>
     );
@@ -67,7 +67,7 @@ function ChatReportInner({
   const title =
     value.name ??
     deriveTitleFromInput(toolType, input) ??
-    `${humanizeChartType(String(report.chartType))} report`;
+    `Отчёт (${humanizeChartType(String(report.chartType))})`;
 
   return (
     <ResultCard title={title}>
@@ -92,7 +92,7 @@ function ChatReportInner({
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground hover:underline"
             >
-              Open in dashboard →
+              Открыть в дашборде →
             </a>
           )}
           {!report.id && (
@@ -111,7 +111,7 @@ function ChatReportInner({
               }
             >
               <SaveIcon className="size-3 mr-1" />
-              Save
+              Сохранить
             </Button>
           )}
         </div>
@@ -140,16 +140,16 @@ function deriveTitleFromInput(toolType: string, input: unknown): string | null {
     case 'tool-get_funnel': {
       if (Array.isArray(args.steps) && args.steps.length > 0) {
         const names = args.steps.filter((s): s is string => typeof s === 'string');
-        if (names.length > 0) return `Funnel: ${names.join(' → ')}`;
+        if (names.length > 0) return `Воронка: ${names.join(' → ')}`;
       }
-      return 'Funnel';
+      return 'Воронка';
     }
 
     case 'tool-get_rolling_active_users': {
       const w = args.windowDays ?? 1;
-      const label = w === 1 ? 'DAU' : w === 7 ? 'WAU' : w === 30 ? 'MAU' : `${w}-day active users`;
+      const label = w === 1 ? 'DAU' : w === 7 ? 'WAU' : w === 30 ? 'MAU' : `${w}-дневные активные пользователи`;
       const days = args.days ?? 30;
-      return `${label} — last ${days} days`;
+      return `${label} — последние ${days} дн.`;
     }
 
     case 'tool-generate_report': {
@@ -160,7 +160,7 @@ function deriveTitleFromInput(toolType: string, input: unknown): string | null {
         : [];
       const kind = args.chartType
         ? humanizeChartType(args.chartType)
-        : 'Report';
+        : 'Отчёт';
       if (events.length === 0) return kind;
       if (events.length === 1) return `${kind}: ${events[0]}`;
       return `${kind}: ${events.join(', ')}`;
@@ -174,27 +174,27 @@ function deriveTitleFromInput(toolType: string, input: unknown): string | null {
 function humanizeChartType(type: string): string {
   switch (type) {
     case 'linear':
-      return 'Line chart';
+      return 'Линейный график';
     case 'bar':
-      return 'Bar chart';
+      return 'Столбчатая диаграмма';
     case 'area':
-      return 'Area chart';
+      return 'Диаграмма с областями';
     case 'pie':
-      return 'Pie chart';
+      return 'Круговая диаграмма';
     case 'funnel':
-      return 'Funnel';
+      return 'Воронка';
     case 'metric':
-      return 'Metric';
+      return 'Метрика';
     case 'retention':
-      return 'Retention';
+      return 'Удержание';
     case 'histogram':
-      return 'Histogram';
+      return 'Гистограмма';
     case 'sankey':
       return 'Sankey';
     case 'map':
-      return 'Map';
+      return 'Карта';
     case 'conversion':
-      return 'Conversion';
+      return 'Конверсия';
     default:
       return type.charAt(0).toUpperCase() + type.slice(1);
   }

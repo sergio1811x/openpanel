@@ -11,10 +11,10 @@ export const PopularRoutes = ({ data }: Props) => {
   return (
     <Widget className="w-full">
       <WidgetHead>
-        <WidgetTitle>Most visted pages</WidgetTitle>
+        <WidgetTitle>Самые посещаемые страницы</WidgetTitle>
       </WidgetHead>
       {data.length === 0 ? (
-        <WidgetEmptyState icon={RouteIcon} text="No pages visited yet" />
+        <WidgetEmptyState icon={RouteIcon} text="Страницы ещё не посещались" />
       ) : (
         <div className="flex flex-col gap-1 p-1">
           {data.slice(0, 5).map((item) => (

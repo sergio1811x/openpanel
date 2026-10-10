@@ -18,8 +18,8 @@ export function RelatedLinksSection({ relatedLinks }: RelatedLinksProps) {
   return (
     <Section className="container">
       <SectionHeader
-        description="Explore more comparisons and guides to help you choose the right analytics tool."
-        title="Related resources"
+        description="Изучите больше сравнений и руководств, чтобы выбрать подходящий инструмент аналитики."
+        title="Полезные материалы"
         variant="sm"
       />
       <div className="mt-12 grid gap-8 md:grid-cols-3">

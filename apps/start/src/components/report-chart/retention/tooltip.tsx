@@ -29,17 +29,17 @@ export function RetentionTooltip({ active, payload }: Props) {
         {interval} {days}
       </h3>
       <div className="flex justify-between">
-        <span className="text-muted-foreground">Retention Rate:</span>
+        <span className="text-muted-foreground">Показатель удержания:</span>
         <span className="font-medium">
           {number.formatWithUnit(percentage / 100, '%')}
         </span>
       </div>
       <div className="flex justify-between">
-        <span className="text-muted-foreground">Retained Users:</span>
+        <span className="text-muted-foreground">Удержанные пользователи:</span>
         <span className="font-medium">{number.format(value)}</span>
       </div>
       <div className="flex justify-between">
-        <span className="text-muted-foreground">Total Users:</span>
+        <span className="text-muted-foreground">Всего пользователей:</span>
         <span className="font-medium">{number.format(sum)}</span>
       </div>
     </div>

@@ -66,7 +66,7 @@ export function ReportSegment({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Available charts</DropdownMenuLabel>
+        <DropdownMenuLabel>Доступные графики</DropdownMenuLabel>
         <DropdownMenuSeparator />
 
         <DropdownMenuGroup>

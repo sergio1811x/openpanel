@@ -38,8 +38,8 @@ export const Route = createFileRoute('/_app/$organizationId/members/_tabs')({
 function Component() {
   const router = useRouter();
   const { activeTab, tabs } = usePageTabs([
-    { id: 'members', label: 'Members' },
-    { id: 'invitations', label: 'Invitations' },
+    { id: 'members', label: 'Участники' },
+    { id: 'invitations', label: 'Приглашения' },
   ]);
 
   const handleTabChange = (tabId: string) => {
@@ -51,7 +51,7 @@ function Component() {
 
   return (
     <div className="container p-8">
-      <PageHeader title="Members" description="Manage your members here" />
+      <PageHeader title="Участники" description="Управляйте участниками здесь" />
 
       <Tabs
         value={activeTab}

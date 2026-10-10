@@ -21,16 +21,16 @@ export const ProfileProperties = ({ profile }: Props) => {
   return (
     <Widget className="w-full">
       <WidgetHead>
-        <div className="title">Profile Information</div>
+        <div className="title">Информация о профиле</div>
         <WidgetButtons>
           {[
             {
               key: 'profile',
-              btn: 'Profile',
+              btn: 'Профиль',
             },
             {
               key: 'properties',
-              btn: 'Properties',
+              btn: 'Свойства',
             },
           ].map((w) => (
             <button
@@ -55,7 +55,7 @@ export const ProfileProperties = ({ profile }: Props) => {
             { name: 'firstName', value: profile.firstName },
             { name: 'lastName', value: profile.lastName },
             { name: 'email', value: profile.email },
-            { name: 'isExternal', value: profile.isExternal ? 'Yes' : 'No' },
+            { name: 'isExternal', value: profile.isExternal ? 'Да' : 'Нет' },
             {
               name: 'createdAt',
               value: formatDateTime(new Date(profile.createdAt)),
@@ -115,7 +115,7 @@ export const ProfileProperties = ({ profile }: Props) => {
         />
       )}
       {(!profile || !profile.properties) && (
-        <FullPageEmptyState title="No properties found" />
+        <FullPageEmptyState title="Свойства не найдены" />
       )}
     </Widget>
   );

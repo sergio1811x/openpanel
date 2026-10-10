@@ -23,27 +23,27 @@ export async function Footer() {
         </div>
         <div className="container relative grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8">
           <div className="col gap-3">
-            <h3 className="font-medium">Useful links</h3>
+            <h3 className="font-medium">Полезные ссылки</h3>
             <Links
               data={[
-                { title: 'About', url: '/about' },
-                { title: 'Contact', url: '/contact' },
-                { title: 'Become a supporter', url: '/supporter' },
+                { title: 'О нас', url: '/about' },
+                { title: 'Контакты', url: '/contact' },
+                { title: 'Стать спонсором', url: '/supporter' },
                 {
-                  title: 'Free analytics for open source projects',
+                  title: 'Бесплатная аналитика для open source проектов',
                   url: '/open-source',
                 },
                 {
-                  title: 'Open source analytics',
+                  title: 'Аналитика с открытым исходным кодом',
                   url: '/articles/self-hosted-web-analytics',
                 },
               ]}
             />
             <div className="h-5" />
-            <h3 className="font-medium">Features</h3>
+            <h3 className="font-medium">Возможности</h3>
             <Links
               data={[
-                { title: 'All features', url: '/features' },
+                { title: 'Все возможности', url: '/features' },
                 ...featureSource.map((item) => ({
                   title: item.short_name,
                   url: item.url,
@@ -53,22 +53,22 @@ export async function Footer() {
           </div>
 
           <div className="col gap-3">
-            <h3 className="font-medium">Resources</h3>
+            <h3 className="font-medium">Ресурсы</h3>
             <Links
               data={[
-                { title: 'Pricing', url: '/pricing' },
-                { title: 'Documentation', url: '/docs' },
-                { title: 'SDKs', url: '/docs/sdks' },
-                { title: 'Guides', url: '/guides' },
-                { title: 'Articles', url: '/articles' },
-                { title: 'Compare', url: '/compare' },
+                { title: 'Тарифы', url: '/pricing' },
+                { title: 'Документация', url: '/docs' },
+                { title: 'SDK', url: '/docs/sdks' },
+                { title: 'Руководства', url: '/guides' },
+                { title: 'Статьи', url: '/articles' },
+                { title: 'Сравнение', url: '/compare' },
               ]}
             />
             <div className="h-5" />
-            <h3 className="font-medium">Solutions</h3>
+            <h3 className="font-medium">Решения</h3>
             <Links
               data={[
-                { title: 'All use cases', url: '/for' },
+                { title: 'Все сценарии использования', url: '/for' },
                 ...forPages.map((page) => ({
                   title: page.hero.heading,
                   url: page.url,
@@ -76,7 +76,7 @@ export async function Footer() {
               ]}
             />
             <div className="h-5" />
-            <h3 className="font-medium">Tools</h3>
+            <h3 className="font-medium">Инструменты</h3>
             <Links
               data={TOOLS.map((tool) => ({
                 title: tool.name,
@@ -86,7 +86,7 @@ export async function Footer() {
           </div>
 
           <div className="col gap-3">
-            <h3 className="font-medium">Compare</h3>
+            <h3 className="font-medium">Сравнение</h3>
             <Links
               data={compareSource.map((item) => ({
                 url: item.url,
@@ -96,7 +96,7 @@ export async function Footer() {
           </div>
 
           <div className="col gap-3">
-            <h3 className="font-medium">Latest articles</h3>
+            <h3 className="font-medium">Последние статьи</h3>
             <Links
               data={articles.slice(0, 10).map((article) => ({
                 title: article.data.title,
@@ -127,7 +127,7 @@ export async function Footer() {
                     overflow: 'hidden',
                     pointerEvents: 'none',
                   }}
-                  title="OpenPanel Analytics Badge"
+                  title="Значок аналитики OpenPanel"
                   width="100%"
                 />
               </a>
@@ -135,13 +135,13 @@ export async function Footer() {
             <Social />
           </div>
           <div className="md:row container flex flex-col-reverse justify-between gap-8">
-            <div>Copyright © {year} OpenPanel. All rights reserved.</div>
+            <div>Copyright © {year} OpenPanel. Все права защищены.</div>
             <div className="col lg:row gap-2 md:gap-4">
-              <Link href="/sitemap.xml">Sitemap</Link>
-              <Link href="/privacy">Privacy Policy</Link>
-              <Link href="/terms">Terms of Service</Link>
+              <Link href="/sitemap.xml">Карта сайта</Link>
+              <Link href="/privacy">Политика конфиденциальности</Link>
+              <Link href="/terms">Условия использования</Link>
               <Link href="/dpa">DPA</Link>
-              <Link href="/cookies">Cookie Policy (just kidding)</Link>
+              <Link href="/cookies">Политика в отношении cookies (шутка)</Link>
             </div>
           </div>
         </div>
@@ -175,7 +175,7 @@ function Social() {
         <Link
           href="https://github.com/Openpanel-dev/openpanel"
           rel="noreferrer noopener nofollow"
-          title="Go to GitHub"
+          title="Перейти на GitHub"
         >
           <svg
             className="fill-current"
@@ -190,7 +190,7 @@ function Social() {
         <Link
           href="https://x.com/openpaneldev"
           rel="noreferrer noopener nofollow"
-          title="Go to X"
+          title="Перейти на X"
         >
           <svg
             className="fill-current"
@@ -205,7 +205,7 @@ function Social() {
         <Link
           href="https://go.openpanel.dev/discord"
           rel="noreferrer noopener nofollow"
-          title="Join Discord"
+          title="Присоединиться к Discord"
         >
           <svg
             className="fill-current"
@@ -220,7 +220,7 @@ function Social() {
         <Link
           href="mailto:hello@openpanel.dev"
           rel="noreferrer noopener nofollow"
-          title="Send an email"
+          title="Отправить письмо"
         >
           <MailIcon className="size-6" />
         </Link>
@@ -230,7 +230,7 @@ function Social() {
           rel="noreferrer noopener nofollow"
           target="_blank"
         >
-          <span>Operational</span>
+          <span>Работает</span>
           <div className="size-2 rounded-full bg-emerald-500" />
         </a>
       </div>

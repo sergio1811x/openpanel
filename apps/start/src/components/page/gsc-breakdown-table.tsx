@@ -42,8 +42,8 @@ export function GscBreakdownTable({ projectId, value, type }: GscBreakdownTableP
       : ((queryQuery.data as { pages?: unknown[] } | undefined)?.pages ?? []) as Record<string, string | number>[];
 
   const breakdownKey = type === 'page' ? 'query' : 'page';
-  const breakdownLabel = type === 'page' ? 'Query' : 'Page';
-  const pluralLabel = type === 'page' ? 'queries' : 'pages';
+  const breakdownLabel = type === 'page' ? 'Запрос' : 'Страница';
+  const pluralLabel = type === 'page' ? 'запросов' : 'страниц';
 
   const maxClicks = Math.max(
     ...(breakdownRows as { clicks: number }[]).map((r) => r.clicks),
@@ -53,7 +53,7 @@ export function GscBreakdownTable({ projectId, value, type }: GscBreakdownTableP
   return (
     <div className="card overflow-hidden">
       <div className="border-b p-4">
-        <h3 className="font-medium text-sm">Top {pluralLabel}</h3>
+        <h3 className="font-medium text-sm">Топ {pluralLabel}</h3>
       </div>
       {isLoading ? (
         <OverviewWidgetTable
@@ -62,10 +62,10 @@ export function GscBreakdownTable({ projectId, value, type }: GscBreakdownTableP
           getColumnPercentage={() => 0}
           columns={[
             { name: breakdownLabel, width: 'w-full', render: () => <Skeleton className="h-4 w-2/3" /> },
-            { name: 'Clicks', width: '70px', render: () => <Skeleton className="h-4 w-10" /> },
-            { name: 'Impr.', width: '70px', render: () => <Skeleton className="h-4 w-10" /> },
+            { name: 'Клики', width: '70px', render: () => <Skeleton className="h-4 w-10" /> },
+            { name: 'Показы', width: '70px', render: () => <Skeleton className="h-4 w-10" /> },
             { name: 'CTR', width: '60px', render: () => <Skeleton className="h-4 w-8" /> },
-            { name: 'Pos.', width: '55px', render: () => <Skeleton className="h-4 w-8" /> },
+            { name: 'Поз.', width: '55px', render: () => <Skeleton className="h-4 w-8" /> },
           ]}
         />
       ) : (
@@ -88,7 +88,7 @@ export function GscBreakdownTable({ projectId, value, type }: GscBreakdownTableP
               },
             },
             {
-              name: 'Clicks',
+              name: 'Клики',
               width: '70px',
               getSortValue: (item) => item.clicks as number,
               render(item) {
@@ -100,7 +100,7 @@ export function GscBreakdownTable({ projectId, value, type }: GscBreakdownTableP
               },
             },
             {
-              name: 'Impr.',
+              name: 'Показы',
               width: '70px',
               getSortValue: (item) => item.impressions as number,
               render(item) {
@@ -124,7 +124,7 @@ export function GscBreakdownTable({ projectId, value, type }: GscBreakdownTableP
               },
             },
             {
-              name: 'Pos.',
+              name: 'Поз.',
               width: '55px',
               getSortValue: (item) => item.position as number,
               render(item) {

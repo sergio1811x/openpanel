@@ -87,7 +87,7 @@ export function Chart({ data }: Props) {
               strokeOpacity={0.5}
               strokeLinecap="round"
               label={{
-                value: `Average (${round(averageRetentionRate, 2)} %)`,
+                value: `Средний показатель (${round(averageRetentionRate, 2)} %)`,
                 fill: getChartColor(1),
                 position: 'insideBottomRight',
                 fontSize: 12,

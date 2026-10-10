@@ -34,7 +34,7 @@ export default function RequestPasswordReset({ email }: Props) {
   const mutation = useMutation(
     trpc.auth.requestResetPassword.mutationOptions({
       onSuccess() {
-        toast.success('You should receive an email shortly!');
+        toast.success('Скоро Вы получите письмо на email!');
         popModal();
       },
       onError: handleError,
@@ -49,11 +49,11 @@ export default function RequestPasswordReset({ email }: Props) {
 
   return (
     <ModalContent>
-      <ModalHeader title="Request password reset" />
+      <ModalHeader title="Сброс пароля" />
       <form className="flex flex-col gap-4" onSubmit={onSubmit}>
         <InputWithLabel
           label="Email"
-          placeholder="Your email address"
+          placeholder="Ваш email-адрес"
           error={form.formState.errors.email?.message}
           {...form.register('email')}
         />
@@ -64,10 +64,10 @@ export default function RequestPasswordReset({ email }: Props) {
             variant={'secondary'}
             onClick={() => popModal()}
           >
-            Cancel
+            Отмена
           </Button>
           <Button type="submit" icon={SendIcon} loading={mutation.isPending}>
-            Continue
+            Продолжить
           </Button>
         </DialogFooter>
       </form>

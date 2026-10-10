@@ -18,7 +18,7 @@ export function ResetPasswordForm({ token }: { token: string }) {
   const mutation = useMutation(
     trpc.auth.resetPassword.mutationOptions({
       onSuccess() {
-        toast.success('Password reset successfully');
+        toast.success('Пароль успешно изменён');
         navigate({
           to: '/login',
         });
@@ -45,23 +45,23 @@ export function ResetPasswordForm({ token }: { token: string }) {
     <div className="col gap-8">
       <div>
         <h1 className="text-3xl font-bold text-foreground mb-2">
-          Reset your password
+          Сброс пароля
         </h1>
         <p className="text-muted-foreground">
-          Already have an account?{' '}
+          Уже есть аккаунт?{' '}
           <a href="/login" className="underline">
-            Sign in
+            Войти
           </a>
         </p>
       </div>
       <form onSubmit={onSubmit} className="col gap-6">
         <InputWithLabel
-          label="New password"
-          placeholder="New password"
+          label="Новый пароль"
+          placeholder="Новый пароль"
           type="password"
           {...form.register('password')}
         />
-        <Button type="submit">Reset password</Button>
+        <Button type="submit">Сбросить пароль</Button>
       </form>
     </div>
   );

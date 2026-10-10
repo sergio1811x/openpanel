@@ -16,7 +16,7 @@ const validateSearch = z.object({
 export const Route = createFileRoute('/_public/onboarding')({
   head: () => ({
     meta: [
-      { title: createEntityTitle('Create an account', PAGE_TITLES.ONBOARDING) },
+      { title: createEntityTitle('Создание аккаунта', PAGE_TITLES.ONBOARDING) },
       { name: 'robots', content: 'noindex, follow' },
     ],
   }),
@@ -65,31 +65,31 @@ function Component() {
     <div className="col w-full gap-8 py-4 text-left">
       <div>
         <h1 className="mb-2 font-bold text-3xl text-foreground">
-          Start tracking in minutes
+          Начните отслеживать за несколько минут
         </h1>
         <p className="text-muted-foreground">
-          By creating an account you accept the{' '}
+          Создавая аккаунт, вы принимаете{' '}
           <a
             className="underline transition-colors hover:text-foreground"
             href="https://openpanel.dev/terms"
             rel="noreferrer"
             target="_blank"
           >
-            Terms of Service
+            Условия использования
           </a>{' '}
-          and{' '}
+          и{' '}
           <a
             className="underline transition-colors hover:text-foreground"
             href="https://openpanel.dev/privacy"
             rel="noreferrer"
             target="_blank"
           >
-            Privacy Policy
+            Политику конфиденциальности
           </a>
           .
         </p>
         <p className="mt-3 text-muted-foreground">
-          Already have an account?{' '}
+          Уже есть аккаунт?{' '}
           <a
             className="font-medium text-foreground underline"
             href={
@@ -98,7 +98,7 @@ function Component() {
                 : '/login'
             }
           >
-            Sign in
+            Войти
           </a>
         </p>
       </div>
@@ -106,22 +106,21 @@ function Component() {
       {invite && !invite.isExpired && (
         <div className="mb-6 rounded-lg border border-border bg-card p-6">
           <h2 className="mb-2 font-semibold text-xl">
-            Invitation to {invite.organization?.name}
+            Приглашение в {invite.organization?.name}
           </h2>
           <p className="text-muted-foreground">
-            After you have created your account, you will be added to the
-            organization.
+            После создания аккаунта вы будете добавлены в организацию.
           </p>
         </div>
       )}
       {invite?.isExpired && (
         <div className="mb-6 rounded-lg border border-destructive/20 bg-destructive/10 p-6">
           <h2 className="mb-2 font-semibold text-destructive text-xl">
-            Invitation to {invite.organization?.name} has expired
+            Срок действия приглашения в {invite.organization?.name} истёк
           </h2>
           <p className="text-muted-foreground">
-            The invitation has expired. Please contact the organization owner to
-            get a new invitation.
+            Приглашение истекло. Пожалуйста, обратитесь к владельцу
+            организации, чтобы получить новое приглашение.
           </p>
         </div>
       )}
@@ -144,7 +143,8 @@ function Component() {
               )}
             </div>
             <p className="text-center text-muted-foreground text-xs">
-              No credit card required · Free 30-day trial · Cancel anytime
+              Без банковской карты · Бесплатный 30-дневный период · Отмена в
+              любой момент
             </p>
 
             <Or className="my-6" />
@@ -153,7 +153,7 @@ function Component() {
 
         <div className="mb-4 flex items-center gap-2 font-semibold text-lg">
           <MailIcon className="size-4" />
-          Sign up with email
+          Регистрация по email
         </div>
         <SignUpEmailForm inviteId={inviteId} />
       </div>

@@ -39,7 +39,7 @@ export default function EditMember(member: EditMemberProps) {
         setAccess(toGrants());
       },
       onSuccess() {
-        toast.success('Access updated');
+        toast.success('Доступ обновлён');
         // Refresh members list so access column reflects changes
         queryClient.invalidateQueries(trpc.organization.members.pathFilter());
         popModal();
@@ -54,10 +54,10 @@ export default function EditMember(member: EditMemberProps) {
       <ModalHeader
         title={
           member.user
-            ? `Edit access for ${[member.user.firstName, member.user.lastName]
+            ? `Изменение доступа для ${[member.user.firstName, member.user.lastName]
                 .filter(Boolean)
                 .join(' ')}`
-            : 'Edit member access'
+            : 'Изменение доступа участника'
         }
       />
 
@@ -70,7 +70,7 @@ export default function EditMember(member: EditMemberProps) {
 
         <ButtonContainer>
           <Button type="button" variant="outline" onClick={() => popModal()}>
-            Cancel
+            Отмена
           </Button>
           <Button
             onClick={() =>
@@ -82,7 +82,7 @@ export default function EditMember(member: EditMemberProps) {
             }
             disabled={mutation.isPending}
           >
-            Save
+            Сохранить
           </Button>
         </ButtonContainer>
       </div>

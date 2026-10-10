@@ -5,13 +5,13 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const VISITOR_DATA = [1840, 2100, 1950, 2400, 2250, 2650, 2980];
-const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const DAYS = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
 const STATS = [
-  { label: 'Visitors', value: 4128, formatted: null, change: 12, up: true },
-  { label: 'Page views', value: 12438, formatted: '12.4k', change: 8, up: true },
-  { label: 'Bounce rate', value: null, formatted: '42%', change: 3, up: false },
-  { label: 'Avg. session', value: null, formatted: '3m 23s', change: 5, up: true },
+  { label: 'Посетители', value: 4128, formatted: null, change: 12, up: true },
+  { label: 'Просмотры', value: 12438, formatted: '12.4k', change: 8, up: true },
+  { label: 'Отказы', value: null, formatted: '42%', change: 3, up: false },
+  { label: 'Сессия (сред.)', value: null, formatted: '3m 23s', change: 5, up: true },
 ];
 
 const SOURCES = [
@@ -96,11 +96,11 @@ export function WebAnalyticsIllustration() {
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
           </span>
           <span className="text-[10px] font-medium text-muted-foreground">
-            <NumberFlow value={liveVisitors} /> online now
+            <NumberFlow value={liveVisitors} /> онлайн прямо сейчас
           </span>
         </div>
         <span className="rounded bg-muted px-1.5 py-0.5 text-[9px] text-muted-foreground">
-          Last 7 days
+          Последние 7 дней
         </span>
       </div>
 
@@ -129,7 +129,7 @@ export function WebAnalyticsIllustration() {
 
       {/* Area chart */}
       <div className="flex-1 col gap-1 overflow-hidden rounded-xl border bg-card px-3 pt-2 pb-1">
-        <span className="text-[8px] text-muted-foreground">Unique visitors</span>
+        <span className="text-[8px] text-muted-foreground">Уникальные посетители</span>
         <AreaChart data={VISITOR_DATA} />
         <div className="row justify-between px-0.5">
           {DAYS.map((d) => (

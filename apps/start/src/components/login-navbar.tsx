@@ -19,7 +19,7 @@ export function LoginNavbar({ className }: { className?: string }) {
       <a className="row items-center gap-2" href="https://openpanel.dev">
         <LogoSquare className="size-8 shrink-0" />
         <span className="font-medium text-muted-foreground text-sm">
-          {isSelfHosted ? 'Self-hosted analytics' : 'OpenPanel.dev'}
+          {isSelfHosted ? 'Self-hosted аналитика' : 'OpenPanel.dev'}
         </span>
       </a>
       {isSelfHosted && (
@@ -30,17 +30,17 @@ export function LoginNavbar({ className }: { className?: string }) {
             </li>
             <li>
               <a href="https://openpanel.dev/compare/mixpanel-alternative">
-                Mixpanel alternative
+                Альтернатива Mixpanel
               </a>
             </li>
             <li>
               <a href="https://openpanel.dev/compare/posthog-alternative">
-                Posthog alternative
+                Альтернатива Posthog
               </a>
             </li>
             <li>
               <a href="https://openpanel.dev/articles/open-source-web-analytics">
-                Open source analytics
+                Аналитика с открытым кодом
               </a>
             </li>
           </ul>
@@ -78,7 +78,7 @@ export function LoginNavbar({ className }: { className?: string }) {
                     href="https://openpanel.dev/compare/mixpanel-alternative"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Posthog alternative
+                    Альтернатива Posthog
                   </a>
                 </li>
                 <li>
@@ -87,7 +87,7 @@ export function LoginNavbar({ className }: { className?: string }) {
                     href="https://openpanel.dev/compare/mixpanel-alternative"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Mixpanel alternative
+                    Альтернатива Mixpanel
                   </a>
                 </li>
                 <li>
@@ -96,7 +96,7 @@ export function LoginNavbar({ className }: { className?: string }) {
                     href="https://openpanel.dev/articles/open-source-web-analytics"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Open source analytics
+                    Аналитика с открытым кодом
                   </a>
                 </li>
               </ul>

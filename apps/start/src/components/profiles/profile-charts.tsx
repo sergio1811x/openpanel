@@ -29,7 +29,7 @@ export const ProfileCharts = memo(
           ],
           id: 'A',
           name: 'screen_view',
-          displayName: 'Events',
+          displayName: 'События',
         },
       ],
       breakdowns: [
@@ -63,7 +63,7 @@ export const ProfileCharts = memo(
           ],
           id: 'A',
           name: '*',
-          displayName: 'Events',
+          displayName: 'События',
         },
       ],
       breakdowns: [
@@ -84,7 +84,7 @@ export const ProfileCharts = memo(
       <>
         <Widget className="col-span-6 md:col-span-3">
           <WidgetHead>
-            <span className="title">Page views</span>
+            <span className="title">Просмотры страниц</span>
           </WidgetHead>
           <WidgetBody>
             <ReportChart report={pageViewsChart} />
@@ -92,7 +92,7 @@ export const ProfileCharts = memo(
         </Widget>
         <Widget className="col-span-6 md:col-span-3">
           <WidgetHead>
-            <span className="title">Events per day</span>
+            <span className="title">События по дням</span>
           </WidgetHead>
           <WidgetBody>
             <ReportChart report={eventsChart} />

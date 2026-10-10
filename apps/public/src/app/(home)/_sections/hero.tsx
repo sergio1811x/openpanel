@@ -19,12 +19,12 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const perks = [
-  { text: 'Free trial 30 days', icon: CalendarIcon },
-  { text: 'No credit card required', icon: CreditCardIcon },
-  { text: 'GDPR compliant', icon: ShieldCheckIcon },
-  { text: 'EU hosted', icon: EuFlag },
-  { text: 'Cookie-less tracking', icon: CookieIcon },
-  { text: 'Open-source', icon: GithubIcon },
+  { text: '30 дней бесплатно', icon: CalendarIcon },
+  { text: 'Без кредитной карты', icon: CreditCardIcon },
+  { text: 'Соответствует GDPR', icon: ShieldCheckIcon },
+  { text: 'Хостинг в ЕС', icon: EuFlag },
+  { text: 'Отслеживание без cookies', icon: CookieIcon },
+  { text: 'Открытый исходный код', icon: GithubIcon },
 ];
 
 const aspectRatio = 2946 / 1329;
@@ -87,15 +87,15 @@ export function Hero() {
       <div className="col w-full gap-8 sm:w-1/2 sm:pr-12">
         <div className="col gap-4">
           <div className="font-mono text-muted-foreground text-sm">
-            TRUSTED BY 1,000+ PROJECTS
+            НАМ ДОВЕРЯЮТ 1 000+ ПРОЕКТОВ
           </div>
           <h1 className="font-semibold text-4xl leading-[1.1] md:text-5xl">
-            The open-source alternative to <Competition />
+            Открытая альтернатива <Competition />
           </h1>
           <p className="text-lg text-muted-foreground">
-            An open-source web and product analytics platform that combines the
-            power of Mixpanel with the ease of Plausible and one of the best
-            Google Analytics replacements.
+            Платформа веб- и продуктовой аналитики с открытым исходным кодом:
+            мощь Mixpanel в сочетании с простотой Plausible — одна из лучших
+            замен Google Analytics.
           </p>
         </div>
         <div className="row gap-4">
@@ -106,7 +106,7 @@ export function Hero() {
               rel="noreferrer noopener nofollow"
               target="_blank"
             >
-              Test live demo
+              Открыть живое демо
             </Link>
           </Button>
         </div>
@@ -146,7 +146,7 @@ export function Hero() {
             className="h-full w-full"
             scrolling="no"
             src={'https://demo.openpanel.dev/demo/shoey?range=lastHour'}
-            title="Live preview"
+            title="Живой предпросмотр"
           />
         </div>
       </div>

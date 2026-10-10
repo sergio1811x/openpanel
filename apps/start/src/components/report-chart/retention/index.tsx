@@ -105,8 +105,8 @@ function Empty() {
 function Disabled() {
   return (
     <AspectContainer>
-      <ReportChartEmpty title="Select 2 events">
-        We need two events to determine the retention rate.
+      <ReportChartEmpty title="Выберите 2 события">
+        Нужны два события, чтобы рассчитать показатель удержания.
       </ReportChartEmpty>
     </AspectContainer>
   );

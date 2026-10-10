@@ -4,9 +4,9 @@ import Link from 'next/link';
 export function DeviceIdWarning() {
   return (
     <Callout>
-      Read more about{' '}
-      <Link href="/docs/device-id">device id and why you might want it</Link>.
-      **We recommend not to but it&apos;s up to you.**
+      Подробнее о{' '}
+      <Link href="/docs/device-id">device id и о том, зачем он может понадобиться</Link>.
+      **Мы не рекомендуем его использовать, но решать вам.**
     </Callout>
   );
 }

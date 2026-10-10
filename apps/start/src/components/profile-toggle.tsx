@@ -45,15 +45,15 @@ export function ProfileToggle({ className }: Props) {
           type="button"
         >
           <UserIcon className="size-4" />
-          <span className="sr-only">Profile</span>
+          <span className="sr-only">Профиль</span>
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="center" className="w-56">
-        <DropdownMenuItem onClick={goToAccount}>Account</DropdownMenuItem>
+        <DropdownMenuItem onClick={goToAccount}>Аккаунт</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuSub>
           <DropdownMenuSubTrigger className="flex w-full items-center justify-between">
-            Theme
+            Тема
             <DropdownMenuShortcut>
               <span className="mr-2">{themeConfig[userTheme].icon}</span>
               {themeConfig[userTheme].label}
@@ -80,7 +80,7 @@ export function ProfileToggle({ className }: Props) {
           className="text-red-600"
           onClick={() => logout.mutate()}
         >
-          Logout
+          Выход
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

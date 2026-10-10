@@ -49,7 +49,7 @@ export default function AddIntegration(props: Props) {
   const navigate = useNavigate();
   const client = useQueryClient();
   const handleSuccess = () => {
-    toast.success('Integration created');
+    toast.success('Интеграция создана');
     popModal();
     client.invalidateQueries(trpc.integration.list.pathFilter());
     client.invalidateQueries(
@@ -78,7 +78,7 @@ export default function AddIntegration(props: Props) {
 
   return (
     <SheetContent className="[&>button.absolute]:hidden">
-      <ModalHeader title="Create an integration" />
+      <ModalHeader title="Создание интеграции" />
       {renderCard()}
       {renderForm()}
     </SheetContent>

@@ -18,7 +18,7 @@ type MoveReportProps = {
 };
 
 const validator = z.object({
-  dashboardId: z.string().min(1, 'Required'),
+  dashboardId: z.string().min(1, 'Обязательное поле'),
 });
 
 type IForm = z.infer<typeof validator>;
@@ -37,7 +37,7 @@ export default function MoveReport({
       onSuccess() {
         queryClient.invalidateQueries(trpc.report.list.pathFilter());
         queryClient.invalidateQueries(trpc.dashboard.list.pathFilter());
-        toast('Report moved');
+        toast('Отчёт перемещён');
         popModal();
       },
     }),
@@ -52,7 +52,7 @@ export default function MoveReport({
 
   return (
     <ModalContent>
-      <ModalHeader title="Move report" />
+      <ModalHeader title="Перемещение отчёта" />
       <form
         className="flex flex-col gap-4"
         onSubmit={handleSubmit((values) => {
@@ -83,14 +83,14 @@ export default function MoveReport({
             onClick={() => popModal()}
             size="default"
           >
-            Cancel
+            Отмена
           </Button>
           <Button
             type="submit"
             disabled={!formState.isValid || move.isPending}
             size="default"
           >
-            Move
+            Переместить
           </Button>
         </ButtonContainer>
       </form>

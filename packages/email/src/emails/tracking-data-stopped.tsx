@@ -25,41 +25,41 @@ export function TrackingDataStopped({
   const names = projectNames.join(', ');
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+      <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
       <Text>
         {single
-          ? `Your project ${names} stopped`
-          : `Your projects (${names}) stopped`}{' '}
-        sending events
+          ? `Проект ${names} перестал`
+          : `Проекты (${names}) перестали`}{' '}
+        отправлять события
         {lastEventDate
-          ? ` — the last one arrived on ${lastEventDate}`
-          : ' about a week ago'}
+          ? ` — последнее событие пришло ${lastEventDate}`
+          : ' около недели назад'}
         .
       </Text>
       <Text>
-        This usually isn't intentional: a deploy that dropped the tracking
-        snippet, a changed client ID, or a new domain that isn't in your allowed
-        origins. Worth a quick check so you don't end up with a gap in your
-        data.
+        Обычно это происходит не специально: при деплое потерялся скрипт
+        отслеживания, изменился client ID или появился новый домен, которого
+        нет в списке разрешённых источников. Стоит быстро проверить, чтобы не
+        образовался пробел в данных.
       </Text>
       <Text>
         <Button href={withUtm(dashboardUrl, 'tracking-data-stopped')}>
-          Check your project
+          Проверить проект
         </Button>
       </Text>
       <Text>
-        The{' '}
+        В{' '}
         <Link
           href={withUtm(
             'https://openpanel.dev/docs/get-started/install-openpanel',
             'tracking-data-stopped'
           )}
         >
-          install guide
+          руководстве по установке
         </Link>{' '}
-        covers a re-install for every framework. If it stopped on purpose — no
-        action needed, and sorry for the noise. Otherwise, reply and I'll help
-        you debug it.
+        есть инструкции по переустановке для каждого фреймворка. Если события
+        остановлены намеренно — ничего делать не нужно, извините за лишнее
+        письмо. Если нет — ответьте на письмо, помогу разобраться.
       </Text>
       <Text>Carl</Text>
     </Layout>
@@ -68,7 +68,7 @@ export function TrackingDataStopped({
 
 TrackingDataStopped.PreviewProps = {
   firstName: 'Alex',
-  projectNames: ['My website'],
-  lastEventDate: 'August 14',
+  projectNames: ['Мой сайт'],
+  lastEventDate: '14 августа',
   dashboardUrl: 'https://dashboard.openpanel.dev/org-id',
 };

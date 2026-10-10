@@ -122,7 +122,7 @@ export function WebhookIntegrationForm({
       onError(error) {
         // Handle validation errors from tRPC
         if (error.data?.code === 'BAD_REQUEST') {
-          const errorMessage = error.message || 'Invalid JavaScript template';
+          const errorMessage = error.message || 'Недопустимый JavaScript-шаблон';
           toast.error(errorMessage);
           // Set form error if it's a JavaScript template error
           if (errorMessage.includes('JavaScript template')) {
@@ -132,7 +132,7 @@ export function WebhookIntegrationForm({
             });
           }
         } else {
-          toast.error('Failed to create integration');
+          toast.error('Не удалось создать интеграцию');
         }
       },
     }),
@@ -143,7 +143,7 @@ export function WebhookIntegrationForm({
   };
 
   const handleError = () => {
-    toast.error('Validation error');
+    toast.error('Ошибка валидации');
   };
 
   return (
@@ -152,8 +152,8 @@ export function WebhookIntegrationForm({
       className="col gap-4"
     >
       <InputWithLabel
-        label="Name"
-        placeholder="Eg. Zapier webhook"
+        label="Название"
+        placeholder="Например, Zapier webhook"
         {...form.register('name')}
         error={form.formState.errors.name?.message}
       />
@@ -164,20 +164,20 @@ export function WebhookIntegrationForm({
       />
 
       <WithLabel
-        label="Headers"
-        info="Add custom HTTP headers to include with webhook requests"
+        label="Заголовки"
+        info="Добавьте кастомные HTTP-заголовки, которые будут отправляться с запросами вебхука"
       >
         <div className="col gap-2">
           {headersArray.fields.map((field, index) => (
             <div key={field.id} className="row gap-2">
               <Input
-                placeholder="Header Name"
+                placeholder="Имя заголовка"
                 {...headersForm.register(`headers.${index}.key`)}
                 className="flex-1"
               />
               <Input
                 placeholder={
-                  defaultValues?.id ? 'Unchanged' : 'Header Value'
+                  defaultValues?.id ? 'Без изменений' : 'Значение заголовка'
                 }
                 // Header values are never sent back to the browser, so an edit
                 // starts blank and blank means "keep the stored value".
@@ -202,7 +202,7 @@ export function WebhookIntegrationForm({
             className="self-start"
             icon={PlusIcon}
           >
-            Add Header
+            Добавить заголовок
           </Button>
         </div>
       </WithLabel>
@@ -212,16 +212,16 @@ export function WebhookIntegrationForm({
         name="config.mode"
         render={({ field }) => (
           <WithLabel
-            label="Payload Format"
-            info="Choose how to format the webhook payload"
+            label="Формат payload"
+            info="Выберите, как форматировать payload вебхука"
           >
             <Combobox
               {...field}
               className="w-full"
-              placeholder="Select format"
+              placeholder="Выберите формат"
               items={[
                 {
-                  label: 'Message',
+                  label: 'Сообщение',
                   value: 'message' as const,
                 },
                 {
@@ -242,33 +242,33 @@ export function WebhookIntegrationForm({
           name="config.javascriptTemplate"
           render={({ field }) => (
             <WithLabel
-              label="JavaScript Transform"
+              label="JavaScript-трансформация"
               info={
                 <div className="prose dark:prose-invert max-w-none">
                   <p>
-                    Write a JavaScript function that transforms the event
-                    payload. The function receives <code>payload</code> as a
-                    parameter and should return an object.
+                    Напишите JavaScript-функцию, которая преобразует payload
+                    события. Функция получает <code>payload</code> в качестве
+                    параметра и должна вернуть объект.
                   </p>
                   <p className="text-sm font-semibold mt-2">
-                    Available in payload:
+                    Доступно в payload:
                   </p>
                   <ul className="text-sm">
                     <li>
-                      <code>payload.name</code> - Event name
+                      <code>payload.name</code> — название события
                     </li>
                     <li>
-                      <code>payload.profileId</code> - User profile ID
+                      <code>payload.profileId</code> — ID профиля пользователя
                     </li>
                     <li>
-                      <code>payload.properties</code> - Full properties object
+                      <code>payload.properties</code> — весь объект свойств
                     </li>
                     <li>
-                      <code>payload.properties.your.property</code> - Nested
-                      property value
+                      <code>payload.properties.your.property</code> — значение
+                      вложенного свойства
                     </li>
                     <li>
-                      <code>payload.profile.firstName</code> - Profile property
+                      <code>payload.profile.firstName</code> — свойство профиля
                     </li>
                     <li>
                       <div className="flex gap-x-2 flex-wrap mt-1">
@@ -279,12 +279,12 @@ export function WebhookIntegrationForm({
                         <code>browser</code>
                         <code>path</code>
                         <code>createdAt</code>
-                        and more...
+                        и другие...
                       </div>
                     </li>
                   </ul>
                   <p className="text-sm font-semibold mt-2">
-                    Available helpers:
+                    Доступные хелперы:
                   </p>
                   <ul className="text-sm">
                     <li>
@@ -294,7 +294,7 @@ export function WebhookIntegrationForm({
                     </li>
                   </ul>
                   <p className="text-sm mt-2">
-                    <strong>Example:</strong>
+                    <strong>Пример:</strong>
                   </p>
                   <pre className="text-xs bg-muted p-2 rounded mt-1 overflow-x-auto">
                     {`(payload) => ({
@@ -306,8 +306,8 @@ export function WebhookIntegrationForm({
 })`}
                   </pre>
                   <p className="text-sm mt-2 text-yellow-600 dark:text-yellow-400">
-                    <strong>Security:</strong> Network calls, file system
-                    access, and other dangerous operations are blocked.
+                    <strong>Безопасность:</strong> Сетевые вызовы, доступ к файловой
+                    системе и другие опасные операции заблокированы.
                   </p>
                 </div>
               }
@@ -335,7 +335,7 @@ export function WebhookIntegrationForm({
         />
       )}
 
-      <Button type="submit">{defaultValues?.id ? 'Update' : 'Create'}</Button>
+      <Button type="submit">{defaultValues?.id ? 'Обновить' : 'Создать'}</Button>
     </form>
   );
 }

@@ -38,43 +38,43 @@ const PREV_LINE_COLOR = 'oklch(from var(--foreground) l c h / 0.4)';
 
 const TITLES = [
   {
-    title: 'Unique Visitors',
+    title: 'Уникальные посетители',
     key: 'unique_visitors',
     unit: '',
     inverted: false,
   },
   {
-    title: 'Sessions',
+    title: 'Сессии',
     key: 'total_sessions',
     unit: '',
     inverted: false,
   },
   {
-    title: 'Pageviews',
+    title: 'Просмотры',
     key: 'total_screen_views',
     unit: '',
     inverted: false,
   },
   {
-    title: 'Pages per session',
+    title: 'Страниц за сессию',
     key: 'views_per_session',
     unit: '',
     inverted: false,
   },
   {
-    title: 'Bounce Rate',
+    title: 'Показатель отказов',
     key: 'bounce_rate',
     unit: '%',
     inverted: true,
   },
   {
-    title: 'Session Duration',
+    title: 'Длительность сессии',
     key: 'avg_session_duration',
     unit: 'min',
     inverted: false,
   },
   {
-    title: 'Revenue',
+    title: 'Доход',
     key: 'total_revenue',
     unit: 'currency',
     inverted: false,
@@ -154,11 +154,11 @@ export default function OverviewMetrics({
                   : 'border-border text-muted-foreground hover:bg-def-100'
               )}
               onClick={() => setMockRevenue((p) => !p)}
-              title="Toggle mock revenue (dev only)"
+              title="Тестовые данные дохода (только для разработки)"
               type="button"
             >
               <DollarSignIcon className="size-3" />
-              {mockRevenue ? 'Mock revenue on' : 'Mock revenue'}
+              {mockRevenue ? 'Тестовый доход: вкл.' : 'Тестовый доход'}
             </button>
           )}
         </div>
@@ -415,7 +415,7 @@ function Chart({
             if (revenue > 0) {
               rows.push({
                 color: REVENUE_COLOR,
-                label: 'Revenue',
+                label: 'Доход',
                 value: revenue,
                 previous: prevRevenue > 0 ? prevRevenue : undefined,
                 inverted: false,

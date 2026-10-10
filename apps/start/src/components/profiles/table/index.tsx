@@ -96,8 +96,8 @@ export const ProfilesTable = memo(
         <ProfileTableToolbar table={table} />
         <DataTable
           empty={{
-            title: 'No profiles',
-            description: "Looks like you haven't identified any profiles yet.",
+            title: 'Нет профилей',
+            description: 'Похоже, вы ещё не идентифицировали ни одного профиля.',
           }}
           loading={isLoading}
           onRowClick={handleRowClick}
@@ -117,13 +117,13 @@ function ProfileTableToolbar({ table }: { table: Table<IServiceProfile> }) {
       <div className="flex flex-1 flex-wrap items-center gap-2">
         <AnimatedSearchInput
           onChange={setSearch}
-          placeholder="Search profiles"
+          placeholder="Поиск профилей"
           value={search}
         />
         <TableFilterPills
           urlKey="f"
           categories={['profile', 'group', 'cohort']}
-          title="Profile filters"
+          title="Фильтры профилей"
         />
       </div>
       <DataTableViewOptions table={table} />

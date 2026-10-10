@@ -19,7 +19,7 @@ export const zWindDownStoppingSoon = z.object({
 });
 
 const formatEvents = (count: number) =>
-  new Intl.NumberFormat('en-US').format(count);
+  new Intl.NumberFormat('ru-RU').format(count);
 
 export type Props = z.infer<typeof zWindDownStoppingSoon>;
 export default WindDownStoppingSoon;
@@ -35,11 +35,11 @@ export function WindDownStoppingSoon({
   highlight,
   unsubscribeUrl,
 }: Props & { unsubscribeUrl?: string }) {
-  const greeting = <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>;
+  const greeting = <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>;
   const cta = (
     <Text>
       <Button href={withUtm(billingUrl, 'wind-down-stopping-soon')}>
-        Keep tracking
+        Продолжить отслеживание
       </Button>
     </Text>
   );
@@ -49,28 +49,28 @@ export function WindDownStoppingSoon({
       <Layout unsubscribeUrl={unsubscribeUrl}>
         {greeting}
         <Text>
-          One week left: on {blockDate} we stop recording events from your
-          projects.
+          Осталась неделя: {blockDate} мы прекратим запись событий из Ваших
+          проектов.
         </Text>
         <Text>
           {recentEventsCount
-            ? `You're sending roughly ${formatEvents(recentEventsCount)} events a month right now. `
-            : "You're still sending events. "}
-          All of that stops being recorded on {blockDate} — the requests will
-          still go out, they just won't land anywhere. Whatever you'd want to
-          look back on later starts missing from that date.
+            ? `Сейчас Вы отправляете около ${formatEvents(recentEventsCount)} событий в месяц. `
+            : 'Вы всё ещё отправляете события. '}
+          Всё это перестанет записываться {blockDate} — запросы будут уходить,
+          но не попадут никуда. Всё, что Вы захотите посмотреть потом, с этой
+          даты будет отсутствовать.
         </Text>
         {highlight ? <Text>{highlight}</Text> : null}
         <Text>
           {recommendedPlan
-            ? `Keeping it running costs ${recommendedPlan}.`
-            : 'Plans start at $2.50 a month.'}{' '}
-          Nothing about your setup changes — no redeploy, no new keys.
+            ? `Продолжение работы стоит ${recommendedPlan}.`
+            : 'Тарифы начинаются с $2.50 в месяц.'}{' '}
+          В Вашей настройке ничего не меняется — ни передеплой, ни новые ключи.
         </Text>
         {cta}
         <Text>
-          Need longer, or want to talk through which plan fits? Reply and I'll
-          sort it out.
+          Нужно больше времени или хотите обсудить, какой тариф подойдёт?
+          Ответьте на письмо — всё устрою.
         </Text>
         <Text>Carl</Text>
       </Layout>
@@ -82,14 +82,15 @@ export function WindDownStoppingSoon({
       <Layout unsubscribeUrl={unsubscribeUrl}>
         {greeting}
         <Text>
-          A heads-up with a date on it: on {blockDate} we stop accepting events
-          from your projects, and the workspace starts winding down.
+          Напоминание с конкретной датой: {blockDate} мы перестанем принимать
+          события из Ваших проектов, и рабочее пространство начнёт
+          сворачиваться.
         </Text>
         <Text>
-          Everything already collected stays put for now
-          {eventsCount ? `, all ${formatEvents(eventsCount)} events of it` : ''}
-          . If you want to keep it, a plan before {blockDate} keeps everything
-          exactly as it is.
+          Всё, что уже собрано, пока остаётся на месте
+          {eventsCount ? ` — событий всего: ${formatEvents(eventsCount)}` : ''}
+          . Если хотите сохранить данные, тариф до {blockDate} оставит всё в
+          точности как есть.
         </Text>
         {cta}
         <Text>Carl</Text>
@@ -101,12 +102,13 @@ export function WindDownStoppingSoon({
     <Layout unsubscribeUrl={unsubscribeUrl}>
       {greeting}
       <Text>
-        Quick follow-up: your trial ended a couple of weeks ago and the
-        workspace is still empty, so I'll be closing it on {blockDate}.
+        Короткое напоминание: пробный период закончился пару недель назад, а
+        рабочее пространство всё ещё пустое, поэтому {blockDate} я его закрою.
       </Text>
       <Text>
-        If you'd rather keep it, picking a plan stops the clock. Otherwise you
-        can ignore this — I'll send one more note before anything goes.
+        Если хотите его сохранить, оформление тарифа остановит процесс. Иначе
+        можете просто проигнорировать это письмо — перед удалением я напишу
+        ещё раз.
       </Text>
       {cta}
       <Text>Carl</Text>
@@ -117,13 +119,13 @@ export function WindDownStoppingSoon({
 WindDownStoppingSoon.PreviewProps = {
   firstName: 'Alex',
   billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
-  blockDate: 'March 14',
-  recommendedPlan: '100K events per month for $20.00',
+  blockDate: '14 марта',
+  recommendedPlan: '100 000 событий в месяц за $20.00',
   hasData: true,
   stillTracking: true,
   eventsCount: 842_110,
   recentEventsCount: 128_400,
   projectNames: ['acme-web'],
   highlight:
-    'acme-web had 12,400 visitors in the last 30 days, peaking at 840 on November 12 — and /pricing was the page they visited most.',
+    'acme-web получил 12 400 посетителей за последние 30 дней с пиком 840 12 ноября — а /pricing стала самой посещаемой страницей.',
 };

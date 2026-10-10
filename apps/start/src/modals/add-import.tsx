@@ -86,10 +86,10 @@ function UmamiImport({
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-4 py-4">
         <InputWithLabel
-          label="File URL"
+          label="URL файла"
           placeholder="https://example.com/export.csv"
           error={form.formState.errors.fileUrl?.message}
-          info="Provide a publicly accessible URL to your exported CSV file."
+          info="Укажите публично доступный URL к вашему экспортированному CSV-файлу."
           {...form.register('fileUrl')}
         />
 
@@ -106,10 +106,10 @@ function UmamiImport({
 
       <div className="flex justify-between">
         <Button type="button" variant="outline" onClick={() => popModal()}>
-          Cancel
+          Отмена
         </Button>
         <Button type="submit" disabled={isPending}>
-          {isPending ? 'Starting...' : 'Start Import'}
+          {isPending ? 'Запуск...' : 'Начать импорт'}
         </Button>
       </div>
     </form>
@@ -166,32 +166,32 @@ function MixpanelImport({
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-4 py-4">
         <InputWithLabel
-          label="Service Account"
-          placeholder="Eg. xxx.xxx.mp-service-account"
+          label="Сервисный аккаунт"
+          placeholder="Например: xxx.xxx.mp-service-account"
           error={form.formState.errors.serviceAccount?.message}
           {...form.register('serviceAccount')}
         />
 
         <InputWithLabel
-          label="Service Secret"
+          label="Секретный ключ"
           type="password"
-          placeholder="Your Mixpanel service secret"
+          placeholder="Ваш сервисный секрет Mixpanel"
           error={form.formState.errors.serviceSecret?.message}
           {...form.register('serviceSecret')}
         />
 
         <InputWithLabel
-          label="Project ID"
-          placeholder="Your Mixpanel project ID"
+          label="ID проекта"
+          placeholder="ID вашего проекта в Mixpanel"
           error={form.formState.errors.projectId?.message}
           {...form.register('projectId')}
         />
 
         <WithLabel
-          label="Date Range"
+          label="Период"
           info={
             !form.getValues('from') || !form.getValues('to')
-              ? 'Select the date range for importing data'
+              ? 'Выберите период для импорта данных'
               : undefined
           }
         >
@@ -212,20 +212,20 @@ function MixpanelImport({
                 {format(new Date(form.getValues('to')), 'LLL dd, y')}
               </>
             ) : (
-              <span>Pick a date range</span>
+              <span>Выберите период</span>
             )}
           </Button>
         </WithLabel>
 
         <InputWithLabel
-          label="Screen View Property"
-          placeholder="Enter the name of the property that contains the screen name"
-          info="Leave empty if not applicable"
+          label="Свойство Screen View"
+          placeholder="Введите имя свойства, содержащего название экрана"
+          info="Оставьте пустым, если не применимо"
           error={form.formState.errors.mapScreenViewProperty?.message}
           {...form.register('mapScreenViewProperty')}
         />
 
-        <WithLabel label="Data Residency" info="Select the Mixpanel data center your project uses">
+        <WithLabel label="Регион хранения данных" info="Выберите дата-центр Mixpanel, который использует ваш проект">
           <Select
             value={form.watch('dataResidency') ?? 'us'}
             onValueChange={(value) =>
@@ -233,12 +233,12 @@ function MixpanelImport({
             }
           >
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="US (default)" />
+              <SelectValue placeholder="США (по умолчанию)" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="us">US (default)</SelectItem>
-              <SelectItem value="eu">EU</SelectItem>
-              <SelectItem value="in">India</SelectItem>
+              <SelectItem value="us">США (по умолчанию)</SelectItem>
+              <SelectItem value="eu">ЕС</SelectItem>
+              <SelectItem value="in">Индия</SelectItem>
             </SelectContent>
           </Select>
         </WithLabel>
@@ -246,10 +246,10 @@ function MixpanelImport({
 
       <div className="flex justify-between">
         <Button type="button" variant="outline" onClick={() => popModal()}>
-          Cancel
+          Отмена
         </Button>
         <Button type="submit" disabled={isPending}>
-          {isPending ? 'Starting...' : 'Start Import'}
+          {isPending ? 'Запуск...' : 'Начать импорт'}
         </Button>
       </div>
     </form>
@@ -300,26 +300,26 @@ function AmplitudeImport({ onSubmit, isPending }: AmplitudeImportProps) {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-4 py-4">
         <InputWithLabel
-          label="API Key"
-          placeholder="Your Amplitude API key"
+          label="API-ключ"
+          placeholder="Ваш API-ключ Amplitude"
           error={form.formState.errors.apiKey?.message}
-          info="Settings → Projects → General in Amplitude."
+          info="Находится в Amplitude: Settings → Projects → General."
           {...form.register('apiKey')}
         />
 
         <InputWithLabel
-          label="Secret Key"
+          label="Секретный ключ"
           type="password"
-          placeholder="Your Amplitude secret key"
+          placeholder="Ваш секретный ключ Amplitude"
           error={form.formState.errors.secretKey?.message}
           {...form.register('secretKey')}
         />
 
         <WithLabel
-          label="Date Range"
+          label="Период"
           info={
             !form.getValues('from') || !form.getValues('to')
-              ? 'Select the date range for importing data'
+              ? 'Выберите период для импорта данных'
               : undefined
           }
         >
@@ -340,22 +340,22 @@ function AmplitudeImport({ onSubmit, isPending }: AmplitudeImportProps) {
                 {format(new Date(form.getValues('to')), 'LLL dd, y')}
               </>
             ) : (
-              <span>Pick a date range</span>
+              <span>Выберите период</span>
             )}
           </Button>
         </WithLabel>
 
         <InputWithLabel
-          label="Screen View Property"
-          placeholder="Enter the name of the property that contains the screen name"
-          info="Leave empty if not applicable"
+          label="Свойство Screen View"
+          placeholder="Введите имя свойства, содержащего название экрана"
+          info="Оставьте пустым, если не применимо"
           error={form.formState.errors.mapScreenViewProperty?.message}
           {...form.register('mapScreenViewProperty')}
         />
 
         <WithLabel
-          label="Data Residency"
-          info="Select the Amplitude data region your project uses"
+          label="Регион хранения данных"
+          info="Выберите регион данных Amplitude, который использует ваш проект"
         >
           <Select
             value={form.watch('dataResidency') ?? 'us'}
@@ -364,11 +364,11 @@ function AmplitudeImport({ onSubmit, isPending }: AmplitudeImportProps) {
             }
           >
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="US (default)" />
+              <SelectValue placeholder="США (по умолчанию)" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="us">US (default)</SelectItem>
-              <SelectItem value="eu">EU</SelectItem>
+              <SelectItem value="us">США (по умолчанию)</SelectItem>
+              <SelectItem value="eu">ЕС</SelectItem>
             </SelectContent>
           </Select>
         </WithLabel>
@@ -376,10 +376,10 @@ function AmplitudeImport({ onSubmit, isPending }: AmplitudeImportProps) {
 
       <div className="flex justify-between">
         <Button type="button" variant="outline" onClick={() => popModal()}>
-          Cancel
+          Отмена
         </Button>
         <Button type="submit" disabled={isPending}>
-          {isPending ? 'Starting...' : 'Start Import'}
+          {isPending ? 'Запуск...' : 'Начать импорт'}
         </Button>
       </div>
     </form>
@@ -394,14 +394,14 @@ export default function AddImport({ provider, name }: AddImportProps) {
   const createImport = useMutation(
     trpc.import.create.mutationOptions({
       onSuccess() {
-        toast.success('Import started', {
-          description: 'Your data import has been queued for processing.',
+        toast.success('Импорт запущен', {
+          description: 'Импорт ваших данных поставлен в очередь на обработку.',
         });
         popModal();
         queryClient.invalidateQueries(trpc.import.list.pathFilter());
       },
       onError: (error) => {
-        toast.error('Import failed', {
+        toast.error('Ошибка импорта', {
           description: error.message,
         });
       },
@@ -418,7 +418,7 @@ export default function AddImport({ provider, name }: AddImportProps) {
 
   return (
     <ModalContent>
-      <ModalHeader title={`Import from ${name}`} />
+      <ModalHeader title={`Импорт из ${name}`} />
 
       {provider === 'umami' && (
         <UmamiImport

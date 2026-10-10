@@ -36,7 +36,7 @@ export function VerifyFaq({
             projectId: project.id,
           })
         );
-        toast.success('Allowed domains updated');
+        toast.success('Разрешённые домены обновлены');
       },
     })
   );
@@ -99,21 +99,21 @@ export function VerifyFaq({
       <Accordion collapsible type="single">
         <AccordionItem value="item-1">
           <AccordionTrigger className="px-6">
-            No events received?
+            События не приходят?
           </AccordionTrigger>
           <AccordionContent className="col gap-4 p-6 pt-2">
             <p>
-              Don't worry, this happens to everyone. Here are a few things you
-              can check:
+              Не волнуйтесь, это случается со всеми. Вот что можно проверить:
             </p>
             <div className="col gap-2">
               <Alert>
                 <UserIcon size={16} />
-                <AlertTitle>Ensure client ID is correct</AlertTitle>
+                <AlertTitle>Убедитесь, что Client ID верный</AlertTitle>
                 <AlertDescription className="col gap-2">
                   <span>
-                    For web tracking, the <code>clientId</code> in your snippet
-                    must match this project. Copy it here if needed:
+                    Для веб-отслеживания <code>clientId</code> в Вашем сниппете
+                    должен соответствовать этому проекту. При необходимости
+                    скопируйте его здесь:
                   </span>
                   <CopyInput
                     className="[&_.font-mono]:text-sm"
@@ -124,19 +124,19 @@ export function VerifyFaq({
               </Alert>
               <Alert>
                 <GlobeIcon size={16} />
-                <AlertTitle>Correct domain configured</AlertTitle>
+                <AlertTitle>Правильно настроен домен</AlertTitle>
                 <AlertDescription className="col gap-2">
                   <span>
-                    For websites it&apos;s important that the domain is
-                    correctly configured. We authenticate requests based on the
-                    domain. Update allowed domains below:
+                    Для сайтов важно, чтобы домен был настроен правильно. Мы
+                    аутентифицируем запросы по домену. Обновите разрешённые
+                    домены ниже:
                   </span>
-                  <WithLabel label="Allowed domains">
+                  <WithLabel label="Разрешённые домены">
                     <TagInput
                       onChange={handleCorsChange}
-                      placeholder="Accept events from these domains"
+                      placeholder="Принимать события с этих доменов"
                       renderTag={(tag: string) =>
-                        tag === '*' ? 'Accept events from any domains' : tag
+                        tag === '*' ? 'Принимать события с любых доменов' : tag
                       }
                       value={project.cors ?? []}
                     />
@@ -145,13 +145,13 @@ export function VerifyFaq({
               </Alert>
               <Alert>
                 <KeyIcon size={16} />
-                <AlertTitle>Wrong client secret</AlertTitle>
+                <AlertTitle>Неверный client secret</AlertTitle>
                 <AlertDescription className="col gap-2">
                   <span>
-                    For app and backend events you need the correct{' '}
-                    <code>clientSecret</code>. Copy it here if needed. Never use
-                    the client secret in web or client-side code—it would expose
-                    your credentials.
+                    Для событий из приложений и бэкенда нужен правильный{' '}
+                    <code>clientSecret</code>. При необходимости скопируйте его
+                    здесь. Никогда не используйте client secret в веб- или
+                    клиентском коде — это раскроет Ваши учётные данные.
                   </span>
                   {showSecret && (
                     <CopyInput
@@ -164,21 +164,21 @@ export function VerifyFaq({
               </Alert>
             </div>
             <p>
-              Still have issues? Join our{' '}
+              Остались проблемы? Заходите в наш{' '}
               <a className="underline" href="https://go.openpanel.dev/discord">
-                discord channel
+                Discord-канал
               </a>{' '}
-              give us an email at{' '}
+              или напишите на{' '}
               <a className="underline" href="mailto:hello@openpanel.dev">
                 hello@openpanel.dev
               </a>{' '}
-              and we&apos;ll help you out.
+              — мы поможем.
             </p>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
           <AccordionTrigger className="px-6">
-            Personal curl example
+            Персональный пример curl
           </AccordionTrigger>
           <AccordionContent className="p-0">
             <Syntax code={code} language="bash" />

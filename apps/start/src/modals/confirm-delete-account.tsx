@@ -18,7 +18,7 @@ export default function ConfirmDeleteAccount() {
     trpc.user.delete.mutationOptions({
       onError: handleError,
       onSuccess: () => {
-        toast.success('Your account has been deleted');
+        toast.success('Ваш аккаунт удалён');
         // The session is now gone server-side; send the user back to the start.
         window.location.href = '/';
       },
@@ -30,12 +30,13 @@ export default function ConfirmDeleteAccount() {
   return (
     <ModalContent>
       <ModalHeader
-        title="Delete account"
-        text="Your account and all of your personal data will be permanently deleted. Organizations you created that have no other admin will also be removed, along with their projects and events. This cannot be undone."
+        title="Удаление аккаунта"
+        text="Ваш аккаунт и все персональные данные будут безвозвратно удалены. Организации, которые Вы создали и в которых нет других администраторов, также будут удалены вместе с их проектами и событиями. Это действие нельзя отменить."
       />
       <div className="col gap-2">
         <label className="text-sm font-medium" htmlFor="confirm-delete-account">
-          Type <span className="font-bold">{CONFIRMATION}</span> to confirm
+          Введите <span className="font-bold">{CONFIRMATION}</span> для
+          подтверждения
         </label>
         <Input
           autoComplete="off"
@@ -48,7 +49,7 @@ export default function ConfirmDeleteAccount() {
       </div>
       <DialogFooter>
         <Button onClick={() => popModal()} variant="secondary">
-          Cancel
+          Отмена
         </Button>
         <Button
           disabled={!canDelete}
@@ -56,7 +57,7 @@ export default function ConfirmDeleteAccount() {
           onClick={() => mutation.mutate()}
           variant="destructive"
         >
-          Delete account
+          Удалить аккаунт
         </Button>
       </DialogFooter>
     </ModalContent>

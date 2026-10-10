@@ -40,7 +40,7 @@ function Tooltip(props: any) {
           style={{ background: getChartColor(0) }}
         />
         <div className="col gap-1">
-          <div className="text-muted-foreground text-sm">Events</div>
+          <div className="text-muted-foreground text-sm">События</div>
           <div
             className="font-semibold text-lg"
             style={{ color: getChartColor(0) }}
@@ -71,13 +71,13 @@ export function CohortEventsChart({ data }: Props) {
     <Widget className="w-full">
       <WidgetHead>
         <WidgetTitle icon={ActivityIcon}>
-          Events last 30 days ({total.toLocaleString()})
+          События за 30 дней ({total.toLocaleString()})
         </WidgetTitle>
       </WidgetHead>
       <WidgetBody>
         {total === 0 ? (
           <p className="py-4 text-center text-muted-foreground text-sm">
-            No events yet
+            Событий пока нет
           </p>
         ) : (
           <div className="h-[200px] w-full">

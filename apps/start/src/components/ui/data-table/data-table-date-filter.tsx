@@ -129,7 +129,7 @@ export function DataTableDateFilter<TData>({
       const hasSelectedDates = selectedDates.from || selectedDates.to;
       const dateText = hasSelectedDates
         ? formatDateRange(selectedDates)
-        : 'Select date range';
+        : 'Выберите период';
 
       return (
         <span className="flex items-center gap-2">
@@ -152,7 +152,7 @@ export function DataTableDateFilter<TData>({
     const hasSelectedDate = selectedDates.length > 0;
     const dateText = hasSelectedDate
       ? formatDate(selectedDates[0])
-      : 'Select date';
+      : 'Выберите дату';
 
     return (
       <span className="flex items-center gap-2">
@@ -178,7 +178,7 @@ export function DataTableDateFilter<TData>({
             <div
               onKeyDown={onReset}
               role="button"
-              aria-label={`Clear ${title} filter`}
+              aria-label={`Очистить фильтр: ${title}`}
               tabIndex={0}
               onClick={onReset}
               className="rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"

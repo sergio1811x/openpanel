@@ -77,9 +77,9 @@ export const GroupsTable = memo(
         <GroupsTableToolbar table={table} toolbarLeft={toolbarLeft} />
         <DataTable
           empty={{
-            title: 'No groups found',
+            title: 'Группы не найдены',
             description:
-              'Groups represent companies, teams, or other entities that events belong to.',
+              'Группы представляют компании, команды или другие сущности, к которым относятся события.',
           }}
           loading={isLoading}
           table={table}
@@ -104,7 +104,7 @@ function GroupsTableToolbar({
         {toolbarLeft}
         <AnimatedSearchInput
           onChange={setSearch}
-          placeholder="Search groups..."
+          placeholder="Поиск групп..."
           value={search}
         />
       </div>

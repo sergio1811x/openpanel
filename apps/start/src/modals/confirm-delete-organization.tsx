@@ -25,7 +25,7 @@ export default function ConfirmDeleteOrganization({
     trpc.organization.delete.mutationOptions({
       onError: handleError,
       onSuccess: () => {
-        toast.success('Organization scheduled for deletion');
+        toast.success('Организация поставлена в очередь на удаление');
         queryClient.invalidateQueries(
           trpc.organization.get.queryFilter({ organizationId }),
         );
@@ -39,12 +39,13 @@ export default function ConfirmDeleteOrganization({
   return (
     <ModalContent>
       <ModalHeader
-        title="Delete organization"
-        text={`${organizationName} and all of its projects and events will be permanently deleted after 24 hours. You can cancel before then.`}
+        title="Удаление организации"
+        text={`${organizationName} и все её проекты и события будут безвозвратно удалены через 24 часа. До этого момента удаление можно отменить.`}
       />
       <div className="col gap-2">
         <label className="text-sm font-medium" htmlFor="confirm-org-name">
-          Type <span className="font-bold">{organizationName}</span> to confirm
+          Введите <span className="font-bold">{organizationName}</span> для
+          подтверждения
         </label>
         <Input
           autoComplete="off"
@@ -57,7 +58,7 @@ export default function ConfirmDeleteOrganization({
       </div>
       <DialogFooter>
         <Button onClick={() => popModal()} variant="secondary">
-          Cancel
+          Отмена
         </Button>
         <Button
           disabled={!canDelete}
@@ -65,7 +66,7 @@ export default function ConfirmDeleteOrganization({
           onClick={() => mutation.mutate({ organizationId })}
           variant="destructive"
         >
-          Delete organization
+          Удалить организацию
         </Button>
       </DialogFooter>
     </ModalContent>

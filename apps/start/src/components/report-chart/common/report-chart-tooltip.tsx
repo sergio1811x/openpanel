@@ -124,7 +124,7 @@ export const ReportChartTooltip = createChartTooltip<Data, Context>(
         ))}
         {hidden.length > 0 && (
           <div className="text-muted-foreground">
-            and {hidden.length} more...
+            ещё {hidden.length}...
           </div>
         )}
         {matchingReferences.length > 0 && (

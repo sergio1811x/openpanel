@@ -25,15 +25,15 @@ export function ApplyFiltersResult({ part }: ToolResultProps) {
   };
   const parts: string[] = [];
   if (input.startDate && input.endDate) {
-    parts.push(`date range: ${input.startDate} → ${input.endDate}`);
+    parts.push(`период: ${input.startDate} → ${input.endDate}`);
   } else if (input.range) {
-    parts.push(`date range: ${formatRange(input.range)}`);
+    parts.push(`период: ${formatRange(input.range)}`);
   }
   if (input.interval) {
-    parts.push(`interval: ${input.interval}`);
+    parts.push(`интервал: ${input.interval}`);
   }
-  const summary = parts.length > 0 ? parts.join(' · ') : 'filters';
-  return <AppliedChip>Applied {summary}</AppliedChip>;
+  const summary = parts.length > 0 ? parts.join(' · ') : 'фильтры';
+  return <AppliedChip>Применено: {summary}</AppliedChip>;
 }
 
 export function SetPropertyFiltersResult({ part }: ToolResultProps) {
@@ -46,7 +46,7 @@ export function SetPropertyFiltersResult({ part }: ToolResultProps) {
   };
   const filters = Array.isArray(input.filters) ? input.filters : [];
   if (filters.length === 0) {
-    return <AppliedChip>Cleared property filters</AppliedChip>;
+    return <AppliedChip>Сброшены фильтры свойств</AppliedChip>;
   }
   const summary = filters
     .map((f) => {
@@ -55,18 +55,18 @@ export function SetPropertyFiltersResult({ part }: ToolResultProps) {
       return `${f.name}${op}${value ? ` = ${value}` : ''}`;
     })
     .join(' · ');
-  return <AppliedChip>Applied filters: {summary}</AppliedChip>;
+  return <AppliedChip>Применены фильтры: {summary}</AppliedChip>;
 }
 
 export function SetEventNamesFilterResult({ part }: ToolResultProps) {
   const input = (part.input ?? {}) as { eventNames?: string[] };
   const names = Array.isArray(input.eventNames) ? input.eventNames : [];
   if (names.length === 0) {
-    return <AppliedChip>Cleared event-name filter</AppliedChip>;
+    return <AppliedChip>Сброшен фильтр событий</AppliedChip>;
   }
   return (
     <AppliedChip>
-      Filtered to {names.length === 1 ? 'event' : 'events'}: {names.join(', ')}
+      Фильтр по {names.length === 1 ? 'событию' : 'событиям'}: {names.join(', ')}
     </AppliedChip>
   );
 }

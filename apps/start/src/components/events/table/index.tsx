@@ -195,8 +195,8 @@ const VirtualizedEventsTable = ({
 
       {!isLoading && data.length === 0 && (
         <FullPageEmptyState
-          description={"Start sending events and you'll see them here"}
-          title="No events"
+          description="Начните отправлять события, и они появятся здесь"
+          title="Нет событий"
         />
       )}
 
@@ -364,8 +364,8 @@ function EventsTableToolbar({
           variant="outline"
         >
           {startDate && endDate
-            ? `${format(startDate, 'MMM d')} - ${format(endDate, 'MMM d')}`
-            : 'Date range'}
+            ? `${format(startDate, 'd MMM')} - ${format(endDate, 'd MMM')}`
+            : 'Период'}
         </Button>
         <OverviewFilterButton enableEventsFilter />
         <OverviewFiltersButtons className="justify-end p-0" />

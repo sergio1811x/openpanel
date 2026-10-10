@@ -39,12 +39,12 @@ function Svg({ className }: { className?: string }) {
 export function CtaBanner({
   title = (
     <>
-      Ready to understand your users better?
+      Готовы лучше понимать своих пользователей?
       <br />
-      Start tracking in minutes
+      Начните отслеживание за считанные минуты
     </>
   ),
-  description = 'Join thousands of companies using OpenPanel. Free 30-day trial, no credit card required. Self-host for free or use our cloud.',
+  description = 'Присоединяйтесь к тысячам компаний, которые используют OpenPanel. 30 дней бесплатно, без кредитной карты. Бесплатный self-hosting или наш облачный сервис.',
   ctaText,
   ctaLink,
 }: {

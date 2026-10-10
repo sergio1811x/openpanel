@@ -1,139 +1,139 @@
 {
   "slug": "event-tracking",
-  "short_name": "Event tracking",
+  "short_name": "Отслеживание событий",
   "seo": {
-    "title": "Event Tracking - The Foundation of Product Analytics",
-    "description": "Track product events without Google Analytics. Simple, privacy-first event tracking that powers funnels, retention, and user profiles. Get started in minutes.",
+    "title": "Отслеживание событий — основа продуктовой аналитики",
+    "description": "Отслеживайте продуктовые события без Google Analytics. Простое отслеживание событий с приоритетом приватности, на котором строятся воронки, удержание и профили пользователей. Старт за минуты.",
     "keywords": [
-      "event tracking software",
-      "product event tracking",
-      "custom event tracking"
+      "софт для отслеживания событий",
+      "отслеживание продуктовых событий",
+      "отслеживание кастомных событий"
     ]
   },
   "hero": {
-    "heading": "Simple events tracking",
-    "subheading": "Track clicks, views, and conversions with a simple API. No cookies, no bloat - just the events you need to understand how users behave.",
+    "heading": "Простое отслеживание событий",
+    "subheading": "Отслеживайте клики, просмотры и конверсии через простой API. Без cookies и лишнего веса — только события, которые нужны, чтобы понять поведение пользователей.",
     "badges": [
-      "Track any user action",
-      "Custom properties",
-      "Real-time ingestion",
-      "One API for all reports"
+      "Отслеживание любых действий",
+      "Кастомные свойства",
+      "Приём в реальном времени",
+      "Один API для всех отчётов"
     ]
   },
   "definition": {
-    "title": "What is event tracking?",
-    "text": "Event tracking is the foundation of product analytics. Instead of relying on page-view counts or session timers, you capture discrete actions-clicks, page views, signups, purchases-as structured events with properties.\n\nEvery interaction becomes a data point you can query, filter, and visualize. That's how you answer questions like:\n\n- **How many users completed onboarding this week?**\n- **Which features do paying customers use most?**\n- **Where in the signup flow do users drop off?**\n\nTraditional analytics tools (like Google Analytics) are built around sessions and page views. That works for marketing, but it falls short when you need to understand **product behavior**: what users do *inside* your app, how they progress through flows, and what correlates with retention.\n\nOpenPanel takes a different approach. You send events from your app or website using a lightweight SDK or API. Each event has a name (e.g. `signup_completed`, `feature_used`) and optional properties (e.g. `plan: pro`, `source: google`). OpenPanel stores these events and lets you build **funnels**, **retention charts**, and **user profiles** on top of them-without the complexity of enterprise analytics tools.\n\nBecause OpenPanel is **privacy-first**, you can run it without cookies and without sending personal data to third parties. Self-host it or use our cloud-your data stays yours."
+    "title": "Что такое отслеживание событий?",
+    "text": "Отслеживание событий — фундамент продуктовой аналитики. Вместо подсчёта просмотров страниц и таймеров сессий вы фиксируете дискретные действия — клики, просмотры страниц, регистрации, покупки — как структурированные события со свойствами.\n\nКаждое взаимодействие становится точкой данных, которую можно запрашивать, фильтровать и визуализировать. Именно так вы отвечаете на вопросы вроде:\n\n- **Сколько пользователей прошли онбординг на этой неделе?**\n- **Какими функциями чаще всего пользуются платящие клиенты?**\n- **На каком шаге регистрации пользователи отсеиваются?**\n\nТрадиционные инструменты аналитики (вроде Google Analytics) построены вокруг сессий и просмотров страниц. Для маркетинга это подходит, но когда нужно понять **поведение в продукте** — что пользователи делают *внутри* приложения, как они проходят потоки и что коррелирует с удержанием, — этого недостаточно.\n\nOpenPanel работает иначе. Вы отправляете события из приложения или сайта через лёгкий SDK или API. У каждого события есть имя (например, `signup_completed`, `feature_used`) и опциональные свойства (например, `plan: pro`, `source: google`). OpenPanel хранит эти события и позволяет строить поверх них **воронки**, **графики удержания** и **профили пользователей** — без сложности enterprise-инструментов.\n\nПоскольку OpenPanel создана с **приоритетом приватности**, вы можете работать без cookies и без передачи персональных данных третьим сторонам. Разверните у себя или используйте наше облако — данные остаются вашими."
   },
   "capabilities_section": {
-    "title": "What you can track",
-    "intro": "From basic page views to custom conversion events, you get full visibility into user actions."
+    "title": "Что можно отслеживать",
+    "intro": "От базовых просмотров страниц до кастомных событий конверсии — полный контроль над действиями пользователей."
   },
   "capabilities": [
     {
-      "title": "Page views and screen views",
-      "description": "Track which pages or screens users visit, with automatic properties like URL, referrer, and device."
+      "title": "Просмотры страниц и экранов",
+      "description": "Отслеживайте, какие страницы или экраны посещают пользователи, с автоматическими свойствами: URL, реферер, устройство."
     },
     {
-      "title": "Clicks and interactions",
-      "description": "Capture button clicks, form submissions, and any custom interactions with a single line of code."
+      "title": "Клики и взаимодействия",
+      "description": "Фиксируйте клики по кнопкам, отправку форм и любые кастомные взаимодействия одной строкой кода."
     },
     {
-      "title": "Custom events and conversions",
-      "description": "Define your own events (e.g. signup, purchase, feature_used) and attach properties for filtering and analysis."
+      "title": "Кастомные события и конверсии",
+      "description": "Определяйте свои события (например, signup, purchase, feature_used) и добавляйте свойства для фильтрации и анализа."
     },
     {
-      "title": "User and session context",
-      "description": "Events are tied to anonymous or identified users and sessions, so you can analyze behavior over time."
+      "title": "Контекст пользователя и сессии",
+      "description": "События привязаны к анонимным или идентифицированным пользователям и сессиям, поэтому можно анализировать поведение во времени."
     },
     {
-      "title": "Real-time ingestion",
-      "description": "Events appear in your dashboard within seconds. No batching delays or overnight processing."
+      "title": "Приём в реальном времени",
+      "description": "События появляются в дашборде за секунды. Никаких пакетных задержек и ночной обработки."
     },
     {
-      "title": "Funnels, retention, and profiles",
-      "description": "Use the same events to build conversion funnels, retention cohorts, and per-user activity timelines."
+      "title": "Воронки, удержание и профили",
+      "description": "Используйте одни и те же события для воронок конверсии, когорт удержания и таймлайнов активности каждого пользователя."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-events-list.webp",
-      "alt": "Event list showing tracked user actions in OpenPanel",
-      "caption": "Browse every event your product sends. Filter by name, user, or properties."
+      "alt": "Список событий с отслеживаемыми действиями пользователей в OpenPanel",
+      "caption": "Просматривайте все события, которые отправляет продукт. Фильтруйте по имени, пользователю или свойствам."
     },
     {
       "src": "/features/feature-events-stats.webp",
-      "alt": "Event statistics and trends over time",
-      "caption": "See event volume and trends at a glance. Spot anomalies before they become problems."
+      "alt": "Статистика событий и тренды во времени",
+      "caption": "Объём и тренды событий с одного взгляда. Замечайте аномалии, пока они не стали проблемами."
     },
     {
       "src": "/features/feature-events-details.webp",
-      "alt": "Detailed view of a single event with properties",
-      "caption": "Drill into any event to see its full context: user, session, properties, and timestamp."
+      "alt": "Детальный просмотр отдельного события со свойствами",
+      "caption": "Углубитесь в любое событие и увидите весь контекст: пользователь, сессия, свойства и время."
     }
   ],
   "how_it_works": {
-    "title": "How event tracking works",
-    "intro": "Three steps to go from zero to full product visibility.",
+    "title": "Как работает отслеживание событий",
+    "intro": "Три шага от нуля до полной видимости продукта.",
     "steps": [
       {
-        "title": "Install the SDK or use the API",
-        "description": "Add our lightweight script to your site or use our SDK for React, Next.js, or other frameworks. Self-hosted or cloud-your choice."
+        "title": "Установите SDK или используйте API",
+        "description": "Добавьте наш лёгкий скрипт на сайт или используйте SDK для React, Next.js и других фреймворков. Self-hosted или облако — выбор за вами."
       },
       {
-        "title": "Send events from your product",
-        "description": "Track page views automatically and call our API for custom events (signup, purchase, feature_used) with optional properties."
+        "title": "Отправляйте события из продукта",
+        "description": "Просмотры страниц отслеживаются автоматически, а для кастомных событий (signup, purchase, feature_used) вызывайте наш API с опциональными свойствами."
       },
       {
-        "title": "Analyze in dashboards, funnels, and retention",
-        "description": "Events flow into funnels, retention charts, and user profiles. No extra setup-one tracking layer powers everything."
+        "title": "Анализируйте в дашбордах, воронках и удержании",
+        "description": "События попадают в воронки, графики удержания и профили пользователей. Без лишних настроек — один слой отслеживания питает всё."
       }
     ]
   },
   "use_cases": {
-    "title": "Who uses event tracking",
-    "intro": "Product and growth teams use events to answer concrete questions.",
+    "title": "Кто использует отслеживание событий",
+    "intro": "Продуктовые и growth-команды используют события, чтобы отвечать на конкретные вопросы.",
     "items": [
       {
-        "title": "Product managers",
-        "description": "Understand which features are used, where users drop off, and how behavior differs between segments."
+        "title": "Продакт-менеджеры",
+        "description": "Понимайте, какие функции используются, где пользователи отсеиваются и как поведение различается между сегментами."
       },
       {
-        "title": "Growth and marketing",
-        "description": "Measure conversion from signup to activation and from visit to purchase. Optimize campaigns based on real events."
+        "title": "Growth и маркетинг",
+        "description": "Измеряйте конверсию из регистрации в активацию и из визита в покупку. Оптимизируйте кампании на основе реальных событий."
       },
       {
-        "title": "Support and success",
-        "description": "View a user's event timeline before a call or ticket. No need to ask \"what did you click?\"-you can see it."
+        "title": "Поддержка и customer success",
+        "description": "Смотрите таймлайн событий пользователя перед звонком или обращением. Не нужно спрашивать «что вы нажимали?» — вы видите это сами."
       }
     ]
   },
   "related_features": [
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "See where users drop off in signup, activation, and conversion flows."
+      "title": "Воронки",
+      "description": "Смотрите, где пользователи отсеиваются в потоках регистрации, активации и конверсии."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about event tracking with OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы об отслеживании событий в OpenPanel.",
     "items": [
       {
-        "question": "Do I need cookies for event tracking?",
-        "answer": "No. OpenPanel can run without cookies. We use a first-party cookie only if you enable it for better session continuity. Many teams run fully cookie-less and still get accurate funnels and retention."
+        "question": "Нужны ли cookies для отслеживания событий?",
+        "answer": "Нет. OpenPanel может работать без cookies. First-party cookie используется, только если вы включите её для более надёжной непрерывности сессий. Многие команды работают полностью без cookies и всё равно получают точные воронки и удержание."
       },
       {
-        "question": "How is this different from Google Analytics?",
-        "answer": "Google Analytics is built for marketing and traffic analysis, with a complex data model. OpenPanel is built for product and conversion: simple events that map directly to user actions. You get funnels, retention, and user profiles without the GA learning curve."
+        "question": "Чем это отличается от Google Analytics?",
+        "answer": "Google Analytics создан для маркетинга и анализа трафика со сложной моделью данных. OpenPanel создана для продукта и конверсии: простые события напрямую отражают действия пользователей. Вы получаете воронки, удержание и профили пользователей без долгого изучения GA."
       },
       {
-        "question": "Can I track custom events?",
-        "answer": "Yes. You can send any event name and attach optional properties (e.g. plan, value, feature_name). Custom events work in funnels, retention, and user profiles the same way as built-in events."
+        "question": "Можно ли отслеживать кастомные события?",
+        "answer": "Да. Можно отправлять события с любыми именами и добавлять опциональные свойства (например, plan, value, feature_name). Кастомные события работают в воронках, удержании и профилях так же, как встроенные."
       }
     ]
   },
   "cta": {
-    "label": "Track events in minutes",
+    "label": "Отслеживайте события за считанные минуты",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

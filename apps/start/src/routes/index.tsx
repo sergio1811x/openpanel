@@ -17,7 +17,7 @@ export const Route = createFileRoute('/')({
   },
   component: LandingPage,
   head: () => ({
-    meta: [{ title: createTitle('Welcome') }],
+    meta: [{ title: createTitle('Добро пожаловать') }],
   }),
   loader: async ({ context }) => {
     // Unsure why not using ensureQueryData here works
@@ -60,8 +60,8 @@ function LandingPage() {
         <div className="col gap-4">
           <LogoSquare className="w-full max-w-14 md:max-w-24" />
           <PageHeader
-            description="The best web and product analytics tool out there (our honest opinion)."
-            title="Welcome to OpenPanel.dev"
+            description="Лучший инструмент веб- и продуктовой аналитики (наше честное мнение)."
+            title="Добро пожаловать в OpenPanel.dev"
           />
         </div>
 
@@ -90,7 +90,7 @@ function LandingPage() {
 
         <div className="row gap-4">
           <Button loading={logout.isPending} onClick={() => logout.mutate()}>
-            Log out
+            Выйти
           </Button>
         </div>
       </div>

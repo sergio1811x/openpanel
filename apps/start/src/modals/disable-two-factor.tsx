@@ -16,7 +16,7 @@ export default function DisableTwoFactor() {
   const mutation = useMutation(
     trpc.auth.totpDisable.mutationOptions({
       onSuccess: () => {
-        toast.success('Two-factor authentication disabled');
+        toast.success('Двухфакторная аутентификация отключена');
         queryClient.invalidateQueries(trpc.auth.totpStatus.pathFilter());
         popModal();
       },
@@ -30,8 +30,8 @@ export default function DisableTwoFactor() {
   return (
     <ModalContent>
       <ModalHeader
-        text="Enter a code from your authenticator app, or a recovery code, to confirm."
-        title="Disable two-factor authentication"
+        text="Введите код из приложения-аутентификатора или код восстановления для подтверждения."
+        title="Отключение двухфакторной аутентификации"
       />
       <Input
         autoCapitalize="characters"
@@ -42,7 +42,7 @@ export default function DisableTwoFactor() {
       />
       <DialogFooter>
         <Button onClick={() => popModal()} variant="secondary">
-          Cancel
+          Отмена
         </Button>
         <Button
           disabled={!code.trim()}
@@ -50,7 +50,7 @@ export default function DisableTwoFactor() {
           onClick={() => mutation.mutate({ code })}
           variant="destructive"
         >
-          Disable
+          Отключить
         </Button>
       </DialogFooter>
     </ModalContent>

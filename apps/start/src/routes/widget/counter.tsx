@@ -31,7 +31,7 @@ function RouteComponent() {
     return (
       <div className="flex h-8 items-center gap-2 px-2">
         <Ping />
-        <AnimatedNumber suffix=" unique visitors" value={0} />
+        <AnimatedNumber prefix="Уникальные посетители: " value={0} />
       </div>
     );
   }
@@ -40,7 +40,7 @@ function RouteComponent() {
     return (
       <div className="flex h-8 items-center gap-2 px-2">
         <Ping className="bg-orange-500" />
-        <AnimatedNumber suffix=" unique visitors" value={0} />
+        <AnimatedNumber prefix="Уникальные посетители: " value={0} />
       </div>
     );
   }
@@ -78,7 +78,7 @@ function CounterWidget({ shareId, data }: RealtimeWidgetProps) {
   return (
     <div className="flex h-8 items-center gap-2 px-2">
       <Ping />
-      <AnimatedNumber suffix=" unique visitors" value={data.counter} />
+      <AnimatedNumber prefix="Уникальные посетители: " value={data.counter} />
     </div>
   );
 }

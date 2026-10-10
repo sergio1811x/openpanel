@@ -234,7 +234,7 @@ export const devicesModule: InsightModule = {
 
     return {
       title: `${device} ${isIncrease ? '↑' : '↓'} ${Math.abs(changePct * 100).toFixed(0)}%`,
-      summary: `${ctx.window.label}. Device traffic change.`,
+      summary: `${ctx.window.label}. Изменение трафика по устройствам.`,
       displayName: device,
       payload: {
         kind: 'insight_v1',

@@ -26,7 +26,7 @@ export function ReportLineType({ className }: ReportLineTypeProps) {
     <Combobox
       icon={Tv2Icon}
       className={className}
-      placeholder="Line type"
+      placeholder="Тип линии"
       onChange={(value) => {
         dispatch(changeLineType(value));
       }}

@@ -70,8 +70,8 @@ function Component() {
         <div className="flex items-center gap-2 rounded-md border border-blue-200 bg-blue-50 px-4 py-3 text-blue-900 text-sm">
           <InfoIcon className="size-4 shrink-0" />
           <span>
-            This cohort hasn&apos;t been computed yet. Membership will appear
-            within a minute.
+            Эта кохорта ещё не рассчитана. Состав участников появится в течение
+            минуты.
           </span>
         </div>
       )}
@@ -80,7 +80,7 @@ function Component() {
         <div className="flex items-center gap-2 rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-amber-900 text-sm">
           <InfoIcon className="size-4 shrink-0" />
           <span>
-            Capped at 10,000 members — consider narrowing the criteria.
+            Ограничение 10 000 участников — попробуйте сузить критерии.
           </span>
         </div>
       )}
@@ -90,7 +90,7 @@ function Component() {
           data={[]}
           id="profileCount"
           isLoading={false}
-          label="Members"
+          label="Участники"
           metric={{ current: c.profileCount, previous: null }}
           unit=""
         />
@@ -98,7 +98,7 @@ function Component() {
           data={[]}
           id="lastComputedAt"
           isLoading={false}
-          label="Last computed"
+          label="Последний расчёт"
           metric={{
             current: c.lastComputedAt
               ? new Date(c.lastComputedAt).getTime()
@@ -111,7 +111,7 @@ function Component() {
           data={[]}
           id="createdAt"
           isLoading={false}
-          label="Created"
+          label="Создана"
           metric={{
             current: new Date(c.createdAt).getTime(),
             previous: null,

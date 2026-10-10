@@ -113,7 +113,7 @@ export function ReportItem({
                 {timeWindows[chartRange as keyof typeof timeWindows]?.label}
               </span>
               {startDate && endDate ? (
-                <span>Custom dates</span>
+                <span>Произвольные даты</span>
               ) : (
                 range !== null &&
                 chartRange !== range && (
@@ -154,7 +154,7 @@ export function ReportItem({
                 }}
               >
                 <CopyIcon size={16} className="mr-2" />
-                Duplicate
+                Дублировать
               </DropdownMenuItem>
               {onMove && (
                 <DropdownMenuItem
@@ -164,7 +164,7 @@ export function ReportItem({
                   }}
                 >
                   <LayoutPanelTopIcon size={16} className="mr-2" />
-                  Move to dashboard
+                  Переместить на дашборд
                 </DropdownMenuItem>
               )}
               <DropdownMenuGroup>
@@ -176,7 +176,7 @@ export function ReportItem({
                   }}
                 >
                   <Trash size={16} className="mr-2" />
-                  Delete
+                  Удалить
                 </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
@@ -238,7 +238,7 @@ export function ReportItemReadOnly({
                 {timeWindows[chartRange as keyof typeof timeWindows]?.label}
               </span>
               {startDate && endDate ? (
-                <span>Custom dates</span>
+                <span>Произвольные даты</span>
               ) : (
                 range !== null &&
                 chartRange !== range && (

@@ -43,13 +43,13 @@ const { TooltipProvider, Tooltip } = createChartTooltip<
       </ChartTooltipHeader>
       <ChartTooltipItem color={getChartColor(0)}>
         <div className="flex justify-between gap-8 font-medium font-mono">
-          <span>Views</span>
+          <span>Просмотры</span>
           <span>{item.pageviews.toLocaleString()}</span>
         </div>
       </ChartTooltipItem>
       <ChartTooltipItem color={getChartColor(1)}>
         <div className="flex justify-between gap-8 font-medium font-mono">
-          <span>Sessions</span>
+          <span>Сессии</span>
           <span>{item.sessions.toLocaleString()}</span>
         </div>
       </ChartTooltipItem>
@@ -93,21 +93,21 @@ export function PageViewsChart({
   return (
     <div className="card p-4">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="font-medium text-sm">Views & Sessions</h3>
+        <h3 className="font-medium text-sm">Просмотры и сессии</h3>
         <div className="flex items-center gap-4 text-muted-foreground text-xs">
           <span className="flex items-center gap-1.5">
             <span
               className="h-0.5 w-3 rounded-full"
               style={{ backgroundColor: getChartColor(0) }}
             />
-            Views
+            Просмотры
           </span>
           <span className="flex items-center gap-1.5">
             <span
               className="h-0.5 w-3 rounded-full"
               style={{ backgroundColor: getChartColor(1) }}
             />
-            Sessions
+            Сессии
           </span>
         </div>
       </div>

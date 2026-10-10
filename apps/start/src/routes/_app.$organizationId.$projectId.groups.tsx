@@ -25,7 +25,7 @@ export const Route = createFileRoute('/_app/$organizationId/$projectId/groups')(
   {
     component: Component,
     head: () => ({
-      meta: [{ title: createProjectTitle('Groups') }],
+      meta: [{ title: createProjectTitle('Группы') }],
     }),
   }
 );
@@ -63,12 +63,12 @@ function Component() {
         actions={
           <Button onClick={() => pushModal('AddGroup')}>
             <PlusIcon className="mr-2 size-4" />
-            Add group
+            Добавить группу
           </Button>
         }
         className="mb-8"
-        description="Groups represent companies, teams, or other entities that events belong to."
-        title="Groups"
+        description="Группы представляют компании, команды или другие сущности, к которым относятся события."
+        title="Группы"
       />
 
       <GroupsTable
@@ -81,10 +81,10 @@ function Component() {
               value={typeFilter || 'all'}
             >
               <SelectTrigger className="w-40">
-                <SelectValue placeholder="All types" />
+                <SelectValue placeholder="Все типы" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All types</SelectItem>
+                <SelectItem value="all">Все типы</SelectItem>
                 {types.map((t) => (
                   <SelectItem key={t} value={t}>
                     {t}

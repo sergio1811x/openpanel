@@ -40,11 +40,11 @@ export default function OverviewTopDevices({
   const isPageFilter = filters.find((filter) => filter.name === 'path');
   const [widget, setWidget, widgets] = useOverviewWidget('tech', {
     device: {
-      title: 'Top devices',
-      btn: 'Devices',
+      title: 'Топ устройств',
+      btn: 'Устройства',
       chart: {
         options: {
-          columns: ['Device', isPageFilter ? 'Views' : 'Sessions'],
+          columns: ['Устройство', isPageFilter ? 'Просмотры' : 'Сессии'],
         },
         report: {
           limit: 10,
@@ -69,7 +69,7 @@ export default function OverviewTopDevices({
           chartType,
           lineType: 'monotone',
           interval: interval,
-          name: 'Top devices',
+          name: 'Топ устройств',
           range: range,
           previous: previous,
           metric: 'sum',
@@ -77,11 +77,11 @@ export default function OverviewTopDevices({
       },
     },
     browser: {
-      title: 'Top browser',
-      btn: 'Browser',
+      title: 'Топ браузеров',
+      btn: 'Браузеры',
       chart: {
         options: {
-          columns: ['Browser', isPageFilter ? 'Views' : 'Sessions'],
+          columns: ['Браузер', isPageFilter ? 'Просмотры' : 'Сессии'],
         },
         report: {
           limit: 10,
@@ -106,7 +106,7 @@ export default function OverviewTopDevices({
           chartType,
           lineType: 'monotone',
           interval: interval,
-          name: 'Top browser',
+          name: 'Топ браузеров',
           range: range,
           previous: previous,
           metric: 'sum',
@@ -114,11 +114,11 @@ export default function OverviewTopDevices({
       },
     },
     browser_version: {
-      title: 'Top Browser Version',
-      btn: 'Browser Version',
+      title: 'Топ версий браузера',
+      btn: 'Версии браузеров',
       chart: {
         options: {
-          columns: ['Version', isPageFilter ? 'Views' : 'Sessions'],
+          columns: ['Версия', isPageFilter ? 'Просмотры' : 'Сессии'],
           renderSerieName(name) {
             return name[1] || NOT_SET_VALUE;
           },
@@ -150,7 +150,7 @@ export default function OverviewTopDevices({
           chartType,
           lineType: 'monotone',
           interval: interval,
-          name: 'Top Browser Version',
+          name: 'Топ версий браузера',
           range: range,
           previous: previous,
           metric: 'sum',
@@ -158,11 +158,11 @@ export default function OverviewTopDevices({
       },
     },
     os: {
-      title: 'Top OS',
-      btn: 'OS',
+      title: 'Топ ОС',
+      btn: 'ОС',
       chart: {
         options: {
-          columns: ['OS', isPageFilter ? 'Views' : 'Sessions'],
+          columns: ['ОС', isPageFilter ? 'Просмотры' : 'Сессии'],
         },
         report: {
           limit: 10,
@@ -187,7 +187,7 @@ export default function OverviewTopDevices({
           chartType,
           lineType: 'monotone',
           interval: interval,
-          name: 'Top OS',
+          name: 'Топ ОС',
           range: range,
           previous: previous,
           metric: 'sum',
@@ -195,11 +195,11 @@ export default function OverviewTopDevices({
       },
     },
     os_version: {
-      title: 'Top OS version',
-      btn: 'OS Version',
+      title: 'Топ версий ОС',
+      btn: 'Версии ОС',
       chart: {
         options: {
-          columns: ['Version', isPageFilter ? 'Views' : 'Sessions'],
+          columns: ['Версия', isPageFilter ? 'Просмотры' : 'Сессии'],
           renderSerieName(name) {
             return name[1] || NOT_SET_VALUE;
           },
@@ -231,7 +231,7 @@ export default function OverviewTopDevices({
           chartType,
           lineType: 'monotone',
           interval: interval,
-          name: 'Top OS version',
+          name: 'Топ версий ОС',
           range: range,
           previous: previous,
           metric: 'sum',
@@ -239,11 +239,11 @@ export default function OverviewTopDevices({
       },
     },
     brand: {
-      title: 'Top Brands',
-      btn: 'Brands',
+      title: 'Топ брендов',
+      btn: 'Бренды',
       chart: {
         options: {
-          columns: ['Brand', isPageFilter ? 'Views' : 'Sessions'],
+          columns: ['Бренд', isPageFilter ? 'Просмотры' : 'Сессии'],
         },
         report: {
           limit: 10,
@@ -268,7 +268,7 @@ export default function OverviewTopDevices({
           chartType,
           lineType: 'monotone',
           interval: interval,
-          name: 'Top Brands',
+          name: 'Топ брендов',
           range: range,
           previous: previous,
           metric: 'sum',
@@ -276,11 +276,11 @@ export default function OverviewTopDevices({
       },
     },
     model: {
-      title: 'Top Models',
-      btn: 'Models',
+      title: 'Топ моделей',
+      btn: 'Модели',
       chart: {
         options: {
-          columns: ['Model', isPageFilter ? 'Views' : 'Sessions'],
+          columns: ['Модель', isPageFilter ? 'Просмотры' : 'Сессии'],
           renderSerieName(name) {
             return name[1] || NOT_SET_VALUE;
           },
@@ -312,7 +312,7 @@ export default function OverviewTopDevices({
           chartType,
           lineType: 'monotone',
           interval: interval,
-          name: 'Top Models',
+          name: 'Топ моделей',
           range: range,
           previous: previous,
           metric: 'sum',
@@ -377,7 +377,7 @@ export default function OverviewTopDevices({
           onTabChange={setWidget}
           searchValue={searchQuery}
           onSearchChange={setSearchQuery}
-          searchPlaceholder={`Search ${widget.btn.toLowerCase()}`}
+          searchPlaceholder={`Поиск: ${widget.btn}`}
           className="border-b-0 pb-2"
         />
         <WidgetBody className="p-0">
@@ -412,7 +412,7 @@ export default function OverviewTopDevices({
                           setFilter(widget.key, item.name);
                         }}
                       >
-                        {item.name || 'Not set'}
+                        {item.name || 'Не задано'}
                       </button>
                     </div>
                   );

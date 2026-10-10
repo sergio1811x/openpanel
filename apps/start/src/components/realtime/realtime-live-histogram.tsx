@@ -106,7 +106,7 @@ function Wrapper({ children, count, icons }: WrapperProps) {
     <div className="flex flex-col">
       <div className="row justify-between gap-2">
         <div className="relative font-medium text-muted-foreground text-sm leading-normal">
-          Unique visitors last 30 min
+          Уникальные посетители за последние 30 минут
         </div>
         <div>{icons}</div>
       </div>
@@ -197,7 +197,7 @@ const CustomTooltip = ({ active, payload, coordinate }: any) => {
             style={{ background: getChartColor(0) }}
           />
           <div className="col flex-1 gap-1">
-            <div className="flex items-center gap-1">Active users</div>
+            <div className="flex items-center gap-1">Активные пользователи</div>
             <div className="flex justify-between gap-8 font-medium font-mono">
               <div className="row gap-1">
                 {number.formatWithUnit(data.visitorCount)}
@@ -207,7 +207,7 @@ const CustomTooltip = ({ active, payload, coordinate }: any) => {
         </div>
         {data.referrers && data.referrers.length > 0 && (
           <div className="mt-2 border-border border-t pt-2">
-            <div className="mb-2 text-muted-foreground text-xs">Referrers:</div>
+            <div className="mb-2 text-muted-foreground text-xs">Источники:</div>
             <div className="space-y-1">
               {data.referrers.slice(0, 3).map((ref: any, index: number) => (
                 <div
@@ -228,7 +228,7 @@ const CustomTooltip = ({ active, payload, coordinate }: any) => {
               ))}
               {data.referrers.length > 3 && (
                 <div className="text-muted-foreground text-xs">
-                  +{data.referrers.length - 3} more
+                  ещё {data.referrers.length - 3}
                 </div>
               )}
             </div>

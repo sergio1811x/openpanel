@@ -69,12 +69,12 @@ const { Tooltip, TooltipProvider } = createChartTooltip<
           color={getColorValue()}
           innerClassName="row justify-between"
         >
-          <div className="flex items-center gap-1">Sessions</div>
+          <div className="flex items-center gap-1">Сессии</div>
           <div className="font-mono font-bold">{number.format(data.value)}</div>
         </ChartTooltipItem>
         {data.revenue > 0 && (
           <ChartTooltipItem color="#3ba974">
-            <div className="flex items-center gap-1">Revenue</div>
+            <div className="flex items-center gap-1">Доход</div>
             <div className="font-mono font-medium">
               {number.currency(data.revenue / 100)}
             </div>
@@ -135,9 +135,9 @@ export function ProjectChart({
           </div>
 
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 px-4 text-center">
-            <p className="text-sm font-medium text-foreground/85">No activity yet</p>
+            <p className="text-sm font-medium text-foreground/85">Активности пока нет</p>
             <p className="text-xs text-muted-foreground">
-              Sessions will show up here once tracking starts.
+              Сессии появятся здесь после начала отслеживания.
             </p>
           </div>
       </div>

@@ -1,158 +1,158 @@
 {
   "slug": "identify-users",
-  "short_name": "Identify users",
+  "short_name": "Идентификация пользователей",
   "seo": {
-    "title": "User Profiles and Identification",
-    "description": "Track individual users across sessions with privacy-first user profiles. See first seen, last seen, activity timelines, and custom properties-without invasive tracking.",
+    "title": "Профили и идентификация пользователей",
+    "description": "Отслеживайте отдельных пользователей между сессиями с приватными профилями. Первое и последнее появление, таймлайны активности и кастомные свойства — без навязчивого отслеживания.",
     "keywords": [
-      "user profiles analytics",
-      "track individual users",
-      "user activity timeline",
-      "identify users analytics",
-      "user tracking software"
+      "профили пользователей в аналитике",
+      "отслеживание отдельных пользователей",
+      "таймлайн активности пользователя",
+      "идентификация пользователей",
+      "софт для отслеживания пользователей"
     ]
   },
   "hero": {
-    "heading": "User tracking",
-    "subheading": "See who they are, when they first appeared, and what they did - with full respect for privacy. No fingerprinting, no surveillance.",
+    "heading": "Отслеживание пользователей",
+    "subheading": "Узнайте, кто они, когда появились впервые и что делали — с полным уважением к приватности. Без фингерпринтинга и слежки.",
     "badges": [
-      "First seen / last seen",
-      "Activity timeline per user",
-      "Custom user properties",
-      "Privacy-first identification"
+      "Первое и последнее появление",
+      "Таймлайн активности по пользователю",
+      "Кастомные свойства пользователей",
+      "Приватная идентификация"
     ]
   },
   "definition": {
-    "title": "What is user identification?",
-    "text": "User identification connects anonymous activity to a **known user profile**. Instead of treating every visit as a nameless session, you link events, page views, and sessions to a real person-someone you can look up, follow over time, and understand in context.\n\nWith OpenPanel, identification works like this:\n\n1. A visitor arrives and generates anonymous events\n2. When they sign up or log in, you call `identify()` with an ID and optional properties\n3. OpenPanel merges their anonymous history with the identified profile\n\nFrom that point on, you can see when they first appeared, when they were last active, every event they triggered, and any properties you attached (plan, company, role, etc.).\n\nThat lets you answer questions like:\n\n- **When did this user first show up, and what led them to sign up?**\n- **What did they do in the last 7 days?**\n- **Which features does this account actually use?**\n- **Is this user at risk of churning?**\n\nMost analytics tools reduce users to anonymous metrics. OpenPanel gives you individual-level profiles while keeping you in control of what data you send. No third-party cookies, no fingerprinting, no data sold to advertisers. These profiles help your support, sales, and product teams."
+    "title": "Что такое идентификация пользователей?",
+    "text": "Идентификация пользователей связывает анонимную активность с **известным профилем**. Вместо того чтобы считать каждый визит безымянной сессией, вы привязываете события, просмотры страниц и сессии к реальному человеку — его можно найти, наблюдать во времени и понимать в контексте.\n\nВ OpenPanel идентификация работает так:\n\n1. Посетитель приходит и генерирует анонимные события\n2. Когда он регистрируется или входит, вы вызываете `identify()` с ID и опциональными свойствами\n3. OpenPanel объединяет анонимную историю с идентифицированным профилем\n\nС этого момента вы видите, когда пользователь появился впервые, когда был активен в последний раз, каждое его событие и все добавленные свойства (тариф, компания, роль и т.д.).\n\nЭто позволяет отвечать на вопросы вроде:\n\n- **Когда этот пользователь появился впервые и что привело его к регистрации?**\n- **Что он делал за последние 7 дней?**\n- **Какими функциями реально пользуется этот аккаунт?**\n- **Есть ли риск, что пользователь уйдёт?**\n\nБольшинство инструментов аналитики сводит пользователей к анонимным метрикам. OpenPanel даёт профили уровня отдельного пользователя, оставляя вам контроль над тем, какие данные отправлять. Никаких сторонних cookies, фингерпринтинга и продажи данных рекламодателям. Эти профили помогают командам поддержки, продаж и продукта."
   },
   "capabilities_section": {
-    "title": "What you get with user profiles",
-    "intro": "From basic identity to full activity history, user profiles give you the context your team needs."
+    "title": "Что дают профили пользователей",
+    "intro": "От базовой идентичности до полной истории активности — профили дают команде нужный контекст."
   },
   "capabilities": [
     {
-      "title": "First seen and last seen",
-      "description": "Know exactly when each user first appeared and when they were last active. Spot dormant accounts before they churn."
+      "title": "Первое и последнее появление",
+      "description": "Точно знайте, когда каждый пользователь появился впервые и когда был активен в последний раз. Замечайте «спящие» аккаунты до того, как они уйдут."
     },
     {
-      "title": "Full activity timeline",
-      "description": "See every event a user triggered in chronological order-page views, clicks, conversions, custom events-all on one screen."
+      "title": "Полный таймлайн активности",
+      "description": "Видите каждое событие пользователя в хронологическом порядке — просмотры страниц, клики, конверсии, кастомные события — на одном экране."
     },
     {
-      "title": "Custom user properties",
-      "description": "Attach properties like plan, company, role, or lifetime value. Filter and segment users by any property you set."
+      "title": "Кастомные свойства пользователей",
+      "description": "Добавляйте свойства: тариф, компания, роль, пожизненная ценность. Фильтруйте и сегментируйте пользователей по любому заданному свойству."
     },
     {
-      "title": "Anonymous-to-identified merge",
-      "description": "Pre-signup activity is automatically merged with the identified profile, so you never lose the full journey."
+      "title": "Объединение анонима с профилем",
+      "description": "Активность до регистрации автоматически объединяется с идентифицированным профилем — полный путь не теряется."
     },
     {
-      "title": "Session history",
-      "description": "See how many sessions a user has had, how long they lasted, and what happened in each one."
+      "title": "История сессий",
+      "description": "Смотрите, сколько у пользователя было сессий, сколько они длились и что происходило в каждой."
     },
     {
-      "title": "Privacy-first by design",
-      "description": "You choose what to send. No fingerprinting, no third-party cookies, no hidden data collection. Self-host for full control."
+      "title": "Приватность по умолчанию",
+      "description": "Вы решаете, что отправлять. Никакого фингерпринтинга, сторонних cookies и скрытого сбора данных. Разверните у себя для полного контроля."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-profiles-details.webp",
-      "alt": "User profile showing activity timeline and properties in OpenPanel",
-      "caption": "See a user's full history: first seen, last seen, events, sessions, and custom properties."
+      "alt": "Профиль пользователя с таймлайном активности и свойствами в OpenPanel",
+      "caption": "Полная история пользователя: первое и последнее появление, события, сессии и кастомные свойства."
     },
     {
       "src": "/features/feature-profiles-events.webp",
-      "alt": "Event stream for an identified user",
-      "caption": "Drill into any user's event stream to understand exactly what they did and when."
+      "alt": "Поток событий идентифицированного пользователя",
+      "caption": "Углубитесь в поток событий любого пользователя и точно узнайте, что и когда он делал."
     }
   ],
   "how_it_works": {
-    "title": "How user identification works",
-    "intro": "Three steps to go from anonymous visitors to rich user profiles.",
+    "title": "Как работает идентификация пользователей",
+    "intro": "Три шага от анонимных посетителей к подробным профилям.",
     "steps": [
       {
-        "title": "Track events as usual",
-        "description": "Install the SDK and send events. Before identification, all activity is stored under an anonymous profile."
+        "title": "Отслеживайте события как обычно",
+        "description": "Установите SDK и отправляйте события. До идентификации вся активность хранится под анонимным профилем."
       },
       {
-        "title": "Call identify() on login or signup",
-        "description": "Pass a user ID and optional properties (email, plan, company). OpenPanel merges the anonymous history with the new profile."
+        "title": "Вызовите identify() при входе или регистрации",
+        "description": "Передайте ID пользователя и опциональные свойства (email, тариф, компания). OpenPanel объединит анонимную историю с новым профилем."
       },
       {
-        "title": "Browse profiles and timelines",
-        "description": "Open any user profile to see their full journey: first seen, last seen, every event, session history, and attached properties."
+        "title": "Просматривайте профили и таймлайны",
+        "description": "Откройте любой профиль, чтобы увидеть полный путь: первое появление, последнюю активность, все события, историю сессий и свойства."
       }
     ]
   },
   "use_cases": {
-    "title": "Who uses user profiles",
-    "intro": "User identification powers workflows across support, sales, and product teams.",
+    "title": "Кто использует профили пользователей",
+    "intro": "Идентификация пользователей питает процессы поддержки, продаж и продукта.",
     "items": [
       {
-        "title": "Support teams",
-        "description": "Pull up a user's activity timeline before responding to a ticket. See what they clicked, where they got stuck, and whether the issue is reproducible-without asking them to describe every step."
+        "title": "Команды поддержки",
+        "description": "Открывайте таймлайн активности пользователя перед ответом на обращение. Видите, что он нажимал, где застрял и воспроизводится ли проблема — без пересказа каждого шага."
       },
       {
-        "title": "Sales teams",
-        "description": "See which features a prospect has explored, how often they return, and when they were last active. Reach out with context instead of cold guesses."
+        "title": "Отделы продаж",
+        "description": "Видите, какие функции изучал потенциальный клиент, как часто возвращается и когда был активен в последний раз. Выходите на контакт с контекстом, а не с холодными догадками."
       },
       {
-        "title": "Product managers",
-        "description": "Identify power users and understand what makes them different. Compare activity patterns between retained and churned users to prioritize the right features."
+        "title": "Продакт-менеджеры",
+        "description": "Находите самых активных пользователей и понимайте, чем они отличаются. Сравнивайте паттерны активности удержанных и ушедших, чтобы приоритизировать нужные функции."
       },
       {
         "title": "Customer success",
-        "description": "Monitor user engagement over time. Spot accounts going quiet before they cancel and intervene with the right message at the right time."
+        "description": "Следите за вовлечённостью пользователей во времени. Замечайте затихающие аккаунты до отмены подписки и вмешивайтесь с правильным сообщением в правильный момент."
       }
     ]
   },
   "related_features": [
     {
       "slug": "event-tracking",
-      "title": "Event tracking",
-      "description": "Track the actions that make up each user's activity timeline."
+      "title": "Отслеживание событий",
+      "description": "Отслеживайте действия, из которых складывается таймлайн каждого пользователя."
     },
     {
       "slug": "session-tracking",
-      "title": "Session tracking",
-      "description": "See how users move through your product session by session."
+      "title": "Отслеживание сессий",
+      "description": "Смотрите, как пользователи движутся по продукту от сессии к сессии."
     },
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "Analyze where identified users drop off in conversion flows."
+      "title": "Воронки",
+      "description": "Анализируйте, где идентифицированные пользователи отсеиваются в потоках конверсии."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about user identification in OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы об идентификации пользователей в OpenPanel.",
     "items": [
       {
-        "question": "What happens before a user is identified?",
-        "answer": "Events are stored under an anonymous profile. When you call identify(), the anonymous history is merged with the identified profile, so you get the complete journey from first visit to current session."
+        "question": "Что происходит до идентификации пользователя?",
+        "answer": "События хранятся под анонимным профилем. Когда вы вызываете identify(), анонимная история объединяется с идентифицированным профилем — вы получаете полный путь от первого визита до текущей сессии."
       },
       {
-        "question": "Is this GDPR-compliant?",
-        "answer": "Yes. You control exactly what data you send. OpenPanel doesn't add tracking pixels, fingerprinting, or third-party cookies. If you self-host, no data ever leaves your infrastructure. You can also delete a user's data at any time to comply with erasure requests."
+        "question": "Это соответствует GDPR?",
+        "answer": "Да. Вы контролируете, какие данные отправлять. OpenPanel не добавляет трекинг-пиксели, фингерпринтинг и сторонние cookies. При самостоятельном хостинге данные вообще не покидают вашу инфраструктуру. Данные пользователя можно удалить в любой момент по запросу на забвение."
       },
       {
-        "question": "How is this different from Google Analytics user tracking?",
-        "answer": "Google Analytics relies on anonymous client IDs and has limited support for individual-level profiles. OpenPanel gives you a dedicated profile page per user with a full event timeline, session history, and custom properties-without sending data to Google."
+        "question": "Чем это отличается от отслеживания пользователей в Google Analytics?",
+        "answer": "Google Analytics опирается на анонимные client ID и ограниченно поддерживает профили уровня отдельного пользователя. OpenPanel даёт отдельную страницу профиля для каждого пользователя с полным таймлайном событий, историей сессий и кастомными свойствами — без отправки данных в Google."
       },
       {
-        "question": "Can I attach custom properties to users?",
-        "answer": "Yes. Pass any key-value pairs when you call identify()-plan, company, role, revenue, or anything else. These properties are searchable and can be used to filter and segment users across all reports."
+        "question": "Можно ли добавлять пользователям кастомные свойства?",
+        "answer": "Да. При вызове identify() передавайте любые пары ключ-значение — тариф, компанию, роль, выручку и что угодно ещё. Эти свойства доступны в поиске и могут использоваться для фильтрации и сегментации во всех отчётах."
       },
       {
-        "question": "Do I need to identify every user?",
-        "answer": "No. Identification is optional. Anonymous users still generate events and sessions. You identify users when you want to link their activity to a known person-typically after login or signup."
+        "question": "Нужно ли идентифицировать каждого пользователя?",
+        "answer": "Нет. Идентификация опциональна. Анонимные пользователи так же генерируют события и сессии. Идентифицируйте пользователей, когда хотите связать активность с реальным человеком — обычно после входа или регистрации."
       }
     ]
   },
   "cta": {
-    "label": "Start identifying users today",
+    "label": "Начните идентифицировать пользователей сегодня",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

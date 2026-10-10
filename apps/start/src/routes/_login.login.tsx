@@ -46,14 +46,14 @@ function LoginPage() {
   return (
     <div className="col w-full gap-8 text-left">
       <div>
-        <h1 className="mb-2 font-bold text-3xl text-foreground">Sign in</h1>
+        <h1 className="mb-2 font-bold text-3xl text-foreground">Вход</h1>
         <p className="text-muted-foreground">
-          Don't have an account?{' '}
+          Нет аккаунта?{' '}
           <a
             className="font-medium text-foreground underline"
             href="/onboarding"
           >
-            Create one today
+            Создайте прямо сейчас
           </a>
         </p>
       </div>
@@ -63,14 +63,14 @@ function LoginPage() {
           variant="destructive"
         >
           <AlertCircle className="h-4 w-4" />
-          <AlertTitle>Error</AlertTitle>
+          <AlertTitle>Ошибка</AlertTitle>
           <AlertDescription>
             <p>{error}</p>
             {correlationId && (
               <>
                 <p>Correlation ID: {correlationId}</p>
                 <p className="mt-2">
-                  Contact us if you have any issues.{' '}
+                  Если возникнут проблемы, свяжитесь с нами.{' '}
                   <a
                     className="font-medium underline"
                     href={`mailto:hello@openpanel.dev?subject=Login%20Issue%20-%20Correlation%20ID%3A%20${correlationId}`}

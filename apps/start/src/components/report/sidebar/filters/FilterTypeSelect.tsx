@@ -31,7 +31,7 @@ export function FilterTypeSelect({
         value: key,
         label: filterValueTypes[key],
       }))}
-      label="Value type"
+      label="Тип значения"
     >
       {trigger}
     </DropdownMenuComposed>

@@ -9,7 +9,7 @@ export function LogoSquare({ className }: LogoProps) {
     <img
       src="/logo.svg"
       className={cn('rounded-md', className)}
-      alt="Openpanel logo"
+      alt="Логотип Openpanel"
     />
   );
 }

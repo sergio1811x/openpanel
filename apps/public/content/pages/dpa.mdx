@@ -1,147 +1,147 @@
 ---
-title: Data Processing Agreement
-description: OpenPanel's Data Processing Agreement (DPA) under Art. 28 GDPR for cloud customers who use OpenPanel to collect analytics on their websites and applications.
+title: Соглашение об обработке данных (DPA)
+description: Соглашение об обработке данных (DPA) OpenPanel согласно ст. 28 GDPR для облачных клиентов, использующих OpenPanel для сбора аналитики на своих сайтах и в приложениях.
 ---
 
-_Last updated: May 21, 2026_
+_Последнее обновление: 21 мая 2026 г._
 
-This Data Processing Agreement ("DPA") is incorporated into and forms part of the OpenPanel Terms of Service between OpenPanel AB ("OpenPanel", "we", "us") and the customer ("Controller", "you"). It applies where OpenPanel processes personal data on your behalf as part of the OpenPanel Cloud service.
+Настоящее Соглашение об обработке данных («DPA») включено в Условия использования OpenPanel и является их частью; оно заключается между OpenPanel AB («OpenPanel», «мы», «нас») и клиентом («Контролёр», «вы»). Оно применяется в случаях, когда OpenPanel обрабатывает персональные данные от вашего имени в рамках сервиса OpenPanel Cloud.
 
-## 1. Definitions
+## 1. Определения
 
-- **GDPR** means Regulation (EU) 2016/679 of the European Parliament and of the Council.
-- **Controller** means you, the customer, who determines the purposes and means of processing.
-- **Processor** means OpenPanel, who processes data on your behalf.
-- **Personal Data**, **Processing**, **Data Subject**, and **Supervisory Authority** have the meanings given in the GDPR.
-- **Sub-processor** means any third party engaged by OpenPanel to process Personal Data in connection with the service.
+- **GDPR** — Регламент (ЕС) 2016/679 Европейского парламента и Совета.
+- **Контролёр** — вы, клиент, который определяет цели и средства обработки.
+- **Обработчик** — OpenPanel, обрабатывающая данные от вашего имени.
+- **Персональные данные**, **Обработка**, **Субъект данных** и **Надзорный орган** имеют значения, определённые в GDPR.
+- **Субобработчик** — любая третья сторона, привлечённая OpenPanel для обработки персональных данных в связи с сервисом.
 
-## 2. Our approach to privacy
+## 2. Наш подход к приватности
 
-OpenPanel is built to minimize personal data collection by design. We do not use cookies for analytics tracking. We do not store IP addresses. Instead, we generate a daily-rotating anonymous identifier using a one-way hash of the visitor's IP address, user agent, and project ID combined with a salt that is replaced every 24 hours. The raw IP address is discarded immediately and the identifier becomes irreversible once the salt is rotated.
+OpenPanel создана так, чтобы минимизировать сбор персональных данных на уровне архитектуры. Мы не используем cookies для аналитического отслеживания и не храним IP-адреса. Вместо этого мы генерируем ежедневно обновляемый анонимный идентификатор с помощью однонаправленного хеша IP-адреса посетителя, user agent и ID проекта в сочетании с солью, которая меняется каждые 24 часа. Сырой IP-адрес отбрасывается немедленно, а идентификатор становится необратимым после ротации соли.
 
-The data we store per event is:
+Данные, которые мы храним по каждому событию:
 
-- Page URL and referrer
-- Browser name and version
-- Operating system name and version
-- Device type, brand, and model
-- City, country, and region (derived from IP at the time of the request; IP is then discarded)
-- Custom event properties you choose to send
+- URL страницы и источник перехода
+- Название и версия браузера
+- Название и версия операционной системы
+- Тип, бренд и модель устройства
+- Город, страна и регион (определяются по IP на момент запроса; затем IP отбрасывается)
+- Кастомные свойства событий, которые вы решаете отправлять
 
-No persistent identifiers, no cookies, no cross-site tracking.
+Никаких постоянных идентификаторов, никаких cookies, никакого межсайтового отслеживания.
 
-Because of this approach, the analytics data OpenPanel collects in standard website tracking mode does not constitute personal data under GDPR Art. 4(1). However, we provide this DPA for customers who require it for their own compliance documentation and records of processing activities.
+Благодаря этому подходу аналитические данные, которые OpenPanel собирает в стандартном режиме отслеживания сайтов, не являются персональными данными согласно GDPR, ст. 4(1). Тем не менее мы предоставляем этот DPA клиентам, которым он нужен для собственных документов соответствия и реестров действий по обработке.
 
-**Session replay (optional feature)**
+**Session replay (опциональная функция)**
 
-OpenPanel optionally supports session replay, which must be explicitly enabled by the Controller. When enabled, session replay records DOM snapshots and user interactions (mouse movements, clicks, scrolls) on the Controller's website using rrweb. This data is stored against the session identifier and may incidentally capture personal data visible in the page (for example, a logged-in user's name displayed in the UI). All text content and form inputs are masked by default. The Controller is responsible for ensuring their use of session replay complies with applicable privacy law, including providing appropriate notice to end users. Additional masking options are available via the SDK configuration.
+OpenPanel опционально поддерживает session replay, который должен быть явно включён Контролёром. При включении session replay записывает снимки DOM и взаимодействия пользователя (движения мыши, клики, скроллы) на сайте Контролёра с помощью rrweb. Эти данные привязываются к идентификатору сессии и могут случайно захватывать персональные данные, видимые на странице (например, имя вошедшего пользователя в интерфейсе). Весь текстовый контент и поля форм по умолчанию маскируются. Контролёр отвечает за то, чтобы использование session replay соответствовало применимому законодательству о приватности, включая надлежащее уведомление конечных пользователей. Дополнительные опции маскирования доступны в конфигурации SDK.
 
-**AI features (optional, opt-in)**
+**AI-функции (опционально, по включению)**
 
-OpenPanel offers optional AI features (such as natural-language queries over the Controller's analytics data, anomaly insights, and AI-assisted reports) which must be explicitly invoked by the Controller. When the Controller uses these features, the prompt and the relevant slice of the Controller's analytics data are transmitted to OpenAI, L.L.C. (United States) as a sub-processor for the sole purpose of generating the requested response. OpenAI is contractually bound under its Data Processing Addendum and the EU Standard Contractual Clauses; OpenAI does not use API-submitted data to train its models. If the Controller does not use these features, no data is sent to OpenAI.
+OpenPanel предлагает опциональные AI-функции (например, запросы на естественном языке к аналитическим данным Контролёра, инсайты об аномалиях и отчёты с помощью AI), которые должны быть явно вызваны Контролёром. Когда Контролёр использует эти функции, промпт и соответствующий фрагмент аналитических данных Контролёра передаются в OpenAI, L.L.C. (США) как субобработчику исключительно для формирования запрошенного ответа. OpenAI связана договорными обязательствами согласно своему Data Processing Addendum и Стандартным договорным условиям ЕС; OpenAI не использует данные, отправленные через API, для обучения своих моделей. Если Контролёр не использует эти функции, никакие данные в OpenAI не передаются.
 
-## 3. Scope and roles
+## 3. Объём применения и роли
 
-OpenPanel acts as a **Processor** when processing data on behalf of the Controller. You act as the **Controller** for the analytics data collected from visitors to your websites and applications.
+OpenPanel выступает **Обработчиком** при обработке данных от имени Контролёра. Вы выступаете **Контролёром** для аналитических данных, собранных с посетителей ваших сайтов и приложений.
 
-## 4. Processor obligations
+## 4. Обязанности Обработчика
 
-OpenPanel commits to the following:
+OpenPanel обязуется:
 
-- Process Personal Data only on your documented instructions and for no other purpose.
-- Ensure that all personnel with access to Personal Data are bound by appropriate confidentiality obligations.
-- Implement and maintain technical and organizational measures in accordance with Section 7 of this DPA.
-- Not engage a Sub-processor without your prior general or specific written authorization and flow down equivalent data protection obligations to any Sub-processor.
-- Assist you, where reasonably possible, in responding to Data Subject requests to exercise their rights under GDPR.
-- Notify you without undue delay (and no later than 48 hours) upon becoming aware of a Personal Data breach.
-- Make available all information necessary to demonstrate compliance with this DPA. Audits by you or your designated auditor are limited to one per 12-month period (unless required by a supervisory authority or following a confirmed Personal Data breach), require 30 days' prior notice, are conducted under confidentiality, at your cost, and without unreasonable disruption to operations. Documentary requests in lieu of on-site audits will be accommodated where they provide equivalent assurance.
-- At your choice, delete or return all Personal Data upon termination of the service.
+- Обрабатывать персональные данные только по вашим документированным инструкциям и ни для каких иных целей.
+- Обеспечить, чтобы весь персонал с доступом к персональным данным был связан надлежащими обязательствами конфиденциальности.
+- Внедрять и поддерживать технические и организационные меры согласно разделу 7 этого DPA.
+- Не привлекать субобработчиков без вашего предварительного общего или специального письменного разрешения и распространять на любого субобработчика эквивалентные обязательства по защите данных.
+- Содействовать вам, насколько это разумно возможно, в реагировании на запросы субъектов данных о реализации их прав по GDPR.
+- Уведомить вас без неоправданной задержки (и не позднее 48 часов) после того, как OpenPanel узнает об утечке персональных данных.
+- Предоставлять всю информацию, необходимую для подтверждения соответствия этому DPA. Аудит с вашей стороны или со стороны назначенного вами аудитора ограничивается одним разом за 12-месячный период (если иное не требуется надзорным органом или не связано с подтверждённой утечкой персональных данных), требует уведомления за 30 дней, проводится при соблюдении конфиденциальности, за ваш счёт и без неоправданного нарушения работы сервиса. Запросы документов вместо аудита на месте принимаются, если они дают эквивалентные гарантии.
+- По вашему выбору удалить или вернуть все персональные данные после прекращения сервиса.
 
-## 5. Your obligations as Controller
+## 5. Ваши обязанности как Контролёра
 
-You confirm that:
+Вы подтверждаете, что:
 
-- You have a lawful basis for the processing described in this DPA.
-- You have provided appropriate privacy notices to your end users.
-- You are responsible for the accuracy and lawfulness of the data you instruct OpenPanel to process.
+- Имеете законное основание для обработки, описанной в этом DPA.
+- Предоставили надлежащие уведомления о приватности своим конечным пользователям.
+- Отвечаете за точность и законность данных, обработку которых поручаете OpenPanel.
 
-## 6. Sub-processors
+## 6. Субобработчики
 
-OpenPanel uses the following sub-processors to deliver the service. All sub-processors are either located within the European Economic Area or provide adequate safeguards under GDPR Chapter V (Standard Contractual Clauses).
+OpenPanel использует следующих субобработчиков для оказания сервиса. Все субобработчики либо находятся в Европейской экономической зоне, либо обеспечивают надлежащие гарантии согласно главе V GDPR (Стандартные договорные условия).
 
-| Sub-processor | Purpose | Location |
+| Субобработчик | Назначение | Расположение |
 |---|---|---|
-| Hetzner Online GmbH | Cloud infrastructure and primary data storage | Germany (EU) |
-| Cloudflare, Inc. | CDN, WAF, and edge proxy in front of public endpoints | EU edge (under SCCs for any US transit) |
-| Cloudflare R2 | Backup storage | EU |
-| OpenAI, L.L.C. | LLM provider, used only when the Controller invokes opt-in AI features | United States (under SCCs) |
-| Resend, Inc. | Transactional email delivery (account, billing, and product notifications) | United States (under SCCs) |
+| Hetzner Online GmbH | Облачная инфраструктура и основное хранилище данных | Германия (ЕС) |
+| Cloudflare, Inc. | CDN, WAF и edge-прокси перед публичными эндпоинтами | Edge в ЕС (по SCC для любого транзита через США) |
+| Cloudflare R2 | Резервное копирование | ЕС |
+| OpenAI, L.L.C. | Поставщик LLM, используется только когда Контролёр вызывает опциональные AI-функции | США (по SCC) |
+| Resend, Inc. | Доставка транзакционных писем (аккаунт, биллинг и продуктовые уведомления) | США (по SCC) |
 
-We will inform you of any intended changes to this list (additions or replacements) with reasonable notice, giving you the opportunity to object.
+Мы уведомим вас о любых планируемых изменениях этого списка (добавлениях или заменах) с разумным сроком, дав вам возможность возразить.
 
-## 7. Technical and organizational measures
+## 7. Технические и организационные меры
 
-OpenPanel implements the following measures under GDPR Art. 32:
+OpenPanel внедряет следующие меры согласно GDPR, ст. 32:
 
-**Data minimization and anonymization**
-- IP addresses are never stored. They are used only to derive geolocation and generate an anonymous daily identifier, then discarded.
-- Daily-rotating cryptographic salts ensure visitor identifiers cannot be reversed or linked to individuals after 24 hours.
-- No cookies or persistent cross-device identifiers are used.
+**Минимизация данных и анонимизация**
+- IP-адреса никогда не хранятся. Они используются только для определения геолокации и генерации анонимного дневного идентификатора, после чего отбрасываются.
+- Ежедневная ротация криптографических солей гарантирует, что идентификаторы посетителей нельзя восстановить или связать с конкретными людьми по истечении 24 часов.
+- Cookies и постоянные междевайсные идентификаторы не используются.
 
-**Access control**
-- Dashboard access is protected by authentication and role-based access control.
-- Production systems are accessible only to authorized personnel.
+**Контроль доступа**
+- Доступ к дашборду защищён аутентификацией и ролевой моделью доступа.
+- Продакшн-системы доступны только авторизованному персоналу.
 
-**Encryption and transport security**
-- All data is transmitted over HTTPS (TLS).
+**Шифрование и безопасность передачи**
+- Все данные передаются по HTTPS (TLS).
 
-**Infrastructure and availability**
-- All data is hosted on Hetzner servers located in Germany within the EU.
-- Regular backups are performed.
-- No data leaves the EEA in the course of normal operations.
+**Инфраструктура и доступность**
+- Все данные размещаются на серверах Hetzner в Германии, на территории ЕС.
+- Регулярно выполняется резервное копирование.
+- В штатном режиме данные не покидают ЕЭП.
 
-**Incident response**
-- We maintain procedures for detecting, reporting, and investigating Personal Data breaches.
-- In the event of a breach affecting your data, we will notify you within 48 hours of becoming aware.
+**Реагирование на инциденты**
+- Мы поддерживаем процедуры обнаружения, отчётности и расследования утечек персональных данных.
+- В случае инцидента, затрагивающего ваши данные, мы уведомим вас в течение 48 часов после того, как узнаем о нём.
 
-**Open source**
-- The OpenPanel codebase is publicly available on GitHub, allowing independent review of our data handling practices.
+**Открытый исходный код**
+- Код OpenPanel публично доступен на GitHub, что позволяет независимо проверять наши практики работы с данными.
 
-## 8. International data transfers
+## 8. Международная передача данных
 
-All analytics data is stored on Hetzner infrastructure located in Germany. Backups are stored on Cloudflare R2 within the EU. In standard operation, analytics data does not leave the European Economic Area.
+Все аналитические данные хранятся на инфраструктуре Hetzner в Германии. Резервные копии хранятся в Cloudflare R2 на территории ЕС. В штатном режиме аналитические данные не покидают Европейскую экономическую зону.
 
-Limited transfers to the United States may occur in the following cases:
+Ограниченная передача данных в США возможна в следующих случаях:
 
-- **Transactional email** (via Resend, Inc.) — necessary to deliver account, billing, and product communications to the Controller's authorized users.
-- **AI features** (via OpenAI, L.L.C.) — only when the Controller actively invokes an opt-in AI feature, in which case the relevant prompt and data slice are transmitted to OpenAI for processing.
-- **Cloudflare edge** — public-endpoint traffic is served via Cloudflare's global network. Cloudflare's EU traffic is processed at EU edge locations where possible.
+- **Транзакционные письма** (через Resend, Inc.) — необходимо для доставки сообщений об аккаунте, биллинге и продукте авторизованным пользователям Контролёра.
+- **AI-функции** (через OpenAI, L.L.C.) — только когда Контролёр активно вызывает опциональную AI-функцию; в этом случае соответствующий промпт и фрагмент данных передаются в OpenAI для обработки.
+- **Edge-сеть Cloudflare** — трафик публичных эндпоинтов обслуживается глобальной сетью Cloudflare. Трафик из ЕС обрабатывается на edge-локациях в ЕС, где это возможно.
 
-All such transfers are governed by the EU Standard Contractual Clauses (Commission Decision (EU) 2021/914) executed with each sub-processor, providing the adequate safeguards required under GDPR Chapter V.
+Все такие передачи регулируются Стандартными договорными условиями ЕС (Решение Комиссии (ЕС) 2021/914), подписанными с каждым субобработчиком, и обеспечивают надлежащие гарантии согласно главе V GDPR.
 
-## 9. Data retention and deletion
+## 9. Хранение и удаление данных
 
-**Analytics events** are retained for as long as your account is active. We do not currently enforce a maximum retention period on analytics event data. If we introduce a retention limit in the future, we will notify all customers in advance.
+**Аналитические события** хранятся, пока ваш аккаунт активен. Максимальный срок хранения аналитических данных сейчас не введён. Если мы введём лимит хранения в будущем, мы уведомим всех клиентов заранее.
 
-**Session replays** are retained for 30 days and then permanently deleted.
+**Session replay** хранятся 30 дней, после чего удаляются безвозвратно.
 
-You can delete individual projects, all associated data, or your entire account at any time from within the dashboard. Upon account termination we will delete your data within 30 days unless we are required by law to retain it longer.
+Вы можете в любой момент удалить отдельные проекты, все связанные данные или весь аккаунт прямо из дашборда. После прекращения аккаунта мы удалим ваши данные в течение 30 дней, если закон не требует сохранять их дольше.
 
-## 10. Governing law
+## 10. Применимое право
 
-This DPA is governed by the laws of Sweden and is interpreted in accordance with the GDPR.
+Этот DPA регулируется законодательством Швеции и толкуется в соответствии с GDPR.
 
-## 11. How to execute this DPA
+## 11. Как заключить этот DPA
 
-Using OpenPanel Cloud constitutes acceptance of this DPA as part of our Terms of Service.
+Использование OpenPanel Cloud означает принятие этого DPA как части наших Условий использования.
 
-If your organization requires a signed copy for your records of processing activities, you can download a pre-signed version below. Fill in your company details and countersign — no need to send it back to us.
+Если вашей организации нужен подписанный экземпляр для реестра действий по обработке, вы можете скачать предварительно подписанную версию ниже. Впишите данные своей компании и поставьте встречную подпись — отправлять её нам не нужно.
 
-[Download pre-signed DPA](/dpa/download)
+[Скачать подписанный DPA](/dpa/download)
 
-## Contact
+## Контакты
 
-For questions about this DPA or data protection at OpenPanel:
+По вопросам об этом DPA и защите данных в OpenPanel:
 
 - Email: [hello@openpanel.dev](mailto:hello@openpanel.dev)
-- Company: OpenPanel AB, Sankt Eriksgatan 100, 113 31 Stockholm, Sweden
+- Компания: OpenPanel AB, Sankt Eriksgatan 100, 113 31 Stockholm, Sweden

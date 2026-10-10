@@ -8,16 +8,16 @@ import {
 
 export const TOOLS = [
   {
-    name: 'URL Checker',
+    name: 'Проверка URL',
     url: '/tools/url-checker',
     icon: SearchIcon,
     description:
-      'Analyze any URL for SEO, social, technical, and security data',
+      'Анализ любого URL: SEO, соцсети, технические данные и безопасность',
   },
   {
-    name: 'IP Lookup',
+    name: 'Проверка IP',
     url: '/tools/ip-lookup',
     icon: GlobeIcon,
-    description: 'Find your IP address and geolocation data',
+    description: 'Узнайте свой IP-адрес и данные геолокации',
   },
 ];

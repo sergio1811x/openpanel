@@ -49,12 +49,12 @@ export function ChatDrawerNotConfigured() {
         <KeyRoundIcon className="size-5" />
       </div>
       <div className="max-w-xs">
-        <h3 className="font-semibold text-xl mb-2">AI chat isn't configured</h3>
+        <h3 className="font-semibold text-xl mb-2">Чат ИИ не настроен</h3>
         <p className="mt-1.5 text-muted-foreground leading-[1.5]">
-          Set <code className="font-mono text-sm">OPENAI_API_KEY</code> and/or{' '}
-          <code className="font-mono text-sm">ANTHROPIC_API_KEY</code> on the
-          API service to enable AI chat, then restart it. The model picker
-          shows only providers with a configured key.
+          Установите <code className="font-mono text-sm">OPENAI_API_KEY</code> и/или{' '}
+          <code className="font-mono text-sm">ANTHROPIC_API_KEY</code> в сервисе
+          API, чтобы включить чат ИИ, затем перезапустите его. В списке моделей
+          отображаются только провайдеры с настроенным ключом.
         </p>
       </div>
       <div className="flex w-full max-w-xs flex-col gap-2">
@@ -67,7 +67,7 @@ export function ChatDrawerNotConfigured() {
         rel="noopener"
         className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
       >
-        View setup docs
+        Просмотр документации по настройке
         <ExternalLinkIcon className="size-3.5" />
       </a>
     </div>
@@ -85,13 +85,13 @@ function getSuggestionsForContext(
 ): Suggestions {
   if (!ctx) {
     return {
-      headline: 'Ask about your data',
+      headline: 'Спросите о Ваших данных',
       description:
-        'I can answer questions about your analytics, generate reports, and dig into users, sessions, or pages.',
+        'Я могу отвечать на вопросы по Вашей аналитике, создавать отчёты и разбираться в пользователях, сессиях или страницах.',
       prompts: [
-        'What happened yesterday?',
-        'Show me last 7 days of traffic',
-        'Which pages have the highest bounce rate?',
+        'Что произошло вчера?',
+        'Покажи трафик за последние 7 дней',
+        'Какие страницы имеют самый высокий показатель отказов?',
       ],
     };
   }
@@ -99,142 +99,142 @@ function getSuggestionsForContext(
   switch (ctx.page) {
     case 'overview':
       return {
-        headline: 'Ask about this overview',
+        headline: 'Спросите об этом обзоре',
         description:
-          'I can explain trends, compare periods, or filter the page. Try a question or pick a starter.',
+          'Я могу объяснить тренды, сравнить периоды или отфильтровать страницу. Задайте вопрос или выберите готовый вариант.',
         prompts: [
-          'What changed compared to the previous period?',
-          'Filter to mobile only',
-          'Show me last 7 days of traffic',
-          'Which referrers drove the most sessions?',
+          'Что изменилось по сравнению с предыдущим периодом?',
+          'Фильтровать только мобильные устройства',
+          'Покажи трафик за последние 7 дней',
+          'Какие источники привели больше всего сессий?',
         ],
       };
 
     case 'insights':
       return {
-        headline: 'Explore your insights',
+        headline: 'Изучите Ваши инсайты',
         description:
-          'I can explain why an insight fired, find related ones, or walk you through the most important.',
+          'Я могу объяснить, почему сработал инсайт, найти связанные или провести Вас по самым важным.',
         prompts: [
-          'What are the most important insights right now?',
-          'Explain the biggest anomaly this week',
-          'Any insights related to device trends?',
+          'Какие инсайты сейчас самые важные?',
+          'Объясни самую большую аномалию за эту неделю',
+          'Есть ли инсайты, связанные с трендами устройств?',
         ],
       };
 
     case 'pages':
       return {
-        headline: 'Ask about your pages',
+        headline: 'Спросите о Ваших страницах',
         description:
-          'I can rank pages by performance, find declining ones, or identify entry/exit patterns.',
+          'Я могу ранжировать страницы по эффективности, найти падающие или выявить паттерны входа/выхода.',
         prompts: [
-          'Which pages are declining vs last month?',
-          'Show pages with the highest bounce rate',
-          'Top entry pages in the last 7 days',
-          'Find pages with underperforming SEO',
+          'Какие страницы упали по сравнению с прошлым месяцем?',
+          'Покажи страницы с самым высоким показателем отказов',
+          'Топ страниц входа за последние 7 дней',
+          'Найди страницы со слабым SEO',
         ],
       };
 
     case 'seo':
       return {
-        headline: 'Dig into your SEO',
+        headline: 'Разберитесь в своём SEO',
         description:
-          'I can surface high-opportunity queries, check for cannibalization, and correlate SEO with on-site engagement.',
+          'Я могу найти перспективные запросы, проверить каннибализацию и сопоставить SEO с вовлечённостью на сайте.',
         prompts: [
-          'Queries on page 2 with high impressions (easy wins)',
-          'Any query cannibalization I should fix?',
-          'Which pages bring GSC clicks but bounce hard?',
-          'Top SEO queries last 30 days',
+          'Запросы на 2-й странице с высокими показами (лёгкие победы)',
+          'Есть ли каннибализация запросов, которую стоит исправить?',
+          'Какие страницы получают клики из GSC, но имеют высокий отказ?',
+          'Топ SEO-запросов за последние 30 дней',
         ],
       };
 
     case 'events':
       return {
-        headline: 'Analyze your events',
+        headline: 'Проанализируйте Ваши события',
         description:
-          'I can analyze distribution, correlate events, and drill into properties.',
+          'Я могу проанализировать распределение, сопоставить события и детально разобрать свойства.',
         prompts: [
-          'Which events often happen together?',
-          'Analyze event distribution by country',
-          'Filter to signup events only',
-          'What are the most common event properties?',
+          'Какие события часто происходят вместе?',
+          'Проанализируй распределение событий по странам',
+          'Фильтровать только события регистрации',
+          'Какие свойства событий встречаются чаще всего?',
         ],
       };
 
     case 'profileDetail':
       return {
-        headline: 'Ask about this user',
+        headline: 'Спросите об этом пользователе',
         description:
-          'I can summarize this profile, build a journey, or compare them to the average user.',
+          'Я могу сделать сводку по этому профилю, построить путь или сравнить пользователя со средним.',
         prompts: [
-          "Tell me about this user's journey",
-          'How does this user compare to average?',
-          'What was their last session?',
-          'Do they have unusual behavior?',
+          'Расскажи о пути этого пользователя',
+          'Как этот пользователь сравнивается со средним?',
+          'Какой была его последняя сессия?',
+          'Есть ли необычное поведение?',
         ],
       };
 
     case 'sessionDetail':
       return {
-        headline: 'Ask about this session',
+        headline: 'Спросите об этой сессии',
         description:
-          'I can walk through the path, compare to typical sessions, or explain the referrer context.',
+          'Я могу разобрать путь, сравнить с типичными сессиями или объяснить контекст источника.',
         prompts: [
-          'Walk me through this session',
-          'How does this compare to typical sessions?',
-          'Where did this traffic come from?',
-          'Are there similar sessions today?',
+          'Разбери мне эту сессию',
+          'Как это сравнивается с типичными сессиями?',
+          'Откуда пришёл этот трафик?',
+          'Есть ли похожие сессии сегодня?',
         ],
       };
 
     case 'groupDetail':
       return {
-        headline: 'Ask about this group',
+        headline: 'Спросите об этой группе',
         description:
-          'I can show metrics, list members, and compare to peer groups.',
+          'Я могу показать метрики, перечислить участников и сравнить с похожими группами.',
         prompts: [
-          "Summarize this group's activity",
-          'Compare to other groups',
-          'Who are the most active members?',
-          "What's this group's engagement trend?",
+          'Сделай сводку активности этой группы',
+          'Сравни с другими группами',
+          'Кто самые активные участники?',
+          'Каков тренд вовлечённости этой группы?',
         ],
       };
 
     case 'reportEditor':
       return {
-        headline: 'Edit this report with me',
+        headline: 'Отредактируйте этот отчёт вместе со мной',
         description:
-          'I can preview changes, suggest breakdowns, or compare to the previous period.',
+          'Я могу предварительно показать изменения, предложить разбивки или сравнить с предыдущим периодом.',
         prompts: [
-          'Suggest useful breakdowns for this report',
-          'Compare to the previous period',
-          'Find anomalies in the current data',
-          'Add a country breakdown',
+          'Предложи полезные разбивки для этого отчёта',
+          'Сравни с предыдущим периодом',
+          'Найди аномалии в текущих данных',
+          'Добавь разбивку по странам',
         ],
       };
 
     case 'dashboard':
       return {
-        headline: 'Ask about this dashboard',
+        headline: 'Спросите об этом дашборде',
         description:
-          'I can summarize every report on this dashboard at once, flag what changed, or zoom into a single chart.',
+          'Я могу сделать сводку по всем отчётам этого дашборда сразу, отметить изменения или приблизиться к конкретному графику.',
         prompts: [
-          'Summarize this dashboard',
-          "What's underperforming here?",
-          'Compare this dashboard to the previous period',
-          'Which report has the biggest change?',
+          'Сделай сводку по этому дашборду',
+          'Что здесь работает хуже всего?',
+          'Сравни этот дашборд с предыдущим периодом',
+          'В каком отчёте самое большое изменение?',
         ],
       };
 
     default:
       return {
-        headline: 'Ask about your data',
+        headline: 'Спросите о Ваших данных',
         description:
-          'I can answer questions about the page you\'re viewing, generate reports, and dig into specific users, sessions, or pages.',
+          'Я могу отвечать на вопросы по просматриваемой странице, создавать отчёты и разбираться в конкретных пользователях, сессиях или страницах.',
         prompts: [
-          "What's our visitor count this week?",
-          'Top traffic sources right now',
-          'Show me top pages by bounce rate',
+          'Сколько у нас посетителей на этой неделе?',
+          'Топ источников трафика прямо сейчас',
+          'Покажи топ страниц по показателю отказов',
         ],
       };
   }

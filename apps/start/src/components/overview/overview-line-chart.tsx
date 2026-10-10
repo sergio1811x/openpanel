@@ -111,7 +111,7 @@ export function OverviewLineChart({
         className={cn('flex h-[358px] items-center justify-center', className)}
       >
         <div className="text-muted-foreground text-sm">
-          {searchQuery ? 'No results found' : 'No data available'}
+          {searchQuery ? 'Ничего не найдено' : 'Нет данных'}
         </div>
       </div>
     );
@@ -154,7 +154,7 @@ export function OverviewLineChart({
               }
               return (
                 <div className="text-muted-foreground text-sm">
-                  and {hidden} more {hidden === 1 ? 'item' : 'items'}
+                  и ещё {hidden} скрыто
                 </div>
               );
             }}
@@ -190,22 +190,22 @@ export function OverviewLineChart({
                         <span className="mx-1">/</span>
                       </>
                     )}
-                    {series.name || 'Not set'}
+                    {series.name || 'Не задано'}
                   </>
                 ),
                 sub: [
                   ...(revenue !== undefined && revenue > 0
                     ? [
                         {
-                          label: 'Revenue',
+                          label: 'Доход',
                           value: revenue,
                           unit: 'currency' as const,
                           color: 'var(--chart-8)',
                         },
                       ]
                     : []),
-                  { label: 'Pageviews', value: pageviews },
-                  { label: 'Sessions', value: sessions },
+                  { label: 'Просмотры', value: pageviews },
+                  { label: 'Сессии', value: sessions },
                 ],
               }));
             }}
@@ -289,7 +289,7 @@ function LegendScrollable({ items }: { items: SeriesMeta[] }) {
                   <span className="mx-1">/</span>
                 </>
               )}
-              {series.name || 'Not set'}
+              {series.name || 'Не задано'}
             </span>
           </div>
         ))}
@@ -314,7 +314,7 @@ export function OverviewLineChartLoading({
     <div
       className={cn('flex h-[358px] items-center justify-center', className)}
     >
-      <div className="text-muted-foreground text-sm">Loading...</div>
+      <div className="text-muted-foreground text-sm">Загрузка...</div>
     </div>
   );
 }
@@ -324,7 +324,7 @@ export function OverviewLineChartEmpty({ className }: { className?: string }) {
     <div
       className={cn('flex h-[358px] items-center justify-center', className)}
     >
-      <div className="text-muted-foreground text-sm">No data available</div>
+      <div className="text-muted-foreground text-sm">Нет данных</div>
     </div>
   );
 }

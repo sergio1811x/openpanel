@@ -2,175 +2,199 @@
   "slug": "agencies",
   "audience": "agencies",
   "seo": {
-    "title": "Analytics for Agencies — Manage All Client Sites in One Place",
-    "description": "OpenPanel helps agencies manage analytics for all client websites from one account. Privacy-first, no cookie banners, unlimited projects, and affordable per-client pricing from $2.50/mo.",
+    "title": "Аналитика для агентств — все сайты клиентов в одном месте",
+    "description": "OpenPanel помогает агентствам управлять аналитикой всех клиентских сайтов из одного аккаунта. Приватность прежде всего, без cookie-баннеров, неограниченные проекты и доступные тарифы от $2.50/мес.",
     "noindex": false
   },
   "hero": {
-    "heading": "Analytics for agencies",
-    "subheading": "Manage web and product analytics for every client from one account. No cookie consent banners to configure, no per-seat pricing, and costs that make sense for agency billing. From $2.50/month per project.",
+    "heading": "Аналитика для агентств",
+    "subheading": "Веб- и продуктовая аналитика для каждого клиента из одного аккаунта.",
     "badges": [
-      "Unlimited projects",
-      "No per-seat fees",
-      "No cookie banners needed",
-      "Open source"
+      "Неограниченные проекты",
+      "Без платы за место",
+      "Cookie-баннеры не нужны",
+      "Открытый исходный код"
     ]
   },
   "problem": {
-    "title": "Why analytics is painful for agencies",
-    "intro": "Managing analytics across dozens of client sites creates problems that most tools weren't designed to solve.",
+    "title": "Почему аналитика — боль для агентств",
+    "intro": "Управление аналитикой на десятках клиентских сайтов создаёт проблемы, которые большинство инструментов не умеют решать.",
     "items": [
       {
-        "title": "Google Analytics access management is a nightmare",
-        "description": "Creating GA4 properties, managing user permissions, switching between accounts, and dealing with Google's constantly changing interface. Multiply this by 20+ clients and it's a full-time job."
+        "title": "Управление доступом в Google Analytics — кошмар",
+        "description": "Создание свойств GA4, управление правами пользователей, переключение между аккаунтами и постоянно меняющийся интерфейс Google. Умножьте на 20+ клиентов — получится отдельная работа на полную ставку."
       },
       {
-        "title": "Cookie consent for every single client",
-        "description": "Every client site needs its own cookie consent banner configured correctly. Different jurisdictions, different requirements, different implementations — and one mistake can mean a GDPR fine."
+        "title": "Согласие на cookies для каждого клиента",
+        "description": "Каждому клиентскому сайту нужен свой корректно настроенный баннер согласия на cookies. Разные юрисдикции, разные требования, разные реализации — и одна ошибка может обернуться штрафом по GDPR."
       },
       {
-        "title": "Per-seat pricing kills agency margins",
-        "description": "Most analytics tools charge per user. When your team of 10 needs access to analytics for client reporting, the cost adds up fast. Then the client wants access too."
+        "title": "Оплата за место убивает маржу агентства",
+        "description": "Большинство инструментов берут плату за пользователя. Когда доступ к аналитике для клиентских отчётов нужен команде из 10 человек, стоимость растёт быстро. А потом доступ захочет и сам клиент."
       },
       {
-        "title": "No easy way to show clients their data",
-        "description": "Clients want to see their analytics without logging into your tools. Exporting PDFs is tedious, sharing login credentials is insecure, and building custom dashboards takes time you don't have."
+        "title": "Нет простого способа показать клиентам их данные",
+        "description": "Клиенты хотят видеть свою аналитику без входа в ваши инструменты. Экспорт PDF утомителен, передача логинов небезопасна, а построение кастомных дашбордов требует времени, которого нет."
       }
     ]
   },
   "features": {
-    "title": "Analytics built for multi-client workflows",
-    "intro": "OpenPanel works the way agencies do: multiple projects, multiple team members, one interface.",
+    "title": "Аналитика, созданная для мульти-клиентских процессов",
+    "intro": "OpenPanel работает так, как работают агентства: много проектов, много участников, один интерфейс.",
     "items": [
       {
-        "title": "Unlimited projects per account",
-        "description": "Add every client as a separate project under one account. No extra cost per project — just one monthly bill based on total event volume."
+        "title": "Неограниченные проекты в одном аккаунте",
+        "description": "Добавьте каждого клиента отдельным проектом в одном аккаунте. Без доплаты за проект — один счёт в месяц по общему объёму событий."
       },
       {
-        "title": "No per-seat pricing",
-        "description": "Invite your entire team at no extra cost. Account managers, developers, strategists — everyone gets access. No reason to share logins or limit who can see data."
+        "title": "Без оплаты за место",
+        "description": "Приглашайте всю команду без доплат. Аккаунт-менеджеры, разработчики, стратеги — доступ получают все. Нет причин шарить логины или ограничивать доступ к данным."
       },
       {
-        "title": "No cookie consent required",
-        "description": "OpenPanel uses cookieless tracking by default. No consent banners to set up for any client, regardless of their location or audience. Saves hours of implementation per client."
+        "title": "Согласие на cookies не требуется",
+        "description": "OpenPanel по умолчанию отслеживает без cookies. Не нужно настраивать баннеры согласия ни для одного клиента, независимо от его локации и аудитории. Часы экономии внедрения на каждого клиента."
       },
       {
-        "title": "Simple, instant dashboards",
-        "description": "Every project gets a complete analytics dashboard out of the box. No custom report building needed — clients get useful data from day one."
+        "title": "Простые мгновенные дашборды",
+        "description": "Каждый проект получает полный дашборд аналитики из коробки. Без построения кастомных отчётов — клиенты получают полезные данные с первого дня."
       },
       {
-        "title": "Privacy compliance built in",
-        "description": "GDPR and CCPA compliant by design. No cookies, EU data hosting, and data minimization mean you can confidently deploy analytics for clients in any market."
+        "title": "Соответствие приватности встроено",
+        "description": "GDPR и CCPA по дизайну. Без cookies, хостинг данных в ЕС и минимизация данных позволяют уверенно внедрять аналитику для клиентов на любом рынке."
       },
       {
-        "title": "Web + product analytics combined",
-        "description": "Pageviews, referrers, and campaigns alongside events, funnels, and user profiles. One tool replaces both Google Analytics and Mixpanel for clients who need deeper insights."
+        "title": "Веб- и продуктовая аналитика вместе",
+        "description": "Просмотры страниц, рефереры и кампании рядом с событиями, воронками и профилями пользователей. Один инструмент заменяет и Google Analytics, и Mixpanel для клиентов, которым нужна глубина."
       },
       {
-        "title": "Quick setup for new clients",
-        "description": "Add a script tag or install an SDK. Page views start tracking automatically. Most client setups take under 15 minutes including custom event configuration."
+        "title": "Быстрый запуск для новых клиентов",
+        "description": "Добавьте тег скрипта или установите SDK. Просмотры страниц отслеживаются автоматически. Большинство клиентских внедрений занимает до 15 минут вместе с настройкой кастомных событий."
       },
       {
-        "title": "Self-hosting for full control",
-        "description": "Agencies handling sensitive industries can self-host OpenPanel on their own infrastructure. Complete data sovereignty for clients who require it."
+        "title": "Self-hosting для полного контроля",
+        "description": "Агентства в чувствительных отраслях могут развернуть OpenPanel на своей инфраструктуре. Полный суверенитет над данными для требовательных клиентов."
       },
       {
-        "title": "Export and API access",
-        "description": "Pull data via the REST API for custom client reports. Export events for clients who want their own data. Integrate with your existing reporting stack."
+        "title": "Экспорт и API-доступ",
+        "description": "Забирайте данные через REST API для кастомных клиентских отчётов. Экспортируйте события клиентам, которые хотят владеть своими данными. Интегрируйтесь с существующим стеком отчётности."
       }
     ]
   },
   "benefits": {
-    "title": "Why agencies choose OpenPanel",
-    "intro": "Simpler analytics management means more time for the work clients actually pay you for.",
+    "title": "Почему агентства выбирают OpenPanel",
+    "intro": "Простое управление аналитикой — больше времени на работу, за которую клиенты вам платят.",
     "items": [
       {
-        "title": "One account for all clients",
-        "description": "Switch between client projects in one click. No separate logins, no Google account juggling, no access management headaches."
+        "title": "Один аккаунт для всех клиентов",
+        "description": "Переключение между клиентскими проектами в один клик. Без отдельных логинов, жонглирования Google-аккаунтами и головной боли с доступами."
       },
       {
-        "title": "Predictable costs for easy billing",
-        "description": "Flat tiers based on total event volume. Pass the cost through to clients or absorb it in your retainer — the pricing is simple enough to do either."
+        "title": "Предсказуемые расходы для простого биллинга",
+        "description": "Фиксированные уровни по общему объёму событий. Пробрасывайте стоимость клиентам или закладывайте в ретейнер — тарифы просты для любого варианта."
       },
       {
-        "title": "Ship cookie-free analytics for every client",
-        "description": "Stop spending hours configuring consent banners. OpenPanel works without cookies, so there's nothing to configure for GDPR or CCPA."
+        "title": "Аналитика без cookies для каждого клиента",
+        "description": "Хватит тратить часы на настройку баннеров согласия. OpenPanel работает без cookies — для GDPR или CCPA настраивать нечего."
       },
       {
-        "title": "Impress clients with real-time data",
-        "description": "Show clients their live analytics in real time during calls. Events, pageviews, and conversions updating as you speak."
+        "title": "Впечатляйте клиентов данными в реальном времени",
+        "description": "Показывайте клиентам живую аналитику прямо на звонках. События, просмотры страниц и конверсии обновляются, пока вы говорите."
       },
       {
-        "title": "Open source trust factor",
-        "description": "Clients in regulated industries appreciate that the analytics code is fully auditable. Open source means transparency about exactly what's being tracked."
+        "title": "Доверие open source",
+        "description": "Клиенты из регулируемых отраслей ценят, что код аналитики полностью проверяем. Открытый исходный код — прозрачность в том, что именно отслеживается."
       },
       {
-        "title": "Affordable at scale",
-        "description": "At $20/month for 100K events across all projects, OpenPanel is dramatically cheaper than running separate Mixpanel or GA4 properties per client."
+        "title": "Выгодно в масштабе",
+        "description": "При $20/месяц за 100 тыс. событий по всем проектам OpenPanel радикально дешевле отдельных свойств Mixpanel или GA4 для каждого клиента."
       }
     ]
   },
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions from agencies evaluating OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы от агентств, оценивающих OpenPanel.",
     "items": [
       {
-        "question": "How does pricing work with multiple client projects?",
-        "answer": "You pay based on total event volume across all projects, not per project. For example, if you have 20 client sites generating a combined 100K events/month, you pay $20/month total. All projects share the same plan."
+        "question": "Как устроены тарифы при нескольких клиентских проектах?",
+        "answer": "Оплата по общему объёму событий по всем проектам, а не за проект. Например, если у вас 20 клиентских сайтов с суммарными 100 тыс. событий в месяц, вы платите $20 в месяц всего. Все проекты делят один тариф."
       },
       {
-        "question": "Can clients see their own analytics without a login?",
-        "answer": "OpenPanel supports team invitations so clients can be added to their specific project. They'll only see their own data. You can also use the API to build custom dashboards or export reports for client presentations."
+        "question": "Могут ли клиенты видеть свою аналитику без логина?",
+        "answer": "OpenPanel поддерживает приглашения в команду: клиентов можно добавить в их конкретный проект, где они видят только свои данные. Также можно использовать API для кастомных дашбордов или экспорта отчётов для презентаций."
       },
       {
-        "question": "Do I need cookie consent banners for client sites?",
-        "answer": "No. OpenPanel uses cookieless tracking by default, which doesn't require consent under GDPR, CCPA, or PECR. This eliminates one of the most common compliance headaches for agency deployments."
+        "question": "Нужны ли клиентским сайтам баннеры согласия на cookies?",
+        "answer": "Нет. OpenPanel по умолчанию отслеживает без cookies, что не требует согласия по GDPR, CCPA и PECR. Это снимает одну из главных головных болей соответствия при внедрениях агентств."
       },
       {
-        "question": "How do I set up tracking for a new client?",
-        "answer": "Create a new project in your OpenPanel dashboard, copy the script tag, and add it to the client's website. Page views start tracking immediately. Custom events are one line of JavaScript each. Most setups take under 15 minutes."
+        "question": "Как настроить отслеживание для нового клиента?",
+        "answer": "Создайте новый проект в дашборде OpenPanel, скопируйте тег скрипта и добавьте его на сайт клиента. Просмотры страниц отслеживаются сразу. Кастомные события — по строке JavaScript на каждое. Большинство внедрений занимает до 15 минут."
       },
       {
-        "question": "Can I self-host for agency use?",
-        "answer": "Yes. Self-hosting is free and has no project or event limits. Run OpenPanel on your own server to keep all client data under your control. Docker Compose deployment takes about 10 minutes."
+        "question": "Можно ли развернуть OpenPanel самостоятельно для агентства?",
+        "answer": "Да. Self-hosting бесплатен и не имеет лимитов проектов и событий. Запустите OpenPanel на своём сервере, чтобы все клиентские данные были под вашим контролем. Развёртывание через Docker Compose занимает около 10 минут."
       },
       {
-        "question": "How does OpenPanel compare to Google Analytics for agencies?",
-        "answer": "OpenPanel is simpler to manage across multiple clients (one account, no Google permissions), privacy-compliant without cookies, and includes product analytics features that GA4 lacks. GA4 has more advanced attribution modeling and integrates with Google Ads. For most agency use cases, OpenPanel saves significant time on setup and compliance."
+        "question": "Чем OpenPanel отличается от Google Analytics для агентств?",
+        "answer": "OpenPanel проще в управлении несколькими клиентами (один аккаунт, без прав Google), соответствует требованиям приватности без cookies и включает продуктовую аналитику, которой нет в GA4. У GA4 более продвинутая атрибуция и интеграция с Google Ads. Для большинства агентских сценариев OpenPanel заметно экономит время на настройку и комплаенс."
       },
       {
-        "question": "Is there an API for building custom reports?",
-        "answer": "Yes. OpenPanel has a REST API for querying analytics data, managing projects, and exporting events. You can use it to build custom client dashboards, integrate with your reporting tools, or automate monthly reports."
+        "question": "Есть ли API для кастомных отчётов?",
+        "answer": "Да. У OpenPanel есть REST API для запросов аналитических данных, управления проектами и экспорта событий. С его помощью можно строить кастомные клиентские дашборды, интегрироваться с вашими отчётными инструментами или автоматизировать ежемесячные отчёты."
       },
       {
-        "question": "Can I white-label the analytics dashboard?",
-        "answer": "White-labeling is not currently available as a built-in feature. However, since OpenPanel is open source, agencies who self-host can customize the dashboard appearance, including branding. Cloud users can use the API to build branded dashboards."
+        "question": "Можно ли сделать белый лейбл дашборда аналитики?",
+        "answer": "Белый лейбл сейчас недоступен как встроенная функция. Но поскольку OpenPanel open source, агентства с self-hosting могут кастомизировать внешний вид дашборда, включая брендинг. Облачным пользователям доступен API для построения дашбордов под своим брендом."
       }
     ]
   },
   "related_links": {
     "guides": [
-      { "title": "Script tag SDK setup", "url": "/docs/sdks/script" },
-      { "title": "Migrate from Google Analytics", "url": "/guides/migrate-from-google-analytics" }
+      {
+        "title": "Настройка SDK через тег скрипта",
+        "url": "/docs/sdks/script"
+      },
+      {
+        "title": "Переход с Google Analytics",
+        "url": "/guides/migrate-from-google-analytics"
+      }
     ],
     "articles": [
-      { "title": "Cookieless analytics explained", "url": "/articles/cookieless-analytics" },
-      { "title": "How to self-host OpenPanel", "url": "/articles/how-to-self-host-openpanel" },
-      { "title": "Best open source analytics tools", "url": "/articles/self-hosted-web-analytics" }
+      {
+        "title": "Аналитика без cookies: как это работает",
+        "url": "/articles/cookieless-analytics"
+      },
+      {
+        "title": "Как развернуть OpenPanel самостоятельно",
+        "url": "/articles/how-to-self-host-openpanel"
+      },
+      {
+        "title": "Лучшие open source инструменты аналитики",
+        "url": "/articles/self-hosted-web-analytics"
+      }
     ],
     "comparisons": [
-      { "title": "OpenPanel vs Google Analytics", "url": "/compare/google-analytics-alternative" },
-      { "title": "OpenPanel vs Plausible", "url": "/compare/plausible-alternative" },
-      { "title": "OpenPanel vs Matomo", "url": "/compare/matomo-alternative" }
+      {
+        "title": "OpenPanel против Google Analytics",
+        "url": "/compare/google-analytics-alternative"
+      },
+      {
+        "title": "OpenPanel против Plausible",
+        "url": "/compare/plausible-alternative"
+      },
+      {
+        "title": "OpenPanel против Matomo",
+        "url": "/compare/matomo-alternative"
+      }
     ]
   },
   "ctas": {
     "primary": {
-      "label": "Try OpenPanel Free",
+      "label": "Попробуйте OpenPanel бесплатно",
       "href": "https://dashboard.openpanel.dev/onboarding"
     },
     "secondary": {
-      "label": "View Source on GitHub",
+      "label": "Исходный код на GitHub",
       "href": "https://github.com/Openpanel-dev/openpanel"
     }
   }

@@ -47,7 +47,7 @@ export function WeeklyDigest({
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
       <Heading as="h2" className="text-xl font-semibold">
-        Your week on {projectName}
+        Ваша неделя в {projectName}
       </Heading>
       <Text className="text-sm text-gray-500">{dateRange}</Text>
 
@@ -73,7 +73,7 @@ export function WeeklyDigest({
         <>
           <Hr />
           <Heading as="h3" className="text-base font-semibold">
-            What stood out
+            Главное за неделю
           </Heading>
           <List
             items={insights.map((i) => (
@@ -88,7 +88,7 @@ export function WeeklyDigest({
 
       <Section className="mt-6">
         <Link href={withUtm(dashboardUrl, 'weekly-digest')}>
-          Open your dashboard →
+          Открыть дашборд →
         </Link>
       </Section>
     </Layout>
@@ -98,40 +98,40 @@ export function WeeklyDigest({
 WeeklyDigest.PreviewProps = {
   projectName: 'Public Web 2',
   dashboardUrl: 'http://localhost:3000/openpanel-dev/public-web',
-  dateRange: 'Jun 8 – Jun 15, 2026',
+  dateRange: '8 июня – 15 июня 2026 г.',
   narrative:
-    "This week on Public Web 2, overall visitor numbers remained steady with a slight dip from 3,898 to 3,889, while sessions saw a modest increase to 4,777. Notably, visits originating from Twitter nearly tripled over the past month, boosting social media engagement considerably. Additionally, user interest in the IP lookup tool has more than doubled, and activity on the dashboard's settings page surged by over 200%, reflecting stronger interaction with site features. However, traffic from Ukraine fell sharply by over 80%, a drop that likely impacted overall traffic and may warrant further attention.",
+    'На этой неделе на Public Web 2 общее число посетителей оставалось стабильным с небольшим снижением с 3 898 до 3 889, а количество сессий умеренно выросло до 4 777. Примечательно, что переходы из Twitter за последний месяц почти утроились, заметно повысив вовлечённость в социальных сетях. Кроме того, интерес пользователей к инструменту проверки IP более чем удвоился, а активность на странице настроек дашборда выросла более чем на 200%, что говорит о более активном взаимодействии с возможностями сайта. Однако трафик из Украины резко упал более чем на 80% — это снижение, вероятно, повлияло на общий трафик и может требовать дополнительного внимания.',
   stats: [
-    { label: 'visitors', value: '3 889', delta: '-0%', direction: 'flat' },
-    { label: 'sessions', value: '4 777', delta: '+2%', direction: 'up' },
-    { label: 'pageviews', value: '25 254', delta: '-2%', direction: 'down' },
-    { label: 'bounce rate', value: '49%', delta: '+0pp', direction: 'flat' },
+    { label: 'посетители', value: '3 889', delta: '-0%', direction: 'flat' },
+    { label: 'сессии', value: '4 777', delta: '+2%', direction: 'up' },
+    { label: 'просмотры страниц', value: '25 254', delta: '-2%', direction: 'down' },
+    { label: 'показатель отказов', value: '49%', delta: '+0п.п.', direction: 'flat' },
   ],
   insights: [
     {
       title:
-        'Visits from Twitter nearly tripled over the last 30 days, a major surge indicating increased social media engagement.',
-      summary: 'Last 30 days. Sessions 277 vs 99.',
+        'Переходы из Twitter за последние 30 дней почти утроились — сильный всплеск, говорящий о росте вовлечённости в социальных сетях.',
+      summary: 'Последние 30 дней. Сессии: 277 против 99.',
     },
     {
       title:
-        'Visits starting at the IP lookup tool on openpanel.dev more than doubled in the past 30 days, a strong sign of increased user interest in this feature.',
-      summary: 'Last 30 days. Sessions 1168 vs 520.',
+        'Переходы к инструменту проверки IP на openpanel.dev более чем удвоились за последние 30 дней — явный признак растущего интереса пользователей к этой возможности.',
+      summary: 'Последние 30 дней. Сессии: 1168 против 520.',
     },
     {
       title:
-        'Settings page on the dashboard experienced a strong surge with 211.5% more sessions, indicating increased user activity or interest.',
-      summary: 'Last 30 days. Sessions 81 vs 26.',
+        'Страница настроек дашборда показала сильный рост — на 211,5% больше сессий, что говорит о повышенной активности или интересе пользователей.',
+      summary: 'Последние 30 дней. Сессии: 81 против 26.',
     },
     {
       title:
-        'Visits from Ukraine fell steeply by over 80% in the last week, a major drop that likely affects overall site traffic and should be investigated.',
-      summary: 'Last 7 days. Traffic change from Ukraine.',
+        'Переходы из Украины за последнюю неделю резко упали более чем на 80% — серьёзное снижение, которое, вероятно, влияет на общий трафик сайта и стоит изучить.',
+      summary: 'Последние 7 дней. Изменение трафика из Украины.',
     },
     {
       title:
-        'Traffic from New Zealand surged by 170% in the last 30 days, a large jump suggesting significant new interest from this market.',
-      summary: 'Last 30 days. Traffic change from New Zealand.',
+        'Трафик из Новой Зеландии вырос на 170% за последние 30 дней — большой скачок, указывающий на значительный новый интерес из этого рынка.',
+      summary: 'Последние 30 дней. Изменение трафика из Новой Зеландии.',
     },
   ],
 } satisfies Props;

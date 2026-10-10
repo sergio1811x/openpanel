@@ -42,7 +42,7 @@ function Tooltip(props: any) {
           style={{ background: getChartColor(0) }}
         />
         <div className="col gap-1">
-          <div className="text-muted-foreground text-sm">Total members</div>
+          <div className="text-muted-foreground text-sm">Всего участников</div>
           <div
             className="font-semibold text-lg"
             style={{ color: getChartColor(0) }}
@@ -53,7 +53,7 @@ function Tooltip(props: any) {
       </div>
       {payload.count > 0 && (
         <div className="text-muted-foreground text-xs">
-          +{number.format(payload.count)} new
+          +{number.format(payload.count)} новых
         </div>
       )}
     </div>
@@ -81,12 +81,12 @@ export function GroupMemberGrowth({ data }: Props) {
   return (
     <Widget className="w-full">
       <WidgetHead>
-        <WidgetTitle icon={TrendingUpIcon}>New members last 30 days</WidgetTitle>
+        <WidgetTitle icon={TrendingUpIcon}>Новые участники за 30 дней</WidgetTitle>
       </WidgetHead>
       <WidgetBody>
         {data.length === 0 ? (
           <p className="py-4 text-center text-muted-foreground text-sm">
-            No data yet
+            Данных пока нет
           </p>
         ) : (
           <div className="h-[200px] w-full">

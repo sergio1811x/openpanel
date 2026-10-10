@@ -28,15 +28,15 @@ export default function EditReport({ form, onSubmit }: EditReportProps) {
 
   return (
     <ModalContent>
-      <ModalHeader title="Edit report" />
+      <ModalHeader title="Изменение отчёта" />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <InputWithLabel label="Name" placeholder="Name" {...register('name')} />
+        <InputWithLabel label="Название" placeholder="Название" {...register('name')} />
         <ButtonContainer>
           <Button type="button" variant="outline" onClick={() => popModal()}>
-            Cancel
+            Отмена
           </Button>
           <Button type="submit" disabled={!formState.isDirty}>
-            Update
+            Обновить
           </Button>
         </ButtonContainer>
       </form>

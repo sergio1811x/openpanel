@@ -233,8 +233,8 @@ export const entryPagesModule: InsightModule = {
     const isNew = result.extra?.isNew as boolean | undefined;
 
     const title = isNew
-      ? `New entry page: ${displayValue}`
-      : `Entry page ${displayValue} ${isIncrease ? '↑' : '↓'} ${Math.abs(Number(pct))}%`;
+      ? `Новая страница входа: ${displayValue}`
+      : `Страница входа ${displayValue} ${isIncrease ? '↑' : '↓'} ${Math.abs(Number(pct))}%`;
 
     const sessionsCurrent = result.currentValue ?? 0;
     const sessionsCompare = result.compareValue ?? 0;
@@ -243,7 +243,7 @@ export const entryPagesModule: InsightModule = {
 
     return {
       title,
-      summary: `${ctx.window.label}. Sessions ${sessionsCurrent} vs ${sessionsCompare}.`,
+      summary: `${ctx.window.label}. Сессии: ${sessionsCurrent} vs ${sessionsCompare}.`,
       displayName: displayValue,
       payload: {
         kind: 'insight_v1',

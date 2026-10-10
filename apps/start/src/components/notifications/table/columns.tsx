@@ -23,7 +23,7 @@ export function useColumns() {
   const columns: ColumnDef<RouterOutputs['notification']['list'][number]>[] = [
     {
       accessorKey: 'title',
-      header: 'Title',
+      header: 'Заголовок',
       cell({ row }) {
         const { title } = row.original;
         return (
@@ -35,13 +35,13 @@ export function useColumns() {
       },
       meta: {
         variant: 'text',
-        placeholder: 'Search',
-        label: 'Title',
+        placeholder: 'Поиск',
+        label: 'Заголовок',
       },
     },
     {
       accessorKey: 'message',
-      header: 'Message',
+      header: 'Сообщение',
       cell({ row }) {
         const { message } = row.original;
         return (
@@ -51,36 +51,36 @@ export function useColumns() {
         );
       },
       meta: {
-        label: 'Message',
+        label: 'Сообщение',
         hidden: true,
       },
     },
     {
       accessorKey: 'integration',
-      header: 'Integration',
+      header: 'Интеграция',
       cell({ row }) {
         const integration = row.original.integration;
         return <div>{integration?.name}</div>;
       },
       meta: {
-        label: 'Integration',
+        label: 'Интеграция',
       },
     },
     {
       accessorKey: 'notificationRule',
-      header: 'Rule',
+      header: 'Правило',
       cell({ row }) {
         const rule = row.original.notificationRule;
         return <div>{rule?.name}</div>;
       },
       meta: {
-        label: 'Rule',
+        label: 'Правило',
         hidden: true,
       },
     },
     {
       accessorKey: 'country',
-      header: 'Country',
+      header: 'Страна',
       cell({ row }) {
         const { payload } = row.original;
         const event = getEventFromPayload(payload);
@@ -95,12 +95,12 @@ export function useColumns() {
         );
       },
       meta: {
-        label: 'Country',
+        label: 'Страна',
       },
     },
     {
       accessorKey: 'os',
-      header: 'OS',
+      header: 'ОС',
       cell({ row }) {
         const { payload } = row.original;
         const event = getEventFromPayload(payload);
@@ -115,12 +115,12 @@ export function useColumns() {
         );
       },
       meta: {
-        label: 'OS',
+        label: 'ОС',
       },
     },
     {
       accessorKey: 'browser',
-      header: 'Browser',
+      header: 'Браузер',
       cell({ row }) {
         const { payload } = row.original;
         const event = getEventFromPayload(payload);
@@ -135,12 +135,12 @@ export function useColumns() {
         );
       },
       meta: {
-        label: 'Browser',
+        label: 'Браузер',
       },
     },
     {
       accessorKey: 'profile',
-      header: createHeaderColumn('Profile'),
+      header: createHeaderColumn('Профиль'),
       cell({ row }) {
         const { payload } = row.original;
         const event = getEventFromPayload(payload);
@@ -158,12 +158,12 @@ export function useColumns() {
         );
       },
       meta: {
-        label: 'Profile',
+        label: 'Профиль',
       },
     },
     {
       accessorKey: 'createdAt',
-      header: 'Created at',
+      header: 'Создано',
       size: ColumnCreatedAt.size,
       cell: ({ row }) => {
         const item = row.original;
@@ -172,8 +172,8 @@ export function useColumns() {
       filterFn: 'isWithinRange',
       meta: {
         variant: 'dateRange',
-        placeholder: 'Created at',
-        label: 'Created at',
+        placeholder: 'Дата создания',
+        label: 'Создано',
       },
     },
   ];

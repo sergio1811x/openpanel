@@ -39,14 +39,14 @@ const VerifyListener = ({ events }: Props) => {
         {renderIcon()}
         <div className="flex-1">
           <div className="font-semibold text-foreground/90 text-lg leading-normal">
-            {isConnected ? 'Successfully connected' : 'Waiting for events'}
+            {isConnected ? 'Успешно подключено' : 'Ожидаем события'}
           </div>
           {isConnected ? (
             <div className="mt-2 flex flex-col-reverse gap-1">
               {events.length > 5 && (
                 <div className="flex items-center gap-2">
                   <CheckIcon size={14} />{' '}
-                  <span>{events.length - 5} more events</span>
+                  <span>и ещё {events.length - 5} событий</span>
                 </div>
               )}
               {events.slice(-5).map((event) => (
@@ -61,7 +61,7 @@ const VerifyListener = ({ events }: Props) => {
             </div>
           ) : (
             <div className="text-foreground/50">
-              Verify that your implementation works.
+              Проверьте, что Ваша интеграция работает.
             </div>
           )}
         </div>

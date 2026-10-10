@@ -55,7 +55,7 @@ export function WhoShouldChoose({
           <div className="pointer-events-none absolute inset-0 bg-linear-to-br opacity-100 blur-2xl dark:from-emerald-500/5 dark:via-transparent dark:to-green-500/5 light:from-emerald-800/10 light:via-transparent light:to-green-900/10 group-hover:opacity-150 transition-opacity duration-500" />
           <div className="col gap-3 relative z-10">
             <div className="col gap-2">
-              <h3 className="text-xl font-semibold">Choose OpenPanel if...</h3>
+              <h3 className="text-xl font-semibold">Выбирайте OpenPanel, если...</h3>
             </div>
             <div className="col gap-2 mt-2">
               {openpanelItems.map((item, index) => (
@@ -90,7 +90,7 @@ export function WhoShouldChoose({
           <div className="col gap-3 relative z-10">
             <div className="col gap-2">
               <h3 className="text-xl font-semibold">
-                Choose {competitorName} if...
+                Выбирайте {competitorName}, если...
               </h3>
             </div>
             <div className="col gap-2 mt-2">

@@ -11,7 +11,7 @@ export const zOnboardingWhatToTrack = z.object({
 });
 
 const formatEvents = (count: number) =>
-  new Intl.NumberFormat('en-US').format(count);
+  new Intl.NumberFormat('ru-RU').format(count);
 
 export type Props = z.infer<typeof zOnboardingWhatToTrack>;
 export default OnboardingWhatToTrack;
@@ -23,50 +23,52 @@ export function OnboardingWhatToTrack({
 }: Props & { unsubscribeUrl?: string }) {
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+      <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
       {hasData ? (
         <>
           <Text>
-            Your tracking is live
-            {eventsCount ? ` (${formatEvents(eventsCount)} events so far)` : ''}
-            , so here's the advice I give everyone next.
+            Отслеживание уже работает
+            {eventsCount ? ` (событий поступило: ${formatEvents(eventsCount)})` : ''}
+            , поэтому делюсь советом, который даю всем на этом этапе.
           </Text>
           <Text>
-            Don't try to track everything. Pick the one flow that decides
-            whether your product works (signup, checkout, whatever it is) and
-            set up a funnel for it. Two or three custom events is enough.
+            Не пытайтесь отслеживать всё подряд. Выберите один сценарий,
+            который решает, работает ли Ваш продукт (регистрация, оформление
+            заказа — что угодно), и настройте для него воронку. Двух-трёх
+            пользовательских событий достаточно.
           </Text>
           <Text>
-            Pageviews tell you people came. The funnel tells you whether they
-            did the thing you built the product for.
+            Просмотры страниц говорят лишь о том, что люди пришли. Воронка
+            говорит о том, сделали ли они то, ради чего Вы создавали продукт.
           </Text>
           <Text>
-            Not sure what's worth tracking for your product? Reply with what
-            you're building and I'll give you a concrete suggestion.
+            Не уверены, что стоит отслеживать в Вашем продукте? Ответьте на
+            это письмо и расскажите, что Вы создаёте, — я предложу конкретный
+            вариант.
           </Text>
         </>
       ) : (
         <>
           <Text>
-            You created your OpenPanel account two days ago, but no events have
-            come in yet.
+            Вы создали аккаунт OpenPanel два дня назад, но события пока не
+            поступали.
           </Text>
           <Text>
-            Usually that means the install didn't happen, or something is
-            blocking the script. Both are quick to sort out:{' '}
+            Обычно это значит, что установка не выполнена или что-то блокирует
+            скрипт. И то и другое быстро исправить:{' '}
             <Link
               href={withUtm(
                 'https://openpanel.dev/docs/get-started/install-openpanel',
                 'onboarding-what-to-track',
               )}
             >
-              install guide
+              руководство по установке
             </Link>
             .
           </Text>
           <Text>
-            If something in the docs didn't make sense, reply and tell me where
-            you got stuck. That helps me either way.
+            Если что-то в документации было непонятно, ответьте и напишите, где
+            Вы застряли. В любом случае это мне поможет.
           </Text>
         </>
       )}

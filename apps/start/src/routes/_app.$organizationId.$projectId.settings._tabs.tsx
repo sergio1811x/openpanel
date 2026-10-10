@@ -39,13 +39,13 @@ function ProjectDashboard() {
   const tab = location.pathname.split('/').pop();
 
   const settingsTabs = [
-    { id: 'details', label: 'Details' },
-    { id: 'events', label: 'Events' },
-    { id: 'clients', label: 'Clients / API keys' },
-    { id: 'tracking', label: 'Tracking script' },
+    { id: 'details', label: 'Детали' },
+    { id: 'events', label: 'События' },
+    { id: 'clients', label: 'Клиенты / API-ключи' },
+    { id: 'tracking', label: 'Скрипт отслеживания' },
     { id: 'mcp', label: 'MCP' },
-    { id: 'widgets', label: 'Widgets' },
-    { id: 'imports', label: 'Imports' },
+    { id: 'widgets', label: 'Виджеты' },
+    { id: 'imports', label: 'Импорт' },
     { id: 'gsc', label: 'Google Search' },
   ];
 
@@ -59,8 +59,8 @@ function ProjectDashboard() {
   return (
     <div className="container p-8">
       <PageHeader
-        description="Manage your project settings here"
-        title="Project settings"
+        description="Управляйте настройками проекта здесь"
+        title="Настройки проекта"
       />
 
       <Tabs className="mt-2 mb-8" onValueChange={handleTabChange} value={tab}>

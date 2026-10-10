@@ -122,18 +122,18 @@ export default function SiteCheckerPage() {
         if (response.status === 429) {
           setIsRateLimited(true);
           throw new Error(
-            'Rate limit exceeded. Please wait a minute before trying again.',
+            'Превышен лимит запросов. Подождите минуту и попробуйте снова.',
           );
         }
         setIsRateLimited(false);
-        throw new Error(data.error || 'Failed to check site');
+        throw new Error(data.error || 'Не удалось проверить сайт');
       }
 
       setIsRateLimited(false);
 
       setResult(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      setError(err instanceof Error ? err.message : 'Произошла ошибка');
     } finally {
       setLoading(false);
     }
@@ -187,16 +187,16 @@ export default function SiteCheckerPage() {
 
   const tabs: { id: Tab; label: string; icon: React.ReactNode }[] = [
     { id: 'seo', label: 'SEO', icon: <Search className="size-4" /> },
-    { id: 'social', label: 'Social', icon: <Share2 className="size-4" /> },
-    { id: 'technical', label: 'Technical', icon: <Code className="size-4" /> },
-    { id: 'security', label: 'Security', icon: <Shield className="size-4" /> },
+    { id: 'social', label: 'Соцсети', icon: <Share2 className="size-4" /> },
+    { id: 'technical', label: 'Технические', icon: <Code className="size-4" /> },
+    { id: 'security', label: 'Безопасность', icon: <Shield className="size-4" /> },
   ];
 
   return (
     <div className="max-w-4xl">
       <SectionHeader
-        title="URL Checker"
-        description="Analyze any website for SEO, social media, technical, and security information. Get comprehensive insights about any URL."
+        title="Проверка URL"
+        description="Анализ любого сайта: SEO, соцсети, технические данные и безопасность. Подробные сведения о любом URL."
         variant="default"
         as="h1"
       />
@@ -215,12 +215,12 @@ export default function SiteCheckerPage() {
             {loading ? (
               <>
                 <Loader2 className="size-4 animate-spin" />
-                Checking...
+                Проверяем...
               </>
             ) : (
               <>
                 <Search className="size-4" />
-                Check
+                Проверить
               </>
             )}
           </Button>
@@ -242,8 +242,8 @@ export default function SiteCheckerPage() {
               <div className="font-medium">{error}</div>
               {isRateLimited && (
                 <div className="text-sm mt-1 opacity-90">
-                  You can make up to 10 requests per minute. Please try again
-                  shortly.
+                  Вы можете делать до 10 запросов в минуту. Пожалуйста,
+                  попробуйте позже.
                 </div>
               )}
             </div>
@@ -256,12 +256,12 @@ export default function SiteCheckerPage() {
           {/* Header with final URL */}
           <FeatureCardContainer className="mb-6 gap-4">
             <div className="flex items-center gap-2">
-              <span className="font-medium">Final URL</span>
+              <span className="font-medium">Итоговый URL</span>
             </div>
             <div className="row gap-2 items-center">
               <img
                 src={`https://api.openpanel.dev/misc/favicon?url=${encodeURIComponent(result.finalUrl)}`}
-                alt="Favicon"
+                alt="Фавикон"
                 className="size-4 rounded-xs"
               />
               <a
@@ -276,7 +276,7 @@ export default function SiteCheckerPage() {
             </div>
             {result.url !== result.finalUrl && (
               <div className="text-xs text-muted-foreground mt-1">
-                Redirected from: {result.url}
+                Перенаправление с: {result.url}
               </div>
             )}
           </FeatureCardContainer>
@@ -307,8 +307,8 @@ export default function SiteCheckerPage() {
           {activeTab === 'seo' && (
             <div className="space-y-4">
               <InfoRow
-                label="Title"
-                value={result.seo.title.value || 'Not set'}
+                label="Заголовок (Title)"
+                value={result.seo.title.value || 'Не задан'}
                 status={
                   result.seo.title.length > 0
                     ? result.seo.title.length >= 30 &&
@@ -317,11 +317,11 @@ export default function SiteCheckerPage() {
                       : 'warning'
                     : 'fail'
                 }
-                helpText={`${result.seo.title.length} characters (recommended: 30-60)`}
+                helpText={`${result.seo.title.length} символов (рекомендуется: 30–60)`}
               />
               <InfoRow
-                label="Meta Description"
-                value={result.seo.description.value || 'Not set'}
+                label="Meta-описание"
+                value={result.seo.description.value || 'Не задано'}
                 status={
                   result.seo.description.length > 0
                     ? result.seo.description.length >= 120 &&
@@ -330,15 +330,15 @@ export default function SiteCheckerPage() {
                       : 'warning'
                     : 'fail'
                 }
-                helpText={`${result.seo.description.length} characters (recommended: 120-160)`}
+                helpText={`${result.seo.description.length} символов (рекомендуется: 120–160)`}
               />
               <InfoRow
                 label="Canonical URL"
-                value={result.seo.canonical || 'Not set'}
+                value={result.seo.canonical || 'Не задан'}
                 status={result.seo.canonical ? 'pass' : 'warning'}
               />
               <InfoRow
-                label="H1 Tags"
+                label="H1-заголовки"
                 value={
                   result.seo.h1.length > 0 ? (
                     <ul className="list-disc list-inside space-y-1">
@@ -347,7 +347,7 @@ export default function SiteCheckerPage() {
                       ))}
                     </ul>
                   ) : (
-                    'Not found'
+                    'Не найдено'
                   )
                 }
                 status={
@@ -359,25 +359,25 @@ export default function SiteCheckerPage() {
                 }
                 helpText={
                   result.seo.h1.length === 0
-                    ? 'No H1 tag found'
+                    ? 'H1-заголовок не найден'
                     : result.seo.h1.length > 1
-                      ? 'Multiple H1 tags found (recommended: 1)'
-                      : 'One H1 tag found'
+                      ? 'Найдено несколько H1 (рекомендуется: 1)'
+                      : 'Найден один H1-заголовок'
                 }
               />
               <InfoRow
-                label="Robots Meta"
-                value={result.seo.robotsMeta || 'Not set'}
+                label="Meta Robots"
+                value={result.seo.robotsMeta || 'Не задан'}
                 status={result.seo.robotsMeta ? 'info' : 'pass'}
               />
               <InfoRow
                 label="Robots.txt"
                 value={
                   result.seo.robotsTxtStatus === 'allowed'
-                    ? 'Allowed'
+                    ? 'Разрешён'
                     : result.seo.robotsTxtStatus === 'blocked'
-                      ? 'Blocked'
-                      : 'Error checking'
+                      ? 'Заблокирован'
+                      : 'Ошибка проверки'
                 }
                 status={
                   result.seo.robotsTxtStatus === 'allowed'
@@ -389,12 +389,12 @@ export default function SiteCheckerPage() {
               />
               <InfoRow
                 label="Sitemap"
-                value={result.seo.hasSitemap ? 'Found' : 'Not found'}
+                value={result.seo.hasSitemap ? 'Найден' : 'Не найден'}
                 status={result.seo.hasSitemap ? 'pass' : 'warning'}
                 helpText={
                   result.seo.hasSitemap
-                    ? '/sitemap.xml exists'
-                    : '/sitemap.xml not found'
+                    ? '/sitemap.xml существует'
+                    : '/sitemap.xml не найден'
                 }
               />
             </div>
@@ -407,11 +407,11 @@ export default function SiteCheckerPage() {
               <div>
                 <div className="mb-4">
                   <h3 className="text-lg font-semibold mb-2">
-                    Social Media Preview
+                    Превью для соцсетей
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    See how your link will appear when shared on social media
-                    platforms
+                    Посмотрите, как ваша ссылка будет выглядеть при публикации в
+                    социальных сетях
                   </p>
                 </div>
                 <div className="max-w-md">
@@ -437,17 +437,17 @@ export default function SiteCheckerPage() {
 
               <div className="mb-4">
                 <h3 className="text-lg font-semibold mb-3">
-                  Open Graph Details
+                  Open Graph — подробно
                 </h3>
                 <div className="space-y-2">
                   <InfoRow
                     label="OG Title"
-                    value={result.social.og.title || 'Not set'}
+                    value={result.social.og.title || 'Не задано'}
                     status={result.social.og.title ? 'pass' : 'warning'}
                   />
                   <InfoRow
                     label="OG Description"
-                    value={result.social.og.description || 'Not set'}
+                    value={result.social.og.description || 'Не задано'}
                     status={result.social.og.description ? 'pass' : 'warning'}
                   />
                   <InfoRow
@@ -464,19 +464,19 @@ export default function SiteCheckerPage() {
                           <ExternalLink className="size-3" />
                         </a>
                       ) : (
-                        'Not set'
+                        'Не задано'
                       )
                     }
                     status={result.social.og.image ? 'pass' : 'warning'}
                   />
                   <InfoRow
                     label="OG URL"
-                    value={result.social.og.url || 'Not set'}
+                    value={result.social.og.url || 'Не задан'}
                     status={result.social.og.url ? 'pass' : 'warning'}
                   />
                   <InfoRow
                     label="OG Type"
-                    value={result.social.og.type || 'Not set'}
+                    value={result.social.og.type || 'Не задан'}
                     status={result.social.og.type ? 'pass' : 'warning'}
                   />
                 </div>
@@ -484,22 +484,22 @@ export default function SiteCheckerPage() {
 
               <div>
                 <h3 className="text-lg font-semibold mb-3">
-                  Twitter Card Details
+                  Twitter Card — подробно
                 </h3>
                 <div className="space-y-2">
                   <InfoRow
-                    label="Card Type"
-                    value={result.social.twitter.card || 'Not set'}
+                    label="Тип карточки"
+                    value={result.social.twitter.card || 'Не задан'}
                     status={result.social.twitter.card ? 'pass' : 'warning'}
                   />
                   <InfoRow
                     label="Twitter Title"
-                    value={result.social.twitter.title || 'Not set'}
+                    value={result.social.twitter.title || 'Не задано'}
                     status={result.social.twitter.title ? 'pass' : 'warning'}
                   />
                   <InfoRow
                     label="Twitter Description"
-                    value={result.social.twitter.description || 'Not set'}
+                    value={result.social.twitter.description || 'Не задано'}
                     status={
                       result.social.twitter.description ? 'pass' : 'warning'
                     }
@@ -518,7 +518,7 @@ export default function SiteCheckerPage() {
                           <ExternalLink className="size-3" />
                         </a>
                       ) : (
-                        'Not set'
+                        'Не задано'
                       )
                     }
                     status={result.social.twitter.image ? 'pass' : 'warning'}
@@ -532,7 +532,7 @@ export default function SiteCheckerPage() {
           {activeTab === 'technical' && (
             <div className="space-y-4">
               <InfoRow
-                label="HTTP Status"
+                label="HTTP-статус"
                 value={
                   <span
                     className={cn(
@@ -561,7 +561,7 @@ export default function SiteCheckerPage() {
               />
               {result.technical.redirectChain.length > 0 && (
                 <div>
-                  <div className="font-medium mb-2">Redirect Chain</div>
+                  <div className="font-medium mb-2">Цепочка перенаправлений</div>
                   <div className="space-y-2">
                     {result.technical.redirectChain.map((hop, i) => (
                       <div
@@ -581,7 +581,7 @@ export default function SiteCheckerPage() {
               {/* Detailed Response Time Breakdown */}
               <FeatureCardContainer className="space-y-3">
                 <div className="flex items-center justify-between mb-3">
-                  <h4 className="font-semibold">Response Time Breakdown</h4>
+                  <h4 className="font-semibold">Разбивка времени ответа</h4>
                   <span
                     className={cn(
                       'text-lg font-bold',
@@ -592,18 +592,18 @@ export default function SiteCheckerPage() {
                           : 'text-destructive',
                     )}
                   >
-                    {result.technical.responseTime.total}ms total
+                    {result.technical.responseTime.total}мс всего
                   </span>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">DNS Lookup</span>
+                    <span className="text-muted-foreground">DNS-запрос</span>
                     <span className="font-mono">
                       {result.technical.responseTime.dns}ms
                     </span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Connection</span>
+                    <span className="text-muted-foreground">Соединение</span>
                     <span className="font-mono">
                       {result.technical.responseTime.connect}ms
                     </span>
@@ -611,7 +611,7 @@ export default function SiteCheckerPage() {
                   {result.technical.responseTime.tls > 0 && (
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">
-                        TLS Handshake
+                        TLS-рукопожатие
                       </span>
                       <span className="font-mono">
                         {result.technical.responseTime.tls}ms
@@ -620,7 +620,7 @@ export default function SiteCheckerPage() {
                   )}
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">
-                      Time to First Byte (TTFB)
+                      Время до первого байта (TTFB)
                     </span>
                     <span className="font-mono">
                       {result.technical.responseTime.ttfb}ms
@@ -628,7 +628,7 @@ export default function SiteCheckerPage() {
                   </div>
                   <div className="pt-2 border-t">
                     <div className="flex items-center justify-between">
-                      <span className="font-medium">Total</span>
+                      <span className="font-medium">Всего</span>
                       <span className="font-mono font-semibold">
                         {result.technical.responseTime.total}ms
                       </span>
@@ -637,28 +637,28 @@ export default function SiteCheckerPage() {
                 </div>
               </FeatureCardContainer>
               <InfoRow
-                label="Content Type"
+                label="Тип контента"
                 value={result.technical.contentType}
                 status="info"
               />
               <InfoRow
-                label="Page Size"
-                value={`${(result.technical.pageSize / 1024).toFixed(2)} KB`}
+                label="Размер страницы"
+                value={`${(result.technical.pageSize / 1024).toFixed(2)} КБ`}
                 status="info"
               />
               <InfoRow
-                label="Server"
-                value={result.technical.server || 'Not detected'}
+                label="Сервер"
+                value={result.technical.server || 'Не определён'}
                 status="info"
               />
               {result.technical.ssl && (
                 <InfoRow
-                  label="SSL Certificate"
+                  label="SSL-сертификат"
                   value={
                     <div>
-                      <div>Issuer: {result.technical.ssl.issuer}</div>
+                      <div>Эмитент: {result.technical.ssl.issuer}</div>
                       <div className="text-xs text-muted-foreground mt-1">
-                        Expires:{' '}
+                        Истекает:{' '}
                         {new Date(
                           result.technical.ssl.expires,
                         ).toLocaleDateString()}
@@ -673,18 +673,18 @@ export default function SiteCheckerPage() {
                 <FeatureCardContainer className="space-y-3">
                   <div className="flex items-center gap-2 mb-3">
                     <Globe className="size-5" />
-                    <h4 className="font-semibold">Server IP & Hosting</h4>
+                    <h4 className="font-semibold">IP сервера и хостинг</h4>
                   </div>
 
                   <InfoRow
-                    label="IP Address"
+                    label="IP-адрес"
                     value={result.hosting.ip}
                     status="info"
                   />
 
                   {result.hosting.location && (
                     <InfoRow
-                      label="Location"
+                      label="Местоположение"
                       value={
                         <div>
                           {result.hosting.location.city &&
@@ -708,7 +708,7 @@ export default function SiteCheckerPage() {
                                 )}
                             </>
                           ) : (
-                            result.hosting.location.country || 'Unknown'
+                            result.hosting.location.country || 'Неизвестно'
                           )}
                         </div>
                       }
@@ -734,7 +734,7 @@ export default function SiteCheckerPage() {
 
                   {result.hosting.organization && (
                     <InfoRow
-                      label="Organization"
+                      label="Организация"
                       value={result.hosting.organization}
                       status="info"
                     />
@@ -750,7 +750,7 @@ export default function SiteCheckerPage() {
 
                   <div className="pt-2 border-t text-xs text-muted-foreground space-y-2">
                     <div>
-                      <strong>Location data:</strong> Powered by{' '}
+                      <strong>Данные о местоположении:</strong> предоставлено{' '}
                       <a
                         href="https://www.maxmind.com/en/geoip2-services-and-databases"
                         target="_blank"
@@ -759,11 +759,11 @@ export default function SiteCheckerPage() {
                       >
                         MaxMind GeoLite2
                       </a>{' '}
-                      database
+                      (база данных GeoLite2)
                     </div>
                     {(result.hosting.isp || result.hosting.asn) && (
                       <div>
-                        <strong>Network data:</strong> ISP/ASN information from{' '}
+                        <strong>Данные о сети:</strong> информация об ISP/ASN из{' '}
                         <a
                           href="https://ip-api.com"
                           target="_blank"
@@ -780,8 +780,8 @@ export default function SiteCheckerPage() {
 
               {!result.hosting.ip && (
                 <InfoRow
-                  label="Server IP"
-                  value="Not resolved"
+                  label="IP-адрес сервера"
+                  value="Не определён"
                   status="warning"
                 />
               )}
@@ -794,7 +794,7 @@ export default function SiteCheckerPage() {
               <FeatureCardContainer className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Shield className="size-5" />
-                  <span className="font-semibold">Security Score</span>
+                  <span className="font-semibold">Оценка безопасности</span>
                 </div>
                 <div className="text-3xl font-bold">
                   {result.security.score}/100
@@ -816,17 +816,17 @@ export default function SiteCheckerPage() {
 
               <InfoRow
                 label="Content-Security-Policy"
-                value={result.security.csp || 'Not set'}
+                value={result.security.csp || 'Не задан'}
                 status={result.security.csp ? 'pass' : 'fail'}
                 helpText={
                   result.security.csp
-                    ? 'CSP header is present'
-                    : 'CSP header is missing'
+                    ? 'CSP-заголовок присутствует'
+                    : 'CSP-заголовок отсутствует'
                 }
               />
               <InfoRow
                 label="X-Frame-Options"
-                value={result.security.xFrameOptions || 'Not set'}
+                value={result.security.xFrameOptions || 'Не задан'}
                 status={
                   result.security.xFrameOptions
                     ? result.security.xFrameOptions.toLowerCase() === 'deny' ||
@@ -838,13 +838,13 @@ export default function SiteCheckerPage() {
                 }
                 helpText={
                   result.security.xFrameOptions
-                    ? 'Protects against clickjacking'
-                    : 'Missing X-Frame-Options header'
+                    ? 'Защищает от кликджекинга'
+                    : 'Отсутствует заголовок X-Frame-Options'
                 }
               />
               <InfoRow
                 label="X-Content-Type-Options"
-                value={result.security.xContentTypeOptions || 'Not set'}
+                value={result.security.xContentTypeOptions || 'Не задан'}
                 status={
                   result.security.xContentTypeOptions?.toLowerCase() ===
                   'nosniff'
@@ -856,18 +856,18 @@ export default function SiteCheckerPage() {
                 helpText={
                   result.security.xContentTypeOptions?.toLowerCase() ===
                   'nosniff'
-                    ? 'Prevents MIME type sniffing'
-                    : 'Missing or incorrect X-Content-Type-Options header'
+                    ? 'Предотвращает сниффинг MIME-типов'
+                    : 'Отсутствует или неверный заголовок X-Content-Type-Options'
                 }
               />
               <InfoRow
                 label="Strict-Transport-Security (HSTS)"
-                value={result.security.hsts || 'Not set'}
+                value={result.security.hsts || 'Не задан'}
                 status={result.security.hsts ? 'pass' : 'warning'}
                 helpText={
                   result.security.hsts
-                    ? 'Forces HTTPS connections'
-                    : 'HSTS header is missing (only applies to HTTPS sites)'
+                    ? 'Требует использования HTTPS-соединений'
+                    : 'Отсутствует HSTS-заголовок (применимо только к HTTPS-сайтам)'
                 }
               />
             </div>
@@ -880,344 +880,355 @@ export default function SiteCheckerPage() {
         <article className="space-y-8">
           <div>
             <h2 className="text-3xl font-bold mb-4">
-              Free URL Checker & Website Analysis Tool
+              Бесплатная проверка URL и анализ сайта
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Check any URL for SEO issues, security problems, and performance
-              bottlenecks. Our free site checker analyzes meta tags, social
-              previews, security headers, and server configuration in seconds.
+              Проверяйте любой URL на SEO-проблемы, уязвимости безопасности и
+              узкие места в производительности. Наш бесплатный инструмент анализирует
+              мета-теги, превью для соцсетей, заголовки безопасности и
+              конфигурацию сервера за секунды.
             </p>
           </div>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              What This URL Checker Analyzes
+              Что анализирует этот инструмент
             </h3>
             <p className="mb-4">
-              Paste any URL and get a complete breakdown of how the page
-              performs across four critical areas:
+              Вставьте любой URL и получите полный разбор страницы по четырём
+              ключевым направлениям:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
               <li>
-                <strong>SEO Health:</strong> Title tags, meta descriptions, H1
-                tags, canonical URLs, and indexability status
+                <strong>Состояние SEO:</strong> title-теги, мета-описания,
+                H1-заголовки, canonical URL и индексируемость
               </li>
               <li>
-                <strong>Social Previews:</strong> How your link appears when
-                shared on Facebook, Twitter, and LinkedIn
+                <strong>Превью для соцсетей:</strong> как ваша ссылка выглядит
+                при публикации в Facebook, Twitter и LinkedIn
               </li>
               <li>
-                <strong>Performance:</strong> Response times, TTFB, DNS lookup,
-                TLS handshake, and server location
+                <strong>Производительность:</strong> время ответа, TTFB,
+                DNS-запрос, TLS-рукопожатие и расположение сервера
               </li>
               <li>
-                <strong>Security:</strong> SSL certificate status, security
-                headers, and vulnerability checks
+                <strong>Безопасность:</strong> статус SSL-сертификата,
+                заголовки безопасности и проверки уязвимостей
               </li>
             </ul>
           </section>
 
           <section>
-            <h3 className="text-2xl font-semibold mb-4">SEO Analysis</h3>
+            <h3 className="text-2xl font-semibold mb-4">SEO-анализ</h3>
 
-            <h4 className="text-xl font-semibold mt-6 mb-3">Title Tags</h4>
+            <h4 className="text-xl font-semibold mt-6 mb-3">Title-теги</h4>
             <p className="mb-4">
-              Title tags appear in search results and browser tabs. They're one
-              of the strongest on-page ranking signals. Our URL checker verifies
-              your title is:
+              Title-теги отображаются в результатах поиска и на вкладках
+              браузера. Это один из самых сильных сигналов ранжирования на
+              самой странице.
+              Наш инструмент проверяет, что ваш заголовок:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
-              <li>Between 30-60 characters (optimal for search display)</li>
-              <li>Present and not empty</li>
-              <li>Unique and descriptive</li>
+              <li>От 30 до 60 символов (оптимально для выдачи)</li>
+              <li>Присутствует и не пустой</li>
+              <li>Уникальный и содержательный</li>
             </ul>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">
-              Meta Descriptions
+              Мета-описания
             </h4>
             <p className="mb-4">
-              Meta descriptions don't directly affect rankings but significantly
-              impact click-through rates. A good description is 120-160
-              characters, includes a clear value proposition, and encourages
-              clicks.
+              Мета-описания напрямую не влияют на позиции, но существенно
+              сказываются на кликабельности. Хорошее описание — 120–160 символов,
+              с понятной ценностью и призывом кликнуть.
             </p>
 
-            <h4 className="text-xl font-semibold mt-6 mb-3">H1 Tags</h4>
+            <h4 className="text-xl font-semibold mt-6 mb-3">H1-заголовки</h4>
             <p className="mb-4">
-              Each page should have exactly one H1 tag that clearly describes
-              the page content. Our checker flags missing H1s and helps ensure
-              proper heading structure.
+              На каждой странице должен быть ровно один H1, который ясно описывает
+              её содержимое. Наш инструмент находит отсутствующие H1 и помогает
+              поддерживать правильную структуру заголовков.
             </p>
 
-            <h4 className="text-xl font-semibold mt-6 mb-3">Canonical URLs</h4>
+            <h4 className="text-xl font-semibold mt-6 mb-3">Canonical URL</h4>
             <p className="mb-4">
-              Canonical tags prevent duplicate content issues by telling search
-              engines which URL version is authoritative. This matters for pages
-              accessible via multiple URLs, parameter variations, or HTTP/HTTPS
-              and www/non-www variants.
+              Canonical-теги предотвращают дубли контента, сообщая поисковым
+              системам, какая версия URL считается основной. Это важно для страниц,
+              доступных по нескольким URL, с параметрами или вариантами
+              HTTP/HTTPS и www/без www.
             </p>
 
-            <h4 className="text-xl font-semibold mt-6 mb-3">Indexability</h4>
+            <h4 className="text-xl font-semibold mt-6 mb-3">Индексируемость</h4>
             <p className="mb-4">
-              The checker analyzes robots.txt rules and meta robots tags to
-              determine if search engines can crawl and index your page. You'll
-              see clear warnings if anything blocks indexing.
+              Инструмент анализирует правила robots.txt и мета-теги robots,
+              чтобы определить, могут ли поисковые системы обходить и индексировать
+              вашу страницу. Вы увидите понятные предупреждения, если что-то
+              блокирует индексацию.
             </p>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              Social Media Previews
+              Превью для соцсетей
             </h3>
             <p className="mb-4">
-              When someone shares your URL on social media, Open Graph and
-              Twitter Card tags control what appears. Without them, platforms
-              guess—often poorly.
+              Когда кто-то публикует ваш URL в соцсетях, то, что отобразится,
+              контролируют теги Open Graph и Twitter Card. Без них платформы
+              угадывают — часто плохо.
             </p>
 
-            <h4 className="text-xl font-semibold mt-6 mb-3">Open Graph Tags</h4>
+            <h4 className="text-xl font-semibold mt-6 mb-3">Теги Open Graph</h4>
             <p className="mb-4">
-              Open Graph controls how links display on Facebook, LinkedIn, and
-              most other platforms. Essential tags include:
+              Open Graph управляет отображением ссылок в Facebook, LinkedIn и
+              большинстве других платформ. Ключевые теги:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
               <li>
-                <code>og:title</code> — Title shown in the share card
+                <code>og:title</code> — заголовок в карточке публикации
               </li>
               <li>
-                <code>og:description</code> — Summary text beneath the title
+                <code>og:description</code> — краткий текст под заголовком
               </li>
               <li>
-                <code>og:image</code> — Preview image (recommended: 1200×630px)
+                <code>og:image</code> — превью-изображение (рекомендуется:
+                1200×630px)
               </li>
               <li>
-                <code>og:url</code> — Canonical URL for the content
+                <code>og:url</code> — канонический URL контента
               </li>
             </ul>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">Twitter Cards</h4>
             <p className="mb-4">
-              Twitter uses its own card format. Our site checker verifies:
+              У Twitter собственный формат карточек. Наш инструмент проверяет:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
               <li>
-                <code>twitter:card</code> — Card type (summary or
+                <code>twitter:card</code> — тип карточки (summary или
                 summary_large_image)
               </li>
               <li>
-                <code>twitter:title</code> and <code>twitter:description</code>
+                <code>twitter:title</code> и <code>twitter:description</code>
               </li>
               <li>
-                <code>twitter:image</code> — Image for the tweet preview
+                <code>twitter:image</code> — изображение для превью твита
               </li>
             </ul>
           </section>
 
           <section>
-            <h3 className="text-2xl font-semibold mb-4">Performance Metrics</h3>
+            <h3 className="text-2xl font-semibold mb-4">Показатели производительности</h3>
             <p className="mb-4">
-              Page speed affects both user experience and search rankings. Our
-              URL checker breaks down exactly where time is spent:
+              Скорость страницы влияет и на пользовательский опыт, и на позиции
+              в поиске. Наш инструмент показывает, на что именно уходит время:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
               <li>
-                <strong>DNS Lookup:</strong> Time to resolve domain to IP
-                address. Slow DNS? Consider a faster provider or DNS caching.
+                <strong>DNS-запрос:</strong> время преобразования домена в
+                IP-адрес. Медленный DNS? Подумайте о более быстром провайдере или
+                кешировании DNS.
               </li>
               <li>
-                <strong>Connection Time:</strong> TCP connection establishment.
-                Affected by server location relative to users.
+                <strong>Время соединения:</strong> установление TCP-соединения.
+                Зависит от расположения сервера относительно пользователей.
               </li>
               <li>
-                <strong>TLS Handshake:</strong> SSL/TLS negotiation for HTTPS.
-                Modern TLS versions and CDNs reduce this.
+                <strong>TLS-рукопожатие:</strong> согласование SSL/TLS для HTTPS.
+                Современные версии TLS и CDN сокращают это время.
               </li>
               <li>
-                <strong>Time to First Byte (TTFB):</strong> Time until server
-                starts responding. Under 200ms is good. This reflects server
-                processing speed.
+                <strong>Время до первого байта (TTFB):</strong> время до начала
+                ответа сервера. Меньше 200мс — хорошо. Отражает скорость обработки
+                на сервере.
               </li>
               <li>
-                <strong>Total Time:</strong> Complete request including body
-                download.
+                <strong>Общее время:</strong> полный запрос, включая загрузку
+                тела ответа.
               </li>
             </ul>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">
-              Server Information
+              Информация о сервере
             </h4>
             <p className="mb-4">
-              The checker also reveals hosting details: server IP and location,
-              hosting provider, CDN detection (Cloudflare, Fastly, Vercel,
-              etc.), and server software (Nginx, Apache).
+              Инструмент также показывает данные хостинга: IP и расположение
+              сервера, хостинг-провайдера, определение CDN (Cloudflare, Fastly,
+              Vercel и др.) и серверное ПО (Nginx, Apache).
             </p>
           </section>
 
           <section>
-            <h3 className="text-2xl font-semibold mb-4">Security Analysis</h3>
+            <h3 className="text-2xl font-semibold mb-4">Анализ безопасности</h3>
             <p className="mb-4">
-              Security headers protect your site and visitors from common
-              attacks. Our checker evaluates four critical headers:
+              Заголовки безопасности защищают ваш сайт и посетителей от
+              распространённых атак. Наш инструмент оценивает четыре ключевых
+              заголовка:
             </p>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">
               Content Security Policy (CSP)
             </h4>
             <p className="mb-4">
-              CSP prevents cross-site scripting (XSS) by controlling which
-              resources can load. It restricts scripts to trusted sources and
-              blocks inline execution.
+              CSP предотвращает межсайтовый скриптинг (XSS), контролируя, какие
+              ресурсы могут загружаться. Скрипты ограничиваются доверенными
+              источниками, а встроенный код блокируется.
             </p>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">X-Frame-Options</h4>
             <p className="mb-4">
-              Prevents clickjacking by controlling whether your page can be
-              embedded in iframes. Set to DENY or SAMEORIGIN for protection.
+              Предотвращает кликджекинг, управляя тем, можно ли встраивать вашу
+              страницу в iframe. Для защиты установите DENY или SAMEORIGIN.
             </p>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">
               X-Content-Type-Options
             </h4>
             <p className="mb-4">
-              Set to <code>nosniff</code> to prevent browsers from MIME-type
-              sniffing, which can lead to security vulnerabilities.
+              Установите <code>nosniff</code>, чтобы браузеры не пытались
+              определять MIME-тип самостоятельно — это может привести к
+              уязвимостям.
             </p>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">
               Strict-Transport-Security (HSTS)
             </h4>
             <p className="mb-4">
-              Forces HTTPS connections, preventing protocol downgrade attacks.
-              Essential for sites handling any sensitive data.
+              Принуждает использовать HTTPS, предотвращая атаки понижения
+              протокола. Обязательно для сайтов с любыми чувствительными данными.
             </p>
 
-            <h4 className="text-xl font-semibold mt-6 mb-3">SSL Certificate</h4>
+            <h4 className="text-xl font-semibold mt-6 mb-3">SSL-сертификат</h4>
             <p className="mb-4">
-              The checker verifies your SSL certificate is valid, trusted, and
-              not expiring soon. Expired certificates trigger browser warnings
-              that destroy user trust.
+              Инструмент проверяет, что ваш SSL-сертификат действителен,
+              доверенный и не истекает в ближайшее время. Просроченные
+              сертификаты вызывают предупреждения браузера и подрывают доверие
+              пользователей.
             </p>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              How to Use This Website Checker
+              Как пользоваться инструментом
             </h3>
             <ol className="list-decimal list-inside space-y-3 mb-6 ml-4">
               <li>
-                <strong>Enter a URL:</strong> Paste any web address (with or
-                without https://)
+                <strong>Введите URL:</strong> вставьте любой веб-адрес (с
+                https:// или без)
               </li>
               <li>
-                <strong>Click Check:</strong> Analysis takes 2-5 seconds
+                <strong>Нажмите «Проверить»:</strong> анализ занимает 2–5 секунд
               </li>
               <li>
-                <strong>Review results:</strong> Navigate the tabs for SEO,
-                Social, Performance, and Security details
+                <strong>Изучите результаты:</strong> переключайтесь между
+                вкладками SEO, Соцсети, Производительность и Безопасность
               </li>
               <li>
-                <strong>Fix issues:</strong> Address any warnings or missing
-                elements
+                <strong>Исправьте проблемы:</strong> устраните предупреждения и
+                отсутствующие элементы
               </li>
             </ol>
             <p className="mb-4">
-              Pro tip: Check your pages after any significant changes, and
-              periodically audit competitor sites to see what they're doing
-              right.
+              Совет: проверяйте страницы после значительных изменений и
+              периодически аудитируйте сайты конкурентов, чтобы понять, что они
+              делают правильно.
             </p>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              Quick Optimization Checklist
+              Быстрый чек-лист оптимизации
             </h3>
 
-            <h4 className="text-xl font-semibold mt-6 mb-3">SEO Essentials</h4>
+            <h4 className="text-xl font-semibold mt-6 mb-3">Основы SEO</h4>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
-              <li>Unique title tag (30-60 characters) on every page</li>
-              <li>Compelling meta description (120-160 characters)</li>
-              <li>Single, descriptive H1 tag</li>
-              <li>Canonical URL set correctly</li>
-              <li>Page is indexable (no accidental noindex)</li>
+              <li>Уникальный title-тег (30–60 символов) на каждой странице</li>
+              <li>Цепляющее мета-описание (120–160 символов)</li>
+              <li>Один содержательный H1-заголовок</li>
+              <li>Canonical URL задан правильно</li>
+              <li>Страница индексируется (без случайного noindex)</li>
             </ul>
 
-            <h4 className="text-xl font-semibold mt-6 mb-3">Performance</h4>
+            <h4 className="text-xl font-semibold mt-6 mb-3">Производительность</h4>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
-              <li>TTFB under 200ms</li>
-              <li>Use a CDN for global reach</li>
-              <li>Enable compression (gzip/brotli)</li>
-              <li>Optimize images and enable caching</li>
+              <li>TTFB меньше 200мс</li>
+              <li>Используйте CDN для глобального охвата</li>
+              <li>Включите сжатие (gzip/brotli)</li>
+              <li>Оптимизируйте изображения и включите кеширование</li>
             </ul>
 
-            <h4 className="text-xl font-semibold mt-6 mb-3">Security</h4>
+            <h4 className="text-xl font-semibold mt-6 mb-3">Безопасность</h4>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
-              <li>Valid SSL certificate (not expiring soon)</li>
-              <li>All four security headers configured</li>
-              <li>HSTS enabled for HTTPS enforcement</li>
+              <li>Действительный SSL-сертификат (не истекает в ближайшее время)</li>
+              <li>Все четыре заголовка безопасности настроены</li>
+              <li>HSTS включён для принудительного HTTPS</li>
             </ul>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              Frequently Asked Questions
+              Часто задаваемые вопросы
             </h3>
 
             <Faqs>
-              <FaqItem question="What's the difference between a URL checker and a site checker?">
-                A URL checker analyzes a single page. A full site checker crawls
-                your entire website. This tool checks individual URLs, which is
-                faster and useful for spot-checking specific pages.
+              <FaqItem question="Чем проверка URL отличается от полного аудита сайта?">
+                Проверка URL анализирует одну страницу. Полный аудит сайта
+                обходит весь ваш сайт целиком. Этот инструмент проверяет отдельные
+                URL — это быстрее и удобно для точечной проверки конкретных
+                страниц.
               </FaqItem>
 
-              <FaqItem question="How often should I check my URLs?">
-                Check after publishing new pages, making significant updates, or
-                changing hosting/CDN configuration. Monthly audits of key pages
-                catch issues before they impact rankings.
+              <FaqItem question="Как часто нужно проверять свои URL?">
+                Проверяйте после публикации новых страниц, значительных
+                обновлений или смены хостинга/CDN. Ежемесячный аудит ключевых
+                страниц позволяет находить проблемы до того, как они повлияют на
+                позиции.
               </FaqItem>
 
-              <FaqItem question="What's a good TTFB (Time to First Byte)?">
-                Under 200ms is good. 200-500ms is acceptable. Over 500ms
-                suggests server or configuration issues worth investigating.
+              <FaqItem question="Какой TTFB считается хорошим?">
+                Меньше 200мс — хорошо. 200–500мс — приемлемо. Свыше 500мс
+                указывает на проблемы с сервером или конфигурацией, которые стоит
+                исследовать.
               </FaqItem>
 
-              <FaqItem question="What security score should I aim for?">
-                100% means all four security headers are present. Aim for at
-                least 75% (three headers). CSP can be complex to implement but
-                the others are straightforward.
+              <FaqItem question="Какой оценки безопасности стремиться достичь?">
+                100% означает, что присутствуют все четыре заголовка
+                безопасности. Стремитесь хотя бы к 75% (три заголовка). CSP может
+                быть сложным во внедрении, остальные — простые.
               </FaqItem>
 
-              <FaqItem question="Can I check competitor websites?">
-                Yes. The tool works on any public URL. Analyzing competitors
-                reveals their SEO strategies, hosting setup, and security
-                posture.
+              <FaqItem question="Можно ли проверять сайты конкурентов?">
+                Да. Инструмент работает с любым публичным URL. Анализ конкурентов
+                показывает их SEO-стратегию, настройки хостинга и уровень
+                безопасности.
               </FaqItem>
 
-              <FaqItem question="Why is my page marked as not indexable?">
-                Common causes: a noindex meta tag, robots.txt blocking crawlers,
-                or canonical pointing elsewhere. Check the SEO tab for specific
-                details.
+              <FaqItem question="Почему моя страница помечена как неиндексируемая?">
+                Частые причины: мета-тег noindex, robots.txt, блокирующий
+                краулеров, или canonical, указывающий на другой адрес. Подробности
+                смотрите на вкладке SEO.
               </FaqItem>
 
-              <FaqItem question="Is this tool free?">
-                Yes, completely free. We rate-limit to 10 checks per minute per
-                IP to ensure availability for everyone.
+              <FaqItem question="Этот инструмент бесплатный?">
+                Да, полностью бесплатный. Мы ограничиваем количество проверок до
+                10 в минуту с одного IP, чтобы сервис оставался доступным всем.
               </FaqItem>
             </Faqs>
           </section>
 
           <section className="border-t pt-8 mt-8">
             <h3 className="text-2xl font-semibold mb-4">
-              Start Checking URLs Now
+              Начните проверять URL прямо сейчас
             </h3>
             <p className="mb-6">
-              Enter any URL above to get instant insights into SEO, performance,
-              security, and social sharing. Find issues before they hurt your
-              rankings or user experience.
+              Введите любой URL выше, чтобы мгновенно получить информацию о SEO,
+              производительности, безопасности и превью в соцсетях. Находите
+              проблемы до того, как они навредят позициям или пользовательскому
+              опыту.
             </p>
             <p className="text-muted-foreground">
-              <strong>Built by OpenPanel</strong> — the open-source analytics
-              platform. We use these same checks to help thousands of websites
-              understand their traffic and optimize performance.
+              <strong>Создано OpenPanel</strong> — платформой аналитики с
+              открытым исходным кодом. Мы используем те же проверки, чтобы помогать
+              тысячам сайтов понимать свой трафик и улучшать производительность.
             </p>
           </section>
         </article>

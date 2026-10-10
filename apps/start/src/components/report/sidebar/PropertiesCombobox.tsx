@@ -57,33 +57,33 @@ interface PropertiesComboboxProps {
 const SESSION_ACTIONS: PropertiesComboboxAction[] = [
   {
     value: 'session.is_bounce',
-    label: 'Bounced',
-    description: 'Single-pageview session',
+    label: 'Отказ',
+    description: 'Сессия с одним просмотром страницы',
   },
   {
     value: 'session.screen_view_count',
-    label: 'Screen views',
-    description: 'Number of screen views in the session',
+    label: 'Просмотры экранов',
+    description: 'Количество просмотров экранов в сессии',
   },
   {
     value: 'session.event_count',
-    label: 'Events',
-    description: 'Total events in the session',
+    label: 'События',
+    description: 'Всего событий в сессии',
   },
   {
     value: 'session.duration',
-    label: 'Duration',
-    description: 'Session length in milliseconds',
+    label: 'Длительность',
+    description: 'Длительность сессии в миллисекундах',
   },
   {
     value: 'session.revenue',
-    label: 'Revenue',
-    description: 'Revenue attributed to the session',
+    label: 'Доход',
+    description: 'Доход, отнесённый к сессии',
   },
   {
     value: 'session.performed_event',
-    label: 'Performed event',
-    description: 'Session contains an event named X',
+    label: 'Выполненное событие',
+    description: 'Сессия содержит событие с названием X',
   },
 ];
 
@@ -112,7 +112,7 @@ function SearchHeader({
       <Input
         autoFocus
         onChange={(e) => onSearch(e.target.value)}
-        placeholder="Search"
+        placeholder="Поиск"
         value={value}
       />
     </div>
@@ -231,7 +231,7 @@ export function PropertiesCombobox({
               handleStateChange('event');
             }}
           >
-            Event properties
+            Свойства события
             <DatabaseIcon className="size-4 transition-all group-hover:rotate-12 group-hover:scale-125 group-hover:text-blue-500" />
           </DropdownMenuItem>
         )}
@@ -243,7 +243,7 @@ export function PropertiesCombobox({
               handleStateChange('profile');
             }}
           >
-            Profile properties
+            Свойства профиля
             <UserIcon className="size-4 transition-all group-hover:rotate-12 group-hover:scale-125 group-hover:text-blue-500" />
           </DropdownMenuItem>
         )}
@@ -255,7 +255,7 @@ export function PropertiesCombobox({
               handleStateChange('group');
             }}
           >
-            Group properties
+            Свойства группы
             <Building2Icon className="size-4 transition-all group-hover:rotate-12 group-hover:scale-125 group-hover:text-blue-500" />
           </DropdownMenuItem>
         )}
@@ -266,12 +266,12 @@ export function PropertiesCombobox({
               e.preventDefault();
               handleSelect({
                 value: 'cohort',
-                label: 'Cohorts',
-                description: 'All cohorts',
+                label: 'Кохорты',
+                description: 'Все кохорты',
               });
             }}
           >
-            Cohorts
+            Кохорты
             <TargetIcon className="size-4 transition-all group-hover:rotate-12 group-hover:scale-125 group-hover:text-blue-500" />
           </DropdownMenuItem>
         )}
@@ -283,7 +283,7 @@ export function PropertiesCombobox({
               handleStateChange('session');
             }}
           >
-            Session metrics
+            Метрики сессии
             <ActivityIcon className="size-4 transition-all group-hover:rotate-12 group-hover:scale-125 group-hover:text-blue-500" />
           </DropdownMenuItem>
         )}

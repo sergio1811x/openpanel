@@ -50,7 +50,7 @@ function Component() {
   }
 
   if (!organization) {
-    return <FullPageEmptyState title="Organization not found" />;
+    return <FullPageEmptyState title="Организация не найдена" />;
   }
 
   const { register, handleSubmit, formState, reset, control } = useForm<IForm>({
@@ -64,8 +64,8 @@ function Component() {
   const mutation = useMutation(
     trpc.organization.update.mutationOptions({
       onSuccess(res) {
-        toast('Organization updated', {
-          description: 'Your organization has been updated.',
+        toast('Организация обновлена', {
+          description: 'Ваша организация была обновлена.',
         });
         reset({
           ...res,
@@ -80,8 +80,8 @@ function Component() {
   return (
     <div className="container p-8">
       <PageHeader
-        title="Workspace settings"
-        description="Manage your workspace settings here"
+        title="Настройки рабочего пространства"
+        description="Управляйте настройками рабочего пространства здесь"
         className="mb-8"
       />
 
@@ -92,12 +92,12 @@ function Component() {
       >
         <Widget>
           <WidgetHead className="flex items-center justify-between">
-            <span className="title">Details</span>
+            <span className="title">Детали</span>
           </WidgetHead>
           <WidgetBody className="gap-4 col">
             <InputWithLabel
               className="flex-1"
-              label="Name"
+              label="Название"
               {...register('name')}
               defaultValue={organization?.name}
             />
@@ -105,9 +105,9 @@ function Component() {
               name="timezone"
               control={control}
               render={({ field }) => (
-                <WithLabel label="Timezone">
+                <WithLabel label="Часовой пояс">
                   <Combobox
-                    placeholder="Select timezone"
+                    placeholder="Выберите часовой пояс"
                     items={Intl.supportedValuesOf('timeZone').map((item) => ({
                       value: item,
                       label: item,
@@ -125,7 +125,7 @@ function Component() {
               disabled={!formState.isDirty}
               className="self-end"
             >
-              Save
+              Сохранить
             </Button>
           </WidgetBody>
         </Widget>

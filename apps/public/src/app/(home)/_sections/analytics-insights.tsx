@@ -14,25 +14,25 @@ function wrap(child: React.ReactNode) {
 
 const mediumFeatures = [
   {
-    title: 'Retention',
+    title: 'Удержание пользователей',
     description:
-      'Know how many users come back after day 1, day 7, day 30. Identify which behaviors predict long-term retention.',
+      'Узнайте, сколько пользователей возвращается на 1-й, 7-й и 30-й день. Определите, какое поведение предсказывает долгосрочное удержание.',
     illustration: wrap(<RetentionIllustration />),
-    link: { href: '/features/retention', children: 'View retention' },
+    link: { href: '/features/retention', children: 'Посмотреть удержание' },
   },
   {
     title: 'Session Replay',
     description:
-      'Watch real user sessions to see exactly what happened — clicks, scrolls, rage clicks. Privacy controls built in.',
+      'Смотрите реальные сессии пользователей и видите, что именно происходило: клики, скроллы, бешеные клики. Встроенные настройки приватности.',
     illustration: wrap(<SessionReplayIllustration />),
-    link: { href: '/features/session-replay', children: 'See session replay' },
+    link: { href: '/features/session-replay', children: 'Смотреть session replay' },
   },
   {
-    title: 'Notifications',
+    title: 'Уведомления',
     description:
-      'Get notified when a funnel is completed. Stay on top of key moments in your product without watching dashboards all day.',
+      'Получайте уведомления о завершении воронки. Будьте в курсе ключевых событий в продукте, не глядя в дашборды весь день.',
     illustration: wrap(<NotificationsIllustration />),
-    link: { href: '/features/notifications', children: 'Set up notifications' },
+    link: { href: '/features/notifications', children: 'Настроить уведомления' },
   },
 ];
 
@@ -41,23 +41,23 @@ export function AnalyticsInsights() {
     <Section className="container">
       <SectionHeader
         className="mb-16"
-        description="From first page view to long-term retention — every touchpoint in one platform. No sampling, no data limits, no guesswork."
-        label="ANALYTICS & INSIGHTS"
-        title="Everything you need to understand your users"
+        description="От первого просмотра страницы до долгосрочного удержания — все точки контакта на одной платформе. Без сэмплирования, без лимитов на данные, без догадок."
+        label="АНАЛИТИКА И ИНСАЙТЫ"
+        title="Всё, что нужно, чтобы понять своих пользователей"
       />
 
       <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
         <FeatureCard
           className="px-0 **:data-content:px-6"
-          description="Understand your website performance with privacy-first analytics. Track visitors, referrers, and page views without touching user cookies."
+          description="Оцените работу сайта с аналитикой с приоритетом приватности. Отслеживайте посетителей, источники и просмотры страниц, не трогая cookies пользователей."
           illustration={<WebAnalyticsIllustration />}
-          title="Web Analytics"
+          title="Веб-аналитика"
         />
         <FeatureCard
           className="px-0 **:data-content:px-6"
-          description="Go beyond page views. Track custom events, understand user flows, and explore exactly how people use your product."
+          description="Больше, чем просмотры страниц. Отслеживайте кастомные события, изучайте пользовательские сценарии и смотрите, как именно люди пользуются вашим продуктом."
           illustration={<ProductAnalyticsIllustration />}
-          title="Product Analytics"
+          title="Продуктовая аналитика"
         />
       </div>
 
@@ -79,7 +79,7 @@ export function AnalyticsInsights() {
           className="inline-flex items-center gap-1 text-muted-foreground text-sm transition-colors hover:text-foreground"
           href="/features"
         >
-          Explore all features
+          Посмотреть все возможности
           <ChevronRightIcon className="size-3.5" />
         </Link>
       </p>

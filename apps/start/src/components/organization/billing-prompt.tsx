@@ -11,14 +11,14 @@ import { formatDate } from '@/utils/date';
 import { op } from '@/utils/op';
 
 const FEATURES = [
-  'Plans start at $2.5/month',
-  'Unlimited reports, members and projects',
-  'Advanced funnels and conversions',
-  'Real-time analytics',
-  'Track KPIs and custom events',
-  'Privacy-focused and GDPR compliant',
-  'Revenue tracking',
-  'Google Search Console integration',
+  'Тарифы от $2.5 в месяц',
+  'Безлимитные отчёты, участники и проекты',
+  'Продвинутые воронки и конверсии',
+  'Аналитика в реальном времени',
+  'Отслеживание KPI и кастомных событий',
+  'Фокус на приватности, соответствие GDPR',
+  'Отслеживание выручки',
+  'Интеграция с Google Search Console',
 ];
 
 type BadgeVariant = 'secondary' | 'warning' | 'info';
@@ -39,53 +39,53 @@ const COPY: Record<
   CopyVariant
 > = {
   trialEnded: {
-    badge: { label: 'Trial ended', variant: 'secondary' },
+    badge: { label: 'Trial завершён', variant: 'secondary' },
     gradient: 'rgb(16 185 129)',
-    title: 'Your 30 days are up',
-    lead: 'Thanks for trying OpenPanel. Everything you set up is still here: your projects, your reports, and every event you tracked. Pick a plan and your dashboards are live again in about a minute.',
-    dateLabel: 'Trial ended',
+    title: 'Ваши 30 дней подошли к концу',
+    lead: 'Спасибо, что попробовали OpenPanel. Всё, что Вы настроили, осталось на месте: Ваши проекты, отчёты и все отслеженные события. Выберите тариф — и Ваши дашборды снова заработают примерно через минуту.',
+    dateLabel: 'Trial завершён',
     action: 'checkout',
-    cta: (plan, price) => `Continue with ${plan} for ${price}/month`,
-    note: 'We keep collecting your incoming events for now, so nothing is lost while you decide.',
+    cta: (plan, price) => `Продолжить с тарифом ${plan} за ${price}/мес.`,
+    note: 'Мы пока продолжаем собирать входящие события, так что ничего не потеряется, пока Вы принимаете решение.',
   },
   expired: {
-    badge: { label: 'Subscription ended', variant: 'info' },
+    badge: { label: 'Подписка закончилась', variant: 'info' },
     gradient: 'rgb(59 130 246)',
-    title: 'Your data is right where you left it',
-    lead: "Your subscription ended, but we haven't deleted anything. Reactivate and your dashboards, reports, and events are back immediately.",
-    dateLabel: 'Subscription ended',
+    title: 'Ваши данные там же, где Вы их оставили',
+    lead: 'Ваша подписка закончилась, но мы ничего не удалили. Возобновите её — и Ваши дашборды, отчёты и события вернутся сразу же.',
+    dateLabel: 'Подписка закончилась',
     action: 'checkout',
-    cta: (plan, price) => `Reactivate with ${plan} for ${price}/month`,
+    cta: (plan, price) => `Возобновить с тарифом ${plan} за ${price}/мес.`,
     note: null,
   },
   unpaid: {
-    badge: { label: 'Payment issue', variant: 'warning' },
+    badge: { label: 'Проблема с оплатой', variant: 'warning' },
     gradient: 'rgb(245 158 11)',
-    title: "Your last payment didn't go through",
-    lead: "Usually it's an expired card or a bank block, and it takes a minute to fix. Update your payment method and your dashboards come straight back. Your data hasn't gone anywhere.",
-    dateLabel: 'Paid through',
+    title: 'Последний платёж не прошёл',
+    lead: 'Обычно это истёкшая карта или блокировка банка, и исправить это можно за минуту. Обновите способ оплаты — и Ваши дашборды сразу вернутся. Ваши данные никуда не делись.',
+    dateLabel: 'Оплачено до',
     action: 'portal',
-    cta: () => 'Update payment method',
+    cta: () => 'Обновить способ оплаты',
     note: null,
   },
   paused: {
-    badge: { label: 'Paused', variant: 'secondary' },
+    badge: { label: 'Приостановлено', variant: 'secondary' },
     gradient: 'rgb(16 185 129)',
-    title: 'Your subscription is on a break',
-    lead: "You paused your subscription, so billing is stopped — but we're still collecting every event. Resume whenever you're ready and your dashboards are back immediately, right where you left them.",
-    dateLabel: 'Billing resumes',
+    title: 'Ваша подписка на паузе',
+    lead: 'Вы приостановили подписку, поэтому списание остановлено — но мы по-прежнему собираем каждое событие. Возобновите в любой удобный момент, и Ваши дашборды сразу вернутся к тому состоянию, в котором Вы их оставили.',
+    dateLabel: 'Списание возобновится',
     action: 'resume',
-    cta: () => 'Resume subscription now',
-    note: 'Resuming starts a new billing period right away. Your events keep being collected while paused, so nothing is lost.',
+    cta: () => 'Возобновить подписку сейчас',
+    note: 'Возобновление сразу запускает новый расчётный период. Во время паузы события продолжают собираться, так что ничего не потеряется.',
   },
   freePlan: {
-    badge: { label: 'Plan change', variant: 'secondary' },
+    badge: { label: 'Изменение тарифов', variant: 'secondary' },
     gradient: 'rgb(16 185 129)',
-    title: 'We retired the free plan',
-    lead: "We'd rather run a small, sustainable service than a free one we can't support properly. Paid plans start at $2.5/month and your data carries over as-is.",
-    dateLabel: 'Subscription ended',
+    title: 'Мы вывели бесплатный тариф из эксплуатации',
+    lead: 'Мы предпочитаем небольшой устойчивый сервис бесплатному, который не можем должным образом поддерживать. Платные тарифы начинаются от $2.5/мес., и Ваши данные переносятся как есть.',
+    dateLabel: 'Подписка закончилась',
     action: 'checkout',
-    cta: (plan, price) => `Continue with ${plan} for ${price}/month`,
+    cta: (plan, price) => `Продолжить с тарифом ${plan} за ${price}/мес.`,
     note: null,
   },
 };
@@ -111,8 +111,8 @@ export default function BillingPrompt({
         if (data?.url) {
           window.location.href = data.url;
         } else {
-          toast.success('Subscription updated', {
-            description: 'It might take a few seconds to update',
+          toast.success('Подписка обновлена', {
+            description: 'Обновление может занять несколько секунд',
           });
         }
       },
@@ -139,8 +139,8 @@ export default function BillingPrompt({
       onSuccess() {
         queryClient.invalidateQueries(trpc.organization.pathFilter());
         queryClient.invalidateQueries(trpc.subscription.pathFilter());
-        toast.success('Welcome back!', {
-          description: 'It might take a few seconds to update',
+        toast.success('С возвращением!', {
+          description: 'Обновление может занять несколько секунд',
         });
       },
       onError(error) {
@@ -223,14 +223,14 @@ export default function BillingPrompt({
       if (isLoadingProducts) {
         return (
           <Button className="w-full" loading size="lg">
-            Loading plans
+            Загрузка тарифов
           </Button>
         );
       }
       return (
         <Button asChild className="w-full" size="lg">
           <a href="mailto:hello@openpanel.dev?subject=Custom plan">
-            Get a custom plan
+            Получить индивидуальный тариф
           </a>
         </Button>
       );
@@ -282,7 +282,7 @@ export default function BillingPrompt({
               {number.short(eventsCount)}
             </div>
             <div className="text-muted-foreground text-sm">
-              Events tracked, all safe and stored
+              Отслеженных событий — всё сохранено
             </div>
           </div>
           {(() => {
@@ -311,19 +311,19 @@ export default function BillingPrompt({
           {copy.action === 'checkout' &&
             (bestProductFit ? (
               <p className="text-muted-foreground text-sm">
-                Based on your usage, the{' '}
+                Исходя из Вашего использования, Вам подойдёт тариф{' '}
                 <strong className="text-foreground">
                   {bestProductFit.name}
                 </strong>{' '}
-                plan covers you: up to{' '}
+                : до{' '}
                 {number.short(Number(bestProductFit.metadata.eventsLimit))}{' '}
-                events per month for {price}.
+                событий в месяц за {price}.
               </p>
             ) : (
               !isLoadingProducts && (
                 <p className="text-muted-foreground text-sm">
-                  Your usage is above our standard plans, so let's set you up
-                  with a custom one.
+                  Ваше использование превышает наши стандартные тарифы, поэтому
+                  давайте настроим для Вас индивидуальный.
                 </p>
               )
             ))}
@@ -337,13 +337,13 @@ export default function BillingPrompt({
               to="/$organizationId/billing"
               variant="outline"
             >
-              See all plans
+              Все тарифы
             </LinkButton>
             <a
               className="text-muted-foreground text-sm hover:underline"
               href="mailto:hello@openpanel.dev"
             >
-              Questions? Email us
+              Вопросы? Напишите нам
             </a>
           </div>
         </div>

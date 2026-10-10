@@ -23,8 +23,8 @@ type SaveReportProps = {
 };
 
 const validator = z.object({
-  name: z.string().min(1, 'Required'),
-  dashboardId: z.string().min(1, 'Required'),
+  name: z.string().min(1, 'Обязательное поле'),
+  dashboardId: z.string().min(1, 'Обязательное поле'),
 });
 
 type IForm = z.infer<typeof validator>;
@@ -67,10 +67,10 @@ export default function SaveReport({
           });
         };
 
-        toast('Report created', {
+        toast('Отчёт создан', {
           description: `${res.name}`,
           action: {
-            label: 'View report',
+            label: 'Открыть отчёт',
             onClick: () => goToReport(),
           },
         });
@@ -95,7 +95,7 @@ export default function SaveReport({
 
   return (
     <ModalContent>
-      <ModalHeader title="Create report" />
+      <ModalHeader title="Создание отчёта" />
       <form
         className="flex flex-col gap-4"
         onSubmit={handleSubmit(({ name, ...values }) => {
@@ -109,8 +109,8 @@ export default function SaveReport({
         })}
       >
         <InputWithLabel
-          label="Report name"
-          placeholder="Name"
+          label="Название отчёта"
+          placeholder="Название"
           {...register('name')}
           defaultValue={report.name}
         />
@@ -134,10 +134,10 @@ export default function SaveReport({
             onClick={() => popModal()}
             size="default"
           >
-            Cancel
+            Отмена
           </Button>
           <Button type="submit" disabled={!formState.isValid} size="default">
-            Save
+            Сохранить
           </Button>
         </ButtonContainer>
       </form>

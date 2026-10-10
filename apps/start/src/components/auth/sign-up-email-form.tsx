@@ -20,7 +20,7 @@ export function SignUpEmailForm({
   const mutation = useMutation(
     trpc.auth.signUpEmail.mutationOptions({
       async onSuccess() {
-        toast.success('Successfully signed up');
+        toast.success('Регистрация успешно завершена');
         window.location.href = '/';
       },
       onError(error) {
@@ -41,14 +41,14 @@ export function SignUpEmailForm({
     <form className="col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
       <div className="row gap-4 w-full flex-1">
         <InputWithLabel
-          label="First name"
+          label="Имя"
           className="flex-1"
           type="text"
           {...form.register('firstName')}
           error={form.formState.errors.firstName?.message}
         />
         <InputWithLabel
-          label="Last name"
+          label="Фамилия"
           className="flex-1"
           type="text"
           {...form.register('lastName')}
@@ -64,14 +64,14 @@ export function SignUpEmailForm({
       />
       <div className="row gap-4 w-full">
         <InputWithLabel
-          label="Password"
+          label="Пароль"
           className="flex-1"
           type="password"
           {...form.register('password')}
           error={form.formState.errors.password?.message}
         />
         <InputWithLabel
-          label="Confirm password"
+          label="Подтверждение пароля"
           className="flex-1"
           type="password"
           {...form.register('confirmPassword')}
@@ -79,7 +79,7 @@ export function SignUpEmailForm({
         />
       </div>
       <Button type="submit" className="w-full" size="lg">
-        Create account
+        Создать аккаунт
       </Button>
     </form>
   );

@@ -16,7 +16,7 @@ export function getOgImageUrl(url: string): string {
 export function getRootMetadata(): Metadata {
   return getRawMetadata({
     url: baseUrl('/'),
-    title: `${siteName} | An open-source alternative to Mixpanel`,
+    title: `${siteName} | Открытая альтернатива Mixpanel`,
     description: defaultDescription,
     image: defaultImage,
   });

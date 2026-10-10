@@ -31,7 +31,7 @@ export function ReportBreakdowns() {
 
   return (
     <div>
-      <h3 className="mb-2 font-medium">Breakdown</h3>
+      <h3 className="mb-2 font-medium">Разбивка</h3>
       <div className="flex flex-col gap-4">
         {selectedBreakdowns.map((item, index) => {
           return (
@@ -59,7 +59,7 @@ export function ReportBreakdowns() {
                     >
                       <div className="row w-full gap-2 items-center">
                         <SplitIcon className="size-4" />
-                        {item.name === 'cohort' ? 'Cohorts' : item.name}
+                        {item.name === 'cohort' ? 'Кохорты' : item.name}
                       </div>
                       <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                     </Button>
@@ -91,7 +91,7 @@ export function ReportBreakdowns() {
             >
               <div className="row w-full gap-2 items-center">
                 <SplitIcon className="size-4" />
-                Select breakdown
+                Выберите разбивку
               </div>
               <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>

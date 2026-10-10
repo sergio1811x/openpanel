@@ -66,19 +66,19 @@ const { TooltipProvider, Tooltip } = createChartTooltip<
   return (
     <>
       <ChartTooltipHeader>
-        <div>Position #{item.position}</div>
+        <div>Позиция #{item.position}</div>
       </ChartTooltipHeader>
       {item.yourCtr != null && (
         <ChartTooltipItem color={getChartColor(0)}>
           <div className="flex justify-between gap-8 font-medium font-mono">
-            <span>Your avg CTR</span>
+            <span>Ваш средний CTR</span>
             <span>{item.yourCtr.toFixed(1)}%</span>
           </div>
         </ChartTooltipItem>
       )}
       <ChartTooltipItem color={getChartColor(3)}>
         <div className="flex justify-between gap-8 font-medium font-mono">
-          <span>Benchmark</span>
+          <span>Ориентир</span>
           <span>{item.benchmark.toFixed(1)}%</span>
         </div>
       </ChartTooltipItem>
@@ -153,7 +153,7 @@ export function GscCtrBenchmark({ data, isLoading }: GscCtrBenchmarkProps) {
   return (
     <div className="card p-4">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="font-medium text-sm">CTR vs Position</h3>
+        <h3 className="font-medium text-sm">CTR по позициям</h3>
         <div className="flex items-center gap-4 text-muted-foreground text-xs">
           {hasAnyData && (
             <span className="flex items-center gap-1.5">
@@ -161,7 +161,7 @@ export function GscCtrBenchmark({ data, isLoading }: GscCtrBenchmarkProps) {
                 className="h-0.5 w-3 rounded-full"
                 style={{ backgroundColor: getChartColor(0) }}
               />
-              Your CTR
+              Ваш CTR
             </span>
           )}
           <span className="flex items-center gap-1.5">
@@ -169,7 +169,7 @@ export function GscCtrBenchmark({ data, isLoading }: GscCtrBenchmarkProps) {
               className="h-0.5 w-3 rounded-full opacity-60"
               style={{ backgroundColor: getChartColor(3) }}
             />
-            Benchmark
+            Ориентир
           </span>
         </div>
       </div>

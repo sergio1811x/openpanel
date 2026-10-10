@@ -3,28 +3,28 @@
  *
  * Each tool gets a tuple: (verb-form for in-progress, noun-form for
  * completed). E.g.
- *   list_event_names → ["Looking up event names", "Event names"]
+ *   list_event_names → ["Ищу названия событий", "Названия событий"]
  *
  * Falls back to a generic transformation when a tool isn't in the
  * map: snake_case → "Snake case", with verb-prefix heuristics
- * ("get_" → "Loading", "list_" → "Looking up", "find_" → "Finding").
+ * ("get_" → "Загружаю", "list_" → "Ищу", "find_" → "Ищу").
  */
 
 const VERB_PREFIXES: Array<[string, string]> = [
-  ['list_', 'Looking up'],
-  ['get_', 'Loading'],
-  ['find_', 'Finding'],
-  ['query_', 'Querying'],
-  ['analyze_', 'Analyzing'],
-  ['compare_', 'Comparing'],
-  ['correlate_', 'Correlating'],
-  ['explain_', 'Explaining'],
-  ['suggest_', 'Suggesting'],
-  ['preview_', 'Previewing'],
-  ['generate_', 'Generating'],
-  ['apply_', 'Applying'],
-  ['set_', 'Updating'],
-  ['gsc_', 'Loading SEO'],
+  ['list_', 'Ищу'],
+  ['get_', 'Загружаю'],
+  ['find_', 'Ищу'],
+  ['query_', 'Запрашиваю'],
+  ['analyze_', 'Анализирую'],
+  ['compare_', 'Сравниваю'],
+  ['correlate_', 'Сопоставляю'],
+  ['explain_', 'Объясняю'],
+  ['suggest_', 'Подбираю'],
+  ['preview_', 'Просматриваю'],
+  ['generate_', 'Создаю'],
+  ['apply_', 'Применяю'],
+  ['set_', 'Обновляю'],
+  ['gsc_', 'Загружаю SEO'],
 ];
 
 const PHRASES: Record<
@@ -32,227 +32,227 @@ const PHRASES: Record<
   { active: string; done: string }
 > = {
   // Discovery
-  list_event_names: { active: 'Looking up event names', done: 'Event names' },
+  list_event_names: { active: 'Ищу названия событий', done: 'Названия событий' },
   list_event_properties: {
-    active: 'Looking up properties',
-    done: 'Event properties',
+    active: 'Ищу свойства',
+    done: 'Свойства событий',
   },
   get_event_property_values: {
-    active: 'Loading property values',
-    done: 'Property values',
+    active: 'Загружаю значения свойств',
+    done: 'Значения свойств',
   },
 
   // Saved reports & dashboards
-  list_dashboards: { active: 'Loading dashboards', done: 'Dashboards' },
-  list_reports: { active: 'Loading reports', done: 'Reports' },
-  get_report_data: { active: 'Running report', done: 'Report' },
-  generate_report: { active: 'Building report', done: 'Report' },
+  list_dashboards: { active: 'Загружаю дашборды', done: 'Дашборды' },
+  list_reports: { active: 'Загружаю отчёты', done: 'Отчёты' },
+  get_report_data: { active: 'Выполняю отчёт', done: 'Отчёт' },
+  generate_report: { active: 'Создаю отчёт', done: 'Отчёт' },
 
   // Aggregate analytics
-  get_analytics_overview: { active: 'Loading overview', done: 'Overview' },
-  get_top_pages: { active: 'Loading top pages', done: 'Top pages' },
+  get_analytics_overview: { active: 'Загружаю обзор', done: 'Обзор' },
+  get_top_pages: { active: 'Загружаю топ страниц', done: 'Топ страниц' },
   get_top_referrers: {
-    active: 'Loading top referrers',
-    done: 'Top referrers',
+    active: 'Загружаю топ источников',
+    done: 'Топ источников',
   },
   get_country_breakdown: {
-    active: 'Loading geo breakdown',
-    done: 'Geo breakdown',
+    active: 'Загружаю гео-разбивку',
+    done: 'Гео-разбивка',
   },
   get_device_breakdown: {
-    active: 'Loading device breakdown',
-    done: 'Device breakdown',
+    active: 'Загружаю разбивку по устройствам',
+    done: 'Разбивка по устройствам',
   },
   get_rolling_active_users: {
-    active: 'Loading active users',
-    done: 'Active users',
+    active: 'Загружаю активных пользователей',
+    done: 'Активные пользователи',
   },
-  get_funnel: { active: 'Building funnel', done: 'Funnel' },
+  get_funnel: { active: 'Строю воронку', done: 'Воронка' },
   get_retention_cohort: {
-    active: 'Building retention cohort',
-    done: 'Retention',
+    active: 'Строю кохорту удержания',
+    done: 'Удержание',
   },
-  get_user_flow: { active: 'Building user flow', done: 'User flow' },
+  get_user_flow: { active: 'Строю путь пользователя', done: 'Путь пользователя' },
 
   // Free-form
-  query_events: { active: 'Querying events', done: 'Events' },
-  query_sessions: { active: 'Querying sessions', done: 'Sessions' },
-  find_profiles: { active: 'Finding profiles', done: 'Profiles' },
+  query_events: { active: 'Запрашиваю события', done: 'События' },
+  query_sessions: { active: 'Запрашиваю сессии', done: 'Сессии' },
+  find_profiles: { active: 'Ищу профили', done: 'Профили' },
 
   // Profile
-  get_profile_full: { active: 'Loading profile', done: 'Profile' },
+  get_profile_full: { active: 'Загружаю профиль', done: 'Профиль' },
   get_profile_events: {
-    active: 'Loading profile events',
-    done: 'Profile events',
+    active: 'Загружаю события профиля',
+    done: 'События профиля',
   },
   get_profile_sessions: {
-    active: 'Loading profile sessions',
-    done: 'Profile sessions',
+    active: 'Загружаю сессии профиля',
+    done: 'Сессии профиля',
   },
   get_profile_metrics: {
-    active: 'Loading profile metrics',
-    done: 'Profile metrics',
+    active: 'Загружаю метрики профиля',
+    done: 'Метрики профиля',
   },
   get_profile_journey: {
-    active: 'Loading user journey',
-    done: 'User journey',
+    active: 'Загружаю путь пользователя',
+    done: 'Путь пользователя',
   },
   get_profile_groups: {
-    active: 'Loading profile groups',
-    done: 'Profile groups',
+    active: 'Загружаю группы профиля',
+    done: 'Группы профиля',
   },
   compare_profile_to_average: {
-    active: 'Comparing to average',
-    done: 'Profile comparison',
+    active: 'Сравниваю со средним',
+    done: 'Сравнение профиля',
   },
 
   // Session
-  get_session_full: { active: 'Loading session', done: 'Session' },
-  get_session_path: { active: 'Loading session path', done: 'Session path' },
+  get_session_full: { active: 'Загружаю сессию', done: 'Сессия' },
+  get_session_path: { active: 'Загружаю путь сессии', done: 'Путь сессии' },
   get_session_events: {
-    active: 'Loading session events',
-    done: 'Session events',
+    active: 'Загружаю события сессии',
+    done: 'События сессии',
   },
   get_similar_sessions: {
-    active: 'Finding similar sessions',
-    done: 'Similar sessions',
+    active: 'Ищу похожие сессии',
+    done: 'Похожие сессии',
   },
   compare_session_to_typical: {
-    active: 'Comparing to typical',
-    done: 'Session comparison',
+    active: 'Сравниваю с типичной',
+    done: 'Сравнение сессий',
   },
   get_session_referrer_context: {
-    active: 'Loading referrer context',
-    done: 'Referrer context',
+    active: 'Загружаю контекст источника',
+    done: 'Контекст источника',
   },
   get_session_replay_summary: {
-    active: 'Loading session replay',
-    done: 'Session replay',
+    active: 'Загружаю повтор сессии',
+    done: 'Повтор сессии',
   },
 
   // Pages
   get_page_performance: {
-    active: 'Loading page performance',
-    done: 'Page performance',
+    active: 'Загружаю эффективность страницы',
+    done: 'Эффективность страницы',
   },
   get_page_conversions: {
-    active: 'Loading page conversions',
-    done: 'Page conversions',
+    active: 'Загружаю конверсии страницы',
+    done: 'Конверсии страницы',
   },
   get_entry_exit_pages: {
-    active: 'Loading entry/exit pages',
-    done: 'Entry/exit pages',
+    active: 'Загружаю страницы входа/выхода',
+    done: 'Страницы входа/выхода',
   },
   find_declining_pages: {
-    active: 'Finding declining pages',
-    done: 'Declining pages',
+    active: 'Ищу падающие страницы',
+    done: 'Падающие страницы',
   },
 
   // SEO / GSC
-  gsc_get_overview: { active: 'Loading SEO overview', done: 'SEO overview' },
-  gsc_get_top_queries: { active: 'Loading top queries', done: 'Top queries' },
+  gsc_get_overview: { active: 'Загружаю SEO-обзор', done: 'SEO-обзор' },
+  gsc_get_top_queries: { active: 'Загружаю топ запросов', done: 'Топ запросов' },
   gsc_get_top_pages: {
-    active: 'Loading top SEO pages',
-    done: 'Top SEO pages',
+    active: 'Загружаю топ SEO-страниц',
+    done: 'Топ SEO-страниц',
   },
   gsc_get_query_details: {
-    active: 'Loading query details',
-    done: 'Query details',
+    active: 'Загружаю детали запроса',
+    done: 'Детали запроса',
   },
   gsc_get_page_details: {
-    active: 'Loading page details',
-    done: 'Page details',
+    active: 'Загружаю детали страницы',
+    done: 'Детали страницы',
   },
   gsc_get_query_opportunities: {
-    active: 'Finding query opportunities',
-    done: 'Query opportunities',
+    active: 'Ищу возможности по запросам',
+    done: 'Возможности по запросам',
   },
   gsc_get_cannibalization: {
-    active: 'Checking cannibalization',
-    done: 'Cannibalization',
+    active: 'Проверяю каннибализацию',
+    done: 'Каннибализация',
   },
   correlate_seo_with_traffic: {
-    active: 'Correlating SEO with traffic',
-    done: 'SEO/traffic correlation',
+    active: 'Сопоставляю SEO с трафиком',
+    done: 'Корреляция SEO и трафика',
   },
 
   // Events
   analyze_event_distribution: {
-    active: 'Analyzing event distribution',
-    done: 'Event distribution',
+    active: 'Анализирую распределение событий',
+    done: 'Распределение событий',
   },
-  correlate_events: { active: 'Correlating events', done: 'Event correlation' },
+  correlate_events: { active: 'Сопоставляю события', done: 'Корреляция событий' },
   get_event_property_distribution: {
-    active: 'Loading property distribution',
-    done: 'Property distribution',
+    active: 'Загружаю распределение свойств',
+    done: 'Распределение свойств',
   },
   list_properties_for_event: {
-    active: 'Loading properties',
-    done: 'Event properties',
+    active: 'Загружаю свойства',
+    done: 'Свойства событий',
   },
 
   // Insights
-  list_insights: { active: 'Loading insights', done: 'Insights' },
-  explain_insight: { active: 'Loading insight', done: 'Insight' },
+  list_insights: { active: 'Загружаю инсайты', done: 'Инсайты' },
+  explain_insight: { active: 'Загружаю инсайт', done: 'Инсайт' },
   find_related_insights: {
-    active: 'Finding related insights',
-    done: 'Related insights',
+    active: 'Ищу связанные инсайты',
+    done: 'Связанные инсайты',
   },
 
   // Group
-  get_group_full: { active: 'Loading group', done: 'Group' },
-  get_group_members: { active: 'Loading group members', done: 'Group members' },
-  get_group_events: { active: 'Loading group events', done: 'Group events' },
+  get_group_full: { active: 'Загружаю группу', done: 'Группа' },
+  get_group_members: { active: 'Загружаю участников группы', done: 'Участники группы' },
+  get_group_events: { active: 'Загружаю события группы', done: 'События группы' },
   get_group_metrics: {
-    active: 'Loading group metrics',
-    done: 'Group metrics',
+    active: 'Загружаю метрики группы',
+    done: 'Метрики группы',
   },
-  compare_groups: { active: 'Comparing groups', done: 'Group comparison' },
+  compare_groups: { active: 'Сравниваю группы', done: 'Сравнение групп' },
 
   // Report editor
   preview_report_with_changes: {
-    active: 'Previewing changes',
-    done: 'Report preview',
+    active: 'Просматриваю изменения',
+    done: 'Предпросмотр отчёта',
   },
   suggest_breakdowns: {
-    active: 'Suggesting breakdowns',
-    done: 'Breakdown suggestions',
+    active: 'Подбираю разбивки',
+    done: 'Предложения разбивок',
   },
   compare_to_previous_period: {
-    active: 'Comparing to previous period',
-    done: 'Period comparison',
+    active: 'Сравниваю с предыдущим периодом',
+    done: 'Сравнение периодов',
   },
   find_anomalies_in_current_report: {
-    active: 'Finding anomalies',
-    done: 'Anomalies',
+    active: 'Ищу аномалии',
+    done: 'Аномалии',
   },
   explain_filter_impact: {
-    active: 'Analyzing filter impact',
-    done: 'Filter impact',
+    active: 'Анализирую влияние фильтра',
+    done: 'Влияние фильтра',
   },
 
   // UI mutators (client-side)
   apply_filters: {
-    active: 'Applying date range',
-    done: 'Date range updated',
+    active: 'Применяю период',
+    done: 'Период обновлён',
   },
   set_property_filters: {
-    active: 'Applying filters',
-    done: 'Filters updated',
+    active: 'Применяю фильтры',
+    done: 'Фильтры обновлены',
   },
   set_event_names_filter: {
-    active: 'Applying event filter',
-    done: 'Event filter updated',
+    active: 'Применяю фильтр событий',
+    done: 'Фильтр событий обновлён',
   },
 
   // References
   list_references: {
-    active: 'Loading references',
-    done: 'References',
+    active: 'Загружаю точки отсчёта',
+    done: 'Точки отсчёта',
   },
   get_references_around: {
-    active: 'Checking references around this date',
-    done: 'Nearby references',
+    active: 'Проверяю точки отсчёта рядом с этой датой',
+    done: 'Точки отсчёта рядом',
   },
 };
 
@@ -264,7 +264,7 @@ export function getToolPhrase(toolName: string, phase: ToolPhrasePhase): string 
 
   const matchedPrefix = VERB_PREFIXES.find(([p]) => toolName.startsWith(p));
   const verb = matchedPrefix?.[0] ?? '';
-  const verbLabel = matchedPrefix?.[1] ?? 'Running';
+  const verbLabel = matchedPrefix?.[1] ?? 'Выполняю';
 
   const noun = humanizeNoun(toolName.slice(verb.length) || toolName);
   return phase === 'active' ? `${verbLabel} ${noun.toLowerCase()}` : noun;

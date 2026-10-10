@@ -51,7 +51,7 @@ export function GCSExportIntegrationForm({
     trpc.integration.createOrUpdateExport.mutationOptions({
       onSuccess,
       onError(error) {
-        toast.error(error.message || 'Failed to create integration');
+        toast.error(error.message || 'Не удалось создать интеграцию');
       },
     }),
   );
@@ -60,13 +60,13 @@ export function GCSExportIntegrationForm({
     trpc.integration.testExportConnection.mutationOptions({
       onSuccess(data) {
         if (data.success) {
-          toast.success('Connection successful! Bucket is accessible.');
+          toast.success('Подключение успешно! Бакет доступен.');
         } else {
-          toast.error(`Connection failed: ${data.error}`);
+          toast.error(`Ошибка подключения: ${data.error}`);
         }
       },
       onError(error) {
-        toast.error(error.message || 'Failed to test connection');
+        toast.error(error.message || 'Не удалось проверить подключение');
       },
     }),
   );
@@ -76,13 +76,13 @@ export function GCSExportIntegrationForm({
   };
 
   const handleError = () => {
-    toast.error('Please fix validation errors');
+    toast.error('Исправьте ошибки валидации');
   };
 
   const handleTest = () => {
     const values = form.getValues();
     if (!values.config.bucket || !values.config.serviceAccountKey) {
-      return toast.error('Bucket and Service Account Key are required');
+      return toast.error('Не указаны бакет и ключ сервисного аккаунта');
     }
     testMutation.mutate(values);
   };
@@ -93,21 +93,21 @@ export function GCSExportIntegrationForm({
       className="col gap-4"
     >
       <InputWithLabel
-        label="Name"
-        placeholder="Eg. Production GCS Export"
+        label="Название"
+        placeholder="Например, GCS-экспорт продакшена"
         {...form.register('name')}
         error={form.formState.errors.name?.message}
       />
 
       <div className="grid grid-cols-2 gap-4">
         <InputWithLabel
-          label="GCS Bucket"
+          label="GCS-бакет"
           placeholder="my-analytics-bucket"
           {...form.register('config.bucket')}
           error={path(['config', 'bucket', 'message'], form.formState.errors)}
         />
         <InputWithLabel
-          label="Prefix"
+          label="Префикс"
           placeholder="openpanel-exports"
           {...form.register('config.prefix')}
           error={path(['config', 'prefix', 'message'], form.formState.errors)}
@@ -115,19 +115,19 @@ export function GCSExportIntegrationForm({
       </div>
 
       <div className="col gap-1.5">
-        <label className="text-sm font-medium">Format</label>
+        <label className="text-sm font-medium">Формат</label>
         <Controller
           name="config.format"
           control={form.control}
           render={({ field }) => (
             <Select onValueChange={field.onChange} value={field.value}>
               <SelectTrigger className="w-48">
-                <SelectValue placeholder="Select format" />
+                <SelectValue placeholder="Выберите формат" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="jsonl_gzip">JSONL (gzip)</SelectItem>
                 <SelectItem value="parquet" disabled>
-                  Parquet (coming soon)
+                  Parquet (скоро)
                 </SelectItem>
               </SelectContent>
             </Select>
@@ -137,13 +137,13 @@ export function GCSExportIntegrationForm({
 
       <div className="col gap-1.5">
         <label className="text-sm font-medium">
-          Service Account Key (JSON)
+          Ключ сервисного аккаунта (JSON)
         </label>
         <textarea
           className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring min-h-32 w-full rounded-md border px-3 py-2 text-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
           placeholder={
             defaultValues?.id
-              ? 'Leave blank to keep the current key'
+              ? 'Оставьте пустым, чтобы сохранить текущий ключ'
               : '{"type": "service_account", "project_id": "...", ...}'
           }
           // Stored secrets are never sent back to the browser, so an edit starts
@@ -164,9 +164,9 @@ export function GCSExportIntegrationForm({
           </p>
         )}
         <p className="text-muted-foreground text-xs">
-          Paste the contents of your GCS service account JSON key file (a
-          document with <code>"type": "service_account"</code>). The service
-          account needs write access to the specified bucket.
+          Вставьте содержимое JSON-файла ключа сервисного аккаунта GCS
+          (документ с <code>"type": "service_account"</code>). Сервисному
+          аккаунту нужен доступ на запись в указанный бакет.
         </p>
       </div>
 
@@ -177,14 +177,14 @@ export function GCSExportIntegrationForm({
           onClick={handleTest}
           disabled={testMutation.isPending}
         >
-          {testMutation.isPending ? 'Testing...' : 'Test connection'}
+          {testMutation.isPending ? 'Проверка...' : 'Проверить подключение'}
         </Button>
         <Button type="submit" className="flex-1" disabled={mutation.isPending}>
           {mutation.isPending
-            ? 'Saving...'
+            ? 'Сохранение...'
             : defaultValues?.id
-              ? 'Update'
-              : 'Create'}
+              ? 'Обновить'
+              : 'Создать'}
         </Button>
       </div>
     </form>

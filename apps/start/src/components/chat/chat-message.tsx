@@ -113,7 +113,7 @@ export function ChatMessage({
                   key={part.callId}
                   className="flex items-center gap-2 py-1.5 text-sm"
                 >
-                  <span className="op-shimmer font-medium">Thinking…</span>
+                  <span className="op-shimmer font-medium">Думаю…</span>
                 </div>
               );
             }
@@ -127,7 +127,7 @@ export function ChatMessage({
               input: part.args ? safeParse(part.args) : undefined,
               output: matched?.result,
               errorText:
-                matched?.status === 'error' ? 'Tool failed' : undefined,
+                matched?.status === 'error' ? 'Ошибка инструмента' : undefined,
             };
             return (
               <div key={part.callId} className="w-full max-w-full">
@@ -174,7 +174,7 @@ function ReasoningBlock({
     return (
       <div className="w-full max-w-full">
         <div className="flex items-center gap-2 text-sm">
-          <span className="op-shimmer font-medium">Thinking…</span>
+          <span className="op-shimmer font-medium">Думаю…</span>
         </div>
         {latestLine && (
           <div className="mt-1 text-sm text-muted-foreground/80 italic line-clamp-1">
@@ -195,7 +195,7 @@ function ReasoningBlock({
         <ChevronRightIcon
           className={cn('size-3 transition-transform', open && 'rotate-90')}
         />
-        <span>Thought</span>
+        <span>Мысль</span>
       </button>
       {open && (
         <div className="mt-2">

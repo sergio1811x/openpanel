@@ -15,7 +15,7 @@ export function GetStartedButton({
   return (
     <Button asChild className={cn('group', className)} size="lg">
       <Link href={href}>
-        {text ?? 'Start free trial'}
+        {text ?? 'Начать бесплатный период'}
         <ChevronRightIcon className="size-4 transition-transform group-hover:translate-x-1 group-hover:scale-125" />
       </Link>
     </Button>

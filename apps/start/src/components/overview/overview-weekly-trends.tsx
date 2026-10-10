@@ -33,23 +33,23 @@ type MetricKey =
   | 'avg_session_duration';
 
 const METRICS: { key: MetricKey; label: string; unit: string }[] = [
-  { key: 'unique_visitors', label: 'Unique Visitors', unit: '' },
-  { key: 'total_sessions', label: 'Sessions', unit: '' },
-  { key: 'total_screen_views', label: 'Pageviews', unit: '' },
-  { key: 'bounce_rate', label: 'Bounce Rate', unit: 'pct' },
-  { key: 'views_per_session', label: 'Pages / Session', unit: '' },
-  { key: 'avg_session_duration', label: 'Session Duration', unit: 'min' },
+  { key: 'unique_visitors', label: 'Уникальные посетители', unit: '' },
+  { key: 'total_sessions', label: 'Сессии', unit: '' },
+  { key: 'total_screen_views', label: 'Просмотры', unit: '' },
+  { key: 'bounce_rate', label: 'Показатель отказов', unit: 'pct' },
+  { key: 'views_per_session', label: 'Страниц / сессию', unit: '' },
+  { key: 'avg_session_duration', label: 'Длительность сессии', unit: 'min' },
 ];
 
-const SHORT_DAY_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const SHORT_DAY_NAMES = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 const LONG_DAY_NAMES = [
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday',
+  'Понедельник',
+  'Вторник',
+  'Среда',
+  'Четверг',
+  'Пятница',
+  'Суббота',
+  'Воскресенье',
 ];
 
 function formatHourRange(hour: number) {
@@ -149,11 +149,11 @@ export default function OverviewWeeklyTrends({
       <WidgetBody>
         {query.isLoading ? (
           <div className="flex h-48 items-center justify-center text-sm text-muted-foreground">
-            Loading...
+            Загрузка...
           </div>
         ) : !heatmap ? (
           <div className="flex h-48 items-center justify-center text-sm text-muted-foreground">
-            No data available
+            Нет данных
           </div>
         ) : (
           <div className="flex">

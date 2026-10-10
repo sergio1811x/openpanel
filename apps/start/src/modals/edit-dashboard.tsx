@@ -39,8 +39,8 @@ export default function EditDashboard({ id, name }: EditDashboardProps) {
     trpc.dashboard.update.mutationOptions({
       onSuccess() {
         reset();
-        toast('Success', {
-          description: 'Dashboard updated.',
+        toast('Успешно', {
+          description: 'Дашборд обновлён.',
         });
         popModal();
         queryClient.invalidateQueries(trpc.dashboard.list.pathFilter());
@@ -50,24 +50,24 @@ export default function EditDashboard({ id, name }: EditDashboardProps) {
 
   return (
     <ModalContent>
-      <ModalHeader title="Edit dashboard" />
+      <ModalHeader title="Изменение дашборда" />
       <form
         onSubmit={handleSubmit((values) => {
           mutation.mutate(values);
         })}
       >
         <InputWithLabel
-          label="Name"
-          placeholder="Name"
+          label="Название"
+          placeholder="Название"
           {...register('name')}
           defaultValue={name}
         />
         <ButtonContainer>
           <Button type="button" variant="outline" onClick={() => popModal()}>
-            Cancel
+            Отмена
           </Button>
           <Button type="submit" disabled={!formState.isDirty}>
-            Update
+            Обновить
           </Button>
         </ButtonContainer>
       </form>

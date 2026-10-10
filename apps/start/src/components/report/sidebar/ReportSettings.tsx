@@ -86,12 +86,12 @@ export function ReportSettings() {
 
   return (
     <div>
-      <h3 className="mb-2 font-medium">Settings</h3>
+      <h3 className="mb-2 font-medium">Настройки</h3>
       <div className="col rounded-lg border bg-card p-4 gap-4">
         {fields.includes('previous') && (
           <Label className="flex items-center justify-between mb-0">
             <span className="whitespace-nowrap">
-              Compare to previous period
+              Сравнивать с предыдущим периодом
             </span>
             <Switch
               checked={previous}
@@ -102,20 +102,20 @@ export function ReportSettings() {
         {fields.includes('criteria') && (
           <div className="flex items-center justify-between gap-4">
             <Label className="whitespace-nowrap font-medium mb-0">
-              Criteria
+              Критерий
             </Label>
             <Combobox
               align="end"
-              placeholder="Select criteria"
+              placeholder="Выберите критерий"
               value={criteria}
               onChange={(val) => dispatch(changeCriteria(val))}
               items={[
                 {
-                  label: 'On or After',
+                  label: 'В этот день или позже',
                   value: 'on_or_after',
                 },
                 {
-                  label: 'On',
+                  label: 'В этот день',
                   value: 'on',
                 },
               ]}
@@ -124,17 +124,17 @@ export function ReportSettings() {
         )}
         {fields.includes('unit') && (
           <div className="flex items-center justify-between gap-4">
-            <Label className="whitespace-nowrap font-medium mb-0">Unit</Label>
+            <Label className="whitespace-nowrap font-medium mb-0">Единица</Label>
             <Combobox
               align="end"
-              placeholder="Unit"
+              placeholder="Единица"
               value={unit || 'count'}
               onChange={(val) => {
                 dispatch(changeUnit(val === 'count' ? undefined : val));
               }}
               items={[
                 {
-                  label: 'Count',
+                  label: 'Количество',
                   value: 'count',
                 },
                 {
@@ -148,20 +148,20 @@ export function ReportSettings() {
         {fields.includes('metric') && (
           <div className="flex items-center justify-between gap-4">
             <Label className="whitespace-nowrap font-medium mb-0">
-              Aggregation
+              Агрегация
             </Label>
             <Combobox
               align="end"
-              placeholder="Aggregation"
+              placeholder="Агрегация"
               value={metric}
               onChange={(val) => dispatch(changeMetric(val as IChartMetric))}
               // Same labels the report table uses for these columns.
               items={[
-                { label: 'Unique', value: 'count' },
-                { label: 'Sum', value: 'sum' },
-                { label: 'Average', value: 'average' },
-                { label: 'Min', value: 'min' },
-                { label: 'Max', value: 'max' },
+                { label: 'Уникальные', value: 'count' },
+                { label: 'Сумма', value: 'sum' },
+                { label: 'Среднее', value: 'average' },
+                { label: 'Минимум', value: 'min' },
+                { label: 'Максимум', value: 'max' },
               ]}
             />
           </div>
@@ -169,11 +169,11 @@ export function ReportSettings() {
         {fields.includes('funnelGroup') && (
           <div className="flex items-center justify-between gap-4">
             <Label className="whitespace-nowrap font-medium mb-0">
-              Funnel Group
+              Группа воронки
             </Label>
             <Combobox
               align="end"
-              placeholder="Default: Session"
+              placeholder="По умолчанию: Сессия"
               value={funnelGroup || 'session_id'}
               onChange={(val) => {
                 dispatch(
@@ -182,11 +182,11 @@ export function ReportSettings() {
               }}
               items={[
                 {
-                  label: 'Session',
+                  label: 'Сессия',
                   value: 'session_id',
                 },
                 {
-                  label: 'Profile',
+                  label: 'Профиль',
                   value: 'profile_id',
                 },
               ]}
@@ -196,12 +196,12 @@ export function ReportSettings() {
         {fields.includes('funnelWindow') && (
           <div className="flex items-center justify-between gap-4">
             <Label className="whitespace-nowrap font-medium mb-0">
-              Funnel Window
+              Окно воронки
             </Label>
             <InputEnter
               type="number"
               value={funnelWindow ? String(funnelWindow) : ''}
-              placeholder="Default: 24h"
+              placeholder="По умолчанию: 24ч"
               onChangeValue={(value) => {
                 const parsed = Number.parseFloat(value);
                 if (Number.isNaN(parsed)) {
@@ -215,10 +215,10 @@ export function ReportSettings() {
         )}
         {fields.includes('sankeyMode') && options?.type === 'sankey' && (
           <div className="flex items-center justify-between gap-4">
-            <Label className="whitespace-nowrap font-medium mb-0">Mode</Label>
+            <Label className="whitespace-nowrap font-medium mb-0">Режим</Label>
             <Combobox
               align="end"
-              placeholder="Select mode"
+              placeholder="Выберите режим"
               value={options?.mode || 'after'}
               onChange={(val) => {
                 dispatch(
@@ -227,15 +227,15 @@ export function ReportSettings() {
               }}
               items={[
                 {
-                  label: 'After',
+                  label: 'После',
                   value: 'after',
                 },
                 {
-                  label: 'Before',
+                  label: 'До',
                   value: 'before',
                 },
                 {
-                  label: 'Between',
+                  label: 'Между',
                   value: 'between',
                 },
               ]}
@@ -244,11 +244,11 @@ export function ReportSettings() {
         )}
         {fields.includes('sankeySteps') && options?.type === 'sankey' && (
           <div className="flex items-center justify-between gap-4">
-            <Label className="whitespace-nowrap font-medium mb-0">Steps</Label>
+            <Label className="whitespace-nowrap font-medium mb-0">Шаги</Label>
             <InputEnter
               type="number"
               value={options?.steps ? String(options.steps) : '5'}
-              placeholder="Default: 5"
+              placeholder="По умолчанию: 5"
               onChangeValue={(value) => {
                 const parsed = Number.parseInt(value, 10);
                 if (Number.isNaN(parsed) || parsed < 2 || parsed > 10) {
@@ -263,7 +263,7 @@ export function ReportSettings() {
         {fields.includes('sankeyExclude') && options?.type === 'sankey' && (
           <div className="flex flex-col">
             <Label className="whitespace-nowrap font-medium">
-              Exclude Events
+              Исключить события
             </Label>
             <ComboboxEvents
               multiple
@@ -273,14 +273,14 @@ export function ReportSettings() {
                 dispatch(changeSankeyExclude(value));
               }}
               items={eventNames.filter((item) => item.name !== '*')}
-              placeholder="Select events to exclude"
+              placeholder="Выберите события для исключения"
             />
           </div>
         )}
         {fields.includes('sankeyInclude') && options?.type === 'sankey' && (
           <div className="flex flex-col">
             <Label className="whitespace-nowrap font-medium">
-              Include events
+              Включить события
             </Label>
             <ComboboxEvents
               multiple
@@ -292,13 +292,13 @@ export function ReportSettings() {
                 );
               }}
               items={eventNames.filter((item) => item.name !== '*')}
-              placeholder="Leave empty to include all"
+              placeholder="Оставьте пустым, чтобы включить все"
             />
           </div>
         )}
         {fields.includes('stacked') && (
           <Label className="flex items-center justify-between mb-0">
-            <span className="whitespace-nowrap">Stack series</span>
+            <span className="whitespace-nowrap">Накапливать серии</span>
             <Switch
               checked={stacked}
               onCheckedChange={(val) => dispatch(changeStacked(!!val))}

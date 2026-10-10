@@ -12,9 +12,9 @@ export function ReportGlobalFilters() {
 
   return (
     <div>
-      <h3 className="mb-2 font-medium">Global filters</h3>
+      <h3 className="mb-2 font-medium">Глобальные фильтры</h3>
       <p className="mb-2 text-sm text-muted-foreground">
-        Applied to every series in this report.
+        Применяются ко всем сериям в этом отчёте.
       </p>
       <div className="rounded-lg border bg-def-100">
         <div className="flex gap-2 p-2">
@@ -57,7 +57,7 @@ export function ReportGlobalFilters() {
                 onClick={() => setOpen((p) => !p)}
                 icon={FilterIcon}
               >
-                Add filter
+                Добавить фильтр
               </SmallButton>
             )}
           </PropertiesCombobox>

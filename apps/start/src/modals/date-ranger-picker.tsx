@@ -63,7 +63,7 @@ export default function DateRangerPicker({
           type="button"
           variant="outline"
         >
-          Cancel
+          Отмена
         </Button>
 
         {startDate && endDate && (
@@ -86,8 +86,8 @@ export default function DateRangerPicker({
             type="button"
           >
             {startDate && endDate
-              ? `Select ${formatDate(startDate)} - ${formatDate(endDate)}`
-              : 'Cancel'}
+              ? `Выбрать ${formatDate(startDate)} - ${formatDate(endDate)}`
+              : 'Отмена'}
           </Button>
         )}
       </div>

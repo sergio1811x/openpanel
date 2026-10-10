@@ -11,9 +11,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = getPageMetadata({
-  title: 'Articles',
+  title: 'Статьи',
   description:
-    'Read our latest articles and stay up to date with the latest news and updates.',
+    'Читайте наши последние статьи и будьте в курсе свежих новостей и обновлений.',
   url: url('/articles'),
   image: getOgImageUrl('/articles'),
 });
@@ -29,8 +29,8 @@ export default async function Page() {
           as="h1"
           align="center"
           className="flex-1"
-          title="Articles"
-          description="Read our latest articles and stay up to date with the latest news and updates."
+          title="Статьи"
+          description="Читайте наши последние статьи и будьте в курсе свежих новостей и обновлений."
         />
       </HeroContainer>
 

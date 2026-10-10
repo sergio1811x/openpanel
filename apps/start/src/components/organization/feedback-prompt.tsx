@@ -67,17 +67,17 @@ export default function FeedbackPrompt() {
       gradientColor="rgb(59 130 246)"
       onClose={handleClose}
       show={shouldShow}
-      subtitle="Help us improve OpenPanel with your insights"
-      title="Share Your Feedback"
+      subtitle="Помогите нам улучшить OpenPanel Вашими идеями"
+      title="Поделитесь отзывом"
     >
       <div className="col gap-4 px-6">
         <p className="text-foreground text-sm leading-normal">
-          Your feedback helps us build features you actually need. Share your
-          thoughts, report bugs, or suggest improvements
+          Ваш отзыв помогает нам создавать функции, которые действительно нужны.
+          Поделитесь мыслями, сообщите об ошибках или предложите улучшения
         </p>
 
         <Button className="self-start" onClick={handleGiveFeedback}>
-          Give Feedback
+          Оставить отзыв
         </Button>
       </div>
     </PromptCard>

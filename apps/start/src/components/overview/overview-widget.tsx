@@ -152,7 +152,7 @@ export function WidgetButtons({
               sizes.current.length - 1 === slice ? hidden : 'opacity-50',
             )}
           >
-            More <ChevronsUpDownIcon size={12} />
+            Ещё <ChevronsUpDownIcon size={12} />
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="[&_button]:w-full">
@@ -192,7 +192,7 @@ export function WidgetHeadSearchable<T extends string>({
   onTabChange,
   searchValue,
   onSearchChange,
-  searchPlaceholder = 'Search',
+  searchPlaceholder = 'Поиск',
 }: WidgetHeadSearchableProps<T>) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeftGradient, setShowLeftGradient] = useState(false);

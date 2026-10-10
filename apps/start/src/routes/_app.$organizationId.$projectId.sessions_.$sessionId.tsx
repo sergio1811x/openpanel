@@ -45,7 +45,7 @@ export const Route = createFileRoute(
     ]);
   },
   head: () => ({
-    meta: [{ title: createProjectTitle('Session') }],
+    meta: [{ title: createProjectTitle('Сессия') }],
   }),
   pendingComponent: FullPageLoadingState,
 });
@@ -81,7 +81,7 @@ function VisitedRoutes({ paths }: { paths: string[] }) {
   return (
     <Widget className="w-full">
       <WidgetHead>
-        <WidgetTitle>Visited pages</WidgetTitle>
+        <WidgetTitle>Посещённые страницы</WidgetTitle>
       </WidgetHead>
       <div className="flex flex-col gap-1 p-1">
         {sorted.map(([path, count]) => (
@@ -116,7 +116,7 @@ function EventDistribution({ events }: { events: IServiceEvent[] }) {
   return (
     <Widget className="w-full">
       <WidgetHead>
-        <WidgetTitle>Event distribution</WidgetTitle>
+        <WidgetTitle>Распределение событий</WidgetTitle>
       </WidgetHead>
       <div className="flex flex-col gap-1 p-1">
         {sorted.map(([name, count]) => (
@@ -193,7 +193,7 @@ function Component() {
 
   return (
     <PageContainer className="col gap-8">
-      <PageHeader title={`Session: ${session.id}`}>
+      <PageHeader title={`Сессия: ${session.id}`}>
         <div className="row mb-6 gap-4">
           {session.country && (
             <div className="row items-center gap-2">
@@ -241,7 +241,7 @@ function Component() {
           {/* Session info */}
           <Widget className="w-full">
             <WidgetHead>
-              <WidgetTitle>Session info</WidgetTitle>
+              <WidgetTitle>Информация о сессии</WidgetTitle>
             </WidgetHead>
             <KeyValueGrid
               className="border-0"
@@ -256,7 +256,7 @@ function Component() {
                 { name: 'endedAt', value: session.endedAt },
                 { name: 'screenViews', value: session.screenViewCount },
                 { name: 'events', value: session.eventCount },
-                { name: 'bounce', value: session.isBounce ? 'Yes' : 'No' },
+                { name: 'bounce', value: session.isBounce ? 'Да' : 'Нет' },
                 ...(session.entryPath
                   ? [{ name: 'entryPath', value: session.entryPath }]
                   : []),
@@ -325,7 +325,7 @@ function Component() {
           {isIdentified && profile && (
             <Widget className="w-full">
               <WidgetHead>
-                <WidgetTitle>Profile</WidgetTitle>
+                <WidgetTitle>Профиль</WidgetTitle>
               </WidgetHead>
               <WidgetBody className="p-0">
                 <Link
@@ -357,7 +357,7 @@ function Component() {
           {sessionGroups && sessionGroups.length > 0 && (
             <Widget className="w-full">
               <WidgetHead>
-                <WidgetTitle>Groups</WidgetTitle>
+                <WidgetTitle>Группы</WidgetTitle>
               </WidgetHead>
               <WidgetBody className="p-0">
                 {sessionGroups.map((group) => (
@@ -398,7 +398,7 @@ function Component() {
           {/* Events list */}
           <Widget className="w-full">
             <WidgetHead>
-              <WidgetTitle>Events</WidgetTitle>
+              <WidgetTitle>События</WidgetTitle>
             </WidgetHead>
             <div className="divide-y">
               {events.map((event) => (
@@ -421,7 +421,7 @@ function Component() {
               ))}
               {events.length === 0 && (
                 <div className="py-8 text-center text-muted-foreground text-sm">
-                  No events found
+                  События не найдены
                 </div>
               )}
             </div>

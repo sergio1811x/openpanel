@@ -12,9 +12,9 @@ const testimonials = [
     name: 'Steven Tey',
     handle: 'steventey',
     content: [
-      'Open-source Mixpanel alternative just dropped → http://git.new/openpanel',
-      'It combines the power of Mixpanel + the ease of use of @PlausibleHQ into a fully open-source product.',
-      'Built by @CarlLindesvard and it’s already tracking 750K+ events 🤩',
+      'Вышла open-source альтернатива Mixpanel → http://git.new/openpanel',
+      'Сочетает мощь Mixpanel и простоту @PlausibleHQ в полностью открытом продукте.',
+      'Сделан @CarlLindesvard, уже отслеживает 750K+ событий 🤩',
     ],
     replies: 25,
     retweets: 68,
@@ -25,7 +25,7 @@ const testimonials = [
     avatarUrl: '/twitter-pontus.jpg',
     name: 'Pontus Abrahamsson - oss/acc',
     handle: 'pontusab',
-    content: ['Thanks, OpenPanel is a beast, love it!'],
+    content: ['Спасибо, OpenPanel — зверь, обожаю его!'],
     replies: 25,
     retweets: 68,
     likes: 648,
@@ -36,8 +36,8 @@ const testimonials = [
     name: 'Piotr Kulpinski',
     handle: 'piotrkulpinski',
     content: [
-      'The Overview tab in OpenPanel is great. It has everything I need from my analytics: the stats, the graph, traffic sources, locations, devices, etc.',
-      'The UI is beautiful ✨ Clean, modern look, very pleasing to the eye.',
+      'Вкладка Обзор в OpenPanel отличная. В ней есть всё, что мне нужно от аналитики: статистика, графики, источники трафика, география, устройства и т.д.',
+      'Интерфейс прекрасен ✨ Чистый, современный вид, очень приятный для глаз.',
     ],
     replies: 25,
     retweets: 68,
@@ -48,7 +48,7 @@ const testimonials = [
     avatarUrl: '/twitter-greg.png',
     name: 'greg hodson 🍜',
     handle: 'h0dson',
-    content: ['i second this, openpanel is killing it'],
+    content: ['поддерживаю, openpanel просто великолепен'],
     replies: 25,
     retweets: 68,
     likes: 648,
@@ -59,8 +59,8 @@ const testimonials = [
     name: 'Jacob 🍀 Build in Public',
     handle: 'javayhuwx',
     content: [
-      "🤯 wow, it's amazing! Just integrate @OpenPanelDev into http://indiehackers.site last night, and now I can see visitors coming from all round the world.",
-      'OpenPanel has a more beautiful UI and much more powerful features when compared to Umami.',
+      '🤯 вау, потрясающе! Вчера вечером подключил @OpenPanelDev к http://indiehackers.site, и теперь вижу посетителей со всего мира.',
+      'У OpenPanel более красивый UI и гораздо более мощные возможности по сравнению с Umami.',
       '#buildinpublic #indiehackers',
     ],
     replies: 25,
@@ -73,10 +73,10 @@ const testimonials = [
     name: 'Lee',
     handle: 'DutchEngIishman',
     content: [
-      'Day two of marketing.',
-      'I like this upward trend..',
-      'P.S. website went live on Sunday',
-      'P.P.S. Openpanel by @CarlLindesvard is awesome.',
+      'Второй день маркетинга.',
+      'Мне нравится этот восходящий тренд..',
+      'P.S. сайт запустился в воскресенье',
+      'P.P.S. Openpanel от @CarlLindesvard — потрясающий.',
     ],
     replies: 25,
     retweets: 68,
@@ -88,9 +88,9 @@ const testimonials = [
     name: 'Thomas Sanlis',
     handle: 'T_Zahil',
     content: [
-      `We're now sponsoring @OpenPanelDev with Uneed 🥳`,
-      `If you're looking for open source analytics, OpenPanel is BY FAR the best I've ever seen`,
-      'Bonus: 1-click install on Coolify 🥰',
+      `Теперь мы спонсируем @OpenPanelDev с Uneed 🥳`,
+      `Если ищете аналитику с открытым исходным кодом, OpenPanel — безусловно лучшая из всех, что я видел`,
+      'Бонус: установка в один клик на Coolify 🥰',
     ],
     replies: 8,
     retweets: 3,
@@ -165,8 +165,8 @@ export function Testimonials() {
     <Section className="overflow-hidden">
       <div className="container mb-16">
         <SectionHeader
-          title="Loved by builders everywhere"
-          description="From indie hackers to global teams, OpenPanel helps people understand their users effortlessly."
+          title="Пользователи в восторге"
+          description="От инди-хакеров до глобальных команд — OpenPanel помогает без усилий понять своих пользователей."
         />
       </div>
       <div className="relative -mx-4 px-4">

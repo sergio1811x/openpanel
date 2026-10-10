@@ -153,13 +153,13 @@ export function PureCohortFilterItem({
         <DropdownMenuComposed
           onChange={changeFilterOperator}
           items={[
-            { value: 'inCohort', label: 'In cohort' },
-            { value: 'notInCohort', label: 'Not in cohort' },
+            { value: 'inCohort', label: 'В кохорте' },
+            { value: 'notInCohort', label: 'Не в кохорте' },
           ]}
-          label="Operator"
+          label="Оператор"
         >
           <Button variant="outline" className="whitespace-nowrap">
-            {filter.operator === 'inCohort' ? 'In cohort' : 'Not in cohort'}
+            {filter.operator === 'inCohort' ? 'В кохорте' : 'Не в кохорте'}
           </Button>
         </DropdownMenuComposed>
         <ComboboxAdvanced
@@ -167,7 +167,7 @@ export function PureCohortFilterItem({
           value={selectedIds}
           className="flex-1"
           onChange={changeCohort}
-          placeholder="Select cohorts..."
+          placeholder="Выберите кохорты..."
         />
       </div>
     </div>

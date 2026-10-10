@@ -2,156 +2,171 @@
   "slug": "shopify",
   "audience": "shopify",
   "seo": {
-    "title": "Shopify Analytics — Cookie-Free Tracking Without Consent Banners",
-    "description": "Add product analytics to your Shopify store without GDPR consent banners. OpenPanel is cookieless by default — track events, funnels, and revenue from $2.50/month or free to self-host.",
+    "title": "Аналитика для Shopify — отслеживание без cookies и без баннеров согласия",
+    "description": "Добавьте продуктовую аналитику в магазин Shopify без баннеров согласия GDPR. OpenPanel по умолчанию работает без cookies — отслеживайте события, воронки и доход от $2.50/месяц или бесплатно на self-hosting.",
     "noindex": false
   },
   "hero": {
-    "heading": "Shopify analytics that actually works",
-    "subheading": "Most analytics tools break on Shopify: cookie consent blocks tracking, GA4 loses attribution, and Shopify's built-in reports can't answer the questions that matter. OpenPanel tracks every event without cookies, so your data is complete and your checkout conversion doesn't suffer from a consent banner.",
+    "heading": "Аналитика для Shopify, которая реально работает",
+    "subheading": "Большинство инструментов ломаются на Shopify: баннеры согласия блокируют отслеживание, GA4 теряет данные.",
     "badges": [
-      "Cookie-free tracking",
-      "No consent banner needed",
-      "Revenue tracking",
-      "From $2.50/month"
+      "Отслеживание без cookies",
+      "Баннер согласия не нужен",
+      "Отслеживание дохода",
+      "От $2.50/месяц"
     ]
   },
   "problem": {
-    "title": "Why analytics breaks on Shopify",
-    "intro": "Every major analytics tool creates a different problem for Shopify stores. Here's what you're actually dealing with.",
+    "title": "Почему аналитика ломается на Shopify",
+    "intro": "Каждый крупный инструмент аналитики создаёт для магазинов Shopify свою проблему. Вот с чем вы реально сталкиваетесь.",
     "items": [
       {
-        "title": "GA4 consent mode destroys your data",
-        "description": "Cookie consent requirements mean 30-50% of visitors opt out. GA4's \"consent mode\" fills gaps with modeled data — you're making decisions on estimates, not reality."
+        "title": "Consent mode в GA4 уничтожает ваши данные",
+        "description": "Требования согласия на cookies означают, что 30–50% посетителей отказываются. «Consent mode» в GA4 заполняет пробелы смоделированными данными — вы принимаете решения на основе оценок, а не реальности."
       },
       {
-        "title": "Shopify's built-in analytics is shallow",
-        "description": "Pageviews and sales are there, but you can't build funnels, analyze drop-off by product page, or see which acquisition channel retains customers best."
+        "title": "Встроенная аналитика Shopify поверхностна",
+        "description": "Просмотры страниц и продажи там есть, но воронки не построить, отвал по страницам товаров не проанализировать, а какой канал привлечения лучше удерживает клиентов — не увидеть."
       },
       {
-        "title": "Event tracking requires a developer",
-        "description": "Installing GA4 on Shopify correctly, with purchase events, add-to-cart, and checkout steps, requires custom code or expensive third-party apps."
+        "title": "Отслеживание событий требует разработчика",
+        "description": "Правильная установка GA4 на Shopify — с событиями покупки, добавления в корзину и шагами оформления — требует кастомного кода или дорогих сторонних приложений."
       },
       {
-        "title": "Cookie banners hurt conversion",
-        "description": "A consent popup before checkout is a conversion killer. Every analytics tool that uses cookies forces you to choose between data and revenue."
+        "title": "Баннеры cookies убивают конверсию",
+        "description": "Попап согласия перед оформлением заказа — убийца конверсии. Каждый инструмент аналитики с cookies заставляет вас выбирать между данными и выручкой."
       }
     ]
   },
   "features": {
-    "title": "Everything you need to understand your Shopify store",
-    "intro": "OpenPanel is designed to give you complete visibility into your store's performance — without the privacy headaches.",
+    "title": "Всё, что нужно, чтобы понимать свой магазин Shopify",
+    "intro": "OpenPanel создана, чтобы дать вам полную картину работы магазина — без головной боли с приватностью.",
     "items": [
       {
-        "title": "Script tag install — no developer needed",
-        "description": "Add one script tag in Shopify's theme settings. Automatic page view tracking starts immediately. No Shopify app or coding required."
+        "title": "Установка тегом script — разработчик не нужен",
+        "description": "Добавьте один тег script в настройках темы Shopify. Автоматическое отслеживание просмотров страниц начнётся сразу. Не нужны ни приложение Shopify, ни код."
       },
       {
-        "title": "Cookieless tracking by default",
-        "description": "No cookies means no consent banner. Your analytics data is 100% complete — not modeled, not estimated, not filtered by opt-outs."
+        "title": "Отслеживание без cookies по умолчанию",
+        "description": "Нет cookies — нет баннера согласия. Ваши аналитические данные на 100% полны — не смоделированы, не оценены, не отфильтрованы отказами."
       },
       {
-        "title": "Purchase and revenue tracking",
-        "description": "Track add-to-cart, checkout started, and purchase events with revenue values. See exactly which campaigns and pages drive revenue, not just clicks."
+        "title": "Отслеживание покупок и дохода",
+        "description": "Отслеживайте события добавления в корзину, начала оформления и покупки с суммами дохода. Видите точно, какие кампании и страницы приносят доход, а не просто клики."
       },
       {
-        "title": "Funnel analysis",
-        "description": "Build funnels from product page → add to cart → checkout → purchase. See exactly where you're losing customers and fix it."
+        "title": "Анализ воронок",
+        "description": "Стройте воронки: страница товара → корзина → оформление заказа → покупка. Видите точно, где теряете клиентов, и исправляйте это."
       },
       {
-        "title": "UTM campaign attribution",
-        "description": "Track every paid ad, email campaign, and influencer link. See which traffic source actually converts to buyers, not just visitors."
+        "title": "Атрибуция UTM-кампаний",
+        "description": "Отслеживайте каждую платную рекламу, email-кампанию и ссылку инфлюенсера. Смотрите, какой источник трафика реально конвертирует в покупателей, а не просто в посетителей."
       },
       {
-        "title": "User profiles",
-        "description": "See the complete journey of any customer — pages visited, products viewed, purchase history. Identify high-value customer behavior patterns."
+        "title": "Профили пользователей",
+        "description": "Смотрите полный путь любого клиента — посещённые страницы, просмотренные товары, историю покупок. Выявляйте паттерны поведения самых ценных клиентов."
       },
       {
-        "title": "Real-time dashboard",
-        "description": "Watch your store live. Launch a sale or send an email and see the traffic surge in real time."
+        "title": "Дашборд в реальном времени",
+        "description": "Наблюдайте за магазином вживую. Запустите распродажу или отправьте рассылку — и увидите всплеск трафика в реальном времени."
       },
       {
-        "title": "EU data residency",
-        "description": "All data stored in the EU. No transfers to US servers. GDPR compliance without the legal complexity."
+        "title": "Данные хранятся в ЕС",
+        "description": "Все данные хранятся в ЕС. Без передачи на серверы в США. Соответствие GDPR без юридической сложности."
       }
     ]
   },
   "benefits": {
-    "title": "Why Shopify store owners choose OpenPanel",
-    "intro": "OpenPanel was built to solve the exact problems that plague analytics on Shopify.",
+    "title": "Почему владельцы магазинов на Shopify выбирают OpenPanel",
+    "intro": "OpenPanel создана для решения именно тех проблем, которые мучают аналитику на Shopify.",
     "items": [
       {
-        "title": "Complete data, no consent required",
-        "description": "Cookieless tracking means every visitor is counted. No consent mode models, no sampling, no gaps from opt-outs."
+        "title": "Полные данные, согласие не требуется",
+        "description": "Отслеживание без cookies означает, что учтён каждый посетитель. Никаких consent mode-моделей, сэмплирования и пробелов из-за отказов."
       },
       {
-        "title": "Cheaper than Shopify analytics apps",
-        "description": "Most Shopify analytics apps charge $50–200/month. OpenPanel starts at $2.50/month with all features included."
+        "title": "Дешевле, чем аналитические приложения Shopify",
+        "description": "Большинство аналитических приложений Shopify стоят $50–200 в месяц. OpenPanel начинается от $2.50/месяц — со всеми включёнными функциями."
       },
       {
-        "title": "Replace GA4 and your analytics app",
-        "description": "One tool covers web analytics (traffic, referrers, UTM) and product analytics (funnels, retention, revenue). Cancel two subscriptions."
+        "title": "Замените GA4 и ваше аналитическое приложение",
+        "description": "Один инструмент покрывает веб-аналитику (трафик, рефереры, UTM) и продуктовую аналитику (воронки, удержание, доход). Отмените две подписки."
       },
       {
-        "title": "Privacy-first out of the box",
-        "description": "EU hosting, no cookies, no fingerprinting. No compliance team required to use OpenPanel on your store."
+        "title": "Приватность на первом месте из коробки",
+        "description": "Хостинг в ЕС, без cookies, без фингерпринтинга. Команда соответствия требованиям не нужна, чтобы использовать OpenPanel в вашем магазине."
       },
       {
-        "title": "Self-host for free",
-        "description": "For high-volume stores, self-hosting eliminates per-event costs entirely. One Docker deployment, unlimited events."
+        "title": "Бесплатный self-hosting",
+        "description": "Для магазинов с высоким трафиком self-hosting полностью убирает плату за события. Одно развёртывание Docker — и безлимитные события."
       }
     ]
   },
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions from Shopify store owners evaluating OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы от владельцев магазинов Shopify, оценивающих OpenPanel.",
     "items": [
       {
-        "question": "How do I install OpenPanel on Shopify?",
-        "answer": "Add the OpenPanel script tag via Shopify Admin → Online Store → Themes → Edit Code → theme.liquid. Paste the snippet before </head>. Automatic page views track immediately. For purchase events, add a few lines to your order confirmation page."
+        "question": "Как установить OpenPanel на Shopify?",
+        "answer": "Добавьте тег script OpenPanel через Shopify Admin → Online Store → Themes → Edit Code → theme.liquid. Вставьте сниппет перед </head>. Автоматические просмотры страниц начнут отслеживаться сразу. Для событий покупки добавьте несколько строк на страницу подтверждения заказа."
       },
       {
-        "question": "Does OpenPanel work without a cookie consent banner?",
-        "answer": "Yes. OpenPanel is cookieless by default and doesn't collect personal data. No consent banner is required under GDPR or CCPA for analytics-only use."
+        "question": "Работает ли OpenPanel без баннера согласия на cookies?",
+        "answer": "Да. OpenPanel по умолчанию работает без cookies и не собирает персональные данные. Баннер согласия по GDPR или CCPA не требуется, если OpenPanel используется только для аналитики."
       },
       {
-        "question": "Can I track Shopify purchase events?",
-        "answer": "Yes. Use a simple script on your order confirmation page to send purchase amount, order ID, and product data to OpenPanel. No Shopify app required."
+        "question": "Можно ли отслеживать события покупок в Shopify?",
+        "answer": "Да. Используйте простой скрипт на странице подтверждения заказа, чтобы отправлять в OpenPanel сумму покупки, ID заказа и данные о товарах. Приложение Shopify не требуется."
       },
       {
-        "question": "How does OpenPanel compare to Lucky Orange or Hotjar for Shopify?",
-        "answer": "Lucky Orange and Hotjar focus on heatmaps and session replay. OpenPanel focuses on event analytics, funnels, and retention — understanding what users do, not watching recordings. If you need both, they complement each other."
+        "question": "Чем OpenPanel отличается от Lucky Orange или Hotjar для Shopify?",
+        "answer": "Lucky Orange и Hotjar фокусируются на тепловых картах и записи сессий. OpenPanel фокусируется на аналитике событий, воронках и удержании — на понимании того, что делают пользователи, а не на просмотре записей. Если нужно и то и другое, они дополняют друг друга."
       },
       {
-        "question": "Will OpenPanel affect my Shopify store's page speed?",
-        "answer": "OpenPanel's JavaScript SDK is 2.3 KB gzipped — one of the lightest analytics trackers available. GA4 is 50+ KB. The performance impact is negligible."
+        "question": "Повлияет ли OpenPanel на скорость страниц моего магазина Shopify?",
+        "answer": "JavaScript SDK OpenPanel весит 2.3 КБ в сжатом виде (gzip) — один из самых лёгких аналитических трекеров. GA4 весит 50+ КБ. Влияние на производительность ничтожно."
       },
       {
-        "question": "Does OpenPanel work with Shopify Plus?",
-        "answer": "Yes. OpenPanel works on any Shopify plan including Plus. The script tag installation method works identically across all plans."
+        "question": "Работает ли OpenPanel с Shopify Plus?",
+        "answer": "Да. OpenPanel работает на любом тарифе Shopify, включая Plus. Установка тегом script одинаково работает на всех тарифах."
       }
     ]
   },
   "related_links": {
     "guides": [
-      { "title": "Ecommerce tracking setup", "url": "/guides/ecommerce-tracking" }
+      {
+        "title": "Настройка отслеживания электронной коммерции",
+        "url": "/guides/ecommerce-tracking"
+      }
     ],
     "articles": [
-      { "title": "Cookieless analytics explained", "url": "/articles/cookieless-analytics" },
-      { "title": "Best open source analytics tools", "url": "/articles/self-hosted-web-analytics" }
+      {
+        "title": "Аналитика без cookies: как это работает",
+        "url": "/articles/cookieless-analytics"
+      },
+      {
+        "title": "Лучшие open source-инструменты аналитики",
+        "url": "/articles/self-hosted-web-analytics"
+      }
     ],
     "comparisons": [
-      { "title": "OpenPanel vs Google Analytics", "url": "/compare/google-analytics-alternative" },
-      { "title": "OpenPanel vs Plausible", "url": "/compare/plausible-alternative" }
+      {
+        "title": "OpenPanel против Google Analytics",
+        "url": "/compare/google-analytics-alternative"
+      },
+      {
+        "title": "OpenPanel против Plausible",
+        "url": "/compare/plausible-alternative"
+      }
     ]
   },
   "ctas": {
     "primary": {
-      "label": "Try OpenPanel Free",
+      "label": "Попробуйте OpenPanel бесплатно",
       "href": "https://dashboard.openpanel.dev/onboarding"
     },
     "secondary": {
-      "label": "View Source on GitHub",
+      "label": "Исходный код на GitHub",
       "href": "https://github.com/Openpanel-dev/openpanel"
     }
   }

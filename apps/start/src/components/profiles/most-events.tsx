@@ -11,10 +11,10 @@ export const MostEvents = ({ data }: Props) => {
   return (
     <Widget className="w-full">
       <WidgetHead>
-        <WidgetTitle>Popular events</WidgetTitle>
+        <WidgetTitle>Популярные события</WidgetTitle>
       </WidgetHead>
       {data.length === 0 ? (
-        <WidgetEmptyState icon={ZapIcon} text="No events yet" />
+        <WidgetEmptyState icon={ZapIcon} text="Событий пока нет" />
       ) : (
         <div className="flex flex-col gap-1 p-1">
           {data.slice(0, 5).map((item) => (

@@ -62,7 +62,7 @@ export default function ReportEditor({
               }
               variant="outline"
             >
-              Share
+              Поделиться
             </Button>
           )}
         </div>
@@ -73,7 +73,7 @@ export default function ReportEditor({
               icon={GanttChartSquareIcon}
               variant="cta"
             >
-              Pick events
+              Выбрать события
             </Button>
           </SheetTrigger>
           <div className="col-span-4 grid grid-cols-2 gap-2 md:grid-cols-4">

@@ -50,7 +50,7 @@ export const Route = createFileRoute(
 export const columnDefs: ColumnDef<IServiceReference>[] = [
   {
     accessorKey: 'title',
-    header: createHeaderColumn('Title'),
+    header: createHeaderColumn('Название'),
     cell: ({ row }) => {
       return (
         <div>
@@ -65,13 +65,13 @@ export const columnDefs: ColumnDef<IServiceReference>[] = [
     },
     meta: {
       variant: 'text',
-      placeholder: 'Search',
-      label: 'Title',
+      placeholder: 'Поиск',
+      label: 'Название',
     },
   },
   {
     accessorKey: 'date',
-    header: createHeaderColumn('Occurrence'),
+    header: createHeaderColumn('Событие'),
     cell({ row }) {
       const date = row.original.date;
       return formatDateTime(date);
@@ -80,14 +80,14 @@ export const columnDefs: ColumnDef<IServiceReference>[] = [
     sortingFn: 'datetime',
     meta: {
       variant: 'dateRange',
-      placeholder: 'Occurrence',
-      label: 'Occurrence',
+      placeholder: 'Событие',
+      label: 'Событие',
       hidden: true,
     },
   },
   {
     accessorKey: 'createdAt',
-    header: createHeaderColumn('Created at'),
+    header: createHeaderColumn('Создано'),
     size: ColumnCreatedAt.size,
     cell: ({ row }) => {
       const item = row.original;
@@ -97,8 +97,8 @@ export const columnDefs: ColumnDef<IServiceReference>[] = [
     sortingFn: 'datetime',
     meta: {
       variant: 'dateRange',
-      placeholder: 'Created at',
-      label: 'Created at',
+      placeholder: 'Создано',
+      label: 'Создано',
     },
   },
   createActionColumn(({ row }) => {
@@ -107,7 +107,7 @@ export const columnDefs: ColumnDef<IServiceReference>[] = [
     const deletion = useMutation(
       trpc.reference.delete.mutationOptions({
         onSuccess() {
-          toast.success('Reference deleted');
+          toast.success('Референс удалён');
           queryClient.invalidateQueries(trpc.reference.pathFilter());
         },
       }),
@@ -125,15 +125,15 @@ export const columnDefs: ColumnDef<IServiceReference>[] = [
             })
           }
         >
-          Edit
+          Изменить
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem
           variant="destructive"
           onClick={() =>
             showConfirm({
-              title: 'Delete reference',
-              text: 'Are you sure you want to delete this reference? This action cannot be undone.',
+              title: 'Удаление референса',
+              text: 'Вы уверены, что хотите удалить этот референс? Это действие нельзя отменить.',
               onConfirm() {
                 deletion.mutate({
                   id: ref.id,
@@ -142,7 +142,7 @@ export const columnDefs: ColumnDef<IServiceReference>[] = [
             })
           }
         >
-          Delete
+          Удалить
         </DropdownMenuItem>
       </>
     );
@@ -175,14 +175,14 @@ function Component() {
   return (
     <PageContainer>
       <PageHeader
-        title="References"
-        description="References is a good way to keep track of important events. They will show up in your reports."
+        title="Референсы"
+        description="Референсы помогают отслеживать важные события. Они отображаются в ваших отчётах."
         className="mb-8"
       />
       <DataTableToolbar table={table}>
         <Button icon={PlusIcon} onClick={() => pushModal('AddReference')}>
-          <span className="max-sm:hidden">Create reference</span>
-          <span className="sm:hidden">Reference</span>
+          <span className="max-sm:hidden">Добавить референс</span>
+          <span className="sm:hidden">Референс</span>
         </Button>
       </DataTableToolbar>
       <DataTable table={table} loading={loading} />

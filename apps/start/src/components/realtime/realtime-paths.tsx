@@ -31,7 +31,7 @@ export function RealtimePaths({ projectId }: RealtimePathsProps) {
   return (
     <div className="col h-full card">
       <div className="row justify-between items-center p-4 pb-0">
-        <div className="font-medium text-muted-foreground">Paths</div>
+        <div className="font-medium text-muted-foreground">Пути</div>
         <div className="row gap-1">
           {unique.map((item) => (
             <Tooltiper key={item.origin} content={item.origin}>
@@ -46,7 +46,7 @@ export function RealtimePaths({ projectId }: RealtimePathsProps) {
         getColumnPercentage={(item) => item.count / maxCount}
         columns={[
           {
-            name: 'Path',
+            name: 'Путь',
             width: 'w-full',
             responsive: { priority: 1 },
             render(item) {
@@ -59,7 +59,7 @@ export function RealtimePaths({ projectId }: RealtimePathsProps) {
                 >
                   <div className="row items-center gap-2 min-w-0 relative">
                     <SerieIcon name={item.origin} />
-                    <span className="truncate">{item.path || '(Not set)'}</span>
+                    <span className="truncate">{item.path || '(Не задано)'}</span>
                     {item.origin && (
                       <a
                         href={item.origin + item.path}
@@ -75,7 +75,7 @@ export function RealtimePaths({ projectId }: RealtimePathsProps) {
             },
           },
           {
-            name: 'Duration',
+            name: 'Длительность',
             width: '75px',
             responsive: { priority: 7 },
             render(item) {
@@ -83,7 +83,7 @@ export function RealtimePaths({ projectId }: RealtimePathsProps) {
             },
           },
           {
-            name: 'Events',
+            name: 'События',
             width: '60px',
             responsive: { priority: 4 },
             render(item) {
@@ -97,7 +97,7 @@ export function RealtimePaths({ projectId }: RealtimePathsProps) {
             },
           },
           {
-            name: 'Sessions',
+            name: 'Сессии',
             width: '82px',
             responsive: { priority: 2 },
             render(item) {

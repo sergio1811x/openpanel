@@ -18,20 +18,21 @@ export default function DeleteAccount() {
   return (
     <Widget className="max-w-screen-md w-full">
       <WidgetHead>
-        <span className="title">Delete account</span>
+        <span className="title">Удаление аккаунта</span>
       </WidgetHead>
       <WidgetBody className="space-y-4">
         <p>
-          Deleting your account will permanently remove your personal data.
-          Organizations you created that have no other admin will also be
-          deleted, along with their projects and events.
+          Удаление Вашего аккаунта безвозвратно удалит Ваши персональные
+          данные. Созданные Вами организации, в которых нет других
+          администраторов, также будут удалены вместе со своими проектами и
+          событиями.
         </p>
         {blocked && (
           <Alert variant="destructive">
-            <AlertTitle>Cancel your subscriptions first</AlertTitle>
+            <AlertTitle>Сначала отмените подписки</AlertTitle>
             <AlertDescription>
-              These organizations you created have an active subscription. Cancel
-              each one before deleting your account:
+              У этих созданных Вами организаций есть активная подписка. Отмените
+              каждую из них перед удалением аккаунта:
               <ul className="mt-2 list-disc pl-5">
                 {blockers.map((organization) => (
                   <li key={organization.id}>
@@ -57,7 +58,7 @@ export default function DeleteAccount() {
             }}
             variant="destructive"
           >
-            Delete account
+            Удалить аккаунт
           </Button>
         </div>
       </WidgetBody>

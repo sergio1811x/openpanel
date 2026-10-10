@@ -43,7 +43,7 @@ export default function AddGroup() {
       onSuccess() {
         queryClient.invalidateQueries(trpc.group.list.pathFilter());
         queryClient.invalidateQueries(trpc.group.types.pathFilter());
-        toast('Success', { description: 'Group created.' });
+        toast('Успешно', { description: 'Группа создана.' });
         popModal();
       },
       onError: handleError,
@@ -52,7 +52,7 @@ export default function AddGroup() {
 
   return (
     <ModalContent>
-      <ModalHeader title="Add group" />
+      <ModalHeader title="Добавить группу" />
       <form
         className="flex flex-col gap-4"
         onSubmit={handleSubmit(({ properties, ...values }) => {
@@ -72,13 +72,13 @@ export default function AddGroup() {
           error={formState.errors.id?.message}
         />
         <InputWithLabel
-          label="Name"
+          label="Название"
           placeholder="Acme Corp"
           {...register('name')}
           error={formState.errors.name?.message}
         />
         <InputWithLabel
-          label="Type"
+          label="Тип"
           placeholder="company"
           {...register('type')}
           error={formState.errors.type?.message}
@@ -86,7 +86,7 @@ export default function AddGroup() {
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between">
-            <span className="font-medium text-sm">Properties</span>
+            <span className="font-medium text-sm">Свойства</span>
             <Button
               onClick={() => append({ key: '', value: '' })}
               size="sm"
@@ -94,19 +94,19 @@ export default function AddGroup() {
               variant="outline"
             >
               <PlusIcon className="mr-1 size-3" />
-              Add
+              Добавить
             </Button>
           </div>
           {fields.map((field, index) => (
             <div className="flex gap-2" key={field.id}>
               <input
                 className="h-9 flex-1 rounded-md border bg-background px-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                placeholder="key"
+                placeholder="ключ"
                 {...register(`properties.${index}.key`)}
               />
               <input
                 className="h-9 flex-1 rounded-md border bg-background px-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                placeholder="value"
+                placeholder="значение"
                 {...register(`properties.${index}.value`)}
               />
               <Button
@@ -124,13 +124,13 @@ export default function AddGroup() {
 
         <ButtonContainer>
           <Button onClick={() => popModal()} type="button" variant="outline">
-            Cancel
+            Отмена
           </Button>
           <Button
             disabled={!formState.isDirty || mutation.isPending}
             type="submit"
           >
-            Create
+            Создать
           </Button>
         </ButtonContainer>
       </form>

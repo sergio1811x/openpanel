@@ -30,7 +30,7 @@ export function createOrganizationTitle(
   if (organizationName) {
     return createTitle(pageTitle, organizationName);
   }
-  return createTitle(pageTitle, 'Organization');
+  return createTitle(pageTitle, 'Организация');
 }
 
 /**
@@ -77,61 +77,61 @@ export function createEntityTitle(
  */
 export const PAGE_TITLES = {
   // Main sections
-  DASHBOARD: 'Dashboard',
-  EVENTS: 'Events',
-  SESSIONS: 'Sessions',
-  PAGES: 'Pages',
-  REPORTS: 'Reports',
-  NOTIFICATIONS: 'Notifications',
-  SETTINGS: 'Settings',
-  INTEGRATIONS: 'Integrations',
-  MEMBERS: 'Members',
-  BILLING: 'Billing',
-  CHAT: 'AI Assistant',
-  REALTIME: 'Realtime',
-  REFERENCES: 'References',
-  INSIGHTS: 'Insights',
+  DASHBOARD: 'Дашборд',
+  EVENTS: 'События',
+  SESSIONS: 'Сессии',
+  PAGES: 'Страницы',
+  REPORTS: 'Отчёты',
+  NOTIFICATIONS: 'Уведомления',
+  SETTINGS: 'Настройки',
+  INTEGRATIONS: 'Интеграции',
+  MEMBERS: 'Участники',
+  BILLING: 'Биллинг',
+  CHAT: 'AI-ассистент',
+  REALTIME: 'Реалтайм',
+  REFERENCES: 'Референсы',
+  INSIGHTS: 'Инсайты',
   // Profiles
-  PROFILES: 'Profiles',
-  PROFILE_EVENTS: 'Profile events',
-  PROFILE_DETAILS: 'Profile details',
+  PROFILES: 'Профили',
+  PROFILE_EVENTS: 'События профиля',
+  PROFILE_DETAILS: 'Детали профиля',
   // Groups
-  GROUPS: 'Groups',
-  GROUP_DETAILS: 'Group details',
+  GROUPS: 'Группы',
+  GROUP_DETAILS: 'Детали группы',
   // Cohorts
-  COHORTS: 'Cohorts',
-  COHORT_DETAIL: 'Cohort',
-  COHORT_MEMBERS: 'Cohort members',
-  COHORT_EVENTS: 'Cohort events',
+  COHORTS: 'Кохорты',
+  COHORT_DETAIL: 'Кохорта',
+  COHORT_MEMBERS: 'Участники кохорты',
+  COHORT_EVENTS: 'События кохорты',
 
   // Sub-sections
-  CONVERSIONS: 'Conversions',
-  STATS: 'Statistics',
-  ANONYMOUS: 'Anonymous',
-  IDENTIFIED: 'Identified',
-  POWER_USERS: 'Power Users',
-  CLIENTS: 'Clients',
-  DETAILS: 'Details',
-  AVAILABLE: 'Available',
-  INSTALLED: 'Installed',
-  INVITATIONS: 'Invitations',
+  CONVERSIONS: 'Конверсии',
+  STATS: 'Статистика',
+  ANONYMOUS: 'Анонимные',
+  IDENTIFIED: 'Идентифицированные',
+  POWER_USERS: 'Опытные пользователи',
+  CLIENTS: 'Клиенты',
+  DETAILS: 'Детали',
+  AVAILABLE: 'Доступные',
+  INSTALLED: 'Установленные',
+  INVITATIONS: 'Приглашения',
 
   // Actions
-  CREATE: 'Create',
-  EDIT: 'Edit',
-  DELETE: 'Delete',
+  CREATE: 'Создать',
+  EDIT: 'Изменить',
+  DELETE: 'Удалить',
 
   // Onboarding
-  ONBOARDING: 'Getting Started',
-  CONNECT: 'Connect',
-  VERIFY: 'Verify',
-  PROJECT: 'Project',
-  PROJECTS: 'Projects',
+  ONBOARDING: 'Начало работы',
+  CONNECT: 'Подключение',
+  VERIFY: 'Проверка',
+  PROJECT: 'Проект',
+  PROJECTS: 'Проекты',
 
   // Auth
-  LOGIN: 'Login',
-  RESET_PASSWORD: 'Reset Password',
+  LOGIN: 'Вход',
+  RESET_PASSWORD: 'Сброс пароля',
 
   // Share
-  SHARE: 'Shared Dashboard',
+  SHARE: 'Общий дашборд',
 } as const;

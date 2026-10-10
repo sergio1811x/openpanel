@@ -16,7 +16,7 @@ import { createEntityTitle, PAGE_TITLES } from '@/utils/title';
 
 export const Route = createFileRoute('/_steps/onboarding/$projectId/verify')({
   head: () => ({
-    meta: [{ title: createEntityTitle('Verify', PAGE_TITLES.ONBOARDING) }],
+    meta: [{ title: createEntityTitle('Проверка', PAGE_TITLES.ONBOARDING) }],
   }),
   beforeLoad: ({ context }) => {
     if (!context.session?.session) {
@@ -72,13 +72,13 @@ function Component() {
 
   if (!project) {
     return (
-      <FullPageEmptyState icon={BoxSelectIcon} title="Project not found" />
+      <FullPageEmptyState icon={BoxSelectIcon} title="Проект не найден" />
     );
   }
 
   const client = project.clients[0];
   if (!client) {
-    return <FullPageEmptyState icon={BoxSelectIcon} title="Client not found" />;
+    return <FullPageEmptyState icon={BoxSelectIcon} title="Клиент не найден" />;
   }
 
   return (
@@ -97,7 +97,7 @@ function Component() {
           size="lg"
           variant={'secondary'}
         >
-          Back
+          Назад
         </LinkButton>
 
         <div className="flex items-center gap-8">
@@ -110,7 +110,7 @@ function Component() {
               }}
               to={'/$organizationId/$projectId'}
             >
-              Skip for now
+              Пропустить пока
             </Link>
           )}
 
@@ -126,7 +126,7 @@ function Component() {
             size="lg"
             to={'/$organizationId/$projectId'}
           >
-            Your dashboard
+            Ваш дашборд
           </LinkButton>
         </div>
       </ButtonContainer>

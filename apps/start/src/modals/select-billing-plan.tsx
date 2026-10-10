@@ -25,7 +25,7 @@ export default function SelectBillingPlan({
     <ModalContent className="!flex !flex-col !overflow-hidden">
       {view === 'plans' ? (
         <>
-          <ModalHeader title="Select a billing plan" />
+          <ModalHeader title="Выбор тарифа" />
           <BillingPlanPicker
             currentProduct={currentProduct}
             defaultInterval={defaultInterval}

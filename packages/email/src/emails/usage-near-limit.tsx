@@ -14,7 +14,7 @@ export const zUsageNearLimit = z.object({
 });
 
 const formatNumber = (count: number) =>
-  new Intl.NumberFormat('en-US').format(count);
+  new Intl.NumberFormat('ru-RU').format(count);
 
 export type Props = z.infer<typeof zUsageNearLimit>;
 export default UsageNearLimit;
@@ -29,24 +29,26 @@ export function UsageNearLimit({
   const percent = Math.round((eventsCount / eventsLimit) * 100);
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+      <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
       <Text>
-        Heads up: {organizationName} has used {formatNumber(eventsCount)} of its{' '}
-        {formatNumber(eventsLimit)} monthly events ({percent}%).
+        Обратите внимание: организация {organizationName} уже использовала{' '}
+        {formatNumber(eventsCount)} из {formatNumber(eventsLimit)} событий
+        месячного лимита ({percent}%).
       </Text>
       <Text>
-        If you go over the limit, we keep collecting every event — nothing is
-        lost — but your charts stop showing new data until you upgrade or the
-        next billing cycle starts.
+        Если лимит будет превышен, мы продолжим собирать все события — ничего
+        не потеряется, — но графики перестанут показывать новые данные, пока
+        Вы не перейдёте на другой тариф или не начнётся следующий расчётный
+        период.
       </Text>
       <Text>
         <Button href={withUtm(billingUrl, 'usage-near-limit')}>
-          See usage &amp; plans
+          Использование и тарифы
         </Button>
       </Text>
       <Text>
-        Questions about which plan fits? Reply to this email and I'll help you
-        pick.
+        Не уверены, какой тариф подойдёт? Ответьте на это письмо — помогу
+        выбрать.
       </Text>
       <Text>Carl</Text>
     </Layout>

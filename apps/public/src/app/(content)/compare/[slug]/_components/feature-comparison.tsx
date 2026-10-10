@@ -28,8 +28,8 @@ export function FeatureComparison({ featureGroups }: FeatureComparisonProps) {
   return (
     <Section className="container">
       <SectionHeader
-        title="Feature comparison"
-        description="Detailed breakdown of capabilities"
+        title="Сравнение функций"
+        description="Подробный разбор возможностей"
         align="center"
       />
       <div className="mt-12 col gap-4">

@@ -29,7 +29,7 @@ export default function Confirm({
             onCancel?.();
           }}
         >
-          Cancel
+          Отмена
         </Button>
         <Button
           onClick={() => {
@@ -37,7 +37,7 @@ export default function Confirm({
             onConfirm();
           }}
         >
-          Yes
+          Да
         </Button>
       </ButtonContainer>
     </ModalContent>

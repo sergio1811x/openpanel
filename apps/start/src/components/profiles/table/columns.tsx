@@ -10,7 +10,7 @@ export function useColumns(type: 'profiles' | 'power-users') {
   const columns: ColumnDef<IServiceProfile>[] = [
     {
       accessorKey: 'name',
-      header: 'Name',
+      header: 'Имя',
       cell: ({ row }) => {
         const profile = row.original;
         return (
@@ -28,7 +28,7 @@ export function useColumns(type: 'profiles' | 'power-users') {
     },
     {
       accessorKey: 'referrer',
-      header: 'Referrer',
+      header: 'Реферер',
       cell({ row }) {
         const { referrer, referrer_name } = row.original.properties;
         const ref = referrer_name || referrer;
@@ -42,7 +42,7 @@ export function useColumns(type: 'profiles' | 'power-users') {
     },
     {
       accessorKey: 'country',
-      header: 'Country',
+      header: 'Страна',
       cell({ row }) {
         const { country, city } = row.original.properties;
         return (
@@ -55,7 +55,7 @@ export function useColumns(type: 'profiles' | 'power-users') {
     },
     {
       accessorKey: 'os',
-      header: 'OS',
+      header: 'ОС',
       cell({ row }) {
         const { os } = row.original.properties;
         return (
@@ -68,7 +68,7 @@ export function useColumns(type: 'profiles' | 'power-users') {
     },
     {
       accessorKey: 'browser',
-      header: 'Browser',
+      header: 'Браузер',
       cell({ row }) {
         const { browser } = row.original.properties;
         return (
@@ -81,7 +81,7 @@ export function useColumns(type: 'profiles' | 'power-users') {
     },
     {
       accessorKey: 'model',
-      header: 'Model',
+      header: 'Модель',
       cell({ row }) {
         const { model, brand } = row.original.properties;
         return (
@@ -96,7 +96,7 @@ export function useColumns(type: 'profiles' | 'power-users') {
     },
     {
       accessorKey: 'createdAt',
-      header: 'First seen',
+      header: 'Первое появление',
       size: ColumnCreatedAt.size,
       cell: ({ row }) => {
         const item = row.original;
@@ -105,7 +105,7 @@ export function useColumns(type: 'profiles' | 'power-users') {
     },
     {
       accessorKey: 'lastSeenAt',
-      header: 'Last seen',
+      header: 'Последнее появление',
       size: ColumnCreatedAt.size,
       cell: ({ row }) => {
         const item = row.original;
@@ -114,7 +114,7 @@ export function useColumns(type: 'profiles' | 'power-users') {
     },
     {
       accessorKey: 'groups',
-      header: 'Groups',
+      header: 'Группы',
       size: 200,
       meta: {
         hidden: true,
@@ -145,7 +145,7 @@ export function useColumns(type: 'profiles' | 'power-users') {
   if (type === 'power-users') {
     columns.unshift({
       accessorKey: 'count',
-      header: 'Events',
+      header: 'События',
       cell: ({ row }) => {
         const profile = row.original;
         // @ts-expect-error

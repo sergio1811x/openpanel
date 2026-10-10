@@ -6,17 +6,17 @@ export function fancyMinutes(time: number) {
   if (minutes > 60) {
     const hours = Math.floor(minutes / 60);
     const remainingMinutes = minutes % 60;
-    return `${hours}h ${remainingMinutes}m`;
+    return `${hours} ч ${remainingMinutes} м`;
   }
   const seconds = round(time - minutes * 60, 0);
-  if (minutes === 0) return `${seconds}s`;
-  return `${minutes}m ${seconds}s`;
+  if (minutes === 0) return `${seconds} с`;
+  return `${minutes} м ${seconds} с`;
 }
 
 export const formatNumber =
   (locale: string) => (value: number | null | undefined) => {
     if (isNil(value)) {
-      return 'N/A';
+      return 'Н/Д';
     }
     return new Intl.NumberFormat(locale).format(value);
   };
@@ -24,7 +24,7 @@ export const formatNumber =
 export const shortNumber =
   (locale: string) => (value: number | null | undefined) => {
     if (isNil(value)) {
-      return 'N/A';
+      return 'Н/Д';
     }
     return new Intl.NumberFormat(locale, {
       notation: 'compact',
@@ -71,7 +71,7 @@ export const formatCurrency =
   };
 
 export function useNumber() {
-  const locale = 'en-US';
+  const locale = 'ru-RU';
   const format = formatNumber(locale);
   const short = shortNumber(locale);
   const currency = formatCurrency(locale);
@@ -82,7 +82,7 @@ export function useNumber() {
     short,
     shortWithUnit: (value: number | null | undefined, unit?: string | null) => {
       if (isNil(value)) {
-        return 'N/A';
+        return 'Н/Д';
       }
       if (unit === 'min') {
         return fancyMinutes(value);
@@ -94,7 +94,7 @@ export function useNumber() {
       unit?: string | null,
     ) => {
       if (isNil(value)) {
-        return 'N/A';
+        return 'Н/Д';
       }
       if (unit === 'min') {
         return fancyMinutes(value);

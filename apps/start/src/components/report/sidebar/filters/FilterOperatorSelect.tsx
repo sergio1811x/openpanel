@@ -42,7 +42,7 @@ export function FilterOperatorSelect({
         description:
           operatorsShort[key] === operators[key] ? undefined : operators[key],
       }))}
-      label="Operator"
+      label="Оператор"
     >
       {trigger}
     </DropdownMenuComposed>

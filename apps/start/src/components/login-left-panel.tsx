@@ -13,8 +13,8 @@ const sellingPoints = [
     render: () => (
       <SellingPoint
         bgImage="/img-1.webp"
-        title="Best open-source alternative"
-        description="Mixpanel too expensive, Google Analytics has no privacy, Amplitude old and boring"
+        title="Лучшая open-source альтернатива"
+        description="Mixpanel слишком дорог, Google Analytics не заботится о приватности, Amplitude устарела и скучна"
       />
     ),
   },
@@ -23,8 +23,8 @@ const sellingPoints = [
     render: () => (
       <SellingPoint
         bgImage="/img-2.webp"
-        title="Fast and reliable"
-        description="Never miss a beat with our real-time analytics"
+        title="Быстро и надёжно"
+        description="С аналитикой в реальном времени вы ничего не упустите"
       />
     ),
   },
@@ -33,8 +33,8 @@ const sellingPoints = [
     render: () => (
       <SellingPoint
         bgImage="/img-3.webp"
-        title="Easy to use"
-        description="Compared to other tools we have kept it simple"
+        title="Простота использования"
+        description="В отличие от других инструментов, мы сохранили всё простым"
       />
     ),
   },
@@ -43,8 +43,8 @@ const sellingPoints = [
     render: () => (
       <SellingPoint
         bgImage="/img-4.webp"
-        title="Privacy by default"
-        description="We have built our platform with privacy at its heart"
+        title="Приватность по умолчанию"
+        description="Мы построили нашу платформу с приватностью в её основе"
       />
     ),
   },
@@ -53,8 +53,8 @@ const sellingPoints = [
     render: () => (
       <SellingPoint
         bgImage="/img-5.webp"
-        title="Open source"
-        description="You can inspect the code and self-host if you choose"
+        title="Открытый исходный код"
+        description="Вы можете изучить код и при желании развернуть на своих серверах"
       />
     ),
   },

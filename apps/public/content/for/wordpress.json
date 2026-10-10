@@ -2,155 +2,179 @@
   "slug": "wordpress",
   "audience": "wordpress",
   "seo": {
-    "title": "WordPress Analytics Without Cookies — A Google Analytics Alternative",
-    "description": "Add privacy-first analytics to your WordPress site without cookie consent banners. OpenPanel is cookieless, open source, and starts at $2.50/month — a better alternative to GA4 for WordPress.",
+    "title": "Аналитика для WordPress без cookies — альтернатива Google Analytics",
+    "description": "Добавьте на сайт WordPress аналитику с приоритетом приватности — без баннеров согласия на cookies. OpenPanel работает без cookies, имеет открытый исходный код и стоит от $2.50/месяц — лучшая альтернатива GA4 для WordPress.",
     "noindex": false
   },
   "hero": {
-    "heading": "WordPress analytics without the cookie banner",
-    "subheading": "Google Analytics on WordPress means cookie consent popups, GDPR complexity, and sending your visitors' data to US servers. OpenPanel is a cookieless WordPress analytics plugin that gives you pageviews, events, and user behavior, with full GDPR compliance out of the box and none of the privacy headaches.",
+    "heading": "Аналитика для WordPress без баннера о cookies",
+    "subheading": "Google Analytics на WordPress — это попапы о согласии, сложность GDPR и потеря данных.",
     "badges": [
-      "No cookie banner needed",
-      "GDPR compliant",
-      "Open source",
-      "Lightweight — 2.3 KB"
+      "Баннер о cookies не нужен",
+      "Соответствует GDPR",
+      "Открытый исходный код",
+      "Легковесный — 2.3 КБ"
     ]
   },
   "problem": {
-    "title": "Why Google Analytics on WordPress creates problems",
-    "intro": "WordPress powers 40% of the web, but GA4 was not designed with WordPress privacy requirements in mind.",
+    "title": "Почему Google Analytics на WordPress создаёт проблемы",
+    "intro": "На WordPress работает 40% всех сайтов, но GA4 создавался без учёта требований приватности, важных для WordPress.",
     "items": [
       {
-        "title": "Google Analytics requires cookie consent on WordPress",
-        "description": "Installing GA4 on a WordPress site means a consent popup for every visitor. Under GDPR, you can't set GA4 cookies without explicit opt-in. That banner costs you conversions and corrupts your data."
+        "title": "Google Analytics требует согласия на cookies на WordPress",
+        "description": "Установка GA4 на сайт WordPress означает попап согласия для каждого посетителя. По GDPR нельзя ставить cookies GA4 без явного согласия. Этот баннер стоит вам конверсий и искажает данные."
       },
       {
-        "title": "GA4 sends data to US servers",
-        "description": "Google Analytics transfers visitor data to US servers. For European sites, this creates legal exposure under Schrems II, a risk WordPress site owners increasingly can't ignore."
+        "title": "GA4 отправляет данные на серверы в США",
+        "description": "Google Analytics передаёт данные посетителей на серверы в США. Для европейских сайтов это создаёт юридические риски по делу Schrems II, которые владельцы WordPress-сайтов всё сложнее игнорировать."
       },
       {
-        "title": "WordPress analytics plugins are bloated",
-        "description": "Most GA4 WordPress plugins add significant weight to your site. Page speed suffers, Core Web Vitals scores drop, and you're still dealing with cookies."
+        "title": "Плагины аналитики для WordPress тяжеловесны",
+        "description": "Большинство GA4-плагинов для WordPress заметно утяжеляют сайт. Скорость страниц падает, оценки Core Web Vitals снижаются, а cookies всё равно остаются."
       },
       {
-        "title": "You can't see user behavior, only pageviews",
-        "description": "GA4 tells you how many people visited. OpenPanel tells you what they did: which CTAs they clicked, where they dropped off, which blog posts convert to signups."
+        "title": "Вы не видите поведение пользователей — только просмотры страниц",
+        "description": "GA4 говорит, сколько людей пришло. OpenPanel говорит, что они сделали: по каким CTA кликнули, где отвалились, какие записи блога конвертируют в регистрации."
       }
     ]
   },
   "features": {
-    "title": "Privacy-first analytics for WordPress",
-    "intro": "OpenPanel gives WordPress site owners complete visibility without the cookie compliance headaches.",
+    "title": "Аналитика для WordPress с приоритетом приватности",
+    "intro": "OpenPanel даёт владельцам WordPress-сайтов полную картину без головной боли с согласием на cookies.",
     "items": [
       {
-        "title": "Official WordPress plugin",
-        "description": "Install the OpenPanel WordPress plugin directly from the WordPress plugin directory. Activate it, paste your Client ID, and page view tracking starts immediately — no code required."
+        "title": "Официальный плагин WordPress",
+        "description": "Установите плагин OpenPanel для WordPress прямо из каталога плагинов WordPress. Активируйте его, вставьте свой Client ID — и отслеживание просмотров страниц начнётся сразу. Без кода."
       },
       {
-        "title": "Automatic page view tracking",
-        "description": "Every WordPress page, post, and custom post type is tracked automatically. No configuration needed for standard pageview analytics."
+        "title": "Автоматическое отслеживание просмотров страниц",
+        "description": "Каждая страница WordPress, запись и произвольный тип записи отслеживаются автоматически. Для стандартной аналитики просмотров страниц настройка не нужна."
       },
       {
-        "title": "Cookie-free by default",
-        "description": "No cookies means no consent banner. Compliant with GDPR, CCPA, and ePrivacy without any configuration."
+        "title": "Без cookies по умолчанию",
+        "description": "Нет cookies — нет баннера согласия. Соответствие GDPR, CCPA и ePrivacy без какой-либо настройки."
       },
       {
-        "title": "Custom event tracking",
-        "description": "Track clicks, form submissions, and conversions with a one-line JavaScript call. Know which CTAs and forms drive the most leads."
+        "title": "Отслеживание кастомных событий",
+        "description": "Отслеживайте клики, отправки форм и конверсии одной строкой JavaScript. Знайте, какие CTA и формы приносят больше всего лидов."
       },
       {
-        "title": "UTM campaign tracking",
-        "description": "See exactly which emails, ads, and social posts drive traffic to your WordPress site — and which ones actually convert."
+        "title": "Отслеживание UTM-кампаний",
+        "description": "Смотрите точно, какие рассылки, объявления и посты в соцсетях приводят трафик на ваш сайт WordPress — и какие из них реально конвертируют."
       },
       {
-        "title": "Lightweight script — 2.3 KB",
-        "description": "OpenPanel's tracker is 20x smaller than GA4. No impact on Core Web Vitals or PageSpeed scores."
+        "title": "Легковесный скрипт — 2.3 КБ",
+        "description": "Трекер OpenPanel в 20 раз меньше GA4. Без влияния на Core Web Vitals и оценки PageSpeed."
       },
       {
-        "title": "Self-hostable on your own server",
-        "description": "Run OpenPanel on your own infrastructure. Your WordPress visitor data never leaves your servers."
+        "title": "Self-hosting на своём сервере",
+        "description": "Запускайте OpenPanel на собственной инфраструктуре. Данные посетителей WordPress никогда не покидают ваши серверы."
       }
     ]
   },
   "benefits": {
-    "title": "Why WordPress site owners switch to OpenPanel",
-    "intro": "OpenPanel replaces Google Analytics without sacrificing features — and fixes the privacy problems GA4 created.",
+    "title": "Почему владельцы WordPress-сайтов переходят на OpenPanel",
+    "intro": "OpenPanel заменяет Google Analytics без потери функций — и решает проблемы приватности, созданные GA4.",
     "items": [
       {
-        "title": "No consent banner required",
-        "description": "Cookieless tracking means you're GDPR-compliant without a popup. No lost conversions, no fragmented data from opt-outs."
+        "title": "Баннер согласия не нужен",
+        "description": "Отслеживание без cookies означает соответствие GDPR без попапа. Без потерянных конверсий и фрагментированных данных из-за отказов."
       },
       {
-        "title": "Replace Google Analytics without losing features",
-        "description": "Pageviews, referrers, countries, devices, UTM campaigns — all there. Plus events and funnels that GA4 requires complex configuration to support."
+        "title": "Замените Google Analytics без потери функций",
+        "description": "Просмотры страниц, рефереры, страны, устройства, UTM-кампании — всё на месте. Плюс события и воронки, для которых в GA4 нужна сложная настройка."
       },
       {
-        "title": "Your data stays out of Google's hands",
-        "description": "OpenPanel is EU-hosted with no data sharing. Ideal for European sites, publishers, and anyone avoiding Google's data monopoly."
+        "title": "Ваши данные не попадают в руки Google",
+        "description": "OpenPanel размещена в ЕС и не передаёт данные третьим сторонам. Идеально для европейских сайтов, издателей и всех, кто избегает монополии Google на данные."
       },
       {
-        "title": "Open source and auditable",
-        "description": "Unlike GA4, OpenPanel's code is public. You can see exactly what data is collected and how it's processed."
+        "title": "Открытый исходный код и проверяемость",
+        "description": "В отличие от GA4, код OpenPanel открыт. Вы видите точно, какие данные собираются и как они обрабатываются."
       },
       {
-        "title": "Affordable pricing",
-        "description": "From $2.50/month for small WordPress sites. Self-host for free if you prefer — full feature parity, no event limits."
+        "title": "Доступные цены",
+        "description": "От $2.50/месяц для небольших WordPress-сайтов. При желании — бесплатный self-hosting: полный паритет функций, без лимитов событий."
       }
     ]
   },
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions from WordPress site owners evaluating OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы от владельцев WordPress-сайтов, оценивающих OpenPanel.",
     "items": [
       {
-        "question": "How do I install OpenPanel on WordPress?",
-        "answer": "Add the OpenPanel script tag to your WordPress site via your theme's header.php, a child theme, or any \"header scripts\" plugin. Paste the snippet before </head>. Automatic page view tracking starts immediately — no additional configuration needed."
+        "question": "Как установить OpenPanel на WordPress?",
+        "answer": "Добавьте тег script OpenPanel на сайт WordPress через header.php вашей темы, дочернюю тему или любой плагин «header scripts». Вставьте сниппет перед </head>. Автоматическое отслеживание просмотров страниц начнётся сразу — дополнительная настройка не нужна."
       },
       {
-        "question": "Do I need a cookie consent banner with OpenPanel?",
-        "answer": "No. OpenPanel uses cookieless tracking and doesn't collect personal data by default. Under GDPR, cookie consent is only required when you actually use cookies. OpenPanel doesn't, so no banner is needed."
+        "question": "Нужен ли баннер согласия на cookies с OpenPanel?",
+        "answer": "Нет. OpenPanel использует отслеживание без cookies и по умолчанию не собирает персональные данные. По GDPR согласие на cookies требуется, только если вы реально используете cookies. OpenPanel их не использует, поэтому баннер не нужен."
       },
       {
-        "question": "Is there an OpenPanel WordPress plugin?",
-        "answer": "Yes. The official OpenPanel plugin is available in the WordPress plugin directory. Search for \"OpenPanel\" in Plugins → Add New, install it, and paste your Client ID. You can also add the script tag manually via your theme's header.php or any \"add code to header\" plugin if you prefer."
+        "question": "Есть ли плагин OpenPanel для WordPress?",
+        "answer": "Да. Официальный плагин OpenPanel доступен в каталоге плагинов WordPress. Найдите «OpenPanel» в разделе Плагины → Добавить новый, установите его и вставьте свой Client ID. При желании можно добавить тег script вручную через header.php темы или любой плагин для вставки кода в header."
       },
       {
-        "question": "How does OpenPanel compare to MonsterInsights or Analytify?",
-        "answer": "Those plugins are wrappers around Google Analytics — they still send data to Google and still require cookies. OpenPanel is an independent analytics platform that's cookieless by default and stores data in the EU."
+        "question": "Чем OpenPanel отличается от MonsterInsights или Analytify?",
+        "answer": "Эти плагины — обёртки над Google Analytics: они по-прежнему отправляют данные в Google и по-прежнему требуют cookies. OpenPanel — независимая аналитическая платформа, которая по умолчанию работает без cookies и хранит данные в ЕС."
       },
       {
-        "question": "Can I track WooCommerce events?",
-        "answer": "Yes. You can track add-to-cart, checkout, and purchase events by adding a few lines of JavaScript to your WooCommerce templates or using WordPress hooks. No dedicated WooCommerce plugin required."
+        "question": "Можно ли отслеживать события WooCommerce?",
+        "answer": "Да. События добавления в корзину, оформления заказа и покупки можно отслеживать, добавив несколько строк JavaScript в шаблоны WooCommerce или используя хуки WordPress. Отдельный плагин WooCommerce не требуется."
       },
       {
-        "question": "Does OpenPanel affect WordPress site speed?",
-        "answer": "OpenPanel's script is 2.3 KB gzipped. By comparison, GA4 adds 50+ KB. Switching from GA4 to OpenPanel will likely improve your Core Web Vitals scores."
+        "question": "Влияет ли OpenPanel на скорость сайта WordPress?",
+        "answer": "Скрипт OpenPanel весит 2.3 КБ в сжатом виде (gzip). Для сравнения: GA4 добавляет 50+ КБ. Переход с GA4 на OpenPanel, скорее всего, улучшит ваши оценки Core Web Vitals."
       }
     ]
   },
   "related_links": {
     "guides": [
-      { "title": "Ecommerce tracking setup", "url": "/guides/ecommerce-tracking" },
-      { "title": "Website analytics setup", "url": "/guides/website-analytics-setup" },
-      { "title": "OpenPanel WordPress plugin", "url": "https://sv.wordpress.org/plugins/openpanel/" }
+      {
+        "title": "Настройка отслеживания электронной коммерции",
+        "url": "/guides/ecommerce-tracking"
+      },
+      {
+        "title": "Настройка аналитики сайта",
+        "url": "/guides/website-analytics-setup"
+      },
+      {
+        "title": "Плагин OpenPanel для WordPress",
+        "url": "https://sv.wordpress.org/plugins/openpanel/"
+      }
     ],
     "articles": [
-      { "title": "Cookieless analytics explained", "url": "/articles/cookieless-analytics" },
-      { "title": "How to self-host OpenPanel", "url": "/articles/self-hosted-web-analytics" }
+      {
+        "title": "Аналитика без cookies: как это работает",
+        "url": "/articles/cookieless-analytics"
+      },
+      {
+        "title": "Как настроить self-hosting OpenPanel",
+        "url": "/articles/self-hosted-web-analytics"
+      }
     ],
     "comparisons": [
-      { "title": "OpenPanel vs Google Analytics", "url": "/compare/google-analytics-alternative" },
-      { "title": "OpenPanel vs Plausible", "url": "/compare/plausible-alternative" },
-      { "title": "OpenPanel vs Matomo", "url": "/compare/matomo-alternative" }
+      {
+        "title": "OpenPanel против Google Analytics",
+        "url": "/compare/google-analytics-alternative"
+      },
+      {
+        "title": "OpenPanel против Plausible",
+        "url": "/compare/plausible-alternative"
+      },
+      {
+        "title": "OpenPanel против Matomo",
+        "url": "/compare/matomo-alternative"
+      }
     ]
   },
   "ctas": {
     "primary": {
-      "label": "Try OpenPanel Free",
+      "label": "Попробуйте OpenPanel бесплатно",
       "href": "https://dashboard.openpanel.dev/onboarding"
     },
     "secondary": {
-      "label": "View Source on GitHub",
+      "label": "Исходный код на GitHub",
       "href": "https://github.com/Openpanel-dev/openpanel"
     }
   }

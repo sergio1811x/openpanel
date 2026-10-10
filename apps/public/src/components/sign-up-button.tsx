@@ -24,7 +24,7 @@ export function SignUpButton() {
         className="hidden md:flex"
         href={`https://dashboard.openpanel.dev${isSignedIn ? '/' : '/onboarding'}`}
       >
-        {isSignedIn ? 'Dashboard' : 'Sign up'}
+        {isSignedIn ? 'Дашборд' : 'Регистрация'}
       </Link>
     </Button>
   );

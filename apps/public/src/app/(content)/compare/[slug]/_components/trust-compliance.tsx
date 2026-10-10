@@ -26,7 +26,7 @@ export function TrustCompliance({ trust }: TrustComplianceProps) {
             <div className="col gap-2">
               <div className="row gap-2 items-center text-sm">
                 <ShieldIcon className="size-4" />
-                <span className="font-medium">Data Processing</span>
+                <span className="font-medium">Обработка данных</span>
               </div>
               <p className="text-sm text-muted-foreground ml-6">
                 {trust.openpanel.data_processing}
@@ -35,7 +35,7 @@ export function TrustCompliance({ trust }: TrustComplianceProps) {
             <div className="col gap-2">
               <div className="row gap-2 items-center text-sm">
                 <MapPinIcon className="size-4" />
-                <span className="font-medium">Data Location</span>
+                <span className="font-medium">Расположение данных</span>
               </div>
               <p className="text-sm text-muted-foreground ml-6">
                 {trust.openpanel.data_location}
@@ -44,30 +44,30 @@ export function TrustCompliance({ trust }: TrustComplianceProps) {
             <div className="col gap-2">
               <div className="row gap-2 items-center text-sm">
                 <ServerIcon className="size-4" />
-                <span className="font-medium">Self-Hosting</span>
+                <span className="font-medium">Self-hosting</span>
               </div>
               <div className="row gap-2 items-center text-sm ml-6">
                 {trust.openpanel.self_hosting ? (
                   <>
                     <CheckIcon className="size-4 text-green-500" />
-                    <span className="text-muted-foreground">Available</span>
+                    <span className="text-muted-foreground">Доступен</span>
                   </>
                 ) : (
                   <>
                     <XIcon className="size-4 text-red-500" />
-                    <span className="text-muted-foreground">Not available</span>
+                    <span className="text-muted-foreground">Недоступен</span>
                   </>
                 )}
               </div>
             </div>
           </div>
         </FeatureCard>
-        <FeatureCard title="Competitor" description="">
+        <FeatureCard title="Конкурент" description="">
           <div className="col gap-4 mt-4">
             <div className="col gap-2">
               <div className="row gap-2 items-center text-sm">
                 <ShieldIcon className="size-4" />
-                <span className="font-medium">Data Processing</span>
+                <span className="font-medium">Обработка данных</span>
               </div>
               <p className="text-sm text-muted-foreground ml-6">
                 {trust.competitor.data_processing}
@@ -76,7 +76,7 @@ export function TrustCompliance({ trust }: TrustComplianceProps) {
             <div className="col gap-2">
               <div className="row gap-2 items-center text-sm">
                 <MapPinIcon className="size-4" />
-                <span className="font-medium">Data Location</span>
+                <span className="font-medium">Расположение данных</span>
               </div>
               <p className="text-sm text-muted-foreground ml-6">
                 {trust.competitor.data_location}
@@ -85,18 +85,18 @@ export function TrustCompliance({ trust }: TrustComplianceProps) {
             <div className="col gap-2">
               <div className="row gap-2 items-center text-sm">
                 <ServerIcon className="size-4" />
-                <span className="font-medium">Self-Hosting</span>
+                <span className="font-medium">Self-hosting</span>
               </div>
               <div className="row gap-2 items-center text-sm ml-6">
                 {trust.competitor.self_hosting ? (
                   <>
                     <CheckIcon className="size-4 text-green-500" />
-                    <span className="text-muted-foreground">Available</span>
+                    <span className="text-muted-foreground">Доступен</span>
                   </>
                 ) : (
                   <>
                     <XIcon className="size-4 text-red-500" />
-                    <span className="text-muted-foreground">Not available</span>
+                    <span className="text-muted-foreground">Недоступен</span>
                   </>
                 )}
               </div>

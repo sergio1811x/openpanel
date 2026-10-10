@@ -39,7 +39,7 @@ export function CompareHero({ hero, tocItems = [] }: CompareHeroProps) {
                 target="_blank"
                 rel="noreferrer noopener nofollow"
               >
-                See live demo
+                Смотреть живое демо
               </Link>
             </Button>
           </div>

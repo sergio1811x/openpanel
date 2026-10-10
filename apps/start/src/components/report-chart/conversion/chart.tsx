@@ -215,7 +215,7 @@ export function Chart({ data }: Props) {
                   strokeOpacity={0.6}
                   strokeLinecap="round"
                   label={{
-                    value: `Average (${round(averageConversionRate, 2)}%)`,
+                    value: `Средний показатель (${round(averageConversionRate, 2)}%)`,
                     fill: getChartColor(series.length),
                     position: 'insideBottomRight',
                     fontSize: 13,

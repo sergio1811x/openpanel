@@ -75,7 +75,7 @@ export function S3ExportIntegrationForm({
     trpc.integration.createOrUpdateExport.mutationOptions({
       onSuccess,
       onError(error) {
-        toast.error(error.message || 'Failed to create integration');
+        toast.error(error.message || 'Не удалось создать интеграцию');
       },
     }),
   );
@@ -84,13 +84,13 @@ export function S3ExportIntegrationForm({
     trpc.integration.testExportConnection.mutationOptions({
       onSuccess(data) {
         if (data.success) {
-          toast.success('Connection successful! Bucket is accessible.');
+          toast.success('Подключение успешно! Бакет доступен.');
         } else {
-          toast.error(`Connection failed: ${data.error}`);
+          toast.error(`Ошибка подключения: ${data.error}`);
         }
       },
       onError(error) {
-        toast.error(error.message || 'Failed to test connection');
+        toast.error(error.message || 'Не удалось проверить подключение');
       },
     }),
   );
@@ -103,20 +103,20 @@ export function S3ExportIntegrationForm({
   };
 
   const handleError = () => {
-    toast.error('Please fix validation errors');
+    toast.error('Исправьте ошибки валидации');
   };
 
   const handleTest = () => {
     const values = form.getValues();
     if (!values.config.bucket || !values.config.region) {
-      return toast.error('Bucket and Region are required');
+      return toast.error('Не указаны бакет и регион');
     }
     if (values.config.authMode === 'iam_role' && !values.config.roleArn) {
-      return toast.error('IAM Role ARN is required');
+      return toast.error('Не указан IAM Role ARN');
     }
     if (values.config.authMode === 'access_key') {
       if (!values.config.accessKeyId || !values.config.secretAccessKey) {
-        return toast.error('Access Key ID and Secret Access Key are required');
+        return toast.error('Не указаны Access Key ID и Secret Access Key');
       }
     }
     testMutation.mutate(values);
@@ -128,21 +128,21 @@ export function S3ExportIntegrationForm({
       className="col gap-4"
     >
       <InputWithLabel
-        label="Name"
-        placeholder="Eg. Production S3 Export"
+        label="Название"
+        placeholder="Например, S3-экспорт продакшена"
         {...form.register('name')}
         error={form.formState.errors.name?.message}
       />
 
       <div className="grid grid-cols-2 gap-4">
         <InputWithLabel
-          label="S3 Bucket"
+          label="S3-бакет"
           placeholder="my-analytics-bucket"
           {...form.register('config.bucket')}
           error={path(['config', 'bucket', 'message'], form.formState.errors)}
         />
         <InputWithLabel
-          label="Prefix"
+          label="Префикс"
           placeholder="openpanel-exports"
           {...form.register('config.prefix')}
           error={path(['config', 'prefix', 'message'], form.formState.errors)}
@@ -151,14 +151,14 @@ export function S3ExportIntegrationForm({
 
       <div className="grid grid-cols-2 gap-4">
         <div className="col gap-1.5">
-          <label className="text-sm font-medium">Region</label>
+          <label className="text-sm font-medium">Регион</label>
           <Controller
             name="config.region"
             control={form.control}
             render={({ field }) => (
               <Select onValueChange={field.onChange} value={field.value}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select region" />
+                  <SelectValue placeholder="Выберите регион" />
                 </SelectTrigger>
                 <SelectContent>
                   {AWS_REGIONS.map((region) => (
@@ -173,19 +173,19 @@ export function S3ExportIntegrationForm({
         </div>
 
         <div className="col gap-1.5">
-          <label className="text-sm font-medium">Format</label>
+          <label className="text-sm font-medium">Формат</label>
           <Controller
             name="config.format"
             control={form.control}
             render={({ field }) => (
               <Select onValueChange={field.onChange} value={field.value}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select format" />
+                  <SelectValue placeholder="Выберите формат" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="jsonl_gzip">JSONL (gzip)</SelectItem>
                   <SelectItem value="parquet" disabled>
-                    Parquet (coming soon)
+                    Parquet (скоро)
                   </SelectItem>
                 </SelectContent>
               </Select>
@@ -196,26 +196,26 @@ export function S3ExportIntegrationForm({
 
       {/* Auth Mode Selector */}
       <div className="col gap-1.5">
-        <label className="text-sm font-medium">Authentication Mode</label>
+        <label className="text-sm font-medium">Режим аутентификации</label>
         <Controller
           name="config.authMode"
           control={form.control}
           render={({ field }) => (
             <Select onValueChange={field.onChange} value={field.value}>
               <SelectTrigger>
-                <SelectValue placeholder="Select authentication mode" />
+                <SelectValue placeholder="Выберите режим аутентификации" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="iam_role">IAM Role (AWS)</SelectItem>
-                <SelectItem value="access_key">Access Keys (R2, MinIO, Spaces)</SelectItem>
+                <SelectItem value="iam_role">IAM-роль (AWS)</SelectItem>
+                <SelectItem value="access_key">Ключи доступа (R2, MinIO, Spaces)</SelectItem>
               </SelectContent>
             </Select>
           )}
         />
         <p className="text-muted-foreground text-xs">
           {authMode === 'iam_role'
-            ? 'Recommended for AWS S3. Create an IAM role that grants OpenPanel access.'
-            : 'Use access keys for Cloudflare R2, MinIO, DigitalOcean Spaces, or other S3-compatible storage.'}
+            ? 'Рекомендуется для AWS S3. Создайте IAM-роль, предоставляющую OpenPanel доступ.'
+            : 'Используйте ключи доступа для Cloudflare R2, MinIO, DigitalOcean Spaces или другого S3-совместимого хранилища.'}
         </p>
       </div>
 
@@ -230,8 +230,8 @@ export function S3ExportIntegrationForm({
           />
 
           <InputWithLabel
-            label="External ID (optional)"
-            placeholder="Optional external ID for cross-account access"
+            label="Внешний ID (необязательно)"
+            placeholder="Необязательный внешний ID для доступа между аккаунтами"
             {...form.register('config.externalId')}
             error={path(['config', 'externalId', 'message'], form.formState.errors)}
           />
@@ -242,13 +242,13 @@ export function S3ExportIntegrationForm({
       {authMode === 'access_key' && (
         <>
           <InputWithLabel
-            label="Endpoint URL (optional)"
+            label="URL эндпоинта (необязательно)"
             placeholder="https://your-account-id.r2.cloudflarestorage.com"
             {...form.register('config.endpoint')}
             error={path(['config', 'endpoint', 'message'], form.formState.errors)}
           />
           <p className="text-muted-foreground -mt-2 text-xs">
-            Required for R2, MinIO, etc. Leave empty for AWS S3.
+            Требуется для R2, MinIO и т.д. Для AWS S3 оставьте пустым.
           </p>
 
           <div className="grid grid-cols-2 gap-4">
@@ -263,7 +263,7 @@ export function S3ExportIntegrationForm({
               type="password"
               placeholder={
                 defaultValues?.id
-                  ? 'Leave blank to keep the current key'
+                  ? 'Оставьте пустым, чтобы сохранить текущий ключ'
                   : 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
               }
               // Stored secrets are never sent back to the browser, so an edit
@@ -277,19 +277,19 @@ export function S3ExportIntegrationForm({
 
       <div className="grid grid-cols-2 gap-4">
         <div className="col gap-1.5">
-          <label className="text-sm font-medium">Encryption</label>
+          <label className="text-sm font-medium">Шифрование</label>
           <Controller
             name="config.encryption"
             control={form.control}
             render={({ field }) => (
               <Select onValueChange={field.onChange} value={field.value}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select encryption" />
+                  <SelectValue placeholder="Выберите шифрование" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="SSE-S3">SSE-S3 (AES-256)</SelectItem>
                   <SelectItem value="SSE-KMS">SSE-KMS</SelectItem>
-                  <SelectItem value="none">None</SelectItem>
+                  <SelectItem value="none">Нет</SelectItem>
                 </SelectContent>
               </Select>
             )}
@@ -316,14 +316,14 @@ export function S3ExportIntegrationForm({
           onClick={handleTest}
           disabled={testMutation.isPending}
         >
-          {testMutation.isPending ? 'Testing...' : 'Test connection'}
+          {testMutation.isPending ? 'Проверка...' : 'Проверить подключение'}
         </Button>
         <Button type="submit" className="flex-1" disabled={mutation.isPending}>
           {mutation.isPending
-            ? 'Saving...'
+            ? 'Сохранение...'
             : defaultValues?.id
-              ? 'Update'
-              : 'Create'}
+              ? 'Обновить'
+              : 'Создать'}
         </Button>
       </div>
     </form>

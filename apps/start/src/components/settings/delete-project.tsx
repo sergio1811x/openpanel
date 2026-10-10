@@ -29,7 +29,7 @@ export default function DeleteProject({ project }: Props) {
     trpc.project.delete.mutationOptions({
       onError: handleError,
       onSuccess: () => {
-        toast.success('Project is scheduled for deletion');
+        toast.success('Проект запланирован к удалению');
         queryClient.invalidateQueries(
           trpc.project.getProjectWithClients.queryFilter({
             projectId: project.id,
@@ -43,7 +43,7 @@ export default function DeleteProject({ project }: Props) {
     trpc.project.cancelDeletion.mutationOptions({
       onError: handleError,
       onSuccess: () => {
-        toast.success('Project deletion cancelled');
+        toast.success('Удаление проекта отменено');
         queryClient.invalidateQueries(
           trpc.project.getProjectWithClients.queryFilter({
             projectId: project.id,
@@ -56,18 +56,18 @@ export default function DeleteProject({ project }: Props) {
   return (
     <Widget className="max-w-screen-md w-full">
       <WidgetHead>
-        <span className="title">Delete Project</span>
+        <span className="title">Удаление проекта</span>
       </WidgetHead>
       <WidgetBody className="space-y-4">
         <p>
-          Deleting your project will remove it from your organization and all of
-          its data. It'll be permanently deleted after 24 hours.
+          Удаление проекта уберёт его из Вашей организации вместе со всеми его
+          данными. Он будет безвозвратно удалён через 24 часа.
         </p>
         {project?.deleteAt && (
           <Alert variant="destructive">
-            <AlertTitle>Project scheduled for deletion</AlertTitle>
+            <AlertTitle>Проект запланирован к удалению</AlertTitle>
             <AlertDescription>
-              This project will be deleted on{' '}
+              Этот проект будет удалён{' '}
               <span className="font-medium">
                 {
                   // add 1 hour and round to the nearest hour
@@ -78,12 +78,12 @@ export default function DeleteProject({ project }: Props) {
                   )
                 }
               </span>
-              . Any event associated with this project will be deleted.
+              . Все события, связанные с этим проектом, будут удалены.
               {isOrgScheduledForDeletion && (
                 <>
                   {' '}
-                  The whole organization is scheduled for deletion. To keep this
-                  project, cancel the deletion from the organization settings.
+                  Вся организация запланирована к удалению. Чтобы сохранить этот
+                  проект, отмените удаление в настройках организации.
                 </>
               )}
             </AlertDescription>
@@ -99,7 +99,7 @@ export default function DeleteProject({ project }: Props) {
               }}
               loading={cancelDeletionMutation.isPending}
             >
-              Cancel deletion
+              Отменить удаление
             </Button>
           )}
           <Button
@@ -109,15 +109,15 @@ export default function DeleteProject({ project }: Props) {
             loading={mutation.isPending}
             onClick={() => {
               showConfirm({
-                title: 'Delete Project',
-                text: 'Are you sure you want to delete this project?',
+                title: 'Удаление проекта',
+                text: 'Вы уверены, что хотите удалить этот проект?',
                 onConfirm: () => {
                   mutation.mutate({ projectId: project.id });
                 },
               });
             }}
           >
-            Delete Project
+            Удалить проект
           </Button>
         </div>
       </WidgetBody>

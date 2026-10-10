@@ -76,7 +76,7 @@ export function MarkerTooltipContent({ markers }: MarkerTooltipContentProps) {
       })}
       {hiddenCount > 0 && (
         <div className="pl-7 text-chart-tooltip-muted text-xs">
-          +{hiddenCount} more...
+          +{hiddenCount} ещё...
         </div>
       )}
     </div>

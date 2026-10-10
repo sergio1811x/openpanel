@@ -81,7 +81,7 @@ export const EventItem = memo<EventItemProps>(
             <span className="min-w-0 whitespace-break-spaces wrap-break-word break-all text-sm leading-normal">
               {event.name === 'screen_view' ? (
                 <>
-                  <span className="text-muted-foreground mr-2">Visit:</span>
+                  <span className="text-muted-foreground mr-2">Визит:</span>
                   <span className="font-medium min-w-0">
                     {url ? url : event.path}
                   </span>

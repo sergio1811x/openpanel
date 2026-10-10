@@ -22,7 +22,7 @@ export function ShareEnterPassword({
         window.location.reload();
       },
       onError() {
-        toast.error('Incorrect password');
+        toast.error('Неверный пароль');
       },
     }),
   );
@@ -45,24 +45,24 @@ export function ShareEnterPassword({
 
   const typeLabel =
     shareType === 'dashboard'
-      ? 'Dashboard'
+      ? 'Дашборд'
       : shareType === 'report'
-        ? 'Report'
-        : 'Overview';
+        ? 'Отчёт'
+        : 'Обзор';
 
   return (
     <PublicPageCard
-      title={`${typeLabel} is locked`}
-      description={`Please enter correct password to access this ${typeLabel.toLowerCase()}`}
+      title={`${typeLabel} защищён паролем`}
+      description={`Введите правильный пароль, чтобы открыть ${typeLabel.toLowerCase()}`}
     >
       <form onSubmit={onSubmit} className="col gap-4">
         <Input
           {...form.register('password')}
           type="password"
-          placeholder="Enter your password"
+          placeholder="Введите пароль"
           size="large"
         />
-        <Button type="submit">Get access</Button>
+        <Button type="submit">Получить доступ</Button>
       </form>
     </PublicPageCard>
   );

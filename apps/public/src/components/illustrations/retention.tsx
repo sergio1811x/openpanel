@@ -1,13 +1,13 @@
 'use client';
 
 const cohorts = [
-  { label: 'Week 1', values: [100, 68, 45, 38, 31] },
-  { label: 'Week 2', values: [100, 72, 51, 42, 35] },
-  { label: 'Week 3', values: [100, 65, 48, 39, null] },
-  { label: 'Week 4', values: [100, 70, null, null, null] },
+  { label: 'Неделя 1', values: [100, 68, 45, 38, 31] },
+  { label: 'Неделя 2', values: [100, 72, 51, 42, 35] },
+  { label: 'Неделя 3', values: [100, 65, 48, 39, null] },
+  { label: 'Неделя 4', values: [100, 70, null, null, null] },
 ];
 
-const headers = ['Day 0', 'Day 1', 'Day 7', 'Day 14', 'Day 30'];
+const headers = ['День 0', 'День 1', 'День 7', 'День 14', 'День 30'];
 
 function cellStyle(v: number | null) {
   if (v === null) {

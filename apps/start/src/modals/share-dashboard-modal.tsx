@@ -67,13 +67,13 @@ export default function ShareDashboardModal({
       onError: handleError,
       onSuccess(res) {
         queryClient.invalidateQueries(trpc.share.dashboardSettings.pathFilter());
-        toast('Success', {
-          description: `Your dashboard is now ${
-            res.public ? 'public' : 'private'
+        toast('Успешно', {
+          description: `Теперь Ваш дашборд ${
+            res.public ? 'публичный' : 'приватный'
           }`,
           action: res.public
             ? {
-                label: 'View',
+                label: 'Открыть',
                 onClick: () =>
                   navigate({
                     to: '/share/dashboard/$shareId',
@@ -93,7 +93,7 @@ export default function ShareDashboardModal({
     navigator.clipboard.writeText(shareUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-    toast('Link copied to clipboard');
+    toast('Ссылка скопирована в буфер обмена');
   };
 
   const handleMakePrivate = () => {
@@ -109,11 +109,11 @@ export default function ShareDashboardModal({
   return (
     <ModalContent className="max-w-md">
       <ModalHeader
-        title="Dashboard public availability"
+        title="Публичный доступ к дашборду"
         text={
           isShared
-            ? 'Your dashboard is currently public and can be accessed by anyone with the link.'
-            : 'You can choose if you want to add a password to make it a bit more private.'
+            ? 'Ваш дашборд сейчас публичный и доступен любому, у кого есть ссылка.'
+            : 'Вы можете добавить пароль, чтобы сделать дашборд более приватным.'
         }
       />
 
@@ -121,11 +121,11 @@ export default function ShareDashboardModal({
         <div className="p-4 bg-def-100 border rounded-lg space-y-3">
           <div className="flex items-center gap-2 text-sm text-green-600 dark:text-green-400">
             <CheckCircle2 className="size-4" />
-            <span className="font-medium">Currently shared</span>
+            <span className="font-medium">Сейчас общий доступ включён</span>
           </div>
           <div className="flex items-center gap-1">
             <Input value={shareUrl} readOnly className="flex-1 text-sm" />
-            <Tooltiper content="Copy link">
+            <Tooltiper content="Копировать ссылку">
               <Button
                 type="button"
                 variant="outline"
@@ -139,7 +139,7 @@ export default function ShareDashboardModal({
                 )}
               </Button>
             </Tooltiper>
-            <Tooltiper content="Open in new tab">
+            <Tooltiper content="Открыть в новой вкладке">
               <Button
                 type="button"
                 variant="outline"
@@ -149,7 +149,7 @@ export default function ShareDashboardModal({
                 <ExternalLink className="size-4" />
               </Button>
             </Tooltiper>
-            <Tooltiper content="Make private">
+            <Tooltiper content="Сделать приватным">
               <Button
                 type="button"
                 variant="destructive"
@@ -174,17 +174,17 @@ export default function ShareDashboardModal({
       >
         <Input
           {...register('password')}
-          placeholder="Enter your password (optional)"
+          placeholder="Введите пароль (необязательно)"
           size="large"
           type={password === '••••••••' ? 'text' : 'password'}
         />
         <ButtonContainer>
           <Button type="button" variant="outline" onClick={() => popModal()}>
-            Cancel
+            Отмена
           </Button>
 
           <Button type="submit">
-            {isShared ? 'Update' : 'Make it public'}
+            {isShared ? 'Обновить' : 'Сделать публичным'}
           </Button>
         </ButtonContainer>
       </form>

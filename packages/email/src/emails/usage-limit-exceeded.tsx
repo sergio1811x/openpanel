@@ -13,7 +13,7 @@ export const zUsageLimitExceeded = z.object({
 });
 
 const formatNumber = (count: number) =>
-  new Intl.NumberFormat('en-US').format(count);
+  new Intl.NumberFormat('ru-RU').format(count);
 
 export type Props = z.infer<typeof zUsageLimitExceeded>;
 export default UsageLimitExceeded;
@@ -26,28 +26,30 @@ export function UsageLimitExceeded({
 }: Props & { unsubscribeUrl?: string }) {
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+      <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
       <Text>
-        {organizationName} has reached its monthly limit of{' '}
-        {formatNumber(eventsLimit)} events.
+        Организация {organizationName} достигла месячного лимита в{' '}
+        {formatNumber(eventsLimit)} событий.
       </Text>
       <Text>
-        Important: we're still collecting every incoming event, so nothing is
-        being lost. But your charts are paused at the moment you hit the limit —
-        new data won't show until you upgrade or your next billing cycle starts.
+        Важно: мы по-прежнему собираем все входящие события, ничего не
+        теряется. Но графики остановлены в момент достижения лимита — новые
+        данные не будут отображаться, пока Вы не перейдёте на другой тариф или
+        не начнётся следующий расчётный период.
       </Text>
       <Text>
-        Upgrading takes a minute and unlocks everything collected in the
-        meantime.
+        Переход на другой тариф занимает минуту и открывает доступ ко всем
+        данным, собранным за это время.
       </Text>
       <Text>
         <Button href={withUtm(billingUrl, 'usage-limit-exceeded')}>
-          Upgrade your plan
+          Сменить тариф
         </Button>
       </Text>
       <Text>
-        If this month was an outlier, you can also just wait for the cycle to
-        reset. And if you're stuck between plans, reply and I'll help.
+        Если этот месяц был исключением, можно просто дождаться сброса лимита.
+        А если сомневаетесь между тарифами, ответьте на письмо — помогу
+        разобраться.
       </Text>
       <Text>Carl</Text>
     </Layout>

@@ -66,7 +66,7 @@ export function OverviewAICommand({ className }: { className?: string }) {
         if (applied === 0) {
           toast(
             result.summary ||
-              "Couldn't translate that into a filter — try rephrasing."
+              'Не удалось преобразовать это в фильтр — попробуйте переформулировать.'
           );
         } else if (result.summary) {
           toast(result.summary);
@@ -115,7 +115,7 @@ export function OverviewAICommand({ className }: { className?: string }) {
         <Loader2Icon className="absolute top-1/2 left-2.5 size-4 -translate-y-1/2 animate-spin text-muted-foreground" />
       )}
       <Input
-        aria-label="AI filter command"
+        aria-label="Команда фильтра для AI"
         className="pl-8"
         disabled={pending}
         onChange={(e) => setValue(e.target.value)}
@@ -125,7 +125,7 @@ export function OverviewAICommand({ className }: { className?: string }) {
             submit();
           }
         }}
-        placeholder='Try: "last 7 days, mobile only"'
+        placeholder='Например: «последние 7 дней, только мобильные»'
         value={value}
       />
     </div>

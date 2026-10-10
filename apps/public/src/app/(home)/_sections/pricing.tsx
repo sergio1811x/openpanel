@@ -11,12 +11,12 @@ import { Button } from '@/components/ui/button';
 import { cn, formatEventsCount } from '@/lib/utils';
 
 const features = [
-  'Unlimited websites or apps',
-  'Unlimited users',
-  'Unlimited dashboards',
-  'Unlimited charts',
-  'Unlimited tracked profiles',
-  'Yes, we have no limits or hidden costs',
+  'Неограниченное число сайтов и приложений',
+  'Неограниченное число пользователей',
+  'Неограниченное число дашбордов',
+  'Неограниченное число графиков',
+  'Неограниченное число отслеживаемых профилей',
+  'Да, без лимитов и скрытых платежей',
 ];
 
 export function Pricing() {
@@ -28,7 +28,7 @@ export function Pricing() {
       <div className="col md:row gap-16">
         <div className="col w-full min-w-sm gap-4 rounded-3xl border bg-linear-to-b from-card to-background p-6 md:w-1/3">
           <p className="text-muted-foreground text-sm">
-            Choose how many events you'll track this month
+            Выберите, сколько событий вы будете отслеживать в этом месяце
           </p>
           <div className="row flex-wrap gap-2">
             {PRICING.map((tier, index) => (
@@ -49,14 +49,14 @@ export function Pricing() {
               size="sm"
               variant={selectedIndex === -1 ? 'default' : 'outline'}
             >
-              Custom
+              Другой объём
             </Button>
           </div>
           <div className="col mt-8 w-full items-baseline md:mt-auto">
             {selected ? (
               <>
                 <span className="mb-2 rounded-full bg-primary/10 px-2.5 py-0.5 font-medium text-primary text-xs">
-                  30-day free trial
+                  30 дней бесплатно
                 </span>
                 <div className="row items-end gap-3">
                   <NumberFlow
@@ -73,23 +73,23 @@ export function Pricing() {
                 </div>
                 <div className="row w-full justify-between">
                   <span className="-mt-2 text-muted-foreground/80 text-sm">
-                    Per month
+                    В месяц
                   </span>
                   <span className="-mt-2 text-muted-foreground/80 text-sm">
-                    + VAT if applicable
+                    + НДС, если применимо
                   </span>
                 </div>
                 <span className="mt-2 text-emerald-600 text-sm dark:text-emerald-500">
-                  Pay yearly and get 2 months free
+                  При оплате за год — 2 месяца в подарок
                 </span>
               </>
             ) : (
               <div className="text-lg">
-                Contact us at{' '}
+                Напишите нам на{' '}
                 <a className="underline" href="mailto:hello@openpanel.dev">
                   hello@openpanel.dev
                 </a>{' '}
-                to get a custom quote.
+                чтобы получить индивидуальное предложение.
               </div>
             )}
           </div>
@@ -98,8 +98,8 @@ export function Pricing() {
         <div className="col flex-1 shrink-0 justify-center gap-8">
           <div className="col gap-4">
             <SectionHeader
-              description="Pay only for what you use. Choose your event volume - everything else is unlimited. No surprises, no hidden fees."
-              title="Simple, transparent pricing"
+              description="Платите только за то, что используете. Выберите объём событий — всё остальное без ограничений. Без сюрпризов и скрытых комиссий."
+              title="Простые и прозрачные тарифы"
             />
           </div>
 
@@ -116,14 +116,14 @@ export function Pricing() {
 
           <p className="row items-center gap-2 text-muted-foreground text-sm">
             <ServerIcon className="size-4 shrink-0" />
-            Prefer to self-host?{' '}
+            Предпочитаете самостоятельный хостинг?{' '}
             <Link
               className="text-primary hover:underline"
               href="/docs/self-hosting/self-hosting"
             >
-              Deploy for free
+              Разверните бесплатно
             </Link>{' '}
-            with unlimited events.
+            с неограниченным числом событий.
           </p>
         </div>
       </div>

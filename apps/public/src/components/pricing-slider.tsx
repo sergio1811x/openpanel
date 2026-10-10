@@ -19,8 +19,8 @@ export function PricingSlider() {
         step={1}
         tooltip={
           match
-            ? `${formatNumber(match.events)} events per month`
-            : `More than ${formatNumber(PRICING[PRICING.length - 1].events)} events`
+            ? `${formatNumber(match.events)} событий в месяц`
+            : `Более ${formatNumber(PRICING[PRICING.length - 1].events)} событий`
         }
         onValueChange={(value) => setIndex(value[0])}
       />
@@ -39,7 +39,7 @@ export function PricingSlider() {
               }}
               locales={'en-US'}
             />
-            <span className="text-sm text-muted-foreground ml-2">/ month</span>
+            <span className="text-sm text-muted-foreground ml-2">/ месяц</span>
           </div>
           <span
             className={cn(
@@ -47,19 +47,19 @@ export function PricingSlider() {
               match.price === 0 && 'opacity-0',
             )}
           >
-            + VAT if applicable
+            + НДС, если применимо
           </span>
           <div className="mt-1 text-emerald-600 text-sm dark:text-emerald-500">
-            Pay yearly and get 2 months free
+            При оплате за год — 2 месяца в подарок
           </div>
         </div>
       ) : (
         <div className="text-lg">
-          Contact us at{' '}
+          Напишите нам на{' '}
           <a className="underline" href="mailto:hello@openpanel.dev">
             hello@openpanel.dev
           </a>{' '}
-          to get a custom quote.
+          чтобы получить индивидуальное предложение.
         </div>
       )}
     </>

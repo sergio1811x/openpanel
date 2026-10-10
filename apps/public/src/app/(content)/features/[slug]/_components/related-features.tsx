@@ -10,7 +10,7 @@ interface RelatedFeaturesProps {
 }
 
 export function RelatedFeatures({
-  title = 'Related features',
+  title = 'Похожие возможности',
   related,
 }: RelatedFeaturesProps) {
   if (related.length === 0) return null;
@@ -19,7 +19,7 @@ export function RelatedFeatures({
     <Section className="container">
       <SectionHeader
         title={title}
-        description="Explore more capabilities that work together with this feature."
+        description="Изучите больше возможностей, которые работают вместе с этой функцией."
         variant="sm"
         className="mb-12"
       />

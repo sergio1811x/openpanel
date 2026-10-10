@@ -139,7 +139,7 @@ const discordServer: IServerIntegration<'discord'> = {
     );
     return res.ok
       ? { success: true }
-      : { success: false, error: 'Failed to send test notification' };
+      : { success: false, error: 'Не удалось отправить тестовое уведомление' };
   },
   notification: {
     deliver: ({ config, notification }) =>

@@ -227,7 +227,7 @@ export function ReplayTimeline({ events }: { events: IServiceEvent[] }) {
                         e.stopPropagation();
                         seek(first.offsetMs);
                       }}
-                      aria-label={isGroup ? `${group.items.length} events at ${formatDuration(first.offsetMs)}` : `${first.event.name} at ${formatDuration(first.offsetMs)}`}
+                      aria-label={isGroup ? `Событий: ${group.items.length} на ${formatDuration(first.offsetMs)}` : `${first.event.name} на ${formatDuration(first.offsetMs)}`}
                     >
                       <EventIcon name={first.event.name} meta={first.event.meta} size="sm" />
                       {isGroup && (

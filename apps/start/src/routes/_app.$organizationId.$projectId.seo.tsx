@@ -71,13 +71,13 @@ const { TooltipProvider, Tooltip: GscTooltip } = createChartTooltip<
       </ChartTooltipHeader>
       <ChartTooltipItem color={getChartColor(0)}>
         <div className="flex justify-between gap-8 font-medium font-mono">
-          <span>Clicks</span>
+          <span>Клики</span>
           <span>{item.clicks.toLocaleString()}</span>
         </div>
       </ChartTooltipItem>
       <ChartTooltipItem color={getChartColor(1)}>
         <div className="flex justify-between gap-8 font-medium font-mono">
-          <span>Impressions</span>
+          <span>Показы</span>
           <span>{item.impressions.toLocaleString()}</span>
         </div>
       </ChartTooltipItem>
@@ -192,7 +192,7 @@ function SeoPage() {
   if (connectionQuery.isLoading) {
     return (
       <PageContainer>
-        <PageHeader description="Google Search Console data" title="SEO" />
+        <PageHeader description="Данные Google Search Console" title="SEO" />
         <div className="mt-8 space-y-4">
           <Skeleton className="h-64 w-full" />
           <Skeleton className="h-96 w-full" />
@@ -205,9 +205,9 @@ function SeoPage() {
     return (
       <FullPageEmptyState
         className="pt-[20vh]"
-        description="Connect Google Search Console to track your search impressions, clicks, and keyword rankings."
+        description="Подключите Google Search Console, чтобы отслеживать поисковые показы, клики и позиции по ключевым словам."
         icon={SearchIcon}
-        title="No SEO data yet"
+        title="SEO-данных пока нет"
       >
         <Button
           onClick={() =>
@@ -217,7 +217,7 @@ function SeoPage() {
             })
           }
         >
-          Connect Google Search Console
+          Подключить Google Search Console
         </Button>
       </FullPageEmptyState>
     );
@@ -251,7 +251,7 @@ function SeoPage() {
             <OverviewInterval />
           </>
         }
-        description={`Search performance for ${connection.siteUrl}`}
+        description={`Эффективность поиска для ${connection.siteUrl}`}
         title="SEO"
       />
 
@@ -262,7 +262,7 @@ function SeoPage() {
               data={overview.map((r) => ({ current: r.clicks, date: r.date }))}
               id="clicks"
               isLoading={overviewQuery.isLoading}
-              label="Clicks"
+              label="Клики"
               metric={{ current: totals.clicks, previous: prevTotals.clicks }}
             />
             <OverviewMetricCard
@@ -272,7 +272,7 @@ function SeoPage() {
               }))}
               id="impressions"
               isLoading={overviewQuery.isLoading}
-              label="Impressions"
+              label="Показы"
               metric={{
                 current: totals.impressions,
                 previous: prevTotals.impressions,
@@ -285,7 +285,7 @@ function SeoPage() {
               }))}
               id="ctr"
               isLoading={overviewQuery.isLoading}
-              label="Avg CTR"
+              label="Ср. CTR"
               metric={{
                 current: (totals.ctr / n) * 100,
                 previous: (prevTotals.ctr / pn) * 100,
@@ -300,7 +300,7 @@ function SeoPage() {
               id="position"
               inverted
               isLoading={overviewQuery.isLoading}
-              label="Avg Position"
+              label="Ср. позиция"
               metric={{
                 current: totals.position / n,
                 previous: prevTotals.position / pn,
@@ -338,7 +338,7 @@ function SeoPage() {
           <GscTable
             isLoading={pagesQuery.isLoading}
             keyField="page"
-            keyLabel="Page"
+            keyLabel="Страница"
             maxClicks={Math.max(...paginatedPages.map((p) => p.clicks), 1)}
             onNextPage={() =>
               setPagesPage((p) => Math.min(pagesPageCount - 1, p + 1))
@@ -355,15 +355,15 @@ function SeoPage() {
             pageIndex={pagesPage}
             pageSize={pageSize}
             rows={paginatedPages}
-            searchPlaceholder="Search pages"
+            searchPlaceholder="Поиск страниц"
             searchValue={pagesSearch}
-            title="Top pages"
+            title="Топ страниц"
             totalCount={filteredPages.length}
           />
           <GscTable
             isLoading={queriesQuery.isLoading}
             keyField="query"
-            keyLabel="Query"
+            keyLabel="Запрос"
             maxClicks={Math.max(...paginatedQueries.map((q) => q.clicks), 1)}
             onNextPage={() =>
               setQueriesPage((p) => Math.min(queriesPageCount - 1, p + 1))
@@ -380,9 +380,9 @@ function SeoPage() {
             pageIndex={queriesPage}
             pageSize={pageSize}
             rows={paginatedQueries}
-            searchPlaceholder="Search queries"
+            searchPlaceholder="Поиск запросов"
             searchValue={queriesSearch}
-            title="Top queries"
+            title="Топ запросов"
             totalCount={filteredQueries.length}
           />
         </div>
@@ -422,7 +422,7 @@ function TrafficSourceWidget({
       ? [
           ...engines.slice(0, 7),
           {
-            name: 'Others',
+            name: 'Другие',
             sessions: engines.slice(7).reduce((s, d) => s + d.sessions, 0),
           },
         ]
@@ -477,7 +477,7 @@ function TrafficSourceWidget({
                   style={{ width: `${barPct}%` }}
                 />
                 <div className="relative flex items-center gap-2">
-                  {engine.name !== 'Others' && (
+                  {engine.name !== 'Другие' && (
                     <SerieIcon
                       className="size-3.5 shrink-0 rounded-sm"
                       name={engine.name}
@@ -510,8 +510,8 @@ function SearchEngines(props: {
   return (
     <TrafficSourceWidget
       {...props}
-      emptyMessage="No search traffic in this period"
-      title="Search engines"
+      emptyMessage="Нет поискового трафика за этот период"
+      title="Поисковые системы"
     />
   );
 }
@@ -525,8 +525,8 @@ function AiEngines(props: {
   return (
     <TrafficSourceWidget
       {...props}
-      emptyMessage="No AI traffic in this period"
-      title="AI referrals"
+      emptyMessage="Нет AI-трафика за этот период"
+      title="AI-переходы"
     />
   );
 }
@@ -543,7 +543,7 @@ function GscChart({
 
   return (
     <div className="card p-4">
-      <h3 className="mb-4 font-medium text-sm">Clicks & Impressions</h3>
+      <h3 className="mb-4 font-medium text-sm">Клики и показы</h3>
       {isLoading ? (
         <Skeleton className="h-48 w-full" />
       ) : (
@@ -683,12 +683,12 @@ function GscTable({
               render: () => <Skeleton className="h-4 w-2/3" />,
             },
             {
-              name: 'Clicks',
+              name: 'Клики',
               width: '70px',
               render: () => <Skeleton className="h-4 w-10" />,
             },
             {
-              name: 'Impr.',
+              name: 'Показы',
               width: '70px',
               render: () => <Skeleton className="h-4 w-10" />,
             },
@@ -698,7 +698,7 @@ function GscTable({
               render: () => <Skeleton className="h-4 w-8" />,
             },
             {
-              name: 'Pos.',
+              name: 'Поз.',
               width: '55px',
               render: () => <Skeleton className="h-4 w-8" />,
             },
@@ -720,8 +720,8 @@ function GscTable({
             <div className="flex shrink-0 items-center gap-2">
               <span className="whitespace-nowrap text-muted-foreground text-xs">
                 {totalCount === 0
-                  ? '0 results'
-                  : `${rangeStart}-${rangeEnd} of ${totalCount}`}
+                  ? '0 результатов'
+                  : `${rangeStart}-${rangeEnd} из ${totalCount}`}
               </span>
               <Pagination
                 canNextPage={canNextPage}
@@ -739,7 +739,7 @@ function GscTable({
             <Input
               className="rounded-none border-0 border-t bg-transparent pl-9 text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground focus-visible:ring-offset-0"
               onChange={(e) => onSearchChange(e.target.value)}
-              placeholder={searchPlaceholder ?? 'Search'}
+              placeholder={searchPlaceholder ?? 'Поиск'}
               type="search"
               value={searchValue ?? ''}
             />
@@ -766,7 +766,7 @@ function GscTable({
             },
           },
           {
-            name: 'Clicks',
+            name: 'Клики',
             width: '70px',
             getSortValue: (item) => item.clicks,
             render(item) {
@@ -778,7 +778,7 @@ function GscTable({
             },
           },
           {
-            name: 'Impr.',
+            name: 'Показы',
             width: '70px',
             getSortValue: (item) => item.impressions,
             render(item) {
@@ -802,7 +802,7 @@ function GscTable({
             },
           },
           {
-            name: 'Pos.',
+            name: 'Поз.',
             width: '55px',
             getSortValue: (item) => item.position,
             render(item) {

@@ -1,167 +1,167 @@
 {
   "slug": "notifications",
-  "short_name": "Notifications",
+  "short_name": "Уведомления",
   "seo": {
-    "title": "Notifications - Act When Events Happen",
-    "description": "Set up notification rules that trigger when specific events happen. Filter by event properties, use templates with variables, and route alerts to Slack, Discord, or any webhook.",
+    "title": "Уведомления — реагируйте, когда происходят события",
+    "description": "Настройте правила уведомлений, которые срабатывают при конкретных событиях. Фильтруйте по свойствам событий, используйте шаблоны с переменными и направляйте оповещения в Slack, Discord или любой вебхук.",
     "keywords": [
-      "analytics notifications",
-      "event-based alerts",
-      "real-time user alerts",
-      "notification rules analytics",
-      "event filtering notifications",
-      "custom alert templates"
+      "уведомления в аналитике",
+      "оповещения по событиям",
+      "оповещения о пользователях в реальном времени",
+      "правила уведомлений в аналитике",
+      "фильтрация событий в уведомлениях",
+      "кастомные шаблоны оповещений"
     ]
   },
   "hero": {
-    "heading": "When it happens, act on it",
-    "subheading": "Define rules that watch for specific events and fire automatically. Filter by properties, use templates with variables, and route to Slack, Discord, or any webhook.",
+    "heading": "Когда это происходит — реагируйте",
+    "subheading": "Определите правила, которые следят за конкретными событиями и срабатывают автоматически. Фильтруйте по свойствам, используйте шаблоны с переменными и направляйте оповещения в Slack, Discord или любой вебхук.",
     "badges": [
-      "Event-based rules",
-      "Property filters",
-      "Template variables",
-      "Multi-integration routing"
+      "Правила по событиям",
+      "Фильтры по свойствам",
+      "Переменные в шаблонах",
+      "Маршрутизация в несколько интеграций"
     ]
   },
   "definition": {
-    "title": "What are notification rules?",
-    "text": "Notification rules are the **trigger layer** in OpenPanel. They define *when* something should happen - and **[integrations](/features/integrations)** define *where* it goes.\n\nA notification rule has three parts:\n\n1. **Events** - which events to watch for (e.g. `screen_view`, `purchase`, `signup`)\n2. **Filters** - optional property conditions that narrow the match (e.g. path starts with `/onboarding` and ends with `/verify`)\n3. **Integrations** - which connected services should receive the notification when the rule fires\n\nYou can also write a **template** using variables like `{{country}}`, `{{browser}}`, or any event property. The template is rendered with real values when the notification fires, so your Slack message or webhook payload contains the exact context you need.\n\nHere's a concrete example: you want to know when new users visit your onboarding verification page. You create a rule that:\n\n- Watches for `screen_view` events\n- Filters where **path** starts with `/onboarding` and ends with `/verify`\n- Uses the template *\"New user with their first event from {{country}}\"*\n- Routes to your Slack workspace and a webhook integration\n\nNow every time someone hits that page, your team sees a message in Slack with the user's country, and your webhook fires for any downstream automation.\n\nThe notifications page in OpenPanel shows a feed of every notification that fired - searchable, sortable by date, and showing the integration, country, OS, browser, and profile for each one. You can see exactly what happened and when.\n\nNotification rules connect the events you track to the actions you take. With integrations, they let OpenPanel act on your data instead of just storing it."
+    "title": "Что такое правила уведомлений?",
+    "text": "Правила уведомлений — это **слой триггеров** в OpenPanel. Они определяют *когда* что-то должно произойти, а **[интеграции](/features/integrations)** — *куда* это направляется.\n\nУ правила уведомлений три части:\n\n1. **События** — какие события отслеживать (например, `screen_view`, `purchase`, `signup`)\n2. **Фильтры** — опциональные условия по свойствам, сужающие совпадение (например, путь начинается с `/onboarding` и заканчивается `/verify`)\n3. **Интеграции** — какие подключённые сервисы получают уведомление при срабатывании правила\n\nМожно написать **шаблон** с переменными вроде `{{country}}`, `{{browser}}` или любого свойства события. Шаблон подставляется с реальными значениями в момент срабатывания, поэтому сообщение в Slack или payload вебхука содержит нужный контекст.\n\nКонкретный пример: вы хотите знать, когда новые пользователи заходят на страницу подтверждения онбординга. Создаёте правило, которое:\n\n- Следит за событиями `screen_view`\n- Фильтрует, где **путь** начинается с `/onboarding` и заканчивается `/verify`\n- Использует шаблон *\"Новый пользователь со своим первым событием из {{country}}\"*\n- Направляет уведомление в Slack-воркспейс и интеграцию с вебхуком\n\nТеперь каждый раз, когда кто-то открывает эту страницу, команда видит сообщение в Slack со страной пользователя, а вебхук запускает дальнейшую автоматизацию.\n\nСтраница уведомлений в OpenPanel показывает ленту всех сработавших уведомлений — с поиском, сортировкой по дате и данными об интеграции, стране, ОС, браузере и профиле для каждого. Вы точно видите, что и когда произошло.\n\nПравила уведомлений связывают отслеживаемые события с действиями, которые вы предпринимаете. Вместе с интеграциями они позволяют OpenPanel действовать на основе ваших данных, а не просто хранить их."
   },
   "capabilities_section": {
-    "title": "What you can do with notifications",
-    "intro": "From simple alerts to complex event-driven workflows - rules give you full control."
+    "title": "Что можно делать с уведомлениями",
+    "intro": "От простых оповещений до сложных событийных процессов — правила дают полный контроль."
   },
   "capabilities": [
     {
-      "title": "Event-based triggers",
-      "description": "Choose which events a rule watches for - screen_view, purchase, signup, or any custom event. A single rule can watch for one event type and fire on every match."
+      "title": "Триггеры по событиям",
+      "description": "Выберите, за какими событиями следит правило — screen_view, purchase, signup или любое кастомное событие. Одно правило может следить за одним типом событий и срабатывать на каждое совпадение."
     },
     {
-      "title": "Property filters",
-      "description": "Narrow rules with property conditions. Filter by path, country, device, or any event property using operators like 'starts with', 'ends with', 'equals', and more. Stack multiple filters to match exactly the events you care about."
+      "title": "Фильтры по свойствам",
+      "description": "Сужайте правила условиями по свойствам. Фильтруйте по пути, стране, устройству или любому свойству события с операторами «начинается с», «заканчивается на», «равно» и другими. Комбинируйте фильтры, чтобы совпадали ровно нужные события."
     },
     {
-      "title": "Template variables",
-      "description": "Write notification templates with {{variable}} syntax. Use any event property - {{country}}, {{path}}, {{browser}}, {{os}}, or custom properties. Templates are rendered with real values when the notification fires."
+      "title": "Переменные в шаблонах",
+      "description": "Пишите шаблоны уведомлений с синтаксисом {{variable}}. Используйте любое свойство события — {{country}}, {{path}}, {{browser}}, {{os}} или кастомные свойства. Шаблоны подставляются с реальными значениями при срабатывании."
     },
     {
-      "title": "Multi-integration routing",
-      "description": "Attach multiple integrations to a single rule. Fire a Slack message and a webhook at the same time. Mix and match integrations across rules however you want."
+      "title": "Маршрутизация в несколько интеграций",
+      "description": "Прикрепляйте несколько интеграций к одному правилу. Отправляйте сообщение в Slack и вебхук одновременно. Комбинируйте интеграции между правилами как угодно."
     },
     {
-      "title": "Notification feed",
-      "description": "Every fired notification is logged in a searchable feed. See the title, integration, country, OS, browser, and profile for each notification. Filter and sort to find exactly what you need."
+      "title": "Лента уведомлений",
+      "description": "Каждое сработавшее уведомление попадает в ленту с поиском. Видите заголовок, интеграцию, страну, ОС, браузер и профиль для каждого уведомления. Фильтруйте и сортируйте, чтобы найти нужное."
     },
     {
-      "title": "Rules management",
-      "description": "Create, edit, and delete rules from a dedicated Rules tab. See at a glance which events each rule watches, what filters are applied, and which integrations are attached."
+      "title": "Управление правилами",
+      "description": "Создавайте, редактируйте и удаляйте правила на отдельной вкладке «Правила». С одного взгляда видно, за какими событиями следит каждое правило, какие фильтры применены и какие интеграции прикреплены."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-notifications.webp",
-      "alt": "Notification feed showing fired notifications with country, OS, browser, and profile details",
-      "caption": "Every notification that fires is logged in a searchable feed. See the country, OS, browser, and profile for each event - sortable and searchable."
+      "alt": "Лента уведомлений со сработавшими уведомлениями и данными о стране, ОС, браузере и профиле",
+      "caption": "Каждое сработавшее уведомление попадает в ленту с поиском. Смотрите страну, ОС, браузер и профиль для каждого события — с сортировкой и поиском."
     },
     {
       "src": "/features/feature-notifications-rule.webp",
-      "alt": "Editing a notification rule with event type, property filters, template, and integrations",
-      "caption": "Create rules with event filters, template variables, and multi-integration routing. This rule fires on screen_view events where the path matches an onboarding verification flow."
+      "alt": "Редактирование правила уведомлений с типом события, фильтрами по свойствам, шаблоном и интеграциями",
+      "caption": "Создавайте правила с фильтрами событий, переменными шаблонов и маршрутизацией в несколько интеграций. Это правило срабатывает на screen_view, где путь совпадает с потоком подтверждения онбординга."
     }
   ],
   "how_it_works": {
-    "title": "How notification rules work",
-    "intro": "Rules are simple: define the trigger, write the message, pick the destinations.",
+    "title": "Как работают правила уведомлений",
+    "intro": "Всё просто: задайте триггер, напишите сообщение, выберите получателей.",
     "steps": [
       {
-        "title": "Choose the event type",
-        "description": "Select which event the rule should watch - screen_view, purchase, signup, or any custom event you track. The rule will evaluate every incoming event of that type."
+        "title": "Выберите тип события",
+        "description": "Укажите, за каким событием следит правило — screen_view, purchase, signup или любое кастомное событие. Правило проверяет каждое входящее событие этого типа."
       },
       {
-        "title": "Add property filters",
-        "description": "Optionally narrow the rule with property conditions. For example, filter where path starts with /onboarding and ends with /verify. Only events matching all filters will trigger the rule."
+        "title": "Добавьте фильтры по свойствам",
+        "description": "При желании сузьте правило условиями по свойствам. Например, фильтр: путь начинается с /onboarding и заканчивается /verify. Правило срабатывает только на события, совпавшие со всеми фильтрами."
       },
       {
-        "title": "Write a template",
-        "description": "Write the notification message using {{variable}} placeholders. When the rule fires, variables are replaced with real values from the event - e.g. \"New user with their first event from {{country}}\" becomes \"New user with their first event from US\"."
+        "title": "Напишите шаблон",
+        "description": "Составьте сообщение уведомления с плейсхолдерами {{variable}}. При срабатывании переменные заменяются реальными значениями события — например, «Новый пользователь со своим первым событием из {{country}}» превращается в «Новый пользователь со своим первым событием из США»."
       },
       {
-        "title": "Attach integrations",
-        "description": "Select one or more integrations to receive the notification - Slack, Discord, webhook, or any combination. Each integration will be triggered simultaneously when a matching event arrives."
+        "title": "Прикрепите интеграции",
+        "description": "Выберите одну или несколько интеграций для получения уведомления — Slack, Discord, вебхук или любую комбинацию. Каждая интеграция сработает одновременно при поступлении совпавшего события."
       }
     ]
   },
   "use_cases": {
-    "title": "How teams use notifications",
-    "intro": "From simple team alerts to event-driven automation - notifications make analytics actionable.",
+    "title": "Как команды используют уведомления",
+    "intro": "От простых командных оповещений до событийных автоматизаций — уведомления делают аналитику действенной.",
     "items": [
       {
-        "title": "New user alerts",
-        "description": "Get notified in Slack whenever a new user signs up. Include their country, source, or any property in the message. The whole team sees new signups in real time without checking a dashboard."
+        "title": "Оповещения о новых пользователях",
+        "description": "Получайте уведомление в Slack при каждой регистрации нового пользователя. Включите в сообщение страну, источник или любое свойство. Вся команда видит регистрации в реальном времени, не открывая дашборд."
       },
       {
-        "title": "Onboarding monitoring",
-        "description": "Set up rules that fire when users hit key onboarding milestones - account creation, first feature use, verification. Know immediately when someone gets stuck or completes the flow."
+        "title": "Мониторинг онбординга",
+        "description": "Настройте правила, которые срабатывают на ключевые этапы онбординга — создание аккаунта, первое использование функции, подтверждение. Сразу узнавайте, когда кто-то застрял или прошёл поток до конца."
       },
       {
-        "title": "Revenue and purchase alerts",
-        "description": "Fire a notification on every purchase event. Include the amount, plan, or product in the template. Route to Slack for celebration and to a webhook for CRM updates or fulfillment triggers."
+        "title": "Оповещения о выручке и покупках",
+        "description": "Запускайте уведомление на каждое событие покупки. Включите в шаблон сумму, тариф или товар. Направляйте в Slack для празднования и в вебхук для обновления CRM или запуска поставки."
       },
       {
-        "title": "Error and regression detection",
-        "description": "Watch for error events or unexpected patterns. Get alerted when error rates spike for a specific page or feature, so you can respond before users complain."
+        "title": "Детекция ошибок и регрессий",
+        "description": "Следите за ошибками и неожиданными паттернами. Получайте оповещение, когда частота ошибок по странице или функции резко растёт, — чтобы отреагировать раньше жалоб."
       }
     ]
   },
   "related_features": [
     {
       "slug": "integrations",
-      "title": "Integrations",
-      "description": "Integrations are the destinations for notifications. Connect Slack, Discord, or webhooks, then attach them to rules."
+      "title": "Интеграции",
+      "description": "Интеграции — это получатели уведомлений. Подключите Slack, Discord или вебхуки, затем прикрепите их к правилам."
     },
     {
       "slug": "event-tracking",
-      "title": "Event tracking",
-      "description": "Notification rules are built on the events you track. The more events you send, the more precise your rules can be."
+      "title": "Отслеживание событий",
+      "description": "Правила уведомлений строятся на отслеживаемых событиях. Чем больше событий вы отправляете, тем точнее правила."
     },
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "Trigger notifications when users complete a funnel - combining step-by-step analysis with real-time action."
+      "title": "Воронки",
+      "description": "Запускайте уведомления, когда пользователи проходят воронку, — сочетая пошаговый анализ с действием в реальном времени."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about notification rules in OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы о правилах уведомлений в OpenPanel.",
     "items": [
       {
-        "question": "What's the difference between notifications and integrations?",
-        "answer": "Integrations are connections to external services (Slack, Discord, webhooks). Notifications are rules that define when those integrations should fire. You create an integration once, then attach it to as many notification rules as you want."
+        "question": "Чем уведомления отличаются от интеграций?",
+        "answer": "Интеграции — это подключения к внешним сервисам (Slack, Discord, вебхуки). Уведомления — это правила, определяющие, когда эти интеграции срабатывают. Интеграция создаётся один раз, затем прикрепляется к любому числу правил уведомлений."
       },
       {
-        "question": "What template variables can I use?",
-        "answer": "You can use any event property as a template variable with the {{property}} syntax. Common ones include {{country}}, {{city}}, {{browser}}, {{os}}, {{path}}, and any custom properties you send with your events."
+        "question": "Какие переменные можно использовать в шаблонах?",
+        "answer": "Любое свойство события можно использовать как переменную с синтаксисом {{property}}. Типичные: {{country}}, {{city}}, {{browser}}, {{os}}, {{path}} и любые кастомные свойства, которые вы отправляете с событиями."
       },
       {
-        "question": "Can I have multiple filters on a single rule?",
-        "answer": "Yes. You can stack multiple property filters on a rule. All filters must match for the rule to fire - they work as AND conditions. For example, path starts with /onboarding AND path ends with /verify."
+        "question": "Можно ли задать несколько фильтров в одном правиле?",
+        "answer": "Да. К правилу можно добавить несколько фильтров по свойствам. Правило срабатывает только при совпадении всех фильтров — они работают как условия И. Например: путь начинается с /onboarding И путь заканчивается на /verify."
       },
       {
-        "question": "Can I send to multiple integrations from one rule?",
-        "answer": "Yes. Attach as many integrations as you want to a single rule. When the rule fires, all attached integrations are triggered simultaneously. For example, send to both Slack and a webhook at the same time."
+        "question": "Можно ли отправлять в несколько интеграций из одного правила?",
+        "answer": "Да. Прикрепите к правилу столько интеграций, сколько нужно. При срабатывании правила все прикреплённые интеграции запускаются одновременно. Например, отправить и в Slack, и вебхуком одновременно."
       },
       {
-        "question": "Is there a delay between the event and the notification?",
-        "answer": "No. Notifications fire in real time as events arrive. There's no batching or delay - when an event matches a rule, the attached integrations are triggered immediately."
+        "question": "Есть ли задержка между событием и уведомлением?",
+        "answer": "Нет. Уведомления срабатывают в реальном времени по мере поступления событий. Без пакетной обработки и задержек — как только событие совпало с правилом, прикреплённые интеграции запускаются немедленно."
       },
       {
-        "question": "Can I see past notifications?",
-        "answer": "Yes. The Notifications tab shows a feed of every notification that fired. You can search, sort by date, and see details like the integration used, country, OS, browser, and profile for each notification."
+        "question": "Можно ли видеть прошлые уведомления?",
+        "answer": "Да. Вкладка «Уведомления» показывает ленту всех сработавших уведомлений. Можно искать, сортировать по дате и смотреть детали: использованную интеграцию, страну, ОС, браузер и профиль для каждого уведомления."
       }
     ]
   },
   "cta": {
-    "label": "Set up your first notification rule",
+    "label": "Настройте своё первое правило уведомлений",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

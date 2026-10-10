@@ -16,8 +16,8 @@ export function EmailResetPassword({
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
       <Text>
-        You have requested to reset your password. Follow the link below to
-        reset your password:
+        Вы запросили сброс пароля. Перейдите по ссылке ниже, чтобы сбросить
+        пароль:
       </Text>
       <Button
         href={url}
@@ -29,14 +29,14 @@ export function EmailResetPassword({
           textDecoration: 'none',
         }}
       >
-        Reset password
+        Сброс пароля
       </Button>
       <Text>
-        Reset password link: <Link href={url}>{url}</Link>
+        Ссылка для сброса пароля: <Link href={url}>{url}</Link>
       </Text>
       <Text style={{ color: '#666' }}>
-        Have you not requested this? Please ignore this email and contact
-        support if you believe this was a mistake.
+        Не запрашивали сброс пароля? Просто проигнорируйте это письмо, а если
+        считаете, что это ошибка, обратитесь в поддержку.
       </Text>
     </Layout>
   );

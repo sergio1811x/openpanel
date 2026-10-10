@@ -42,7 +42,7 @@ export const Route = createFileRoute('/share/dashboard/$shareId')({
       return {
         meta: [
           {
-            title: 'Share not found - OpenPanel.dev',
+            title: 'Публичная ссылка не найдена - OpenPanel.dev',
           },
         ],
       };
@@ -70,8 +70,8 @@ export const Route = createFileRoute('/share/dashboard/$shareId')({
   pendingComponent: FullPageLoadingState,
   errorComponent: () => (
     <FullPageEmptyState
-      title="Share not found"
-      description="The dashboard you are looking for does not exist."
+      title="Публичная ссылка не найдена"
+      description="Такого дашборда не существует."
       className="min-h-[calc(100vh-theme(spacing.16))]"
     />
   ),
@@ -143,7 +143,7 @@ function RouteComponent() {
             <ReportItemSkeleton />
           </div>
         ) : reports.length === 0 ? (
-          <FullPageEmptyState title="No reports" />
+          <FullPageEmptyState title="Нет отчётов" />
         ) : (
           <GrafanaGrid layouts={layouts}>
             {reports.map((report) => (

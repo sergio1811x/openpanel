@@ -109,7 +109,7 @@ function ProfileList({ profiles }: { profiles: any[] }) {
   if (profiles.length === 0) {
     return (
       <div className="flex items-center justify-center py-8">
-        <div className="text-muted-foreground">No users found</div>
+        <div className="text-muted-foreground">Пользователи не найдены</div>
       </div>
     );
   }
@@ -163,7 +163,7 @@ function ProfileListState({
   if (query.isLoading) {
     return (
       <div className="flex items-center justify-center py-8">
-        <div className="text-muted-foreground">Loading users...</div>
+        <div className="text-muted-foreground">Загрузка пользователей...</div>
       </div>
     );
   }
@@ -171,10 +171,10 @@ function ProfileListState({
   if (query.isError) {
     return (
       <div className="col items-center justify-center gap-1 py-8 text-center">
-        <div className="font-medium">Could not load users</div>
+        <div className="font-medium">Не удалось загрузить пользователей</div>
         <div className="text-muted-foreground text-sm">
-          Something went wrong running this query. Try again, or adjust the
-          report.
+          Что-то пошло не так при выполнении запроса. Попробуйте снова или
+          измените отчёт.
         </div>
       </div>
     );
@@ -252,8 +252,8 @@ function ChartUsersView({ chartData, report, date }: ChartUsersViewProps) {
       header={
         <div>
           <ModalHeader
-            title="View Users"
-            text={`Users who performed actions on ${new Date(date).toLocaleDateString()}`}
+            title="Просмотр пользователей"
+            text={`Пользователи, выполнявшие действия ${new Date(date).toLocaleDateString()}`}
           />
           {report.series.length > 0 && (
             <div className="col md:row gap-2">
@@ -262,14 +262,14 @@ function ChartUsersView({ chartData, report, date }: ChartUsersViewProps) {
                 onValueChange={handleSerieChange}
               >
                 <SelectTrigger className="flex-1">
-                  <SelectValue placeholder="Select Serie" />
+                  <SelectValue placeholder="Выберите серию" />
                 </SelectTrigger>
                 <SelectContent>
                   {report.series.map((serie) => (
                     <SelectItem key={serie.id} value={serie.id || ''}>
                       {serie.type === 'event'
                         ? serie.displayName || serie.name
-                        : serie.displayName || 'Formula'}
+                        : serie.displayName || 'Формула'}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -281,7 +281,7 @@ function ChartUsersView({ chartData, report, date }: ChartUsersViewProps) {
                   onValueChange={(value) => setSelectedBreakdownId(value)}
                 >
                   <SelectTrigger className="flex-1">
-                    <SelectValue placeholder="Select Breakdown" />
+                    <SelectValue placeholder="Выберите разбивку" />
                   </SelectTrigger>
                   <SelectContent>
                     {matchingChartSeries
@@ -363,11 +363,11 @@ function FunnelUsersView({ report, stepIndex, breakdownValues }: FunnelUsersView
       header={
         <div className="flex flex-col gap-2">
           <ModalHeader
-            title="View Users"
+            title="Просмотр пользователей"
             text={
               showDropoffs
-                ? `Users who dropped off after step ${stepIndex + 1} of ${report.series.length}`
-                : `Users who completed step ${stepIndex + 1} of ${report.series.length} in the funnel`
+                ? `Пользователи, выпавшие после шага ${stepIndex + 1} из ${report.series.length}`
+                : `Пользователи, прошедшие шаг ${stepIndex + 1} из ${report.series.length} в воронке`
             }
           />
           {!isLastStep && (
@@ -382,7 +382,7 @@ function FunnelUsersView({ report, stepIndex, breakdownValues }: FunnelUsersView
                     : 'bg-muted text-muted-foreground hover:bg-muted/80',
                 )}
               >
-                Completed
+                Прошли
               </button>
               <button
                 type="button"
@@ -394,7 +394,7 @@ function FunnelUsersView({ report, stepIndex, breakdownValues }: FunnelUsersView
                     : 'bg-muted text-muted-foreground hover:bg-muted/80',
                 )}
               >
-                Dropped Off
+                Выпали
               </button>
             </div>
           )}

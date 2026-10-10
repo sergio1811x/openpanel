@@ -24,7 +24,7 @@ export function sendDiscordNotification({
   return postWebhook(fetcher, webhookUrl, {
     content: message,
     avatar_url: 'https://openpanel.dev/logo.jpg',
-    username: 'OpenPanel Notifications',
+    username: 'Уведомления OpenPanel',
   });
 }
 
@@ -36,6 +36,6 @@ export function sendTestDiscordNotification(
     webhookUrl,
     fetcher,
     message:
-      '**🧪 Test [OpenPanel.dev](<https://openpanel.dev/>)**\nIf you can read this, your Slack webhook is functioning correctly!\n',
+      '**🧪 Тест [OpenPanel.dev](<https://openpanel.dev/>)**\nЕсли Вы видите это сообщение, Ваш вебхук работает корректно!\n',
   });
 }

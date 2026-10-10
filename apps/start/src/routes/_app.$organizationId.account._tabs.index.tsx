@@ -40,8 +40,8 @@ function Component() {
   const mutation = useMutation(
     trpc.user.update.mutationOptions({
       onSuccess: (data) => {
-        toast('Profile updated', {
-          description: 'Your profile has been updated.',
+        toast('Профиль обновлён', {
+          description: 'Ваш профиль был обновлён.',
         });
         queryClient.invalidateQueries(trpc.auth.session.pathFilter());
         reset({
@@ -66,7 +66,7 @@ function Component() {
       >
         <Widget className="max-w-screen-md w-full">
         <WidgetHead>
-          <span className="title">Profile</span>
+          <span className="title">Профиль</span>
         </WidgetHead>
         <WidgetBody className="gap-4 col">
           <InputWithLabel
@@ -76,12 +76,12 @@ function Component() {
             readOnly
           />
           <InputWithLabel
-            label="First name"
+            label="Имя"
             {...register('firstName')}
             defaultValue={user.firstName ?? ''}
           />
           <InputWithLabel
-            label="Last name"
+            label="Фамилия"
             {...register('lastName')}
             defaultValue={user.lastName ?? ''}
           />
@@ -93,7 +93,7 @@ function Component() {
             icon={SaveIcon}
             loading={mutation.isPending}
           >
-            Save
+            Сохранить
           </Button>
         </WidgetBody>
       </Widget>

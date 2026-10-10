@@ -160,7 +160,7 @@ function Component() {
             onClick={() => setCreateNewOrg(true)}
             type="button"
           >
-            Create new workspace
+            Создать рабочее пространство
           </button>
           <button
             className={cn(
@@ -176,7 +176,7 @@ function Component() {
             onClick={() => setCreateNewOrg(false)}
             type="button"
           >
-            Use existing workspace
+            Использовать существующее
           </button>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
@@ -184,16 +184,16 @@ function Component() {
             <>
               <InputWithLabel
                 error={form.formState.errors.organization?.message}
-                info="This is the name of your workspace. It can be anything you like."
-                label="Workspace name"
-                placeholder="Eg. The Music Company"
+                info="Это название вашего рабочего пространства. Может быть любым."
+                label="Название рабочего пространства"
+                placeholder="Например, «Музыкальная компания»"
                 {...form.register('organization')}
               />
               <Controller
                 control={form.control}
                 name="timezone"
                 render={({ field }) => (
-                  <WithLabel label="Timezone">
+                  <WithLabel label="Часовой пояс">
                     <Combobox
                       className="w-full"
                       items={Intl.supportedValuesOf('timeZone').map((item) => ({
@@ -201,7 +201,7 @@ function Component() {
                         label: item,
                       }))}
                       onChange={field.onChange}
-                      placeholder="Select timezone"
+                      placeholder="Выберите часовой пояс"
                       searchable
                       value={field.value}
                     />
@@ -231,7 +231,7 @@ function Component() {
                 name="organizationId"
                 render={({ field, formState }) => {
                   return (
-                    <WithLabel label="Workspace">
+                    <WithLabel label="Рабочее пространство">
                       <Combobox
                         className="w-full"
                         error={formState.errors.organizationId?.message}
@@ -245,7 +245,7 @@ function Component() {
                             })) ?? []
                         }
                         onChange={field.onChange}
-                        placeholder="Select workspace"
+                        placeholder="Выберите рабочее пространство"
                         value={field.value}
                       />
                     </WithLabel>
@@ -269,31 +269,31 @@ function Component() {
           )}
           <InputWithLabel
             error={form.formState.errors.project?.message}
-            label="Your first project name"
-            placeholder="Eg. The Music App"
+            label="Название вашего первого проекта"
+            placeholder="Например, «Музыкальное приложение»"
             {...form.register('project')}
             className="col-span-2"
           />
         </div>
         <div className="mt-4">
-          <Label className="mb-2">What are you tracking?</Label>
+          <Label className="mb-2">Что вы будете отслеживать?</Label>
           <div className="grid grid-cols-3 gap-3">
             {[
               {
                 key: 'website' as const,
-                label: 'Website',
+                label: 'Веб-сайт',
                 Icon: MonitorIcon,
                 active: isWebsite,
               },
               {
                 key: 'app' as const,
-                label: 'App',
+                label: 'Приложение',
                 Icon: SmartphoneIcon,
                 active: isApp,
               },
               {
                 key: 'backend' as const,
-                label: 'Backend / API',
+                label: 'Бэкенд / API',
                 Icon: ServerIcon,
                 active: isBackend,
               },
@@ -320,13 +320,13 @@ function Component() {
             form.formState.errors.app?.message ||
             form.formState.errors.backend?.message) && (
             <p className="mt-2 text-destructive text-sm">
-              At least one type must be selected
+              Выберите хотя бы один тип
             </p>
           )}
           <AnimateHeight open={isWebsite}>
             <div className="mt-4">
               <InputWithLabel
-                label="Domain"
+                label="Домен"
                 placeholder="example.com"
                 {...form.register('domain')}
                 error={form.formState.errors.domain?.message}
@@ -353,11 +353,11 @@ function Component() {
                     onClick={() => setShowCorsInput((open) => !open)}
                     type="button"
                   >
-                    All events from{' '}
+                    Будут приниматься события с{' '}
                     <span className="font-medium text-foreground">
                       {domain}
-                    </span>{' '}
-                    will be allowed. Do you want to allow any other?
+                    </span>
+                    . Хотите разрешить и другие домены?
                   </button>
                   <AnimateHeight open={showCorsInput}>
                     <div className="mt-3">
@@ -365,7 +365,7 @@ function Component() {
                         control={form.control}
                         name="cors"
                         render={({ field }) => (
-                          <WithLabel label="Allowed domains">
+                          <WithLabel label="Разрешённые домены">
                             <TagInput
                               {...field}
                               error={form.formState.errors.cors?.message}
@@ -384,10 +384,10 @@ function Component() {
                                   })
                                 );
                               }}
-                              placeholder="Accept events from these domains"
+                              placeholder="Принимать события с этих доменов"
                               renderTag={(tag: string) =>
                                 tag === '*'
-                                  ? 'Accept events from any domains'
+                                  ? 'События с любых доменов'
                                   : tag
                               }
                               value={field.value ?? []}
@@ -412,7 +412,7 @@ function Component() {
           size="lg"
           type="submit"
         >
-          Next
+          Далее
         </Button>
       </ButtonContainer>
     </form>

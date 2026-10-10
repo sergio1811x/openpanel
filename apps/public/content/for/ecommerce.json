@@ -2,166 +2,187 @@
   "slug": "ecommerce",
   "audience": "ecommerce",
   "seo": {
-    "title": "Ecommerce Analytics — Cookieless Tracking for Shopify, WooCommerce, Stripe",
-    "description": "Ecommerce analytics without consent banners. Track revenue, funnels, and customers across Shopify, WooCommerce, and Stripe checkouts. From $2.50/month or self-host free.",
+    "title": "Аналитика для e-commerce — отслеживание без cookies для Shopify, WooCommerce, Stripe",
+    "description": "Аналитика e-commerce без баннеров согласия. Отслеживайте выручку, воронки и покупателей в Shopify, WooCommerce и Stripe checkout. От $2.50/месяц или бесплатно на self-hosting.",
     "noindex": false
   },
   "hero": {
-    "heading": "Ecommerce analytics that survives cookie consent",
-    "subheading": "GA4 loses 30-50% of your data to consent banners. Mixpanel and Heap charge per event and scale into thousands per month. OpenPanel tracks every cart, checkout, and purchase without cookies, so attribution stays intact and your CFO doesn't get a surprise invoice.",
+    "heading": "Аналитика для e-commerce, которая переживает баннер согласия",
+    "subheading": "GA4 теряет 30–50% ваших данных из-за баннеров согласия. Mixpanel и Heap берут плату за каждое событие.",
     "badges": [
-      "Cookieless tracking",
-      "No consent banner needed",
-      "Revenue + funnel tracking",
+      "Отслеживание без cookies",
+      "Баннер согласия не нужен",
+      "Выручка и воронки",
       "Shopify, WooCommerce, Stripe"
     ]
   },
   "problem": {
-    "title": "Why ecommerce analytics is broken in 2026",
-    "intro": "Every analytics tool has a different failure mode for online stores. Here's what actually breaks.",
+    "title": "Почему аналитика e-commerce в 2026 году сломана",
+    "intro": "У каждого инструмента аналитики свой сценарий провала для интернет-магазинов. Вот что ломается на самом деле.",
     "items": [
       {
-        "title": "Cookie consent destroys GA4 data",
-        "description": "Under GDPR you need explicit consent for analytics cookies. Around 30-50% of EU shoppers click reject. GA4 fills the gap with modeled data — you're optimising your ad spend on estimates, not real conversions."
+        "title": "Согласие на cookies разрушает данные GA4",
+        "description": "По GDPR аналитические cookies требуют явного согласия. Около 30–50% покупателей в ЕС нажимают «отклонить». GA4 заполняет пробелы модельными данными — вы оптимизируете рекламный бюджет по оценкам, а не по реальным конверсиям."
       },
       {
-        "title": "Event-priced analytics scale into the thousands",
-        "description": "Mixpanel and Heap charge per event. A modestly busy store firing 50 events per session reaches 1M events at 20K sessions. That's $300-500/mo before you've made any business decisions with the data."
+        "title": "Тарифы за события доходят до тысяч долларов",
+        "description": "Mixpanel и Heap берут плату за событие. Магазин средней загруженности с 50 событиями за сессию достигает 1 млн событий при 20 тыс. сессий. Это $300–500 в месяц ещё до того, как вы приняли хоть одно решение на этих данных."
       },
       {
-        "title": "Shopify and WooCommerce native reports are shallow",
-        "description": "Pageviews and orders are there, but you can't build a funnel from product page → cart → checkout, segment by acquisition channel, or compare retention between SKUs. Native reports show what happened, not why."
+        "title": "Нативные отчёты Shopify и WooCommerce поверхностны",
+        "description": "Просмотры страниц и заказы есть, но воронку «страница товара → корзина → checkout» не построить, по каналам привлечения не сегментировать, удержание между SKU не сравнить. Нативные отчёты показывают, что произошло, а не почему."
       },
       {
-        "title": "Cart-abandonment retargeting depends on attribution that breaks",
-        "description": "When a third of shoppers reject cookies and the rest get cleared by ITP and tracking-prevention, last-click attribution becomes fiction. You're paying ads on data that no longer exists."
+        "title": "Ретаргетинг брошенных корзин зависит от ломающейся атрибуции",
+        "description": "Когда треть покупателей отклоняет cookies, а остальных чистят ITP и защита от трекинга, last-click атрибуция становится фикцией. Вы платите за рекламу по данным, которых больше нет."
       }
     ]
   },
   "features": {
-    "title": "Everything an online store needs",
-    "intro": "These features cover the full ecommerce funnel without the privacy or pricing trade-offs.",
+    "title": "Всё, что нужно интернет-магазину",
+    "intro": "Эти функции покрывают весь e-commerce воронку без компромиссов по приватности и цене.",
     "items": [
       {
-        "title": "Cookieless tracking by default",
-        "description": "No cookies, no consent banner, no modeled data. Every visitor counts, every event lands in the database, and your conversion data isn't filtered by opt-out rates."
+        "title": "Отслеживание без cookies по умолчанию",
+        "description": "Без cookies, баннеров согласия и модельных данных. Каждый посетитель посчитан, каждое событие попало в базу, а данные конверсии не фильтруются долей отказов."
       },
       {
-        "title": "Revenue and order tracking",
-        "description": "Send purchase events with revenue, currency, order ID, and product properties. Build revenue-by-channel reports without stitching together GA4 and Stripe."
+        "title": "Отслеживание выручки и заказов",
+        "description": "Отправляйте события покупки с выручкой, валютой, ID заказа и свойствами товаров. Стройте отчёты выручки по каналам без сшивания GA4 и Stripe."
       },
       {
-        "title": "Funnel analysis at the SKU level",
-        "description": "Build funnels from product page → add to cart → checkout → purchase, broken down by SKU, category, or campaign. See exactly where each product loses customers."
+        "title": "Анализ воронок на уровне SKU",
+        "description": "Стройте воронки «страница товара → корзина → checkout → покупка» с разбивкой по SKU, категории или кампании. Видите, где именно каждый продукт теряет покупателей."
       },
       {
-        "title": "Works with Shopify, WooCommerce, Stripe, and custom stacks",
-        "description": "Drop a script tag in a Shopify theme, hook into WooCommerce events, fire purchase events from Stripe webhooks, or instrument a custom Next.js or Remix store. Same tracking model everywhere."
+        "title": "Работает с Shopify, WooCommerce, Stripe и кастомными стеками",
+        "description": "Вставьте тег скрипта в тему Shopify, подпишитесь на события WooCommerce, отправляйте события покупок из вебхуков Stripe или инструментируйте кастомный магазин на Next.js или Remix. Одна модель отслеживания везде."
       },
       {
-        "title": "EU-only data residency",
-        "description": "All cloud data is stored in EU infrastructure. No transfers to US servers. GDPR-clean by default — no DPAs, no transfer-impact assessments, no Standard Contractual Clauses to maintain."
+        "title": "Данные только в ЕС",
+        "description": "Все облачные данные хранятся в инфраструктуре ЕС. Без передач на серверы США. Чисто по GDPR по умолчанию — без DPAs, оценок влияния передачи и Standard Contractual Clauses."
       },
       {
-        "title": "Customer profiles and lifetime value",
-        "description": "See every customer's full journey: which ad they came from, what products they viewed, when they purchased, when they came back. Compute LTV and repeat-purchase rate without exporting data to a warehouse."
+        "title": "Профили покупателей и пожизненная ценность",
+        "description": "Видите весь путь каждого покупателя: из какой рекламы пришёл, какие товары смотрел, когда купил и когда вернулся. Считайте LTV и частоту повторных покупок без выгрузки в warehouse."
       },
       {
-        "title": "Real-time dashboard",
-        "description": "Run a flash sale or send an email and watch traffic and revenue land live. No 24-hour processing delay like GA4."
+        "title": "Дашборд в реальном времени",
+        "description": "Запустите флеш-распродажу или рассылку и смотрите, как трафик и выручка поступают вживую. Без 24-часовой задержки обработки, как в GA4."
       },
       {
-        "title": "Self-host for unlimited events",
-        "description": "Run OpenPanel on your own infrastructure with Docker Compose for a flat hosting cost — no per-event pricing. The setup script is one command. The cloud and self-hosted versions have feature parity."
+        "title": "Self-hosting для неограниченных событий",
+        "description": "Запустите OpenPanel на своей инфраструктуре через Docker Compose за фиксированную стоимость хостинга — без оплаты за события. Скрипт установки — одна команда. Облако и self-hosted версия идентичны по функциям."
       }
     ]
   },
   "benefits": {
-    "title": "Why ecommerce teams switch to OpenPanel",
-    "intro": "The trade-offs that break ecommerce on other tools — consent attrition, runaway pricing, shallow reports — don't apply here.",
+    "title": "Почему e-commerce команды переходят на OpenPanel",
+    "intro": "Компромиссы, ломающие e-commerce на других инструментах — отток из-за согласия, разгоняющиеся тарифы, поверхностные отчёты, — здесь не работают.",
     "items": [
       {
-        "title": "Real attribution, not modeled estimates",
-        "description": "Cookieless tracking means 100% of visitors are counted. No GA4 consent-mode gaps, no Mixpanel sampling. You make ad-spend decisions on real numbers."
+        "title": "Реальная атрибуция, а не модельные оценки",
+        "description": "Отслеживание без cookies означает, что посчитаны 100% посетителей. Без пробелов consent mode в GA4 и без сэмплирования Mixpanel. Решения по рекламному бюджету — на реальных цифрах."
       },
       {
-        "title": "Predictable cost as you scale",
-        "description": "$2.50/mo at 5K events. $20/mo at 100K events. $90/mo at 1M events. Self-host free for unlimited. No usage-based billing surprises after a Black Friday spike."
+        "title": "Предсказуемая стоимость при росте",
+        "description": "$2.50/мес при 5 тыс. событий. $20/мес при 100 тыс. $90/мес при 1 млн. Self-hosting — бесплатно и без лимитов. Никаких сюрпризов в счёте после пика Чёрной пятницы."
       },
       {
-        "title": "One tool replaces GA4 + product analytics + heatmap subscriptions",
-        "description": "Web analytics, funnels, retention, and revenue tracking in one tool. Cancel two or three subscriptions in the process."
+        "title": "Один инструмент вместо GA4 + продуктовой аналитики + тепловых карт",
+        "description": "Веб-аналитика, воронки, удержание и отслеживание выручки в одном инструменте. Заодно отмените две-три подписки."
       },
       {
-        "title": "Compliance handled at the architecture level",
-        "description": "EU hosting, no cookies, no third-party data sharing. No consent platform required, no DPAs to negotiate with vendors. The privacy work was done before you signed up."
+        "title": "Соответствие требованиям решено на уровне архитектуры",
+        "description": "Хостинг в ЕС, без cookies, без передачи данных третьим лицам. Платформа согласия не нужна, DPAs с вендорами не нужно согласовывать. Работа по приватности сделана до вашей регистрации."
       },
       {
-        "title": "Works on every platform",
-        "description": "Shopify, WooCommerce, BigCommerce, Magento, Squarespace, custom Next.js, Remix, Astro, or a Stripe-direct checkout. The script tag and SDK setup are identical."
+        "title": "Работает на любой платформе",
+        "description": "Shopify, WooCommerce, BigCommerce, Magento, Squarespace, кастомные Next.js, Remix, Astro или прямой Stripe-checkout. Настройка тега скрипта и SDK одинакова везде."
       }
     ]
   },
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions from ecommerce teams evaluating OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы от e-commerce команд, оценивающих OpenPanel.",
     "items": [
       {
-        "question": "Can OpenPanel replace GA4 for an online store?",
-        "answer": "Yes. OpenPanel covers all the core ecommerce reporting GA4 does — pageviews, traffic sources, UTM attribution, conversion events, revenue tracking, funnels — and adds product-analytics features (cohorts, retention, customer profiles) that GA4 lacks. The biggest difference is that OpenPanel is cookieless, so your consent banner can go away and your data is complete."
+        "question": "Может ли OpenPanel заменить GA4 для интернет-магазина?",
+        "answer": "Да. OpenPanel покрывает всю ключевую отчётность GA4 для e-commerce — просмотры страниц, источники трафика, UTM-атрибуцию, события конверсии, отслеживание выручки, воронки — и добавляет функции продуктовой аналитики (когорты, удержание, профили покупателей), которых в GA4 нет. Главное отличие: OpenPanel работает без cookies, поэтому баннер согласия можно убрать, а данные будут полными."
       },
       {
-        "question": "How do I install OpenPanel on Shopify?",
-        "answer": "Add the OpenPanel script tag in Shopify Admin → Online Store → Themes → Edit Code → theme.liquid, before </head>. Pageviews track automatically. For purchase events, add a small script on the order confirmation page that fires op.track('Purchase', {revenue, currency, orderId, products}). See our [Shopify analytics page](/for/shopify) for the full walkthrough."
+        "question": "Как установить OpenPanel на Shopify?",
+        "answer": "Добавьте тег скрипта OpenPanel в Shopify Admin → Online Store → Themes → Edit Code → theme.liquid перед </head>. Просмотры страниц отслеживаются автоматически. Для событий покупок добавьте небольшой скрипт на страницу подтверждения заказа, вызывающий op.track('Purchase', {revenue, currency, orderId, products}). Полное руководство — на [странице аналитики Shopify](/for/shopify)."
       },
       {
-        "question": "How do I install OpenPanel on WooCommerce?",
-        "answer": "Two options. Easiest: install the OpenPanel WordPress plugin (or the Site Kit alternative). Manual: hook into WooCommerce's woocommerce_thankyou action to fire op.track('Purchase') with the order object, and add the OpenPanel script to your theme header. WooCommerce events like add_to_cart and product_view are also available as native hooks."
+        "question": "Как установить OpenPanel на WooCommerce?",
+        "answer": "Два варианта. Простой: установите WordPress-плагин OpenPanel (или вариант Site Kit). Ручной: подпишитесь на действие woocommerce_thankyou, чтобы отправить op.track('Purchase') с объектом заказа, и добавьте скрипт OpenPanel в заголовок темы. События WooCommerce вроде add_to_cart и product_view также доступны как нативные хуки."
       },
       {
-        "question": "Does OpenPanel work with Stripe Checkout or Payment Links?",
-        "answer": "Yes. Fire op.track('CheckoutStarted') from your product page when a customer clicks the buy button, then fire op.track('Purchase', {revenue, currency, orderId}) from a Stripe webhook handler when checkout.session.completed fires. This works for Stripe Checkout, Payment Links, Subscriptions, and custom Stripe Elements integrations."
+        "question": "Работает ли OpenPanel со Stripe Checkout или Payment Links?",
+        "answer": "Да. Отправьте op.track('CheckoutStarted') со страницы товара при клике на кнопку покупки, затем отправьте op.track('Purchase', {revenue, currency, orderId}) из обработчика вебхука Stripe при событии checkout.session.completed. Работает для Stripe Checkout, Payment Links, подписок и кастомных интеграций на Stripe Elements."
       },
       {
-        "question": "Will I need a cookie consent banner with OpenPanel on my store?",
-        "answer": "Not for analytics. OpenPanel is cookieless and doesn't process personal data — no consent banner is required under GDPR or CCPA for analytics tracking. You may still need a consent banner for marketing pixels (Meta, Google Ads) if you use them, but you can drop it for analytics-only sites."
+        "question": "Понадобится ли баннер согласия на cookies с OpenPanel в магазине?",
+        "answer": "Для аналитики — нет. OpenPanel работает без cookies и не обрабатывает персональные данные — по GDPR и CCPA баннер согласия для аналитики не требуется. Для маркетинговых пикселей (Meta, Google Ads), если вы их используете, баннер может понадобиться, но для сайтов с одной аналитикой от него можно отказаться."
       },
       {
-        "question": "Will OpenPanel slow down my checkout?",
-        "answer": "OpenPanel's JavaScript SDK is 2.3 KB gzipped. GA4 is 50 KB. Mixpanel is 60 KB. Performance impact at checkout is negligible — far below the threshold that affects Core Web Vitals or conversion."
+        "question": "Замедлит ли OpenPanel мой checkout?",
+        "answer": "JavaScript SDK OpenPanel весит 2.3 КБ в gzip. GA4 — 50 КБ. Mixpanel — 60 КБ. Влияние на производительность checkout ничтожно — значительно ниже порога, влияющего на Core Web Vitals и конверсию."
       },
       {
-        "question": "How does OpenPanel pricing compare to Mixpanel for a busy store?",
-        "answer": "A store with 20K sessions/month and 50 events per session fires 1M events. Mixpanel charges roughly $200-300/mo at that volume. Heap is similar. OpenPanel's cloud costs $90/mo for 1M events, or $0/mo if self-hosted. At Black Friday traffic spikes, the gap widens — Mixpanel scales with overages, OpenPanel stays at the same monthly tier."
+        "question": "Как тарифы OpenPanel сравниваются с Mixpanel для загруженного магазина?",
+        "answer": "Магазин с 20 тыс. сессий в месяц и 50 событиями за сессию отправляет 1 млн событий. Mixpanel на таком объёме стоит примерно $200–300 в месяц. Heap — похоже. Облако OpenPanel стоит $90/мес за 1 млн событий или $0/мес при self-hosting. На пиках Чёрной пятницы разрыв растёт: Mixpanel масштабируется с доплатами за перерасход, OpenPanel остаётся на том же месячном тарифе."
       },
       {
-        "question": "Can I track multi-store setups (Shopify Plus with multiple stores)?",
-        "answer": "Yes. OpenPanel supports unlimited projects per account, so you can track each store as a separate project, or roll them all up into one project and segment by store_id. Both patterns work — pick whichever matches your reporting needs."
+        "question": "Можно ли отслеживать мультимагазинные конфигурации (Shopify Plus с несколькими магазинами)?",
+        "answer": "Да. OpenPanel поддерживает неограниченное число проектов в аккаунте: отслеживайте каждый магазин отдельным проектом или соберите всё в один проект с сегментацией по store_id. Оба подхода работают — выберите тот, что подходит под вашу отчётность."
       }
     ]
   },
   "related_links": {
     "guides": [
-      { "title": "Ecommerce tracking setup", "url": "/guides/ecommerce-tracking" },
-      { "title": "Track custom events", "url": "/guides/track-custom-events" }
+      {
+        "title": "Настройка отслеживания e-commerce",
+        "url": "/guides/ecommerce-tracking"
+      },
+      {
+        "title": "Отслеживание кастомных событий",
+        "url": "/guides/track-custom-events"
+      }
     ],
     "articles": [
-      { "title": "Cookieless analytics explained", "url": "/articles/cookieless-analytics" },
-      { "title": "Open source analytics tools survey", "url": "/articles/self-hosted-web-analytics" }
+      {
+        "title": "Аналитика без cookies: как это работает",
+        "url": "/articles/cookieless-analytics"
+      },
+      {
+        "title": "Обзор open source инструментов аналитики",
+        "url": "/articles/self-hosted-web-analytics"
+      }
     ],
     "comparisons": [
-      { "title": "OpenPanel vs Google Analytics", "url": "/compare/google-analytics-alternative" },
-      { "title": "OpenPanel vs Mixpanel", "url": "/compare/mixpanel-alternative" },
-      { "title": "OpenPanel vs Plausible", "url": "/compare/plausible-alternative" }
+      {
+        "title": "OpenPanel против Google Analytics",
+        "url": "/compare/google-analytics-alternative"
+      },
+      {
+        "title": "OpenPanel против Mixpanel",
+        "url": "/compare/mixpanel-alternative"
+      },
+      {
+        "title": "OpenPanel против Plausible",
+        "url": "/compare/plausible-alternative"
+      }
     ]
   },
   "ctas": {
     "primary": {
-      "label": "Try OpenPanel Free",
+      "label": "Попробуйте OpenPanel бесплатно",
       "href": "https://dashboard.openpanel.dev/onboarding"
     },
     "secondary": {
-      "label": "View Source on GitHub",
+      "label": "Исходный код на GitHub",
       "href": "https://github.com/Openpanel-dev/openpanel"
     }
   }

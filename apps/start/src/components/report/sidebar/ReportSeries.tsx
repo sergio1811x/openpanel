@@ -199,7 +199,7 @@ export function ReportSeries() {
 
   return (
     <div>
-      <h3 className="mb-2 font-medium">Metrics</h3>
+      <h3 className="mb-2 font-medium">Метрики</h3>
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
@@ -229,7 +229,7 @@ export function ReportSeries() {
                     <>
                       <div className="flex-1 flex flex-col gap-2">
                         <InputEnter
-                          placeholder="eg: A+B"
+                          placeholder="напр.: A+B"
                           value={event.formula}
                           onChangeValue={(value) => {
                             dispatchChangeFormula({
@@ -240,7 +240,7 @@ export function ReportSeries() {
                         />
                         {showDisplayNameInput && (
                           <Input
-                            placeholder={`Name: Formula (${alphabetIds[index]})`}
+                            placeholder={`Название: Формула (${alphabetIds[index]})`}
                             defaultValue={event.displayName}
                             onChange={(e) => {
                               dispatchChangeFormula({
@@ -289,7 +289,7 @@ export function ReportSeries() {
                                         );
                                       }}
                                     />
-                                    Hide series {alphaId} from chart
+                                    Скрыть серию {alphaId} на графике
                                   </label>
                                 );
                               })}
@@ -345,14 +345,14 @@ export function ReportSeries() {
                           );
                         }}
                         items={eventNames}
-                        placeholder="Select event"
+                        placeholder="Выберите событие"
                       />
                       {showDisplayNameInput && (
                         <Input
                           placeholder={
                             (event as IChartEventItem & { type: 'event' }).name
                               ? `${(event as IChartEventItem & { type: 'event' }).name} (${alphabetIds[index]})`
-                              : 'Display name'
+                              : 'Отображаемое имя'
                           }
                           defaultValue={
                             (event as IChartEventItem & { type: 'event' })
@@ -408,7 +408,7 @@ export function ReportSeries() {
                     );
                   }
                 }}
-                placeholder="Select event"
+                placeholder="Выберите событие"
                 items={eventNames}
               />
               {showFormula && (
@@ -427,7 +427,7 @@ export function ReportSeries() {
                     );
                   }}
                 >
-                  Add Formula
+                  Добавить формулу
                   <PlusIcon className="size-4 ml-auto text-muted-foreground" />
                 </Button>
               )}

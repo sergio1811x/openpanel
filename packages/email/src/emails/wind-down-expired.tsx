@@ -26,7 +26,7 @@ export const zWindDownExpired = z.object({
 });
 
 const formatEvents = (count: number) =>
-  new Intl.NumberFormat('en-US').format(count);
+  new Intl.NumberFormat('ru-RU').format(count);
 
 export type Props = z.infer<typeof zWindDownExpired>;
 export default WindDownExpired;
@@ -44,27 +44,28 @@ export function WindDownExpired({
   highlight,
   unsubscribeUrl,
 }: Props & { unsubscribeUrl?: string }) {
-  const greeting = <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>;
+  const greeting = <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>;
   const projectLabel =
     projectNames.length === 1
       ? projectNames[0]
       : projectNames.length > 1
-        ? `${projectNames[0]} and ${projectNames.length - 1} more`
+        ? `${projectNames[0]} и ещё ${projectNames.length - 1}`
         : undefined;
   const mcpPitch = (
     <Text>
-      A lot has shipped since your trial — including our{' '}
+      С момента Вашего пробного периода появилось много нового — в том числе
+      наш{' '}
       <Link href={withUtm('https://openpanel.dev/docs/mcp', 'wind-down-expired')}>
-        MCP server
+        MCP-сервер
       </Link>
-      : connect Claude, Cursor, or any MCP client and ask questions about this
-      data in plain English.
+      : подключите Claude, Cursor или любой MCP-клиент и задавайте вопросы по
+      этим данным обычным языком.
     </Text>
   );
   const cta = (
     <Text>
       <Button href={withUtm(billingUrl, 'wind-down-expired')}>
-        Choose a plan
+        Выбрать тариф
       </Button>
     </Text>
   );
@@ -75,32 +76,32 @@ export function WindDownExpired({
       <Layout unsubscribeUrl={unsubscribeUrl}>
         {greeting}
         <Text>
-          Your OpenPanel tracking is still running
-          {trialEndedDate ? `, even though your trial ended ${trialEndedDate}` : ''}
+          Отслеживание OpenPanel всё ещё работает
+          {trialEndedDate ? `, хотя Ваш пробный период закончился ${trialEndedDate}` : ''}
           .
           {recentEventsCount
-            ? ` You've sent ${formatEvents(recentEventsCount)} events in the last 30 days and we've recorded every one of them.`
-            : ' Your SDKs are still sending and we are still recording.'}
+            ? ` За последние 30 дней от Вас поступило событий: ${formatEvents(recentEventsCount)} — и мы записали каждое из них.`
+            : ' Ваши SDK продолжают отправлять данные, и мы продолжаем их записывать.'}
         </Text>
         {highlight ? <Text>{highlight}</Text> : null}
         <Text>
-          I'd rather tell you than let it lapse quietly: on {blockDate} we stop
-          accepting events from your projects. Your SDKs will keep firing, but
-          nothing will be recorded, and your history gets a permanent gap
-          starting that day.
+          Лучше скажу прямо, чем позволю этому тихо завершиться: {blockDate} мы
+          перестанем принимать события из Ваших проектов. SDK продолжат
+          отправлять запросы, но ничего не будет записываться, и в истории с
+          этого дня останется постоянный пробел.
         </Text>
         <Text>
           {recommendedPlan
-            ? `For what you're actually sending, that's ${recommendedPlan}.`
-            : 'Plans start at $2.50 a month.'}{' '}
-          Subscribe before {blockDate} and nothing changes — same data, same
-          setup, dashboard unlocked.
+            ? `При Вашем текущем объёме это ${recommendedPlan}.`
+            : 'Тарифы начинаются с $2.50 в месяц.'}{' '}
+          Оформите подписку до {blockDate} — и ничего не изменится: те же
+          данные, та же настройка, дашборд разблокирован.
         </Text>
         {cta}
         {mcpPitch}
         <Text>
-          If the price is the blocker, or you only need part of what you're
-          sending, reply and we'll work something out.
+          Если проблема в цене или Вам нужна лишь часть отправляемого,
+          ответьте на письмо — что-нибудь придумаем.
         </Text>
         <Text>Carl</Text>
       </Layout>
@@ -113,24 +114,25 @@ export function WindDownExpired({
       <Layout unsubscribeUrl={unsubscribeUrl}>
         {greeting}
         <Text>
-          Your trial ended{trialEndedDate ? ` ${trialEndedDate}` : ''}, so the
-          dashboard is locked. Your data
-          {projectLabel ? ` from ${projectLabel}` : ''} is still here —
+          Пробный период закончился{trialEndedDate ? ` ${trialEndedDate}` : ''},
+          поэтому дашборд заблокирован. Ваши данные
+          {projectLabel ? ` из ${projectLabel}` : ''} всё ещё здесь —
           {eventsCount
-            ? ` all ${formatEvents(eventsCount)} events of it.`
-            : ' everything you tracked is stored.'}
+            ? ` все собранные события (${formatEvents(eventsCount)}) на месте.`
+            : ' всё, что Вы отслеживали, сохранено.'}
         </Text>
         <Text>
-          Nothing has been sent in a while, so I'm assuming you moved on. If
-          that's right you can ignore this; I'll close the workspace down over
-          the next few weeks and send a reminder before anything is removed.
+          Давно ничего не поступало, поэтому я предполагаю, что Вы ушли дальше.
+          Если так, можете проигнорировать это письмо: в ближайшие недели я
+          закрою рабочее пространство и отправлю напоминание перед удалением
+          чего-либо.
         </Text>
         <Text>
-          If you'd rather pick it back up,{' '}
+          Если хотите продолжить,{' '}
           {recommendedPlan
-            ? `a plan for your volume is ${recommendedPlan}`
-            : 'plans start at $2.50 a month'}{' '}
-          and everything resumes where it left off.
+            ? `тариф под Ваш объём — ${recommendedPlan}`
+            : 'тарифы начинаются с $2.50 в месяц'}{' '}
+          и всё продолжится с того места, где остановилось.
         </Text>
         {cta}
         {mcpPitch}
@@ -144,17 +146,17 @@ export function WindDownExpired({
     <Layout unsubscribeUrl={unsubscribeUrl}>
       {greeting}
       <Text>
-        Your OpenPanel trial has ended. No events ever reached us, so there's
-        nothing stored and nothing for you to lose.
+        Ваш пробный период OpenPanel закончился. События до нас так и не дошли,
+        поэтому хранить нечего и терять Вам нечего.
       </Text>
       <Text>
-        I'll close the workspace down over the next few weeks unless you pick a
-        plan. You'll get a reminder before anything is removed.
+        В ближайшие недели я закрою рабочее пространство, если Вы не оформите
+        тариф. Перед удалением чего-либо Вы получите напоминание.
       </Text>
       {cta}
       <Text>
-        If something got in the way during setup, I'd genuinely like to know.
-        One line is plenty.
+        Если на этапе настройки что-то помешало, мне действительно важно это
+        узнать. Достаточно одной строки.
       </Text>
       <Text>Carl</Text>
     </Layout>
@@ -164,14 +166,14 @@ export function WindDownExpired({
 WindDownExpired.PreviewProps = {
   firstName: 'Alex',
   billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
-  blockDate: 'March 14',
-  trialEndedDate: 'November 3, 2025',
-  recommendedPlan: '100K events per month for $20.00',
+  blockDate: '14 марта',
+  trialEndedDate: '3 ноября 2025 г.',
+  recommendedPlan: '100 000 событий в месяц за $20.00',
   hasData: true,
   stillTracking: true,
   eventsCount: 842_110,
   recentEventsCount: 128_400,
   projectNames: ['acme-web', 'acme-docs'],
   highlight:
-    'acme-web had 12,400 visitors in the last 30 days, peaking at 840 on November 12 — and /pricing was the page they visited most.',
+    'acme-web получил 12 400 посетителей за последние 30 дней с пиком 840 12 ноября — а /pricing стала самой посещаемой страницей.',
 };

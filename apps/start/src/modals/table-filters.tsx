@@ -42,7 +42,7 @@ const Heading = ({
 export default function TableFilters({
   urlKey,
   categories,
-  title = 'Filters',
+  title = 'Фильтры',
 }: TableFiltersProps) {
   const [filters, setFilters] = useTableFilters(urlKey);
 
@@ -90,12 +90,12 @@ export default function TableFilters({
   return (
     <SheetContent className="[&>button.absolute]:hidden">
       <ModalHeader title={title} />
-      <Heading icon={SlidersHorizontal} title="Filters" />
+      <Heading icon={SlidersHorizontal} title="Фильтры" />
       <div className="flex flex-col gap-2">
         <div className={cn('bg-card rounded-lg border')}>
           {filters.length === 0 && (
             <div className="p-4 text-center text-sm text-muted-foreground">
-              No filters selected
+              Фильтры не выбраны
             </div>
           )}
           {filters.map((filter) => {
@@ -156,7 +156,7 @@ export default function TableFilters({
               className="w-full"
               icon={FilterIcon}
             >
-              Add filter
+              Добавить фильтр
             </Button>
           )}
         </PropertiesCombobox>

@@ -67,7 +67,7 @@ export default function BillingUsage({ organization }: Props) {
   const wrapper = (node: React.ReactNode) => (
     <Widget className="w-full">
       <WidgetHead className="flex items-center justify-between">
-        <span className="title">Usage</span>
+        <span className="title">Использование</span>
       </WidgetHead>
       <WidgetBody>{node}</WidgetBody>
     </Widget>
@@ -84,7 +84,7 @@ export default function BillingUsage({ organization }: Props) {
   if (usageQuery.isError) {
     return wrapper(
       <div className="center-center p-8 font-medium">
-        Issues loading usage data
+        Проблемы при загрузке данных об использовании
       </div>
     );
   }
@@ -94,7 +94,7 @@ export default function BillingUsage({ organization }: Props) {
     !usageQuery.data?.some((item) => item.count !== 0)
   ) {
     return wrapper(
-      <div className="center-center p-8 font-medium">No usage data yet</div>
+      <div className="center-center p-8 font-medium">Данных об использовании пока нет</div>
     );
   }
 
@@ -173,7 +173,7 @@ export default function BillingUsage({ organization }: Props) {
         {organization.hasSubscription ? (
           <>
             <Card
-              title="Period"
+              title="Период"
               value={
                 organization.subscriptionCurrentPeriodStart &&
                 organization.subscriptionCurrentPeriodEnd
@@ -182,7 +182,7 @@ export default function BillingUsage({ organization }: Props) {
               }
             />
             <Card
-              title="Left to use"
+              title="Осталось"
               value={
                 subscriptionPeriodEventsLimit === 0
                   ? '👀'
@@ -195,22 +195,22 @@ export default function BillingUsage({ organization }: Props) {
               }
             />
             <Card
-              title="Events count"
+              title="Событий"
               value={number.format(subscriptionPeriodEventsCount)}
             />
             <Card
-              title="Limit"
+              title="Лимит"
               value={number.format(subscriptionPeriodEventsLimit)}
             />
           </>
         ) : (
           <>
             <div className="col-span-2">
-              <Card title="Subscription" value={'No active subscription'} />
+              <Card title="Подписка" value={'Нет активной подписки'} />
             </div>
             <div className="col-span-2">
               <Card
-                title="Events from last 30 days"
+                title="События за последние 30 дней"
                 value={number.format(
                   sum(usageQuery.data?.map((item) => item.count) ?? [])
                 )}
@@ -222,7 +222,7 @@ export default function BillingUsage({ organization }: Props) {
       {/* Events Chart */}
       <div className="space-y-2">
         <h3 className="font-medium text-muted-foreground text-sm">
-          {useWeeklyIntervals ? 'Weekly Events' : 'Daily Events'}
+          {useWeeklyIntervals ? 'События по неделям' : 'События по дням'}
         </h3>
         <div className="h-[250px] max-h-[300px] w-full p-4">
           <ResponsiveContainer>
@@ -271,13 +271,13 @@ function EventsTooltip({ useWeekly, ...props }: { useWeekly: boolean } & any) {
           ? payload.weekRange
           : payload?.date
             ? formatDate(new Date(payload.date))
-            : 'Unknown date'}
+            : 'Неизвестная дата'}
       </div>
       <div className="flex items-center gap-2">
         <div className="h-10 w-1 rounded-full bg-chart-0" />
         <div className="col gap-1">
           <div className="text-muted-foreground text-sm">
-            Events {useWeekly ? 'this week' : 'this day'}
+            События {useWeekly ? 'за эту неделю' : 'за этот день'}
           </div>
           <div className="font-semibold text-chart-0 text-lg">
             {number.format(payload.count)}
@@ -298,11 +298,11 @@ function TotalTooltip(props: any) {
 
   return (
     <div className="flex min-w-[180px] flex-col gap-2 rounded-xl border bg-card p-3 shadow-xl">
-      <div className="text-muted-foreground text-sm">Total Events</div>
+      <div className="text-muted-foreground text-sm">Всего событий</div>
       <div className="flex items-center gap-2">
         <div className="h-10 w-1 rounded-full bg-chart-2" />
         <div className="col gap-1">
-          <div className="text-muted-foreground text-sm">Your events count</div>
+          <div className="text-muted-foreground text-sm">Ваши события</div>
           <div className="font-semibold text-chart-2 text-lg">
             {number.format(payload.count)}
           </div>
@@ -312,7 +312,7 @@ function TotalTooltip(props: any) {
         <div className="flex items-center gap-2">
           <div className="h-10 w-1 rounded-full border-2 border-chart-1 border-dashed" />
           <div className="col gap-1">
-            <div className="text-muted-foreground text-sm">Your tier limit</div>
+            <div className="text-muted-foreground text-sm">Ваш лимит тарифа</div>
             <div className="font-semibold text-chart-1 text-lg">
               {number.format(payload.limit)}
             </div>

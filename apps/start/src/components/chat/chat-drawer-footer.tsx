@@ -61,7 +61,7 @@ export function ChatDrawerFooter() {
           ref={textareaRef}
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Ask anything about your data…"
+          placeholder="Спросите о чём угодно по Вашим данным…"
           rows={2}
           className={cn(
             'block w-full bg-transparent text-sm leading-[1.5] text-foreground',
@@ -86,7 +86,7 @@ export function ChatDrawerFooter() {
               variant="secondary"
               className="size-7 rounded-md shrink-0"
               onClick={stop}
-              aria-label="Stop generating"
+              aria-label="Остановить генерацию"
             >
               <StopCircleIcon className="size-3.5" />
             </Button>
@@ -97,7 +97,7 @@ export function ChatDrawerFooter() {
               variant="default"
               className="size-7 rounded-md shrink-0"
               disabled={!text.trim()}
-              aria-label="Send message"
+              aria-label="Отправить сообщение"
             >
               <ArrowUpIcon className="size-3.5" />
             </Button>

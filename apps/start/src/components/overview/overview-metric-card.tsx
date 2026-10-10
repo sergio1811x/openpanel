@@ -67,7 +67,7 @@ export function OverviewMetricCard({
     : (metric.previous ?? null);
   const displayLabel = hovered
     ? formatDate(new Date(hovered.date))
-    : (range ? timeWindows[range]?.label : 'Total') || 'Total';
+    : (range ? timeWindows[range]?.label : 'Всего') || 'Всего';
 
   const diff = getPreviousMetric(displayValue, displayPrev);
 
@@ -173,14 +173,14 @@ function MetricValue({ value, unit }: { value: number; unit?: MetricUnit }) {
   if (unit === 'date') {
     return (
       <span className={VALUE_CLASS}>
-        {value ? formatAbsoluteDate(new Date(value)) : 'N/A'}
+        {value ? formatAbsoluteDate(new Date(value)) : 'Н/Д'}
       </span>
     );
   }
 
   if (unit === 'timeAgo') {
     return (
-      <span className={VALUE_CLASS}>{value ? timeAgo(new Date(value)) : 'N/A'}</span>
+      <span className={VALUE_CLASS}>{value ? timeAgo(new Date(value)) : 'Н/Д'}</span>
     );
   }
 

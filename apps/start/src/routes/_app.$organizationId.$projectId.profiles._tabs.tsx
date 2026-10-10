@@ -23,9 +23,9 @@ function Component() {
   const router = useRouter();
 
   const { activeTab, tabs } = usePageTabs([
-    { id: 'identified', label: 'Identified' },
-    { id: 'anonymous', label: 'Anonymous' },
-    { id: 'power-users', label: 'Power users' },
+    { id: 'identified', label: 'Идентифицированные' },
+    { id: 'anonymous', label: 'Анонимные' },
+    { id: 'power-users', label: 'Активные пользователи' },
   ]);
 
   const handleTabChange = (tabId: string) => {
@@ -39,8 +39,8 @@ function Component() {
   return (
     <div className="container p-8">
       <PageHeader
-        title="Profiles"
-        description="If you haven't called identify your profiles will be anonymous"
+        title="Профили"
+        description="Если вы не вызывали identify, ваши профили будут анонимными"
       />
 
       <Tabs

@@ -31,8 +31,8 @@ export function ReportSaveButton({ className }: ReportSaveButtonProps) {
     trpc.report.update.mutationOptions({
       onSuccess(res) {
         dispatch(resetDirty());
-        toast('Success', {
-          description: 'Report updated.',
+        toast('Успешно', {
+          description: 'Отчёт обновлён.',
         });
         queryClient.invalidateQueries(
           trpc.report.list.queryFilter({
@@ -61,7 +61,7 @@ export function ReportSaveButton({ className }: ReportSaveButtonProps) {
         }}
         icon={SaveIcon}
       >
-        Update
+        Обновить
       </Button>
     );
   }
@@ -77,7 +77,7 @@ export function ReportSaveButton({ className }: ReportSaveButtonProps) {
       icon={SaveIcon}
       loading={isLoading}
     >
-      Save
+      Сохранить
     </Button>
   );
 }

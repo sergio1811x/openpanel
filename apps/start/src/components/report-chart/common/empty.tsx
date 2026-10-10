@@ -9,7 +9,7 @@ import {
 import { useReportChartContext } from '../context';
 
 export function ReportChartEmpty({
-  title = 'No data',
+  title = 'Нет данных',
   children,
 }: {
   title?: string;
@@ -28,17 +28,17 @@ export function ReportChartEmpty({
             strokeWidth={1.2}
             className="size-8 animate-pulse text-muted-foreground"
           />
-          <div className="text-muted-foreground">Start here</div>
+          <div className="text-muted-foreground">Начните здесь</div>
         </div>
         <ForkliftIcon
           strokeWidth={1.2}
           className="mb-4 size-1/3 max-w-40 animate-pulse text-muted-foreground"
         />
         <div className="font-medium text-muted-foreground">
-          Ready when you're
+          Мы готовы, когда готовы вы
         </div>
         <div className="text-muted-foreground mt-2">
-          Pick atleast one event to start visualize
+          Выберите хотя бы одно событие, чтобы начать визуализацию
         </div>
       </div>
     );

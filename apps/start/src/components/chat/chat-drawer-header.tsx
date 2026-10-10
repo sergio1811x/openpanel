@@ -55,7 +55,7 @@ export function ChatDrawerHeader({
   //   3. "New chat" fallback when nothing is known yet
   const persistedTitle =
     conversations?.find((c) => c.id === conversationId)?.title ?? null;
-  const activeTitle = streamingTitle ?? persistedTitle ?? 'New chat';
+  const activeTitle = streamingTitle ?? persistedTitle ?? 'Новый чат';
 
   return (
     <header className="flex items-center justify-between gap-2 border-b px-3 py-2">
@@ -74,11 +74,11 @@ export function ChatDrawerHeader({
             align="start"
             className="w-72 max-h-96 overflow-y-auto"
           >
-            <DropdownMenuLabel>Conversations</DropdownMenuLabel>
+            <DropdownMenuLabel>Диалоги</DropdownMenuLabel>
             <DropdownMenuSeparator />
             {(!conversations || conversations.length === 0) && (
               <div className="px-2 py-3 text-sm text-muted-foreground">
-                No conversations yet. Start typing to create one.
+                Диалогов пока нет. Начните писать, чтобы создать первый.
               </div>
             )}
             {conversations?.map((c) => (
@@ -87,7 +87,7 @@ export function ChatDrawerHeader({
                 className="flex items-center justify-between gap-2"
                 onSelect={() => switchConversation(c.id)}
               >
-                <span className="truncate">{c.title ?? 'Untitled chat'}</span>
+                <span className="truncate">{c.title ?? 'Чат без названия'}</span>
                 <InlineDeleteButton
                   onConfirm={() => deleteMutation.mutate({ id: c.id })}
                 />
@@ -101,8 +101,8 @@ export function ChatDrawerHeader({
           variant="ghost"
           size="sm"
           onClick={() => newConversation()}
-          aria-label="New conversation"
-          title="New conversation"
+          aria-label="Новый диалог"
+          title="Новый диалог"
         >
           <MessageSquarePlusIcon className="size-4" />
         </Button>
@@ -110,7 +110,7 @@ export function ChatDrawerHeader({
           variant="ghost"
           size="sm"
           onClick={onClose}
-          aria-label="Close chat"
+          aria-label="Закрыть чат"
         >
           <XIcon className="size-4" />
         </Button>
@@ -167,8 +167,8 @@ function InlineDeleteButton({ onConfirm }: { onConfirm: () => void }) {
           ? 'shrink-0 rounded bg-destructive p-1 text-white hover:bg-destructive/90 transition-colors'
           : 'shrink-0 rounded p-0.5 text-muted-foreground hover:text-destructive transition-colors'
       }
-      aria-label={armed ? 'Confirm delete' : 'Delete conversation'}
-      title={armed ? 'Click again to confirm' : 'Delete'}
+      aria-label={armed ? 'Подтвердить удаление' : 'Удалить диалог'}
+      title={armed ? 'Нажмите ещё раз для подтверждения' : 'Удалить'}
     >
       {armed ? (
         <Trash2Icon className="size-3" />

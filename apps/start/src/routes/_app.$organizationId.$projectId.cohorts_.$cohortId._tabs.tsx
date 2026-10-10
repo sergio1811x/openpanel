@@ -70,7 +70,7 @@ function Component() {
   const refreshMutation = useMutation(
     trpc.cohort.refresh.mutationOptions({
       onSuccess() {
-        toast('Success', { description: 'Cohort refresh queued.' });
+        toast('Успешно', { description: 'Обновление кохорты запланировано.' });
         queryClient.invalidateQueries(trpc.cohort.get.pathFilter());
       },
       onError: handleError,
@@ -86,17 +86,17 @@ function Component() {
       const csv = cohortMembersToCSV(result.profileIds);
       downloadCSV(csv, `${c.name}-members.csv`);
     } catch {
-      toast.error('Failed to download cohort members');
+      toast.error('Не удалось скачать участников кохорты');
     }
   }
 
   const { activeTab, tabs } = usePageTabs([
     {
       id: '/$organizationId/$projectId/cohorts/$cohortId',
-      label: 'Overview',
+      label: 'Обзор',
     },
-    { id: 'members', label: 'Members' },
-    { id: 'events', label: 'Events' },
+    { id: 'members', label: 'Участники' },
+    { id: 'events', label: 'События' },
   ]);
 
   const handleTabChange = (tabId: string) => {
@@ -113,7 +113,7 @@ function Component() {
       <PageContainer>
         <div className="flex flex-col items-center justify-center gap-3 py-24 text-muted-foreground">
           <TargetIcon className="size-10 opacity-30" />
-          <p className="text-sm">Cohort not found</p>
+          <p className="text-sm">Кохорта не найдена</p>
         </div>
       </PageContainer>
     );
@@ -130,7 +130,7 @@ function Component() {
               variant="outline"
             >
               <DownloadIcon className="mr-2 size-4" />
-              Download
+              Скачать
             </Button>
             {!c.isStatic && (
               <Button
@@ -140,7 +140,7 @@ function Component() {
                 variant="outline"
               >
                 <RefreshCwIcon className="mr-2 size-4" />
-                Refresh
+                Обновить
               </Button>
             )}
             <Button
@@ -157,13 +157,13 @@ function Component() {
               variant="outline"
             >
               <PencilIcon className="mr-2 size-4" />
-              Edit
+              Изменить
             </Button>
             <Button
               onClick={() =>
                 showConfirm({
-                  title: 'Delete cohort',
-                  text: `Are you sure you want to delete "${c.name}"? This action cannot be undone.`,
+                  title: 'Удаление кохорты',
+                  text: `Вы уверены, что хотите удалить «${c.name}»? Это действие нельзя отменить.`,
                   onConfirm: () => deleteMutation.mutate({ id: c.id }),
                 })
               }
@@ -171,7 +171,7 @@ function Component() {
               variant="outline"
             >
               <Trash2Icon className="mr-2 size-4" />
-              Delete
+              Удалить
             </Button>
           </div>
         }
@@ -182,7 +182,7 @@ function Component() {
             <span className="truncate">{c.name}</span>
             {c.isStatic && (
               <span className="rounded bg-blue-100 px-2 py-0.5 text-xs text-blue-700">
-                Static
+                Статическая
               </span>
             )}
           </div>

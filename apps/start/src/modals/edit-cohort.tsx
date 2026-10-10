@@ -17,7 +17,7 @@ import { popModal } from '.';
 import { ModalContent, ModalHeader } from './Modal/Container';
 
 const validator = z.object({
-  name: z.string().min(1, 'Required'),
+  name: z.string().min(1, 'Обязательное поле'),
   description: z.string().optional(),
   definition: z.any(),
   isStatic: z.boolean().default(false),
@@ -50,7 +50,7 @@ export default function EditCohort(props: EditCohortProps) {
   const mutation = useMutation(
     trpc.cohort.update.mutationOptions({
       onSuccess() {
-        toast('Success', { description: 'Cohort updated.' });
+        toast('Успешно', { description: 'Кохорта обновлена.' });
         queryClient.invalidateQueries(trpc.cohort.pathFilter());
         popModal();
       },
@@ -60,7 +60,7 @@ export default function EditCohort(props: EditCohortProps) {
 
   return (
     <ModalContent className="max-w-3xl">
-      <ModalHeader title="Edit cohort" />
+      <ModalHeader title="Изменение кохорты" />
       <form
         className="flex flex-col gap-4"
         onSubmit={handleSubmit((data) => {
@@ -74,14 +74,14 @@ export default function EditCohort(props: EditCohortProps) {
         })}
       >
         <InputWithLabel
-          label="Name"
-          placeholder="Name of the cohort"
+          label="Название"
+          placeholder="Название кохорты"
           {...register('name')}
         />
 
-        <WithLabel label="Description">
+        <WithLabel label="Описание">
           <Textarea
-            placeholder="Optional description"
+            placeholder="Необязательное описание"
             {...register('description')}
           />
         </WithLabel>
@@ -99,12 +99,12 @@ export default function EditCohort(props: EditCohortProps) {
             )}
           />
           <Label htmlFor="isStatic" className="cursor-pointer text-sm mb-0">
-            Freeze snapshot (don&apos;t auto-refresh)
+            Зафиксировать снимок (без автообновления)
           </Label>
         </div>
 
         <div>
-          <Label className="mb-2 block">Cohort Criteria</Label>
+          <Label className="mb-2 block">Критерии кохорты</Label>
           <Controller
             name="definition"
             control={control}
@@ -119,10 +119,10 @@ export default function EditCohort(props: EditCohortProps) {
 
         <ButtonContainer>
           <Button type="button" variant="outline" onClick={() => popModal()}>
-            Cancel
+            Отмена
           </Button>
           <Button type="submit" disabled={!formState.isDirty}>
-            Save changes
+            Сохранить изменения
           </Button>
         </ButtonContainer>
       </form>

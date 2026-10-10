@@ -80,7 +80,7 @@ export function ReportChartLoading({ things }: { things?: boolean }) {
             isSlow && 'opacity-100',
           )}
         >
-          Stay calm, its coming 🙄
+          Спокойно, данные уже в пути 🙄
         </div>
       </div>
     </div>

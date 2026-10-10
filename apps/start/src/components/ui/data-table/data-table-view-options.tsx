@@ -173,22 +173,22 @@ export function DataTableViewOptions<TData>({
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          aria-label="Toggle columns"
+          aria-label="Показать/скрыть столбцы"
           role="combobox"
           variant="outline"
           size="sm"
           className="ml-auto hidden h-8 lg:flex"
         >
           <Settings2Icon className="size-4 mr-2" />
-          View
+          Вид
           <ChevronsUpDown className="opacity-50 ml-2 size-4" />
         </Button>
       </PopoverTrigger>
       <PopoverContent align="end" className="w-52 p-0">
         <Command>
-          <CommandInput placeholder="Search columns..." />
+          <CommandInput placeholder="Поиск по столбцам..." />
           <CommandList>
-            <CommandEmpty>No columns found.</CommandEmpty>
+            <CommandEmpty>Столбцы не найдены.</CommandEmpty>
             <CommandGroup>
               <DndContext
                 sensors={sensors}
@@ -217,7 +217,7 @@ export function DataTableViewOptions<TData>({
                 className="text-muted-foreground"
               >
                 <RotateCcw className="size-4 mr-2" />
-                Reset to default
+                Сбросить к стандартным
               </CommandItem>
             </CommandGroup>
           </CommandList>

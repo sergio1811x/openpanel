@@ -21,7 +21,7 @@ type Props = {
 
 const Header = ({ framework }: Pick<Props, 'framework'>) => (
   <SheetHeader>
-    <SheetTitle>Instructions for {framework.name}</SheetTitle>
+    <SheetTitle>Инструкция для {framework.name}</SheetTitle>
   </SheetHeader>
 );
 
@@ -33,7 +33,7 @@ const Footer = ({ framework }: Pick<Props, 'framework'>) => (
       onClick={() => popModal()}
       icon={XIcon}
     >
-      Close
+      Закрыть
     </Button>
     <LinkButton
       target="_blank"
@@ -41,7 +41,7 @@ const Footer = ({ framework }: Pick<Props, 'framework'>) => (
       className="flex-1"
       icon={ExternalLinkIcon}
     >
-      More details
+      Подробнее
     </LinkButton>
   </SheetFooter>
 );

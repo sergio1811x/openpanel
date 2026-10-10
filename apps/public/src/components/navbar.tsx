@@ -14,11 +14,11 @@ import { cn } from '@/lib/utils';
 
 const LINKS = [
   {
-    text: 'Home',
+    text: 'Главная',
     url: '/',
   },
   {
-    text: 'Pricing',
+    text: 'Тарифы',
     url: '/pricing',
   },
   // {
@@ -26,11 +26,11 @@ const LINKS = [
   //   url: '/supporter',
   // },
   {
-    text: 'Docs',
+    text: 'Документация',
     url: '/docs',
   },
   {
-    text: 'Articles',
+    text: 'Статьи',
     url: '/articles',
   },
 ];
@@ -204,7 +204,7 @@ function ThemeToggle({ className }: { className?: string }) {
           </motion.div>
         )}
       </AnimatePresence>
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">Переключить тему</span>
     </Button>
   );
 }

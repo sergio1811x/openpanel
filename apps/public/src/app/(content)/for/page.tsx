@@ -8,9 +8,9 @@ import { getPageMetadata } from '@/lib/metadata';
 
 export function generateMetadata(): Metadata {
   return getPageMetadata({
-    title: 'OpenPanel for Your Use Case',
+    title: 'OpenPanel для ваших задач',
     description:
-      'Discover how OpenPanel helps startups, developers, and agencies with privacy-first, open-source web and product analytics.',
+      'Узнайте, как OpenPanel помогает стартапам, разработчикам и агентствам: веб- и продуктовая аналитика с открытым исходным кодом и приоритетом приватности.',
     url: '/for',
   });
 }
@@ -31,8 +31,8 @@ export default async function ForListPage() {
     <HeroContainer divider={false}>
       <SectionHeader
         as="h1"
-        description="See how OpenPanel helps different teams and industries with privacy-first, open-source analytics."
-        title="OpenPanel for Your Use Case"
+        description="Посмотрите, как OpenPanel помогает разным командам и отраслям: аналитика с открытым исходным кодом и приоритетом приватности."
+        title="OpenPanel для ваших задач"
         variant="sm"
       />
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -47,7 +47,7 @@ export default async function ForListPage() {
               {page.seo.description}
             </p>
             <div className="row mt-auto items-center gap-1 pt-2 text-primary text-sm">
-              Learn more <ArrowRightIcon className="size-4" />
+              Подробнее <ArrowRightIcon className="size-4" />
             </div>
           </Link>
         ))}

@@ -43,8 +43,8 @@ const buildClients = (mcpEndpoint: string): AiClient[] => {
       name: 'Claude Desktop',
       description: (
         <>
-          Add the following block to <code>claude_desktop_config.json</code>.
-          You can open it from <strong>Settings → Developer → Edit Config</strong>.
+          Добавьте следующий блок в <code>claude_desktop_config.json</code>. Его
+          можно открыть через <strong>Settings → Developer → Edit Config</strong>.
         </>
       ),
       configFile:
@@ -70,9 +70,9 @@ const buildClients = (mcpEndpoint: string): AiClient[] => {
       name: 'Claude Code (CLI)',
       description: (
         <>
-          Run this once in your terminal. If your setup can't pass headers, use{' '}
-          <code>"{urlWithToken}"</code> as the URL instead and drop the{' '}
-          <code>--header</code> flag.
+          Выполните это один раз в терминале. Если Ваша конфигурация не может
+          передавать заголовки, используйте <code>"{urlWithToken}"</code> как
+          URL вместо этого и уберите флаг <code>--header</code>.
         </>
       ),
       language: 'bash',
@@ -84,8 +84,8 @@ const buildClients = (mcpEndpoint: string): AiClient[] => {
       name: 'Cursor',
       description: (
         <>
-          Add the server to your global config at <code>~/.cursor/mcp.json</code>{' '}
-          or your project config at <code>.cursor/mcp.json</code>.
+          Добавьте сервер в глобальную конфигурацию <code>~/.cursor/mcp.json</code>{' '}
+          или в конфигурацию проекта <code>.cursor/mcp.json</code>.
         </>
       ),
       configFile: '~/.cursor/mcp.json',
@@ -110,8 +110,8 @@ const buildClients = (mcpEndpoint: string): AiClient[] => {
       name: 'Windsurf',
       description: (
         <>
-          Add the server to <code>~/.codeium/windsurf/mcp_config.json</code>.
-          Windsurf accepts both <code>serverUrl</code> and <code>url</code>.
+          Добавьте сервер в <code>~/.codeium/windsurf/mcp_config.json</code>.
+          Windsurf принимает как <code>serverUrl</code>, так и <code>url</code>.
         </>
       ),
       configFile: '~/.codeium/windsurf/mcp_config.json',
@@ -135,8 +135,8 @@ const buildClients = (mcpEndpoint: string): AiClient[] => {
       name: 'VS Code (Copilot)',
       description: (
         <>
-          Add the server to <code>.vscode/mcp.json</code> in your workspace, or
-          to your user-level MCP config.
+          Добавьте сервер в <code>.vscode/mcp.json</code> в Вашем рабочем
+          пространстве или в MCP-конфигурацию уровня пользователя.
         </>
       ),
       configFile: '.vscode/mcp.json',
@@ -161,9 +161,10 @@ const buildClients = (mcpEndpoint: string): AiClient[] => {
       name: 'Raycast',
       description: (
         <>
-          Copy the JSON below, then run the <strong>Install Server</strong>{' '}
-          command in Raycast — it auto-fills the form from your clipboard. The
-          install form takes a URL only, so the token goes in the query string.
+          Скопируйте JSON ниже, затем выполните команду <strong>Install
+          Server</strong> в Raycast — она автоматически заполнит форму из буфера
+          обмена. Форма установки принимает только URL, поэтому токен передаётся
+          в строке запроса.
         </>
       ),
       language: 'json',
@@ -189,42 +190,45 @@ function Component() {
   return (
     <div className="col gap-6">
       <div className="col gap-2">
-        <h2 className="font-semibold text-lg">MCP Server</h2>
+        <h2 className="font-semibold text-lg">MCP-сервер</h2>
         <p className="text-muted-foreground text-sm">
-          Connect any MCP-compatible AI client (Claude, Cursor, Windsurf, …) to
-          your OpenPanel data. The server is read-only and exposes 38 tools for
-          querying events, sessions, profiles, funnels, retention and more.
+          Подключите любой MCP-совместимый AI-клиент (Claude, Cursor,
+          Windsurf, …) к Вашим данным OpenPanel. Сервер работает только в
+          режиме чтения и предоставляет 38 инструментов для запросов событий,
+          сессий, профилей, воронок, удержания и многого другого.
         </p>
       </div>
 
       <div className="col gap-2">
-        <CopyInput label="Endpoint" value={mcpEndpoint} />
+        <CopyInput label="Эндпоинт" value={mcpEndpoint} />
         <p className="text-muted-foreground text-xs">
-          Send your token as an <code>Authorization: Bearer</code> header, with{' '}
-          <code>base64(clientId:clientSecret)</code> in place of{' '}
-          <code>{TOKEN_PLACEHOLDER}</code>. Clients that can't set headers take
-          it as a <code>?token=</code> query param instead.
+          Отправляйте свой токен в заголовке <code>Authorization: Bearer</code>,
+          подставив <code>base64(clientId:clientSecret)</code> вместо{' '}
+          <code>{TOKEN_PLACEHOLDER}</code>. Клиенты, которые не могут задавать
+          заголовки, могут передавать его как query-параметр{' '}
+          <code>?token=</code>.
         </p>
       </div>
 
       <div className="col gap-3 rounded-lg border bg-def-200 p-4">
         <div className="col gap-1">
-          <div className="font-medium">Need a token?</div>
+          <div className="font-medium">Нужен токен?</div>
           <p className="text-muted-foreground text-sm">
-            Only <code>read</code> and <code>root</code> clients can authenticate
-            with MCP. Create one and copy the MCP token from the success screen
-            — it's only shown once.
+            Аутентификацию в MCP проходят только клиенты с типом{' '}
+            <code>read</code> и <code>root</code>. Создайте такой клиент и
+            скопируйте MCP-токен с экрана успешного создания — он показывается
+            только один раз.
           </p>
         </div>
         <div>
           <Button icon={PlusIcon} onClick={() => pushModal('AddClient')}>
-            Create MCP client
+            Создать MCP-клиента
           </Button>
         </div>
       </div>
 
       <div className="col gap-2">
-        <div className="font-medium">Configure your AI client</div>
+        <div className="font-medium">Настройте свой AI-клиент</div>
         <Accordion className="rounded-lg border" collapsible type="single">
           {clients.map((client) => (
             <AccordionItem
@@ -239,7 +243,7 @@ function Component() {
                 </p>
                 {client.configFile && (
                   <p className="text-muted-foreground text-xs">
-                    <span className="font-medium">Config file:</span>{' '}
+                    <span className="font-medium">Файл конфигурации:</span>{' '}
                     <code>{client.configFile}</code>
                   </p>
                 )}
@@ -261,7 +265,7 @@ function Component() {
         target="_blank"
       >
         <ExternalLinkIcon className="h-4 w-4" />
-        Read the full MCP docs
+        Прочитать полную документацию по MCP
       </a>
     </div>
   );

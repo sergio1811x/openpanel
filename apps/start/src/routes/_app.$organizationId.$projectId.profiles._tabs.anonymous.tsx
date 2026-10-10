@@ -15,7 +15,7 @@ export const Route = createFileRoute(
     return {
       meta: [
         {
-          title: createEntityTitle('Anonymous', PAGE_TITLES.PROFILES),
+          title: createEntityTitle('Анонимные', PAGE_TITLES.PROFILES),
         },
       ],
     };

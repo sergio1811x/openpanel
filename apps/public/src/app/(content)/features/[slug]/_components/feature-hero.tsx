@@ -30,7 +30,7 @@ export function FeatureHero({ hero }: FeatureHeroProps) {
               target="_blank"
               rel="noreferrer noopener nofollow"
             >
-              See live demo
+              Смотреть живое демо
             </Link>
           </Button>
         </div>

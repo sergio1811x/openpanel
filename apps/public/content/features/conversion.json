@@ -1,167 +1,167 @@
 {
   "slug": "conversion",
-  "short_name": "Conversion",
+  "short_name": "Конверсии",
   "seo": {
-    "title": "Conversion Tracking - Trends Over Time",
-    "description": "Track conversion rates over time, spot trends, and break down by segments. Like funnels but built for monitoring how conversion changes. Good for A/B testing and growth.",
+    "title": "Отслеживание конверсий — динамика во времени",
+    "description": "Отслеживайте конверсию во времени, замечайте тренды и делайте разбивку по сегментам. Как воронки, но для наблюдения за тем, как меняется конверсия. Подходит для A/B-тестов и роста.",
     "keywords": [
-      "conversion tracking",
-      "conversion rate trends",
-      "a/b testing analytics",
-      "conversion breakdown",
-      "conversion over time"
+      "отслеживание конверсий",
+      "динамика конверсии",
+      "аналитика a/b-тестов",
+      "разбивка конверсии",
+      "конверсия во времени"
     ]
   },
   "hero": {
-    "heading": "Is conversion going up or down?",
-    "subheading": "See how your conversion rates change over days, weeks, and months. Break down by any property to compare variants or campaigns, and catch regressions early.",
+    "heading": "Растёт ли конверсия?",
+    "subheading": "Смотрите, как конверсия меняется по дням, неделям и месяцам. Делайте разбивку по любому свойству, чтобы сравнить варианты или кампании, и замечайте регрессии заранее.",
     "badges": [
-      "Conversion over time",
-      "Breakdown by any property",
-      "A/B test comparison",
-      "AI-powered insights"
+      "Конверсия во времени",
+      "Разбивка по любому свойству",
+      "Сравнение A/B-тестов",
+      "AI-инсайты"
     ]
   },
   "definition": {
-    "title": "What is conversion tracking?",
-    "text": "Conversion tracking measures the rate at which users complete a desired action-like going from `session_start` to `save_recipe`, or from `signup` to `purchase`. You define a **flow** (a start event and an end event), and OpenPanel calculates the conversion rate for every time period you choose.\n\nIf you're familiar with [funnels](/features/funnels), conversions will feel similar. Both measure whether users complete a sequence. The difference is **perspective**:\n\n- **Funnels** are great for understanding *where* users drop off in a multi-step flow. They answer: \"which step loses the most users?\"\n- **Conversions** are great for understanding *trends*. They answer: \"is our conversion getting better or worse over time?\"\n\nWith conversion tracking, you get:\n\n- **Conversion rate over time** - see how your rate trends week over week or day by day. Spot improvements from product changes or regressions from bugs\n- **Average, best, and worst rates** - instantly see your overall average and the specific time periods where conversion peaked or dipped\n- **Breakdowns** - split conversion by any property (device, country, variant, campaign) to compare segments side by side. For **A/B testing**, break down by experiment variant and see which one converts better, with per-period granularity\n- **Total conversions** - absolute numbers alongside rates, so you understand volume as well as percentage\n\nConversion reports in OpenPanel are built on the same events you already track. Define a flow once, and you get a live chart that shows whether your product is converting more or fewer users over time.\n\nNo sampling, no delayed processing. Every event counts, and results update in real time."
+    "title": "Что такое отслеживание конверсий?",
+    "text": "Отслеживание конверсий измеряет долю пользователей, которые совершают целевое действие — например, переходят от `session_start` к `save_recipe` или от `signup` к `purchase`. Вы задаёте **поток** (стартовое и конечное событие), а OpenPanel рассчитывает конверсию для каждого выбранного периода времени.\n\nЕсли вы знакомы с [воронками](/features/funnels), конверсии покажутся похожими. Оба подхода измеряют, доходит ли пользователь до конца последовательности. Разница — в **ракурсе**:\n\n- **Воронки** помогают понять, *где* пользователи отсеиваются в многошаговом потоке. Они отвечают на вопрос: «какой шаг теряет больше всего пользователей?»\n- **Конверсии** помогают понять *динамику*. Они отвечают на вопрос: «наша конверсия со временем растёт или падает?»\n\nС отслеживанием конверсий вы получаете:\n\n- **Конверсию во времени** — смотрите, как меняется показатель неделю к неделе или день к дню. Замечайте улучшения после продуктовых изменений и регрессии из-за багов\n- **Среднюю, лучшую и худшую конверсию** — сразу видите общее среднее значение и конкретные периоды, где конверсия достигала пика или проседала\n- **Разбивки** — разделяйте конверсию по любому свойству (устройство, страна, вариант, кампания), чтобы сравнивать сегменты бок о бок. Для **A/B-тестов** сделайте разбивку по варианту эксперимента и посмотрите, какой конвертит лучше, с детализацией по периодам\n- **Всего конверсий** — абсолютные числа рядом с процентами, чтобы понимать не только долю, но и объём\n\nОтчёты по конверсиям в OpenPanel строятся на тех же событиях, которые вы уже отслеживаете. Задайте поток один раз — и получите живой график, показывающий, конвертирует ли продукт больше или меньше пользователей со временем.\n\nБез сэмплирования и задержек обработки. Каждое событие учитывается, результаты обновляются в реальном времени."
   },
   "capabilities_section": {
-    "title": "What you can do with conversions",
-    "intro": "Monitor, compare, and optimize your most important flows."
+    "title": "Что можно делать с конверсиями",
+    "intro": "Отслеживайте, сравнивайте и оптимизируйте свои самые важные потоки."
   },
   "capabilities": [
     {
-      "title": "Conversion trends over time",
-      "description": "See your conversion rate plotted over days, weeks, or months. Spot trends, seasonal patterns, and the impact of product changes."
+      "title": "Динамика конверсии во времени",
+      "description": "Смотрите график конверсии по дням, неделям или месяцам. Замечайте тренды, сезонность и влияние продуктовых изменений."
     },
     {
-      "title": "Breakdowns for A/B testing",
-      "description": "Split conversion by any property-experiment variant, device, country, or traffic source. Compare lines on the same chart to see which segment converts best."
+      "title": "Разбивки для A/B-тестов",
+      "description": "Разделяйте конверсию по любому свойству — варианту эксперимента, устройству, стране или источнику трафика. Сравнивайте линии на одном графике, чтобы увидеть, какой сегмент конвертит лучше."
     },
     {
-      "title": "Smart insights",
-      "description": "OpenPanel highlights your best and worst performing periods and breakdowns automatically. See which variant had the highest average rate and when the lowest dip occurred."
+      "title": "Умные инсайты",
+      "description": "OpenPanel автоматически подсвечивает лучшие и худшие периоды и разбивки. Смотрите, у какого варианта самая высокая средняя конверсия и когда случился самый глубокий провал."
     },
     {
-      "title": "Flexible flow definition",
-      "description": "Define a conversion as any two events: a start (e.g. session_start) and a goal (e.g. purchase). Change events or time windows without re-instrumenting."
+      "title": "Гибкое определение потока",
+      "description": "Определяйте конверсию как любую пару событий: старт (например, session_start) и цель (например, purchase). Меняйте события или периоды без повторной инструментировки."
     },
     {
-      "title": "Per-period detail table",
-      "description": "Below the chart, a table shows conversion rate for every period (week, day, month) for each segment. Sort and search to find exactly the data point you need."
+      "title": "Детальная таблица по периодам",
+      "description": "Под графиком — таблица с конверсией для каждого периода (неделя, день, месяц) по каждому сегменту. Сортируйте и ищите нужную точку данных."
     },
     {
-      "title": "Save and share reports",
-      "description": "Save conversion reports with their configuration and add them to dashboards. Share with your team so everyone monitors the same metrics."
+      "title": "Сохранение и шаринг отчётов",
+      "description": "Сохраняйте отчёты по конверсиям вместе с настройками и добавляйте их на дашборды. Делитесь с командой, чтобы все следили за одними метриками."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-conversion.webp",
-      "alt": "Conversion report showing rate over time with average, best, and worst metrics",
-      "caption": "Track conversion trends over time. See average rate, total conversions, and identify your best and worst performing periods."
+      "alt": "Отчёт по конверсии с динамикой во времени и метриками среднего, лучшего и худшего значения",
+      "caption": "Отслеживайте динамику конверсии во времени. Смотрите среднюю конверсию, всего конверсий и находите лучшие и худшие периоды."
     },
     {
       "src": "/features/feature-conversion-breakdown.webp",
-      "alt": "Conversion report with breakdown by platform showing Android vs iOS",
-      "caption": "Break down conversion by any property. Compare segments side by side-perfect for A/B tests, platform comparisons, and campaign analysis."
+      "alt": "Отчёт по конверсии с разбивкой по платформе: Android против iOS",
+      "caption": "Разбивайте конверсию по любому свойству. Сравнивайте сегменты бок о бок — идеально для A/B-тестов, сравнения платформ и анализа кампаний."
     }
   ],
   "how_it_works": {
-    "title": "How conversion tracking works",
-    "intro": "Set up a conversion report in seconds using events you already track.",
+    "title": "Как работает отслеживание конверсий",
+    "intro": "Настройте отчёт по конверсиям за секунды на событиях, которые уже отслеживаете.",
     "steps": [
       {
-        "title": "Pick your events",
-        "description": "Choose a start event (e.g. session_start) and a goal event (e.g. save_recipe, purchase). These are events you already send-no extra instrumentation."
+        "title": "Выберите события",
+        "description": "Укажите стартовое событие (например, session_start) и целевое (например, save_recipe, purchase). Это события, которые вы уже отправляете — без дополнительной инструментировки."
       },
       {
-        "title": "Choose your time range and granularity",
-        "description": "Select a date range and whether to view conversion by day, week, or month. OpenPanel calculates the rate for each period."
+        "title": "Задайте период и гранулярность",
+        "description": "Выберите диапазон дат и режим просмотра конверсии — по дням, неделям или месяцам. OpenPanel рассчитает показатель для каждого периода."
       },
       {
-        "title": "Add breakdowns (optional)",
-        "description": "Break down by device, country, experiment variant, or any event property. Each breakdown value gets its own line on the chart and row in the table."
+        "title": "Добавьте разбивки (опционально)",
+        "description": "Разбейте по устройству, стране, варианту эксперимента или любому свойству события. Каждое значение разбивки получит свою линию на графике и строку в таблице."
       },
       {
-        "title": "Monitor trends and act",
-        "description": "Watch your conversion rate over time. Spot regressions early, validate that product changes improve conversion, and compare A/B test variants with real data."
+        "title": "Следите за трендами и действуйте",
+        "description": "Наблюдайте за конверсией во времени. Рано замечайте регрессии, проверяйте, улучшают ли продуктовые изменения конверсию, и сравнивайте варианты A/B-тестов на реальных данных."
       }
     ]
   },
   "use_cases": {
-    "title": "Who uses conversion tracking",
-    "intro": "Teams that need to monitor and improve conversion over time.",
+    "title": "Кто использует отслеживание конверсий",
+    "intro": "Команды, которым важно отслеживать и улучшать конверсию во времени.",
     "items": [
       {
-        "title": "Growth and product teams",
-        "description": "Monitor signup-to-activation or trial-to-paid conversion week over week. Validate that product changes actually move the needle-not just in aggregate, but period by period."
+        "title": "Growth- и продуктовые команды",
+        "description": "Отслеживайте конверсию из регистрации в активацию или из триала в оплату неделю к неделе. Проверяйте, действительно ли продуктовые изменения двигают метрику — не только в среднем, но и по периодам."
       },
       {
-        "title": "A/B testing and experimentation",
-        "description": "Break down conversion by experiment variant to see which version wins. Unlike simple A/B tools, you get per-period granularity so you can spot if a variant's advantage changes over time."
+        "title": "A/B-тесты и эксперименты",
+        "description": "Разбивайте конверсию по варианту эксперимента, чтобы увидеть, какая версия побеждает. В отличие от простых A/B-инструментов, вы получаете детализацию по периодам и видите, меняется ли преимущество варианта со временем."
       },
       {
-        "title": "Marketing and campaigns",
-        "description": "Compare conversion rates across traffic sources, campaigns, or landing pages. Find out which channels convert best and whether performance is improving or declining."
+        "title": "Маркетинг и кампании",
+        "description": "Сравнивайте конверсию между источниками трафика, кампаниями или посадочными страницами. Узнайте, какие каналы конвертят лучше и улучшается ли динамика."
       },
       {
-        "title": "Mobile and cross-platform teams",
-        "description": "Break down by platform (iOS vs Android), app version, or device type. Catch platform-specific regressions and prioritize fixes where conversion is lowest."
+        "title": "Мобильные и кроссплатформенные команды",
+        "description": "Разбивайте по платформе (iOS или Android), версии приложения или типу устройства. Отлавливайте платформенные регрессии и расставляйте приоритеты там, где конверсия ниже всего."
       }
     ]
   },
   "related_features": [
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "See where users drop off step by step. Funnels show you which step loses users-conversions show you how rates trend over time."
+      "title": "Воронки",
+      "description": "Смотрите, где пользователи отсеиваются шаг за шагом. Воронки показывают, какой шаг теряет пользователей, а конверсии — как меняется динамика во времени."
     },
     {
       "slug": "event-tracking",
-      "title": "Event tracking",
-      "description": "Conversions are built on the events you track. Send events once and use them for conversions, funnels, retention, and more."
+      "title": "Отслеживание событий",
+      "description": "Конверсии строятся на отслеживаемых событиях. Отправляйте события один раз и используйте их для конверсий, воронок, удержания и многого другого."
     },
     {
       "slug": "retention",
-      "title": "Retention",
-      "description": "Conversion measures if users complete an action. Retention measures if they keep coming back."
+      "title": "Удержание",
+      "description": "Конверсия измеряет, совершают ли пользователи действие. Удержание — возвращаются ли они снова."
     },
     {
       "slug": "data-visualization",
-      "title": "Data visualization",
-      "description": "Conversion charts are one of many ways to visualize your data in OpenPanel."
+      "title": "Визуализация данных",
+      "description": "Графики конверсии — лишь один из многих способов визуализировать данные в OpenPanel."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about conversion tracking in OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы об отслеживании конверсий в OpenPanel.",
     "items": [
       {
-        "question": "How is this different from funnels?",
-        "answer": "Funnels show you a multi-step sequence and where users drop off at each step. Conversions focus on a single flow (start → goal) and show you how the conversion rate changes over time. Use funnels to diagnose where users get stuck; use conversions to monitor whether things are getting better or worse."
+        "question": "Чем это отличается от воронок?",
+        "answer": "Воронки показывают многошаговую последовательность и отсеивание на каждом шаге. Конверсии фокусируются на одном потоке (старт → цель) и показывают, как меняется конверсия во времени. Воронками диагностируйте, где пользователи застревают; конверсиями — становится ли лучше или хуже."
       },
       {
-        "question": "Can I use conversions for A/B testing?",
-        "answer": "Yes. Add a breakdown by your experiment variant property, and you'll see each variant's conversion rate plotted over time with per-period detail. You can tell whether one variant's advantage holds consistently or fluctuates, which a single aggregate number can't show."
+        "question": "Подходят ли конверсии для A/B-тестов?",
+        "answer": "Да. Добавьте разбивку по свойству варианта эксперимента — и увидите конверсию каждого варианта во времени с детализацией по периодам. Так вы поймёте, держится ли преимущество варианта стабильно или колеблется, чего не покажет одно агрегированное число."
       },
       {
-        "question": "What events can I use?",
-        "answer": "Any events you already track. A conversion is defined by two events: a start event and a goal event. Common examples include session_start → signup, signup → purchase, or page_view → add_to_cart."
+        "question": "Какие события можно использовать?",
+        "answer": "Любые события, которые вы уже отслеживаете. Конверсия определяется двумя событиями: стартовым и целевым. Типичные примеры: session_start → signup, signup → purchase или page_view → add_to_cart."
       },
       {
-        "question": "Is the data sampled?",
-        "answer": "No. OpenPanel processes every event with no sampling. Your conversion rates are calculated from complete data, so you can trust the numbers even for small segments."
+        "question": "Данные сэмплируются?",
+        "answer": "Нет. OpenPanel обрабатывает каждое событие без сэмплирования. Конверсия рассчитывается по полным данным, поэтому цифрам можно доверять даже на малых сегментах."
       },
       {
-        "question": "Can I see absolute numbers alongside rates?",
-        "answer": "Yes. Every conversion report shows both the conversion rate and the total number of conversions. The detail table below the chart includes totals and per-period counts for each segment."
+        "question": "Можно ли видеть абсолютные числа рядом с процентами?",
+        "answer": "Да. Каждый отчёт по конверсии показывает и конверсию, и общее число конверсий. Таблица под графиком включает итоги и количество по периодам для каждого сегмента."
       }
     ]
   },
   "cta": {
-    "label": "Track your first conversion",
+    "label": "Отследите свою первую конверсию",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

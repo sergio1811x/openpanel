@@ -15,7 +15,7 @@ export const Route = createFileRoute(
     return {
       meta: [
         {
-          title: createProjectTitle('Report'),
+          title: createProjectTitle('Отчёт'),
         },
       ],
     };

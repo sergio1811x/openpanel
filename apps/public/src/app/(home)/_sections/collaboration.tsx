@@ -15,23 +15,23 @@ import { CollaborationChart } from './collaboration-chart';
 
 const features = [
   {
-    title: 'Flexible data visualization',
+    title: 'Гибкая визуализация данных',
     description:
-      'Build line charts, bar charts, sankey flows, and custom dashboards. Combine metrics from any event into a single view.',
+      'Стройте линейные и столбчатые диаграммы, sankey-потоки и кастомные дашборды. Объединяйте метрики любых событий в одном виде.',
     icon: ChartBarIcon,
     slug: 'data-visualization',
   },
   {
-    title: 'Share & Collaborate',
+    title: 'Шеринг и совместная работа',
     description:
-      'Invite unlimited team members with org-wide or project-level access. Share dashboards publicly or lock them behind a password.',
+      'Приглашайте неограниченное число участников команды с доступом на уровне организации или проекта. Публикуйте дашборды или защищайте их паролем.',
     icon: LayoutDashboardIcon,
     slug: 'share-and-collaborate',
   },
   {
-    title: 'Integrations & Webhooks',
+    title: 'Интеграции и вебхуки',
     description:
-      'Forward events to your own systems or third-party tools. Connect OpenPanel to Slack, your data warehouse, or any webhook endpoint.',
+      'Пересылайте события в свои системы или сторонние сервисы. Подключите OpenPanel к Slack, вашему хранилищу данных или любому вебхуку.',
     icon: WorkflowIcon,
     slug: 'integrations',
   },
@@ -44,8 +44,8 @@ export function Collaboration() {
         <CollaborationChart />
         <div>
           <SectionHeader
-            title="Turn data into actionable insights"
-            description="Build interactive dashboards, share insights with your team, and make data-driven decisions faster. OpenPanel helps you understand not just what's happening, but why."
+            title="Превратите данные в конкретные действия"
+            description="Стройте интерактивные дашборды, делитесь инсайтами с командой и быстрее принимайте решения на основе данных. OpenPanel помогает понять не только что происходит, но и почему."
           />
 
           <GetStartedButton className="mt-6" />

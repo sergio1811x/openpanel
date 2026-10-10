@@ -7,15 +7,15 @@ import { source } from '@/lib/source';
 export default function Layout({ children }: { children: React.ReactNode }) {
   const tabs = [
     {
-      title: 'Documentation',
-      description: 'Guides and references',
+      title: 'Документация',
+      description: 'Руководства и справочники',
       url: '/docs',
       icon: <BookOpenIcon className="size-4 text-blue-500" />,
       $folder: source.pageTree as never,
     },
     {
-      title: 'API Reference',
-      description: 'REST API endpoints',
+      title: 'API-справочник',
+      description: 'Эндпоинты REST API',
       url: API_REFERENCE_BASE_URL,
       icon: <CodeIcon className="size-4 text-yellow-500" />,
     },

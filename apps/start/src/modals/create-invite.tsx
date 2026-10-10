@@ -49,14 +49,14 @@ export default function CreateInvite() {
   const mutation = useMutation(
     trpc.organization.inviteUser.mutationOptions({
       onSuccess() {
-        toast.success('User has been invited');
+        toast.success('Пользователь приглашён');
         reset();
         queryClient.invalidateQueries(
           trpc.organization.invitations.queryFilter({ organizationId }),
         );
       },
       onError(error) {
-        toast.error('Failed to invite user', {
+        toast.error('Не удалось пригласить пользователя', {
           description: error.message,
         });
       },
@@ -68,30 +68,30 @@ export default function CreateInvite() {
       {mutation.isSuccess ? (
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>User has been invited</SheetTitle>
+            <SheetTitle>Пользователь приглашён</SheetTitle>
           </SheetHeader>
           <div className="prose dark:prose-invert">
             {mutation.data.type === 'is_member' ? (
               <>
                 <p>
-                  Since the user already has an account we have added him/her to
-                  your organization. This means you will not see this user in
-                  the list of invites.
+                  Поскольку у пользователя уже есть аккаунт, мы добавили его в
+                  Вашу организацию. Поэтому этот пользователь не появится в
+                  списке приглашений.
                 </p>
-                <p>We have also notified the user by email about this.</p>
+                <p>Мы также уведомили пользователя об этом по email.</p>
               </>
             ) : (
               <p>
-                We have sent an email with instructions to join the
-                organization.
+                Мы отправили письмо с инструкциями по присоединению к
+                организации.
               </p>
             )}
             <div className="row gap-4 mt-8">
               <Button onClick={() => mutation.reset()}>
-                Invite another user
+                Пригласить другого пользователя
               </Button>
               <Button variant="outline" onClick={() => closeSheet()}>
-                Close
+                Закрыть
               </Button>
             </div>
           </div>
@@ -100,10 +100,10 @@ export default function CreateInvite() {
         <SheetContent>
           <SheetHeader>
             <div>
-              <SheetTitle>Invite a user</SheetTitle>
+              <SheetTitle>Приглашение пользователя</SheetTitle>
               <SheetDescription>
-                Invite users to your organization. They will receive an email
-                will instructions.
+                Пригласите пользователей в Вашу организацию. Они получат письмо
+                с инструкциями.
               </SheetDescription>
             </div>
           </SheetHeader>
@@ -115,11 +115,11 @@ export default function CreateInvite() {
               className="w-full max-w-sm"
               label="Email"
               error={formState.errors.email?.message}
-              placeholder="Who do you want to invite?"
+              placeholder="Кого Вы хотите пригласить?"
               {...register('email')}
             />
             <div>
-              <Label>What role?</Label>
+              <Label>Какая роль?</Label>
               <Controller
                 name="role"
                 control={control}
@@ -134,13 +134,13 @@ export default function CreateInvite() {
                     <div className="flex items-center gap-2">
                       <RadioGroupItem value="org:member" id="member" />
                       <Label className="mb-0" htmlFor="member">
-                        Member
+                        Участник
                       </Label>
                     </div>
                     <div className="flex items-center gap-2">
                       <RadioGroupItem value="org:admin" id="admin" />
                       <Label className="mb-0" htmlFor="admin">
-                        Admin
+                        Администратор
                       </Label>
                     </div>
                   </RadioGroup>
@@ -152,14 +152,14 @@ export default function CreateInvite() {
               control={control}
               render={({ field }) => (
                 <div>
-                  <Label>Restrict access</Label>
+                  <Label>Ограничить доступ</Label>
                   <ProjectAccessGrants
                     value={field.value}
                     onChange={field.onChange}
                     projects={projects}
                   />
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Leave empty to give access to all projects
+                    Оставьте пустым, чтобы предоставить доступ ко всем проектам
                   </p>
                 </div>
               )}
@@ -170,7 +170,7 @@ export default function CreateInvite() {
                 type="submit"
                 loading={mutation.isPending}
               >
-                Invite user
+                Пригласить пользователя
               </Button>
             </SheetFooter>
           </form>

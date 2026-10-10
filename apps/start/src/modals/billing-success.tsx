@@ -34,12 +34,11 @@ export default function BillingSuccess() {
 
         {/* Success Message */}
         <h2 className="text-3xl font-semibold mb-4">
-          Subscription updated successfully
+          Подписка успешно обновлена
         </h2>
         <p className="text-center mb-12 max-w-md text-base leading-normal">
-          Thank you for your purchase! You have now full access to OpenPanel. If
-          you have any questions or feedback, please don't hesitate to contact
-          us.
+          Спасибо за покупку! Теперь у Вас есть полный доступ к OpenPanel. Если
+          у Вас есть вопросы или пожелания, пожалуйста, свяжитесь с нами.
         </p>
       </div>
     </ModalContent>

@@ -80,14 +80,14 @@ interface OverviewListModalProps<T extends OverviewListItem> {
 
 export function OverviewListModal<T extends OverviewListItem>({
   title,
-  searchPlaceholder = 'Search...',
+  searchPlaceholder = 'Поиск...',
   data,
   keyExtractor,
   searchFilter,
   renderItem,
   footer,
   headerContent,
-  columnName = 'Name',
+  columnName = 'Название',
   showPageviews = true,
   showSessions = true,
 }: OverviewListModalProps<T>) {
@@ -160,9 +160,9 @@ export function OverviewListModal<T extends OverviewListItem>({
           }}
         >
           <div className="text-left truncate">{columnName}</div>
-          {hasRevenue && <div className="text-right">Revenue</div>}
-          {hasPageviews && <div className="text-right">Views</div>}
-          {showSessions && <div className="text-right">Sessions</div>}
+          {hasRevenue && <div className="text-right">Доход</div>}
+          {hasPageviews && <div className="text-right">Просмотры</div>}
+          {showSessions && <div className="text-right">Сессии</div>}
         </div>
       </div>
 
@@ -256,7 +256,7 @@ export function OverviewListModal<T extends OverviewListItem>({
         {/* Empty state */}
         {filteredData.length === 0 && (
           <div className="flex items-center justify-center h-32 text-muted-foreground">
-            {searchQuery ? 'No results found' : 'No data available'}
+            {searchQuery ? 'Ничего не найдено' : 'Нет данных'}
           </div>
         )}
       </div>

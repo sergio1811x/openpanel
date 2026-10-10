@@ -36,7 +36,7 @@ export const SkipOnboarding = () => {
         to="/login"
         className="flex items-center gap-2  text-muted-foreground"
       >
-        Login
+        Войти
         <LogInIcon size={16} />
       </Link>
     );
@@ -54,8 +54,8 @@ export const SkipOnboarding = () => {
           navigate({ to: '/' });
         } else {
           showConfirm({
-            title: 'Skip onboarding?',
-            text: 'Are you sure you want to skip onboarding? Since you do not have any projects, you will be logged out.',
+            title: 'Пропустить начало работы?',
+            text: 'Вы уверены, что хотите пропустить начало работы? Поскольку у Вас нет ни одного проекта, Вы будете разлогинены.',
             onConfirm() {
               logout.mutate();
             },
@@ -64,7 +64,7 @@ export const SkipOnboarding = () => {
       }}
       className="flex items-center gap-2  text-muted-foreground"
     >
-      Skip onboarding
+      Пропустить начало работы
       <ChevronLastIcon size={16} />
     </button>
   );

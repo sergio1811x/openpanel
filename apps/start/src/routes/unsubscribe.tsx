@@ -35,7 +35,7 @@ function RouteComponent() {
         setIsUnsubscribing(false);
       },
       onError: (err) => {
-        setError(err.message || 'Failed to unsubscribe');
+        setError(err.message || 'Не удалось отписаться');
         setIsUnsubscribing(false);
       },
     }),
@@ -53,20 +53,19 @@ function RouteComponent() {
   if (isSuccess) {
     return (
       <PublicPageCard
-        title="Unsubscribed"
-        description={`You've been unsubscribed from ${categoryName} emails. You won't receive any more ${categoryName.toLowerCase()} emails from
-          us.`}
+        title="Вы отписаны"
+        description={`Вы отписались от рассылки «${categoryName}». Мы больше не будем отправлять вам такие письма.`}
       />
     );
   }
 
   return (
     <PublicPageCard
-      title="Unsubscribe"
+      title="Отписка от рассылки"
       description={
         <>
-          Unsubscribe from {categoryName} emails? You'll stop receiving{' '}
-          {categoryName.toLowerCase()} emails sent to&nbsp;
+          Отписаться от писем «{categoryName}»? Вы перестанете получать
+          письма, отправляемые на&nbsp;
           <span className="">{email}</span>
         </>
       }
@@ -78,10 +77,10 @@ function RouteComponent() {
           </div>
         )}
         <Button onClick={handleUnsubscribe} disabled={isUnsubscribing}>
-          {isUnsubscribing ? 'Unsubscribing...' : 'Confirm Unsubscribe'}
+          {isUnsubscribing ? 'Отписываемся...' : 'Подтвердить отписку'}
         </Button>
         <LinkButton href="/" variant="ghost">
-          Cancel
+          Отмена
         </LinkButton>
       </div>
     </PublicPageCard>

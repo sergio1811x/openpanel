@@ -226,8 +226,8 @@ const VirtualizedSessionsTable = ({
 
       {!isLoading && data.length === 0 && (
         <FullPageEmptyState
-          description="Looks like you haven't inserted any events yet."
-          title="No sessions found"
+          description="Похоже, вы ещё не отправили ни одного события."
+          title="Сессии не найдены"
         />
       )}
 
@@ -364,13 +364,13 @@ function SessionTableToolbar({ table }: { table: Table<IServiceSession> }) {
       <div className="flex flex-1 flex-wrap items-center gap-2">
         <AnimatedSearchInput
           onChange={setSearch}
-          placeholder="Search sessions by path, referrer..."
+          placeholder="Поиск сессий по пути, рефереру..."
           value={search}
         />
         <TableFilterPills
           urlKey="f"
           categories={['profile', 'group', 'cohort', 'session']}
-          title="Session filters"
+          title="Фильтры сессий"
         />
       </div>
       <DataTableViewOptions table={table} />

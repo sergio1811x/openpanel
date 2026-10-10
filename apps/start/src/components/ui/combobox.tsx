@@ -90,7 +90,7 @@ export function Combobox<T extends string>({
             <div className="flex min-w-0 items-center">
               {Icon ? <Icon size={16} className="mr-2 shrink-0" /> : null}
               <span className="overflow-hidden text-ellipsis whitespace-nowrap">
-                {value ? (find(value)?.label ?? 'No match') : placeholder}
+                {value ? (find(value)?.label ?? 'Нет совпадений') : placeholder}
               </span>
             </div>
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -106,7 +106,7 @@ export function Combobox<T extends string>({
           <Command shouldFilter={false}>
             {searchable === true && (
               <CommandInput
-                placeholder="Search item..."
+                placeholder="Поиск..."
                 value={search}
                 onValueChange={setSearch}
               />
@@ -120,11 +120,11 @@ export function Combobox<T extends string>({
                     setOpen(false);
                   }}
                 >
-                  Create &quot;{search}&quot;
+                  Создать &quot;{search}&quot;
                 </Button>
               </CommandEmpty>
             ) : (
-              <CommandEmpty>Nothing selected</CommandEmpty>
+              <CommandEmpty>Ничего не выбрано</CommandEmpty>
             )}
             <VirtualList
               height={Math.min(items.length * 32, 300)}

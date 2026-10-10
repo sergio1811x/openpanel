@@ -42,7 +42,7 @@ export const Route = createFileRoute('/share/overview/$shareId')({
       return {
         meta: [
           {
-            title: 'Share not found - OpenPanel.dev',
+            title: 'Публичная ссылка не найдена - OpenPanel.dev',
           },
         ],
       };
@@ -59,8 +59,8 @@ export const Route = createFileRoute('/share/overview/$shareId')({
   pendingComponent: FullPageLoadingState,
   errorComponent: () => (
     <FullPageEmptyState
-      title="Share not found"
-      description="The overview you are looking for does not exist."
+      title="Публичная ссылка не найдена"
+      description="Такого обзора не существует."
       className="min-h-[calc(100vh-theme(spacing.16))]"
     />
   ),
@@ -77,7 +77,7 @@ function RouteComponent() {
   );
 
   if (shareQuery.isLoading) {
-    return <div>Loading...</div>;
+    return <div>Загрузка...</div>;
   }
 
   const share = shareQuery.data;

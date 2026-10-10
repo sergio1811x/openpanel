@@ -55,9 +55,9 @@ function RouteComponent() {
     return (
       <div className="center-center col flex h-screen w-full bg-background p-4 text-foreground">
         <LogoSquare className="mb-4 size-10" />
-        <h1 className="font-semibold text-xl">Widget not found</h1>
+        <h1 className="font-semibold text-xl">Виджет не найден</h1>
         <p className="mt-2 text-muted-foreground text-sm">
-          This widget is not available or has been removed.
+          Этот виджет недоступен или был удалён.
         </p>
       </div>
     );
@@ -127,7 +127,7 @@ function RealtimeWidget({ shareId, data, limit, color }: RealtimeWidgetProps) {
           <div className="flex w-full items-center gap-3">
             <Ping />
             <div className="flex-1 font-medium text-muted-foreground text-sm">
-              USERS IN LAST 30 MINUTES
+              ПОЛЬЗОВАТЕЛИ ЗА ПОСЛЕДНИЕ 30 МИНУТ
             </div>
             {data.project.domain && <SerieIcon name={data.project.domain} />}
           </div>
@@ -183,7 +183,7 @@ function RealtimeWidget({ shareId, data, limit, color }: RealtimeWidgetProps) {
             {data.countries.length > 0 && (
               <div className="flex flex-col">
                 <div className="mb-3 font-medium text-muted-foreground text-xs">
-                  COUNTRY
+                  СТРАНА
                 </div>
                 <div className="col">
                   {(() => {
@@ -228,7 +228,7 @@ function RealtimeWidget({ shareId, data, limit, color }: RealtimeWidgetProps) {
             {data.referrers.length > 0 && (
               <div className="flex flex-col">
                 <div className="mb-3 font-medium text-muted-foreground text-xs">
-                  REFERRER
+                  ИСТОЧНИК
                 </div>
                 <div className="col">
                   {(() => {
@@ -267,7 +267,7 @@ function RealtimeWidget({ shareId, data, limit, color }: RealtimeWidgetProps) {
             {data.paths.length > 0 && (
               <div className="flex flex-col">
                 <div className="mb-3 font-medium text-muted-foreground text-xs">
-                  PATH
+                  ПУТЬ
                 </div>
                 <div className="col">
                   {(() => {
@@ -321,7 +321,7 @@ const CustomTooltip = ({ active, payload }: any) => {
         <div>{data.time}</div>
       </ChartTooltipHeader>
       <ChartTooltipItem color={getChartColor(0)} innerClassName="row gap-1">
-        <div className="flex-1">Visitors</div>
+        <div className="flex-1">Посетители</div>
         <div>{number.short(data.sessionCount)}</div>
       </ChartTooltipItem>
     </ChartTooltipContainer>
@@ -367,23 +367,25 @@ function RestRow({
 }) {
   const number = useNumber();
   const otherCount = restCount - 1;
+  const plural = (n: number, one: string, few: string, many: string) => {
+    const mod100 = n % 100;
+    const mod10 = n % 10;
+    if (mod100 >= 11 && mod100 <= 14) return many;
+    if (mod10 === 1) return one;
+    if (mod10 >= 2 && mod10 <= 4) return few;
+    return many;
+  };
   const typeLabel =
     type === 'countries'
-      ? otherCount === 1
-        ? 'country'
-        : 'countries'
+      ? plural(otherCount, 'страна', 'страны', 'стран')
       : type === 'referrers'
-        ? otherCount === 1
-          ? 'referrer'
-          : 'referrers'
-        : otherCount === 1
-          ? 'path'
-          : 'paths';
+        ? plural(otherCount, 'источник', 'источника', 'источников')
+        : plural(otherCount, 'страница', 'страницы', 'страниц');
 
   return (
     <div className="-mx-3 flex h-10 items-center justify-between border-b px-3 py-2 text-sm hover:bg-foreground/5">
       <span className="truncate">
-        {firstName} and {otherCount} more {typeLabel}...
+        {firstName} и ещё {otherCount} {typeLabel}...
       </span>
       <span className="font-semibold">{number.short(totalCount)}</span>
     </div>
@@ -447,7 +449,7 @@ function RealtimeWidgetSkeleton({ limit }: { limit: number }) {
           <div className="flex w-full items-center gap-3">
             <div className="size-2 rounded-full bg-muted" />
             <div className="flex-1 font-medium text-muted-foreground text-sm">
-              USERS IN LAST 30 MINUTES
+              ПОЛЬЗОВАТЕЛИ ЗА ПОСЛЕДНИЕ 30 МИНУТ
             </div>
           </div>
           <div className="size-4 shrink-0 rounded bg-muted" />
@@ -483,7 +485,7 @@ function RealtimeWidgetSkeleton({ limit }: { limit: number }) {
           {/* Countries skeleton */}
           <div className="flex flex-col">
             <div className="mb-3 font-medium text-muted-foreground text-xs">
-              COUNTRY
+              СТРАНА
             </div>
             <div className="col">
               {SKELETON_KEYS.countries.slice(0, itemCount).map((key) => (
@@ -495,7 +497,7 @@ function RealtimeWidgetSkeleton({ limit }: { limit: number }) {
           {/* Referrers skeleton */}
           <div className="flex flex-col">
             <div className="mb-3 font-medium text-muted-foreground text-xs">
-              REFERRER
+              ИСТОЧНИК
             </div>
             <div className="col">
               {SKELETON_KEYS.referrers.slice(0, itemCount).map((key) => (
@@ -507,7 +509,7 @@ function RealtimeWidgetSkeleton({ limit }: { limit: number }) {
           {/* Paths skeleton */}
           <div className="flex flex-col">
             <div className="mb-3 font-medium text-muted-foreground text-xs">
-              PATH
+              ПУТЬ
             </div>
             <div className="col">
               {SKELETON_KEYS.paths.slice(0, itemCount).map((key) => (

@@ -35,7 +35,7 @@ export function GithubButton() {
             clipRule="evenodd"
           />
         </svg>
-        {formatStars(stars)} stars
+        {formatStars(stars)} звёзд
       </Link>
     </Button>
   );

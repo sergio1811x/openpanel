@@ -28,7 +28,7 @@ export function looksEncrypted(value: string): boolean {
  */
 const zWriteOnlySecret = (label: string) =>
   z.string().refine((value) => !looksEncrypted(value), {
-    message: `${label} looks like a stored, already-encrypted value. Paste the real credential, or leave it blank to keep the current one.`,
+    message: `${label}: похоже, вставлено уже зашифрованное значение. Вставьте настоящий ключ доступа или оставьте поле пустым, чтобы сохранить текущий.`,
   });
 
 // ---------------------------------------------------------------------------
@@ -65,11 +65,11 @@ export function parseServiceAccountKey(raw: string): IServiceAccountKeyResult {
   try {
     parsed = JSON.parse(raw);
   } catch {
-    return { ok: false, error: 'not valid JSON' };
+    return { ok: false, error: 'некорректный JSON' };
   }
 
   if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
-    return { ok: false, error: 'not a JSON object' };
+    return { ok: false, error: 'не JSON-объект' };
   }
 
   const doc = parsed as Record<string, unknown>;
@@ -77,13 +77,13 @@ export function parseServiceAccountKey(raw: string): IServiceAccountKeyResult {
   if (doc.type !== 'service_account') {
     return {
       ok: false,
-      error: `unsupported credential type ${JSON.stringify(doc.type ?? null)} — only "service_account" keys are accepted`,
+      error: `неподдерживаемый тип учётных данных ${JSON.stringify(doc.type ?? null)} — принимаются только ключи "service_account"`,
     };
   }
 
   for (const field of ['project_id', 'client_email', 'private_key'] as const) {
     if (typeof doc[field] !== 'string' || doc[field] === '') {
-      return { ok: false, error: `missing "${field}"` };
+      return { ok: false, error: `отсутствует поле "${field}"` };
     }
   }
 
@@ -166,9 +166,9 @@ export type IEmailConfig = z.infer<typeof zEmailConfig>;
 // S3 Export Integration Config - Base fields shared by both auth modes
 const zS3ExportConfigBase = z.object({
   type: z.literal('s3_export'),
-  bucket: z.string().min(1, 'Bucket name is required'),
+  bucket: z.string().min(1, 'Укажите имя бакета'),
   prefix: z.string().default('openpanel-exports'),
-  region: z.string().min(1, 'Region is required'),
+  region: z.string().min(1, 'Укажите регион'),
   endpoint: z.string().url().optional(), // For R2, MinIO, etc.
   // Only jsonl_gzip is implemented; adding a format here without a
   // `createBatch` branch persists a config whose exports can never run.
@@ -181,14 +181,14 @@ const zS3ExportConfigBase = z.object({
 // Auth mode: IAM Role assumption (AWS best practice)
 const zS3AuthIamRole = z.object({
   authMode: z.literal('iam_role'),
-  roleArn: z.string().min(1, 'IAM Role ARN is required'),
+  roleArn: z.string().min(1, 'Укажите IAM Role ARN'),
   externalId: z.string().optional(),
 });
 
 // Auth mode: Access Keys (for R2, MinIO, DigitalOcean Spaces, etc.)
 const zS3AuthAccessKey = z.object({
   authMode: z.literal('access_key'),
-  accessKeyId: z.string().min(1, 'Access Key ID is required'),
+  accessKeyId: z.string().min(1, 'Укажите Access Key ID'),
   // Write-only. Blank on update = keep the stored key (see zWriteOnlySecret).
   secretAccessKey: zWriteOnlySecret('Secret Access Key'),
 });
@@ -212,7 +212,7 @@ export type IS3ExportConfig = z.infer<typeof zS3ExportConfig>;
 // GCS Export Integration Config
 export const zGCSExportConfig = z.object({
   type: z.literal('gcs_export'),
-  bucket: z.string().min(1, 'Bucket name is required'),
+  bucket: z.string().min(1, 'Укажите имя бакета'),
   prefix: z.string().default('openpanel-exports'),
   // Only jsonl_gzip is implemented; adding a format here without a
   // `createBatch` branch persists a config whose exports can never run.
@@ -229,7 +229,7 @@ export const zGCSExportConfig = z.object({
       if (!result.ok) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
-          message: `Invalid service account key: ${result.error}`,
+          message: `Недопустимый ключ сервисного аккаунта: ${result.error}`,
         });
       }
     },
@@ -292,7 +292,7 @@ export const slackDescriptor = {
   catalog: {
     name: 'Slack',
     description:
-      'Connect your Slack workspace to get notified when new issues are created.',
+      'Подключите рабочее пространство Slack, чтобы получать уведомления о новых событиях.',
   },
 } as const satisfies IIntegrationDescriptor<'slack', typeof zSlackConfig>;
 
@@ -304,7 +304,7 @@ export const discordDescriptor = {
   catalog: {
     name: 'Discord',
     description:
-      'Connect your Discord server to get notified when new issues are created.',
+      'Подключите сервер Discord, чтобы получать уведомления о новых событиях.',
   },
 } as const satisfies IIntegrationDescriptor<'discord', typeof zDiscordConfig>;
 
@@ -314,9 +314,9 @@ export const webhookDescriptor = {
   setup: 'form',
   configSchema: zWebhookConfig,
   catalog: {
-    name: 'Webhook',
+    name: 'Вебхук',
     description:
-      'Create a webhook to take actions in your own systems when new events are created.',
+      'Создайте вебхук, чтобы выполнять действия в своих системах при появлении новых событий.',
   },
 } as const satisfies IIntegrationDescriptor<'webhook', typeof zWebhookConfig>;
 
@@ -325,7 +325,7 @@ export const appDescriptor = {
   kinds: ['notification'],
   setup: 'form',
   configSchema: zAppConfig,
-  catalog: { name: 'Website', description: 'In-app notifications', hidden: true },
+  catalog: { name: 'Сайт', description: 'Уведомления в приложении', hidden: true },
 } as const satisfies IIntegrationDescriptor<'app', typeof zAppConfig>;
 
 export const emailDescriptor = {
@@ -333,7 +333,7 @@ export const emailDescriptor = {
   kinds: ['notification'],
   setup: 'form',
   configSchema: zEmailConfig,
-  catalog: { name: 'Email', description: 'Email notifications', hidden: true },
+  catalog: { name: 'Email', description: 'Уведомления по email', hidden: true },
 } as const satisfies IIntegrationDescriptor<'email', typeof zEmailConfig>;
 
 export const s3ExportDescriptor = {
@@ -342,9 +342,9 @@ export const s3ExportDescriptor = {
   setup: 'form',
   configSchema: zS3ExportConfig,
   catalog: {
-    name: 'S3 Export',
+    name: 'Экспорт в S3',
     description:
-      'Export events to Amazon S3 for loading into Redshift, Snowflake, Athena, or other data warehouses.',
+      'Экспортируйте события в Amazon S3 для загрузки в Redshift, Snowflake, Athena и другие хранилища данных.',
   },
 } as const satisfies IIntegrationDescriptor<'s3_export', typeof zS3ExportConfig>;
 
@@ -354,9 +354,9 @@ export const gcsExportDescriptor = {
   setup: 'form',
   configSchema: zGCSExportConfig,
   catalog: {
-    name: 'GCS Export',
+    name: 'Экспорт в GCS',
     description:
-      'Export events to Google Cloud Storage for loading into BigQuery or other data warehouses.',
+      'Экспортируйте события в Google Cloud Storage для загрузки в BigQuery и другие хранилища данных.',
   },
 } as const satisfies IIntegrationDescriptor<
   'gcs_export',

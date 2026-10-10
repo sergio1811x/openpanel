@@ -18,8 +18,8 @@ export function SignInGithub({
     }),
   );
   const title = () => {
-    if (type === 'sign-in') return 'Sign in with Github';
-    if (type === 'sign-up') return 'Sign up with Github';
+    if (type === 'sign-in') return 'Войти через GitHub';
+    if (type === 'sign-up') return 'Зарегистрироваться через GitHub';
   };
   return (
     <div className="relative">
@@ -47,7 +47,7 @@ export function SignInGithub({
       </Button>
       {isLastUsed && (
         <span className="absolute -top-2 right-3 text-[10px] font-medium bg-highlight text-white px-1.5 py-0.5 rounded-full leading-none">
-          Used last time
+          Использовался в прошлый раз
         </span>
       )}
     </div>

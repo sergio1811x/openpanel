@@ -16,7 +16,7 @@ export function useGroupColumns(): ColumnDef<IServiceGroupWithStats>[] {
   return [
     {
       accessorKey: 'name',
-      header: 'Name',
+      header: 'Имя',
       cell: ({ row }) => {
         const group = row.original;
         return (
@@ -41,21 +41,21 @@ export function useGroupColumns(): ColumnDef<IServiceGroupWithStats>[] {
     },
     {
       accessorKey: 'type',
-      header: 'Type',
+      header: 'Тип',
       cell: ({ row }) => (
         <Badge variant="outline">{row.original.type}</Badge>
       ),
     },
     {
       accessorKey: 'memberCount',
-      header: 'Members',
+      header: 'Участники',
       cell: ({ row }) => (
         <span className="tabular-nums">{row.original.memberCount}</span>
       ),
     },
     {
       accessorKey: 'lastActiveAt',
-      header: 'Last active',
+      header: 'Последняя активность',
       size: ColumnCreatedAt.size,
       cell: ({ row }) =>
         row.original.lastActiveAt ? (
@@ -66,7 +66,7 @@ export function useGroupColumns(): ColumnDef<IServiceGroupWithStats>[] {
     },
     {
       accessorKey: 'createdAt',
-      header: 'Created',
+      header: 'Создано',
       size: ColumnCreatedAt.size,
       cell: ({ row }) => (
         <ColumnCreatedAt>{row.original.createdAt}</ColumnCreatedAt>

@@ -69,7 +69,7 @@ export function OverviewLiveHistogram({
   }));
   const totalSessions = liveData.totalSessions ?? 0;
   const displayCount = hover.point?.sessionCount ?? totalSessions;
-  const displayLabel = hover.point ? hover.point.time : 'Last 30 min';
+  const displayLabel = hover.point ? hover.point.time : 'Последние 30 мин';
   const referrers = liveData.referrers ?? [];
 
   return (
@@ -77,7 +77,7 @@ export function OverviewLiveHistogram({
       <div className="px-3 pt-2.5">
         <div className="flex items-start justify-between gap-2">
           <span className="truncate text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-            Live · 30 min
+            Онлайн · 30 мин
           </span>
           <span className="relative flex h-2 w-2 items-center justify-center">
             <span

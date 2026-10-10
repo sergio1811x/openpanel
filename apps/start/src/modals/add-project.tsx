@@ -53,10 +53,10 @@ export default function AddProject() {
         queryClient.invalidateQueries(
           trpc.project.list.queryFilter({ organizationId })
         );
-        toast.success('Project created', {
+        toast.success('Проект создан', {
           description: `${res.name}`,
           action: {
-            label: 'View project',
+            label: 'Открыть проект',
             onClick: () =>
               navigate({
                 to: '/$organizationId/$projectId',
@@ -105,13 +105,13 @@ export default function AddProject() {
     <ModalContent>
       {mutation.isSuccess ? (
         <>
-          <ModalHeader text={'Your project is created'} title="Success" />
+          <ModalHeader text={'Ваш проект создан'} title="Успешно" />
           {mutation.data.client && (
             <CreateClientSuccess {...mutation.data.client} />
           )}
           <ButtonContainer className="justify-end">
             <Button onClick={() => popModal()} variant="outline">
-              Close
+              Закрыть
             </Button>
             {/* Route through the same connect -> verify steps as onboarding so
                 a second project doesn't skip the install instructions. The
@@ -132,18 +132,18 @@ export default function AddProject() {
                   }
                 }}
               >
-                Set up tracking
+                Настроить отслеживание
               </a>
             </Button>
           </ButtonContainer>
         </>
       ) : (
         <>
-          <ModalHeader title="Create project" />
+          <ModalHeader title="Создание проекта" />
           <form className="col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
             <InputWithLabel
-              label="Project name"
-              placeholder="Eg. My music site"
+              label="Название проекта"
+              placeholder="Например: Мой музыкальный сайт"
               {...form.register('project')}
               error={form.formState.errors.project?.message}
             />
@@ -154,18 +154,18 @@ export default function AddProject() {
                 name="website"
                 render={({ field }) => (
                   <CheckboxItem
-                    description="Track events and conversion for your website"
+                    description="Отслеживание событий и конверсий на вашем сайте"
                     disabled={isApp}
                     error={form.formState.errors.website?.message}
                     Icon={MonitorIcon}
-                    label="Website"
+                    label="Веб-сайт"
                     {...field}
                   >
                     <AnimateHeight open={isWebsite && !isApp}>
                       <div className="p-4 pl-14">
                         <InputWithLabel
-                          label="Domain"
-                          placeholder="Your website address"
+                          label="Домен"
+                          placeholder="Адрес вашего сайта"
                           {...form.register('domain')}
                           className="mb-4"
                           error={form.formState.errors.domain?.message}
@@ -185,7 +185,7 @@ export default function AddProject() {
                           control={form.control}
                           name="cors"
                           render={({ field }) => (
-                            <WithLabel label="Allowed domains">
+                            <WithLabel label="Разрешённые домены">
                               <TagInput
                                 {...field}
                                 error={form.formState.errors.cors?.message}
@@ -204,10 +204,10 @@ export default function AddProject() {
                                     })
                                   );
                                 }}
-                                placeholder="Accept events from these domains"
+                                placeholder="Принимать события с этих доменов"
                                 renderTag={(tag) =>
                                   tag === '*'
-                                    ? 'Accept events from any domains'
+                                    ? 'Принимать события с любых доменов'
                                     : tag
                                 }
                                 value={field.value ?? []}
@@ -225,11 +225,11 @@ export default function AddProject() {
                 name="app"
                 render={({ field }) => (
                   <CheckboxItem
-                    description="Track events and conversion for your app"
+                    description="Отслеживание событий и конверсий в вашем приложении"
                     disabled={isWebsite}
                     error={form.formState.errors.app?.message}
                     Icon={SmartphoneIcon}
-                    label="App"
+                    label="Приложение"
                     {...field}
                   />
                 )}
@@ -239,7 +239,7 @@ export default function AddProject() {
                 name="backend"
                 render={({ field }) => (
                   <CheckboxItem
-                    description="Track events and conversion for your backend / API"
+                    description="Отслеживание событий и конверсий для вашего бэкенда / API"
                     error={form.formState.errors.backend?.message}
                     Icon={ServerIcon}
                     label="Backend / API"
@@ -255,7 +255,7 @@ export default function AddProject() {
                 loading={mutation.isPending}
                 type="submit"
               >
-                Create project
+                Создать проект
               </Button>
             </ButtonContainer>
           </form>

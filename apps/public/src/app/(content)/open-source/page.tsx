@@ -24,9 +24,9 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 export const metadata: Metadata = getPageMetadata({
-  title: 'Free Analytics for Open Source Projects | OpenPanel OSS Program',
+  title: 'Бесплатная аналитика для open source проектов | OpenPanel OSS Program',
   description:
-    "Get free web and product analytics for your open source project. Track up to 2.5M events/month. Apply to OpenPanel's open source program today.",
+    'Получите бесплатную веб- и продуктовую аналитику для вашего open source проекта. До 2,5 млн событий в месяц. Подайте заявку в open source программу OpenPanel.',
   url: url('/open-source'),
   image: getOgImageUrl('/open-source'),
 });
@@ -73,22 +73,22 @@ export default function OpenSourcePage() {
             className="flex-1"
             title={
               <>
-                Free Analytics for
+                Бесплатная аналитика для
                 <br />
-                Open Source Projects
+                open source проектов
               </>
             }
-            description="Track your users, understand adoption, and grow your project - all without cost. Get free analytics for your open source project with up to 2.5M events per month."
+            description="Отслеживайте пользователей, понимайте распространение и развивайте свой проект — совершенно бесплатно. Бесплатная аналитика для open source проектов с объёмом до 2,5 млн событий в месяц."
           />
           <div className="col gap-4 justify-center items-center mt-8">
             <Button size="lg" asChild>
               <Link href="mailto:oss@openpanel.dev">
-                Apply for Free Access
+                Подать заявку на бесплатный доступ
                 <MailIcon className="size-4" />
               </Link>
             </Button>
             <p className="text-sm text-muted-foreground">
-              Up to 2.5M events/month • No credit card required
+              До 2,5 млн событий в месяц • Без кредитной карты
             </p>
           </div>
         </div>
@@ -99,28 +99,28 @@ export default function OpenSourcePage() {
           {/* What You Get Section */}
           <Section className="my-0">
             <SectionHeader
-              title="What you get"
-              description="Everything you need to understand your users and grow your open source project."
+              title="Что вы получаете"
+              description="Всё, что нужно, чтобы понять пользователей и развивать свой open source проект."
             />
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <FeatureCard
-                title="2.5 Million Events/Month"
-                description="More than enough for most open source projects. Track page views, user actions, and custom events without worrying about limits."
+                title="2,5 млн событий в месяц"
+                description="Более чем достаточно для большинства open source проектов. Отслеживайте просмотры страниц, действия пользователей и кастомные события без ограничений."
                 icon={BarChartIcon}
               />
               <FeatureCard
-                title="Full Feature Access"
-                description="Same powerful capabilities as paid plans. Funnels, retention analysis, custom dashboards, and real-time analytics."
+                title="Полный доступ к функциям"
+                description="Те же мощные возможности, что и на платных планах. Воронки, анализ удержания, кастомные дашборды и аналитика в реальном времени."
                 icon={ZapIcon}
               />
               <FeatureCard
-                title="Unlimited Team Members"
-                description="Invite your entire contributor team. Collaborate with maintainers and core contributors on understanding your project's growth."
+                title="Неограниченное число участников команды"
+                description="Приглашайте всю команду контрибьюторов. Сотрудничайте с мейнтейнерами и ключевыми разработчиками, разбираясь в росте вашего проекта."
                 icon={UsersIcon}
               />
               <FeatureCard
-                title="Priority Support"
-                description="Dedicated help for open source maintainers. Get faster responses and priority assistance when you need it."
+                title="Приоритетная поддержка"
+                description="Отдельная помощь для мейнтейнеров open source. Быстрые ответы и приоритетное сопровождение, когда это необходимо."
                 icon={MessageSquareIcon}
               />
             </div>
@@ -129,31 +129,30 @@ export default function OpenSourcePage() {
           {/* Why We Do This Section */}
           <Section className="my-0">
             <SectionHeader
-              title="Why we do this"
-              description="OpenPanel is built by and for the open source community. We believe in giving back."
+              title="Почему мы это делаем"
+              description="OpenPanel создана open source сообществом и для него. Мы верим в то, что нужно отдавать."
             />
             <div className="col gap-6 mt-8">
               <p className="text-muted-foreground">
-                We started OpenPanel because we believed analytics tools
-                shouldn't be complicated or locked behind expensive enterprise
-                subscriptions. As an open source project ourselves, we
-                understand the challenges of building and growing a project
-                without the resources of big corporations.
+                Мы начали OpenPanel, потому что верили: инструменты аналитики не
+                должны быть сложными или спрятанными за дорогими enterprise-подписками.
+                Будучи open source проектом сами, мы понимаем сложности создания и
+                развития проекта без ресурсов больших корпораций.
               </p>
               <div className="grid md:grid-cols-3 gap-4">
                 <FeatureCard
-                  title="Built for OSS"
-                  description="OpenPanel is open source. We know what it's like to build in the open."
+                  title="Создано для OSS"
+                  description="OpenPanel — open source. Мы знаем, что значит разрабатывать открыто."
                   icon={CodeIcon}
                 />
                 <FeatureCard
-                  title="No Barriers"
-                  description="Analytics shouldn't be a barrier to understanding your users. We're removing that barrier."
+                  title="Без барьеров"
+                  description="Аналитика не должна быть барьером на пути к пониманию пользователей. Мы убираем этот барьер."
                   icon={HeartHandshakeIcon}
                 />
                 <FeatureCard
-                  title="Giving Back"
-                  description="We're giving back to the projects that inspire us and the community that supports us."
+                  title="Отдаём сообществу"
+                  description="Мы возвращаем долг проектам, которые нас вдохновляют, и сообществу, которое нас поддерживает."
                   icon={SparklesIcon}
                 />
               </div>
@@ -163,30 +162,30 @@ export default function OpenSourcePage() {
           {/* What We Ask In Return Section */}
           <Section className="my-0">
             <SectionHeader
-              title="What we ask in return"
-              description="We keep it simple. Just a small way to help us grow and support more projects."
+              title="Что мы просим взамен"
+              description="Всё просто. Небольшой способ помочь нам расти и поддерживать больше проектов."
             />
             <div className="row gap-6 mt-8">
               <div className="col gap-6">
                 <FeatureCard
-                  title="Backlink to OpenPanel"
-                  description="A simple link on your website or README helps others discover OpenPanel. It's a win-win for the community."
+                  title="Обратная ссылка на OpenPanel"
+                  description="Простая ссылка на вашем сайте или в README поможет другим узнать об OpenPanel. Это выгодно всему сообществу."
                   icon={LinkIcon}
                 >
                   <p className="text-sm text-muted-foreground mt-2">
-                    Example: "Analytics powered by{' '}
+                    Пример: «Аналитика на движке{' '}
                     <Link
                       href="https://openpanel.dev"
                       className="text-primary hover:underline"
                     >
                       OpenPanel
                     </Link>
-                    "
+                    »
                   </p>
                 </FeatureCard>
                 <FeatureCard
-                  title="Display a Widget"
-                  description="Showcase your visitor count with our real-time analytics widget. It's completely optional but helps spread the word."
+                  title="Виджет на сайте"
+                  description="Покажите число посетителей с помощью нашего виджета аналитики в реальном времени. Полностью опционально, но помогает рассказать о нас."
                   icon={GlobeIcon}
                 >
                   <a
@@ -208,25 +207,25 @@ export default function OpenSourcePage() {
                         overflow: 'hidden',
                         pointerEvents: 'none',
                       }}
-                      title="OpenPanel Analytics Badge"
+                      title="Значок аналитики OpenPanel"
                     />
                   </a>
                 </FeatureCard>
                 <p className="text-muted-foreground">
-                  That's it. No complicated requirements, no hidden fees, no
-                  catch. We just want to help open source projects succeed.
+                  Это всё. Никаких сложных требований, скрытых платежей и подвоха.
+                  Мы просто хотим помочь open source проектам стать успешными.
                 </p>
               </div>
               <div>
                 <div className="text-center text-xs text-muted-foreground">
                   <iframe
-                    title="Realtime Widget"
+                    title="Виджет реального времени"
                     src="https://dashboard.openpanel.dev/widget/realtime?shareId=26wVGY"
                     width="300"
                     height="400"
                     className="rounded-xl border mb-2"
                   />
-                  Analytics from{' '}
+                  Аналитика от{' '}
                   <a className="underline" href="https://openpanel.dev">
                     OpenPanel.dev
                   </a>
@@ -238,38 +237,37 @@ export default function OpenSourcePage() {
           {/* Eligibility Criteria Section */}
           <Section className="my-0">
             <SectionHeader
-              title="Eligibility criteria"
-              description="We want to support legitimate open source projects that are making a difference."
+              title="Критерии отбора"
+              description="Мы хотим поддерживать настоящие open source проекты, которые действительно меняют что-то к лучшему."
             />
             <div className="col gap-4 mt-8">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="flex gap-3">
                   <CheckIcon className="size-5 text-primary mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-1">OSI-Approved License</h3>
+                    <h3 className="font-semibold mb-1">Лицензия, одобренная OSI</h3>
                     <p className="text-sm text-muted-foreground">
-                      Your project must use an OSI-approved open source license
-                      (MIT, Apache, GPL, etc.)
+                      Ваш проект должен использовать открытую лицензию, одобренную OSI
+                      (MIT, Apache, GPL и т.д.)
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <CheckIcon className="size-5 text-primary mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-1">Public Repository</h3>
+                    <h3 className="font-semibold mb-1">Публичный репозиторий</h3>
                     <p className="text-sm text-muted-foreground">
-                      Your code must be publicly available on GitHub, GitLab, or
-                      similar platforms
+                      Код должен быть публично доступен на GitHub, GitLab или
+                      подобных платформах
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <CheckIcon className="size-5 text-primary mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-1">Active Development</h3>
+                    <h3 className="font-semibold mb-1">Активная разработка</h3>
                     <p className="text-sm text-muted-foreground">
-                      Show evidence of active development and a growing
-                      community
+                      Покажите, что проект активно развивается и сообщество растёт
                     </p>
                   </div>
                 </div>
@@ -277,11 +275,11 @@ export default function OpenSourcePage() {
                   <CheckIcon className="size-5 text-primary mt-0.5 shrink-0" />
                   <div>
                     <h3 className="font-semibold mb-1">
-                      Non-Commercial Primary Purpose
+                      Некоммерческое назначение
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      The primary purpose should be non-commercial, though
-                      commercial OSS projects may be considered
+                      Основное назначение должно быть некоммерческим, хотя
+                      коммерческие OSS проекты могут рассматриваться
                     </p>
                   </div>
                 </div>
@@ -292,8 +290,8 @@ export default function OpenSourcePage() {
           {/* How to Apply Section */}
           <Section className="my-0">
             <SectionHeader
-              title="How to apply"
-              description="Getting started is simple. Just send us an email with a few details about your project."
+              title="Как подать заявку"
+              description="Всё просто: отправьте нам письмо с краткой информацией о вашем проекте."
             />
             <div className="col gap-6 mt-8">
               <div className="grid md:grid-cols-3 gap-6">
@@ -301,43 +299,43 @@ export default function OpenSourcePage() {
                   <div className="size-10 rounded-full bg-primary/10 center-center text-primary font-semibold">
                     1
                   </div>
-                  <h3 className="font-semibold">Send us an email</h3>
+                  <h3 className="font-semibold">Напишите нам</h3>
                   <p className="text-sm text-muted-foreground">
-                    Reach out to{' '}
+                    Напишите на{' '}
                     <Link
                       href="mailto:oss@openpanel.dev"
                       className="text-primary hover:underline"
                     >
                       oss@openpanel.dev
                     </Link>{' '}
-                    with your project details
+                    с информацией о вашем проекте
                   </p>
                 </div>
                 <div className="col gap-3">
                   <div className="size-10 rounded-full bg-primary/10 center-center text-primary font-semibold">
                     2
                   </div>
-                  <h3 className="font-semibold">Include project info</h3>
+                  <h3 className="font-semibold">Расскажите о проекте</h3>
                   <p className="text-sm text-muted-foreground">
-                    Share your project URL, license type, and a brief
-                    description of what you're building
+                    Укажите URL проекта, тип лицензии и краткое описание того,
+                    что вы создаете
                   </p>
                 </div>
                 <div className="col gap-3">
                   <div className="size-10 rounded-full bg-primary/10 center-center text-primary font-semibold">
                     3
                   </div>
-                  <h3 className="font-semibold">We'll review</h3>
+                  <h3 className="font-semibold">Мы рассмотрим заявку</h3>
                   <p className="text-sm text-muted-foreground">
-                    We'll evaluate your project and respond within a few
-                    business days
+                    Мы оценим ваш проект и ответим в течение нескольких
+                    рабочих дней
                   </p>
                 </div>
               </div>
               <div className="mt-4">
                 <Button size="lg" asChild>
                   <Link href="mailto:oss@openpanel.dev?subject=Open Source Program Application">
-                    Apply Now
+                    Подать заявку
                     <MailIcon className="size-4" />
                   </Link>
                 </Button>
@@ -348,57 +346,53 @@ export default function OpenSourcePage() {
           {/* FAQ Section */}
           <Section className="my-0">
             <SectionHeader
-              title="Frequently asked questions"
-              description="Everything you need to know about our open source program."
+              title="Часто задаваемые вопросы"
+              description="Всё, что нужно знать о нашей open source программе."
             />
             <div className="mt-8">
               <Faqs>
-                <FaqItem question="What counts as an open-source project?">
-                  We consider any project with an OSI-approved open source
-                  license (MIT, Apache, GPL, BSD, etc.) that is publicly
-                  available and actively maintained. The project should have a
-                  non-commercial primary purpose, though we may consider
-                  commercial open source projects on a case-by-case basis.
+                <FaqItem question="Что считается open source проектом?">
+                  Мы рассматриваем любой проект с открытой лицензией, одобренной OSI
+                  (MIT, Apache, GPL, BSD и т.д.), который публично доступен и активно
+                  поддерживается. Основное назначение проекта должно быть некоммерческим,
+                  хотя коммерческие open source проекты могут рассматриваться
+                  индивидуально.
                 </FaqItem>
-                <FaqItem question="What happens if I exceed 2.5M events per month?">
-                  We understand that successful projects grow. If you
-                  consistently exceed 2.5M events, we'll reach out to discuss
-                  options. We're flexible and want to support your success. In
-                  most cases, we can work out a solution that works for both of
-                  us.
+                <FaqItem question="Что будет, если я превышу 2,5 млн событий в месяц?">
+                  Мы понимаем, что успешные проекты растут. Если вы стабильно превышаете
+                  2,5 млн событий, мы свяжемся с вами, чтобы обсудить варианты. Мы гибкие
+                  и хотим поддержать ваш успех. В большинстве случаев мы найдём решение,
+                  удобное для обеих сторон.
                 </FaqItem>
-                <FaqItem question="Can commercial open source projects apply?">
-                  Yes, we consider commercial open source projects on a
-                  case-by-case basis. If your project is open source but has
-                  commercial offerings, please mention this in your application
-                  and we'll evaluate accordingly.
+                <FaqItem question="Могут ли подать заявку коммерческие open source проекты?">
+                  Да, мы рассматриваем коммерческие open source проекты в индивидуальном
+                  порядке. Если ваш проект open source, но имеет коммерческие продукты,
+                  укажите это в заявке — мы оценим ситуацию.
                 </FaqItem>
-                <FaqItem question="How long does the free access last?">
-                  As long as your project remains eligible and active, your free
-                  access continues. We review projects periodically to ensure
-                  they still meet our criteria, but we're committed to
-                  supporting projects long-term.
+                <FaqItem question="На сколько даётся бесплатный доступ?">
+                  Пока ваш проект остаётся соответствующим критериям и активным, бесплатный
+                  доступ продолжается. Мы периодически проверяем проекты, но нацелены
+                  поддерживать их долгосрочно.
                 </FaqItem>
-                <FaqItem question="Do I need to display the widget?">
-                  No, displaying the widget is completely optional. We only
-                  require a backlink to OpenPanel on your website or README. The
-                  widget is just a nice way to showcase your analytics if you
-                  want to.
+                <FaqItem question="Обязательно ли размещать виджет?">
+                  Нет, виджет полностью опционален. Мы просим только обратную ссылку на
+                  OpenPanel на вашем сайте или в README. Виджет — просто приятный способ
+                  показать вашу аналитику, если хотите.
                 </FaqItem>
-                <FaqItem question="What if my project is very small or just starting?">
-                  We welcome projects of all sizes! Whether you're just getting
-                  started or have a large community, if you meet our eligibility
-                  criteria, we'd love to help. Small projects often benefit the
-                  most from understanding their users early on.
+                <FaqItem question="А если мой проект совсем маленький или только стартует?">
+                  Мы рады проектам любого размера! Независимо от того, только ли вы
+                  начинаете или уже располагаете большим сообществом, — если вы
+                  соответствуете критериям, мы с радостью поможем. Малым проектам
+                  понимание пользователей на раннем этапе приносит наибольшую пользу.
                 </FaqItem>
               </Faqs>
             </div>
           </Section>
 
           <CtaBanner
-            title="Ready to get free analytics for your open source project?"
-            description="Join other open source projects using OpenPanel to understand their users and grow their communities. Apply today and get started in minutes."
-            ctaText="Apply for Free Access"
+            title="Готовы получить бесплатную аналитику для вашего open source проекта?"
+            description="Присоединяйтесь к другим open source проектам, которые используют OpenPanel, чтобы понимать пользователей и развивать сообщества. Подайте заявку сегодня — настройка займёт считанные минуты."
+            ctaText="Подать заявку на бесплатный доступ"
             ctaLink="mailto:oss@openpanel.dev?subject=Open Source Program Application"
           />
         </div>

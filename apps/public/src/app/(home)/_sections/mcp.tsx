@@ -86,18 +86,18 @@ export function Mcp() {
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
         {/* Left: copy */}
         <div className="col gap-6">
-          <SectionLabel>AI-NATIVE ANALYTICS</SectionLabel>
+          <SectionLabel>АНАЛИТИКА ДЛЯ AI</SectionLabel>
 
           <h2 className="font-semibold text-3xl leading-[1.1] md:text-5xl">
-            Ask your AI{' '}
-            <span className="block text-muted-foreground">anything</span>
-            about your users
+            Спросите у AI{' '}
+            <span className="block text-muted-foreground">что угодно</span>
+            о своих пользователях
           </h2>
 
           <p className="text-muted-foreground leading-relaxed">
-            Connect Claude, Cursor, Windsurf, or your own AI agent to your
-            OpenPanel data via MCP. No more tab-switching or building charts,
-            your AI has the answers.
+            Подключите Claude, Cursor, Windsurf или собственного AI-агента к
+            данным OpenPanel через MCP. Больше не нужно переключать вкладки и
+            строить графики — ответы уже у вашего AI.
           </p>
 
           {/* Tool count + ticker */}
@@ -109,14 +109,14 @@ export function Mcp() {
               className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 font-semibold text-background text-sm transition-opacity hover:opacity-80"
               href="https://dashboard.openpanel.dev/onboarding"
             >
-              Try it now
+              Попробовать сейчас
               <ArrowRightIcon className="size-3.5" />
             </Link>
             <Link
               className="row items-center gap-2 text-muted-foreground text-sm transition-colors hover:text-foreground"
               href="/docs/mcp#available-tools"
             >
-              View all 38 tools <ArrowRightIcon className="size-3.5" />
+              Все 38 инструментов <ArrowRightIcon className="size-3.5" />
             </Link>
           </div>
         </div>

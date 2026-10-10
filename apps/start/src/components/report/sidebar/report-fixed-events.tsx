@@ -76,7 +76,7 @@ export function ReportFixedEvents({
 
   return (
     <div>
-      <h3 className="mb-2 font-medium">Metrics</h3>
+      <h3 className="mb-2 font-medium">Метрики</h3>
       <div className="flex flex-col gap-4">
         {Array.from({ length: numberOfEvents }, (_, index) => ({
           slotId: `fixed-event-slot-${index}`,
@@ -125,7 +125,7 @@ export function ReportFixedEvents({
                       }
                     }}
                     items={eventNames}
-                    placeholder="Select event"
+                    placeholder="Выберите событие"
                   />
                 </div>
               </div>
@@ -191,14 +191,14 @@ export function ReportFixedEvents({
                   );
                 }}
                 items={eventNames}
-                placeholder="Select event"
+                placeholder="Выберите событие"
               />
               {showDisplayNameInput && (
                 <Input
                   placeholder={
                     (event as IChartEventItem & { type: 'event' }).name
                       ? `${(event as IChartEventItem & { type: 'event' }).name} (${alphabetIds[index]})`
-                      : 'Display name'
+                      : 'Отображаемое имя'
                   }
                   defaultValue={
                     (event as IChartEventItem & { type: 'event' }).displayName

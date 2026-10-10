@@ -12,7 +12,7 @@ export const Route = createFileRoute(
 )({
   component: Component,
   head: () => ({
-    meta: [{ title: createProjectTitle('Group events') }],
+    meta: [{ title: createProjectTitle('События группы') }],
   }),
 });
 

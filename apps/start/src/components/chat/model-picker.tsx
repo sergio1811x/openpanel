@@ -34,8 +34,8 @@ export function ModelPicker() {
           variant="ghost"
           size="sm"
           className="h-7 px-2 text-xs gap-1 text-muted-foreground"
-          aria-label="Select model"
-          title="Select model"
+          aria-label="Выбрать модель"
+          title="Выбрать модель"
         >
           <span className="truncate max-w-[140px]">
             {getModelLabel(agentName)}

@@ -23,10 +23,10 @@ export function SignInGoogle({
   );
   const title = () => {
     if (type === 'sign-in') {
-      return 'Sign in with Google';
+      return 'Войти через Google';
     }
     if (type === 'sign-up') {
-      return 'Sign up with Google';
+      return 'Зарегистрироваться через Google';
     }
   };
   return (
@@ -67,7 +67,7 @@ export function SignInGoogle({
       </Button>
       {isLastUsed && (
         <span className="absolute -top-2 right-3 rounded-full bg-highlight px-1.5 py-0.5 font-medium text-[10px] text-white leading-none">
-          Used last time
+          Использовался в прошлый раз
         </span>
       )}
     </div>

@@ -61,15 +61,15 @@ function OrganizationPage() {
 
   if (!organization) {
     return (
-      <FullPageEmptyState title="Organization not found" icon={BoxSelectIcon} />
+      <FullPageEmptyState title="Организация не найдена" icon={BoxSelectIcon} />
     );
   }
 
   return (
     <div className="container p-8">
       <PageHeader
-        title="Billing"
-        description="Manage your billing here"
+        title="Биллинг"
+        description="Управляйте биллингом здесь"
         className="mb-8"
       />
 

@@ -63,7 +63,7 @@ const ConnectWeb = ({ clients }: Props) => {
             onChange={(id) =>
               setClient(clients.find((c) => c.id === id) ?? null)
             }
-            placeholder="Select client"
+            placeholder="Выберите клиента"
             searchable
             value={client?.id ?? null}
           />
@@ -72,14 +72,14 @@ const ConnectWeb = ({ clients }: Props) => {
             onClick={() => clipboard(code, null)}
             variant="outline"
           >
-            Copy
+            Копировать
           </Button>
         </div>
         <Syntax className="border" code={code} copyable={false} />
       </div>
       <div className="col gap-4">
         <p className="text-center text-muted-foreground text-sm">
-          Or pick a framework below to get started.
+          Или выберите фреймворк ниже, чтобы начать.
         </p>
         <div className="grid gap-4 md:grid-cols-2">
           {frameworks.map((framework) => (
@@ -102,12 +102,12 @@ const ConnectWeb = ({ clients }: Props) => {
           ))}
         </div>
         <p className="text-center text-muted-foreground text-sm">
-          Missing a framework?{' '}
+          Не нашли нужный фреймворк?{' '}
           <a
             className="text-foreground underline"
             href="mailto:hello@openpanel.dev"
           >
-            Let us know!
+            Сообщите нам!
           </a>
         </p>
       </div>

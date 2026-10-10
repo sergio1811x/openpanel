@@ -1,7 +1,7 @@
 import { differenceInDays, differenceInHours, isSameDay } from 'date-fns';
 import type { FormatStyleName } from 'javascript-time-ago';
 import TimeAgo from 'javascript-time-ago';
-import en from 'javascript-time-ago/locale/en';
+import ru from 'javascript-time-ago/locale/ru';
 
 export function dateDifferanceInDays(date1: Date, date2: Date) {
   const diffTime = Math.abs(date2.getTime() - date1.getTime());
@@ -10,10 +10,10 @@ export function dateDifferanceInDays(date1: Date, date2: Date) {
 
 export function getLocale() {
   if (typeof navigator === 'undefined') {
-    return 'en-US';
+    return 'ru-RU';
   }
 
-  return navigator.language ?? 'en-US';
+  return navigator.language ?? 'ru-RU';
 }
 
 export function formatDate(date: Date) {
@@ -47,8 +47,8 @@ export function formatTime(date: Date) {
   }).format(date);
 }
 
-TimeAgo.addDefaultLocale(en);
-const ta = new TimeAgo(getLocale());
+TimeAgo.addDefaultLocale(ru);
+const ta = new TimeAgo('ru-RU');
 
 export function timeAgo(date: Date, style?: FormatStyleName) {
   return ta.format(new Date(date), style);

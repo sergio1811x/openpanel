@@ -15,7 +15,7 @@ export function useColumns() {
   const columns: ColumnDef<RouterOutputs['client']['list'][number]>[] = [
     {
       accessorKey: 'name',
-      header: 'Name',
+      header: 'Название',
       cell: ({ row }) => {
         return <div className="font-medium">{row.original.name}</div>;
       },
@@ -27,7 +27,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'createdAt',
-      header: 'Created at',
+      header: 'Создан',
       size: ColumnCreatedAt.size,
       cell: ({ row }) => {
         const item = row.original;
@@ -41,9 +41,9 @@ export function useColumns() {
       const deletion = useMutation(
         trpc.client.remove.mutationOptions({
           onSuccess() {
-            toast('Success', {
+            toast('Успешно', {
               description:
-                'Client revoked, incoming requests will be rejected.',
+                'Клиент отозван, входящие запросы будут отклоняться.',
             });
             queryClient.invalidateQueries(trpc.client.list.pathFilter());
           },
@@ -53,21 +53,21 @@ export function useColumns() {
       return (
         <>
           <DropdownMenuItem onClick={() => clipboard(client.id)}>
-            Copy client ID
+            Копировать Client ID
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => {
               pushModal('EditClient', client);
             }}
           >
-            Edit
+            Изменить
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
             onClick={() => {
               showConfirm({
-                title: 'Revoke client',
-                text: 'Are you sure you want to revoke this client? This action cannot be undone.',
+                title: 'Отзыв клиента',
+                text: 'Вы уверены, что хотите отозвать этого клиента? Это действие нельзя отменить.',
                 onConfirm() {
                   deletion.mutate({
                     id: client.id,
@@ -77,7 +77,7 @@ export function useColumns() {
             }}
             variant="destructive"
           >
-            Revoke
+            Отозвать
           </DropdownMenuItem>
         </>
       );

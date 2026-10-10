@@ -38,8 +38,8 @@ export function DataTable<TData>({
   className,
   onRowClick,
   empty = {
-    title: 'No data',
-    description: 'We could not find any data here yet',
+    title: 'Нет данных',
+    description: 'Здесь пока нет данных',
   },
   ...props
 }: DataTableProps<TData>) {

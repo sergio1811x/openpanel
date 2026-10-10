@@ -73,7 +73,7 @@ export function ConversionTable({
         id: serie.id,
         serieId: serie.id,
         serieName:
-          serie.breakdowns.length > 0 ? serie.breakdowns : ['Conversion'],
+          serie.breakdowns.length > 0 ? serie.breakdowns : ['Конверсия'],
         breakdownValues: serie.breakdowns,
         avgRate,
         prevAvgRate,
@@ -327,7 +327,7 @@ export function ConversionTable({
                   boxShadow: '2px 0 4px -2px var(--border)',
                 }}
               >
-                <div className="flex items-center">Serie</div>
+                <div className="flex items-center">Серия</div>
               </th>
               <th
                 className="text-right h-10 px-4 text-[10px] uppercase font-semibold min-w-[100px] cursor-pointer hover:bg-muted/50 select-none border-r border-border whitespace-nowrap"
@@ -340,7 +340,7 @@ export function ConversionTable({
                 }}
               >
                 <div className="flex items-center justify-end gap-1.5">
-                  Avg Rate
+                  Ср. конверсия
                   <span className="text-muted-foreground">
                     {getSortIcon('metric-avgRate')}
                   </span>
@@ -357,7 +357,7 @@ export function ConversionTable({
                 }}
               >
                 <div className="flex items-center justify-end gap-1.5">
-                  Total
+                  Всего
                   <span className="text-muted-foreground">
                     {getSortIcon('metric-total')}
                   </span>
@@ -374,7 +374,7 @@ export function ConversionTable({
                 }}
               >
                 <div className="flex items-center justify-end gap-1.5">
-                  Conversions
+                  Конверсии
                   <span className="text-muted-foreground">
                     {getSortIcon('metric-conversions')}
                   </span>

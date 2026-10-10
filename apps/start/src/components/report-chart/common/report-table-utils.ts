@@ -404,7 +404,7 @@ function getBreakdownPropertyNames(
   if (series.length === 0) return [];
   const firstSerie = series[0];
   const breakdownCount = firstSerie.names.length - 1;
-  return Array.from({ length: breakdownCount }, (_, i) => `Breakdown ${i + 1}`);
+  return Array.from({ length: breakdownCount }, (_, i) => `Разбивка ${i + 1}`);
 }
 
 /**

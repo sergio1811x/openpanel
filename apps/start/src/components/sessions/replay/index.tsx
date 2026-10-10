@@ -120,7 +120,7 @@ function FullscreenButton({
 
   return (
     <button
-      aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+      aria-label={isFullscreen ? 'Выйти из полноэкранного режима' : 'Во весь экран'}
       className="flex h-6 w-6 items-center justify-center rounded text-muted-foreground hover:text-foreground"
       onClick={toggle}
       type="button"
@@ -173,7 +173,7 @@ function ReplayContent({
       return (
         <div className="col h-[320px] items-center justify-center gap-4 bg-background">
           <div className="h-8 w-8 animate-pulse rounded-full bg-muted" />
-          <div>Loading session replay</div>
+          <div>Загрузка записи сессии</div>
         </div>
       );
     }
@@ -182,7 +182,7 @@ function ReplayContent({
     }
     return (
       <div className="flex h-[320px] items-center justify-center bg-background text-muted-foreground text-sm">
-        No replay data available for this session.
+        Нет данных записи для этой сессии.
       </div>
     );
   }

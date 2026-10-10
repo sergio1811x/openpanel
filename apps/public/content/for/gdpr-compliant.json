@@ -2,167 +2,197 @@
   "slug": "gdpr-compliant",
   "audience": "gdpr-compliant",
   "seo": {
-    "title": "GDPR-Compliant Analytics — No Cookies, No Consent Banner, No DPA",
-    "description": "GDPR-compliant web and product analytics without cookie banners, US data routing, or DPA paperwork. EU-hosted, cookieless by default, and fully self-hostable on your own infrastructure.",
+    "title": "Аналитика, соответствующая GDPR — без cookies, баннера согласия и DPA",
+    "description": "Веб- и продуктовая аналитика, соответствующая GDPR, без cookie-баннеров, маршрутизации данных в США и бюрократии DPA. Хостинг в ЕС, без cookies по умолчанию и полный self-hosting на своей инфраструктуре.",
     "noindex": false
   },
   "hero": {
-    "heading": "GDPR-compliant analytics that doesn't need a consent banner",
-    "subheading": "Google Analytics needs explicit consent, and banner-dismissal rates kill your attribution data. Mixpanel and Amplitude route data through US servers, which Schrems II made a legal mess. OpenPanel is cookieless, EU-hosted, and self-hostable for full data sovereignty. No banner. No DPA hell. No US transfer risk.",
+    "heading": "Аналитика, соответствующая GDPR, без баннера согласия",
+    "subheading": "Google Analytics требует явного согласия, а закрытие баннеров убивает ваши данные.",
     "badges": [
-      "EU-hosted",
-      "Cookieless by default",
-      "No consent banner required",
-      "Self-host for full sovereignty"
+      "Хостинг в ЕС",
+      "Без cookies по умолчанию",
+      "Баннер согласия не нужен",
+      "Self-hosting для полного суверенитета"
     ]
   },
   "problem": {
-    "title": "Why most analytics tools are a GDPR liability",
-    "intro": "The analytics stack most teams default to creates GDPR compliance work that scales worse than the tools themselves.",
+    "title": "Почему большинство инструментов аналитики — GDPR-риск",
+    "intro": "Стек аналитики, который выбирает большинство команд, порождает работу по GDPR-соответствию, которая масштабируется хуже самих инструментов.",
     "items": [
       {
-        "title": "GA4 requires explicit consent — which most users decline",
-        "description": "Consent banner dismissal and rejection rates routinely run 30–60%. That means up to half your traffic is invisible to GA4 by design, your conversion attribution is broken, and you're paying for a tool you can't use on the data that matters most."
+        "title": "GA4 требует явного согласия — и большинство пользователей отказывает",
+        "description": "Закрытие и отклонение баннеров стабильно достигают 30–60%. До половины вашего трафика GA4 не видит по дизайну, атрибуция конверсий сломана, а вы платите за инструмент, который не работает на самых важных данных."
       },
       {
-        "title": "US-based tools mean Schrems II risk",
-        "description": "Mixpanel, Amplitude, PostHog Cloud, and Heap all process EU data on US infrastructure. The EU-US Data Privacy Framework patched the legal hole but EU DPAs continue to scrutinize US transfers. One adequacy challenge and your processor list is suddenly a compliance problem."
+        "title": "Американские инструменты — риск Schrems II",
+        "description": "Mixpanel, Amplitude, PostHog Cloud и Heap обрабатывают данные ЕС на инфраструктуре США. EU-US Data Privacy Framework заткнул юридическую дыру, но европейские регуляторы продолжают проверять передачи в США. Одна апелляция к адекватности — и ваш список процессоров внезапно становится проблемой."
       },
       {
-        "title": "DPAs and BAAs are operational overhead — most teams skip them",
-        "description": "Every SaaS analytics tool you use as a processor needs a signed DPA. Healthcare-adjacent teams need BAAs. Most engineering teams don't track which tools have signed paperwork, which means most production analytics setups quietly fail their first GDPR audit."
+        "title": "DPAs и BAAs — операционный оверхед, который большинство игнорирует",
+        "description": "Для каждого SaaS-инструмента как процессора нужен подписанный DPA. Смежным со здравоохранением командам нужны BAAs. Большинство инженерных команд не отслеживает, у каких инструментов есть подписанные бумаги, — и большинство продакшен-настроек тихо проваливают первую GDPR-аудит."
       },
       {
-        "title": "Cookie consent rejection = no data",
-        "description": "Even when banners show, modern users dismiss them fast. The data you're collecting is the data from users who didn't notice the banner — not your real audience. Cookieless analytics is the structural fix; bolting consent on top of GA4 is not."
+        "title": "Отклонённые cookies = нет данных",
+        "description": "Даже когда баннеры показываются, пользователи закрывают их быстро. Вы собираете данные тех, кто не заметил баннер, — а не реальной аудитории. Аналитика без cookies — структурное решение; прикрутить согласие сверху GA4 — нет."
       }
     ]
   },
   "features": {
-    "title": "How OpenPanel makes GDPR analytics painless",
-    "intro": "Architecture-level decisions — not consent-banner workarounds — that put OpenPanel inside GDPR's legitimate-interest basis from the start.",
+    "title": "Как OpenPanel делает GDPR-аналитику безболезненной",
+    "intro": "Решения на уровне архитектуры, а не обходные пути с баннерами согласия, ставят OpenPanel в рамки законного интереса GDPR с самого начала.",
     "items": [
       {
-        "title": "Cookieless tracking by default",
-        "description": "OpenPanel identifies sessions via a privacy-preserving daily-rotating hash of IP + user agent — no personal data persists beyond 24 hours. No cookies set, no PECR (EU cookie directive) consent required, no banner needed for product analytics."
+        "title": "Отслеживание без cookies по умолчанию",
+        "description": "OpenPanel идентифицирует сессии через приватный хеш IP + user agent с ежедневной ротацией — персональные данные не живут дольше 24 часов. Cookies не ставятся, согласие по PECR (европейской директиве о cookies) не требуется, баннер для продуктовой аналитики не нужен."
       },
       {
-        "title": "EU-hosted cloud option",
-        "description": "OpenPanel Cloud runs on EU infrastructure (Frankfurt). Your event data never crosses the Atlantic. No Schrems II adequacy problem to argue with your DPO."
+        "title": "Облачная опция с хостингом в ЕС",
+        "description": "OpenPanel Cloud работает на инфраструктуре ЕС (Франкфурт). Данные о событиях никогда не пересекают Атлантику. Нет проблемы адекватности Schrems II, которую пришлось бы объяснять вашему DPO."
       },
       {
-        "title": "Self-host for total data sovereignty",
-        "description": "Run OpenPanel on your own infrastructure (Docker Compose: ClickHouse + Postgres + Redis, one-command setup). Your servers, your data, your jurisdiction. No third-party processor, no DPA to sign with anyone."
+        "title": "Self-hosting для полного суверенитета над данными",
+        "description": "Запустите OpenPanel на своей инфраструктуре (Docker Compose: ClickHouse + Postgres + Redis, установка одной командой). Ваши серверы, ваши данные, ваша юрисдикция. Никаких сторонних процессоров, никакого DPA ни с кем подписывать."
       },
       {
-        "title": "IP anonymization built-in",
-        "description": "Raw IP addresses are never stored — they're hashed for the session identifier and discarded. Geo data is derived from the hash, not the IP. No configuration required."
+        "title": "Анонимизация IP встроена",
+        "description": "Сырые IP-адреса никогда не сохраняются — они хешируются для идентификатора сессии и отбрасываются. Гео-данные выводятся из хеша, а не из IP. Настройка не требуется."
       },
       {
-        "title": "Open-source codebase you can audit",
-        "description": "MIT-licensed. Show your DPO exactly which fields are collected, how they're hashed, and where they're stored. Competing tools can only ask you to take their word for it."
+        "title": "Открытая кодовая база, которую можно проверить",
+        "description": "Лицензия MIT. Покажите вашему DPO точно, какие поля собираются, как хешируются и где хранятся. Конкурирующие инструменты могут лишь просить поверить на слово."
       },
       {
-        "title": "Data subject request tooling",
-        "description": "Export or delete all data for a specific user via the API. Build automated GDPR Article 15 (access) and Article 17 (erasure) flows in minutes, not days."
+        "title": "Инструменты для запросов субъектов данных",
+        "description": "Экспортируйте или удаляйте все данные конкретного пользователя через API. Автоматизируйте процессы GDPR Article 15 (доступ) и Article 17 (удаление) за минуты, а не дни."
       },
       {
-        "title": "No third-country data transfers",
-        "description": "EU cloud or self-host means EU-only processing. No Standard Contractual Clauses to maintain, no transfer impact assessments, no chapter V exposure."
+        "title": "Никаких передач в третьи страны",
+        "description": "Облако в ЕС или self-hosting означает обработку только в ЕС. Не нужно поддерживать Standard Contractual Clauses, проводить оценки влияния передачи и рисковать по главе V."
       },
       {
-        "title": "Audit-friendly architecture",
-        "description": "Every data flow is documented in open code. Hand the architecture diagram to your auditor; no proprietary 'trust us' to defend."
+        "title": "Архитектура, дружелюбная к аудиту",
+        "description": "Каждый поток данных документирован в открытом коде. Передайте архитектурную схему аудитору — не нужно защищать проприетарное «поверьте нам»."
       }
     ]
   },
   "benefits": {
-    "title": "Why privacy-conscious teams pick OpenPanel",
-    "intro": "The compliance benefits show up in your data quality, your legal review cycle, and your audit response time.",
+    "title": "Почему команды, заботящиеся о приватности, выбирают OpenPanel",
+    "intro": "Преимущества комплаенса видны в качестве данных, скорости юридических проверок и времени ответа на аудит.",
     "items": [
       {
-        "title": "Get the real attribution picture",
-        "description": "Cookieless tracking captures all your traffic, not just consenting users. Conversion attribution, funnel analysis, and retention metrics finally reflect reality."
+        "title": "Реальная картина атрибуции",
+        "description": "Отслеживание без cookies захватывает весь трафик, а не только согласившихся. Атрибуция конверсий, анализ воронок и метрики удержания наконец отражают реальность."
       },
       {
-        "title": "No DPA paperwork burden",
-        "description": "Self-hosted OpenPanel is not a third-party processor — there's nothing to sign. Cloud users get one DPA from OpenPanel (EU entity) instead of a stack from US vendors."
+        "title": "Нет бумажной волокиты с DPA",
+        "description": "Self-hosted OpenPanel — не сторонний процессор: подписывать нечего. Облачным пользователям достаётся один DPA от OpenPanel (юридическое лицо в ЕС) вместо стека от американских вендоров."
       },
       {
-        "title": "Pass GDPR audits without scrambling",
-        "description": "Architecture-level privacy means the auditor's questions ('What's the lawful basis? Where's the data? Who's the processor?') have one-line answers."
+        "title": "GDPR-аудит без паники",
+        "description": "Приватность на уровне архитектуры означает, что вопросы аудитора («Каково правовое основание? Где данные? Кто процессор?») имеют ответы в одну строку."
       },
       {
-        "title": "Compliance scales with the company",
-        "description": "As you expand into healthcare, financial services, or EU public-sector contracts, the architecture already meets the higher bar. No re-platforming for stricter audits."
+        "title": "Комплаенс масштабируется вместе с компанией",
+        "description": "При выходе в здравоохранение, финансовые услуги или госзакупки ЕС архитектура уже соответствует более высокой планке. Не нужно перепланировать платформу под более строгие аудиты."
       }
     ]
   },
   "faqs": {
-    "title": "Frequently asked questions about GDPR-compliant analytics",
-    "intro": "Common questions from privacy engineers, DPOs, and founders evaluating OpenPanel for EU compliance.",
+    "title": "Частые вопросы о GDPR-совместимой аналитике",
+    "intro": "Вопросы от privacy-инженеров, DPO и основателей, оценивающих OpenPanel для соответствия требованиям ЕС.",
     "items": [
       {
-        "question": "Do I still need a cookie consent banner with OpenPanel?",
-        "answer": "Not for product analytics. OpenPanel's default cookieless mode doesn't store cookies and doesn't collect personal data, so PECR (the EU cookie directive) doesn't apply and GDPR consent isn't required — legitimate interest (Article 6(1)(f)) is the lawful basis. If you add cookie-based features yourself (advertising tags, third-party scripts, etc.) those still need consent."
+        "question": "Нужен ли баннер согласия с OpenPanel?",
+        "answer": "Для продуктовой аналитики — нет. Режим без cookies по умолчанию не хранит cookies и не собирает персональные данные, поэтому PECR (европейская директива о cookies) не применяется, а согласие по GDPR не требуется — правовое основание: законный интерес (Article 6(1)(f)). Если вы сами добавите cookie-функции (рекламные теги, сторонние скрипты и т.д.), для них согласие всё ещё нужно."
       },
       {
-        "question": "What's the lawful basis for processing without consent?",
-        "answer": "Legitimate interest under GDPR Article 6(1)(f). Because OpenPanel collects no personal data in cookieless mode (no IP retention, no persistent identifiers, no fingerprinting), the balancing test against data subject rights is straightforward — minimal data, no profiling, transparent purpose. Document the legitimate interest assessment (LIA) and you're covered."
+        "question": "Какое правовое основание для обработки без согласия?",
+        "answer": "Законный интерес по GDPR Article 6(1)(f). Поскольку OpenPanel в режиме без cookies не собирает персональные данные (без хранения IP, постоянных идентификаторов и фингерпринтинга), баланс-тест против прав субъектов данных прост — минимум данных, без профилирования, прозрачная цель. Задокументируйте оценку законного интереса (LIA) — и вы покрыты."
       },
       {
-        "question": "Does OpenPanel solve Schrems II?",
-        "answer": "Yes. OpenPanel Cloud uses EU-only infrastructure (Frankfurt), so no transfer to the US occurs. Self-hosted is entirely on your infrastructure, so the question never arises. Compare this to Mixpanel/Amplitude/Heap/PostHog Cloud, which all process EU data on US servers and require SCCs and transfer impact assessments."
+        "question": "Решает ли OpenPanel проблему Schrems II?",
+        "answer": "Да. OpenPanel Cloud использует инфраструктуру только в ЕС (Франкфурт), поэтому передача в США не происходит. Self-hosted целиком на вашей инфраструктуре — вопрос не возникает. Сравните с Mixpanel/Amplitude/Heap/PostHog Cloud, которые обрабатывают данные ЕС на серверах США и требуют SCC и оценок влияния передачи."
       },
       {
-        "question": "Do I need to sign a DPA with OpenPanel?",
-        "answer": "If you self-host, no — OpenPanel is software, not a service provider. If you use OpenPanel Cloud, yes, you sign one DPA (with our EU entity). Either way it's simpler than US tool stacks where every vendor needs its own DPA and SCCs."
+        "question": "Нужно ли подписывать DPA с OpenPanel?",
+        "answer": "При self-hosting — нет: OpenPanel это софт, а не провайдер услуг. При использовании OpenPanel Cloud — да, вы подписываете один DPA (с нашим юрлицом в ЕС). В любом случае это проще, чем стеки американских инструментов, где каждому вендору нужен свой DPA и SCC."
       },
       {
-        "question": "How does data subject access / erasure (Articles 15 & 17) work?",
-        "answer": "OpenPanel exposes API endpoints to export all events for a given profileId (Article 15 — right of access) and to delete all events for that profileId (Article 17 — right of erasure). You wire those to your existing GDPR request workflow. Most teams build the whole flow in an afternoon."
+        "question": "Как работают доступ и удаление данных субъектов (Articles 15 и 17)?",
+        "answer": "OpenPanel предоставляет API-эндпоинты для экспорта всех событий по заданному profileId (Article 15 — право доступа) и удаления всех событий этого profileId (Article 17 — право на удаление). Подключите их к вашему существующему GDPR-процессу. Большинство команд собирает весь flow за один день."
       },
       {
-        "question": "What about HIPAA and CCPA?",
-        "answer": "Self-hosted OpenPanel works for HIPAA-regulated workloads — the architecture (no PII collection, encrypted-at-rest data store, audit logs) meets the technical safeguards, and self-hosting means no Business Associate Agreement is required. For CCPA (California), the same cookieless + opt-out architecture covers the 'Do Not Sell' and 'Limit Use of SPI' rights without code changes."
+        "question": "А что насчёт HIPAA и CCPA?",
+        "answer": "Self-hosted OpenPanel подходит для нагрузок, регулируемых HIPAA, — архитектура (без сбора PII, шифрование хранилища, аудит-логи) соответствует техническим защитным мерам, а самостоятельный хостинг снимает необходимость в Business Associate Agreement. Для CCPA (Калифорния) та же архитектура без cookies с opt-out покрывает права «Do Not Sell» и «Limit Use of SPI» без изменений в коде."
       },
       {
-        "question": "How does OpenPanel compare to Plausible and Matomo for GDPR?",
-        "answer": "All three are cookieless and EU-hostable. Plausible is the simplest but lacks product analytics (no funnels, retention, cohorts, user profiles). Matomo has more features but adds cookie-based tracking by default (toggle-able to cookieless) and gates advanced features behind paid plugins. OpenPanel sits between them: simpler than Matomo, more product-analytics depth than Plausible. See `/articles/self-hosted-web-analytics` for a feature-by-feature comparison."
+        "question": "Чем OpenPanel отличается от Plausible и Matomo по GDPR?",
+        "answer": "Все три работают без cookies и могут хоститься в ЕС. Plausible — самый простой, но без продуктовой аналитики (нет воронок, удержания, когорт и профилей). Matomo функциональнее, но по умолчанию включает cookie-отслеживание (можно переключить) и закрывает продвинутые функции платными плагинами. OpenPanel между ними: проще Matomo, глубже в продуктовой аналитике, чем Plausible. Пошаговое сравнение — в `/articles/self-hosted-web-analytics`."
       },
       {
-        "question": "Is OpenPanel SOC 2 certified?",
-        "answer": "OpenPanel Cloud is working toward SOC 2 Type II as of 2026. For workloads that require certification today, self-hosting on your own SOC 2-certified infrastructure inherits your existing controls — the OpenPanel codebase is auditable, and you control all access boundaries."
+        "question": "Сертифицирована ли OpenPanel по SOC 2?",
+        "answer": "OpenPanel Cloud работает над SOC 2 Type II с 2026 года. Для нагрузок, которым нужна сертификация уже сейчас, self-hosting на вашей SOC 2-сертифицированной инфраструктуре наследует существующие контроли — код OpenPanel проверяем, а все границы доступа под вашим контролем."
       }
     ]
   },
   "related_links": {
     "guides": [
-      { "title": "Website analytics setup", "url": "/guides/website-analytics-setup" },
-      { "title": "Track custom events", "url": "/guides/track-custom-events" }
+      {
+        "title": "Настройка аналитики сайта",
+        "url": "/guides/website-analytics-setup"
+      },
+      {
+        "title": "Отслеживание кастомных событий",
+        "url": "/guides/track-custom-events"
+      }
     ],
     "articles": [
-      { "title": "Self-hosted analytics without DPAs: GDPR, HIPAA, CCPA guide", "url": "/articles/better-compliance-self-hosted-analytics" },
-      { "title": "Cookieless analytics", "url": "/articles/cookieless-analytics" },
-      { "title": "Self-hosted web analytics: head-to-head buyer's guide", "url": "/articles/self-hosted-web-analytics" }
+      {
+        "title": "Self-hosted аналитика без DPAs: гайд по GDPR, HIPAA, CCPA",
+        "url": "/articles/better-compliance-self-hosted-analytics"
+      },
+      {
+        "title": "Аналитика без cookies",
+        "url": "/articles/cookieless-analytics"
+      },
+      {
+        "title": "Self-hosted веб-аналитика: сравнительный гид покупателя",
+        "url": "/articles/self-hosted-web-analytics"
+      }
     ],
     "audiences": [
-      { "title": "For SaaS teams", "url": "/for/saas" },
-      { "title": "For WordPress", "url": "/for/wordpress" }
+      {
+        "title": "Для SaaS-команд",
+        "url": "/for/saas"
+      },
+      {
+        "title": "Для WordPress",
+        "url": "/for/wordpress"
+      }
     ],
     "comparisons": [
-      { "title": "OpenPanel vs Google Analytics", "url": "/compare/google-analytics-alternative" },
-      { "title": "OpenPanel vs Plausible", "url": "/compare/plausible-alternative" },
-      { "title": "OpenPanel vs Matomo", "url": "/compare/matomo-alternative" }
+      {
+        "title": "OpenPanel против Google Analytics",
+        "url": "/compare/google-analytics-alternative"
+      },
+      {
+        "title": "OpenPanel против Plausible",
+        "url": "/compare/plausible-alternative"
+      },
+      {
+        "title": "OpenPanel против Matomo",
+        "url": "/compare/matomo-alternative"
+      }
     ]
   },
   "ctas": {
     "primary": {
-      "label": "Try OpenPanel Free",
+      "label": "Попробуйте OpenPanel бесплатно",
       "href": "https://dashboard.openpanel.dev/onboarding"
     },
     "secondary": {
-      "label": "Read the compliance guide",
+      "label": "Прочитайте гайд по комплаенсу",
       "href": "/articles/better-compliance-self-hosted-analytics"
     }
   }

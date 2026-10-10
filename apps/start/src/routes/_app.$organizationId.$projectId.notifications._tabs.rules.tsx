@@ -41,10 +41,10 @@ function Component() {
 
   if (!isLoading && data.length === 0) {
     return (
-      <FullPageEmptyState title="No rules yet" icon={PencilRulerIcon}>
+      <FullPageEmptyState title="Правил пока нет" icon={PencilRulerIcon}>
         <p>
-          You have not created any rules yet. Create a rule to start getting
-          notifications.
+          Вы ещё не создали ни одного правила. Создайте правило, чтобы начать
+          получать уведомления.
         </p>
         <Button
           className="mt-8"
@@ -55,7 +55,7 @@ function Component() {
             })
           }
         >
-          Add Rule
+          Добавить правило
         </Button>
       </FullPageEmptyState>
     );
@@ -73,7 +73,7 @@ function Component() {
             })
           }
         >
-          Add Rule
+          Добавить правило
         </Button>
       </div>
       <div className="col gap-4 w-full grid md:grid-cols-2">

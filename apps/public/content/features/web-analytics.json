@@ -1,181 +1,181 @@
 {
   "slug": "web-analytics",
-  "short_name": "Web analytics",
+  "short_name": "Веб-аналитика",
   "seo": {
-    "title": "Web Analytics That Work Out of the Box",
-    "description": "Get a complete web analytics dashboard out of the box. Track visitors, sessions, pageviews, referrers, UTM campaigns, geo, devices, and more - with just one script tag.",
+    "title": "Веб-аналитика, которая работает из коробки",
+    "description": "Получите полный дашборд веб-аналитики из коробки. Отслеживайте посетителей, сессии, просмотры страниц, рефереров, UTM-кампании, гео, устройства и другое — с помощью одного тега скрипта.",
     "keywords": [
-      "web analytics",
-      "website analytics",
-      "privacy-first analytics",
-      "google analytics alternative",
-      "website traffic analytics",
-      "utm tracking",
-      "referrer tracking",
-      "pageview analytics"
+      "веб-аналитика",
+      "аналитика сайта",
+      "аналитика с приоритетом приватности",
+      "альтернатива google analytics",
+      "аналитика трафика сайта",
+      "отслеживание utm",
+      "отслеживание рефереров",
+      "аналитика просмотров страниц"
     ]
   },
   "hero": {
-    "heading": "Web analytics: one script, full dashboard",
-    "subheading": "Add one script tag and get visitors, sessions, bounce rate, referrers, UTM campaigns, geo with maps, devices, and popular pages. No configuration needed.",
+    "heading": "Веб-аналитика: один скрипт — полный дашборд",
+    "subheading": "Добавьте один тег скрипта и получите посетителей, сессии, показатель отказов, рефереров, UTM-кампании, гео с картой, устройства и популярные страницы. Без настройки.",
     "badges": [
-      "Zero-config setup",
-      "Click any value to filter",
-      "UTM & referrer tracking",
-      "Geo details with map"
+      "Настройка не нужна",
+      "Клик по любому значению — фильтр",
+      "Отслеживание UTM и рефереров",
+      "Гео-детали с картой"
     ]
   },
   "definition": {
-    "title": "What is OpenPanel web analytics?",
-    "text": "OpenPanel web analytics gives you a **complete website analytics dashboard** the moment you add our tracking script. No goals to configure, no views to set up, no filters to define - everything works out of the box.\n\nHere's what you get immediately:\n\n- **Key metrics at a glance** - unique visitors, sessions, pageviews, pages per session, bounce rate, and session duration. Each metric has a sparkline showing the trend and percentage change vs. the previous period\n- **Traffic sources** - see where your visitors come from. Top referrers, search engines, social networks, and direct traffic are broken down automatically\n- **UTM campaign tracking** - every UTM parameter (source, medium, campaign, term, content) gets its own breakdown so you can measure marketing campaigns without any extra setup\n- **Popular pages, entries, and exits** - know which pages get the most views, which pages visitors land on first, and which pages they leave from\n- **Device breakdown** - browser, browser version, OS, OS version, device brand, and device model. See exactly what your visitors use\n- **Geographic details** - a country table with flags and visitor counts alongside an interactive map. Drill into regions and cities\n- **User journey** - follow the path visitors take through your site, from landing page through navigation to exit\n- **Insights** - AI-powered highlights that surface the biggest changes and anomalies in your traffic\n\nThe useful part: **every value in the dashboard is clickable**. See a referrer you want to investigate? Click it to filter the entire dashboard by that referrer. Curious about mobile traffic from Germany? Click the country, click the device - the whole view updates instantly. No query builder, no SQL, no waiting.\n\nOpenPanel is **privacy-first**. We don't use third-party cookies, we don't sell your data, and we don't slow down your site. You can self-host or use our cloud - your data stays yours."
+    "title": "Что такое веб-аналитика OpenPanel?",
+    "text": "Веб-аналитика OpenPanel даёт **полный дашборд аналитики сайта** сразу после добавления нашего скрипта отслеживания. Не нужно настраивать цели, создавать представления, определять фильтры — всё работает из коробки.\n\nВот что вы получаете сразу:\n\n- **Ключевые метрики с одного взгляда** — уникальные посетители, сессии, просмотры страниц, страницы за сессию, показатель отказов и длительность сессии. У каждой метрики есть спарклайн с трендом и изменением в процентах к предыдущему периоду\n- **Источники трафика** — смотрите, откуда приходят посетители. Топ рефереров, поисковиков, соцсетей и прямых переходов разбивается автоматически\n- **Отслеживание UTM-кампаний** — каждый UTM-параметр (source, medium, campaign, term, content) получает свою разбивку, чтобы измерять маркетинговые кампании без лишних настроек\n- **Популярные страницы, входы и выходы** — знайте, какие страницы получают больше всего просмотров, на какие пользователи попадают первыми и с каких уходят\n- **Разбивка по устройствам** — браузер, версия браузера, ОС, версия ОС, бренд и модель устройства. Точно видите, чем пользуются ваши посетители\n- **Географические детали** — таблица стран с флагами и числом посетителей рядом с интерактивной картой. Углубляйтесь в регионы и города\n- **Путь пользователя** — следите за маршрутом посетителей по сайту: от посадочной страницы через навигацию до выхода\n- **Инсайты** — AI-подсветка крупнейших изменений и аномалий в вашем трафике\n\nСамое полезное: **каждое значение на дашборде кликабельно**. Увидели реферера, который надо изучить? Кликните — весь дашборд отфильтруется по нему. Интересует мобильный трафик из Германии? Кликните страну, кликните устройство — весь вид обновится мгновенно. Без конструктора запросов, без SQL, без ожидания.\n\nOpenPanel создана с **приоритетом приватности**. Мы не используем сторонние cookies, не продаём ваши данные и не замедляем ваш сайт. Разверните у себя или используйте наше облако — данные остаются вашими."
   },
   "capabilities_section": {
-    "title": "Everything you get out of the box",
-    "intro": "Add the tracking script once. Everything below is available immediately - no configuration required."
+    "title": "Всё, что вы получаете из коробки",
+    "intro": "Добавьте скрипт отслеживания один раз. Всё перечисленное доступно сразу — без настройки."
   },
   "capabilities": [
     {
-      "title": "Visitors, sessions & pageviews",
-      "description": "Track unique visitors, total sessions, and pageviews with trend sparklines and period-over-period comparisons. See bounce rate, session duration, and pages per session at a glance."
+      "title": "Посетители, сессии и просмотры страниц",
+      "description": "Отслеживайте уникальных посетителей, сессии и просмотры страниц со спарклайнами трендов и сравнением периодов. Показатель отказов, длительность сессий и страницы за сессию — с одного взгляда."
     },
     {
-      "title": "Click-to-filter everything",
-      "description": "Every value in the dashboard is interactive. Click a referrer, country, browser, or page to instantly filter the entire view. Stack multiple filters to drill into any segment without writing queries."
+      "title": "Клик-фильтр по всему",
+      "description": "Каждое значение на дашборде интерактивно. Кликните реферера, страну, браузер или страницу — весь вид мгновенно отфильтруется. Комбинируйте фильтры, чтобы изучить любой сегмент без запросов."
     },
     {
-      "title": "UTM & referrer tracking",
-      "description": "Automatic breakdown by UTM source, medium, campaign, term, and content. See top referrers, search engines, and social networks - all without any tag configuration."
+      "title": "Отслеживание UTM и рефереров",
+      "description": "Автоматическая разбивка по UTM source, medium, campaign, term и content. Смотрите топ рефереров, поисковиков и соцсетей — без настройки тегов."
     },
     {
-      "title": "Popular pages, entries & exits",
-      "description": "Know which pages get the most traffic, which pages visitors land on, and which pages they leave from. Sort by views or sessions to find your best and worst performing content."
+      "title": "Популярные страницы, входы и выходы",
+      "description": "Знайте, какие страницы получают больше всего трафика, куда попадают посетители и откуда уходят. Сортируйте по просмотрам или сессиям, чтобы найти лучший и худший контент."
     },
     {
-      "title": "Device details",
-      "description": "Break down traffic by browser, browser version, operating system, OS version, device brand, and device model. See exactly what your visitors use."
+      "title": "Детали устройств",
+      "description": "Разбивайте трафик по браузеру, версии браузера, ОС, версии ОС, бренду и модели устройства. Точно видите, чем пользуются посетители."
     },
     {
-      "title": "Geographic breakdown with map",
-      "description": "See visitor counts by country with flags, and visualize traffic distribution on an interactive world map. Drill into regions and cities for local insights."
+      "title": "Географическая разбивка с картой",
+      "description": "Смотрите количество посетителей по странам с флагами и визуализируйте распределение трафика на интерактивной карте мира. Углубляйтесь в регионы и города."
     },
     {
-      "title": "User journey",
-      "description": "Follow the path visitors take through your site. See the most common navigation flows from landing page to exit, and identify where users go after each page."
+      "title": "Путь пользователя",
+      "description": "Следите за маршрутом посетителей по сайту. Видите самые частые сценарии навигации от посадочной страницы до выхода и понимайте, куда пользователи уходят с каждой страницы."
     },
     {
-      "title": "Insights for big changes",
-      "description": "Automated insights surface the most significant changes in your traffic - spikes, drops, new referrers, and trending pages. Know what changed without manually comparing time periods."
+      "title": "Инсайты о крупных изменениях",
+      "description": "Автоматические инсайты подсвечивают самые значимые изменения в трафике — всплески, провалы, новых рефереров и растущие страницы. Знайте, что изменилось, без ручного сравнения периодов."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-overview-main.webp",
-      "alt": "OpenPanel web analytics overview dashboard showing visitors, sessions, sources, and geographic data",
-      "caption": "The full web analytics overview - key metrics, traffic sources, pages, devices, and geo - all from a single script tag."
+      "alt": "Обзорный дашборд веб-аналитики OpenPanel с посетителями, сессиями, источниками и гео-данными",
+      "caption": "Полный обзор веб-аналитики — ключевые метрики, источники трафика, страницы, устройства и гео — всё с одного тега скрипта."
     }
   ],
   "how_it_works": {
-    "title": "How it works",
-    "intro": "From zero to full web analytics in under two minutes.",
+    "title": "Как это работает",
+    "intro": "От нуля до полной веб-аналитики менее чем за две минуты.",
     "steps": [
       {
-        "title": "Add the tracking script",
-        "description": "Paste a single script tag into your website's HTML. That's the only setup - no goals, no views, no filters to configure."
+        "title": "Добавьте скрипт отслеживания",
+        "description": "Вставьте один тег скрипта в HTML вашего сайта. Это вся настройка — без целей, представлений и фильтров."
       },
       {
-        "title": "Traffic flows in automatically",
-        "description": "Page views, sessions, referrers, UTM parameters, device info, and geo data are captured automatically. No events to define, no properties to map."
+        "title": "Трафик поступает автоматически",
+        "description": "Просмотры страниц, сессии, рефереры, UTM-параметры, данные об устройствах и гео фиксируются автоматически. Без определения событий и маппинга свойств."
       },
       {
-        "title": "Explore by clicking",
-        "description": "Open your dashboard and start clicking. Every value is a filter - click a country to see only that country's traffic, click a referrer to isolate that source. Stack filters to answer any question."
+        "title": "Исследуйте кликами",
+        "description": "Откройте дашборд и кликайте. Каждое значение — фильтр: клик по стране покажет только её трафик, клик по рефереру изолирует этот источник. Комбинируйте фильтры, чтобы ответить на любой вопрос."
       },
       {
-        "title": "Get insights without looking",
-        "description": "OpenPanel's insights engine monitors your traffic and highlights the biggest changes automatically. You'll know about spikes, drops, and new trends without having to check manually."
+        "title": "Получайте инсайты без поиска",
+        "description": "Движок инсайтов OpenPanel следит за трафиком и автоматически подсвечивает крупнейшие изменения. Всплески, провалы и новые тренды вы узнаете без ручной проверки."
       }
     ]
   },
   "use_cases": {
-    "title": "Who uses web analytics",
-    "intro": "Anyone with a website who wants to understand their traffic without the complexity of enterprise tools.",
+    "title": "Кто использует веб-аналитику",
+    "intro": "Все, у кого есть сайт и кто хочет понимать трафик без сложности enterprise-инструментов.",
     "items": [
       {
-        "title": "Marketing teams",
-        "description": "Track campaign performance with automatic UTM breakdowns. See which sources, mediums, and campaigns drive the most traffic and engagement - without configuring goals or conversions."
+        "title": "Маркетинговые команды",
+        "description": "Отслеживайте эффективность кампаний с автоматическими UTM-разбивками. Смотрите, какие источники, каналы и кампании приводят больше всего трафика и вовлечённости — без настройки целей и конверсий."
       },
       {
-        "title": "Content creators and bloggers",
-        "description": "See which pages get the most traffic, where visitors come from, and which content keeps people on your site. Popular pages, entries, and exits tell the full story."
+        "title": "Контент-мейкеры и блогеры",
+        "description": "Смотрите, какие страницы получают больше всего трафика, откуда приходят посетители и какой контент удерживает на сайте. Популярные страницы, входы и выходы рассказывают всю историю."
       },
       {
-        "title": "Developers and indie hackers",
-        "description": "Add one script tag and forget about it. No complex setup, no tag managers, no consent banners (OpenPanel is privacy-first). Just clean, useful data about your site's traffic."
+        "title": "Разработчики и инди-мейкеры",
+        "description": "Добавьте один тег скрипта и забудьте. Без сложной настройки, менеджеров тегов и баннеров согласия (OpenPanel создана с приоритетом приватности). Только чистые, полезные данные о трафике."
       },
       {
-        "title": "Agencies managing multiple sites",
-        "description": "Give each client a clear, beautiful dashboard they can understand. Click-to-filter makes it easy for non-technical stakeholders to explore their own data."
+        "title": "Агентства с несколькими сайтами",
+        "description": "Дайте каждому клиенту понятный красивый дашборд. Клик-фильтры позволяют нетехническим заинтересованным лицам самостоятельно исследовать свои данные."
       }
     ]
   },
   "related_features": [
     {
       "slug": "event-tracking",
-      "title": "Event tracking",
-      "description": "Go beyond page views - track clicks, signups, purchases, and any custom action to build funnels and retention reports."
+      "title": "Отслеживание событий",
+      "description": "Выйдите за пределы просмотров страниц — отслеживайте клики, регистрации, покупки и любые кастомные действия для воронок и отчётов удержания."
     },
     {
       "slug": "session-tracking",
-      "title": "Session tracking",
-      "description": "Understand how users navigate your site within a session. See entry pages, exit pages, and the full session timeline."
+      "title": "Отслеживание сессий",
+      "description": "Понимайте, как пользователи перемещаются по сайту в рамках сессии. Страницы входа, страницы выхода и полный таймлайн сессии."
     },
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "Define multi-step flows and see where visitors drop off. Combine web analytics data with custom events for full-picture conversion analysis."
+      "title": "Воронки",
+      "description": "Определите многошаговые потоки и смотрите, где посетители отсеиваются. Сочетайте данные веб-аналитики с кастомными событиями для полного анализа конверсии."
     },
     {
       "slug": "data-visualization",
-      "title": "Data visualization",
-      "description": "Build custom charts and dashboards from any metric in your web analytics data."
+      "title": "Визуализация данных",
+      "description": "Стройте кастомные графики и дашборды из любых метрик ваших данных веб-аналитики."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about OpenPanel web analytics.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы о веб-аналитике OpenPanel.",
     "items": [
       {
-        "question": "What do I need to set up?",
-        "answer": "Just add our tracking script to your website. That's it. Page views, sessions, referrers, UTMs, device data, and geo are all captured automatically. There are no goals to configure, no views to create, and no filters to define."
+        "question": "Что нужно настроить?",
+        "answer": "Просто добавьте наш скрипт отслеживания на сайт. Всё. Просмотры страниц, сессии, рефереры, UTM, данные об устройствах и гео фиксируются автоматически. Настраивать цели, создавать представления и определять фильтры не нужно."
       },
       {
-        "question": "How is this different from Google Analytics?",
-        "answer": "Google Analytics requires significant configuration - goals, views, filters, consent banners, and a steep learning curve. OpenPanel gives you a complete, beautiful dashboard from a single script tag. Everything is clickable, privacy-first, and works without cookies. You can self-host it or use our cloud."
+        "question": "Чем это отличается от Google Analytics?",
+        "answer": "Google Analytics требует значительной настройки — цели, представления, фильтры, баннеры согласия и долгое изучение. OpenPanel даёт полный красивый дашборд с одного тега скрипта. Всё кликабельно, с приоритетом приватности и работает без cookies. Можно развернуть у себя или использовать наше облако."
       },
       {
-        "question": "Do I need a cookie consent banner?",
-        "answer": "No. OpenPanel is designed to be privacy-first. We don't use third-party cookies and we don't track personal data. Many teams run OpenPanel without any consent banner at all. Check your local regulations, but in most cases you're covered."
+        "question": "Нужен ли баннер согласия на cookies?",
+        "answer": "Нет. OpenPanel спроектирована с приоритетом приватности. Мы не используем сторонние cookies и не отслеживаем персональные данные. Многие команды работают вообще без баннера согласия. Проверьте местные нормы, но в большинстве случаев вы покрыты."
       },
       {
-        "question": "Can I filter by multiple properties at once?",
-        "answer": "Yes. Click any value to filter the dashboard - then click another value to add a second filter. You can stack as many filters as you want. For example, click a country, then a browser, then a referrer to see exactly that slice of traffic."
+        "question": "Можно ли фильтровать по нескольким свойствам сразу?",
+        "answer": "Да. Кликните любое значение, чтобы отфильтровать дашборд, затем кликните другое — добавится второй фильтр. Фильтры можно наслаивать сколько угодно. Например, кликните страну, затем браузер, затем реферера — и увидите именно этот срез трафика."
       },
       {
-        "question": "What UTM parameters are supported?",
-        "answer": "All five standard UTM parameters: source, medium, campaign, term, and content. They're captured automatically from the URL - no extra configuration needed. Each parameter gets its own breakdown in the dashboard."
+        "question": "Какие UTM-параметры поддерживаются?",
+        "answer": "Все пять стандартных: source, medium, campaign, term и content. Они фиксируются автоматически из URL — без дополнительной настройки. Каждый параметр получает свою разбивку на дашборде."
       },
       {
-        "question": "Does the tracking script slow down my site?",
-        "answer": "No. The OpenPanel script is lightweight (under 5 KB) and loads asynchronously. It won't block rendering or affect your Core Web Vitals scores."
+        "question": "Замедляет ли скрипт отслеживания сайт?",
+        "answer": "Нет. Скрипт OpenPanel лёгкий (менее 5 КБ) и загружается асинхронно. Он не блокирует рендеринг и не влияет на оценки Core Web Vitals."
       },
       {
-        "question": "What geographic data is available?",
-        "answer": "You get country-level breakdown with flags, an interactive world map, and the ability to drill into regions and cities. All geo data is derived from the visitor's IP at ingestion time - nothing is stored or sent to third parties."
+        "question": "Какие географические данные доступны?",
+        "answer": "Разбивка по странам с флагами, интерактивная карта мира и возможность углубиться в регионы и города. Все гео-данные определяются по IP посетителя в момент приёма — ничего не хранится и не передаётся третьим сторонам."
       }
     ]
   },
   "cta": {
-    "label": "Add analytics in 2 minutes",
+    "label": "Подключите аналитику за 2 минуты",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

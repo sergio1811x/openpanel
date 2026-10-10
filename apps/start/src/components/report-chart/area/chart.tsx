@@ -148,7 +148,7 @@ export function Chart({ data }: Props) {
       // View Users - only show if we have projectId
       if (projectId) {
         items.push({
-          label: 'View Users',
+          label: 'Просмотр пользователей',
           icon: <UsersIcon size={16} />,
           onClick: () => {
             pushModal('ViewChartUsers', {
@@ -174,7 +174,7 @@ export function Chart({ data }: Props) {
 
       // Add Reference - always show
       items.push({
-        label: 'Add Reference',
+        label: 'Добавить метку',
         icon: <BookmarkIcon size={16} />,
         onClick: () => {
           pushModal('AddReference', {

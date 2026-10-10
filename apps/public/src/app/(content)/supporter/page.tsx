@@ -21,9 +21,9 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 export const metadata: Metadata = getPageMetadata({
-  title: 'Become a Supporter',
+  title: 'Стать спонсором',
   description:
-    'Support OpenPanel and get exclusive perks like latest Docker images, prioritized support, and early access to new features.',
+    'Поддержите OpenPanel и получите эксклюзивные бонусы: свежие Docker-образы, приоритетную поддержку и ранний доступ к новым функциям.',
   url: url('/supporter'),
   image: getOgImageUrl('/supporter'),
 });
@@ -62,22 +62,22 @@ export default function SupporterPage() {
             className="flex-1"
             title={
               <>
-                Help us build
+                Помогите нам строить
                 <br />
-                the future of open analytics
+                будущее открытой аналитики
               </>
             }
-            description="Your support accelerates development, funds infrastructure, and helps us build features faster. Plus, you get exclusive perks and early access to everything we ship."
+            description="Ваша поддержка ускоряет разработку, оплачивает инфраструктуру и помогает быстрее создавать функции. А ещё вы получаете эксклюзивные бонусы и ранний доступ ко всему, что мы выпускаем."
           />
           <div className="col gap-4 justify-center items-center mt-8">
             <Button size="lg" asChild>
               <Link href="https://buy.polar.sh/polar_cl_Az1CruNFzQB2bYdMOZmGHqTevW317knWqV44W1FqZmV">
-                Become a Supporter
+                Стать спонсором
                 <SparklesIcon className="size-4" />
               </Link>
             </Button>
             <p className="text-sm text-muted-foreground">
-              Starting at $20/month • Cancel anytime
+              От $20 в месяц • Отмена в любой момент
             </p>
           </div>
         </div>
@@ -91,35 +91,35 @@ export default function SupporterPage() {
             {/* Why Support Section */}
             <Section className="my-0">
               <SectionHeader
-                title="Why your support matters"
-                description="We're not a big corporation – just a small team passionate about building something useful for developers. OpenPanel started because we believed analytics tools shouldn't be complicated or locked behind expensive enterprise subscriptions."
+                title="Почему ваша поддержка важна"
+                description="Мы не большая корпорация — просто небольшая команда, увлечённая созданием полезного для разработчиков. OpenPanel появилась на свет, потому что мы верили: инструменты аналитики не должны быть сложными или спрятанными за дорогими enterprise-подписками."
               />
               <div className="col gap-6 mt-8">
                 <p className="text-muted-foreground">
-                  When you become a supporter, you're directly funding:
+                  Став спонсором, вы напрямую финансируете:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <FeatureCard
-                    title="Active Development"
-                    description="More time fixing bugs, adding features, and improving documentation"
+                    title="Активную разработку"
+                    description="Больше времени на исправление багов, добавление функций и улучшение документации"
                     icon={ZapIcon}
                   />
                   <FeatureCard
-                    title="Infrastructure"
-                    description="Keeping servers running, CI/CD pipelines, and development tools"
+                    title="Инфраструктуру"
+                    description="Работу серверов, CI/CD-пайплайны и инструменты разработки"
                     icon={ZapIcon}
                   />
                   <FeatureCard
-                    title="Independence"
-                    description="Staying focused on what matters: building a tool developers actually want"
+                    title="Независимость"
+                    description="Фокус на главном: создание инструмента, который разработчики действительно хотят"
                     icon={ZapIcon}
                   />
                 </div>
                 <p className="text-muted-foreground">
-                  No corporate speak, no fancy promises – just honest work on
-                  making OpenPanel better for everyone. Every contribution, no
-                  matter the size, helps us stay independent and focused on what
-                  matters.
+                  Никакого корпоративного языка и громких обещаний — просто честная
+                  работа над тем, чтобы OpenPanel стала лучше для всех. Каждый вклад,
+                  каким бы он ни был, помогает нам оставаться независимыми и
+                  сосредоточенными на важном.
                 </p>
               </div>
             </Section>
@@ -127,35 +127,35 @@ export default function SupporterPage() {
             {/* What You Get Section */}
             <Section className="my-0">
               <SectionHeader
-                title="What you get as a supporter"
-                description="Exclusive perks and early access to everything we ship."
+                title="Что вы получаете как спонсор"
+                description="Эксклюзивные бонусы и ранний доступ ко всему, что мы выпускаем."
               />
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <FeatureCard
-                  title="Latest Docker Images"
-                  description="Get bleeding-edge builds on every commit. Access new features weeks before public release."
+                  title="Свежие Docker-образы"
+                  description="Получайте сборки с последними изменениями на каждый коммит. Доступ к новым функциям за недели до публичного релиза."
                   icon={RocketIcon}
                 >
                   <Link
                     href="/docs/self-hosting/supporter-access-latest-docker-images"
                     className="text-sm text-primary hover:underline mt-2"
                   >
-                    Learn more →
+                    Подробнее →
                   </Link>
                 </FeatureCard>
                 <FeatureCard
-                  title="Prioritized Support"
-                  description="Get help faster with priority support in our Discord community. Your questions get answered first."
+                  title="Приоритетная поддержка"
+                  description="Получайте помощь быстрее благодаря приоритетной поддержке в нашем сообществе Discord. Ваши вопросы разбирают первыми."
                   icon={MessageSquareIcon}
                 />
                 <FeatureCard
-                  title="Feature Requests"
-                  description="Your ideas and feature requests get prioritized in our roadmap. Shape the future of OpenPanel."
+                  title="Предложения по функциям"
+                  description="Ваши идеи и запросы функций получают приоритет в нашем роадмапе. Формируйте будущее OpenPanel."
                   icon={SparklesIcon}
                 />
                 <FeatureCard
-                  title="Exclusive Discord Role"
-                  description="Special badge and recognition in our community. Show your support with pride."
+                  title="Эксклюзивная роль в Discord"
+                  description="Особый значок и признание в сообществе. Гордо показывайте свою поддержку."
                   icon={StarIcon}
                 />
               </div>
@@ -164,23 +164,23 @@ export default function SupporterPage() {
             {/* Impact Section */}
             <Section className="my-0">
               <SectionHeader
-                title="Your impact"
-                description="Every dollar you contribute goes directly into development, infrastructure, and making OpenPanel better. Here's what your support enables:"
+                title="Ваш вклад"
+                description="Каждый доллар идёт напрямую в разработку, инфраструктуру и улучшение OpenPanel. Вот что делает возможной ваша поддержка:"
               />
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <FeatureCard
-                  title="100% Open Source"
-                  description="Full transparency. Audit the code, contribute, fork it, or self-host without lock-in."
+                  title="100% открытый код"
+                  description="Полная прозрачность. Изучайте код, вносите вклад, делайте форк или развертывайте самостоятельно — без привязки к вендору."
                   icon={GithubIcon}
                 />
                 <FeatureCard
-                  title="24/7 Active Development"
-                  description="Continuous improvements and updates. Your support enables faster development cycles."
+                  title="Разработка 24/7"
+                  description="Постоянные улучшения и обновления. Ваша поддержка позволяет быстрее выпускать новые версии."
                   icon={ClockIcon}
                 />
                 <FeatureCard
-                  title="Self-Hostable"
-                  description="Deploy OpenPanel anywhere - your server, your cloud, or locally. Full flexibility."
+                  title="Self-hosting"
+                  description="Разверните OpenPanel где угодно — на своём сервере, в своём облаке или локально. Полная гибкость."
                   icon={InfinityIcon}
                 />
               </div>
@@ -199,9 +199,9 @@ export default function SupporterPage() {
         </div>
 
         <CtaBanner
-          title="Ready to support OpenPanel?"
-          description="Join our community of supporters and help us build the best open-source alternative to Mixpanel. Every contribution helps accelerate development and make OpenPanel better for everyone."
-          ctaText="Become a Supporter"
+          title="Готовы поддержать OpenPanel?"
+          description="Присоединяйтесь к сообществу спонсоров и помогите нам создать лучшую open-source альтернативу Mixpanel. Каждый вклад ускоряет разработку и делает OpenPanel лучше для всех."
+          ctaText="Стать спонсором"
           ctaLink="https://buy.polar.sh/polar_cl_Az1CruNFzQB2bYdMOZmGHqTevW317knWqV44W1FqZmV"
         />
       </div>

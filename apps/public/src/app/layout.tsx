@@ -33,7 +33,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html
       className={cn(font.className, mono.variable)}
-      lang="en"
+      lang="ru"
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col bg-background">

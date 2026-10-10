@@ -4,59 +4,59 @@ import { Section, SectionHeader } from '@/components/section';
 
 const faqData = [
   {
-    question: 'Does OpenPanel have a free tier?',
+    question: 'Есть ли у OpenPanel бесплатный тариф?',
     answer:
-      'For our Cloud plan we offer a 30 days free trial, this is mostly for you to be able to try out OpenPanel before committing to a paid plan. OpenPanel is also open-source and you can self-host it for free!\n\nWhy does OpenPanel not have a free tier? We want to make sure that OpenPanel is used by people who are serious about using it. We also need to invest time and resources to maintain the platform and provide support to our users.',
+      'Для облачного тарифа мы предлагаем 30 дней бесплатного пробного периода — это возможность попробовать OpenPanel до перехода на платный план. OpenPanel также имеет открытый исходный код, и вы можете развернуть её бесплатно у себя!\n\nПочему у OpenPanel нет бесплатного тарифа? Мы хотим быть уверены, что OpenPanel используют те, кому она действительно нужна. Нам также необходимо вкладывать время и ресурсы в поддержку платформы и наших пользователей.',
   },
   {
-    question: 'Is everything really unlimited?',
+    question: 'Всё действительно без ограничений?',
     answer:
-      'Yes! With OpenPanel, you get unlimited websites/apps, unlimited users, unlimited dashboards, unlimited charts, and unlimited tracked profiles.\n\nThe only limit is the number of events you track per month, which you choose based on your needs.',
+      'Да! С OpenPanel вы получаете неограниченное число сайтов/приложений, пользователей, дашбордов, графиков и отслеживаемых профилей.\n\nЕдинственное ограничение — количество отслеживаемых событий в месяц, которое вы выбираете исходя из своих потребностей.',
   },
   {
-    question: 'What is the difference between web and product analytics?',
+    question: 'Чем отличается веб-аналитика от продуктовой аналитики?',
     answer:
-      'Web analytics focuses on website traffic, page views, and visitor behavior. Product analytics goes deeper, tracking user interactions, events, and product usage patterns.\n\nOpenPanel combines both, giving you a complete view of your users and product performance.',
+      'Веб-аналитика фокусируется на трафике сайта, просмотрах страниц и поведении посетителей. Продуктовая аналитика идёт глубже: она отслеживает взаимодействия пользователей, события и паттерны использования продукта.\n\nOpenPanel объединяет обе, давая полную картину ваших пользователей и работы продукта.',
   },
   {
-    question: 'Do I need to modify my code to use OpenPanel?',
+    question: 'Нужно ли менять код, чтобы использовать OpenPanel?',
     answer:
-      'OpenPanel offers multiple SDKs and integration options. For most frameworks, you can get started with just a few lines of code.\n\nWe provide SDKs for React, Next.js, Vue, Astro, and many more. Check our documentation for your specific framework.',
+      'OpenPanel предлагает несколько SDK и вариантов интеграции. Для большинства фреймворков достаточно нескольких строк кода.\n\nМы предоставляем SDK для React, Next.js, Vue, Astro и многих других. Загляните в документацию для вашего фреймворка.',
   },
   {
-    question: 'Is my data GDPR compliant?',
+    question: 'Мои данные соответствуют GDPR?',
     answer:
-      "Yes! OpenPanel is designed with privacy in mind. We use cookie-less tracking, don't collect personal data without consent, and give you full control over your data.\n\nYou can self-host to ensure complete data sovereignty.",
+      'Да! OpenPanel создана с приоритетом приватности. Мы используем отслеживание без cookies, не собираем персональные данные без согласия и даём вам полный контроль над данными.\n\nВы можете развернуть OpenPanel у себя, чтобы гарантировать полный суверенитет над данными.',
   },
   {
-    question: 'How does OpenPanel compare to other analytics tools?',
+    question: 'Как OpenPanel сравнивается с другими инструментами аналитики?',
     answer:
-      'We have a dedicated compare page where you can see how OpenPanel compares to other analytics tools. You can find it [here](/compare). You can also read our comprehensive guide on the [best open source web analytics tools](/articles/self-hosted-web-analytics).',
+      'У нас есть отдельная страница сравнения, где видно, чем OpenPanel отличается от других инструментов аналитики. Найти её можно [здесь](/compare). Также читайте наше подробное руководство по [лучшим open source инструментам веб-аналитики](/articles/self-hosted-web-analytics).',
   },
   {
-    question: 'Is OpenPanel a good Mixpanel alternative?',
+    question: 'OpenPanel — хорошая альтернатива Mixpanel?',
     answer:
-      "Yes — OpenPanel covers the core features most teams use in Mixpanel: event tracking, funnels, retention, cohorts, and user profiles. The key differences are pricing, privacy, and self-hosting.\n\nOpenPanel starts at $2.50/month and can be self-hosted for free, while Mixpanel is cloud-only and scales to hundreds or thousands per month. OpenPanel is also cookie-free by default with EU-only hosting, so no consent banners required — something Mixpanel can't offer.\n\nSee the full [OpenPanel vs Mixpanel comparison](/compare/mixpanel-alternative) for a side-by-side breakdown.",
+      'Да — OpenPanel покрывает основные функции Mixpanel, которыми пользуется большинство команд: отслеживание событий, воронки, удержание, когорты и профили пользователей. Ключевые отличия — тарифы, приватность и self-hosting.\n\nOpenPanel стоит от $2.50/месяц и может быть развернута бесплатно у себя, тогда как Mixpanel доступен только в облаке и стоит сотни или тысячи в месяц. OpenPanel по умолчанию работает без cookies и хостится только в ЕС, поэтому баннеры согласия не нужны — чего Mixpanel предложить не может.\n\nПолное сравнение смотрите в материале [OpenPanel против Mixpanel](/compare/mixpanel-alternative).',
   },
   {
-    question: 'How does OpenPanel compare to Plausible?',
+    question: 'Чем OpenPanel отличается от Plausible?',
     answer:
-      "OpenPanel shares Plausible's privacy-first approach and simplicity, but adds powerful product analytics capabilities.\n\nWhile Plausible focuses on web analytics, OpenPanel combines both web and product analytics in one platform.",
+      'OpenPanel разделяет подход Plausible с приоритетом приватности и простоту, но добавляет мощные возможности продуктовой аналитики.\n\nЕсли Plausible фокусируется на веб-аналитике, то OpenPanel объединяет веб- и продуктовую аналитику на одной платформе.',
   },
   {
-    question: 'How does OpenPanel compare to Google Analytics?',
+    question: 'Чем OpenPanel отличается от Google Analytics?',
     answer:
-      "OpenPanel is a privacy-first alternative to Google Analytics. Unlike GA, we don't use cookies, respect user privacy, and give you full control over your data.\n\nPlus, you get product analytics features that GA doesn't offer.",
+      'OpenPanel — альтернатива Google Analytics с приоритетом приватности. В отличие от GA, мы не используем cookies, уважаем приватность пользователей и даём вам полный контроль над данными.\n\nК тому же вы получаете функции продуктовой аналитики, которых нет в GA.',
   },
   {
-    question: 'Can I export my data?',
+    question: 'Могу ли я экспортировать свои данные?',
     answer:
-      'Absolutely! You own your data and can export it anytime. We have API endpoints to get all raw data that we have access to.\n\nIf you self-host, you have direct access and own all your data. For our cloud service, you can always reach out to us if you want a database dump of all your data—perfect if you want to move from cloud to self-hosting.\n\nWe have no lock-in whatsoever.',
+      'Конечно! Данные принадлежат вам, и вы можете экспортировать их в любой момент. У нас есть API-эндпоинты для получения всех сырых данных, к которым у нас есть доступ.\n\nПри self-hosting вы имеете прямой доступ и владеете всеми своими данными. Для облачного сервиса вы всегда можете написать нам, если нужен дамп базы со всеми вашими данными — идеально для перехода с облака на самостоятельный хостинг.\n\nНикакой привязки к вендору — вы не заперты в платформе.',
   },
   {
-    question: 'What kind of support do you offer?',
+    question: 'Какая у вас поддержка?',
     answer:
-      'We offer support through our documentation, GitHub issues, and Discord community. For paid plans, we provide email support.\n\nOur team is committed to helping you succeed with OpenPanel.',
+      'Мы поддерживаем пользователей через документацию, GitHub issues и сообщество Discord. Для платных тарифов доступна поддержка по email.\n\nНаша команда стремится помочь вам добиться успеха с OpenPanel.',
   },
 ];
 
@@ -66,7 +66,7 @@ export function Faq() {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div className="col gap-8">
           <SectionHeader
-            description="Some of the most common questions we get asked."
+            description="Ответы на самые распространённые вопросы, которые нам задают."
             title="FAQ"
           />
           <GetStartedButton className="w-fit max-md:hidden" />

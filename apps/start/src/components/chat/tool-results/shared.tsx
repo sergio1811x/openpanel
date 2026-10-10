@@ -30,7 +30,7 @@ export function ToolStateGuard({
     return (
       <div className="flex items-start gap-2 rounded-md border border-destructive/30 bg-destructive/5 px-3 py-2 text-sm text-destructive">
         <AlertCircleIcon className="size-3.5 mt-0.5 shrink-0" />
-        <span>{errorText ?? 'Tool failed'}</span>
+        <span>{errorText ?? 'Ошибка инструмента'}</span>
       </div>
     );
   }
@@ -45,7 +45,7 @@ export function ToolStateGuard({
  * while a tool's input is streaming or it's executing on the server.
  */
 export function ToolActivityBadge({ toolName }: { toolName?: string }) {
-  const label = toolName ? getToolPhrase(toolName, 'active') : 'Working';
+  const label = toolName ? getToolPhrase(toolName, 'active') : 'Работаю';
   return (
     <div className="flex items-center gap-2 py-1.5 text-sm">
       <SparklesIcon className="size-3.5 text-muted-foreground shrink-0" />

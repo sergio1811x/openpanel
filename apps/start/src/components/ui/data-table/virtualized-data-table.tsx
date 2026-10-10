@@ -169,7 +169,7 @@ export function VirtualizedDataTable<TData>({
                   className="h-24 text-center flex items-center justify-center"
                   style={{ width: '100%' }}
                 >
-                  No results.
+                  Нет результатов.
                 </TableCell>
               </TableRow>
             )}

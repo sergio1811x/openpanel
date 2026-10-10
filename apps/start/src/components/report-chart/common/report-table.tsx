@@ -663,7 +663,7 @@ export function ReportTable({
     // Serie name column (pinned left) with checkbox
     cols.push({
       id: 'serie-name',
-      header: 'Serie',
+      header: 'Серия',
       accessorKey: 'serieName',
       enableSorting: true,
       size: DEFAULT_COLUMN_WIDTH,
@@ -899,7 +899,7 @@ export function ReportTable({
                   isGroupHeader && 'font-semibold',
                 )}
               >
-                {value || '(Not set)'}
+                {value || '(Не задано)'}
               </span>
               {canExpand &&
                 index ===
@@ -929,11 +929,11 @@ export function ReportTable({
 
     // Metric columns
     const metrics = [
-      { key: 'count', label: 'Unique' },
-      { key: 'sum', label: 'Sum' },
-      { key: 'average', label: 'Average' },
-      { key: 'min', label: 'Min' },
-      { key: 'max', label: 'Max' },
+      { key: 'count', label: 'Уникальные' },
+      { key: 'sum', label: 'Сумма' },
+      { key: 'average', label: 'Среднее' },
+      { key: 'min', label: 'Минимум' },
+      { key: 'max', label: 'Максимум' },
     ] as const;
 
     metrics.forEach((metric) => {

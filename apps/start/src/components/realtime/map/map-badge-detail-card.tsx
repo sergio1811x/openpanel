@@ -66,7 +66,7 @@ export function MapBadgeDetailCard({
         <div className="flex items-start justify-between gap-4 border-b p-4">
           <div className="min-w-0">
             <div className="mb-2 text-muted-foreground text-xs uppercase tracking-wide">
-              Realtime cluster
+              Реалтайм-кластер
             </div>
             <div className="truncate text-lg" style={{ fontWeight: 600 }}>
               {marker.label}
@@ -75,9 +75,9 @@ export function MapBadgeDetailCard({
               className="mt-1 text-muted-foreground"
               style={{ fontSize: 13 }}
             >
-              {query.data?.summary.totalSessions ?? marker.count} sessions
+              {query.data?.summary.totalSessions ?? marker.count} сессий
               {query.data?.summary.totalProfiles
-                ? ` • ${query.data.summary.totalProfiles} profiles`
+                ? ` • ${query.data.summary.totalProfiles} профилей`
                 : ''}
             </div>
           </div>
@@ -92,19 +92,19 @@ export function MapBadgeDetailCard({
 
         <div className="grid grid-cols-3 gap-2 border-b p-4 text-sm">
           <div className="col gap-1 rounded-lg bg-def-200 p-3">
-            <div className="text-muted-foreground text-xs">Locations</div>
+            <div className="text-muted-foreground text-xs">Локации</div>
             <div className="font-semibold">
               {query.data?.summary.totalLocations ?? marker.members.length}
             </div>
           </div>
           <div className="col gap-1 rounded-lg bg-def-200 p-3">
-            <div className="text-muted-foreground text-xs">Countries</div>
+            <div className="text-muted-foreground text-xs">Страны</div>
             <div className="font-semibold">
               {query.data?.summary.totalCountries ?? 0}
             </div>
           </div>
           <div className="col gap-1 rounded-lg bg-def-200 p-3">
-            <div className="text-muted-foreground text-xs">Cities</div>
+            <div className="text-muted-foreground text-xs">Города</div>
             <div className="font-semibold">
               {query.data?.summary.totalCities ?? 0}
             </div>
@@ -122,7 +122,7 @@ export function MapBadgeDetailCard({
             <>
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="rounded-xl border p-3">
-                  <div className="mb-2 font-medium text-sm">Top referrers</div>
+                  <div className="mb-2 font-medium text-sm">Топ источников</div>
                   <div className="space-y-2">
                     {query.data.topReferrers.length > 0 ? (
                       query.data.topReferrers.map((item) => (
@@ -136,7 +136,7 @@ export function MapBadgeDetailCard({
                               {item.referrerName
                                 .replaceAll('https://', '')
                                 .replaceAll('http://', '')
-                                .replaceAll('www.', '') || '(Not set)'}
+                                .replaceAll('www.', '') || '(Не задано)'}
                             </span>
                           </div>
                           <span className="font-mono">{item.count}</span>
@@ -144,14 +144,14 @@ export function MapBadgeDetailCard({
                       ))
                     ) : (
                       <div className="text-muted-foreground text-sm">
-                        No data
+                        Нет данных
                       </div>
                     )}
                   </div>
                 </div>
 
                 <div className="rounded-xl border p-3">
-                  <div className="mb-2 font-medium text-sm">Top events</div>
+                  <div className="mb-2 font-medium text-sm">Топ событий</div>
                   <div className="space-y-2">
                     {query.data.topEvents.length > 0 ? (
                       query.data.topEvents.map((item) => (
@@ -172,7 +172,7 @@ export function MapBadgeDetailCard({
                 </div>
 
                 <div className="col-span-2 rounded-xl border p-3">
-                  <div className="mb-2 font-medium text-sm">Top paths</div>
+                  <div className="mb-2 font-medium text-sm">Топ путей</div>
                   <div className="space-y-2">
                     {query.data.topPaths.length > 0 ? (
                       query.data.topPaths.map((item) => (
@@ -181,7 +181,7 @@ export function MapBadgeDetailCard({
                           key={`${item.origin}${item.path}`}
                         >
                           <span className="truncate">
-                            {item.path || '(Not set)'}
+                            {item.path || '(Не задано)'}
                           </span>
                           <span className="font-mono">{item.count}</span>
                         </div>
@@ -196,7 +196,7 @@ export function MapBadgeDetailCard({
               </div>
 
               <div className="rounded-xl border p-3">
-                <div className="mb-3 font-medium text-sm">Recent sessions</div>
+                <div className="mb-3 font-medium text-sm">Последние сессии</div>
                 <div className="space-y-3">
                   {query.data.recentProfiles.length > 0 ? (
                     query.data.recentProfiles.map((profile) => {
@@ -250,7 +250,7 @@ export function MapBadgeDetailCard({
                             <div>
                               {[profile.city, profile.country]
                                 .filter(Boolean)
-                                .join(', ') || 'Unknown'}
+                                .join(', ') || 'Неизвестно'}
                             </div>
                           </div>
                         </ProjectLink>
@@ -258,7 +258,7 @@ export function MapBadgeDetailCard({
                     })
                   ) : (
                     <div className="text-muted-foreground text-sm">
-                      No recent sessions
+                      Нет недавних сессий
                     </div>
                   )}
                 </div>
@@ -266,7 +266,7 @@ export function MapBadgeDetailCard({
             </>
           ) : (
             <div className="text-muted-foreground text-sm">
-              Could not load badge details.
+              Не удалось загрузить данные бейджа.
             </div>
           )}
         </div>

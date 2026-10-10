@@ -74,12 +74,12 @@ export const Route = createFileRoute('/_app/$organizationId')({
   pendingComponent: FullPageLoadingState,
   notFoundComponent: () => (
     <FullPageEmptyState
-      title="Workspace not found"
-      description="This workspace doesn't exist or you don't have access to it."
+      title="Рабочее пространство не найдено"
+      description="Это рабочее пространство не существует или у Вас нет к нему доступа."
       icon={Building2Icon}
       className="min-h-[calc(100vh-4rem)]"
     >
-      <LinkButton href="/">Go to home</LinkButton>
+      <LinkButton href="/">На главную</LinkButton>
     </FullPageEmptyState>
   ),
 });
@@ -168,8 +168,8 @@ function Component() {
         organization.subscriptionPeriodEventsCount >=
           organization.subscriptionPeriodEventsLimit * 0.8 && (
           <Alert
-            title="Approaching your events limit"
-            description={`You've used ${Math.round((organization.subscriptionPeriodEventsCount / organization.subscriptionPeriodEventsLimit) * 100)}% of your ${organization.subscriptionPeriodEventsLimit.toLocaleString()} monthly events. If you go over, we keep collecting your events but charts pause until you upgrade.`}
+            title="Вы приближаетесь к лимиту событий"
+            description={`Вы использовали ${Math.round((organization.subscriptionPeriodEventsCount / organization.subscriptionPeriodEventsLimit) * 100)}% из ${organization.subscriptionPeriodEventsLimit.toLocaleString()} ежемесячных событий. При превышении мы продолжим собирать события, но графики будут приостановлены, пока Вы не перейдёте на другой тариф.`}
           >
             <LinkButton
               to="/$organizationId/billing"
@@ -177,7 +177,7 @@ function Component() {
                 organizationId: organizationId,
               }}
             >
-              See plans
+              Посмотреть тарифы
             </LinkButton>
           </Alert>
         )}
@@ -185,8 +185,8 @@ function Component() {
         organization.isActive &&
         organization.isExceeded && (
           <Alert
-            title="Events limit exceeded"
-            description={`You hit your monthly events limit on ${format(organization.subscriptionPeriodEventsCountExceededAt, 'PPP')}. We're still collecting your events — nothing is lost — but charts won't show new data until you upgrade or your next cycle starts.`}
+            title="Превышен лимит событий"
+            description={`Вы достигли месячного лимита событий ${format(organization.subscriptionPeriodEventsCountExceededAt, 'PPP')}. Мы по-прежнему собираем события — ничего не потеряно, — но графики не будут показывать новые данные, пока Вы не перейдёте на другой тариф или не начнётся новый расчётный период.`}
           >
             <LinkButton
               to="/$organizationId/billing"
@@ -194,7 +194,7 @@ function Component() {
                 organizationId: organizationId,
               }}
             >
-              Upgrade now
+              Улучшить тариф
             </LinkButton>
           </Alert>
         )}

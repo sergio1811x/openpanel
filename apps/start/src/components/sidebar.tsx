@@ -57,7 +57,7 @@ export function Sidebar() {
   return (
     <SidebarContainer organizations={organizations} projects={projects}>
       <ActionOrganizationCTAButton />
-      <div className="mb-2 font-medium text-muted-foreground">Organization</div>
+      <div className="mb-2 font-medium text-muted-foreground">Организация</div>
       <SidebarOrganizationMenu
         organization={organizations.find((o) => o.id === organizationId)!}
       />
@@ -143,7 +143,7 @@ export function SidebarContainer({
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Docs
+                Документация
               </a>
               {projectId && (
                 <button
@@ -152,8 +152,8 @@ export function SidebarContainer({
                     chatOpen ? closeChat() : openChatForContext()
                   }
                   className="flex h-12 w-12 items-center justify-center border-border border-r font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-                  title="Open AI chat (⌘J)"
-                  aria-label="Open AI chat"
+                  title="Открыть AI-чат (⌘J)"
+                  aria-label="Открыть AI-чат"
                 >
                   <SparklesIcon size={16} />
                 </button>
@@ -165,8 +165,8 @@ export function SidebarContainer({
                 className="center-center flex h-12 cursor-pointer gap-2 border-border border-t px-4 font-medium text-muted-foreground text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
                 href="https://openpanel.dev/supporter"
               >
-                <span>Support Us</span>
-                <span>Pay What You Want</span>
+                <span>Поддержать нас</span>
+                <span>Платите сколько хотите</span>
               </a>
             )}
           </div>

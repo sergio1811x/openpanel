@@ -217,8 +217,8 @@ export const referrersModule: InsightModule = {
     const isNew = result.extra?.isNew as boolean | undefined;
 
     const title = isNew
-      ? `New traffic source: ${referrer}`
-      : `Traffic from ${referrer} ${isIncrease ? '↑' : '↓'} ${Math.abs(Number(pct))}%`;
+      ? `Новый источник трафика: ${referrer}`
+      : `Трафик из ${referrer} ${isIncrease ? '↑' : '↓'} ${Math.abs(Number(pct))}%`;
 
     const sessionsCurrent = result.currentValue ?? 0;
     const sessionsCompare = result.compareValue ?? 0;
@@ -227,7 +227,7 @@ export const referrersModule: InsightModule = {
 
     return {
       title,
-      summary: `${ctx.window.label}. Sessions ${sessionsCurrent} vs ${sessionsCompare}.`,
+      summary: `${ctx.window.label}. Сессии: ${sessionsCurrent} vs ${sessionsCompare}.`,
       displayName: referrer,
       payload: {
         kind: 'insight_v1',

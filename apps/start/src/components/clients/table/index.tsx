@@ -32,7 +32,7 @@ export const ClientsTable = ({ query }: Props) => {
           onClick={() => pushModal('AddClient')}
           responsive
         >
-          Create client
+          Создать клиента
         </Button>
       </DataTableToolbar>
       <DataTable loading={isLoading} table={table} />

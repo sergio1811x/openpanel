@@ -132,7 +132,7 @@ export function DataTableSliderFilter<TData>({
           {columnFilterValue ? (
             <div
               role="button"
-              aria-label={`Clear ${title} filter`}
+              aria-label={`Очистить фильтр: ${title}`}
               tabIndex={0}
               className="rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               onClick={onReset}
@@ -163,7 +163,7 @@ export function DataTableSliderFilter<TData>({
           </p>
           <div className="flex items-center gap-4">
             <Label htmlFor={`${id}-from`} className="sr-only">
-              From
+              От
             </Label>
             <div className="relative">
               <Input
@@ -187,7 +187,7 @@ export function DataTableSliderFilter<TData>({
               )}
             </div>
             <Label htmlFor={`${id}-to`} className="sr-only">
-              to
+              до
             </Label>
             <div className="relative">
               <Input
@@ -212,7 +212,7 @@ export function DataTableSliderFilter<TData>({
             </div>
           </div>
           <Label htmlFor={`${id}-slider`} className="sr-only">
-            {title} slider
+            Ползунок: {title}
           </Label>
           <Slider
             id={`${id}-slider`}
@@ -224,12 +224,12 @@ export function DataTableSliderFilter<TData>({
           />
         </div>
         <Button
-          aria-label={`Clear ${title} filter`}
+          aria-label={`Очистить фильтр: ${title}`}
           variant="outline"
           size="sm"
           onClick={onReset}
         >
-          Clear
+          Очистить
         </Button>
       </PopoverContent>
     </Popover>

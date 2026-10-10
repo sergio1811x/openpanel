@@ -10,9 +10,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = getPageMetadata({
-  title: 'Implementation Guides',
+  title: 'Руководства по внедрению',
   description:
-    'Step-by-step tutorials for adding privacy-first analytics to your app with OpenPanel.',
+    'Пошаговые инструкции по подключению аналитики с приоритетом приватности к вашему приложению с помощью OpenPanel.',
   url: url('/guides'),
   image: getOgImageUrl('/guides'),
 });
@@ -46,8 +46,8 @@ export default async function Page() {
           as="h1"
           align="center"
           className="flex-1"
-          title="Implementation Guides"
-          description="Step-by-step tutorials for adding privacy-first analytics to your app with OpenPanel."
+          title="Руководства по внедрению"
+          description="Пошаговые инструкции по подключению аналитики с приоритетом приватности к вашему приложению с помощью OpenPanel."
         />
       </HeroContainer>
 

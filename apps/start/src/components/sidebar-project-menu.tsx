@@ -49,50 +49,50 @@ export default function SidebarProjectMenu({
     <>
       <SidebarChatComposer />
       <div className="mb-2 font-medium text-muted-foreground text-sm">
-        Analytics
+        Аналитика
       </div>
-      <SidebarLink href={'/'} icon={WallpaperIcon} label="Overview" />
+      <SidebarLink href={'/'} icon={WallpaperIcon} label="Обзор" />
       <SidebarLink
         href={'/dashboards'}
         icon={LayoutPanelTopIcon}
-        label="Dashboards"
+        label="Дашборды"
       />
       <SidebarLink
         href={'/insights'}
         icon={TrendingUpDownIcon}
-        label="Insights"
+        label="Инсайты"
       />
-      <SidebarLink href={'/pages'} icon={LayersIcon} label="Pages" />
+      <SidebarLink href={'/pages'} icon={LayersIcon} label="Страницы" />
       <SidebarLink href={'/seo'} icon={SearchIcon} label="SEO" />
-      <SidebarLink href={'/realtime'} icon={Globe2Icon} label="Realtime" />
-      <SidebarLink href={'/events'} icon={GanttChartIcon} label="Events" />
-      <SidebarLink href={'/sessions'} icon={UsersIcon} label="Sessions" />
-      <SidebarLink href={'/profiles'} icon={UserCircleIcon} label="Profiles" />
-      <SidebarLink href={'/groups'} icon={Building2Icon} label="Groups" />
-      <SidebarLink href={'/cohorts'} icon={TargetIcon} label="Cohorts" />
+      <SidebarLink href={'/realtime'} icon={Globe2Icon} label="Реалтайм" />
+      <SidebarLink href={'/events'} icon={GanttChartIcon} label="События" />
+      <SidebarLink href={'/sessions'} icon={UsersIcon} label="Сессии" />
+      <SidebarLink href={'/profiles'} icon={UserCircleIcon} label="Профили" />
+      <SidebarLink href={'/groups'} icon={Building2Icon} label="Группы" />
+      <SidebarLink href={'/cohorts'} icon={TargetIcon} label="Кохорты" />
       <div className="mt-4 mb-2 font-medium text-muted-foreground text-sm">
-        Manage
+        Управление
       </div>
       <SidebarLink
         exact={false}
         href={'/settings'}
         icon={CogIcon}
-        label="Settings"
+        label="Настройки"
       />
-      <SidebarLink href={'/references'} icon={GridIcon} label="References" />
+      <SidebarLink href={'/references'} icon={GridIcon} label="Справочники" />
       <SidebarLink
         exact={false}
         href={'/notifications'}
         icon={BellIcon}
-        label="Notifications"
+        label="Уведомления"
       />
       <SidebarLink
         exact={false}
         href={'/integrations'}
         icon={WorkflowIcon}
-        label="Integrations"
+        label="Интеграции"
       />
-      <SidebarLink href={'..'} icon={UndoDotIcon} label="Back to workspace" />
+      <SidebarLink href={'..'} icon={UndoDotIcon} label="Вернуться в рабочее пространство" />
     </>
   );
 }
@@ -103,7 +103,7 @@ export function ActionCTAButton() {
 
   const ACTIONS = [
     {
-      label: 'Create report',
+      label: 'Создать отчёт',
       icon: ChartLineIcon,
       onClick: () =>
         navigate({
@@ -112,22 +112,22 @@ export function ActionCTAButton() {
         }),
     },
     {
-      label: 'Create reference',
+      label: 'Создать справочник',
       icon: BookOpenIcon,
       onClick: () => pushModal('AddReference'),
     },
     {
-      label: 'Ask AI',
+      label: 'Спросить AI',
       icon: SparklesIcon,
       onClick: () => openChatForContext(),
     },
     {
-      label: 'Create dashboard',
+      label: 'Создать дашборд',
       icon: LayoutDashboardIcon,
       onClick: () => pushModal('AddDashboard'),
     },
     {
-      label: 'Create notification rule',
+      label: 'Создать правило уведомлений',
       icon: BellIcon,
       onClick: () =>
         navigate({

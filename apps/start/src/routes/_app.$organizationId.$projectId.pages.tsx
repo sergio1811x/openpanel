@@ -17,7 +17,7 @@ function Component() {
   useRangePageContext('pages');
   return (
     <PageContainer>
-      <PageHeader title="Pages" description="Access all your pages here" className="mb-8" />
+      <PageHeader title="Страницы" description="Все ваши страницы в одном месте" className="mb-8" />
       <PagesTable projectId={projectId} />
     </PageContainer>
   );

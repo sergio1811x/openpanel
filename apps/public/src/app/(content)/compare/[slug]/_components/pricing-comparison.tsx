@@ -52,7 +52,7 @@ export function PricingComparison({
             </p>
             {pricing.competitor.free_tier && (
               <p className="text-xs text-muted-foreground">
-                Free tier: {pricing.competitor.free_tier}
+                Бесплатный тариф: {pricing.competitor.free_tier}
               </p>
             )}
           </div>

@@ -30,7 +30,7 @@ function VerifyPage() {
   const mutation = useMutation(
     trpc.auth.signInTotp.mutationOptions({
       onSuccess() {
-        toast.success('Signed in');
+        toast.success('Вы вошли в систему');
         window.location.href = '/';
       },
       onError(error) {
@@ -53,12 +53,12 @@ function VerifyPage() {
     <form onSubmit={handleSubmit} className="col w-full gap-8 text-left">
       <div>
         <h1 className="mb-2 font-bold text-3xl text-foreground">
-          Two-factor authentication
+          Двухфакторная аутентификация
         </h1>
         <p className="text-muted-foreground">
           {mode === 'totp'
-            ? 'Enter the 6-digit code from your authenticator app.'
-            : 'Enter one of your recovery codes. Each code can be used only once.'}
+            ? 'Введите 6-значный код из приложения-аутентификатора.'
+            : 'Введите один из ваших кодов восстановления. Каждый код можно использовать только один раз.'}
         </p>
       </div>
 
@@ -103,7 +103,7 @@ function VerifyPage() {
         disabled={!canSubmit}
         loading={mutation.isPending}
       >
-        Verify
+        Проверить
       </Button>
 
       <button
@@ -115,14 +115,14 @@ function VerifyPage() {
         className="text-sm text-muted-foreground hover:text-highlight hover:underline transition-colors duration-200 text-center"
       >
         {mode === 'totp'
-          ? 'Use a recovery code instead'
-          : 'Use authenticator app instead'}
+          ? 'Использовать код восстановления'
+          : 'Использовать приложение-аутентификатор'}
       </button>
       <a
         href="/login"
         className="text-xs text-muted-foreground hover:underline text-center"
       >
-        Sign in with a different account
+        Войти с другой учётной записью
       </a>
     </form>
   );

@@ -63,7 +63,7 @@ export function IntegrationCardLogoImage({
         backgroundColor,
       }}
     >
-      <img src={src} alt="Integration Logo" />
+      <img src={src} alt="Логотип интеграции" />
     </IntegrationCardLogo>
   );
 }

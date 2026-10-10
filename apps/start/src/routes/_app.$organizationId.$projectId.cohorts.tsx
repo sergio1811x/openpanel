@@ -57,7 +57,7 @@ function Component() {
       onError: handleError,
       onSuccess() {
         query.refetch();
-        toast('Success', { description: 'Cohort deleted.' });
+        toast('Успешно', { description: 'Кохорта удалена.' });
       },
     }),
   );
@@ -67,7 +67,7 @@ function Component() {
       onError: handleError,
       onSuccess() {
         query.refetch();
-        toast('Success', { description: 'Cohort refresh queued.' });
+        toast('Успешно', { description: 'Обновление кохорты запланировано.' });
       },
     }),
   );
@@ -82,20 +82,20 @@ function Component() {
       const csv = cohortMembersToCSV(result.profileIds);
       downloadCSV(csv, `${cohortName}-members.csv`);
     } catch {
-      toast.error('Failed to download cohort members');
+      toast.error('Не удалось скачать участников кохорты');
     }
   }
 
   if (cohorts.length === 0) {
     return (
-      <FullPageEmptyState title="No cohorts" icon={UsersIcon}>
-        <p>You have not created any cohorts for this project yet</p>
+      <FullPageEmptyState title="Нет кохорт" icon={UsersIcon}>
+        <p>Вы ещё не создали ни одной кохорты для этого проекта</p>
         <Button
           onClick={() => pushModal('AddCohort')}
           className="mt-14"
           icon={PlusIcon}
         >
-          Create cohort
+          Создать кохорту
         </Button>
       </FullPageEmptyState>
     );
@@ -104,13 +104,13 @@ function Component() {
   return (
     <PageContainer>
       <PageHeader
-        title="Cohorts"
-        description="Create and manage user segments based on events and properties"
+        title="Кохорты"
+        description="Создавайте и управляйте сегментами пользователей на основе событий и свойств"
         className="mb-8"
         actions={
           <Button icon={PlusIcon} onClick={() => pushModal('AddCohort')}>
-            <span className="max-sm:hidden">Create cohort</span>
-            <span className="sm:hidden">Cohort</span>
+            <span className="max-sm:hidden">Создать кохорту</span>
+            <span className="sm:hidden">Кохорта</span>
           </Button>
         }
       />
@@ -137,20 +137,19 @@ function Component() {
                     <div className="flex items-center gap-1">
                       <UsersIcon size={14} />
                       <span>
-                        {displayCount.toLocaleString()}{' '}
-                        {displayCount === 1 ? 'member' : 'members'}
+                        Участников: {displayCount.toLocaleString()}
                       </span>
                     </div>
                     {cohort.lastComputedAt && (
                       <div className={cn('text-xs')}>
-                        Updated{' '}
-                        {format(cohort.lastComputedAt, 'MMM d, HH:mm')}
+                        Обновлено{' '}
+                        {format(cohort.lastComputedAt, 'd MMM, HH:mm')}
                       </div>
                     )}
                   </div>
                   {cohort.isStatic && (
                     <div className="mt-1 inline-flex w-fit rounded bg-blue-100 px-2 py-0.5 text-xs text-blue-700">
-                      Static
+                      Статическая
                     </div>
                   )}
                 </div>
@@ -163,7 +162,7 @@ function Component() {
                     onClick={() => handleDownload(cohort.id, cohort.name)}
                   >
                     <DownloadIcon size={16} />
-                    Download
+                    Скачать
                   </button>
                 </CardActionsItem>
                 {!cohort.isStatic && (
@@ -175,7 +174,7 @@ function Component() {
                       }}
                     >
                       <RefreshCwIcon size={16} />
-                      Refresh
+                      Обновить
                     </button>
                   </CardActionsItem>
                 )}
@@ -193,7 +192,7 @@ function Component() {
                     }}
                   >
                     <PencilIcon size={16} />
-                    Edit
+                    Изменить
                   </button>
                 </CardActionsItem>
                 <CardActionsItem className="w-full text-destructive" asChild>
@@ -201,14 +200,14 @@ function Component() {
                     type="button"
                     onClick={() => {
                       showConfirm({
-                        title: 'Delete cohort',
-                        text: 'Are you sure you want to delete this cohort? This action cannot be undone.',
+                        title: 'Удаление кохорты',
+                        text: 'Вы уверены, что хотите удалить эту кохорту? Это действие нельзя отменить.',
                         onConfirm: () => deletion.mutate({ id: cohort.id }),
                       });
                     }}
                   >
                     <TrashIcon size={16} />
-                    Delete
+                    Удалить
                   </button>
                 </CardActionsItem>
               </CardActions>

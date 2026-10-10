@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = getPageMetadata({
   url: '/tools/ip-lookup',
-  title: 'What Is My IP? Free IP Address Lookup & Geolocation',
+  title: 'Какой у меня IP? Бесплатная проверка IP-адреса и геолокации',
   description:
-    'Find your IP address and location instantly. See city, country, ISP, ASN, and coordinates. Free, no signup, no tracking. Works for any IPv4 or IPv6 address.',
+    'Узнайте свой IP-адрес и местоположение мгновенно. Город, страна, провайдер, ASN и координаты. Бесплатно, без регистрации и отслеживания. Работает для любого IPv4 и IPv6.',
 });
 
 export default function IPLookupLayout({

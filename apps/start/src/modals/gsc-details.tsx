@@ -52,7 +52,7 @@ const { TooltipProvider, Tooltip: GscTooltip } = createChartTooltip<
         </ChartTooltipHeader>
         <ChartTooltipItem color={getChartColor(0)}>
           <div className="flex justify-between gap-8 font-medium font-mono">
-            <span>Views</span>
+            <span>Просмотры</span>
             <span>{item.views.toLocaleString()}</span>
           </div>
         </ChartTooltipItem>
@@ -69,7 +69,7 @@ const { TooltipProvider, Tooltip: GscTooltip } = createChartTooltip<
       {clicks != null && (
         <ChartTooltipItem color={getChartColor(0)}>
           <div className="flex justify-between gap-8 font-medium font-mono">
-            <span>Clicks</span>
+            <span>Клики</span>
             <span>{clicks.toLocaleString()}</span>
           </div>
         </ChartTooltipItem>
@@ -77,7 +77,7 @@ const { TooltipProvider, Tooltip: GscTooltip } = createChartTooltip<
       {impressions != null && (
         <ChartTooltipItem color={getChartColor(1)}>
           <div className="flex justify-between gap-8 font-medium font-mono">
-            <span>Impressions</span>
+            <span>Показы</span>
             <span>{impressions.toLocaleString()}</span>
           </div>
         </ChartTooltipItem>
@@ -159,7 +159,7 @@ export default function GscDetails(props: Props) {
       : ((data as { pages?: unknown[] } | undefined)?.pages ?? []);
 
   const breakdownKey = type === 'page' ? 'query' : 'page';
-  const breakdownLabel = type === 'page' ? 'Query' : 'Page';
+  const breakdownLabel = type === 'page' ? 'Запрос' : 'Страница';
 
   const maxClicks = Math.max(
     ...(breakdownRows as { clicks: number }[]).map((r) => r.clicks),
@@ -177,7 +177,7 @@ export default function GscDetails(props: Props) {
       <div className="col gap-6">
         {type === 'page' && (
           <div className="card p-4">
-            <h3 className="mb-4 font-medium text-sm">Views & Sessions</h3>
+            <h3 className="mb-4 font-medium text-sm">Просмотры и сессии</h3>
             {isLoading || pageTimeseriesQuery.isLoading ? (
               <Skeleton className="h-40 w-full" />
             ) : (
@@ -192,7 +192,7 @@ export default function GscDetails(props: Props) {
         )}
 
         <div className="card p-4">
-          <h3 className="mb-4 font-medium text-sm">Clicks & Impressions</h3>
+          <h3 className="mb-4 font-medium text-sm">Клики и показы</h3>
           {isLoading ? (
             <Skeleton className="h-40 w-full" />
           ) : (
@@ -203,7 +203,7 @@ export default function GscDetails(props: Props) {
         <div className="card overflow-hidden">
           <div className="border-b p-4">
             <h3 className="font-medium text-sm">
-              Top {breakdownLabel.toLowerCase()}s
+              Топ {type === 'page' ? 'запросов' : 'страниц'}
             </h3>
           </div>
           {isLoading ? (
@@ -215,12 +215,12 @@ export default function GscDetails(props: Props) {
                   render: () => <Skeleton className="h-4 w-2/3" />,
                 },
                 {
-                  name: 'Clicks',
+                  name: 'Клики',
                   width: '70px',
                   render: () => <Skeleton className="h-4 w-10" />,
                 },
                 {
-                  name: 'Pos.',
+                  name: 'Поз.',
                   width: '55px',
                   render: () => <Skeleton className="h-4 w-8" />,
                 },
@@ -246,7 +246,7 @@ export default function GscDetails(props: Props) {
                   },
                 },
                 {
-                  name: 'Clicks',
+                  name: 'Клики',
                   width: '70px',
                   getSortValue: (item) => item.clicks as number,
                   render(item) {
@@ -258,7 +258,7 @@ export default function GscDetails(props: Props) {
                   },
                 },
                 {
-                  name: 'Impr.',
+                  name: 'Показы',
                   width: '70px',
                   getSortValue: (item) => item.impressions as number,
                   render(item) {
@@ -282,7 +282,7 @@ export default function GscDetails(props: Props) {
                   },
                 },
                 {
-                  name: 'Pos.',
+                  name: 'Поз.',
                   width: '55px',
                   getSortValue: (item) => item.position as number,
                   render(item) {

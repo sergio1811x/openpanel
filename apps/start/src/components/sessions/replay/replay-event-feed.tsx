@@ -61,7 +61,7 @@ export function ReplayEventFeed({ events, replayLoading }: { events: IServiceEve
   return (
     <BrowserChrome
       url={false}
-      controls={<span className="text-lg font-medium">Timeline</span>}
+      controls={<span className="text-lg font-medium">Таймлайн</span>}
       className="h-full"
     >
       <ScrollArea className="flex-1 min-h-0" ref={viewportRef}>
@@ -80,7 +80,7 @@ export function ReplayEventFeed({ events, replayLoading }: { events: IServiceEve
           ))}
           {!replayLoading && visibleEvents.length === 0 && (
             <div className="py-8 text-center text-sm text-muted-foreground">
-              Events will appear as the replay plays.
+              События будут появляться по мере воспроизведения.
             </div>
           )}
           {replayLoading &&

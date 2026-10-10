@@ -77,18 +77,18 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         <FullPageEmptyState
           description={error.message}
           icon={LockIcon}
-          title="No access"
+          title="Нет доступа"
         >
-          <LinkButton href="/">Go back to home</LinkButton>
+          <LinkButton href="/">Вернуться на главную</LinkButton>
         </FullPageEmptyState>
       );
     }
     return (
       <FullPageErrorState
         description={error.message}
-        title={'Something went wrong'}
+        title={'Что-то пошло не так'}
       >
-        <LinkButton href="/">Go back to home</LinkButton>
+        <LinkButton href="/">Вернуться на главную</LinkButton>
       </FullPageErrorState>
     );
   },

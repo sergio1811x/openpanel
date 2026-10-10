@@ -29,7 +29,7 @@ export const Route = createFileRoute(
   },
   pendingComponent: FullPageLoadingState,
   head: () => ({
-    meta: [{ title: createProjectTitle('Group') }],
+    meta: [{ title: createProjectTitle('Группа') }],
   }),
 });
 
@@ -75,7 +75,7 @@ function Component() {
               data={[]}
               id="totalEvents"
               isLoading={false}
-              label="Total Events"
+              label="Всего событий"
               metric={{ current: m.totalEvents, previous: null }}
               unit=""
             />
@@ -83,7 +83,7 @@ function Component() {
               data={[]}
               id="uniqueMembers"
               isLoading={false}
-              label="Unique Members"
+              label="Уникальные участники"
               metric={{ current: m.uniqueProfiles, previous: null }}
               unit=""
             />
@@ -91,7 +91,7 @@ function Component() {
               data={[]}
               id="firstSeen"
               isLoading={false}
-              label="First Seen"
+              label="Первое появление"
               metric={{
                 current: m.firstSeen ? new Date(m.firstSeen).getTime() : 0,
                 previous: null,
@@ -102,7 +102,7 @@ function Component() {
               data={[]}
               id="lastSeen"
               isLoading={false}
-              label="Last Seen"
+              label="Последнее появление"
               metric={{
                 current: m.lastSeen ? new Date(m.lastSeen).getTime() : 0,
                 previous: null,
@@ -117,7 +117,7 @@ function Component() {
       <div className="col-span-1 md:col-span-2">
         <Widget className="w-full">
           <WidgetHead>
-            <div className="title">Group Information</div>
+            <div className="title">Информация о группе</div>
           </WidgetHead>
           <KeyValueGrid
             className="border-0"

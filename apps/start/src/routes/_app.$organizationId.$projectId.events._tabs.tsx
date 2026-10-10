@@ -25,9 +25,9 @@ function Component() {
   useRangePageContext('events');
 
   const { activeTab, tabs } = usePageTabs([
-    { id: 'events', label: 'Events' },
-    { id: 'conversions', label: 'Conversions' },
-    { id: 'stats', label: 'Stats' },
+    { id: 'events', label: 'События' },
+    { id: 'conversions', label: 'Конверсии' },
+    { id: 'stats', label: 'Статистика' },
   ]);
 
   const handleTabChange = (tabId: string) => {
@@ -41,8 +41,8 @@ function Component() {
   return (
     <div className="container p-8">
       <PageHeader
-        title="Events"
-        description="Paginate through your events, conversions and overall stats"
+        title="События"
+        description="Просматривайте события, конверсии и общую статистику"
       />
 
       <Tabs

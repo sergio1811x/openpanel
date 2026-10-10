@@ -44,7 +44,7 @@ export default function SidebarOrganizationMenu({
         to="/$organizationId"
       >
         <LayoutListIcon size={20} />
-        <div className="flex-1">Projects</div>
+        <div className="flex-1">Проекты</div>
       </Link>
       <Link
         activeOptions={{ exact: true }}
@@ -55,7 +55,7 @@ export default function SidebarOrganizationMenu({
         to="/$organizationId/settings"
       >
         <CogIcon size={20} />
-        <div className="flex-1">Settings</div>
+        <div className="flex-1">Настройки</div>
       </Link>
       {isAdmin && !isSelfHosted && (
         <Link
@@ -67,7 +67,7 @@ export default function SidebarOrganizationMenu({
           to="/$organizationId/billing"
         >
           <CreditCardIcon size={20} />
-          <div className="flex-1">Billing</div>
+          <div className="flex-1">Биллинг</div>
           {(() => {
             if (!organization) {
               return null;
@@ -94,7 +94,7 @@ export default function SidebarOrganizationMenu({
           to="/$organizationId/members"
         >
           <UsersIcon size={20} />
-          <div className="flex-1">Members</div>
+          <div className="flex-1">Участники</div>
         </Link>
       )}
     </>
@@ -109,12 +109,12 @@ export function ActionCTAButton() {
     ...(isAdmin
       ? [
           {
-            label: 'Create a project',
+            label: 'Создать проект',
             icon: PlusIcon,
             onClick: () => pushModal('AddProject'),
           },
           {
-            label: 'Invite a user',
+            label: 'Пригласить пользователя',
             icon: UsersIcon,
             onClick: () => pushModal('CreateInvite'),
           },

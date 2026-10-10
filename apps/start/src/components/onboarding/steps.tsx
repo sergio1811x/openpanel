@@ -15,22 +15,22 @@ type Props = {
 function useSteps(path: string) {
   const steps: Step[] = [
     {
-      name: 'Create an account',
+      name: 'Создание аккаунта',
       status: 'pending',
       match: '/onboarding',
     },
     {
-      name: 'Create a project',
+      name: 'Создание проекта',
       status: 'pending',
       match: '/onboarding/project',
     },
     {
-      name: 'Connect your data',
+      name: 'Подключение данных',
       status: 'pending',
       match: '/onboarding/(.+)/connect',
     },
     {
-      name: 'Verify',
+      name: 'Проверка',
       status: 'pending',
       match: '/onboarding/(.+)/verify',
     },

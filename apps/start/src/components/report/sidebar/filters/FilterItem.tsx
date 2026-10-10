@@ -35,14 +35,14 @@ function validateFilterValue(
   }
   switch (type) {
     case 'number':
-      return Number.isFinite(Number(value)) ? undefined : 'Not a valid number';
+      return Number.isFinite(Number(value)) ? undefined : 'Некорректное число';
     case 'date':
     case 'datetime':
-      return Number.isNaN(Date.parse(value)) ? 'Not a valid date' : undefined;
+      return Number.isNaN(Date.parse(value)) ? 'Некорректная дата' : undefined;
     case 'boolean':
       return value === 'true' || value === 'false'
         ? undefined
-        : 'Use "true" or "false"';
+        : 'Используйте "true" или "false"';
     default:
       return undefined;
   }
@@ -185,8 +185,8 @@ export function FilterItem({ filter, event }: FilterProps) {
 }
 
 const BOOLEAN_VALUE_ITEMS = [
-  { value: 'true', label: 'Yes' },
-  { value: 'false', label: 'No' },
+  { value: 'true', label: 'Да' },
+  { value: 'false', label: 'Нет' },
 ];
 
 export function PureFilterItem({
@@ -269,7 +269,7 @@ export function PureFilterItem({
             filter.value[0] === undefined ? null : String(filter.value[0])
           }
           onChange={(v) => changeFilterValue([v])}
-          placeholder="Yes / No"
+          placeholder="Да / Нет"
         />
       );
     }
@@ -281,7 +281,7 @@ export function PureFilterItem({
           items={eventNames}
           value={filter.value[0] ? String(filter.value[0]) : null}
           onChange={(v: string) => changeFilterValue([v])}
-          placeholder="Select event"
+          placeholder="Выберите событие"
           searchable
         />
       );
@@ -294,7 +294,7 @@ export function PureFilterItem({
           value={filter.value}
           className="flex-1"
           onChange={changeFilterValue}
-          placeholder="Select..."
+          placeholder="Выберите..."
         />
       );
     }

@@ -19,56 +19,56 @@ async function getOgData(
   switch (segments[0]) {
     case 'default':
       return {
-        title: 'Home',
-        description: 'Home page',
+        title: 'Главная',
+        description: 'Главная страница',
       };
     case 'supporter': {
       return {
-        title: 'Become a Supporter',
+        title: 'Стать спонсором',
         description:
-          'Support OpenPanel and get exclusive perks like latest Docker images, prioritized support, and early access to new features.',
+          'Поддержите OpenPanel и получите эксклюзивные бонусы: свежие Docker-образы, приоритетную поддержку и ранний доступ к новым функциям.',
       };
     }
     case 'open-source': {
       return {
-        title: 'Free analytics for open source projects',
+        title: 'Бесплатная аналитика для open source проектов',
         description:
-          "Get free web and product analytics for your open source project. Track up to 2.5M events/month. Apply to OpenPanel's open source program today.",
+          'Получите бесплатную веб- и продуктовую аналитику для вашего open source проекта. До 2,5 млн событий в месяц. Подайте заявку в open source программу OpenPanel.',
       };
     }
     case 'pricing': {
       return {
-        title: 'Pricing',
+        title: 'Тарифы',
         description:
-          'Our pricing is as simple as it gets, choose how many events you want to track each month, everything else is unlimited, no tiers, no hidden costs.',
+          'Наши тарифы максимально просты: выберите, сколько событий вы хотите отслеживать каждый месяц, — всё остальное без ограничений. Никаких уровней и скрытых расходов.',
       };
     }
     case 'articles': {
       if (segments.length > 1) {
         const data = await articleSource.getPage(segments.slice(1));
         return {
-          title: data?.data.title ?? 'Article Not Found',
+          title: data?.data.title ?? 'Статья не найдена',
           description:
-            data?.data.description || 'Whooops, could not find this article',
+            data?.data.description || 'Упс, не удалось найти эту статью',
         };
       }
       return {
-        title: 'Articles',
+        title: 'Статьи',
         description:
-          'Read our latest articles and stay up to date with the latest news and updates.',
+          'Читайте наши последние статьи и будьте в курсе свежих новостей и обновлений.',
       };
     }
     case 'compare': {
       const slug = segments[1];
       if (!slug) {
         return {
-          title: 'Compare alternatives',
-          description: 'Compare OpenPanel with other analytics tools',
+          title: 'Сравнение альтернатив',
+          description: 'Сравните OpenPanel с другими инструментами аналитики',
         };
       }
       const data = await getCompareData(slug);
       return {
-        title: data?.seo.title || data?.hero.heading || 'Compare',
+        title: data?.seo.title || data?.hero.heading || 'Сравнение',
         description: data?.seo.description || data?.hero.subheading,
       };
     }
@@ -76,28 +76,29 @@ async function getOgData(
       if (segments.length > 1) {
         const data = await guideSource.getPage(segments.slice(1));
         return {
-          title: data?.data.title ?? 'Guide Not Found',
+          title: data?.data.title ?? 'Руководство не найдено',
           description:
-            data?.data.description || 'Whooops, could not find this guide',
+            data?.data.description || 'Упс, не удалось найти это руководство',
         };
       }
       return {
-        title: 'Implementation Guides',
-        description: 'Step-by-step tutorials for adding analytics to your app',
+        title: 'Руководства по внедрению',
+        description:
+          'Пошаговые инструкции по подключению аналитики к вашему приложению',
       };
     }
     case 'features': {
       const slug = segments[1];
       if (!slug) {
         return {
-          title: 'Product analytics features',
+          title: 'Возможности продуктовой аналитики',
           description:
-            'Explore OpenPanel features: event tracking, funnels, retention, user profiles, and more.',
+            'Изучите возможности OpenPanel: отслеживание событий, воронки, удержание, профили пользователей и многое другое.',
         };
       }
       const featureData = await getFeatureData(slug);
       return {
-        title: featureData?.seo.title ?? 'Feature Not Found',
+        title: featureData?.seo.title ?? 'Возможность не найдена',
         description:
           featureData?.seo.description ?? featureData?.hero.subheading,
       };
@@ -105,9 +106,9 @@ async function getOgData(
     case 'docs': {
       const data = await source.getPage(segments.slice(1));
       return {
-        title: data?.data.title ?? 'Page Not Found',
+        title: data?.data.title ?? 'Страница не найдена',
         description:
-          data?.data.description || 'Whooops, could not find this page',
+          data?.data.description || 'Упс, не удалось найти эту страницу',
       };
     }
     case 'tools': {
@@ -116,34 +117,34 @@ async function getOgData(
         switch (tool) {
           case 'ip-lookup':
             return {
-              title: 'IP Lookup Tool',
+              title: 'Проверка IP-адреса',
               description:
-                'Find detailed information about any IP address including geolocation, ISP, and network details.',
+                'Подробная информация о любом IP-адресе: геолокация, провайдер и сетевые данные.',
             };
           case 'url-checker':
             return {
-              title: 'URL Checker',
+              title: 'Проверка URL',
               description:
-                'Analyze any website for SEO, social media, technical, and security information. Get comprehensive insights about any URL.',
+                'Проанализируйте любой сайт: SEO, соцсети, технические данные и безопасность. Полный разбор любого URL.',
             };
           default:
             return {
-              title: 'Tools',
-              description: 'Free web tools for developers and website owners',
+              title: 'Инструменты',
+              description: 'Бесплатные веб-инструменты для разработчиков и владельцев сайтов',
             };
         }
       }
       return {
-        title: 'Tools',
-        description: 'Free web tools for developers and website owners',
+        title: 'Инструменты',
+        description: 'Бесплатные веб-инструменты для разработчиков и владельцев сайтов',
       };
     }
     default: {
       const data = await pageSource.getPage(segments);
       return {
-        title: data?.data.title || 'Page Not Found',
+        title: data?.data.title || 'Страница не найдена',
         description:
-          data?.data.description || 'Whooops, could not find this page',
+          data?.data.description || 'Упс, не удалось найти эту страницу',
       };
     }
   }
@@ -294,7 +295,7 @@ export async function GET(
     );
   } catch (e: any) {
     console.error(`Failed to generate OG image: ${e.message}`);
-    return new Response('Failed to generate the image', {
+    return new Response('Не удалось сгенерировать изображение', {
       status: 500,
     });
   }

@@ -251,12 +251,12 @@ export const pageTrendsModule: InsightModule = {
     const shareShiftDisplay = Math.abs(shareShiftPp).toFixed(1);
 
     const title = isNew
-      ? `New page getting views: ${displayValue}`
-      : `Page ${displayValue} share ${isIncrease ? '↑' : '↓'} ${shareShiftDisplay}pp`;
+      ? `Новая страница с просмотрами: ${displayValue}`
+      : `Доля страницы ${displayValue} ${isIncrease ? '↑' : '↓'} ${shareShiftDisplay} п.п.`;
 
     return {
       title,
-      summary: `${ctx.window.label}. Share ${(shareCurrent * 100).toFixed(1)}% vs ${(shareCompare * 100).toFixed(1)}%.`,
+      summary: `${ctx.window.label}. Доля: ${(shareCurrent * 100).toFixed(1)}% vs ${(shareCompare * 100).toFixed(1)}%.`,
       displayName: displayValue,
       payload: {
         kind: 'insight_v1',

@@ -2,160 +2,160 @@
   "slug": "mcp",
   "short_name": "MCP",
   "seo": {
-    "title": "Analytics MCP Server - Ask Your AI About Your Users | OpenPanel",
-    "description": "Connect Claude, Cursor, or Windsurf to your OpenPanel analytics via MCP. Query funnels, retention, user profiles, and events without opening the dashboard.",
+    "title": "MCP-сервер аналитики — спросите у AI о своих пользователях | OpenPanel",
+    "description": "Подключите Claude, Cursor или Windsurf к аналитике OpenPanel через MCP. Запрашивайте воронки, удержание, профили пользователей и события, не открывая дашборд.",
     "keywords": [
-      "analytics mcp server",
+      "mcp-сервер аналитики",
       "openpanel mcp",
-      "ai product analytics",
-      "connect analytics to claude",
-      "mixpanel mcp alternative"
+      "ai-продуктовая аналитика",
+      "подключить аналитику к claude",
+      "mixpanel mcp альтернатива"
     ]
   },
   "hero": {
-    "heading": "MCP: ask your AI about your users",
-    "subheading": "Let your AI deep dive into your OpenPanel data and understand what's going on. Skip dashboards and reports when you just want a quick answer.",
+    "heading": "MCP: спросите у AI о своих пользователях",
+    "subheading": "Позвольте своему AI глубоко копнуть данные OpenPanel и понять, что происходит. Пропускайте дашборды и отчёты, когда нужен быстрый ответ.",
     "badges": [
-      "38 tools",
-      "Works with Claude, Cursor & Windsurf",
-      "No install required",
-      "Hosted by OpenPanel"
+      "38 инструментов",
+      "Работает с Claude, Cursor и Windsurf",
+      "Установка не требуется",
+      "Хостится OpenPanel"
     ]
   },
   "definition": {
-    "title": "What is an analytics MCP server?",
-    "text": "The Model Context Protocol (MCP) is an open standard from Anthropic that lets AI clients connect to external data sources and tools. An analytics MCP server is a bridge: it translates your AI's requests into analytics queries and returns structured data the AI can reason over.\n\nWithout it, getting an answer from your analytics looks like this: open the dashboard, navigate to the right view, build or find the right chart, read the number, close the tab, context-switch back to what you were doing. If the answer leads to another question, repeat.\n\nWith OpenPanel's MCP server, you ask and get an answer—inside the tool you're already in.\n\n```\n\"What's the 7-day retention for users who signed up last month?\"\n\"Which funnel step has the biggest drop-off this week?\"\n\"Show me the last 5 sessions for user@example.com\"\n```\n\nOpenPanel hosts the server at `api.openpanel.dev/mcp`. There's nothing to install or run locally. You create an API client in your dashboard, generate a token, and add the URL to your AI client's config. That's it.\n\nThe server exposes **38 tools** covering every layer of your product data:\n\n- **Events and sessions** — query raw events, filter by property, inspect individual sessions\n- **User profiles** — look up users, their event history, and activity timeline\n- **Funnels** — run funnel queries for any defined event sequence\n- **Retention** — get cohort retention by day, week, or month\n- **Page analytics** — top pages, entry/exit pages, performance metrics\n- **Reports and dashboards** — fetch saved report data by name\n- **Google Search Console** — clicks, impressions, top queries, SEO opportunities (requires GSC connected)\n\n**How this compares to the Google Analytics MCP server:**\n\nGoogle Analytics MCP connects to GA4 data—pageviews, traffic sources, sessions in GA's data model. OpenPanel's MCP connects to your *product* data: custom events, user profiles, funnels you've defined, retention cohorts. If you're tracking what users *do* inside your product, OpenPanel's MCP answers those questions. GA4's doesn't.\n\nAuthentication uses a base64-encoded token built from your client ID and secret. The server is read-only—your AI can fetch and query data but cannot write events, modify users, or change any settings."
+    "title": "Что такое MCP-сервер аналитики?",
+    "text": "Model Context Protocol (MCP) — открытый стандарт от Anthropic, позволяющий AI-клиентам подключаться к внешним источникам данных и инструментам. MCP-сервер аналитики — это мост: он переводит запросы AI в аналитические запросы и возвращает структурированные данные, над которыми AI может рассуждать.\n\nБез него ответ из аналитики выглядит так: открыть дашборд, перейти в нужный раздел, построить или найти нужный график, прочитать число, закрыть вкладку, вернуться к прерванной задаче. Если ответ порождает новый вопрос — повторить.\n\nС MCP-сервером OpenPanel вы спрашиваете — и получаете ответ прямо в инструменте, в котором уже работаете.\n\n```\n\"Какое 7-дневное удержание у пользователей, зарегистрировавшихся в прошлом месяце?\"\n\"На каком шаге воронки самое большое отсеивание на этой неделе?\"\n\"Покажи последние 5 сессий пользователя user@example.com\"\n```\n\nOpenPanel хостит сервер по адресу `api.openpanel.dev/mcp`. Ничего не нужно устанавливать и запускать локально. Вы создаёте API-клиента в дашборде, генерируете токен и добавляете URL в конфиг своего AI-клиента. Всё.\n\nСервер открывает **38 инструментов**, покрывающих все слои ваших продуктовых данных:\n\n- **События и сессии** — запросы сырых событий, фильтрация по свойствам, разбор отдельных сессий\n- **Профили пользователей** — поиск пользователей, их истории событий и таймлайна активности\n- **Воронки** — запросы воронок для любой заданной последовательности событий\n- **Удержание** — когортное удержание по дням, неделям или месяцам\n- **Аналитика страниц** — топ страниц, страницы входа и выхода, метрики производительности\n- **Отчёты и дашборды** — получение сохранённых отчётов по имени\n- **Google Search Console** — клики, показы, топ запросов, SEO-возможности (требуется подключённый GSC)\n\n**Чем это отличается от MCP-сервера Google Analytics:**\n\nMCP Google Analytics подключается к данным GA4 — просмотры страниц, источники трафика, сессии в модели данных GA. MCP OpenPanel подключается к вашим *продуктовым* данным: кастомные события, профили пользователей, созданные вами воронки, когорты удержания. Если вы отслеживаете, что пользователи *делают* внутри продукта, MCP OpenPanel отвечает на эти вопросы. MCP GA4 — нет.\n\nАутентификация использует base64-токен, собранный из client ID и секрета. Сервер работает только на чтение — AI может запрашивать данные, но не может писать события, менять пользователей или изменять настройки."
   },
   "capabilities_section": {
-    "title": "What you can do with it",
-    "intro": "38 tools covering every part of your analytics—queryable in plain language from any MCP client."
+    "title": "Что можно делать",
+    "intro": "38 инструментов, покрывающих всю аналитику — запросы на естественном языке из любого MCP-клиента."
   },
   "capabilities": [
     {
-      "title": "Ask questions in plain language",
-      "description": "No SQL, no chart builder. Describe what you want to know and your AI handles the query. Works for funnels, retention, top pages, user lookups, and anything else in your data."
+      "title": "Вопросы на естественном языке",
+      "description": "Без SQL и конструктора графиков. Опишите, что хотите узнать, — AI сам выполнит запрос. Работает для воронок, удержания, топа страниц, поиска пользователей и всего остального в ваших данных."
     },
     {
-      "title": "Funnel and retention analysis",
-      "description": "Run funnel queries for any event sequence or pull cohort retention tables—without opening the dashboard. Ask follow-up questions and the AI queries again."
+      "title": "Анализ воронок и удержания",
+      "description": "Выполняйте запросы воронок для любой последовательности событий или получайте таблицы когортного удержания — не открывая дашборд. Задавайте уточняющие вопросы, и AI запросит снова."
     },
     {
-      "title": "User and group lookup",
-      "description": "Find any user by email or ID, get their full event timeline, session history, and lifetime metrics. For B2B products, look up groups and their member profiles."
+      "title": "Поиск пользователей и групп",
+      "description": "Найдите любого пользователя по email или ID, получите его полный таймлайн событий, историю сессий и метрики за всё время. Для B2B-продуктов — поиск групп и профилей их участников."
     },
     {
-      "title": "Google Search Console data",
-      "description": "If GSC is connected to your project, your AI can also query SEO data—top queries, ranking opportunities, keyword cannibalization, and per-page performance."
+      "title": "Данные Google Search Console",
+      "description": "Если GSC подключён к проекту, AI также сможет запрашивать SEO-данные — топ запросов, возможности ранжирования, каннибализацию ключевых слов и эффективность страниц."
     },
     {
-      "title": "Works with every major AI client",
-      "description": "Claude Desktop, Claude Code, Cursor, Windsurf, VS Code with MCP extensions, or any other MCP-compatible client. One URL, one token, works everywhere."
+      "title": "Работает с любым крупным AI-клиентом",
+      "description": "Claude Desktop, Claude Code, Cursor, Windsurf, VS Code с MCP-расширениями или любой другой MCP-совместимый клиент. Один URL, один токен — работает везде."
     },
     {
-      "title": "Stays in your existing context",
-      "description": "Analytics questions come up while you're building or debugging. MCP keeps you in your editor—you get the answer without switching tabs or breaking your focus."
+      "title": "Не выходит из вашего контекста",
+      "description": "Вопросы к аналитике возникают во время разработки и отладки. MCP держит вас в редакторе — вы получаете ответ без переключения вкладок и потери фокуса."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-mcp-claude.webp",
-      "alt": "Claude Desktop querying OpenPanel analytics via MCP",
-      "caption": "Ask about retention, funnels, or individual users directly from Claude Desktop."
+      "alt": "Claude Desktop запрашивает аналитику OpenPanel через MCP",
+      "caption": "Спрашивайте об удержании, воронках или отдельных пользователях прямо в Claude Desktop."
     }
   ],
   "how_it_works": {
-    "title": "How to connect your AI to OpenPanel",
-    "intro": "Three steps. Nothing to install—the MCP server is hosted at api.openpanel.dev/mcp.",
+    "title": "Как подключить AI к OpenPanel",
+    "intro": "Три шага. Ничего устанавливать не нужно — MCP-сервер работает по адресу api.openpanel.dev/mcp.",
     "steps": [
       {
-        "title": "Create an API client",
-        "description": "Go to Settings → API Clients in your OpenPanel dashboard. Create a `read` client to scope access to one project, or a `root` client for cross-project access. Copy the client ID and secret."
+        "title": "Создайте API-клиента",
+        "description": "Перейдите в Настройки → API-клиенты в дашборде OpenPanel. Создайте клиента `read` для доступа к одному проекту или клиента `root` для доступа ко всем проектам. Скопируйте client ID и секрет."
       },
       {
-        "title": "Generate your token",
-        "description": "Your token is your client ID and secret joined by a colon, base64-encoded. Run `echo -n \"CLIENT_ID:CLIENT_SECRET\" | base64` in your terminal to generate it."
+        "title": "Сгенерируйте токен",
+        "description": "Токен — это client ID и секрет, соединённые двоеточием и закодированные в base64. Выполните в терминале `echo -n \"CLIENT_ID:CLIENT_SECRET\" | base64`."
       },
       {
-        "title": "Add the URL to your AI client",
-        "description": "Paste `https://api.openpanel.dev/mcp` into your AI client's MCP server config and send the token as an `Authorization: Bearer YOUR_TOKEN` header. Clients that can't set headers take it in the URL instead, as `?token=YOUR_TOKEN`. In Claude Desktop that's one JSON block in `claude_desktop_config.json`. In Cursor and Windsurf it's under MCP settings."
+        "title": "Добавьте URL в AI-клиент",
+        "description": "Вставьте `https://api.openpanel.dev/mcp` в конфиг MCP-сервера вашего AI-клиента и передавайте токен в заголовке `Authorization: Bearer YOUR_TOKEN`. Клиенты, которые не умеют задавать заголовки, принимают токен прямо в URL — `?token=YOUR_TOKEN`. В Claude Desktop это один JSON-блок в `claude_desktop_config.json`. В Cursor и Windsurf — в настройках MCP."
       },
       {
-        "title": "Start asking questions",
-        "description": "Your AI now has access to all 38 tools. Ask about users, funnels, retention, or events. If you're not sure what events exist in your project, ask the AI to list them first."
+        "title": "Задавайте вопросы",
+        "description": "Теперь у вашего AI есть доступ ко всем 38 инструментам. Спрашивайте о пользователях, воронках, удержании или событиях. Если не знаете, какие события есть в проекте, попросите AI сначала вывести их список."
       }
     ]
   },
   "use_cases": {
-    "title": "Who uses it",
-    "intro": "Anyone who asks analytics questions while doing something else.",
+    "title": "Кто этим пользуется",
+    "intro": "Все, кто задаёт вопросы к аналитике, занимаясь чем-то другим.",
     "items": [
       {
-        "title": "Product teams and founders",
-        "description": "You're in a meeting, someone asks about last week's funnel drop-off. You ask Claude, get the answer in seconds, and move on. No one has to open the dashboard."
+        "title": "Продуктовые команды и основатели",
+        "description": "Вы на встрече, кто-то спрашивает про отсеивание в воронке за прошлую неделю. Вы спрашиваете Claude, через секунды получаете ответ — и идёте дальше. Дашборд открывать не нужно."
       },
       {
-        "title": "Developers in Cursor or Windsurf",
-        "description": "You're debugging a checkout flow and need to know how many users hit that error state. Ask in your editor. The answer shows up next to your code."
+        "title": "Разработчики в Cursor или Windsurf",
+        "description": "Вы отлаживаете checkout и нужно понять, сколько пользователей столкнулось с ошибкой. Спросите прямо в редакторе — ответ появится рядом с кодом."
       },
       {
-        "title": "Teams without a dedicated analyst",
-        "description": "Most early-stage teams don't have someone who lives in the dashboard. MCP makes it practical for anyone on the team to get answers without learning the tool."
+        "title": "Команды без выделенного аналитика",
+        "description": "У большинства ранних команд нет человека, который живёт в дашборде. MCP позволяет любому члену команды получать ответы, не изучая инструмент."
       }
     ]
   },
   "related_features": [
     {
       "slug": "event-tracking",
-      "title": "Event tracking",
-      "description": "The events you track are what the MCP server queries. Better event coverage means better answers."
+      "title": "Отслеживание событий",
+      "description": "MCP-сервер запрашивает именно те события, которые вы отслеживаете. Чем полнее покрытие событий, тем лучше ответы."
     },
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "Define funnels in OpenPanel and query them by name through MCP."
+      "title": "Воронки",
+      "description": "Определите воронки в OpenPanel и запрашивайте их по имени через MCP."
     },
     {
       "slug": "retention",
-      "title": "Retention",
-      "description": "Ask retention questions in plain language—the MCP server handles the cohort math."
+      "title": "Удержание",
+      "description": "Задавайте вопросы об удержании на естественном языке — MCP-сервер сам посчитает когорты."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about OpenPanel's MCP server.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы о MCP-сервере OpenPanel.",
     "items": [
       {
-        "question": "Which AI clients work with OpenPanel MCP?",
-        "answer": "Any MCP-compatible client: Claude Desktop, Claude Code, Cursor, Windsurf, VS Code with an MCP extension, and any custom client built against the MCP spec. The transport is streamable HTTP, which all major clients support."
+        "question": "Какие AI-клиенты работают с OpenPanel MCP?",
+        "answer": "Любой MCP-совместимый клиент: Claude Desktop, Claude Code, Cursor, Windsurf, VS Code с MCP-расширением и любые кастомные клиенты по спецификации MCP. Транспорт — streamable HTTP, который поддерживают все крупные клиенты."
       },
       {
-        "question": "Do I need to install anything?",
-        "answer": "No. The MCP server is hosted by OpenPanel at `https://api.openpanel.dev/mcp`. You add that URL to your AI client's config with your token—nothing runs on your machine."
+        "question": "Нужно ли что-то устанавливать?",
+        "answer": "Нет. MCP-сервер хостится OpenPanel по адресу `https://api.openpanel.dev/mcp`. Вы добавляете этот URL в конфиг AI-клиента со своим токеном — на вашей машине ничего не запускается."
       },
       {
-        "question": "How does authentication work?",
-        "answer": "Your token is `base64(clientId:clientSecret)`. Generate it with `echo -n \"CLIENT_ID:CLIENT_SECRET\" | base64` and send it as an `Authorization: Bearer YOUR_TOKEN` header. If your client can't set headers, append it to the URL as `?token=YOUR_TOKEN` instead—it works the same, but a token in a URL is easier to leak into history and logs."
+        "question": "Как работает аутентификация?",
+        "answer": "Токен — это `base64(clientId:clientSecret)`. Сгенерируйте его командой `echo -n \"CLIENT_ID:CLIENT_SECRET\" | base64` и передавайте в заголовке `Authorization: Bearer YOUR_TOKEN`. Если клиент не умеет задавать заголовки, добавьте токен в URL как `?token=YOUR_TOKEN` — работает так же, но токен в URL легче утечь в историю и логи."
       },
       {
-        "question": "What's the difference between a read client and a root client?",
-        "answer": "A `read` client is scoped to a single project—the one it was created under. A `root` client can query any project in your organization. Use `read` for single-project setups. Use `root` if you need to ask questions across multiple projects or want to list all projects."
+        "question": "Чем read-клиент отличается от root-клиента?",
+        "answer": "Клиент `read` ограничен одним проектом — тем, в котором он создан. Клиент `root` может запрашивать любой проект вашей организации. Используйте `read` для работы с одним проектом, `root` — если нужны вопросы по нескольким проектам или список всех проектов."
       },
       {
-        "question": "Can the AI modify my data?",
-        "answer": "No. The MCP server is strictly read-only. It can query events, fetch profiles, and run analytics computations, but it has no tools for writing events, modifying users, or changing any configuration."
+        "question": "Может ли AI изменять мои данные?",
+        "answer": "Нет. MCP-сервер работает строго на чтение. Он может запрашивать события, получать профили и выполнять аналитические вычисления, но у него нет инструментов для записи событий, изменения пользователей или конфигурации."
       },
       {
-        "question": "Does it work with self-hosted OpenPanel?",
-        "answer": "If you're self-hosting, the MCP server is part of the API—it runs on your instance at the same `/mcp` path. Point your AI client at your own API URL instead of `api.openpanel.dev`."
+        "question": "Работает ли это с self-hosted OpenPanel?",
+        "answer": "При самостоятельном хостинге MCP-сервер — часть API: он работает на вашем инстансе по тому же пути `/mcp`. Направьте AI-клиент на URL своего API вместо `api.openpanel.dev`."
       },
       {
-        "question": "How is this different from the Google Analytics MCP server?",
-        "answer": "Google Analytics MCP connects to GA4 data—pageviews, traffic sources, sessions. OpenPanel's MCP connects to product event data: custom events, user profiles, funnels, retention cohorts. If you want to ask 'what's the 30-day retention for users who completed onboarding', that's not a question GA4's MCP can answer. OpenPanel's can."
+        "question": "Чем это отличается от MCP-сервера Google Analytics?",
+        "answer": "MCP Google Analytics подключается к данным GA4 — просмотры страниц, источники трафика, сессии. MCP OpenPanel подключается к событиям продукта: кастомные события, профили пользователей, воронки, когорты удержания. Вопрос «какое 30-дневное удержание у пользователей, завершивших онбординг» MCP GA4 не ответит. MCP OpenPanel — ответит."
       }
     ]
   },
   "cta": {
-    "label": "Connect your AI to your analytics",
+    "label": "Подключите AI к своей аналитике",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

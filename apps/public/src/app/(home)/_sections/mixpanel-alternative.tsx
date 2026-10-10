@@ -8,27 +8,27 @@ import { Button } from '@/components/ui/button';
 const reasons = [
   {
     icon: CoinsIcon,
-    title: 'Fraction of the cost',
+    title: 'Лишь малая доля стоимости',
     description:
-      "Mixpanel's pricing scales to hundreds or thousands per month as your event volume grows. OpenPanel starts at $2.50/month — or self-host for free with no event limits.",
+      'Тарифы Mixpanel растут до сотен или тысяч долларов в месяц с ростом объёма событий. OpenPanel начинается с $2.50/месяц — или разверните бесплатно у себя без лимитов на события.',
   },
   {
     icon: BarChart2Icon,
-    title: 'The features you actually use',
+    title: 'Функции, которыми вы реально пользуетесь',
     description:
-      'Events, funnels, retention, cohorts, user profiles, custom dashboards, and A/B testing — all there. OpenPanel covers every core analytics workflow from Mixpanel without the learning curve.',
+      'События, воронки, удержание, когорты, профили пользователей, кастомные дашборды и A/B-тесты — всё на месте. OpenPanel покрывает все ключевые сценарии аналитики из Mixpanel без долгого освоения.',
   },
   {
     icon: ServerIcon,
-    title: 'Actually self-hostable',
+    title: 'Настоящий self-hosting',
     description:
-      'Mixpanel is cloud-only. OpenPanel runs on your own infrastructure with a simple Docker setup. Full data ownership, zero vendor lock-in.',
+      'Mixpanel — только облако. OpenPanel работает на вашей собственной инфраструктуре с простой настройкой через Docker. Полное владение данными, ноль привязки к вендору.',
   },
   {
     icon: GithubIcon,
-    title: 'Open source & transparent',
+    title: 'Открытый и прозрачный код',
     description:
-      "Mixpanel is a black box. OpenPanel's code is public on GitHub — audit it, contribute to it, or fork it. No surprises, no hidden data processing.",
+      'Mixpanel — чёрный ящик. Код OpenPanel публичен на GitHub: проверяйте, вносите вклад или делайте форк. Без сюрпризов и скрытой обработки данных.',
   },
 ];
 
@@ -36,9 +36,9 @@ export function MixpanelAlternative() {
   return (
     <Section className="container">
       <SectionHeader
-        description="Looking for the best Mixpanel alternatives in 2026? OpenPanel covers the product analytics features teams actually use — events, funnels, retention, cohorts, and user profiles — without Mixpanel's pricing, privacy trade-offs, or vendor lock-in."
-        label="Best Mixpanel Alternatives"
-        title="The Best Mixpanel Alternatives in 2026 — Why Teams Switch to OpenPanel"
+        description="Ищете лучшую альтернативу Mixpanel в 2026 году? OpenPanel покрывает функции продуктовой аналитики, которыми команды реально пользуются, — события, воронки, удержание, когорты и профили пользователей — без цен Mixpanel, компромиссов по приватности и привязки к вендору."
+        label="Лучшие альтернативы Mixpanel"
+        title="Лучшие альтернативы Mixpanel в 2026 году — почему команды переходят на OpenPanel"
       />
       <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
         {reasons.map((reason) => (
@@ -54,7 +54,7 @@ export function MixpanelAlternative() {
         <GetStartedButton />
         <Button asChild className="px-6" size="lg" variant="outline">
           <Link href="/compare/mixpanel-alternative">
-            OpenPanel vs Mixpanel →
+            OpenPanel против Mixpanel →
           </Link>
         </Button>
       </div>

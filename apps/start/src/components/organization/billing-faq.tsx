@@ -8,39 +8,39 @@ import { Widget, WidgetHead } from '@/components/widget';
 
 const questions = [
   {
-    question: 'Does OpenPanel have a free tier?',
+    question: 'Есть ли у OpenPanel бесплатный тариф?',
     answer: [
-      'For our Cloud plan we offer a 30 days free trial, this is mostly for you to be able to try out OpenPanel before committing to a paid plan.',
-      'OpenPanel is also open-source and you can self-host it for free!',
+      'Для облачного тарифа (Cloud) мы предлагаем 30 дней бесплатного trial — он нужен, чтобы попробовать OpenPanel до перехода на платный тариф.',
+      'OpenPanel также имеет открытый исходный код, и Вы можете развернуть его самостоятельно бесплатно!',
       '',
-      'Why does OpenPanel not have a free tier?',
-      'We want to make sure that OpenPanel is used by people who are serious about using it. We also need to invest time and resources to maintain the platform and provide support to our users.',
+      'Почему у OpenPanel нет бесплатного тарифа?',
+      'Мы хотим быть уверены, что OpenPanel используют те, кто настроен серьёзно. Нам также нужно вкладывать время и ресурсы в поддержку платформы и наших пользователей.',
     ],
   },
   {
-    question: 'What happens if my site exceeds the limit?',
+    question: 'Что произойдёт, если мой сайт превысит лимит?',
     answer: [
-      "You will not see any new events in OpenPanel until your next billing period. If this happens 2 months in a row, we'll advice you to upgrade your plan.",
+      "Вы не будете видеть новые события в OpenPanel до следующего расчётного периода. Если это повторится 2 месяца подряд, мы порекомендуем повысить тариф.",
     ],
   },
   {
-    question: 'What happens if I cancel my subscription?',
+    question: 'Что произойдёт, если я отменю подписку?',
     answer: [
-      'If you cancel your subscription, you will still have access to OpenPanel until the end of your current billing period. You can reactivate your subscription at any time.',
-      'After your current billing period ends, you will not get access to new data.',
-      "NOTE: If your account has been inactive for 3 months, we'll delete your events.",
+      'Если Вы отмените подписку, доступ к OpenPanel сохранится до конца текущего расчётного периода. Возобновить подписку можно в любой момент.',
+      'После окончания текущего расчётного периода доступ к новым данным прекратится.',
+      "ПРИМЕЧАНИЕ: если Ваш аккаунт неактивен 3 месяца, мы удалим Ваши события.",
     ],
   },
   {
-    question: 'How do I change my billing information?',
+    question: 'Как изменить платёжные данные?',
     answer: [
-      'You can change your billing information by clicking the "Customer portal" button in the billing section.',
+      'Платёжные данные можно изменить, нажав кнопку «Клиентский портал» в разделе биллинга.',
     ],
   },
   {
-    question: 'We need a custom plan, can you help us?',
+    question: 'Нам нужен индивидуальный тариф, можете помочь?',
     answer: [
-      'Yes, we can help you with that. Please contact us at hello@openpanel.dev to request a quote.',
+      'Да, мы можем помочь. Напишите нам на hello@openpanel.dev, чтобы запросить расчёт стоимости.',
     ],
   },
 ];
@@ -49,7 +49,7 @@ export function BillingFaq() {
   return (
     <Widget className="w-full">
       <WidgetHead className="flex items-center justify-between">
-        <span className="title">Frequently asked questions</span>
+        <span className="title">Часто задаваемые вопросы</span>
       </WidgetHead>
       <Accordion
         className="w-full max-w-screen-md self-center"

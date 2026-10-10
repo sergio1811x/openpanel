@@ -6,14 +6,14 @@ import { type ExternalToast, toast } from 'sonner';
 export const { TRPCProvider, useTRPC } = createTRPCContext<AppRouter>();
 
 export function handleError(error: TRPCClientErrorBase<any>) {
-  toast('Error', {
+  toast('Ошибка', {
     description: error.message,
   });
 }
 
 export function handleErrorToastOptions(options: ExternalToast) {
   return (error: TRPCClientErrorBase<any>) => {
-    toast('Error', {
+    toast('Ошибка', {
       description: error.message,
       ...options,
     });

@@ -8,7 +8,7 @@ import { Input } from './input';
 export function InputDateTime({
   value,
   onChange,
-  placeholder = 'Select date and time',
+  placeholder = 'Выберите дату и время',
   label,
   ...props
 }: {
@@ -51,7 +51,7 @@ export function InputDateTime({
   const handleDateTimeSelect = () => {
     pushModal('DateTimePicker', {
       initialDate: getDateFromValue(value || ''),
-      title: 'Select Date & Time',
+      title: 'Выберите дату и время',
       onChange: (selectedDate: Date) => {
         const isoString = selectedDate.toISOString();
         setInternalValue(isoString);

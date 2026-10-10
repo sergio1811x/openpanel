@@ -61,7 +61,7 @@ export function DataTableToolbar<TData>({
         {globalSearchKey && (
           <AnimatedSearchInput
             onChange={setSearch}
-            placeholder={globalSearchPlaceholder ?? 'Search'}
+            placeholder={globalSearchPlaceholder ?? 'Поиск'}
             value={search}
           />
         )}
@@ -70,7 +70,7 @@ export function DataTableToolbar<TData>({
         ))}
         {isFiltered && (
           <Button
-            aria-label="Reset filters"
+            aria-label="Сбросить фильтры"
             className="border-dashed"
             onClick={onReset}
             size="sm"
@@ -192,7 +192,7 @@ export function AnimatedSearchInput({
 
   return (
     <div
-      aria-label={placeholder ?? 'Search'}
+      aria-label={placeholder ?? 'Поиск'}
       className={cn(
         'relative flex items-center rounded-md border border-input bg-background text-sm transition-[width] duration-300 ease-out',
         'focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background',
@@ -221,7 +221,7 @@ export function AnimatedSearchInput({
 
       {isExpanded && value && (
         <button
-          aria-label="Clear search"
+          aria-label="Очистить поиск"
           className="absolute right-1 flex size-6 items-center justify-center rounded-sm text-muted-foreground hover:bg-accent hover:text-foreground"
           onClick={(e) => {
             e.preventDefault();

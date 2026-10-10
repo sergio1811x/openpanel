@@ -23,8 +23,8 @@ function Component() {
   const router = useRouter();
 
   const { activeTab, tabs } = usePageTabs([
-    { id: 'notifications', label: 'Notifications' },
-    { id: 'rules', label: 'Rules' },
+    { id: 'notifications', label: 'Уведомления' },
+    { id: 'rules', label: 'Правила' },
   ]);
 
   const handleTabChange = (tabId: string) => {
@@ -38,8 +38,8 @@ function Component() {
   return (
     <div className="container p-8">
       <PageHeader
-        title="Notifications"
-        description="See notifications and manage your rules when to get notifications"
+        title="Уведомления"
+        description="Просматривайте уведомления и управляйте правилами их получения"
       />
 
       <Tabs

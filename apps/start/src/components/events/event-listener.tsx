@@ -53,16 +53,16 @@ export default function EventListener({
             />
           </div>
           {counter.debounced === 0 ? (
-            'Listening'
+            'Слушаем'
           ) : (
-            <AnimatedNumber suffix=" new events" value={counter.debounced} />
+            <AnimatedNumber suffix=" новых событий" value={counter.debounced} />
           )}
         </button>
       </TooltipTrigger>
       <TooltipContent side="bottom">
         {counter.debounced === 0
-          ? 'Listening to new events'
-          : 'Click to refresh'}
+          ? 'Слушаем новые события'
+          : 'Нажмите, чтобы обновить'}
       </TooltipContent>
     </Tooltip>
   );

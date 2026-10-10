@@ -70,7 +70,7 @@ export function Summary({ data }: { data: RouterOutputs['chart']['funnel'] }) {
       {highestConversion && (
         <div className="card row items-center p-4 py-3">
           <Metric
-            label="Highest conversion rate"
+            label="Наибольшая конверсия"
             value={
               <ChartName breakdowns={highestConversion.breakdowns ?? []} />
             }
@@ -86,7 +86,7 @@ export function Summary({ data }: { data: RouterOutputs['chart']['funnel'] }) {
       {highestCount && (
         <div className="card row items-center p-4 py-3">
           <Metric
-            label="Most conversions"
+            label="Больше всего конверсий"
             value={<ChartName breakdowns={highestCount.breakdowns ?? []} />}
           />
           <span className="font-mono font-semibold text-xl">
@@ -198,7 +198,7 @@ export function Tables({
                 />
               )
             }
-            label="Conversion"
+            label="Конверсия"
             value={number.formatWithUnit(lastStep?.percent / 100, '%')}
           />
           <Metric
@@ -213,7 +213,7 @@ export function Tables({
                 />
               )
             }
-            label="Completed"
+            label="Завершено"
             value={number.format(lastStep?.count)}
           />
           {!!mostDropoffsStep && (
@@ -226,8 +226,7 @@ export function Tables({
                       <span className="font-semibold">
                         {mostDropoffsStep?.dropoffCount}
                       </span>{' '}
-                      dropped after this event. Improve this step and your
-                      conversion rate will likely increase.
+                      пользователей отвалились после этого события. Улучшите этот шаг — и конверсия, скорее всего, вырастет.
                     </span>
                   }
                   tooltipClassName="max-w-xs"
@@ -235,7 +234,7 @@ export function Tables({
                   <InfoIcon className="size-3" />
                 </Tooltiper>
               }
-              label="Most dropoffs after"
+              label="Больше всего отказов после"
               value={mostDropoffsStep?.event?.displayName}
             />
           )}
@@ -247,7 +246,7 @@ export function Tables({
           columnClassName="px-2 group/row items-center"
           columns={[
             {
-              name: 'Event',
+              name: 'Событие',
               render: (item, index) => (
                 <div className="row relative min-w-0 items-center gap-2">
                   <ColorSquare color={getChartColor(index)}>
@@ -260,13 +259,13 @@ export function Tables({
               className: 'text-left font-mono font-semibold',
             },
             {
-              name: 'Completed',
+              name: 'Завершено',
               render: (item) => number.format(item.count),
               className: 'text-right font-mono hidden @xl:block',
               width: '82px',
             },
             {
-              name: 'Dropped after',
+              name: 'Отвалились после',
               render: (item) =>
                 item.dropoffCount !== null && item.dropoffPercent !== null
                   ? number.format(item.dropoffCount)
@@ -275,7 +274,7 @@ export function Tables({
               width: '110px',
             },
             {
-              name: 'Conversion',
+              name: 'Конверсия',
               render: (item) => number.formatWithUnit(item.percent / 100, '%'),
               className: 'text-right font-mono font-semibold',
               width: '90px',
@@ -293,7 +292,7 @@ export function Tables({
                     handleInspectStep(item, stepIndex);
                   }}
                   size="sm"
-                  title="View users who completed this step"
+                  title="Посмотреть пользователей, прошедших этот шаг"
                   variant="ghost"
                 >
                   <UsersIcon size={16} />
@@ -485,7 +484,7 @@ export function Chart({
                 name={
                   breakdown.breakdowns && breakdown.breakdowns.length > 0
                     ? breakdown.breakdowns
-                    : ['Funnel']
+                    : ['Воронка']
                 }
               />
             </div>
@@ -509,7 +508,7 @@ export function Chart({
               borderTop: '2px solid rgba(59, 121, 255, 1)',
             }}
           />
-          <span className="font-medium text-muted-foreground">Current</span>
+          <span className="font-medium text-muted-foreground">Текущий</span>
         </div>
         <div className="flex items-center gap-1.5 rounded px-2 py-1">
           <svg height="12" viewBox="0 0 12 12" width="12">
@@ -527,7 +526,7 @@ export function Chart({
             </defs>
             <rect fill="url(#legend-stripes)" height="12" rx="2" width="12" />
           </svg>
-          <span className="font-medium text-muted-foreground">Previous</span>
+          <span className="font-medium text-muted-foreground">Предыдущий</span>
         </div>
       </div>
     );
@@ -671,7 +670,7 @@ const { Tooltip, TooltipProvider } = createChartTooltip<
         <div className="text-muted-foreground">{data.name}</div>
         <div className="col gap-1.5">
           <div className="flex justify-between gap-8 font-medium font-mono">
-            <span className="text-muted-foreground">Current</span>
+            <span className="text-muted-foreground">Текущий</span>
             <span>
               {number.format(currentVariant.step.count)} (
               {number.formatWithUnit(currentVariant.step.percent / 100, '%')})
@@ -679,7 +678,7 @@ const { Tooltip, TooltipProvider } = createChartTooltip<
           </div>
           {previousVariant?.step && (
             <div className="flex justify-between gap-8 font-medium font-mono text-muted-foreground">
-              <span>Previous</span>
+              <span>Предыдущий</span>
               <span>
                 {number.format(previousVariant.step.count)} (
                 {number.formatWithUnit(previousVariant.step.percent / 100, '%')}
@@ -691,10 +690,10 @@ const { Tooltip, TooltipProvider } = createChartTooltip<
             <div className="mt-0.5 flex items-center justify-between gap-8 border-border border-t pt-1.5">
               <span className="font-medium text-sm">
                 {metric.state === 'positive'
-                  ? 'Improvement'
+                  ? 'Улучшение'
                   : metric.state === 'negative'
-                    ? 'Decline'
-                    : 'No change'}
+                    ? 'Снижение'
+                    : 'Без изменений'}
               </span>
               <PreviousDiffIndicatorPure {...metric} size="xs" />
             </div>

@@ -42,7 +42,7 @@ export function ProjectMapper({
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <Label className="mb-0">Project Mapper (Optional)</Label>
+        <Label className="mb-0">Сопоставление проектов (необязательно)</Label>
         <Button
           type="button"
           variant="outline"
@@ -50,13 +50,13 @@ export function ProjectMapper({
           onClick={() => append({ from: '', to: '' })}
         >
           <PlusIcon className="mr-1 h-4 w-4" />
-          Add Mapping
+          Добавить сопоставление
         </Button>
       </div>
       {fields.length === 0 && (
         <p className="text-sm text-muted-foreground leading-normal">
-          Map source project IDs to your OpenPanel projects. If you skip mapping
-          all data will be imported to your current project.
+          Сопоставьте ID исходных проектов с проектами OpenPanel. Если пропустить
+          сопоставление, все данные будут импортированы в текущий проект.
         </p>
       )}
 
@@ -67,17 +67,17 @@ export function ProjectMapper({
               <div className="grid grid-cols-2 gap-2">
                 <div className="flex-1">
                   <Label className="text-xs text-muted-foreground">
-                    From (Source Project ID)
+                    Откуда (ID исходного проекта)
                   </Label>
                   <Input
-                    placeholder="e.g., abc123"
+                    placeholder="например, abc123"
                     {...register(`projectMapper.${index}.from`)}
                     className="mt-1"
                   />
                 </div>
                 <div className="flex-1">
                   <Label className="text-xs text-muted-foreground">
-                    To (OpenPanel Project)
+                    Куда (проект OpenPanel)
                   </Label>
                   <Select
                     value={watch(`projectMapper.${index}.to`)}
@@ -86,7 +86,7 @@ export function ProjectMapper({
                     }
                   >
                     <SelectTrigger className="mt-1 w-full" size="sm">
-                      <SelectValue placeholder="Select project" />
+                      <SelectValue placeholder="Выберите проект" />
                     </SelectTrigger>
                     <SelectContent>
                       {projects.slice(0, 10).map((project) => (

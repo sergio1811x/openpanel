@@ -40,7 +40,7 @@ export const Route = createFileRoute(
     return {
       meta: [
         {
-          title: createProjectTitle('Dashboards'),
+          title: createProjectTitle('Дашборды'),
         },
       ],
     };
@@ -70,7 +70,7 @@ function Component() {
       onError: (error, variables) => {
         return handleErrorToastOptions({
           action: {
-            label: 'Force delete',
+            label: 'Удалить принудительно',
             onClick: () => {
               deletion.mutate({
                 forceDelete: true,
@@ -83,8 +83,8 @@ function Component() {
       onSuccess() {
         queryClient.invalidateQueries(trpc.dashboard.list.pathFilter());
         query.refetch();
-        toast('Success', {
-          description: 'Dashboard deleted.',
+        toast('Успешно', {
+          description: 'Дашборд удалён.',
         });
       },
     }),
@@ -92,14 +92,14 @@ function Component() {
 
   if (dashboards.length === 0) {
     return (
-      <FullPageEmptyState title="No dashboards" icon={LayoutPanelTopIcon}>
-        <p>You have not created any dashboards for this project yet</p>
+      <FullPageEmptyState title="Нет дашбордов" icon={LayoutPanelTopIcon}>
+        <p>Вы ещё не создали ни одного дашборда для этого проекта</p>
         <Button
           onClick={() => pushModal('AddDashboard')}
           className="mt-14"
           icon={PlusIcon}
         >
-          Create dashboard
+          Создать дашборд
         </Button>
       </FullPageEmptyState>
     );
@@ -108,13 +108,13 @@ function Component() {
   return (
     <PageContainer>
       <PageHeader
-        title="Dashboards"
-        description="Access all your dashboards here"
+        title="Дашборды"
+        description="Здесь собраны все Ваши дашборды"
         className="mb-8"
         actions={
           <Button icon={PlusIcon} onClick={() => pushModal('AddDashboard')}>
-            <span className="max-sm:hidden">Create dashboard</span>
-            <span className="sm:hidden">Dashboard</span>
+            <span className="max-sm:hidden">Создать дашборд</span>
+            <span className="sm:hidden">Дашборд</span>
           </Button>
         }
       />
@@ -175,7 +175,7 @@ function Component() {
                       <div className="row items-center gap-2 rounded-md bg-def-100 p-4 py-2">
                         <PlusIcon size={24} />
                         <div className="min-w-0 overflow-hidden text-ellipsis whitespace-nowrap text-sm">
-                          {item.reports.length - 5} more
+                          Ещё {item.reports.length - 5}
                         </div>
                       </div>
                     )}
@@ -198,7 +198,7 @@ function Component() {
                     }}
                   >
                     <Pencil size={16} />
-                    Edit
+                    Изменить
                   </button>
                 </CardActionsItem>
                 <CardActionsItem className="w-full text-destructive" asChild>
@@ -206,14 +206,14 @@ function Component() {
                     type="button"
                     onClick={() => {
                       showConfirm({
-                        title: 'Delete dashboard',
-                        text: 'Are you sure you want to delete this dashboard? All your reports will be deleted!',
+                        title: 'Удаление дашборда',
+                        text: 'Вы уверены, что хотите удалить этот дашборд? Все Ваши отчёты будут удалены!',
                         onConfirm: () => deletion.mutate({ id: item.id }),
                       });
                     }}
                   >
                     <Trash size={16} />
-                    Delete
+                    Удалить
                   </button>
                 </CardActionsItem>
               </CardActions>

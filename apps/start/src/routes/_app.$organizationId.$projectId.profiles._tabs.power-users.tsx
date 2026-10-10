@@ -13,7 +13,7 @@ export const Route = createFileRoute(
     return {
       meta: [
         {
-          title: createEntityTitle('Power Users', PAGE_TITLES.PROFILES),
+          title: createEntityTitle('Активные пользователи', PAGE_TITLES.PROFILES),
         },
       ],
     };

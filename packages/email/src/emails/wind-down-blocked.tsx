@@ -16,7 +16,7 @@ export const zWindDownBlocked = z.object({
 });
 
 const formatEvents = (count: number) =>
-  new Intl.NumberFormat('en-US').format(count);
+  new Intl.NumberFormat('ru-RU').format(count);
 
 export type Props = z.infer<typeof zWindDownBlocked>;
 export default WindDownBlocked;
@@ -30,11 +30,11 @@ export function WindDownBlocked({
   recentEventsCount,
   unsubscribeUrl,
 }: Props & { unsubscribeUrl?: string }) {
-  const greeting = <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>;
+  const greeting = <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>;
   const cta = (
     <Text>
       <Button href={withUtm(billingUrl, 'wind-down-blocked')}>
-        Resume tracking
+        Возобновить отслеживание
       </Button>
     </Text>
   );
@@ -44,29 +44,29 @@ export function WindDownBlocked({
       <Layout unsubscribeUrl={unsubscribeUrl}>
         {greeting}
         <Text>
-          As of today we've stopped recording events from your projects.
+          С сегодняшнего дня мы прекратили запись событий из Ваших проектов.
           {recentEventsCount
-            ? ` Your SDKs are still sending — around ${formatEvents(recentEventsCount)} events over the last month — and from now on those requests are discarded.`
-            : ' Your SDKs will keep sending; those requests are now discarded.'}
+            ? ` Ваши SDK по-прежнему отправляют данные — около ${formatEvents(recentEventsCount)} событий за последний месяц, — и с этого момента эти запросы отклоняются.`
+            : ' Ваши SDK продолжат отправлять данные; эти запросы теперь отклоняются.'}
         </Text>
         <Text>
-          Nothing has been deleted.
+          Ничего не удалено.
           {eventsCount
-            ? ` The ${formatEvents(eventsCount)} events collected before today are intact`
-            : ' Everything collected before today is intact'}{' '}
-          and waiting. Subscribe and recording resumes within a few minutes,
-          with your full history where you left it — though the gap from today
-          onward can't be backfilled.
+            ? ` События, собранные до сегодняшнего дня (${formatEvents(eventsCount)}), в целости и ждут Вас.`
+            : ' Всё, что собрано до сегодняшнего дня, в целости и никуда не денется.'}{' '}
+          Оформите подписку — запись возобновится в течение
+          нескольких минут, вся история останется там, где Вы её остановили, —
+          но пробел, начиная с сегодняшнего дня, задним числом не заполнить.
         </Text>
         {cta}
         <Text>
-          Being straight about what comes next: if the workspace is still
-          inactive on {deleteDate}, it and its data get removed. I'll send one
-          more email well before that.
+          Скажу прямо, что будет дальше: если рабочее пространство всё ещё
+          будет неактивно {deleteDate}, оно и его данные будут удалены. Я
+          отправлю ещё одно письмо задолго до этого момента.
         </Text>
         <Text>
-          If pricing is the problem, reply — I'd rather find something that
-          works than lose the data.
+          Если проблема в цене, ответьте на письмо — я лучше найду подходящий
+          вариант, чем потеряю Ваши данные.
         </Text>
         <Text>Carl</Text>
       </Layout>
@@ -78,17 +78,17 @@ export function WindDownBlocked({
       <Layout unsubscribeUrl={unsubscribeUrl}>
         {greeting}
         <Text>
-          As of today your projects no longer accept new events. Nothing has
-          been deleted —
+          С сегодняшнего дня Ваши проекты больше не принимают новые события.
+          Ничего не удалено —
           {eventsCount
-            ? ` the ${formatEvents(eventsCount)} events already collected are intact`
-            : ' everything already collected is intact'}{' '}
-          and a plan brings it all straight back.
+            ? ` собранные события (${formatEvents(eventsCount)}) в целости`
+            : ' всё собранное в целости'}, и оформление тарифа мгновенно всё
+          вернёт.
         </Text>
         {cta}
         <Text>
-          If the workspace is still inactive on {deleteDate}, it and its data
-          get removed. I'll send one more email before that happens.
+          Если рабочее пространство всё ещё будет неактивно {deleteDate}, оно и
+          его данные будут удалены. Перед этим я отправлю ещё одно письмо.
         </Text>
         <Text>Carl</Text>
       </Layout>
@@ -99,12 +99,13 @@ export function WindDownBlocked({
     <Layout unsubscribeUrl={unsubscribeUrl}>
       {greeting}
       <Text>
-        Your workspace is now closed to new events. Nothing was ever tracked in
-        it, so this is mostly housekeeping on my end.
+        Ваше рабочее пространство теперь закрыто для новых событий. События в
+        нём никогда не отслеживались, так что это по большей части уборка с
+        моей стороны.
       </Text>
       <Text>
-        It stays recoverable until {deleteDate}. Pick a plan before then and it
-        comes straight back.
+        Его можно восстановить до {deleteDate}. Оформите тариф до этого
+        момента, и оно вернётся в исходное состояние.
       </Text>
       {cta}
       <Text>Carl</Text>
@@ -115,7 +116,7 @@ export function WindDownBlocked({
 WindDownBlocked.PreviewProps = {
   firstName: 'Alex',
   billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
-  deleteDate: 'April 10',
+  deleteDate: '10 апреля',
   hasData: true,
   stillTracking: true,
   eventsCount: 842_110,

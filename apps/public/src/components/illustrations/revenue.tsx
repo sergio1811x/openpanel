@@ -8,7 +8,7 @@ const referrers = [
   { name: 'google.com', amount: '$3,840', pct: 46 },
   { name: 'twitter.com', amount: '$1,920', pct: 23 },
   { name: 'github.com', amount: '$1,260', pct: 15 },
-  { name: 'direct', amount: '$1,400', pct: 16 },
+  { name: 'прямые', amount: '$1,400', pct: 16 },
 ];
 
 export function RevenueIllustration() {
@@ -23,10 +23,10 @@ export function RevenueIllustration() {
           <span className="font-bold font-mono text-xl text-emerald-500">
             $8,420
           </span>
-          <span className="text-[9px] text-emerald-500">↑ 12% this month</span>
+          <span className="text-[9px] text-emerald-500">↑ +12% за месяц</span>
         </div>
         <div className="col flex-1 gap-1 rounded-xl border bg-card px-3 py-2">
-          <span className="text-[9px] text-muted-foreground">MRR over time</span>
+          <span className="text-[9px] text-muted-foreground">MRR по месяцам</span>
           <SimpleChart
             className="mt-1 flex-1"
             height={36}
@@ -41,10 +41,10 @@ export function RevenueIllustration() {
       <div className="flex-1 overflow-hidden rounded-xl border bg-card">
         <div className="row border-b border-border px-3 py-1.5">
           <span className="flex-1 text-[8px] uppercase tracking-wider text-muted-foreground">
-            Referrer
+            Источник
           </span>
           <span className="text-[8px] uppercase tracking-wider text-muted-foreground">
-            Revenue
+            Выручка
           </span>
         </div>
         {referrers.map((r) => (

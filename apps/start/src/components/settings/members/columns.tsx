@@ -15,14 +15,14 @@ export function useColumns() {
   const columns: ColumnDef<IServiceMember>[] = [
     {
       accessorKey: 'user',
-      header: 'Name',
+      header: 'Имя',
       cell: ({ row }) => {
         const user = row.original.user;
         if (!user) return null;
         return [user.firstName, user.lastName].filter(Boolean).join(' ');
       },
       meta: {
-        label: 'Name',
+        label: 'Имя',
       },
     },
     {
@@ -35,40 +35,40 @@ export function useColumns() {
       },
       meta: {
         label: 'Email',
-        placeholder: 'Search email',
+        placeholder: 'Поиск по email',
         variant: 'text',
       },
     },
     {
       accessorKey: 'role',
-      header: 'Role',
+      header: 'Роль',
       cell: ({ row }) => {
         const role = row.original.role;
         return <Badge variant={'outline'}>{role}</Badge>;
       },
       meta: {
-        label: 'Role',
+        label: 'Роль',
       },
     },
     {
       accessorKey: 'createdAt',
-      header: 'Created',
+      header: 'Создан',
       size: ColumnCreatedAt.size,
       cell: ({ row }) => {
         const item = row.original;
         return <ColumnCreatedAt>{item.createdAt}</ColumnCreatedAt>;
       },
       meta: {
-        label: 'Created',
+        label: 'Создан',
       },
     },
     {
       accessorKey: 'access',
-      header: 'Access',
+      header: 'Доступ',
       cell: ({ row }) => {
         const access = row.original.access ?? [];
         if (access.length === 0) {
-          return <div className="text-muted-foreground">All projects</div>;
+          return <div className="text-muted-foreground">Все проекты</div>;
         }
         return (
           <div className="row flex-wrap gap-2">
@@ -81,7 +81,7 @@ export function useColumns() {
         );
       },
       meta: {
-        label: 'Access',
+        label: 'Доступ',
       },
     },
     createActionColumn(({ row }) => {
@@ -91,7 +91,7 @@ export function useColumns() {
         trpc.organization.removeMember.mutationOptions({
           onSuccess() {
             toast.success(
-              `${row.original.user?.firstName} has been removed from the organization`,
+              `${row.original.user?.firstName} удалён из организации`,
             );
             queryClient.invalidateQueries(
               trpc.organization.members.pathFilter(),
@@ -99,7 +99,7 @@ export function useColumns() {
           },
           onError() {
             toast.error(
-              `Failed to remove ${row.original.user?.firstName} from the organization`,
+              `Не удалось удалить ${row.original.user?.firstName} из организации`,
             );
           },
         }),
@@ -112,7 +112,7 @@ export function useColumns() {
               pushModal('EditMember', row.original);
             }}
           >
-            Edit access
+            Изменить доступ
           </DropdownMenuItem>
           <DropdownMenuItem
             className="text-destructive"
@@ -124,7 +124,7 @@ export function useColumns() {
               });
             }}
           >
-            Remove member
+            Удалить участника
           </DropdownMenuItem>
         </>
       );

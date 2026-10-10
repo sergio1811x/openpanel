@@ -11,7 +11,7 @@ export const Route = createFileRoute(
 )({
   component: Component,
   head: () => ({
-    meta: [{ title: createProjectTitle('Group members') }],
+    meta: [{ title: createProjectTitle('Участники группы') }],
   }),
 });
 

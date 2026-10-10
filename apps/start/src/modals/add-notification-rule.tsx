@@ -67,7 +67,7 @@ export default function AddNotificationRule({ rule }: Props) {
     trpc.notification.createOrUpdateRule.mutationOptions({
       onSuccess() {
         toast.success(
-          rule ? 'Notification rule updated' : 'Notification rule created'
+          rule ? 'Правило уведомлений обновлено' : 'Правило уведомлений создано'
         );
         client.refetchQueries(
           trpc.notification.rules.queryFilter({
@@ -91,7 +91,7 @@ export default function AddNotificationRule({ rule }: Props) {
 
   const onSubmit: SubmitHandler<IForm> = (data) => {
     if (!data.config.events[0]?.name) {
-      toast.error('At least one event is required');
+      toast.error('Требуется хотя бы одно событие');
       return;
     }
     mutation.mutate(data);
@@ -105,19 +105,19 @@ export default function AddNotificationRule({ rule }: Props) {
 
   return (
     <SheetContent className="[&>button.absolute]:hidden">
-      <ModalHeader title={rule ? 'Edit rule' : 'Create rule'} />
+      <ModalHeader title={rule ? 'Изменить правило' : 'Создать правило'} />
       <form className="col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
         <InputWithLabel
           error={form.formState.errors.name?.message}
-          label="Rule name"
-          placeholder="Eg. Sign ups on android"
+          label="Название правила"
+          placeholder="Например: Регистрации на Android"
           {...form.register('name')}
         />
 
         <WithLabel
           // @ts-expect-error
           error={form.formState.errors.config?.type.message}
-          label="Type"
+          label="Тип"
         >
           <Controller
             control={form.control}
@@ -130,20 +130,20 @@ export default function AddNotificationRule({ rule }: Props) {
                 error={form.formState.errors.config?.type.message}
                 items={[
                   {
-                    label: 'Events',
+                    label: 'События',
                     value: 'events',
                   },
                   {
-                    label: 'Funnel',
+                    label: 'Воронка',
                     value: 'funnel',
                   },
                 ]}
-                placeholder="Select type"
+                placeholder="Выберите тип"
               />
             )}
           />
         </WithLabel>
-        <WithLabel label="Events">
+        <WithLabel label="События">
           <div className="col gap-2">
             {eventsArray.fields.map((field, index) => {
               return (
@@ -167,7 +167,7 @@ export default function AddNotificationRule({ rule }: Props) {
               }
               variant={'outline'}
             >
-              Add event
+              Добавить событие
             </Button>
           </div>
         </WithLabel>
@@ -176,28 +176,28 @@ export default function AddNotificationRule({ rule }: Props) {
           info={
             <div className="prose dark:prose-invert">
               <p>
-                Customize your notification message. You can grab any property
-                from your event.
+                Настройте текст уведомления. Вы можете использовать любое
+                свойство из вашего события.
               </p>
 
               <ul>
                 <li>
-                  <code>{'{{name}}'}</code> - The name of the event
+                  <code>{'{{name}}'}</code> - Название события
                 </li>
                 <li>
-                  <code>{'{{rule_name}}'}</code> - The name of the rule
+                  <code>{'{{rule_name}}'}</code> - Название правила
                 </li>
                 <li>
-                  <code>{'{{properties.your.property}}'}</code> - Get the value
-                  of a custom property
+                  <code>{'{{properties.your.property}}'}</code> - Получить
+                  значение пользовательского свойства
                 </li>
                 <li>
-                  <code>{'{{profile.firstName}}'}</code> - Get the value of a
-                  profile property
+                  <code>{'{{profile.firstName}}'}</code> - Получить значение
+                  свойства профиля
                 </li>
                 <li>
                   <div className="flex flex-wrap gap-x-2">
-                    And many more...
+                    И многое другое...
                     <code>profileId</code>
                     <code>createdAt</code>
                     <code>country</code>
@@ -219,11 +219,11 @@ export default function AddNotificationRule({ rule }: Props) {
               </ul>
             </div>
           }
-          label="Template"
+          label="Шаблон"
         >
           <Textarea
             {...form.register('template')}
-            placeholder="You received a new '$EVENT_NAME' event"
+            placeholder="Вы получили новое событие '$EVENT_NAME'"
           />
         </WithLabel>
 
@@ -231,7 +231,7 @@ export default function AddNotificationRule({ rule }: Props) {
           control={form.control}
           name="integrations"
           render={({ field }) => (
-            <WithLabel label="Integrations">
+            <WithLabel label="Интеграции">
               <ComboboxAdvanced
                 {...field}
                 className="w-full"
@@ -239,7 +239,7 @@ export default function AddNotificationRule({ rule }: Props) {
                   label: integration.name,
                   value: integration.id,
                 }))}
-                placeholder="Pick integrations"
+                placeholder="Выберите интеграции"
                 value={field.value ?? []}
               />
             </WithLabel>
@@ -247,7 +247,7 @@ export default function AddNotificationRule({ rule }: Props) {
         />
 
         <Button icon={SaveIcon} type="submit">
-          {rule ? 'Update' : 'Create'}
+          {rule ? 'Сохранить' : 'Создать'}
         </Button>
       </form>
     </SheetContent>
@@ -287,7 +287,7 @@ function EventField({
               className="flex-1"
               items={eventNames}
               onChange={field.onChange}
-              placeholder="Select event"
+              placeholder="Выберите событие"
               searchable
               value={field.value}
             />
@@ -306,7 +306,7 @@ function EventField({
               value: [],
             });
           }}
-          placeholder="Select a filter"
+          placeholder="Выберите фильтр"
           searchable
           value=""
         >

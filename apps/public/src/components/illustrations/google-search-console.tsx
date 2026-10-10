@@ -1,18 +1,18 @@
 const queries = [
   {
-    query: 'openpanel analytics',
+    query: 'аналитика openpanel',
     clicks: 312,
     impressions: '4.1k',
     pos: 1.2,
   },
   {
-    query: 'open source mixpanel alternative',
+    query: 'open source альтернатива mixpanel',
     clicks: 187,
     impressions: '3.8k',
     pos: 2.4,
   },
   {
-    query: 'web analytics without cookies',
+    query: 'веб-аналитика без cookies',
     clicks: 98,
     impressions: '2.2k',
     pos: 4.7,
@@ -26,25 +26,25 @@ export function GoogleSearchConsoleIllustration() {
       <div className="row mb-1 gap-2">
         <div className="col flex-1 gap-0.5 rounded-lg border bg-card px-2.5 py-2">
           <span className="text-[8px] text-muted-foreground uppercase tracking-wider">
-            Clicks
+            Клики
           </span>
           <span className="font-bold font-mono text-sm">740</span>
         </div>
         <div className="col flex-1 gap-0.5 rounded-lg border bg-card px-2.5 py-2">
           <span className="text-[8px] text-muted-foreground uppercase tracking-wider">
-            Impr.
+            Показы
           </span>
           <span className="font-bold font-mono text-sm">13k</span>
         </div>
         <div className="col flex-1 gap-0.5 rounded-lg border bg-card px-2.5 py-2">
           <span className="text-[8px] text-muted-foreground uppercase tracking-wider">
-            Avg. CTR
+            Ср. CTR
           </span>
           <span className="font-bold font-mono text-sm">5.7%</span>
         </div>
         <div className="col flex-1 gap-0.5 rounded-lg border bg-card px-2.5 py-2">
           <span className="text-[8px] text-muted-foreground uppercase tracking-wider">
-            Avg. Pos
+            Ср. позиция
           </span>
           <span className="font-bold font-mono text-sm">2.8</span>
         </div>
@@ -54,10 +54,10 @@ export function GoogleSearchConsoleIllustration() {
       <div className="flex-1 overflow-hidden rounded-xl border border-border bg-card">
         <div className="row border-border border-b px-3 py-1.5">
           <span className="flex-1 text-[8px] text-muted-foreground uppercase tracking-wider">
-            Query
+            Запрос
           </span>
           <span className="w-10 text-right text-[8px] text-muted-foreground uppercase tracking-wider">
-            Pos
+            Поз.
           </span>
         </div>
         {queries.map((q, i) => (

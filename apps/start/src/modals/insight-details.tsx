@@ -16,13 +16,37 @@ type Explanation = RouterOutputs['insight']['explain'];
 function formatWindow(windowKind: string): string {
   switch (windowKind) {
     case 'yesterday':
-      return 'Yesterday';
+      return 'Вчера';
     case 'rolling_7d':
-      return '7 Days';
+      return '7 дней';
     case 'rolling_30d':
-      return '30 Days';
+      return '30 дней';
   }
   return windowKind;
+}
+
+function severityLabel(band: string): string {
+  switch (band) {
+    case 'severe':
+      return 'критический';
+    case 'moderate':
+      return 'умеренный';
+    case 'low':
+      return 'низкий';
+  }
+  return band;
+}
+
+function confidenceLabel(confidence: string): string {
+  switch (confidence) {
+    case 'high':
+      return 'высокая';
+    case 'medium':
+      return 'средняя';
+    case 'low':
+      return 'низкая';
+  }
+  return confidence;
 }
 
 function SeverityDot({ band }: { band: string }) {
@@ -38,7 +62,7 @@ function SeverityDot({ band }: { band: string }) {
               : 'bg-blue-500',
         )}
       />
-      <span className="text-muted-foreground text-xs capitalize">{band}</span>
+      <span className="text-muted-foreground text-xs capitalize">{severityLabel(band)}</span>
     </span>
   );
 }
@@ -181,11 +205,11 @@ export default function InsightDetails({ insight }: { insight: Insight }) {
 
       <div>
         <div className="mb-2 flex items-center gap-2 font-medium text-sm">
-          <SparklesIcon className="size-4" /> Why did this happen?
+          <SparklesIcon className="size-4" /> Почему это произошло?
         </div>
 
         {mutation.isPending && (
-          <p className="text-muted-foreground text-sm">Analyzing…</p>
+          <p className="text-muted-foreground text-sm">Анализ…</p>
         )}
 
         {explanation && (
@@ -203,18 +227,18 @@ export default function InsightDetails({ insight }: { insight: Insight }) {
             )}
             {explanation.relatedReference && (
               <p className="text-muted-foreground">
-                Possibly related: {explanation.relatedReference}
+                Возможно связано: {explanation.relatedReference}
               </p>
             )}
             <p className="text-[10px] text-muted-foreground uppercase tracking-wide">
-              Confidence: {explanation.confidence}
+              Уверенность: {confidenceLabel(explanation.confidence)}
             </p>
           </div>
         )}
 
         {!mutation.isPending && mutation.isSuccess && !explanation && (
           <p className="text-muted-foreground text-sm">
-            Couldn't generate an explanation for this one.
+            Не удалось сформировать объяснение.
           </p>
         )}
       </div>

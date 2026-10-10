@@ -11,7 +11,7 @@ const toolCalls = [
       { key: 'startDate', value: '"2024-03-18"' },
       { key: 'endDate', value: '"2024-03-24"' },
     ],
-    result: '12,847 visitors · 1,234 signups · 3.1% bounce',
+    result: '12 847 посетителей · 1 234 регистрации · 3.1% отказов',
   },
   {
     name: 'get_funnel',
@@ -19,12 +19,12 @@ const toolCalls = [
       { key: 'events', value: '["page_view", "signed_up"]' },
       { key: 'startDate', value: '"2024-03-18"' },
     ],
-    result: '72% conversion · up from 61% prev week',
+    result: 'конверсия 72% · против 61% неделю назад',
   },
 ];
 
 // Response split into segments so highlights apply as text streams in
-const RESPONSE = 'Last week saw 1,234 new signups — up 23% from the week before. Your signup funnel is converting at 72%, the highest rate in the past month.';
+const RESPONSE = 'За прошлую неделю было 1 234 новых регистраций — на 23% больше, чем неделей ранее. Ваша воронка регистрации конвертирует с показателем 72% — лучший результат за месяц.';
 
 type Phase = 'user' | 'thinking' | 'tool1' | 'tool2' | 'streaming' | 'done';
 
@@ -87,11 +87,11 @@ function ToolCard({
 function StreamingText({ text, done }: { text: string; done: boolean }) {
   // Split the full response into plain/highlighted segments for rendering
   const segments: { content: string; highlight?: 'white' | 'emerald' }[] = [
-    { content: 'Last week saw ' },
-    { content: '1,234 new signups', highlight: 'white' },
-    { content: ' — up 23% from the week before. Your signup funnel is converting at ' },
+    { content: 'За прошлую неделю было ' },
+    { content: '1 234 новых регистраций', highlight: 'white' },
+    { content: ' — на 23% больше, чем неделей ранее. Ваша воронка регистрации конвертирует с показателем ' },
     { content: '72%', highlight: 'emerald' },
-    { content: ', the highest rate in the past month.' },
+    { content: ' — лучший результат за месяц.' },
   ];
 
   // Walk through segments, revealing up to text.length characters
@@ -211,8 +211,8 @@ export function McpIllustration() {
         <div className="flex justify-end">
           <div className="max-w-[78%] rounded-2xl rounded-tr-md bg-[#2a2a2a] px-3.5 py-2.5">
             <p className="text-[10px] text-white/85 leading-relaxed">
-              How did our signups perform last week, and what's our funnel
-              conversion looking like?
+              Как работали наши регистрации на прошлой неделе и как выглядит
+              конверсия воронки?
             </p>
           </div>
         </div>

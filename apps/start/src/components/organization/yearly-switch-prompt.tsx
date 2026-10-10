@@ -74,11 +74,11 @@ export default function YearlySwitchPrompt({
   return (
     <div className="col gap-1 border-b bg-card p-4 lg:p-8">
       <div className="font-medium text-lg">
-        Switch to yearly — get 2 months free
+        Перейдите на годовую оплату — получите 2 месяца бесплатно
       </div>
       <div className="mb-1">
-        You've been with us for a while. Pay for 10 months and get 12: same
-        plan, same limits, one invoice a year.
+        Вы с нами уже некоторое время. Платите за 10 месяцев и получаете 12: тот
+        же тариф, те же лимиты, один счёт в год.
       </div>
       <div className="row gap-2">
         <Button
@@ -94,10 +94,10 @@ export default function YearlySwitchPrompt({
             });
           }}
         >
-          See my yearly price
+          Посмотреть годовую цену
         </Button>
         <Button onClick={dismiss} variant="outline">
-          Maybe later
+          Может, позже
         </Button>
       </div>
     </div>

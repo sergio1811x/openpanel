@@ -57,12 +57,12 @@ export default function SetupTwoFactor() {
     return (
       <ModalContent>
         <ModalHeader
-          text="Store these somewhere safe. Each can be used once if you lose access to your authenticator. You won't see them again."
-          title="Save your recovery codes"
+          text="Сохраните их в надёжном месте. Каждый код можно использовать один раз, если Вы потеряете доступ к аутентификатору. Больше Вы их не увидите."
+          title="Сохраните коды восстановления"
         />
         <RecoveryCodesBlock codes={recoveryCodes} />
         <DialogFooter>
-          <Button onClick={() => popModal()}>I've saved my codes</Button>
+          <Button onClick={() => popModal()}>Коды сохранены</Button>
         </DialogFooter>
       </ModalContent>
     );
@@ -71,20 +71,20 @@ export default function SetupTwoFactor() {
   return (
     <ModalContent>
       <ModalHeader
-        text="Scan the QR code with your authenticator app, then enter the 6-digit code to enable."
-        title="Set up two-factor authentication"
+        text="Отсканируйте QR-код в приложении-аутентификаторе, затем введите 6-значный код для включения."
+        title="Настройка двухфакторной аутентификации"
       />
 
       {setupMutation.isPending || !setupData ? (
         <div className="center-center min-h-[260px]">
           <span className="text-muted-foreground text-sm">
-            Generating secret…
+            Генерация секрета…
           </span>
         </div>
       ) : (
         <div className="col gap-4">
           <img
-            alt="Authenticator QR code"
+            alt="QR-код аутентификатора"
             className="rounded-md border border-border"
             height={240}
             src={setupData.qrDataUrl}
@@ -92,11 +92,11 @@ export default function SetupTwoFactor() {
           />
           <CopyInput
             className="w-full"
-            label="Can't scan? Enter this secret manually"
+            label="Не сканируется? Введите секрет вручную"
             value={setupData.secret}
           />
           <div className="col w-full gap-2">
-            <Label className="mb-1">Verification code</Label>
+            <Label className="mb-1">Код подтверждения</Label>
             <InputOTP
               disabled={enableMutation.isPending}
               maxLength={6}
@@ -118,14 +118,14 @@ export default function SetupTwoFactor() {
 
       <DialogFooter>
         <Button onClick={() => popModal()} variant="secondary">
-          Cancel
+          Отмена
         </Button>
         <Button
           disabled={code.length !== 6}
           loading={enableMutation.isPending}
           onClick={() => enableMutation.mutate({ code })}
         >
-          Enable
+          Включить
         </Button>
       </DialogFooter>
     </ModalContent>
@@ -156,18 +156,18 @@ function RecoveryCodesBlock({ codes }: { codes: string[] }) {
           size="sm"
           variant="outline"
         >
-          Download
+          Скачать
         </Button>
         <Button
           className="self-start"
           onClick={() => {
             navigator.clipboard.writeText(codes.join('\n'));
-            toast.success('Copied to clipboard');
+            toast.success('Скопировано в буфер обмена');
           }}
           size="sm"
           variant="outline"
         >
-          Copy all
+          Копировать все
         </Button>
       </div>
     </div>

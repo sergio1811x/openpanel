@@ -20,43 +20,43 @@ export function useColumns(): ColumnDef<
     },
     {
       accessorKey: 'email',
-      header: 'Mail',
+      header: 'Email',
       cell: ({ row }) => (
         <div className="font-medium">{row.original.email}</div>
       ),
       meta: {
         label: 'Email',
-        placeholder: 'Search email',
+        placeholder: 'Поиск по email',
         variant: 'text',
       },
     },
     {
       accessorKey: 'role',
-      header: 'Role',
+      header: 'Роль',
       meta: {
-        label: 'Role',
+        label: 'Роль',
       },
     },
     {
       accessorKey: 'createdAt',
-      header: 'Created',
+      header: 'Создан',
       size: ColumnCreatedAt.size,
       cell: ({ row }) => {
         const item = row.original;
         return <ColumnCreatedAt>{item.createdAt}</ColumnCreatedAt>;
       },
       meta: {
-        label: 'Created',
+        label: 'Создан',
       },
     },
     {
       accessorKey: 'projectAccess',
-      header: 'Access',
+      header: 'Доступ',
       cell: ({ row }) => {
         return <AccessCell row={row} />;
       },
       meta: {
-        label: 'Access',
+        label: 'Доступ',
       },
     },
     createActionColumn(({ row }) => {
@@ -65,7 +65,7 @@ export function useColumns(): ColumnDef<
       const revoke = useMutation(
         trpc.organization.revokeInvite.mutationOptions({
           onSuccess() {
-            toast.success(`Invite for ${row.original.email} revoked`);
+            toast.success(`Приглашение для ${row.original.email} отозвано`);
             queryClient.invalidateQueries(
               trpc.organization.invitations.queryFilter({
                 organizationId: row.original.organizationId,
@@ -73,7 +73,7 @@ export function useColumns(): ColumnDef<
             );
           },
           onError() {
-            toast.error(`Failed to revoke invite for ${row.original.email}`);
+            toast.error(`Не удалось отозвать приглашение для ${row.original.email}`);
           },
         }),
       );
@@ -87,7 +87,7 @@ export function useColumns(): ColumnDef<
               );
             }}
           >
-            Copy invite link
+            Копировать ссылку-приглашение
           </DropdownMenuItem>
           <DropdownMenuItem
             className="text-destructive"
@@ -95,7 +95,7 @@ export function useColumns(): ColumnDef<
               revoke.mutate({ inviteId: row.original.id });
             }}
           >
-            Revoke invite
+            Отозвать приглашение
           </DropdownMenuItem>
         </>
       );
@@ -124,18 +124,18 @@ function AccessCell({
         if (!project) {
           return (
             <Badge key={grant.projectId} className="mr-1">
-              Unknown
+              Неизвестно
             </Badge>
           );
         }
         return (
           <Badge key={grant.projectId} color="blue" className="mr-1">
             {project.name}
-            {grant.level === 'read' ? ' (read-only)' : ''}
+            {grant.level === 'read' ? ' (только чтение)' : ''}
           </Badge>
         );
       })}
-      {access.length === 0 && <Badge variant={'secondary'}>All projects</Badge>}
+      {access.length === 0 && <Badge variant={'secondary'}>Все проекты</Badge>}
     </>
   );
 }

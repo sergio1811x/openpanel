@@ -70,11 +70,11 @@ function EventDetailsContent({ id, createdAt, projectId }: Props) {
   const TABS = {
     essentials: {
       id: 'essentials',
-      title: 'Essentials',
+      title: 'Основное',
     },
     detailed: {
       id: 'detailed',
-      title: 'Detailed',
+      title: 'Подробно',
     },
   };
   const [widget, setWidget] = useState(TABS.essentials);
@@ -262,8 +262,8 @@ function EventDetailsContent({ id, createdAt, projectId }: Props) {
             </div>
             {!!session && (
               <div className="text-sm">
-                This session has {session.screenViewCount} screen views and{' '}
-                {session.eventCount} events. Visit duration is{' '}
+                В этой сессии {session.screenViewCount} просмотров экранов и{' '}
+                {session.eventCount} событий. Длительность визита:{' '}
                 {fancyMinutes(session.duration / 1000)}.
               </div>
             )}
@@ -273,7 +273,7 @@ function EventDetailsContent({ id, createdAt, projectId }: Props) {
         {properties.length > 0 && (
           <section>
             <div className="mb-2 flex justify-between font-medium">
-              <div>Properties</div>
+              <div>Свойства</div>
               <button
                 type="button"
                 onClick={() =>
@@ -281,7 +281,7 @@ function EventDetailsContent({ id, createdAt, projectId }: Props) {
                 }
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                {propertiesMode === 'table' ? 'View JSON' : 'View Table'}
+                {propertiesMode === 'table' ? 'Показать JSON' : 'Показать таблицу'}
               </button>
             </div>
             {propertiesMode === 'table' && (
@@ -308,7 +308,7 @@ function EventDetailsContent({ id, createdAt, projectId }: Props) {
         )}
         <section>
           <div className="mb-2 flex justify-between font-medium">
-            <div>Information</div>
+            <div>Информация</div>
           </div>
           <KeyValueGrid
             columns={1}
@@ -344,7 +344,7 @@ function EventDetailsContent({ id, createdAt, projectId }: Props) {
         </section>
         <section>
           <div className="mb-2 flex justify-between font-medium">
-            <div>All events for {event.name}</div>
+            <div>Все события «{event.name}»</div>
             <button
               className="text-muted-foreground hover:underline"
               onClick={() => {
@@ -353,7 +353,7 @@ function EventDetailsContent({ id, createdAt, projectId }: Props) {
               }}
               type="button"
             >
-              Show all
+              Показать все
             </button>
           </div>
           <div className="card p-4">
@@ -364,7 +364,7 @@ function EventDetailsContent({ id, createdAt, projectId }: Props) {
                 {
                   id: 'A',
                   name: event.name,
-                  displayName: 'Similar events',
+                  displayName: 'Похожие события',
                   segment: 'event',
                   filters: [],
                   type: 'event',

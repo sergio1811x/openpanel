@@ -30,7 +30,7 @@ export function ReportSidebar() {
       </div>
       <SheetFooter>
         <SheetClose asChild>
-          <Button className="w-full">Done</Button>
+          <Button className="w-full">Готово</Button>
         </SheetClose>
       </SheetFooter>
     </>

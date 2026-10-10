@@ -36,36 +36,36 @@ export default function OverviewTopSources({
   const [view] = useOverviewView();
   const [widget, setWidget, widgets] = useOverviewWidgetV2('sources', {
     referrer_name: {
-      title: 'Top sources',
-      btn: 'Refs',
+      title: 'Топ источников',
+      btn: 'Источники',
     },
     referrer: {
-      title: 'Top urls',
-      btn: 'Urls',
+      title: 'Топ URL',
+      btn: 'URL',
     },
     referrer_type: {
-      title: 'Top types',
-      btn: 'Types',
+      title: 'Топ типов',
+      btn: 'Типы',
     },
     utm_source: {
-      title: 'UTM Source',
-      btn: 'Source',
+      title: 'UTM-источник',
+      btn: 'Источник',
     },
     utm_medium: {
-      title: 'UTM Medium',
-      btn: 'Medium',
+      title: 'UTM-канал',
+      btn: 'Канал',
     },
     utm_campaign: {
-      title: 'UTM Campaign',
-      btn: 'Campaign',
+      title: 'UTM-кампания',
+      btn: 'Кампания',
     },
     utm_term: {
-      title: 'UTM Term',
-      btn: 'Term',
+      title: 'UTM-термин',
+      btn: 'Термин',
     },
     utm_content: {
-      title: 'UTM Content',
-      btn: 'Content',
+      title: 'UTM-содержание',
+      btn: 'Содержание',
     },
   });
   const trpc = useTRPC();
@@ -123,7 +123,7 @@ export default function OverviewTopSources({
           onTabChange={setWidget}
           searchValue={searchQuery}
           onSearchChange={setSearchQuery}
-          searchPlaceholder={`Search ${widget.btn.toLowerCase()}`}
+          searchPlaceholder={`Поиск: ${widget.btn}`}
           className="border-b-0 pb-2"
         />
         <WidgetBody className="p-0">
@@ -165,7 +165,7 @@ export default function OverviewTopSources({
                           }
                         }}
                       >
-                        {(item.name || 'Direct / Not set')
+                        {(item.name || 'Прямые заходы / Не задано')
                           .replace(/https?:\/\//, '')
                           .replace('www.', '')}
                       </button>

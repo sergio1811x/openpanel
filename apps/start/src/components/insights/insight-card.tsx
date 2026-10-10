@@ -20,11 +20,11 @@ import { Button } from '../ui/button';
 function formatWindowKind(windowKind: string): string {
   switch (windowKind) {
     case 'yesterday':
-      return 'Yesterday';
+      return 'Вчера';
     case 'rolling_7d':
-      return '7 Days';
+      return '7 дней';
     case 'rolling_30d':
-      return '30 Days';
+      return '30 дней';
   }
   return windowKind;
 }
@@ -73,7 +73,7 @@ export function InsightCard({
 
   // Get the metric label
   const metricKeyToLabel = (key: string) =>
-    key === 'share' ? 'Share' : key === 'pageviews' ? 'Pageviews' : 'Sessions';
+    key === 'share' ? 'Доля' : key === 'pageviews' ? 'Просмотры' : 'Сессии';
 
   const metricLabel = metricKeyToLabel(currentMetricKey);
 
@@ -134,7 +134,13 @@ export function InsightCard({
               )}
             />
             <span className="text-[11px] text-muted-foreground capitalize">
-              {insight.severityBand}
+              {insight.severityBand === 'severe'
+                ? 'Критический'
+                : insight.severityBand === 'moderate'
+                  ? 'Средний'
+                  : insight.severityBand === 'low'
+                    ? 'Низкий'
+                    : insight.severityBand}
             </span>
           </div>
         )}
@@ -150,7 +156,7 @@ export function InsightCard({
               }
             >
               <RotateCcwIcon className="size-2" />
-              Show{' '}
+              Показать:{' '}
               {metricKeyToLabel(
                 availableMetrics[
                   (metricIndex + 1) % availableMetrics.length
@@ -165,7 +171,7 @@ export function InsightCard({
             className="text-[11px] text-muted-foreground capitalize flex items-center gap-1"
             onClick={onFilter}
           >
-            Filter <FilterIcon className="size-2" />
+            Фильтр <FilterIcon className="size-2" />
           </button>
         </div>
       )}
@@ -218,7 +224,7 @@ export function InsightCard({
           size="sm"
           variant="ghost"
         >
-          Why did this happen?
+          Почему это произошло?
         </Button>
       </div>
     </div>

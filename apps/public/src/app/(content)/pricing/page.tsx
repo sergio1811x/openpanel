@@ -15,9 +15,9 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { CompareCard } from '../compare/_components/compare-card';
 
-const title = 'OpenPanel Cloud Pricing';
+const title = 'Тарифы OpenPanel Cloud';
 const description =
-  'Our pricing is as simple as it gets, choose how many events you want to track each month, everything else is unlimited, no tiers, no hidden costs.';
+  'Наши тарифы максимально просты: выберите, сколько событий вы хотите отслеживать каждый месяц, — всё остальное без ограничений. Никаких уровней и скрытых расходов.';
 
 export const metadata: Metadata = getPageMetadata({
   title,
@@ -74,23 +74,23 @@ function PricingTable() {
   return (
     <Section className="container">
       <SectionHeader
-        title="Full pricing table"
-        description="Here's the full pricing table for all plans. You can use the discount code to get a discount on your subscription."
+        title="Полная таблица тарифов"
+        description="Вот полная таблица тарифов для всех планов. Используйте промокод, чтобы получить скидку на подписку."
       />
       <div className="prose mt-8">
         <table className="bg-card">
           <thead>
             <tr>
-              <th>Plan</th>
-              <th className="text-right">Monthly price</th>
-              <th className="text-right">Yearly price (2 months free)</th>
+              <th>Тариф</th>
+              <th className="text-right">Цена в месяц</th>
+              <th className="text-right">Цена за год (2 месяца в подарок)</th>
             </tr>
           </thead>
           <tbody>
             {PRICING.map((price) => (
               <tr key={price.price}>
                 <td className="font-semibold">
-                  {formatEventsCount(price.events)} events per month
+                  {formatEventsCount(price.events)} событий в месяц
                 </td>
                 <td className="text-right">
                   {Intl.NumberFormat('en-US', {
@@ -125,15 +125,15 @@ function ComparisonSection() {
   return (
     <Section className="container">
       <SectionHeader
-        title="How do we compare?"
+        title="Чем мы отличаемся?"
         description={
           <>
-            See how OpenPanel stacks up against other analytics tools in our{' '}
+            Посмотрите, как OpenPanel сравнивается с другими инструментами аналитики, в{' '}
             <Link
               href="/articles/self-hosted-web-analytics"
               className="underline hover:text-primary transition-colors"
             >
-              comprehensive comparison of open source web analytics tools
+              подробном сравнении open source инструментов веб-аналитики
             </Link>
             .
           </>
@@ -141,7 +141,7 @@ function ComparisonSection() {
       />
 
       <Button asChild className="mt-8 self-start">
-        <Link href="/compare">View all comparisons</Link>
+        <Link href="/compare">Все сравнения</Link>
       </Button>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
@@ -149,7 +149,7 @@ function ComparisonSection() {
           <CompareCard
             key={comparison.slug}
             url={comparison.url}
-            name={`OpenPanel vs ${comparison.competitor.name}`}
+            name={`OpenPanel против ${comparison.competitor.name}`}
             description={comparison.competitor.short_description}
           />
         ))}

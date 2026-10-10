@@ -9,21 +9,21 @@ import { Button } from '@/components/ui/button';
 
 const secondaryFeatures = [
   {
-    title: 'Open Source',
+    title: 'Открытый исходный код',
     description:
-      'Full transparency. Audit the code, contribute, fork it, or self-host without lock-in.',
+      'Полная прозрачность. Изучайте код, вносите вклад, делайте форк или развертывайте самостоятельно — без привязки к вендору.',
     icon: GithubIcon,
   },
   {
-    title: 'Self-hosting',
+    title: 'Самостоятельный хостинг',
     description:
-      'Deploy OpenPanel anywhere - your server, your cloud, or locally. Full flexibility.',
+      'Разверните OpenPanel где угодно — на своём сервере, в своём облаке или локально. Полная гибкость.',
     icon: ServerIcon,
   },
   {
-    title: 'Lightweight & Fast',
+    title: 'Легковесный и быстрый',
     description:
-      "A tiny, high-performance tracker that won't slow down your site.",
+      'Компактный и производительный трекер, который не замедлит ваш сайт.',
     icon: BoltIcon,
   },
 ];
@@ -32,26 +32,26 @@ export function DataPrivacy() {
   return (
     <Section className="container">
       <SectionHeader
-        description="OpenPanel gives you analytics on your terms - privacy-friendly, open-source, and fully self-hostable. Every part of the platform is designed to put you in control of your data while delivering fast, reliable insights without compromising user trust."
+        description="OpenPanel даёт аналитику на ваших условиях: с уважением к приватности, с открытым исходным кодом и с возможностью полностью развернуть у себя. Каждая часть платформы создана так, чтобы вы контролировали свои данные и получали быстрые, надёжные инсайты, не подрывая доверия пользователей."
         title={
           <>
-            Built for Control,
+            Создано ради контроля,
             <br />
-            Transparency & Trust
+            прозрачности и доверия
           </>
         }
       />
       <div className="mt-16 mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
         <FeatureCard
-          description="GDPR compliant and privacy-friendly analytics without cookies or invasive tracking. Data is EU hosted, and a Data Processing Agreement (DPA) is available to sign."
+          description="Аналитика, соответствующая GDPR (общий регламент по защите данных), без cookies и назойливого отслеживания. Данные хранятся в ЕС, по запросу предоставляется соглашение об обработке данных (DPA)."
           illustration={<PrivacyIllustration />}
-          title="GDPR compliant"
+          title="Соответствует GDPR"
           variant="large"
         />
         <FeatureCard
-          description="You own your data - no vendors, no sharing, no hidden processing. Store analytics on your own infrastructure and stay in full control."
+          description="Данные принадлежат вам — никаких вендоров, обменов и скрытой обработки. Храните аналитику на собственной инфраструктуре и сохраняйте полный контроль."
           illustration={<DataOwnershipIllustration />}
-          title="Data Ownership"
+          title="Владение данными"
           variant="large"
         />
       </div>
@@ -68,7 +68,7 @@ export function DataPrivacy() {
       <div className="row mt-8 gap-4">
         <GetStartedButton />
         <Button asChild className="px-6" size="lg" variant="outline">
-          <Link href="/docs/self-hosting/self-hosting">Self-host for free</Link>
+          <Link href="/docs/self-hosting/self-hosting">Бесплатный self-hosting</Link>
         </Button>
       </div>
     </Section>

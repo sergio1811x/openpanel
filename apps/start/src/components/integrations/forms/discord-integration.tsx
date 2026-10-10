@@ -41,7 +41,7 @@ export function DiscordIntegrationForm({
     trpc.integration.createOrUpdate.mutationOptions({
       onSuccess,
       onError() {
-        toast.error('Failed to create integration');
+        toast.error('Не удалось создать интеграцию');
       },
     }),
   );
@@ -51,7 +51,7 @@ export function DiscordIntegrationForm({
   };
 
   const handleError = () => {
-    toast.error('Validation error');
+    toast.error('Ошибка валидации');
   };
 
   const testMutation = useMutation(
@@ -61,16 +61,16 @@ export function DiscordIntegrationForm({
   const handleTest = async () => {
     const url = form.getValues('config.url');
     if (!url) {
-      return toast.error('Webhook URL is required');
+      return toast.error('Не указан URL вебхука');
     }
     const res = await testMutation.mutateAsync({
       projectId,
       config: { type: 'discord', url },
     });
     if (res.success) {
-      toast.success('Test notification sent');
+      toast.success('Тестовое уведомление отправлено');
     } else {
-      toast.error('Failed to send test notification');
+      toast.error('Не удалось отправить тестовое уведомление');
     }
   };
 
@@ -80,8 +80,8 @@ export function DiscordIntegrationForm({
       className="col gap-4"
     >
       <InputWithLabel
-        label="Name"
-        placeholder="Eg. My personal discord"
+        label="Название"
+        placeholder="Например, Мой личный Discord"
         {...form.register('name')}
         error={form.formState.errors.name?.message}
       />
@@ -92,10 +92,10 @@ export function DiscordIntegrationForm({
       />
       <div className="row gap-4">
         <Button type="button" variant="outline" onClick={handleTest}>
-          Test connection
+          Проверить подключение
         </Button>
         <Button type="submit" className="flex-1">
-          Create
+          Создать
         </Button>
       </div>
     </form>

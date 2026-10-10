@@ -26,7 +26,7 @@ export const ProfileGroups = ({ projectId, groups }: Props) => {
     <div className="flex flex-wrap items-center gap-2">
       <span className="flex shrink-0 items-center gap-1.5 text-muted-foreground text-xs">
         <UsersIcon className="size-3.5" />
-        Groups
+        Группы
       </span>
       {query.data.map((group) => (
         <ProjectLink

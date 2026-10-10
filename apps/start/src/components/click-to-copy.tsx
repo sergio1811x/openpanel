@@ -12,12 +12,12 @@ type Props = {
 const ClickToCopy = ({ children, value }: Props) => {
   return (
     <Tooltiper
-      content="Click to copy"
+      content="Нажмите, чтобы скопировать"
       asChild
       className="cursor-pointer"
       onClick={() => {
         clipboard(value);
-        toast('Copied to clipboard');
+        toast('Скопировано!');
       }}
     >
       {children}

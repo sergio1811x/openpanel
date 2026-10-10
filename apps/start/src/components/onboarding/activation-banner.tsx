@@ -32,16 +32,16 @@ const readDismissed = (projectId: string) => {
 
 const HEADLINES = {
   'first-event': {
-    title: 'Waiting for your first event',
-    sub: 'Install the snippet — this banner lights up the moment data arrives.',
+    title: 'Ожидаем Ваше первое событие',
+    sub: 'Установите сниппет — этот баннер загорится, как только поступят данные.',
   },
   'first-report': {
-    title: 'Data is flowing — now shape it',
-    sub: 'Build your first report from the events coming in.',
+    title: 'Данные поступают — теперь придайте им форму',
+    sub: 'Постройте свой первый отчёт по поступающим событиям.',
   },
   'invite-teammate': {
-    title: 'Bring your team in',
-    sub: 'Invite a teammate to see what you are seeing.',
+    title: 'Пригласите свою команду',
+    sub: 'Пригласите коллегу, чтобы он видел то же, что и Вы.',
   },
 } as const;
 
@@ -84,7 +84,7 @@ export default function ActivationBanner() {
   }[] = [
     {
       key: 'first-event',
-      label: 'First event',
+      label: 'Первое событие',
       done: status.hasFirstEvent,
       go: () => {
         op.track('activation_checklist_setup_clicked', { projectId });
@@ -96,7 +96,7 @@ export default function ActivationBanner() {
     },
     {
       key: 'first-report',
-      label: 'First report',
+      label: 'Первый отчёт',
       done: status.hasReport,
       go: () => {
         op.track('activation_checklist_report_clicked', { projectId });
@@ -108,7 +108,7 @@ export default function ActivationBanner() {
     },
     {
       key: 'invite-teammate',
-      label: 'Invite a teammate',
+      label: 'Пригласить коллегу',
       done: status.hasTeammate,
       go: () => {
         op.track('activation_checklist_invite_clicked', { projectId });
@@ -139,13 +139,13 @@ export default function ActivationBanner() {
     <>
       <Button onClick={current.go} size="sm">
         {current.key === 'first-event'
-          ? 'Set up tracking'
+          ? 'Настроить отслеживание'
           : current.key === 'first-report'
-            ? 'Create a report'
-            : 'Invite'}
+            ? 'Создать отчёт'
+            : 'Пригласить'}
       </Button>
       <Button onClick={dismiss} size="sm" variant="ghost">
-        Skip setup
+        Пропустить настройку
       </Button>
     </>
   );
@@ -168,7 +168,7 @@ export default function ActivationBanner() {
         <div className="row @5xl:contents min-w-0 flex-wrap items-start justify-between gap-4">
           <div className="col min-w-0 gap-1">
             <div className="row items-center gap-2 font-mono text-muted-foreground text-xs uppercase tracking-widest">
-              Setup funnel
+              Настройка
               <span className="text-emerald-600 dark:text-emerald-500">
                 {doneCount}/{steps.length}
               </span>

@@ -170,13 +170,13 @@ export function ComboboxEvents<
           <Command shouldFilter={false}>
             {searchable === true && (
               <CommandInput
-                placeholder="Search event..."
+                placeholder="Поиск события..."
                 value={search}
                 onValueChange={setSearch}
               />
             )}
 
-            <CommandEmpty>Nothing selected</CommandEmpty>
+            <CommandEmpty>Ничего не выбрано</CommandEmpty>
             <VirtualList
               height={300}
               data={items.filter((item) => {
@@ -206,7 +206,7 @@ export function ComboboxEvents<
                       <EventIcon name={item.name} meta={item.meta} size="sm" />
                     )}
                     <span className="font-medium flex-1 truncate">
-                      {item.name === '*' ? 'Any events' : item.name}
+                      {item.name === '*' ? 'Все события' : item.name}
                     </span>
                     <span className="text-muted-foreground font-mono font-medium">
                       {number.short(item.count)}

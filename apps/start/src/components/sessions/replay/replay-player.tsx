@@ -167,7 +167,7 @@ export function ReplayPlayer({
   if (importError) {
     return (
       <div className="flex h-[320px] items-center justify-center bg-black text-sm text-muted-foreground">
-        Failed to load replay player.
+        Не удалось загрузить плеер записи.
       </div>
     );
   }

@@ -2,177 +2,207 @@
   "slug": "developers",
   "audience": "developers",
   "seo": {
-    "title": "Analytics for Developers — Open Source, API-First, Self-Hostable",
-    "description": "OpenPanel is the open-source analytics platform built for developers. 16 SDKs, REST API, Docker self-hosting, TypeScript-first. Track events, funnels, and users without cookies.",
+    "title": "Аналитика для разработчиков — open source, API-first, self-hosting",
+    "description": "OpenPanel — open source платформа аналитики, созданная для разработчиков. 16 SDK, REST API, self-hosting через Docker, приоритет TypeScript. Отслеживайте события, воронки и пользователей без cookies.",
     "noindex": false
   },
   "hero": {
-    "heading": "Analytics for developers",
-    "subheading": "An open-source analytics platform that respects your stack and your users' privacy. 16 SDKs, a REST API, Docker Compose self-hosting, and a 2.3 KB script. No cookies, no consent banners, no vendor lock-in.",
+    "heading": "Аналитика для разработчиков",
+    "subheading": "Платформа аналитики с открытым исходным кодом, которая уважает ваш стек и приватность ваших пользователей.",
     "badges": [
       "Open source (AGPL-3.0)",
-      "16 SDKs",
-      "Self-host with Docker",
-      "2.3 KB script"
+      "16 SDK",
+      "Self-hosting через Docker",
+      "2.3 КБ скрипт"
     ]
   },
   "problem": {
-    "title": "Why developers hate their analytics setup",
-    "intro": "Most analytics tools are built for marketers. They feel wrong when you're a developer who cares about performance, privacy, and owning your infrastructure.",
+    "title": "Почему разработчики ненавидят свою аналитику",
+    "intro": "Большинство инструментов аналитики созданы для маркетологов. Для разработчика, которому важны производительность, приватность и владение инфраструктурой, они ощущаются чужими.",
     "items": [
       {
-        "title": "Google Analytics is a black box",
-        "description": "Proprietary code you can't inspect, heavy scripts that slow your site, sampled data you can't trust, and a UI designed for marketers who think in 'dimensions' and 'metrics'."
+        "title": "Google Analytics — чёрный ящик",
+        "description": "Проприетарный код, который нельзя проверить, тяжёлые скрипты, замедляющие сайт, сэмплированные данные, которым нельзя доверять, и интерфейс для маркетологов, мыслящих «измерениями» и «метриками»."
       },
       {
-        "title": "No self-hosting option",
-        "description": "Most analytics tools are cloud-only. Your data lives on someone else's servers. No way to run it in your own VPC, no access to raw data, no control over retention or processing."
+        "title": "Нет варианта self-hosting",
+        "description": "Большинство инструментов — только облако. Данные живут на чужих серверах. Не запустить в своём VPC, нет доступа к сырым данным, нет контроля над хранением и обработкой."
       },
       {
-        "title": "Heavy SDKs and slow scripts",
-        "description": "The average analytics script is 30–80 KB. That's real performance impact on every page load. Plus the third-party network requests and cookie overhead."
+        "title": "Тяжёлые SDK и медленные скрипты",
+        "description": "Средний аналитический скрипт — 30–80 КБ. Это реальное влияние на производительность каждой загрузки страницы. Плюс сторонние сетевые запросы и накладные расходы cookies."
       },
       {
-        "title": "Cookie consent ruins your UX",
-        "description": "Cookie-based analytics means consent banners on every page. 30-40% of users reject cookies, giving you incomplete data and a worse user experience."
+        "title": "Согласие на cookies портит UX",
+        "description": "Аналитика на cookies означает баннеры согласия на каждой странице. 30–40% пользователей отклоняют cookies — вы получаете неполные данные и худший пользовательский опыт."
       }
     ]
   },
   "features": {
-    "title": "Built the way developers expect",
-    "intro": "OpenPanel is TypeScript-first, API-driven, and designed to fit into modern development workflows.",
+    "title": "Создано так, как ждут разработчики",
+    "intro": "OpenPanel — с приоритетом TypeScript, на API и вписывается в современные процессы разработки.",
     "items": [
       {
-        "title": "16 SDKs for every framework",
-        "description": "JavaScript, React, Next.js, Vue, Nuxt, Astro, Remix, Express, React Native, Python, Ruby, Rust, Kotlin, Swift — plus a script tag and REST API."
+        "title": "16 SDK под каждый фреймворк",
+        "description": "JavaScript, React, Next.js, Vue, Nuxt, Astro, Remix, Express, React Native, Python, Ruby, Rust, Kotlin, Swift — плюс тег скрипта и REST API."
       },
       {
-        "title": "2.3 KB tracking script",
-        "description": "The web script is tiny. No Lighthouse penalty, no performance impact, no bundle bloat. Async loading by default."
+        "title": "Скрипт отслеживания 2.3 КБ",
+        "description": "Веб-скрипт крошечный. Без штрафа Lighthouse, без влияния на производительность, без раздувания бандла. Асинхронная загрузка по умолчанию."
       },
       {
-        "title": "REST API for everything",
-        "description": "Track events, query data, manage projects, and export analytics — all via a documented REST API. Build custom dashboards or pipe data into your own systems."
+        "title": "REST API для всего",
+        "description": "Отправка событий, запросы данных, управление проектами и экспорт аналитики — всё через документированный REST API. Стройте кастомные дашборды или направляйте данные в свои системы."
       },
       {
-        "title": "Docker Compose self-hosting",
-        "description": "One command to deploy. PostgreSQL, ClickHouse, and Redis included. Run it on any VPS, in your Kubernetes cluster, or via Coolify/Dokploy."
+        "title": "Self-hosting через Docker Compose",
+        "description": "Одна команда для развёртывания. PostgreSQL, ClickHouse и Redis включены. Запускайте на любом VPS, в Kubernetes-кластере или через Coolify/Dokploy."
       },
       {
-        "title": "Cookieless by default",
-        "description": "No cookies means no consent banners and no blocked requests. Every user is tracked accurately, with full privacy compliance built in."
+        "title": "Без cookies по умолчанию",
+        "description": "Отсутствие cookies — значит нет баннеров согласия и заблокированных запросов. Каждый пользователь отслеживается точно, со встроенным соответствием приватности."
       },
       {
-        "title": "Open source (AGPL-3.0)",
-        "description": "Read the code, report bugs, submit PRs. No proprietary black boxes. The self-hosted version is identical to cloud — no artificial feature limits."
+        "title": "Открытый код (AGPL-3.0)",
+        "description": "Читайте код, сообщайте о багах, отправляйте PR. Никаких проприетарных чёрных ящиков. Self-hosted версия идентична облаку — без искусственных ограничений функций."
       },
       {
-        "title": "Event-based data model",
-        "description": "Track any event with arbitrary properties. No predefined schema, no reserved event names, no property limits. Your data model, your rules."
+        "title": "Событийная модель данных",
+        "description": "Отслеживайте любые события с произвольными свойствами. Без предопределённой схемы, зарезервированных имён событий и лимитов свойств. Ваша модель данных — ваши правила."
       },
       {
-        "title": "Real-time event stream",
-        "description": "See events as they fire. Debug tracking issues by watching live data flow through your system. No sampling, no delays."
+        "title": "Поток событий в реальном времени",
+        "description": "Видите события по мере их поступления. Отлаживайте проблемы отслеживания, наблюдая живой поток данных. Без сэмплирования и задержек."
       },
       {
-        "title": "Declarative tracking with data attributes",
-        "description": "Add data-track attributes to HTML elements for zero-JavaScript event tracking. Perfect for static sites or server-rendered pages."
+        "title": "Декларативное отслеживание через data-атрибуты",
+        "description": "Добавляйте data-track атрибуты к HTML-элементам для отслеживания событий без JavaScript. Идеально для статических и серверно-рендеренных страниц."
       }
     ]
   },
   "benefits": {
-    "title": "Why developers choose OpenPanel",
-    "intro": "Analytics that fits your workflow instead of fighting against it.",
+    "title": "Почему разработчики выбирают OpenPanel",
+    "intro": "Аналитика, которая вписывается в ваш процесс, а не борется с ним.",
     "items": [
       {
-        "title": "Own your data completely",
-        "description": "Self-host on your infrastructure. Access raw events in ClickHouse. Export anything via API. No vendor lock-in, ever."
+        "title": "Полное владение данными",
+        "description": "Разверните на своей инфраструктуре. Доступ к сырым событиям в ClickHouse. Экспорт чего угодно через API. Никакой привязки к вендору — никогда."
       },
       {
-        "title": "Ship tracking in minutes, not days",
-        "description": "npm install, add your client ID, and tracking starts. Automatic page view tracking out of the box. Custom events are one line of code."
+        "title": "Отслеживание за минуты, а не дни",
+        "description": "npm install, добавьте client ID — и отслеживание началось. Автотрекинг просмотров страниц из коробки. Кастомные события — одна строка кода."
       },
       {
-        "title": "No impact on site performance",
-        "description": "The 2.3 KB async script loads without blocking rendering. No cookies means no additional HTTP overhead. Your Lighthouse score stays perfect."
+        "title": "Ноль влияния на производительность сайта",
+        "description": "Асинхронный скрипт 2.3 КБ загружается без блокировки рендеринга. Без cookies нет дополнительного HTTP-оверхеда. Ваш Lighthouse-балл остаётся идеальным."
       },
       {
-        "title": "Works with your deployment pipeline",
-        "description": "Docker Compose for local dev, Kubernetes for production, or Coolify/Dokploy for managed self-hosting. Fits however you deploy."
+        "title": "Работает с вашим деплой-пайплайном",
+        "description": "Docker Compose для локальной разработки, Kubernetes для продакшена или Coolify/Dokploy для управляемого self-hosting. Подстраивается под любой деплой."
       },
       {
-        "title": "Product analytics included",
-        "description": "Funnels, retention, user profiles, and cohort analysis alongside web analytics. No need for a separate Mixpanel or Amplitude subscription."
+        "title": "Продуктовая аналитика включена",
+        "description": "Воронки, удержание, профили пользователей и когортный анализ вместе с веб-аналитикой. Отдельная подписка Mixpanel или Amplitude не нужна."
       },
       {
-        "title": "Transparent and auditable",
-        "description": "Every line of code is on GitHub. No tracking pixels you can't inspect, no data processing you can't verify."
+        "title": "Прозрачность и проверяемость",
+        "description": "Каждая строка кода — на GitHub. Никаких непрозрачных трекинг-пикселей и процессов обработки данных, которые нельзя проверить."
       }
     ]
   },
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Technical questions from developers evaluating OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Технические вопросы от разработчиков, оценивающих OpenPanel.",
     "items": [
       {
-        "question": "How does self-hosting work?",
-        "answer": "Clone the repo, configure environment variables, and run docker compose up. The stack includes PostgreSQL (config), ClickHouse (events), and Redis (caching/queues). A 4 vCPU / 8 GB RAM VPS handles most workloads. Deployment guides exist for Docker Compose, Kubernetes, Coolify, and Dokploy."
+        "question": "Как работает самостоятельный хостинг?",
+        "answer": "Клонируйте репозиторий, задайте переменные окружения и выполните docker compose up. Стек включает PostgreSQL (конфигурация), ClickHouse (события) и Redis (кэш/очереди). VPS с 4 vCPU / 8 ГБ RAM справляется с большинством нагрузок. Есть руководства по развёртыванию для Docker Compose, Kubernetes, Coolify и Dokploy."
       },
       {
-        "question": "What's the data architecture?",
-        "answer": "OpenPanel uses a three-database strategy: PostgreSQL for relational data (users, projects, dashboards), ClickHouse for analytics events (OLAP, high-volume reads/writes), and Redis for caching, job queues, and real-time pub/sub. Events are ingested via the API, queued in Redis, and batch-written to ClickHouse by background workers."
+        "question": "Какая архитектура данных?",
+        "answer": "OpenPanel использует стратегию трёх баз: PostgreSQL для реляционных данных (пользователи, проекты, дашборды), ClickHouse для аналитических событий (OLAP, высоконагруженные чтения/записи) и Redis для кэша, очередей задач и реалтайм pub/sub. События поступают через API, ставятся в очередь Redis и пакетно записываются в ClickHouse фоновыми воркерами."
       },
       {
-        "question": "Can I access raw event data?",
-        "answer": "Yes. Self-hosted users can query ClickHouse directly with SQL. Cloud users can export data via the REST API. There's no data sampling — you always see the full dataset."
+        "question": "Можно ли получить доступ к сырым данным событий?",
+        "answer": "Да. Пользователи self-hosted могут запрашивать ClickHouse напрямую через SQL. Пользователи облака могут экспортировать данные через REST API. Сэмплирования нет — вы всегда видите полный датасет."
       },
       {
-        "question": "How does cookieless tracking work?",
-        "answer": "OpenPanel uses a combination of hashed IP address, user agent, and other browser signals to create anonymous session identifiers. No cookies are set, no local storage is used, and no personally identifiable information is stored. This approach is GDPR compliant without requiring consent."
+        "question": "Как работает отслеживание без cookies?",
+        "answer": "OpenPanel комбинирует хеш IP-адреса, user agent и другие сигналы браузера для создания анонимных идентификаторов сессий. Cookies не ставятся, localStorage не используется, персональные данные не хранятся. Такой подход соответствует GDPR без запроса согласия."
       },
       {
-        "question": "Is there a TypeScript SDK?",
-        "answer": "Yes. All JavaScript/TypeScript SDKs (web, React, Next.js, Vue, Nuxt, Astro, Express) are written in TypeScript with full type definitions. The tracking API is type-safe with autocomplete for event names and properties if you extend the types."
+        "question": "Есть ли TypeScript SDK?",
+        "answer": "Да. Все JavaScript/TypeScript SDK (web, React, Next.js, Vue, Nuxt, Astro, Express) написаны на TypeScript с полными определениями типов. API отслеживания типобезопасен, с автодополнением имён событий и свойств при расширении типов."
       },
       {
-        "question": "Can I track server-side events?",
-        "answer": "Yes. Use the Express SDK, the Python/Ruby/Rust SDKs, or call the REST API directly from any server-side language. Server-side tracking is useful for backend events like payments, API usage, or background job completions."
+        "question": "Можно ли отслеживать серверные события?",
+        "answer": "Да. Используйте SDK для Express, Python/Ruby/Rust или вызывайте REST API напрямую из любого серверного языка. Серверное отслеживание полезно для бэкенд-событий: платежи, использование API, завершение фоновых задач."
       },
       {
-        "question": "How does OpenPanel compare to PostHog for developers?",
-        "answer": "PostHog offers more tools (feature flags, experiments, error tracking) but requires more infrastructure to self-host (minimum 4 vCPU, 16 GB RAM). OpenPanel focuses on analytics — events, funnels, retention — with a lighter footprint and simpler deployment. Choose PostHog if you need an all-in-one platform; choose OpenPanel if you want focused analytics that's easy to run."
+        "question": "Чем OpenPanel отличается от PostHog для разработчиков?",
+        "answer": "PostHog предлагает больше инструментов (фича-флаги, эксперименты, трекинг ошибок), но требует больше инфраструктуры для self-hosting (минимум 4 vCPU, 16 ГБ RAM). OpenPanel фокусируется на аналитике — события, воронки, удержание — с меньшим потреблением ресурсов и более простым развёртыванием. Выбирайте PostHog, если нужна платформа «всё в одном»; OpenPanel — если нужна сфокусированная аналитика, которую легко поддерживать."
       },
       {
-        "question": "What's the tracking script size?",
-        "answer": "2.3 KB gzipped. For comparison, Google Analytics is ~28 KB, Mixpanel is ~32 KB, and PostHog is ~60 KB. The script loads asynchronously and doesn't block page rendering."
+        "question": "Каков размер скрипта отслеживания?",
+        "answer": "2.3 КБ в gzip. Для сравнения: Google Analytics — ~28 КБ, Mixpanel — ~32 КБ, PostHog — ~60 КБ. Скрипт загружается асинхронно и не блокирует рендеринг страницы."
       }
     ]
   },
   "related_links": {
     "guides": [
-      { "title": "Next.js analytics setup", "url": "/guides/nextjs-analytics" },
-      { "title": "React analytics setup", "url": "/guides/react-analytics" },
-      { "title": "Node.js analytics setup", "url": "/guides/nodejs-analytics" },
-      { "title": "Python analytics setup", "url": "/guides/python-analytics" }
+      {
+        "title": "Настройка аналитики Next.js",
+        "url": "/guides/nextjs-analytics"
+      },
+      {
+        "title": "Настройка аналитики React",
+        "url": "/guides/react-analytics"
+      },
+      {
+        "title": "Настройка аналитики Node.js",
+        "url": "/guides/nodejs-analytics"
+      },
+      {
+        "title": "Настройка аналитики Python",
+        "url": "/guides/python-analytics"
+      }
     ],
     "articles": [
-      { "title": "How to self-host OpenPanel", "url": "/articles/how-to-self-host-openpanel" },
-      { "title": "Best open source analytics tools", "url": "/articles/self-hosted-web-analytics" },
-      { "title": "Cookieless analytics explained", "url": "/articles/cookieless-analytics" }
+      {
+        "title": "Как развернуть OpenPanel самостоятельно",
+        "url": "/articles/how-to-self-host-openpanel"
+      },
+      {
+        "title": "Лучшие open source инструменты аналитики",
+        "url": "/articles/self-hosted-web-analytics"
+      },
+      {
+        "title": "Аналитика без cookies: как это работает",
+        "url": "/articles/cookieless-analytics"
+      }
     ],
     "comparisons": [
-      { "title": "OpenPanel vs PostHog", "url": "/compare/posthog-alternative" },
-      { "title": "OpenPanel vs Plausible", "url": "/compare/plausible-alternative" },
-      { "title": "OpenPanel vs Umami", "url": "/compare/umami-alternative" }
+      {
+        "title": "OpenPanel против PostHog",
+        "url": "/compare/posthog-alternative"
+      },
+      {
+        "title": "OpenPanel против Plausible",
+        "url": "/compare/plausible-alternative"
+      },
+      {
+        "title": "OpenPanel против Umami",
+        "url": "/compare/umami-alternative"
+      }
     ]
   },
   "ctas": {
     "primary": {
-      "label": "Try OpenPanel Free",
+      "label": "Попробуйте OpenPanel бесплатно",
       "href": "https://dashboard.openpanel.dev/onboarding"
     },
     "secondary": {
-      "label": "View Source on GitHub",
+      "label": "Исходный код на GitHub",
       "href": "https://github.com/Openpanel-dev/openpanel"
     }
   }

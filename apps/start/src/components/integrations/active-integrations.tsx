@@ -69,8 +69,8 @@ export function ActiveIntegrations() {
               <BoxSelectIcon className="size-10" strokeWidth={1} />
             </IntegrationCardLogo>
           }
-          name="No integrations yet"
-          description="Integrations allow you to connect your systems to OpenPanel. You can add them in the available integrations section."
+          name="Интеграций пока нет"
+          description="Интеграции позволяют подключить Ваши системы к OpenPanel. Добавить их можно в разделе доступных интеграций."
         />
       )}
       <AnimatePresence mode="popLayout">
@@ -79,15 +79,15 @@ export function ActiveIntegrations() {
             <motion.div key={item.id} layout="position">
               <IntegrationCard {...item.integration} name={item.name}>
                 <IntegrationCardFooter className="row justify-between items-center">
-                  <PingBadge>Connected</PingBadge>
+                  <PingBadge>Подключено</PingBadge>
                   <div className="row gap-2">
                     <Button
                       variant="ghost"
                       className="text-destructive"
                       onClick={() => {
                         showConfirm({
-                          title: `Delete ${item.name}?`,
-                          text: 'This action cannot be undone.',
+                          title: `Удалить ${item.name}?`,
+                          text: 'Это действие нельзя отменить.',
                           onConfirm: () => {
                             deletion.mutate({
                               id: item.id,
@@ -96,7 +96,7 @@ export function ActiveIntegrations() {
                         });
                       }}
                     >
-                      Delete
+                      Удалить
                     </Button>
                     <Button
                       variant="ghost"
@@ -107,7 +107,7 @@ export function ActiveIntegrations() {
                         });
                       }}
                     >
-                      Edit
+                      Изменить
                     </Button>
                   </div>
                 </IntegrationCardFooter>

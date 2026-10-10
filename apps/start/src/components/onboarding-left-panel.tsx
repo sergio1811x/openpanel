@@ -11,7 +11,7 @@ const testimonials = [
     key: 'thomas',
     bgImage: '/img-1.webp',
     quote:
-      "OpenPanel is BY FAR the best open-source analytics I've ever seen. Better UX/UI, many more features, and incredible support from the founder.",
+      'OpenPanel — безусловно, лучшая open-source аналитика из всех, что я видел. Лучший UX/UI, гораздо больше функций и невероятная поддержка от основателя.',
     author: 'Thomas Sanlis',
     site: 'uneed.best',
   },
@@ -19,7 +19,7 @@ const testimonials = [
     key: 'julien',
     bgImage: '/img-2.webp',
     quote:
-      'After testing several product analytics tools, we chose OpenPanel and we are very satisfied. Profiles and Conversion Events are our favorite features.',
+      'Протестировав несколько инструментов продуктовой аналитики, мы выбрали OpenPanel и очень довольны. Профили и события-конверсии — наши любимые функции.',
     author: 'Julien Hany',
     site: 'strackr.com',
   },
@@ -27,7 +27,7 @@ const testimonials = [
     key: 'piotr',
     bgImage: '/img-3.webp',
     quote:
-      'The Overview tab is great — it has everything I need. The UI is beautiful, clean, modern, very pleasing to the eye.',
+      'Вкладка «Обзор» великолепна — в ней есть всё, что мне нужно. Интерфейс красивый, чистый, современный, очень приятный для глаз.',
     author: 'Piotr Kulpinski',
     site: 'producthunt.com',
   },
@@ -35,8 +35,8 @@ const testimonials = [
     key: 'selfhost',
     bgImage: '/img-4.webp',
     quote:
-      "After paying a lot to PostHog for years, OpenPanel gives us the same — in many ways better — analytics while keeping full ownership of our data. We don't want to run any business without OpenPanel anymore.",
-    author: 'Self-hosting user',
+      'После многолетних крупных трат на PostHog OpenPanel даёт нам ту же — а во многом и лучшую — аналитику, сохраняя за нами полное владение данными. Мы больше не хотим вести бизнес без OpenPanel.',
+    author: 'Пользователь self-hosted',
     site: undefined,
   },
 ];

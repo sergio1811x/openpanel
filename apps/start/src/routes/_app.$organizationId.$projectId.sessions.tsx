@@ -47,8 +47,8 @@ function Component() {
     <PageContainer>
       <PageHeader
         className="mb-8"
-        description="Access all your sessions here"
-        title="Sessions"
+        description="Все ваши сессии в одном месте"
+        title="Сессии"
       />
       <SessionsTable query={query} />
     </PageContainer>

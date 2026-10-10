@@ -25,11 +25,11 @@ export const getRouter = async () => {
     defaultPreload: 'intent',
     defaultNotFoundComponent: () => (
       <FullPageEmptyState
-        title="Page not found"
-        description="The page you're looking for doesn't exist or has moved."
+        title="Страница не найдена"
+        description="Страница, которую вы ищете, не существует или была перемещена."
         className="min-h-screen"
       >
-        <LinkButton href="/">Go to home</LinkButton>
+        <LinkButton href="/">На главную</LinkButton>
       </FullPageEmptyState>
     ),
     Wrap: (props: { children: React.ReactNode }) => {

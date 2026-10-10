@@ -34,7 +34,7 @@ export function FiltersBuilder({
   onChange,
   categories = ['event', 'profile', 'group', 'cohort'],
   eventName = '',
-  addLabel = 'Add filter',
+  addLabel = 'Добавить фильтр',
   className,
 }: FiltersBuilderProps) {
   const setFilter = (updated: IChartEventFilter) => {

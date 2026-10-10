@@ -114,7 +114,7 @@ function ProjectMetrics({ id }: { id: string }) {
     <FadeIn className="row flex-wrap gap-3 flex-1">
         {typeof data?.trend?.percentage === 'number' && (
           <Metric
-            label="3M DIFF"
+            label="Разница 3 мес"
             value={
               <span
                 className={cn(
@@ -140,15 +140,15 @@ function ProjectMetrics({ id }: { id: string }) {
         )}
         {!!data?.metrics?.revenue && (
           <Metric
-            label="Revenue"
+            label="Доход"
             value={number.currency(data?.metrics?.revenue / 100, {
               short: true,
             })}
           />
         )}
-      <Metric label="3M" value={number.short(data?.metrics?.months_3 ?? 0)} className="ml-auto" />
-        <Metric label="30D" value={number.short(data?.metrics?.month ?? 0)} />
-        <Metric label="24H" value={number.short(data?.metrics?.day ?? 0)} />
+      <Metric label="3 мес" value={number.short(data?.metrics?.months_3 ?? 0)} className="ml-auto" />
+        <Metric label="30 дней" value={number.short(data?.metrics?.month ?? 0)} />
+        <Metric label="24 часа" value={number.short(data?.metrics?.day ?? 0)} />
     </FadeIn>
   );
 }

@@ -82,7 +82,7 @@ export function ChatDrawer() {
       >
         <div
           className="absolute top-0 left-0 z-10 w-1 h-full cursor-ew-resize hover:bg-border transition-colors"
-          aria-label="Resize chat drawer"
+          aria-label="Изменить размер панели чата"
           {...dragHandleProps}
         />
         <ChatDrawerHeader projectId={projectId} onClose={closeChat} />

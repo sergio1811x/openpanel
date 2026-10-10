@@ -62,7 +62,7 @@ export function SelectDashboard({
   return (
     <div className="space-y-3">
       <Label htmlFor={isCreatingNew ? newDashboardNameId : undefined}>
-        Dashboard
+        Дашборд
       </Label>
 
       {!isCreatingNew ? (
@@ -88,7 +88,7 @@ export function SelectDashboard({
             }}
             icon={PlusIcon}
           >
-            Create new dashboard
+            Создать новый дашборд
           </Button>
         </div>
       ) : (
@@ -98,7 +98,7 @@ export function SelectDashboard({
             variant="outline"
             size="icon"
             icon={ArrowLeftIcon}
-            aria-label="Back to dashboard selection"
+            aria-label="Вернуться к выбору дашборда"
             onClick={() => {
               setIsCreatingNew(false);
               setNewDashboardName('');
@@ -107,7 +107,7 @@ export function SelectDashboard({
           />
           <Input
             id={newDashboardNameId}
-            placeholder="Enter dashboard name"
+            placeholder="Введите название дашборда"
             value={newDashboardName}
             onChange={(e) => setNewDashboardName(e.target.value)}
             onKeyDown={(e) => {
@@ -129,7 +129,7 @@ export function SelectDashboard({
             variant="outline"
             icon={SaveIcon}
           >
-            {dashboardMutation.isPending ? 'Creating...' : 'Create'}
+            {dashboardMutation.isPending ? 'Создание...' : 'Создать'}
           </Button>
         </div>
       )}

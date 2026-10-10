@@ -287,7 +287,7 @@ function OPAnnotationsBlock({
       ))}
       {hiddenRefs > 0 && (
         <div className="pl-8 text-muted-foreground text-xs">
-          +{hiddenRefs} more
+          + ещё {hiddenRefs}
         </div>
       )}
       {spike && <OPSpikeAnnotation spike={spike} />}
@@ -297,11 +297,11 @@ function OPAnnotationsBlock({
 
 function OPSpikeAnnotation({ spike }: { spike: OPReferrerSpikeItem }) {
   const number = useNumber();
-  const sessionsLabel = `${number.short(spike.sessions)} sessions`;
+  const sessionsLabel = `${number.short(spike.sessions)} сессий`;
   const comparison = spike.isNew
-    ? 'first time this period'
-    : `${spike.ratio.toFixed(1)}× typical`;
-  const sharePct = `${Math.round(spike.share * 100)}% of bucket`;
+    ? 'впервые за этот период'
+    : `${spike.ratio.toFixed(1)}× от типичного`;
+  const sharePct = `${Math.round(spike.share * 100)}% сегмента`;
 
   const description = (
     <>
@@ -310,7 +310,7 @@ function OPSpikeAnnotation({ spike }: { spike: OPReferrerSpikeItem }) {
       </div>
       {spike.others.length > 0 && (
         <div className="mt-0.5 truncate">
-          + also: {spike.others.map((o) => o.referrer_name).join(', ')}
+          + также: {spike.others.map((o) => o.referrer_name).join(', ')}
         </div>
       )}
     </>
@@ -319,7 +319,7 @@ function OPSpikeAnnotation({ spike }: { spike: OPReferrerSpikeItem }) {
   return (
     <OPAnnotationRow
       icon={<SerieIcon fill name={spike.referrer_name} />}
-      title={`Spike from ${spike.referrer_name}`}
+      title={`Всплеск с ${spike.referrer_name}`}
       description={description}
     />
   );

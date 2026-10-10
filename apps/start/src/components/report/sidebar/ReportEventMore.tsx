@@ -28,7 +28,7 @@ export function ReportEventMore({ onClick }: ReportEventMoreProps) {
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={() => onClick('duplicate')}>
             <CopyIcon className="mr-2 h-4 w-4" />
-            Duplicate
+            Дублировать
             <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -36,7 +36,7 @@ export function ReportEventMore({ onClick }: ReportEventMoreProps) {
             onClick={() => onClick('remove')}
           >
             <TrashIcon className="mr-2 h-4 w-4" />
-            Delete
+            Удалить
             <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>

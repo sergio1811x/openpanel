@@ -12,7 +12,7 @@ export default function DpaDownloadPage() {
           onClick={() => window.print()}
           type="button"
         >
-          Download / Print PDF
+          Скачать / Печать PDF
         </button>
       </div>
 
@@ -22,199 +22,203 @@ export default function DpaDownloadPage() {
           <p className="mb-1 text-gray-500 text-xs uppercase tracking-widest">
             OpenPanel AB
           </p>
-          <h1 className="mb-2 font-bold text-3xl">Data Processing Agreement</h1>
+          <h1 className="mb-2 font-bold text-3xl">
+            Соглашение об обработке данных (DPA)
+          </h1>
           <p className="text-gray-500 text-sm">
-            Version 1.1 &middot; Last updated: May 21, 2026
+            Версия 1.1 &middot; Последнее обновление: 21 мая 2026 г.
           </p>
         </div>
 
         <p className="mb-8 text-gray-700 text-sm leading-relaxed">
-          This Data Processing Agreement ("DPA") is entered into between
-          OpenPanel AB ("OpenPanel", "Processor") and the customer identified in
-          the signature block below ("Controller"). It applies where OpenPanel
-          processes personal data on behalf of the Controller as part of the
-          OpenPanel Cloud service, and forms part of the OpenPanel Terms of
-          Service.
+          Настоящее соглашение об обработке данных («DPA») заключается между
+          OpenPanel AB («OpenPanel», «Обработчик») и клиентом, указанным в блоке
+          подписей ниже («Контролёр»). Оно применяется в случаях, когда OpenPanel
+          обрабатывает персональные данные от имени Контролёра в рамках сервиса
+          OpenPanel Cloud, и является частью Условий использования OpenPanel.
         </p>
 
-        <Section number="1" title="Definitions">
+        <Section number="1" title="Определения">
           <ul className="list-none space-y-2 text-gray-700 text-sm">
             <li>
-              <strong>GDPR</strong> means Regulation (EU) 2016/679 of the
-              European Parliament and of the Council.
+              <strong>GDPR</strong> — Регламент (ЕС) 2016/679 Европейского
+              парламента и Совета.
             </li>
             <li>
-              <strong>Controller</strong> means the customer, who determines the
-              purposes and means of processing.
+              <strong>Контролёр</strong> — клиент, который определяет цели и
+              средства обработки.
             </li>
             <li>
-              <strong>Processor</strong> means OpenPanel, who processes data on
-              the Controller's behalf.
+              <strong>Обработчик</strong> — OpenPanel, обрабатывающая данные от
+              имени Контролёра.
             </li>
             <li>
-              <strong>Personal Data</strong>, <strong>Processing</strong>,{' '}
-              <strong>Data Subject</strong>, and{' '}
-              <strong>Supervisory Authority</strong> have the meanings given in
-              the GDPR.
+              <strong>Персональные данные</strong>, <strong>Обработка</strong>,{' '}
+              <strong>Субъект данных</strong> и{' '}
+              <strong>Надзорный орган</strong> имеют значения, определённые в
+              GDPR.
             </li>
             <li>
-              <strong>Sub-processor</strong> means any third party engaged by
-              OpenPanel to process Personal Data in connection with the service.
+              <strong>Субобработчик</strong> — любая третья сторона, привлечённая
+              OpenPanel для обработки персональных данных в связи с сервисом.
             </li>
           </ul>
         </Section>
 
-        <Section number="2" title="Our approach to privacy">
+        <Section number="2" title="Наш подход к приватности">
           <p className="mb-3 text-gray-700 text-sm leading-relaxed">
-            OpenPanel is built to minimize personal data collection by design.
-            We do not use cookies for analytics tracking. We do not store IP
-            addresses. Instead, we generate a daily-rotating anonymous
-            identifier using a one-way hash of the visitor's IP address, user
-            agent, and project ID combined with a salt that is replaced every 24
-            hours. The raw IP address is discarded immediately and the
-            identifier becomes irreversible once the salt is rotated.
+            OpenPanel создана так, чтобы минимизировать сбор персональных данных
+            на уровне архитектуры. Мы не используем cookies для аналитического
+            отслеживания и не храним IP-адреса. Вместо этого мы генерируем
+            ежедневно обновляемый анонимный идентификатор с помощью однонаправленного
+            хеша IP-адреса посетителя, user agent и ID проекта в сочетании с солью,
+            которая меняется каждые 24 часа. Сырой IP-адрес отбрасывается немедленно,
+            а идентификатор становится необратимым после ротации соли.
           </p>
           <p className="mb-2 text-gray-700 text-sm">
-            The data we store per event is:
+            Данные, которые мы храним по каждому событию:
           </p>
           <ul className="mb-3 list-disc space-y-1 pl-5 text-gray-700 text-sm">
-            <li>Page URL and referrer</li>
-            <li>Browser name and version</li>
-            <li>Operating system name and version</li>
-            <li>Device type, brand, and model</li>
+            <li>URL страницы и источник перехода</li>
+            <li>Название и версия браузера</li>
+            <li>Название и версия операционной системы</li>
+            <li>Тип, бренд и модель устройства</li>
             <li>
-              City, country, and region (derived from IP at the time of the
-              request; IP is then discarded)
+              Город, страна и регион (определяются по IP на момент запроса; затем
+              IP отбрасывается)
             </li>
-            <li>Custom event properties the Controller chooses to send</li>
+            <li>Кастомные свойства событий, которые Контролёр решает отправлять</li>
           </ul>
           <p className="mb-3 text-gray-700 text-sm">
-            No persistent identifiers, no cookies, no cross-site tracking.
-            Because of this approach, the analytics data OpenPanel collects in
-            standard website tracking mode does not constitute personal data
-            under GDPR Art. 4(1). We provide this DPA for Controllers who
-            require it for their own compliance documentation and records of
-            processing activities.
+            Никаких постоянных идентификаторов, никаких cookies, никакого
+            межсайтового отслеживания. Благодаря этому подходу аналитические
+            данные, которые OpenPanel собирает в стандартном режиме отслеживания
+            сайтов, не являются персональными данными согласно GDPR, ст. 4(1).
+            Мы предоставляем этот DPA Контролёрам, которым он нужен для
+            собственных документов соответствия и реестров действий по обработке.
           </p>
           <p className="mb-1 text-gray-700 text-sm font-semibold">
-            Session replay (optional feature)
+            Session replay (опциональная функция)
           </p>
           <p className="mb-3 text-gray-700 text-sm">
-            OpenPanel optionally supports session replay, which must be
-            explicitly enabled by the Controller. When enabled, session replay
-            records DOM snapshots and user interactions (mouse movements, clicks,
-            scrolls) using rrweb. All text content and form inputs are masked by
-            default. The Controller is responsible for ensuring their use of
-            session replay complies with applicable privacy law, including
-            providing appropriate notice to end users.
+            OpenPanel опционально поддерживает session replay, который должен быть
+            явно включён Контролёром. При включении session replay записывает
+            снимки DOM и взаимодействия пользователя (движения мыши, клики,
+            скроллы) с помощью rrweb. Весь текстовый контент и поля форм по
+            умолчанию маскируются. Контролёр отвечает за то, чтобы использование
+            session replay соответствовало применимому законодательству о
+            приватности, включая надлежащее уведомление конечных пользователей.
           </p>
           <p className="mb-1 text-gray-700 text-sm font-semibold">
-            AI features (optional, opt-in)
+            AI-функции (опционально, по включению)
           </p>
           <p className="text-gray-700 text-sm">
-            OpenPanel offers optional AI features (such as natural-language
-            queries over the Controller's analytics data, anomaly insights, and
-            AI-assisted reports) which must be explicitly invoked by the
-            Controller. When the Controller uses these features, the prompt and
-            the relevant slice of the Controller's analytics data are
-            transmitted to OpenAI, L.L.C. (United States) as a sub-processor for
-            the sole purpose of generating the requested response. OpenAI is
-            contractually bound under its Data Processing Addendum and the EU
-            Standard Contractual Clauses; OpenAI does not use API-submitted data
-            to train its models. If the Controller does not use these features,
-            no data is sent to OpenAI.
+            OpenPanel предлагает опциональные AI-функции (например, запросы на
+            естественном языке к аналитическим данным Контролёра, инсайты об
+            аномалиях и отчёты с помощью AI), которые должны быть явно вызваны
+            Контролёром. Когда Контролёр использует эти функции, промпт и
+            соответствующий фрагмент аналитических данных Контролёра передаются
+            в OpenAI, L.L.C. (США) как субобработчику исключительно для
+            формирования запрошенного ответа. OpenAI связана договорными
+            обязательствами согласно своему Data Processing Addendum и Стандартным
+            договорным условиям ЕС; OpenAI не использует данные, отправленные
+            через API, для обучения своих моделей. Если Контролёр не использует
+            эти функции, никакие данные в OpenAI не передаются.
           </p>
         </Section>
 
-        <Section number="3" title="Scope and roles">
+        <Section number="3" title="Объём применения и роли">
           <p className="text-gray-700 text-sm leading-relaxed">
-            OpenPanel acts as a Processor when processing data on behalf of the
-            Controller. The Controller is responsible for the analytics data
-            collected from visitors to their websites and applications.
+            OpenPanel выступает Обработчиком при обработке данных от имени
+            Контролёра. Контролёр отвечает за аналитические данные, собранные с
+            посетителей его сайтов и приложений.
           </p>
         </Section>
 
-        <Section number="4" title="Processor obligations">
+        <Section number="4" title="Обязанности Обработчика">
           <p className="mb-2 text-gray-700 text-sm">
-            OpenPanel commits to the following:
+            OpenPanel обязуется:
           </p>
           <ul className="list-disc space-y-1 pl-5 text-gray-700 text-sm">
             <li>
-              Process Personal Data only on the Controller's documented
-              instructions and for no other purpose.
+              Обрабатывать персональные данные только по документированным
+              инструкциям Контролёра и ни для каких иных целей.
             </li>
             <li>
-              Ensure that all personnel with access to Personal Data are bound
-              by appropriate confidentiality obligations.
+              Обеспечить, чтобы весь персонал с доступом к персональным данным
+              был связан надлежащими обязательствами конфиденциальности.
             </li>
             <li>
-              Implement and maintain technical and organizational measures in
-              accordance with Section 7 of this DPA.
+              Внедрять и поддерживать технические и организационные меры согласно
+              разделу 7 этого DPA.
             </li>
             <li>
-              Not engage a Sub-processor without prior general or specific
-              written authorization and flow down equivalent data protection
-              obligations to any Sub-processor.
+              Не привлекать субобработчиков без предварительного общего или
+              специального письменного разрешения и распространять на любого
+              субобработчика эквивалентные обязательства по защите данных.
             </li>
             <li>
-              Assist the Controller, where reasonably possible, in responding to
-              Data Subject requests to exercise their rights under GDPR.
+              Содействовать Контролёру, насколько это разумно возможно, в
+              реагировании на запросы субъектов данных о реализации их прав по
+              GDPR.
             </li>
             <li>
-              Notify the Controller without undue delay (and no later than 48
-              hours) upon becoming aware of a Personal Data breach.
+              Уведомить Контролёра без неоправданной задержки (и не позднее 48
+              часов) после того, как OpenPanel узнает об утечке персональных
+              данных.
             </li>
             <li>
-              Make available all information necessary to demonstrate compliance
-              with this DPA. Audits by the Controller or their designated
-              auditor are limited to one per 12-month period (unless required by
-              a supervisory authority or following a confirmed Personal Data
-              breach), require 30 days' prior notice, are conducted under
-              confidentiality, at the Controller's cost, and without
-              unreasonable disruption to operations. Documentary requests in
-              lieu of on-site audits will be accommodated where they provide
-              equivalent assurance.
+              Предоставлять всю информацию, необходимую для подтверждения
+              соответствия этому DPA. Аудит со стороны Контролёра или назначенного
+              им аудитора ограничивается одним разом за 12-месячный период (если
+              иное не требуется надзорным органом или не связано с подтверждённой
+              утечкой персональных данных), требует уведомления за 30 дней,
+              проводится при соблюдении конфиденциальности, за счёт Контролёра и
+              без неоправданного нарушения работы сервиса. Запросы документов
+              вместо аудита на месте принимаются, если они дают эквивалентные
+              гарантии.
             </li>
             <li>
-              At the Controller's choice, delete or return all Personal Data
-              upon termination of the service.
+              По выбору Контролёра удалить или вернуть все персональные данные
+              после прекращения сервиса.
             </li>
           </ul>
         </Section>
 
-        <Section number="5" title="Controller obligations">
+        <Section number="5" title="Обязанности Контролёра">
           <p className="mb-2 text-gray-700 text-sm">
-            The Controller confirms that:
+            Контролёр подтверждает, что:
           </p>
           <ul className="list-disc space-y-1 pl-5 text-gray-700 text-sm">
             <li>
-              They have a lawful basis for the processing described in this DPA.
+              Имеет законное основание для обработки, описанной в этом DPA.
             </li>
             <li>
-              They have provided appropriate privacy notices to their end users.
+              Предоставил надлежащие уведомления о приватности своим конечным
+              пользователям.
             </li>
             <li>
-              They are responsible for the accuracy and lawfulness of the data
-              they instruct OpenPanel to process.
+              Отвечает за точность и законность данных, обработку которых он
+              поручает OpenPanel.
             </li>
           </ul>
         </Section>
 
-        <Section number="6" title="Sub-processors">
+        <Section number="6" title="Субобработчики">
           <p className="mb-3 text-gray-700 text-sm">
-            OpenPanel uses the following sub-processors to deliver the service:
+            OpenPanel использует следующих субобработчиков для оказания сервиса:
           </p>
           <table className="mb-3 w-full border-collapse text-sm">
             <thead>
               <tr className="border border-gray-300 bg-gray-50">
                 <th className="border border-gray-300 px-3 py-2 text-left font-semibold">
-                  Sub-processor
+                  Субобработчик
                 </th>
                 <th className="border border-gray-300 px-3 py-2 text-left font-semibold">
-                  Purpose
+                  Назначение
                 </th>
                 <th className="border border-gray-300 px-3 py-2 text-left font-semibold">
-                  Location
+                  Расположение
                 </th>
               </tr>
             </thead>
@@ -224,10 +228,10 @@ export default function DpaDownloadPage() {
                   Hetzner Online GmbH
                 </td>
                 <td className="border border-gray-300 px-3 py-2">
-                  Cloud infrastructure and primary data storage
+                  Облачная инфраструктура и основное хранилище данных
                 </td>
                 <td className="border border-gray-300 px-3 py-2">
-                  Germany (EU)
+                  Германия (ЕС)
                 </td>
               </tr>
               <tr>
@@ -235,10 +239,10 @@ export default function DpaDownloadPage() {
                   Cloudflare, Inc.
                 </td>
                 <td className="border border-gray-300 px-3 py-2">
-                  CDN, WAF, and edge proxy in front of public endpoints
+                  CDN, WAF и edge-прокси перед публичными эндпоинтами
                 </td>
                 <td className="border border-gray-300 px-3 py-2">
-                  EU edge (under SCCs for any US transit)
+                  Edge в ЕС (по SCC для любого транзита через США)
                 </td>
               </tr>
               <tr>
@@ -246,20 +250,20 @@ export default function DpaDownloadPage() {
                   Cloudflare R2
                 </td>
                 <td className="border border-gray-300 px-3 py-2">
-                  Backup storage
+                  Резервное копирование
                 </td>
-                <td className="border border-gray-300 px-3 py-2">EU</td>
+                <td className="border border-gray-300 px-3 py-2">ЕС</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 px-3 py-2">
                   OpenAI, L.L.C.
                 </td>
                 <td className="border border-gray-300 px-3 py-2">
-                  LLM provider, used only when the Controller invokes opt-in AI
-                  features
+                  Поставщик LLM, используется только когда Контролёр вызывает
+                  опциональные AI-функции
                 </td>
                 <td className="border border-gray-300 px-3 py-2">
-                  United States (under SCCs)
+                  США (по SCC)
                 </td>
               </tr>
               <tr>
@@ -267,206 +271,205 @@ export default function DpaDownloadPage() {
                   Resend, Inc.
                 </td>
                 <td className="border border-gray-300 px-3 py-2">
-                  Transactional email delivery (account, billing, and product
-                  notifications)
+                  Доставка транзакционных писем (аккаунт, биллинг и продуктовые
+                  уведомления)
                 </td>
                 <td className="border border-gray-300 px-3 py-2">
-                  United States (under SCCs)
+                  США (по SCC)
                 </td>
               </tr>
             </tbody>
           </table>
           <p className="text-gray-700 text-sm">
-            OpenPanel will inform the Controller of any intended changes to this
-            list with reasonable notice, giving the Controller the opportunity
-            to object.
+            OpenPanel уведомит Контролёра о любых планируемых изменениях этого
+            списка с разумным сроком, дав Контролёру возможность возразить.
           </p>
         </Section>
 
-        <Section number="7" title="Technical and organizational measures">
+        <Section number="7" title="Технические и организационные меры">
           <div className="space-y-4 text-gray-700 text-sm">
             <div>
               <p className="mb-1 font-semibold">
-                Data minimization and anonymization
+                Минимизация данных и анонимизация
               </p>
               <ul className="list-disc space-y-1 pl-5">
                 <li>
-                  IP addresses are never stored. They are used only to derive
-                  geolocation and generate an anonymous daily identifier, then
-                  discarded.
+                  IP-адреса никогда не хранятся. Они используются только для
+                  определения геолокации и генерации анонимного дневного
+                  идентификатора, после чего отбрасываются.
                 </li>
                 <li>
-                  Daily-rotating cryptographic salts ensure visitor identifiers
-                  cannot be reversed or linked to individuals after 24 hours.
+                  Ежедневная ротация криптографических солей гарантирует, что
+                  идентификаторы посетителей нельзя восстановить или связать с
+                  конкретными людьми по истечении 24 часов.
                 </li>
                 <li>
-                  No cookies or persistent cross-device identifiers are used.
+                  Cookies и постоянные междевайсные идентификаторы не
+                  используются.
                 </li>
               </ul>
             </div>
             <div>
-              <p className="mb-1 font-semibold">Access control</p>
+              <p className="mb-1 font-semibold">Контроль доступа</p>
               <ul className="list-disc space-y-1 pl-5">
                 <li>
-                  Dashboard access is protected by authentication and role-based
-                  access control.
+                  Доступ к дашборду защищён аутентификацией и ролевой моделью
+                  доступа.
                 </li>
                 <li>
-                  Production systems are accessible only to authorized
-                  personnel.
+                  Продакшн-системы доступны только авторизованному персоналу.
                 </li>
               </ul>
             </div>
             <div>
               <p className="mb-1 font-semibold">
-                Encryption and transport security
+                Шифрование и безопасность передачи
               </p>
               <ul className="list-disc space-y-1 pl-5">
-                <li>All data is transmitted over HTTPS (TLS).</li>
+                <li>Все данные передаются по HTTPS (TLS).</li>
               </ul>
             </div>
             <div>
               <p className="mb-1 font-semibold">
-                Infrastructure and availability
+                Инфраструктура и доступность
               </p>
               <ul className="list-disc space-y-1 pl-5">
                 <li>
-                  All data is hosted on Hetzner servers located in Germany
-                  within the EU.
+                  Все данные размещаются на серверах Hetzner в Германии,
+                  на территории ЕС.
                 </li>
-                <li>Regular backups are performed.</li>
+                <li>Регулярно выполняется резервное копирование.</li>
                 <li>
-                  No data leaves the EEA in the course of normal operations.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="mb-1 font-semibold">Incident response</p>
-              <ul className="list-disc space-y-1 pl-5">
-                <li>
-                  We maintain procedures for detecting, reporting, and
-                  investigating Personal Data breaches.
-                </li>
-                <li>
-                  In the event of a breach affecting the Controller's data, we
-                  will notify them within 48 hours of becoming aware.
+                  В штатном режиме данные не покидают ЕЭП.
                 </li>
               </ul>
             </div>
             <div>
-              <p className="mb-1 font-semibold">Open source</p>
+              <p className="mb-1 font-semibold">Реагирование на инциденты</p>
               <ul className="list-disc space-y-1 pl-5">
                 <li>
-                  The OpenPanel codebase is publicly available on GitHub,
-                  allowing independent review of our data handling practices.
+                  Мы поддерживаем процедуры обнаружения, отчётности и
+                  расследования утечек персональных данных.
+                </li>
+                <li>
+                  В случае инцидента, затрагивающего данные Контролёра, мы
+                  уведомим его в течение 48 часов после того, как узнаем о нём.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="mb-1 font-semibold">Открытый исходный код</p>
+              <ul className="list-disc space-y-1 pl-5">
+                <li>
+                  Код OpenPanel публично доступен на GitHub, что позволяет
+                  независимо проверять наши практики работы с данными.
                 </li>
               </ul>
             </div>
           </div>
         </Section>
 
-        <Section number="8" title="International data transfers">
+        <Section number="8" title="Международная передача данных">
           <p className="mb-3 text-gray-700 text-sm leading-relaxed">
-            All analytics data is stored on Hetzner infrastructure located in
-            Germany. Backups are stored on Cloudflare R2 within the EU. In
-            standard operation, analytics data does not leave the European
-            Economic Area.
+            Все аналитические данные хранятся на инфраструктуре Hetzner в
+            Германии. Резервные копии хранятся в Cloudflare R2 на территории ЕС.
+            В штатном режиме аналитические данные не покидают Европейскую
+            экономическую зону.
           </p>
           <p className="mb-2 text-gray-700 text-sm">
-            Limited transfers to the United States may occur in the following
-            cases:
+            Ограниченная передача данных в США возможна в следующих случаях:
           </p>
           <ul className="mb-3 list-disc space-y-1 pl-5 text-gray-700 text-sm">
             <li>
-              <strong>Transactional email</strong> (via Resend, Inc.) —
-              necessary to deliver account, billing, and product communications
-              to the Controller's authorized users.
+              <strong>Транзакционные письма</strong> (через Resend, Inc.) —
+              необходимо для доставки сообщений об аккаунте, биллинге и продукте
+              авторизованным пользователям Контролёра.
             </li>
             <li>
-              <strong>AI features</strong> (via OpenAI, L.L.C.) — only when the
-              Controller actively invokes an opt-in AI feature, in which case
-              the relevant prompt and data slice are transmitted to OpenAI for
-              processing.
+              <strong>AI-функции</strong> (через OpenAI, L.L.C.) — только когда
+              Контролёр активно вызывает опциональную AI-функцию; в этом случае
+              соответствующий промпт и фрагмент данных передаются в OpenAI для
+              обработки.
             </li>
             <li>
-              <strong>Cloudflare edge</strong> — public-endpoint traffic is
-              served via Cloudflare's global network. EU traffic is processed at
-              EU edge locations where possible.
+              <strong>Edge-сеть Cloudflare</strong> — трафик публичных эндпоинтов
+              обслуживается глобальной сетью Cloudflare. Трафик из ЕС
+              обрабатывается на edge-локациях в ЕС, где это возможно.
             </li>
           </ul>
           <p className="text-gray-700 text-sm leading-relaxed">
-            All such transfers are governed by the EU Standard Contractual
-            Clauses (Commission Decision (EU) 2021/914) executed with each
-            sub-processor, providing the adequate safeguards required under GDPR
-            Chapter V.
+            Все такие передачи регулируются Стандартными договорными условиями ЕС
+            (Решение Комиссии (ЕС) 2021/914), подписанными с каждым
+            субобработчиком, и обеспечивают надлежащие гарантии согласно главе V
+            GDPR.
           </p>
         </Section>
 
-        <Section number="9" title="Data retention and deletion">
+        <Section number="9" title="Хранение и удаление данных">
           <ul className="list-disc space-y-1 pl-5 text-gray-700 text-sm">
             <li>
-              <strong>Analytics events</strong> are retained for as long as the
-              Controller's account is active. No maximum retention period is
-              currently enforced. If a retention limit is introduced in the
-              future, all customers will be notified in advance.
+              <strong>Аналитические события</strong> хранятся, пока аккаунт
+              Контролёра активен. Максимальный срок хранения сейчас не введён.
+              Если лимит хранения появится в будущем, все клиенты будут
+              уведомлены заранее.
             </li>
             <li>
-              <strong>Session replays</strong> are retained for 30 days and then
-              permanently deleted.
+              <strong>Session replay</strong> хранятся 30 дней, после чего
+              удаляются безвозвратно.
             </li>
             <li>
-              The Controller can delete individual projects, all associated data,
-              or their entire account at any time from within the dashboard. Upon
-              account termination, OpenPanel will delete the Controller's data
-              within 30 days unless required by law to retain it longer.
+              Контролёр может в любой момент удалить отдельные проекты, все
+              связанные данные или весь аккаунт прямо из дашборда. После
+              прекращения аккаунта OpenPanel удалит данные Контролёра в течение
+              30 дней, если закон не требует сохранять их дольше.
             </li>
           </ul>
         </Section>
 
-        <Section number="10" title="Governing law">
+        <Section number="10" title="Применимое право">
           <p className="text-gray-700 text-sm leading-relaxed">
-            This DPA is governed by the laws of Sweden and is interpreted in
-            accordance with the GDPR.
+            Этот DPA регулируется законодательством Швеции и толкуется в
+            соответствии с GDPR.
           </p>
         </Section>
 
         {/* Exhibit A */}
         <div className="mb-8 border-black border-t-2 pt-8">
           <p className="mb-1 text-gray-500 text-xs uppercase tracking-widest">
-            Annex
+            Приложение
           </p>
           <h2 className="mb-4 font-bold text-xl">
-            Exhibit A: Description of Processing
+            Приложение A: Описание обработки
           </h2>
           <table className="w-full border-collapse text-sm">
             <tbody>
               <Row
-                label="Nature of processing"
-                value="Collection and storage of anonymized website analytics events (page views, custom events, session data). Optionally: session replay recording of DOM snapshots and user interactions."
+                label="Характер обработки"
+                value="Сбор и хранение анонимизированных событий веб-аналитики (просмотры страниц, кастомные события, данные сессий). Опционально: запись session replay — снимки DOM и взаимодействия пользователя."
               />
               <Row
-                label="Purpose of processing"
-                value="To provide the Controller with website and product analytics via the OpenPanel Cloud dashboard. Session replay (if enabled) is used to allow the Controller to review user sessions for UX and debugging purposes."
+                label="Цель обработки"
+                value="Предоставление Контролёру веб- и продуктовой аналитики через дашборд OpenPanel Cloud. Session replay (если включён) используется, чтобы Контролёр мог просматривать сессии пользователей для UX-анализа и отладки."
               />
               <Row
-                label="Duration of processing"
-                value="Analytics events: retained for the duration of the active account (no current maximum). Session replays: 30 days, then permanently deleted. All data deleted within 30 days of account termination."
+                label="Срок обработки"
+                value="Аналитические события: хранятся в течение срока действия активного аккаунта (текущего максимума нет). Session replay: 30 дней, затем удаляются безвозвратно. Все данные удаляются в течение 30 дней после прекращения аккаунта."
               />
               <Row
-                label="Categories of data subjects"
-                value="Visitors to the Controller's websites and applications"
+                label="Категории субъектов данных"
+                value="Посетители сайтов и приложений Контролёра"
               />
               <Row
-                label="Categories of personal data"
-                value="Anonymized session identifiers (non-reversible after 24 hours), page URLs, referrers, browser type and version, operating system, device type, city-level geolocation (country, region, city). No IP addresses, no cookies, no names, no email addresses. If session replay is enabled: DOM snapshots and interaction recordings, which may incidentally contain personal data visible on the Controller's pages. All text content and form inputs are masked by default."
+                label="Категории персональных данных"
+                value="Анонимизированные идентификаторы сессий (необратимы через 24 часа), URL страниц, источники переходов, тип и версия браузера, операционная система, тип устройства, геолокация до города (страна, регион, город). Без IP-адресов, без cookies, без имён и email-адресов. Если включён session replay: снимки DOM и записи взаимодействий, которые могут случайно содержать персональные данные, видимые на страницах Контролёра. Весь текстовый контент и поля форм по умолчанию маскируются."
               />
               <Row
-                label="Special categories of data"
-                value="None intended. The Controller is responsible for ensuring no special category data is captured via session replay."
+                label="Специальные категории данных"
+                value="Не собираются намеренно. Контролёр отвечает за то, чтобы через session replay не попадали данные специальных категорий."
               />
               <Row
-                label="Sub-processors"
-                value="Hetzner Online GmbH (Germany) — cloud infrastructure and primary data storage; Cloudflare, Inc. (EU edge, under SCCs) — CDN/WAF/edge proxy; Cloudflare R2 (EU) — backup storage; OpenAI, L.L.C. (United States, under SCCs) — LLM provider for opt-in AI features only; Resend, Inc. (United States, under SCCs) — transactional email delivery."
+                label="Субобработчики"
+                value="Hetzner Online GmbH (Германия) — облачная инфраструктура и основное хранилище данных; Cloudflare, Inc. (edge в ЕС, по SCC) — CDN/WAF/edge-прокси; Cloudflare R2 (ЕС) — резервное копирование; OpenAI, L.L.C. (США, по SCC) — поставщик LLM только для опциональных AI-функций; Resend, Inc. (США, по SCC) — доставка транзакционных писем."
               />
             </tbody>
           </table>
@@ -475,16 +478,16 @@ export default function DpaDownloadPage() {
         {/* Signatures */}
         <div className="border-black border-t-2 pt-8">
           <p className="mb-1 text-gray-500 text-xs uppercase tracking-widest">
-            Execution
+            Подписание
           </p>
-          <h2 className="mb-6 font-bold text-xl">Signatures</h2>
+          <h2 className="mb-6 font-bold text-xl">Подписи</h2>
 
           <div className="grid grid-cols-2 gap-12">
             {/* Processor - pre-signed */}
             <div>
               <div className="col h-32 gap-2">
                 <p className="font-semibold text-gray-500 text-xs uppercase tracking-widest">
-                  Processor
+                  Обработчик
                 </p>
                 <p className="font-semibold text-sm">OpenPanel AB</p>
                 <p className="text-gray-500 text-xs">
@@ -492,10 +495,10 @@ export default function DpaDownloadPage() {
                 </p>
               </div>
               <SignatureLine
-                label="Signature"
+                label="Подпись"
                 value={
                   <Image
-                    alt="Carl-Gerhard Lindesvärd signature"
+                    alt="Подпись Карла-Герхарда Линдесварда"
                     className="relative top-4 h-16 w-auto object-contain object-left"
                     height={64}
                     src="/signature.png"
@@ -503,23 +506,23 @@ export default function DpaDownloadPage() {
                   />
                 }
               />
-              <SignatureLine label="Name" value="Carl-Gerhard Lindesvärd" />
-              <SignatureLine label="Title" value="Founder" />
-              <SignatureLine label="Date" value="May 21, 2026" />
+              <SignatureLine label="Имя" value="Carl-Gerhard Lindesvärd" />
+              <SignatureLine label="Должность" value="Основатель" />
+              <SignatureLine label="Дата" value="21 мая 2026 г." />
             </div>
 
             {/* Controller - blank */}
             <div>
               <div className="flex flex-col h-32 gap-2">
                 <p className="font-semibold text-gray-500 text-xs uppercase tracking-widest">
-                  Controller
+                  Контролёр
                 </p>
               </div>
-              <SignatureLine label="Company" value="" />
-              <SignatureLine label="Signature" value="" />
-              <SignatureLine label="Name" value="" />
-              <SignatureLine label="Title" value="" />
-              <SignatureLine label="Date" value="" />
+              <SignatureLine label="Компания" value="" />
+              <SignatureLine label="Подпись" value="" />
+              <SignatureLine label="Имя" value="" />
+              <SignatureLine label="Должность" value="" />
+              <SignatureLine label="Дата" value="" />
             </div>
           </div>
         </div>

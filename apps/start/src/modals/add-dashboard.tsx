@@ -15,7 +15,7 @@ import { popModal } from '.';
 import { ModalContent, ModalHeader } from './Modal/Container';
 
 const validator = z.object({
-  name: z.string().min(1, 'Required'),
+  name: z.string().min(1, 'Обязательное поле'),
 });
 
 type IForm = z.infer<typeof validator>;
@@ -44,8 +44,8 @@ export default function AddDashboard() {
             dashboardId: res.id,
           },
         });
-        toast('Success', {
-          description: 'Dashboard created.',
+        toast('Успешно', {
+          description: 'Дашборд создан.',
         });
         queryClient.invalidateQueries(trpc.dashboard.list.pathFilter());
         popModal();
@@ -56,7 +56,7 @@ export default function AddDashboard() {
 
   return (
     <ModalContent>
-      <ModalHeader title="Add dashboard" />
+      <ModalHeader title="Добавить дашборд" />
       <form
         className="flex flex-col gap-4"
         onSubmit={handleSubmit(({ name }) => {
@@ -67,16 +67,16 @@ export default function AddDashboard() {
         })}
       >
         <InputWithLabel
-          label="Name"
-          placeholder="Name of the dashboard"
+          label="Название"
+          placeholder="Название дашборда"
           {...register('name')}
         />
         <ButtonContainer>
           <Button type="button" variant="outline" onClick={() => popModal()}>
-            Cancel
+            Отмена
           </Button>
           <Button type="submit" disabled={!formState.isDirty}>
-            Create
+            Создать
           </Button>
         </ButtonContainer>
       </form>

@@ -17,10 +17,10 @@ export function EmailInvite({
 }: Props & { unsubscribeUrl?: string }) {
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>You've been invited to join {organizationName}!</Text>
+      <Text>Вас пригласили присоединиться к организации {organizationName}!</Text>
       <Text>
-        If you don't have an account yet, click the button below to create one
-        and join the organization:
+        Если у Вас ещё нет аккаунта, нажмите кнопку ниже, чтобы создать его и
+        присоединиться к организации:
       </Text>
       <Button
         href={url}
@@ -32,14 +32,14 @@ export function EmailInvite({
           textDecoration: 'none',
         }}
       >
-        Join {organizationName}
+        Присоединиться к {organizationName}
       </Button>
       <Text>
-        Join link: <Link href={url}>{url}</Link>
+        Ссылка для присоединения: <Link href={url}>{url}</Link>
       </Text>
       <Text style={{ color: '#666' }}>
-        Already have an account? No need to do anything - you'll have access
-        automatically when you sign in.
+        Уже есть аккаунт? Ничего делать не нужно — доступ появится
+        автоматически после входа.
       </Text>
     </Layout>
   );

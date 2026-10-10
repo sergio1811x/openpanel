@@ -38,7 +38,7 @@ export const Route = createFileRoute('/share/report/$shareId')({
       return {
         meta: [
           {
-            title: 'Share not found - OpenPanel.dev',
+            title: 'Публичная ссылка не найдена - OpenPanel.dev',
           },
         ],
       };
@@ -58,7 +58,7 @@ export const Route = createFileRoute('/share/report/$shareId')({
     return {
       meta: [
         {
-          title: `${share.report.name || 'Report'} - ${share.organization?.name} - OpenPanel.dev`,
+          title: `${share.report.name || 'Отчёт'} - ${share.organization?.name} - OpenPanel.dev`,
         },
       ],
     };
@@ -66,8 +66,8 @@ export const Route = createFileRoute('/share/report/$shareId')({
   pendingComponent: FullPageLoadingState,
   errorComponent: () => (
     <FullPageEmptyState
-      title="Share not found"
-      description="The report you are looking for does not exist."
+      title="Публичная ссылка не найдена"
+      description="Такого отчёта не существует."
       className="min-h-[calc(100vh-theme(spacing.16))]"
     />
   ),

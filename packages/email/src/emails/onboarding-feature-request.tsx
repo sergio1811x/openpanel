@@ -18,14 +18,14 @@ export function OnboardingFeatureRequest({
 }: Props & { unsubscribeUrl?: string }) {
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+      <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
       <Text>
-        You're halfway through your trial, so a quick question: is there
-        anything you expected OpenPanel to do that it doesn't?
+        Пробный период уже наполовину пройден, поэтому короткий вопрос: есть
+        ли что-то, что Вы ожидали от OpenPanel, но не нашли?
       </Text>
       <Text>
-        Just reply to this email. If you'd rather post publicly, the feedback
-        board is at{' '}
+        Просто ответьте на это письмо. Если предпочитаете публично, доска
+        обратной связи находится здесь:{' '}
         <Link href={withUtm('https://feedback.openpanel.dev', 'onboarding-feature-request')}>
           feedback.openpanel.dev
         </Link>
@@ -33,8 +33,8 @@ export function OnboardingFeatureRequest({
       </Text>
       {!hasData && (
         <Text>
-          And if you never got around to installing the tracking, no hard
-          feelings, but I'd like to know what got in the way.
+          А если Вы так и не успели настроить отслеживание — ничего страшного,
+          но мне интересно, что помешало.
         </Text>
       )}
       <Text>Carl</Text>

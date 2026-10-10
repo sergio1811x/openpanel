@@ -107,7 +107,7 @@ export function PagesTable({ projectId }: PagesTableProps) {
     <>
       <DataTableToolbarContainer>
         <AnimatedSearchInput
-          placeholder="Search pages"
+          placeholder="Поиск по страницам"
           value={search ?? ''}
           onChange={setSearch}
         />
@@ -121,10 +121,10 @@ export function PagesTable({ projectId }: PagesTableProps) {
         table={table}
         loading={pagesQuery.isLoading}
         empty={{
-          title: 'No pages',
+          title: 'Нет страниц',
           description: debouncedSearch
-            ? `No pages found matching "${debouncedSearch}"`
-            : 'Integrate our web SDK to your site to get pages here.',
+            ? `Страницы по запросу "${debouncedSearch}" не найдены`
+            : 'Подключите наш веб-SDK к своему сайту, чтобы здесь появились страницы.',
         }}
         onRowClick={(row) => {
           if (!isGscConnected) {

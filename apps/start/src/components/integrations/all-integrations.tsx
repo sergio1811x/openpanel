@@ -24,7 +24,7 @@ export function AllIntegrations() {
               }}
             >
               <PlugIcon className="size-4 mr-2" />
-              Connect
+              Подключить
             </Button>
           </IntegrationCardFooter>
         </IntegrationCard>

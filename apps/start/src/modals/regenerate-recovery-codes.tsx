@@ -35,8 +35,8 @@ export default function RegenerateRecoveryCodes() {
     return (
       <ModalContent>
         <ModalHeader
-          text="Your old recovery codes are no longer valid."
-          title="New recovery codes"
+          text="Ваши старые коды восстановления больше недействительны."
+          title="Новые коды восстановления"
         />
         <div className="col gap-2">
           <div className="grid grid-cols-2 gap-2 rounded-md border border-border bg-def-100 p-3 font-mono text-sm">
@@ -48,16 +48,16 @@ export default function RegenerateRecoveryCodes() {
             className="self-start"
             onClick={() => {
               navigator.clipboard.writeText(newCodes.join('\n'));
-              toast.success('Copied to clipboard');
+              toast.success('Скопировано в буфер обмена');
             }}
             size="sm"
             variant="outline"
           >
-            Copy all
+            Копировать все
           </Button>
         </div>
         <DialogFooter>
-          <Button onClick={() => popModal()}>Done</Button>
+          <Button onClick={() => popModal()}>Готово</Button>
         </DialogFooter>
       </ModalContent>
     );
@@ -66,8 +66,8 @@ export default function RegenerateRecoveryCodes() {
   return (
     <ModalContent>
       <ModalHeader
-        text="Enter a code from your authenticator app to generate a fresh set of recovery codes."
-        title="Regenerate recovery codes"
+        text="Введите код из приложения-аутентификатора, чтобы сгенерировать новый набор кодов восстановления."
+        title="Перегенерация кодов восстановления"
       />
       <div className="col items-center gap-2">
         <InputOTP maxLength={6} onChange={setCode} value={code}>
@@ -83,14 +83,14 @@ export default function RegenerateRecoveryCodes() {
       </div>
       <DialogFooter>
         <Button onClick={() => popModal()} variant="secondary">
-          Cancel
+          Отмена
         </Button>
         <Button
           disabled={code.length !== 6}
           loading={mutation.isPending}
           onClick={() => mutation.mutate({ code })}
         >
-          Regenerate
+          Сгенерировать заново
         </Button>
       </DialogFooter>
     </ModalContent>

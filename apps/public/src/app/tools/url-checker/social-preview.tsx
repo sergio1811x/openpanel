@@ -15,8 +15,8 @@ export function SocialPreview({
   url,
   domain,
 }: SocialPreviewProps) {
-  const displayTitle = title || 'No title set';
-  const displayDescription = description || 'No description set';
+  const displayTitle = title || 'Заголовок не задан';
+  const displayDescription = description || 'Описание не задано';
   const hasImage = !!image;
 
   return (
@@ -44,14 +44,14 @@ export function SocialPreview({
               const parent = target.parentElement;
               if (parent) {
                 parent.innerHTML =
-                  '<div class="w-full h-full flex items-center justify-center text-muted-foreground text-sm">Image failed to load</div>';
+                  '<div class="w-full h-full flex items-center justify-center text-muted-foreground text-sm">Не удалось загрузить изображение</div>';
               }
             }}
           />
         </div>
       ) : (
         <div className="w-full aspect-[1.91/1] bg-muted flex items-center justify-center">
-          <span className="text-muted-foreground text-sm">No image</span>
+          <span className="text-muted-foreground text-sm">Нет изображения</span>
         </div>
       )}
 

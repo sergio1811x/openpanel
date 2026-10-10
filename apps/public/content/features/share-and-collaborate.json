@@ -1,168 +1,168 @@
 {
   "slug": "share-and-collaborate",
-  "short_name": "Share & Collaborate",
+  "short_name": "Шеринг и совместная работа",
   "seo": {
-    "title": "Share and Collaborate - Unlimited Members",
-    "description": "Invite unlimited team members with org-wide or project-level access. Share full dashboards or individual reports, publicly or behind a password.",
+    "title": "Шеринг и совместная работа — неограниченное число участников",
+    "description": "Приглашайте неограниченное число участников с доступом на уровне организации или отдельных проектов. Делитесь целыми дашбордами или отдельными отчётами — публично или под паролем.",
     "keywords": [
-      "analytics team collaboration",
-      "share dashboards",
-      "analytics access control",
-      "password-protected reports",
-      "unlimited team members analytics",
-      "project-level permissions analytics"
+      "командная работа в аналитике",
+      "шеринг дашбордов",
+      "управление доступом в аналитике",
+      "отчёты под паролем",
+      "неограниченные участники команды",
+      "доступ на уровне проектов"
     ]
   },
   "hero": {
-    "heading": "Invite the team. Share the numbers.",
-    "subheading": "Unlimited members, org-wide or project-level access. Share full dashboards or single reports - publicly or behind a password.",
+    "heading": "Приглашайте команду. Делитесь цифрами.",
+    "subheading": "Неограниченное число участников, доступ на уровне организации или проектов. Делитесь целыми дашбордами или отдельными отчётами — публично или под паролем.",
     "badges": [
-      "Unlimited members",
-      "Org-wide or project-level access",
-      "Share dashboards and reports",
-      "Public or password-protected links"
+      "Неограниченные участники",
+      "Доступ на уровне организации или проектов",
+      "Шеринг дашбордов и отчётов",
+      "Публичные ссылки или под паролем"
     ]
   },
   "definition": {
-    "title": "What is share and collaborate?",
-    "text": "Share and collaborate in OpenPanel is how you **get the right data to the right people** without opening the door to everything.\n\n**Unlimited members** - There's no cap on how many people you can invite. Add your whole team, contractors, or stakeholders and manage them from a single members view.\n\n**Flexible access** - Each member can have:\n\n- **Organization-wide access** - full visibility across all projects, ideal for admins and core team\n- **Fine-grained access** - access only to specific projects you choose, so stakeholders see only what's relevant\n\n**What you can share** - You're not limited to \"all or nothing\" views:\n\n- **Complete dashboards** - share an entire dashboard so others see the same layout and reports you use\n- **Individual reports** - share a single report (e.g. one funnel or one retention chart) for focused updates\n\n**How you share** - Every shared dashboard or report can be:\n\n- **Publicly available** - anyone with the link can view it (handy for status pages, exec summaries, or embedded views)\n- **Password-protected** - only people with the password can open the link, so you keep sensitive data under control\n\nInviting is straightforward: add members by email, assign access (org or specific projects), and optionally share dashboards or reports with public or password-protected links. Everyone sees the same numbers, and you decide who sees what."
+    "title": "Что такое шеринг и совместная работа?",
+    "text": "Шеринг и совместная работа в OpenPanel — это способ **доставить нужные данные нужным людям**, не открывая дверь ко всему.\n\n**Неограниченные участники** — нет лимита на количество приглашений. Добавляйте всю команду, подрядчиков и заинтересованных лиц и управляйте ими из одного раздела участников.\n\n**Гибкий доступ** — каждый участник может иметь:\n\n- **Доступ ко всей организации** — полная видимость всех проектов, идеально для админов и основной команды\n- **Тонкий доступ** — доступ только к выбранным вами проектам, чтобы заинтересованные лица видели лишь релевантное\n\n**Что можно шарить** — вы не ограничены режимом «всё или ничего»:\n\n- **Целые дашборды** — поделитесь целым дашбордом, чтобы другие видели ту же раскладку и отчёты, что и вы\n- **Отдельные отчёты** — поделитесь одним отчётом (например, одной воронкой или одним графиком удержания) для точечных обновлений\n\n**Как делиться** — каждый общий дашборд или отчёт может быть:\n\n- **Публичным** — просматривать может любой, у кого есть ссылка (удобно для status-страниц, сводок для руководства или встроенных представлений)\n- **Защищённым паролем** — открыть ссылку могут только те, у кого есть пароль, чтобы чувствительные данные оставались под контролем\n\nПриглашение простое: добавьте участников по email, назначьте доступ (организация или конкретные проекты) и при желании поделитесь дашбордами или отчётами по публичным ссылкам или ссылкам с паролем. Все видят одни и те же цифры, а вы решаете, кто что видит."
   },
   "capabilities_section": {
-    "title": "What you can do with share and collaborate",
-    "intro": "From inviting your first teammate to sharing a report with a client - everything is built in."
+    "title": "Что можно делать с шерингом и совместной работой",
+    "intro": "От приглашения первого коллеги до отправки отчёта клиенту — всё встроено."
   },
   "capabilities": [
     {
-      "title": "Unlimited members",
-      "description": "Invite as many team members as you need. No per-seat limits - add admins, analysts, and stakeholders and manage them from one place."
+      "title": "Неограниченные участники",
+      "description": "Приглашайте столько участников команды, сколько нужно. Без платы за место — добавляйте админов, аналитиков и заинтересованных лиц и управляйте ими из одного места."
     },
     {
-      "title": "Organization-wide or project-level access",
-      "description": "Give members access to the entire organization or restrict them to specific projects. Fine-grained control keeps each person seeing only what they need."
+      "title": "Доступ на уровне организации или проектов",
+      "description": "Давайте участникам доступ ко всей организации или ограничивайте конкретными проектами. Тонкий контроль: каждый видит только то, что нужно."
     },
     {
-      "title": "Share full dashboards",
-      "description": "Share a complete dashboard so others see the same layout and reports. Perfect for weekly reviews, exec summaries, or keeping a team on the same page."
+      "title": "Шеринг целых дашбордов",
+      "description": "Поделитесь целым дашбордом, чтобы другие видели ту же раскладку и отчёты. Идеально для еженедельных разборов, сводок для руководства и синхронизации команды."
     },
     {
-      "title": "Share individual reports",
-      "description": "Share a single report - one funnel, one retention chart, or one breakdown - so you send exactly the view that matters without exposing the rest."
+      "title": "Шеринг отдельных отчётов",
+      "description": "Поделитесь одним отчётом — одной воронкой, одним графиком удержания или одной разбивкой — и отправьте ровно тот вид, который важен, не раскрывая остальное."
     },
     {
-      "title": "Public or password-protected links",
-      "description": "Shared dashboards and reports can be publicly viewable (anyone with the link) or protected with a password for sensitive or internal-only use."
+      "title": "Публичные ссылки или под паролем",
+      "description": "Общие дашборды и отчёты могут быть публичными (просмотр по ссылке) или защищёнными паролем для чувствительного или внутреннего использования."
     },
     {
-      "title": "Invite and manage in one place",
-      "description": "Invite by email, assign access, and see all members and their permissions in a clear members view. Update access or remove members anytime."
+      "title": "Приглашение и управление в одном месте",
+      "description": "Приглашайте по email, назначайте доступ и смотрите всех участников с их правами в понятном разделе участников. Меняйте доступ или удаляйте участников в любой момент."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-members.webp",
-      "alt": "Members list showing team members and their access levels",
-      "caption": "Manage unlimited members and their access - org-wide or per project - from one place."
+      "alt": "Список участников с уровнями доступа",
+      "caption": "Управляйте неограниченным числом участников и их доступом — на уровне организации или проектов — из одного места."
     },
     {
       "src": "/features/feature-dashboard-share.webp",
-      "alt": "Sharing a dashboard with public or password-protected options",
-      "caption": "Share full dashboards or individual reports. Choose public links or protect them with a password."
+      "alt": "Шеринг дашборда с публичным доступом или паролем",
+      "caption": "Делитесь целыми дашбордами или отдельными отчётами. Выбирайте публичные ссылки или защищайте паролем."
     },
     {
       "src": "/features/feature-invite-user.webp",
-      "alt": "Invite a new member by email and set project access",
-      "caption": "Invite new members by email and assign organization or project-level access in a few clicks."
+      "alt": "Приглашение нового участника по email с настройкой доступа к проектам",
+      "caption": "Приглашайте участников по email и назначайте доступ к организации или проектам в пару кликов."
     }
   ],
   "how_it_works": {
-    "title": "How sharing and collaboration works",
-    "intro": "Invite members, set access, then share dashboards or reports as needed.",
+    "title": "Как работает шеринг и совместная работа",
+    "intro": "Пригласите участников, настройте доступ, затем делитесь дашбордами или отчётами по необходимости.",
     "steps": [
       {
-        "title": "Invite members",
-        "description": "Add team members by email from the members area. They receive an invite and can sign in to OpenPanel with the access you've assigned."
+        "title": "Пригласите участников",
+        "description": "Добавьте участников команды по email в разделе участников. Они получат приглашение и смогут войти в OpenPanel с назначенным вами доступом."
       },
       {
-        "title": "Set access level",
-        "description": "Give each member organization-wide access (all projects) or fine-grained access to specific projects only. You can change this anytime."
+        "title": "Задайте уровень доступа",
+        "description": "Дайте каждому доступ ко всей организации (все проекты) или тонкий доступ только к конкретным проектам. Изменить можно в любой момент."
       },
       {
-        "title": "Share dashboards or reports",
-        "description": "From any dashboard or report, use Share to generate a link. You can share a full dashboard or a single report."
+        "title": "Поделитесь дашбордом или отчётом",
+        "description": "Из любого дашборда или отчёта используйте «Поделиться», чтобы сгенерировать ссылку. Можно поделиться целым дашбордом или отдельным отчётом."
       },
       {
-        "title": "Choose public or password-protected",
-        "description": "Make the link public (anyone with the link can view) or set a password so only people who have it can open the shared view."
+        "title": "Выберите публичный доступ или пароль",
+        "description": "Сделайте ссылку публичной (просмотр по ссылке) или задайте пароль, чтобы открыть общий вид могли только те, у кого он есть."
       }
     ]
   },
   "use_cases": {
-    "title": "How teams use share and collaborate",
-    "intro": "From internal alignment to client-facing reports - sharing and access control fit many workflows.",
+    "title": "Как команды используют шеринг и совместную работу",
+    "intro": "От внутренней синхронизации до клиентских отчётов — шеринг и контроль доступа подходят под разные процессы.",
     "items": [
       {
-        "title": "Internal team alignment",
-        "description": "Invite product, growth, and support with access to the projects they need. Share a main dashboard so everyone looks at the same KPIs in meetings."
+        "title": "Синхронизация внутренней команды",
+        "description": "Пригласите продукт, growth и поддержку с доступом к нужным проектам. Поделитесь основным дашбордом, чтобы на встречах все смотрели на одни KPI."
       },
       {
-        "title": "Stakeholder and exec updates",
-        "description": "Give execs or stakeholders limited access to specific projects and share a single report or dashboard. No need to give them the full product - just the view that matters."
+        "title": "Обновления для руководства",
+        "description": "Дайте руководству ограниченный доступ к конкретным проектам и поделитесь одним отчётом или дашбордом. Не нужно давать весь продукт — только важный вид."
       },
       {
-        "title": "Client and partner reports",
-        "description": "Share a dashboard or report with a client or partner via link. Use a password when the data is sensitive so only authorized people can view it."
+        "title": "Отчёты для клиентов и партнёров",
+        "description": "Поделитесь дашбордом или отчётом с клиентом или партнёром по ссылке. Используйте пароль, когда данные чувствительные, — просмотр только у авторизованных."
       },
       {
-        "title": "Public status or metrics pages",
-        "description": "Share a dashboard publicly and embed or link it from your status page, docs, or marketing site so visitors see live metrics without signing in."
+        "title": "Публичные страницы метрик",
+        "description": "Сделайте дашборд публичным, вставьте его или дайте ссылку со status-страницы, документации или маркетингового сайта — посетители видят живые метрики без входа."
       }
     ]
   },
   "related_features": [
     {
       "slug": "data-visualization",
-      "title": "Data visualization",
-      "description": "Build the dashboards and reports you'll share - charts, breakdowns, and custom views that stay up to date when you share them."
+      "title": "Визуализация данных",
+      "description": "Стройте дашборды и отчёты, которыми будете делиться, — графики, разбивки и кастомные виды, актуальные в момент шаринга."
     },
     {
       "slug": "notifications",
-      "title": "Notifications",
-      "description": "Keep the team in the loop with alerts when specific events happen. Complements sharing by pushing updates instead of requiring people to open a link."
+      "title": "Уведомления",
+      "description": "Держите команду в курсе с оповещениями о конкретных событиях. Дополняет шеринг: обновления приходят сами, а не по ссылке."
     },
     {
       "slug": "integrations",
-      "title": "Integrations",
-      "description": "Send data to Slack, Discord, or webhooks. Use integrations for real-time alerts alongside shared dashboards for deeper exploration."
+      "title": "Интеграции",
+      "description": "Отправляйте данные в Slack, Discord или вебхуки. Используйте интеграции для оповещений в реальном времени вместе с общими дашбордами для глубокого анализа."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about sharing and collaboration in OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы о шеринге и совместной работе в OpenPanel.",
     "items": [
       {
-        "question": "Is there a limit on how many members I can invite?",
-        "answer": "No. You can invite an unlimited number of members. Each can have organization-wide access or access only to specific projects you choose."
+        "question": "Есть ли лимит на количество приглашённых участников?",
+        "answer": "Нет. Можно приглашать неограниченное число участников. Каждому можно дать доступ ко всей организации или только к выбранным проектам."
       },
       {
-        "question": "What's the difference between org-wide and project-level access?",
-        "answer": "Org-wide access lets a member see and work with all projects in the organization. Project-level access restricts them to only the projects you assign - useful for clients, partners, or teams that only need a subset of your data."
+        "question": "Чем доступ на уровне организации отличается от доступа на уровне проектов?",
+        "answer": "Доступ ко всей организации позволяет участнику видеть и работать со всеми проектами организации. Доступ на уровне проектов ограничивает только назначенными вами проектами — удобно для клиентов, партнёров или команд, которым нужна лишь часть данных."
       },
       {
-        "question": "Can I share just one report instead of a whole dashboard?",
-        "answer": "Yes. You can share a complete dashboard or a single report (e.g. one funnel or one chart). The shared link shows only what you chose to share."
+        "question": "Можно ли поделиться одним отчётом вместо целого дашборда?",
+        "answer": "Да. Можно поделиться целым дашбордом или отдельным отчётом (например, одной воронкой или одним графиком). Общая ссылка показывает только то, что вы выбрали."
       },
       {
-        "question": "Can shared links be password-protected?",
-        "answer": "Yes. When you create a share link for a dashboard or report, you can leave it public (anyone with the link can view) or set a password so only people with the password can open it."
+        "question": "Можно ли защитить общие ссылки паролем?",
+        "answer": "Да. При создании ссылки на дашборд или отчёт можно оставить её публичной (просмотр по ссылке) или задать пароль — открыть смогут только те, у кого он есть."
       },
       {
-        "question": "Can I change a member's access after they've joined?",
-        "answer": "Yes. You can update a member's access (add or remove projects, or switch to org-wide) or remove them from the organization at any time from the members area."
+        "question": "Можно ли изменить доступ участника после приглашения?",
+        "answer": "Да. Обновляйте доступ участника (добавляйте или убирайте проекты, переключайте на доступ ко всей организации) или удаляйте его из организации в любой момент в разделе участников."
       }
     ]
   },
   "cta": {
-    "label": "Invite your team and share your first dashboard",
+    "label": "Пригласите команду и поделитесь первым дашбордом",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

@@ -20,15 +20,15 @@ export function ForRelatedLinksSection({ relatedLinks }: ForRelatedLinksProps) {
   return (
     <Section className="container">
       <SectionHeader
-        description="Learn more about OpenPanel and how it can help you."
-        title="Related resources"
+        description="Узнайте больше об OpenPanel и о том, как она может вам помочь."
+        title="Полезные материалы"
         variant="sm"
       />
       <div className="mt-12 grid gap-8 md:grid-cols-3">
         {relatedLinks.guides && relatedLinks.guides.length > 0 && (
           <div className="col gap-4">
             <h3 className="font-semibold text-muted-foreground text-sm uppercase tracking-wider">
-              Guides
+              Руководства
             </h3>
             {relatedLinks.guides.map((link) => (
               <Link
@@ -45,7 +45,7 @@ export function ForRelatedLinksSection({ relatedLinks }: ForRelatedLinksProps) {
         {relatedLinks.articles && relatedLinks.articles.length > 0 && (
           <div className="col gap-4">
             <h3 className="font-semibold text-muted-foreground text-sm uppercase tracking-wider">
-              Articles
+              Статьи
             </h3>
             {relatedLinks.articles.map((link) => (
               <Link
@@ -62,7 +62,7 @@ export function ForRelatedLinksSection({ relatedLinks }: ForRelatedLinksProps) {
         {relatedLinks.comparisons && relatedLinks.comparisons.length > 0 && (
           <div className="col gap-4">
             <h3 className="font-semibold text-muted-foreground text-sm uppercase tracking-wider">
-              Comparisons
+              Сравнения
             </h3>
             {relatedLinks.comparisons.map((link) => (
               <Link

@@ -15,7 +15,7 @@ export function getProfileName(
   }
 
   if (!profile.isExternal) {
-    return 'Anonymous';
+    return 'Аноним';
   }
 
   const name =
@@ -26,7 +26,7 @@ export function getProfileName(
     if (short && profile?.id && profile.id.length > 10) {
       return `${profile?.id?.slice(0, 4)}...${profile?.id?.slice(-4)}`;
     }
-    return profile?.id ?? 'Unknown';
+    return profile?.id ?? 'Неизвестно';
   }
 
   return name;

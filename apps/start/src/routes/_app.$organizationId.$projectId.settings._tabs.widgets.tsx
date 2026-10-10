@@ -45,10 +45,10 @@ function Component() {
         queryClient.invalidateQueries(
           trpc.widget.get.queryFilter({ projectId, type: variables.type }),
         );
-        toast.success(variables.enabled ? 'Widget enabled' : 'Widget disabled');
+        toast.success(variables.enabled ? 'Виджет включён' : 'Виджет отключён');
       },
       onError: (error) => {
-        toast.error(error.message || 'Failed to update widget');
+        toast.error(error.message || 'Не удалось обновить виджет');
       },
     }),
   );
@@ -60,10 +60,10 @@ function Component() {
         queryClient.invalidateQueries(
           trpc.widget.get.queryFilter({ projectId, type: 'realtime' }),
         );
-        toast.success('Widget options updated');
+        toast.success('Настройки виджета обновлены');
       },
       onError: (error) => {
-        toast.error(error.message || 'Failed to update options');
+        toast.error(error.message || 'Не удалось обновить настройки');
       },
     }),
   );
@@ -178,11 +178,11 @@ function RealtimeWidgetSection({
     <Widget className="max-w-screen-md w-full">
       <WidgetHead className="row items-center justify-between gap-6">
         <div className="space-y-2">
-          <span className="title">Realtime Widget</span>
+          <span className="title">Виджет реального времени</span>
           <p className="text-muted-foreground">
-            Embed a realtime visitor counter widget on your website. The widget
-            shows live visitor count, activity histogram, top countries,
-            referrers and paths.
+            Встройте виджет счётчика посетителей в реальном времени на Ваш сайт.
+            Виджет показывает текущее число посетителей, гистограмму активности,
+            топ стран, рефереров и путей.
           </p>
         </div>
         <Switch
@@ -194,11 +194,11 @@ function RealtimeWidgetSection({
       {isEnabled && (
         <WidgetBody className="space-y-6">
           <div className="space-y-4">
-            <h3 className="text-sm font-medium">Widget Options</h3>
+            <h3 className="text-sm font-medium">Настройки виджета</h3>
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <Label htmlFor="referrers" className="text-sm">
-                  Show Referrers
+                  Показывать рефереров
                 </Label>
                 <Switch
                   id="referrers"
@@ -211,7 +211,7 @@ function RealtimeWidgetSection({
               </div>
               <div className="flex items-center justify-between">
                 <Label htmlFor="countries" className="text-sm">
-                  Show Countries
+                  Показывать страны
                 </Label>
                 <Switch
                   id="countries"
@@ -224,7 +224,7 @@ function RealtimeWidgetSection({
               </div>
               <div className="flex items-center justify-between">
                 <Label htmlFor="paths" className="text-sm">
-                  Show Paths
+                  Показывать пути
                 </Label>
                 <Switch
                   id="paths"
@@ -238,25 +238,25 @@ function RealtimeWidgetSection({
             </div>
           </div>
           <div className="space-y-2">
-            <h3 className="text-sm font-medium">Widget URL</h3>
+            <h3 className="text-sm font-medium">URL виджета</h3>
             <CopyInput label="" value={widgetUrl!} className="w-full" />
             <p className="text-xs text-muted-foreground">
-              Direct link to the widget. You can open this in a new tab or embed
-              it.
+              Прямая ссылка на виджет. Вы можете открыть её в новой вкладке или
+              встроить.
             </p>
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-sm font-medium">Embed Code</h3>
+            <h3 className="text-sm font-medium">Код для встраивания</h3>
             <Syntax code={embedCode!} language="bash" />
             <p className="text-xs text-muted-foreground">
-              Copy this code and paste it into your website HTML where you want
-              the widget to appear.
+              Скопируйте этот код и вставьте его в HTML Вашего сайта там, где
+              должен появиться виджет.
             </p>
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-sm font-medium">Preview</h3>
+            <h3 className="text-sm font-medium">Предпросмотр</h3>
             <div className="border rounded-lg overflow-hidden">
               <iframe
                 key={widgetChecksum}
@@ -264,7 +264,7 @@ function RealtimeWidgetSection({
                 width="100%"
                 height="600"
                 className="border-0"
-                title="Realtime Widget Preview"
+                title="Предпросмотр виджета реального времени"
               />
             </div>
             <div className="flex gap-2">
@@ -276,7 +276,7 @@ function RealtimeWidgetSection({
                   window.open(widgetUrl!, '_blank', 'noopener,noreferrer')
                 }
               >
-                Open in new tab
+                Открыть в новой вкладке
               </Button>
             </div>
           </div>
@@ -315,10 +315,11 @@ function CounterWidgetSection({
     <Widget className="max-w-screen-md w-full">
       <WidgetHead className="row items-center justify-between gap-6">
         <div className="space-y-2">
-          <span className="title">Counter Widget</span>
+          <span className="title">Виджет-счётчик</span>
           <p className="text-muted-foreground">
-            A compact live visitor counter badge you can embed anywhere. Shows
-            the current number of unique visitors with a live indicator.
+            Компактный счётчик посетителей в реальном времени, который можно
+            встроить куда угодно. Показывает текущее число уникальных
+            посетителей с индикатором активности.
           </p>
         </div>
         <Switch
@@ -330,30 +331,30 @@ function CounterWidgetSection({
       {isEnabled && counterUrl && (
         <WidgetBody className="space-y-6">
           <div className="space-y-2">
-            <h3 className="text-sm font-medium">Widget URL</h3>
+            <h3 className="text-sm font-medium">URL виджета</h3>
             <CopyInput label="" value={counterUrl} className="w-full" />
             <p className="text-xs text-muted-foreground">
-              Direct link to the counter widget.
+              Прямая ссылка на виджет-счётчик.
             </p>
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-sm font-medium">Embed Code</h3>
+            <h3 className="text-sm font-medium">Код для встраивания</h3>
             <Syntax code={counterEmbedCode!} language="bash" />
             <p className="text-xs text-muted-foreground">
-              Copy this code and paste it into your website HTML where you want
-              the counter to appear.
+              Скопируйте этот код и вставьте его в HTML Вашего сайта там, где
+              должен появиться счётчик.
             </p>
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-sm font-medium">Preview</h3>
+            <h3 className="text-sm font-medium">Предпросмотр</h3>
             <div className="border rounded-lg p-4 bg-muted/30">
               <iframe
                 src={counterUrl}
                 height="32"
                 className="border-0"
-                title="Counter Widget Preview"
+                title="Предпросмотр виджета-счётчика"
               />
             </div>
             <div className="flex gap-2">
@@ -365,7 +366,7 @@ function CounterWidgetSection({
                   window.open(counterUrl, '_blank', 'noopener,noreferrer')
                 }
               >
-                Open in new tab
+                Открыть в новой вкладке
               </Button>
             </div>
           </div>
@@ -403,33 +404,34 @@ function BadgeWidgetSection({ widget, dashboardUrl }: BadgeWidgetSectionProps) {
     <Widget className="max-w-screen-md w-full">
       <WidgetHead className="row items-center justify-between gap-6">
         <div className="space-y-2">
-          <span className="title">Analytics Badge</span>
+          <span className="title">Бейдж аналитики</span>
           <p className="text-muted-foreground">
-            A Product Hunt-style badge showing your 30-day unique visitor count.
-            Perfect for showcasing your analytics powered by OpenPanel.
+            Бейдж в стиле Product Hunt, показывающий число уникальных
+            посетителей за 30 дней. Отлично подходит, чтобы продемонстрировать
+            свою аналитику на базе OpenPanel.
           </p>
         </div>
       </WidgetHead>
       <WidgetBody className="space-y-6">
         <div className="space-y-2">
-          <h3 className="text-sm font-medium">Widget URL</h3>
+          <h3 className="text-sm font-medium">URL виджета</h3>
           <CopyInput label="" value={badgeUrl} className="w-full" />
           <p className="text-xs text-muted-foreground">
-            Direct link to the analytics badge widget.
+            Прямая ссылка на виджет бейджа аналитики.
           </p>
         </div>
 
         <div className="space-y-2">
-          <h3 className="text-sm font-medium">Embed Code</h3>
+          <h3 className="text-sm font-medium">Код для встраивания</h3>
           <Syntax code={badgeEmbedCode!} language="bash" />
           <p className="text-xs text-muted-foreground">
-            Copy this code and paste it into your website HTML where you want
-            the badge to appear.
+            Скопируйте этот код и вставьте его в HTML Вашего сайта там, где
+            должен появиться бейдж.
           </p>
         </div>
 
         <div className="space-y-2">
-          <h3 className="text-sm font-medium">Preview</h3>
+          <h3 className="text-sm font-medium">Предпросмотр</h3>
           <div className="border rounded-lg p-4 bg-muted/30">
             <a
               href="https://openpanel.dev"
@@ -446,7 +448,7 @@ function BadgeWidgetSection({ widget, dashboardUrl }: BadgeWidgetSectionProps) {
                 height="48"
                 width="250"
                 className="border-0 pointer-events-none"
-                title="Analytics Badge Preview"
+                title="Предпросмотр бейджа аналитики"
               />
             </a>
           </div>
@@ -459,7 +461,7 @@ function BadgeWidgetSection({ widget, dashboardUrl }: BadgeWidgetSectionProps) {
                 window.open(badgeUrl, '_blank', 'noopener,noreferrer')
               }
             >
-              Open in new tab
+              Открыть в новой вкладке
             </Button>
           </div>
         </div>

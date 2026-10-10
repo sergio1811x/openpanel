@@ -86,8 +86,8 @@ function ChatTableInner({ output }: { output: unknown }) {
       </table>
       {rows.length > 15 && (
         <div className="border-t px-3 py-1 text-[11px] text-muted-foreground">
-          Showing 15 of {total ?? rows.length}
-          {truncated && ' (truncated)'}
+          Показано 15 из {total ?? rows.length}
+          {truncated && ' (усечено)'}
         </div>
       )}
     </ResultCard>

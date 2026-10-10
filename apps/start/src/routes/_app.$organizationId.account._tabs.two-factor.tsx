@@ -21,13 +21,13 @@ function Component() {
   return (
     <Widget className="max-w-screen-md w-full">
       <WidgetHead>
-        <span className="title">Two-factor authentication</span>
+        <span className="title">Двухфакторная аутентификация</span>
       </WidgetHead>
       <WidgetBody className="col gap-4">
         <p className="text-sm text-muted-foreground leading-normal">
-          Protect your account with an authenticator app (Google Authenticator,
-          1Password, Authy, etc.). You'll be asked for a 6-digit code each time
-          you sign in with email and password.
+          Защитите свой аккаунт с помощью приложения-аутентификатора (Google
+          Authenticator, 1Password, Authy и т.д.). При каждом входе по email и
+          паролю у Вас будет запрашиваться 6-значный код.
         </p>
 
         {status.data.enabled ? (
@@ -49,12 +49,12 @@ function DisabledView({ hasEmailProvider }: { hasEmailProvider: boolean }) {
       <div className="col gap-2 rounded-md border border-border bg-def-100 px-4 py-3 text-sm">
         <div className="row items-center gap-2">
           <ShieldOffIcon className="size-4 text-muted-foreground" />
-          <span>Two-factor authentication is not available.</span>
+          <span>Двухфакторная аутентификация недоступна.</span>
         </div>
         <p className="text-muted-foreground leading-normal">
-          Your account signs in with Google or GitHub, which handle two-factor
-          authentication in their account settings. Enable it in your provider's
-          security settings.
+          Ваш аккаунт входит через Google или GitHub, которые обрабатывают
+          двухфакторную аутентификацию в своих настройках аккаунта. Включите её
+          в настройках безопасности Вашего провайдера входа.
         </p>
       </div>
     );
@@ -64,10 +64,10 @@ function DisabledView({ hasEmailProvider }: { hasEmailProvider: boolean }) {
     <div className="row items-center justify-between rounded-md border border-border bg-def-100 px-4 py-3">
       <div className="row items-center gap-2 text-sm">
         <ShieldOffIcon className="size-4 text-muted-foreground" />
-        <span>Two-factor authentication is disabled.</span>
+        <span>Двухфакторная аутентификация отключена.</span>
       </div>
       <Button size="sm" onClick={() => pushModal('SetupTwoFactor')}>
-        Enable
+        Включить
       </Button>
     </div>
   );
@@ -88,11 +88,10 @@ function EnabledView({
           <ShieldCheckIcon className="size-4 text-emerald-500" />
           </div>
           <div className="col gap-1">
-            <span>Two-factor authentication is enabled.</span>
+            <span>Двухфакторная аутентификация включена.</span>
             <span className="text-xs text-muted-foreground">
-              Enabled {new Date(enabledAt).toLocaleString()} ·{' '}
-              {remainingRecoveryCodes} recovery code
-              {remainingRecoveryCodes === 1 ? '' : 's'} remaining
+              Включено {new Date(enabledAt).toLocaleString()} · осталось кодов
+              восстановления: {remainingRecoveryCodes}
             </span>
           </div>
         </div>
@@ -104,14 +103,14 @@ function EnabledView({
           variant="outline"
           onClick={() => pushModal('RegenerateRecoveryCodes')}
         >
-          Regenerate recovery codes
+          Сгенерировать коды восстановления заново
         </Button>
         <Button
           size="sm"
           variant="destructive"
           onClick={() => pushModal('DisableTwoFactor')}
         >
-          Disable
+          Отключить
         </Button>
       </div>
     </>

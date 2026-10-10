@@ -43,13 +43,13 @@ const { TooltipProvider, Tooltip } = createChartTooltip<
       </ChartTooltipHeader>
       <ChartTooltipItem color={getChartColor(0)}>
         <div className="flex justify-between gap-8 font-medium font-mono">
-          <span>Clicks</span>
+          <span>Клики</span>
           <span>{item.clicks.toLocaleString()}</span>
         </div>
       </ChartTooltipItem>
       <ChartTooltipItem color={getChartColor(1)}>
         <div className="flex justify-between gap-8 font-medium font-mono">
-          <span>Impressions</span>
+          <span>Показы</span>
           <span>{item.impressions.toLocaleString()}</span>
         </div>
       </ChartTooltipItem>
@@ -110,21 +110,21 @@ export function GscClicksChart({
   return (
     <div className="card p-4">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="font-medium text-sm">Clicks & Impressions</h3>
+        <h3 className="font-medium text-sm">Клики и показы</h3>
         <div className="flex items-center gap-4 text-muted-foreground text-xs">
           <span className="flex items-center gap-1.5">
             <span
               className="h-0.5 w-3 rounded-full"
               style={{ backgroundColor: getChartColor(0) }}
             />
-            Clicks
+            Клики
           </span>
           <span className="flex items-center gap-1.5">
             <span
               className="h-0.5 w-3 rounded-full"
               style={{ backgroundColor: getChartColor(1) }}
             />
-            Impressions
+            Показы
           </span>
         </div>
       </div>

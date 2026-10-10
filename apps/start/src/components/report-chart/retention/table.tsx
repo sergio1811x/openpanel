@@ -55,10 +55,10 @@ const CohortTable: React.FC<CohortTableProps> = ({ data }) => {
               <tr>
                 <th className={cn(thClassName, 'sticky left-0 z-10')}>
                   <div className="bg-def-100">
-                    <div className="h-10 center-center -mt-3">Date</div>
+                    <div className="h-10 center-center -mt-3">Дата</div>
                   </div>
                 </th>
-                <th className={cn(thClassName, 'pr-1')}>Total profiles</th>
+                <th className={cn(thClassName, 'pr-1')}>Всего профилей</th>
                 {data[0]?.values.map((column, index) => (
                   <th
                     key={index.toString()}

@@ -42,7 +42,7 @@ export function ChatContextWidget() {
 
   // Event-name filter
   if (ctx.filters?.eventNames && ctx.filters.eventNames.length > 0) {
-    chips.push(`Events: ${ctx.filters.eventNames.join(', ')}`);
+    chips.push(`События: ${ctx.filters.eventNames.join(', ')}`);
   }
 
   // Property filters — short form: "country=SE,US, device=mobile"
@@ -65,10 +65,10 @@ export function ChatContextWidget() {
   }
 
   // Entity ids on detail pages
-  if (ctx.ids?.profileId) chips.push('Profile');
-  if (ctx.ids?.sessionId) chips.push('Session');
-  if (ctx.ids?.groupId) chips.push('Group');
-  if (ctx.ids?.reportId) chips.push('Report');
+  if (ctx.ids?.profileId) chips.push('Профиль');
+  if (ctx.ids?.sessionId) chips.push('Сессия');
+  if (ctx.ids?.groupId) chips.push('Группа');
+  if (ctx.ids?.reportId) chips.push('Отчёт');
 
   return (
     <div className="mx-3 mt-3 mb-1 rounded-lg border bg-card/95 px-3 py-2">
@@ -76,7 +76,7 @@ export function ChatContextWidget() {
         <Icon className="size-3.5 mt-0.5 text-muted-foreground shrink-0" />
         <div className="min-w-0 flex-1 col gap-1">
           <div className="text-sm text-muted-foreground">
-            Assistant context
+            Контекст ассистента
           </div>
           <div className="text-sm font-medium text-foreground/90">
             {pageLabel}
@@ -111,16 +111,16 @@ const PAGE_META: Record<
   string,
   { label: string; icon: LucideIcon }
 > = {
-  overview: { label: 'Overview', icon: WallpaperIcon },
-  insights: { label: 'Insights', icon: TrendingUpDownIcon },
-  pages: { label: 'Pages', icon: LayersIcon },
+  overview: { label: 'Обзор', icon: WallpaperIcon },
+  insights: { label: 'Инсайты', icon: TrendingUpDownIcon },
+  pages: { label: 'Страницы', icon: LayersIcon },
   seo: { label: 'SEO', icon: SearchIcon },
-  events: { label: 'Events', icon: GanttChartIcon },
-  sessionDetail: { label: 'Session detail', icon: UsersIcon },
-  profileDetail: { label: 'Profile detail', icon: UserCircleIcon },
-  groupDetail: { label: 'Group detail', icon: Building2Icon },
-  reportEditor: { label: 'Report editor', icon: LayoutPanelTopIcon },
-  dashboard: { label: 'Dashboard', icon: LayoutDashboardIcon },
+  events: { label: 'События', icon: GanttChartIcon },
+  sessionDetail: { label: 'Детали сессии', icon: UsersIcon },
+  profileDetail: { label: 'Детали профиля', icon: UserCircleIcon },
+  groupDetail: { label: 'Детали группы', icon: Building2Icon },
+  reportEditor: { label: 'Редактор отчёта', icon: LayoutPanelTopIcon },
+  dashboard: { label: 'Дашборд', icon: LayoutDashboardIcon },
 };
 
 function formatRange(range: string): string {

@@ -17,15 +17,15 @@ import { average, sum } from '@openpanel/common';
 import { useReportChartContext } from '../context';
 
 const SUMMARY_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  Flow: GitBranch,
-  'Average conversion rate': Percent,
-  'Total conversions': Target,
-  'Previous period average conversion rate': Percent,
-  'Previous period total conversions': Hash,
-  'Best breakdown (avg)': Trophy,
-  'Worst breakdown (avg)': ArrowDownRight,
-  'Best conversion rate': ArrowUpRight,
-  'Worst conversion rate': ArrowDownRight,
+  'Поток': GitBranch,
+  'Средняя конверсия': Percent,
+  'Всего конверсий': Target,
+  'Средняя конверсия за предыдущий период': Percent,
+  'Всего конверсий за предыдущий период': Hash,
+  'Лучшая разбивка (среднее)': Trophy,
+  'Худшая разбивка (среднее)': ArrowDownRight,
+  'Лучшая конверсия': ArrowUpRight,
+  'Худшая конверсия': ArrowDownRight,
 };
 
 interface Props {
@@ -133,56 +133,56 @@ export function Summary({ data }: Props) {
       .map((e) => e.displayName || e.name)
       .join(' → ');
     const items: { name: string; value: React.ReactNode }[] = [
-      { name: 'Flow', value: flowLabel },
+      { name: 'Поток', value: flowLabel },
       {
-        name: 'Average conversion rate',
+        name: 'Средняя конверсия',
         value: number.formatWithUnit(averageConversionRate / 100, '%'),
       },
-      { name: 'Total conversions', value: sumConversions },
+      { name: 'Всего конверсий', value: sumConversions },
     ];
     if (data.previous != null) {
       items.push(
         {
-          name: 'Previous period average conversion rate',
+          name: 'Средняя конверсия за предыдущий период',
           value: number.formatWithUnit(
             averageConversionRatePrevious / 100,
             '%',
           ),
         },
         {
-          name: 'Previous period total conversions',
+          name: 'Всего конверсий за предыдущий период',
           value: sumConversionsPrevious ?? 0,
         },
       );
     }
     if (hasManySeries && bestAverageConversionRateMatch) {
       items.push({
-        name: 'Best breakdown (avg)',
-        value: `${bestAverageConversionRateMatch.serie?.breakdowns.join(', ')} with ${number.formatWithUnit(bestAverageConversionRateMatch.averageRate / 100, '%')}`,
+        name: 'Лучшая разбивка (среднее)',
+        value: `${bestAverageConversionRateMatch.serie?.breakdowns.join(', ')} — ${number.formatWithUnit(bestAverageConversionRateMatch.averageRate / 100, '%')}`,
       });
     }
     if (hasManySeries && worstAverageConversionRateMatch) {
       items.push({
-        name: 'Worst breakdown (avg)',
-        value: `${worstAverageConversionRateMatch.serie?.breakdowns.join(', ')} with ${number.formatWithUnit(worstAverageConversionRateMatch.averageRate / 100, '%')}`,
+        name: 'Худшая разбивка (среднее)',
+        value: `${worstAverageConversionRateMatch.serie?.breakdowns.join(', ')} — ${number.formatWithUnit(worstAverageConversionRateMatch.averageRate / 100, '%')}`,
       });
     }
     if (bestConversionRate) {
       const breakdowns = bestConversionRate.serie.breakdowns.join(', ');
       items.push({
-        name: 'Best conversion rate',
+        name: 'Лучшая конверсия',
         value: breakdowns
-          ? `${number.formatWithUnit(bestConversionRate.rate / 100, '%')} on ${breakdowns} at ${formatDate(new Date(bestConversionRate.date))}`
-          : `${number.formatWithUnit(bestConversionRate.rate / 100, '%')} at ${formatDate(new Date(bestConversionRate.date))}`,
+          ? `${number.formatWithUnit(bestConversionRate.rate / 100, '%')} — ${breakdowns}, ${formatDate(new Date(bestConversionRate.date))}`
+          : `${number.formatWithUnit(bestConversionRate.rate / 100, '%')}, ${formatDate(new Date(bestConversionRate.date))}`,
       });
     }
     if (worstConversionRate) {
       const breakdowns = worstConversionRate.serie.breakdowns.join(', ');
       items.push({
-        name: 'Worst conversion rate',
+        name: 'Худшая конверсия',
         value: breakdowns
-          ? `${number.formatWithUnit(worstConversionRate.rate / 100, '%')} on ${breakdowns} at ${formatDate(new Date(worstConversionRate.date))}`
-          : `${number.formatWithUnit(worstConversionRate.rate / 100, '%')} at ${formatDate(new Date(worstConversionRate.date))}`,
+          ? `${number.formatWithUnit(worstConversionRate.rate / 100, '%')} — ${breakdowns}, ${formatDate(new Date(worstConversionRate.date))}`
+          : `${number.formatWithUnit(worstConversionRate.rate / 100, '%')}, ${formatDate(new Date(worstConversionRate.date))}`,
       });
     }
     return items;

@@ -58,21 +58,21 @@ export function ReportInterval({
   const items = [
     {
       value: 'minute',
-      label: 'Minute',
+      label: 'Минута',
       disabled: !isMinuteIntervalEnabledByRange(range),
     },
     {
       value: 'hour',
-      label: 'Hour',
+      label: 'Час',
       disabled: !isHourIntervalEnabled,
     },
     {
       value: 'day',
-      label: 'Day',
+      label: 'День',
     },
     {
       value: 'week',
-      label: 'Week',
+      label: 'Неделя',
       disabled:
         range === 'today' ||
         range === 'lastHour' ||
@@ -82,7 +82,7 @@ export function ReportInterval({
     },
     {
       value: 'month',
-      label: 'Month',
+      label: 'Месяц',
       disabled:
         range === 'today' ||
         range === 'lastHour' ||
@@ -101,12 +101,12 @@ export function ReportInterval({
           icon={ClockIcon}
           className={cn('justify-start', className)}
         >
-          {items.find((item) => item.value === interval)?.label || 'Interval'}
+          {items.find((item) => item.value === interval)?.label || 'Интервал'}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel className="row items-center justify-between">
-          Select interval
+          Выберите интервал
           {!!selectedItem && (
             <CommandShortcut>{selectedItem?.label}</CommandShortcut>
           )}

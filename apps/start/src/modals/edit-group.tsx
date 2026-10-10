@@ -60,7 +60,7 @@ export default function EditGroup({
         queryClient.invalidateQueries(trpc.group.list.pathFilter());
         queryClient.invalidateQueries(trpc.group.byId.pathFilter());
         queryClient.invalidateQueries(trpc.group.types.pathFilter());
-        toast('Success', { description: 'Group updated.' });
+        toast('Успешно', { description: 'Группа обновлена.' });
         popModal();
       },
       onError: handleError,
@@ -69,7 +69,7 @@ export default function EditGroup({
 
   return (
     <ModalContent>
-      <ModalHeader title="Edit group" />
+      <ModalHeader title="Изменение группы" />
       <form
         className="flex flex-col gap-4"
         onSubmit={handleSubmit(({ properties: formProps, ...values }) => {
@@ -82,19 +82,19 @@ export default function EditGroup({
         })}
       >
         <InputWithLabel
-          label="Name"
+          label="Название"
           {...register('name')}
           error={formState.errors.name?.message}
         />
         <InputWithLabel
-          label="Type"
+          label="Тип"
           {...register('type')}
           error={formState.errors.type?.message}
         />
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between">
-            <span className="font-medium text-sm">Properties</span>
+            <span className="font-medium text-sm">Свойства</span>
             <Button
               onClick={() => append({ key: '', value: '' })}
               size="sm"
@@ -102,19 +102,19 @@ export default function EditGroup({
               variant="outline"
             >
               <PlusIcon className="mr-1 size-3" />
-              Add
+              Добавить
             </Button>
           </div>
           {fields.map((field, index) => (
             <div className="flex gap-2" key={field.id}>
               <input
                 className="h-9 flex-1 rounded-md border bg-background px-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                placeholder="key"
+                placeholder="ключ"
                 {...register(`properties.${index}.key`)}
               />
               <input
                 className="h-9 flex-1 rounded-md border bg-background px-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                placeholder="value"
+                placeholder="значение"
                 {...register(`properties.${index}.value`)}
               />
               <Button
@@ -132,13 +132,13 @@ export default function EditGroup({
 
         <ButtonContainer>
           <Button onClick={() => popModal()} type="button" variant="outline">
-            Cancel
+            Отмена
           </Button>
           <Button
             disabled={!formState.isDirty || mutation.isPending}
             type="submit"
           >
-            Update
+            Обновить
           </Button>
         </ButtonContainer>
       </form>

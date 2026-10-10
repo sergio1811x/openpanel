@@ -214,11 +214,11 @@ export function Chart({ data }: { data: SankeyData }) {
                   </ChartTooltipHeader>
                   <ChartTooltipItem color={color} innerClassName="gap-2">
                     <div className="flex items-center justify-between gap-8 font-mono font-medium">
-                      <div className="text-muted-foreground">Sessions</div>
+                      <div className="text-muted-foreground">Сессии</div>
                       <div>{number.format(value)}</div>
                     </div>
                     <div className="flex items-center justify-between gap-8 font-mono font-medium">
-                      <div className="text-muted-foreground">Share</div>
+                      <div className="text-muted-foreground">Доля</div>
                       <div>{number.format(round(pct, 1))} %</div>
                     </div>
                   </ChartTooltipItem>
@@ -273,15 +273,15 @@ export function Chart({ data }: { data: SankeyData }) {
 
                   <ChartTooltipItem color={color} innerClassName="gap-2">
                     <div className="flex items-center justify-between gap-8 font-mono font-medium">
-                      <div className="text-muted-foreground">Sessions</div>
+                      <div className="text-muted-foreground">Сессии</div>
                       <div>{number.format(value)}</div>
                     </div>
                     <div className="flex items-center justify-between gap-8 font-mono text-sm">
-                      <div className="text-muted-foreground">% of total</div>
+                      <div className="text-muted-foreground">% от общего</div>
                       <div>{number.format(round(pctOfTotal, 1))} %</div>
                     </div>
                     <div className="flex items-center justify-between gap-8 font-mono text-sm">
-                      <div className="text-muted-foreground">% of source</div>
+                      <div className="text-muted-foreground">% от источника</div>
                       <div>{number.format(round(pctOfSource, 1))} %</div>
                     </div>
                   </ChartTooltipItem>

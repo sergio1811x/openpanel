@@ -18,7 +18,7 @@ export async function generateMetadata({
 
   if (!page) {
     return {
-      title: 'Page Not Found',
+      title: 'Страница не найдена',
     };
   }
 

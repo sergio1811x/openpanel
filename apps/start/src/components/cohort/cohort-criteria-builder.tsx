@@ -51,7 +51,7 @@ export function CohortCriteriaBuilder({
           onClick={() => handleTypeChange('event')}
           className="flex-1"
         >
-          Event-based
+          По событиям
         </Button>
         <Button
           type="button"
@@ -59,7 +59,7 @@ export function CohortCriteriaBuilder({
           onClick={() => handleTypeChange('property')}
           className="flex-1"
         >
-          Property-based
+          По свойствам
         </Button>
       </div>
 
@@ -145,17 +145,17 @@ function EventBasedBuilder({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-2">
-        <span className="text-sm text-muted-foreground">Match</span>
+        <span className="text-sm text-muted-foreground">Совпадение</span>
         <DropdownMenuComposed
           onChange={updateOperator}
           items={[
-            { value: 'or', label: 'Any of these events' },
-            { value: 'and', label: 'All of these events' },
+            { value: 'or', label: 'Любое из этих событий' },
+            { value: 'and', label: 'Все эти события' },
           ]}
-          label="Operator"
+          label="Оператор"
         >
           <Button variant="outline" size="sm">
-            {definition.criteria.operator === 'or' ? 'Any' : 'All'}
+            {definition.criteria.operator === 'or' ? 'Любое' : 'Все'}
           </Button>
         </DropdownMenuComposed>
       </div>
@@ -176,7 +176,7 @@ function EventBasedBuilder({
         onClick={addEventCriteria}
         icon={PlusIcon}
       >
-        Add event criteria
+        Добавить критерий события
       </Button>
     </div>
   );
@@ -247,14 +247,14 @@ function EventCriteriaItem({
     <div className="rounded border p-4">
       <div className="mb-3 flex items-start justify-between gap-2">
         <div className="flex-1">
-          <label className="mb-1 block text-sm font-medium">Event</label>
+          <label className="mb-1 block text-sm font-medium">Событие</label>
           <ComboboxAdvanced
             items={eventNames}
             value={criteria.name ? [criteria.name] : []}
             onChange={(values) =>
               onChange({ ...criteria, name: String(values[0] ?? '') })
             }
-            placeholder="Select event..."
+            placeholder="Выберите событие..."
             className="w-full"
           />
         </div>
@@ -270,7 +270,7 @@ function EventCriteriaItem({
       </div>
 
       <div className="mb-3">
-        <label className="mb-1 block text-sm font-medium">Frequency</label>
+        <label className="mb-1 block text-sm font-medium">Частота</label>
         <div className="flex gap-2">
           <DropdownMenuComposed
             onChange={(operator) => {
@@ -287,16 +287,16 @@ function EventCriteriaItem({
               });
             }}
             items={[
-              { value: 'gte', label: 'At least' },
-              { value: 'eq', label: 'Exactly' },
-              { value: 'lte', label: 'At most' },
+              { value: 'gte', label: 'Не менее' },
+              { value: 'eq', label: 'Ровно' },
+              { value: 'lte', label: 'Не более' },
             ]}
-            label="Operator"
+            label="Оператор"
           >
             <Button variant="outline" size="sm">
-              {criteria.frequency?.operator === 'gte' && 'At least'}
-              {criteria.frequency?.operator === 'eq' && 'Exactly'}
-              {criteria.frequency?.operator === 'lte' && 'At most'}
+              {criteria.frequency?.operator === 'gte' && 'Не менее'}
+              {criteria.frequency?.operator === 'eq' && 'Ровно'}
+              {criteria.frequency?.operator === 'lte' && 'Не более'}
             </Button>
           </DropdownMenuComposed>
           <input
@@ -325,13 +325,13 @@ function EventCriteriaItem({
             className="w-20 rounded border px-2 py-1 text-sm"
           />
           <span className="flex items-center text-sm text-muted-foreground">
-            times
+            раз
           </span>
         </div>
       </div>
 
       <div className="mb-3">
-        <label className="mb-1 block text-sm font-medium">Timeframe</label>
+        <label className="mb-1 block text-sm font-medium">Период</label>
         <div className="flex flex-col gap-2">
           <div className="flex gap-2">
             <DropdownMenuComposed
@@ -367,19 +367,19 @@ function EventCriteriaItem({
                 }
               }}
               items={[
-                { value: 'relative', label: 'Last' },
-                { value: 'since', label: 'Since' },
-                { value: 'between', label: 'Between' },
+                { value: 'relative', label: 'Последние' },
+                { value: 'since', label: 'С даты' },
+                { value: 'between', label: 'Между' },
               ]}
-              label="Type"
+              label="Тип"
             >
               <Button variant="outline" size="sm">
                 {criteria.timeframe.type === 'relative'
-                  ? 'Last'
+                  ? 'Последние'
                   : criteria.timeframe.type === 'absolute' &&
                       !criteria.timeframe.end
-                    ? 'Since'
-                    : 'Between'}
+                    ? 'С даты'
+                    : 'Между'}
               </Button>
             </DropdownMenuComposed>
             {criteria.timeframe.type === 'relative' ? (
@@ -391,20 +391,20 @@ function EventCriteriaItem({
                   })
                 }
                 items={[
-                  { value: '7d', label: '7 days' },
-                  { value: '30d', label: '30 days' },
-                  { value: '90d', label: '90 days' },
-                  { value: '180d', label: '180 days' },
-                  { value: '365d', label: '365 days' },
+                  { value: '7d', label: '7 дней' },
+                  { value: '30d', label: '30 дней' },
+                  { value: '90d', label: '90 дней' },
+                  { value: '180d', label: '180 дней' },
+                  { value: '365d', label: '365 дней' },
                 ]}
-                label="Period"
+                label="Период"
               >
                 <Button variant="outline" size="sm">
-                  {criteria.timeframe.value === '7d' && '7 days'}
-                  {criteria.timeframe.value === '30d' && '30 days'}
-                  {criteria.timeframe.value === '90d' && '90 days'}
-                  {criteria.timeframe.value === '180d' && '180 days'}
-                  {criteria.timeframe.value === '365d' && '365 days'}
+                  {criteria.timeframe.value === '7d' && '7 дней'}
+                  {criteria.timeframe.value === '30d' && '30 дней'}
+                  {criteria.timeframe.value === '90d' && '90 дней'}
+                  {criteria.timeframe.value === '180d' && '180 дней'}
+                  {criteria.timeframe.value === '365d' && '365 дней'}
                 </Button>
               </DropdownMenuComposed>
             ) : !criteria.timeframe.end ? (
@@ -441,7 +441,7 @@ function EventCriteriaItem({
                   }
                   className="flex-1 rounded border px-2 py-1 text-sm"
                 />
-                <span className="text-sm text-muted-foreground">to</span>
+                <span className="text-sm text-muted-foreground">по</span>
                 <input
                   type="date"
                   value={criteria.timeframe.end}
@@ -468,7 +468,7 @@ function EventCriteriaItem({
       {criteria.filters.length > 0 && (
         <div className="mb-2">
           <label className="mb-2 block text-sm font-medium">
-            Event Filters
+            Фильтры события
           </label>
           <div className="space-y-2">
             {criteria.filters.map((filter) => (
@@ -502,7 +502,7 @@ function EventCriteriaItem({
             icon={PlusIcon}
             disabled={!criteria.name}
           >
-            Add filter
+            Добавить фильтр
           </Button>
         )}
       </PropertiesCombobox>
@@ -591,17 +591,17 @@ function PropertyBasedBuilder({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-2">
-        <span className="text-sm text-muted-foreground">Match</span>
+        <span className="text-sm text-muted-foreground">Совпадение</span>
         <DropdownMenuComposed
           onChange={updateOperator}
           items={[
-            { value: 'or', label: 'Any of these properties' },
-            { value: 'and', label: 'All of these properties' },
+            { value: 'or', label: 'Любое из этих свойств' },
+            { value: 'and', label: 'Все эти свойства' },
           ]}
-          label="Operator"
+          label="Оператор"
         >
           <Button variant="outline" size="sm">
-            {definition.criteria.operator === 'or' ? 'Any' : 'All'}
+            {definition.criteria.operator === 'or' ? 'Любое' : 'Все'}
           </Button>
         </DropdownMenuComposed>
       </div>
@@ -635,7 +635,7 @@ function PropertyBasedBuilder({
             onClick={() => setOpen(true)}
             icon={PlusIcon}
           >
-            Add property filter
+            Добавить фильтр свойств
           </Button>
         )}
       </PropertiesCombobox>

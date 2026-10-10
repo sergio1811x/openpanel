@@ -122,7 +122,7 @@ export function TimeWindowPicker({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Time window</DropdownMenuLabel>
+        <DropdownMenuLabel>Период</DropdownMenuLabel>
         <DropdownMenuSeparator />
 
         <DropdownMenuGroup>
@@ -241,16 +241,16 @@ export function TimeWindowPicker({
             onClick={(e) => e.stopPropagation()}
             onKeyDown={(e) => e.stopPropagation()}
           >
-            <span className="whitespace-nowrap">Last days</span>
+            <span className="whitespace-nowrap">Последние дни</span>
             <InputEnter
-              aria-label="Number of days for custom date filter"
+              aria-label="Количество дней для произвольного периода"
               className="h-7 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               inputMode="numeric"
               key={customDaysKey}
               max={365}
               min={1}
               onChangeValue={handleCustomDays}
-              placeholder="X days"
+              placeholder="X дней"
               step={1}
               type="number"
               value=""

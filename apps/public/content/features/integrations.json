@@ -1,168 +1,168 @@
 {
   "slug": "integrations",
-  "short_name": "Integrations",
+  "short_name": "Интеграции",
   "seo": {
-    "title": "Integrations - Slack, Webhooks, and More",
-    "description": "Connect OpenPanel to Slack, Discord, webhooks, and more. Trigger actions based on user behavior-send alerts, sync to Zapier, or export events to S3 and BigQuery.",
+    "title": "Интеграции — Slack, вебхуки и не только",
+    "description": "Подключите OpenPanel к Slack, Discord, вебхукам и другим сервисам. Запускайте действия на основе поведения пользователей — отправляйте оповещения, синхронизируйте с Zapier или экспортируйте события в S3 и BigQuery.",
     "keywords": [
-      "analytics integrations",
-      "webhook analytics",
-      "slack notifications analytics",
-      "zapier analytics integration",
-      "event-driven webhooks",
-      "export events to s3",
-      "analytics to bigquery"
+      "интеграции аналитики",
+      "вебхуки аналитики",
+      "уведомления Slack в аналитике",
+      "интеграция аналитики с Zapier",
+      "вебхуки по событиям",
+      "экспорт событий в s3",
+      "аналитика в bigquery"
     ]
   },
   "hero": {
-    "heading": "Integrations: connect to any webhook",
-    "subheading": "Push data out of OpenPanel and into Slack, Discord, or any webhook. Trigger on the events you choose, with no polling and no glue code.",
+    "heading": "Интеграции: подключите любой вебхук",
+    "subheading": "Отправляйте данные из OpenPanel в Slack, Discord или любой вебхук. Срабатывание на выбранных вами событиях — без поллинга и связующего кода.",
     "badges": [
-      "Slack, Discord & webhooks",
-      "Trigger on any event",
-      "Custom payloads with JavaScript",
-      "S3 & GCS export coming soon"
+      "Slack, Discord и вебхуки",
+      "Триггер на любом событии",
+      "Кастомные payload на JavaScript",
+      "Экспорт в S3 и GCS скоро"
     ]
   },
   "definition": {
-    "title": "What are integrations?",
-    "text": "Integrations are the bridge between OpenPanel and everything else. They let you **get data out** of OpenPanel and into the tools and workflows your team already relies on.\n\nThe idea is simple: you create an **integration** (a connection to an external service), then attach it to a **[notification rule](/features/notifications)** that fires whenever the conditions you define are met. That's it - OpenPanel handles the rest.\n\nHere's an example: you want to be notified in Slack whenever a new user signs up from a specific country. You create a Slack integration, set up a notification rule that triggers on `signup` events, and use a template like *\"New user from {{country}}\"*. Every time someone signs up, the message lands in your Slack channel - no polling, no cron jobs, no glue code.\n\nIt goes beyond alerts. With **webhooks**, you can push event data to any URL - including **Zapier**, **Make**, or your own backend. That means you can trigger custom workflows based on real user behavior: send a welcome email when someone completes onboarding, notify sales when a user hits a usage milestone, or log high-value events to an external system.\n\nYou can even trigger integrations when a user completes a **funnel** - combining OpenPanel's funnel analysis with real-time action.\n\nToday, OpenPanel supports:\n\n- **Slack** - post messages to any channel when events fire\n- **Discord** - same as Slack, but for Discord servers\n- **Webhooks** - send event payloads to any URL with custom headers and a JavaScript transform for full control over the payload shape\n\nComing soon:\n\n- **S3-compatible storage** - automatically export events to Amazon S3, MinIO, Cloudflare R2, or any S3-compatible store\n- **Google Cloud Storage** - export to GCS for easy import into **BigQuery**, **Redshift**, or your data warehouse\n\nThese storage integrations will let you import OpenPanel events into your data warehouse without custom ETL pipelines."
+    "title": "Что такое интеграции?",
+    "text": "Интеграции — мост между OpenPanel и всем остальным. Они позволяют **выводить данные** из OpenPanel в инструменты и процессы, на которые уже опирается ваша команда.\n\nИдея простая: вы создаёте **интеграцию** (подключение к внешнему сервису), затем прикрепляете её к **[правилу уведомлений](/features/notifications)**, которое срабатывает при выполнении заданных условий. Всё — остальное OpenPanel берёт на себя.\n\nПример: вы хотите получать уведомление в Slack каждый раз, когда новый пользователь регистрируется из определённой страны. Создаёте интеграцию Slack, настраиваете правило уведомлений на событие `signup` и используете шаблон *\"Новый пользователь из {{country}}\"*. Каждый раз при регистрации сообщение приходит в ваш Slack-канал — без поллинга, cron-задач и связующего кода.\n\nЭто не только оповещения. С **вебхуками** вы можете отправлять данные событий на любой URL — в том числе в **Zapier**, **Make** или свой бэкенд. Это значит, что можно запускать кастомные процессы на основе реального поведения: отправить приветственное письмо после завершения онбординга, уведомить продажи о достижении лимита использования или записывать важные события во внешнюю систему.\n\nИнтеграции можно запускать даже когда пользователь проходит **воронку** целиком — сочетая анализ воронок OpenPanel с действием в реальном времени.\n\nСегодня OpenPanel поддерживает:\n\n- **Slack** — отправка сообщений в любой канал при срабатывании событий\n- **Discord** — то же самое, но для серверов Discord\n- **Вебхуки** — отправка payload событий на любой URL с кастомными заголовками и JavaScript-трансформацией для полного контроля над форматом\n\nСкоро:\n\n- **S3-совместимое хранилище** — автоматический экспорт событий в Amazon S3, MinIO, Cloudflare R2 или любое S3-совместимое хранилище\n- **Google Cloud Storage** — экспорт в GCS для удобного импорта в **BigQuery**, **Redshift** или ваш дата-warehouse\n\nЭти интеграции позволят загружать события OpenPanel в ваше хранилище данных без кастомных ETL-пайплайнов."
   },
   "capabilities_section": {
-    "title": "What you can do with integrations",
-    "intro": "From real-time Slack alerts to upcoming warehouse exports - integrations connect OpenPanel to your stack."
+    "title": "Что можно делать с интеграциями",
+    "intro": "От оповещений в Slack в реальном времени до складских экспортов — интеграции соединяют OpenPanel с вашим стеком."
   },
   "capabilities": [
     {
-      "title": "Slack & Discord notifications",
-      "description": "Connect your Slack workspace or Discord server and receive messages whenever notification rules fire. Great for staying on top of signups, errors, or milestone events without leaving your chat tool."
+      "title": "Уведомления в Slack и Discord",
+      "description": "Подключите Slack-воркспейс или Discord-сервер и получайте сообщения при срабатывании правил уведомлений. Удобно, чтобы не пропустить регистрации, ошибки или ключевые события, не выходя из чата."
     },
     {
-      "title": "Webhooks to any URL",
-      "description": "Send event data to any HTTP endpoint - your own API, Zapier, Make, or any automation platform. Define custom headers and use a JavaScript transform to shape the payload exactly how the receiving service expects it."
+      "title": "Вебхуки на любой URL",
+      "description": "Отправляйте данные событий на любой HTTP-эндпоинт — свой API, Zapier, Make или любую платформу автоматизации. Задавайте кастомные заголовки и используйте JavaScript-трансформацию, чтобы payload выглядел ровно так, как ожидает принимающий сервис."
     },
     {
-      "title": "JavaScript payload transforms",
-      "description": "Webhook integrations include a built-in JavaScript editor. Write a transform function that receives the raw payload and returns whatever shape you need - rename fields, filter data, or enrich the payload before it's sent."
+      "title": "Трансформация payload на JavaScript",
+      "description": "В вебхук-интеграциях есть встроенный JavaScript-редактор. Напишите функцию, которая получает сырой payload и возвращает нужную структуру — переименуйте поля, отфильтруйте данные или обогатите payload перед отправкой."
     },
     {
-      "title": "Pair with notification rules",
-      "description": "Integrations don't fire on their own - you attach them to notification rules. A single rule can trigger multiple integrations at once, and a single integration can be used by many rules."
+      "title": "Связка с правилами уведомлений",
+      "description": "Интеграции не срабатывают сами по себе — вы прикрепляете их к правилам уведомлений. Одно правило может запускать несколько интеграций сразу, а одна интеграция может использоваться многими правилами."
     },
     {
-      "title": "Trigger on funnels and events",
-      "description": "Notification rules can fire on specific events with property filters, or when a user completes an entire funnel. That means you can trigger a webhook when someone finishes onboarding, not just when they view a single page."
+      "title": "Триггеры на воронки и события",
+      "description": "Правила уведомлений могут срабатывать на конкретные события с фильтрами по свойствам или на прохождение воронки целиком. То есть вебхук можно запустить, когда кто-то завершил онбординг, а не просто посмотрел страницу."
     },
     {
-      "title": "S3 & GCS export (coming soon)",
-      "description": "Automatically export your events to S3-compatible storage or Google Cloud Storage. From there, import into BigQuery, Redshift, or any data warehouse - no custom ETL required."
+      "title": "Экспорт в S3 и GCS (скоро)",
+      "description": "Автоматически экспортируйте события в S3-совместимое хранилище или Google Cloud Storage. Дальше — импорт в BigQuery, Redshift или любой дата-warehouse без кастомного ETL."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-integrations.webp",
-      "alt": "Available integrations showing Slack, Discord, and Webhook options",
-      "caption": "Browse available integrations. Connect Slack, Discord, or set up a custom webhook in seconds."
+      "alt": "Доступные интеграции: Slack, Discord и вебхуки",
+      "caption": "Просматривайте доступные интеграции. Подключите Slack, Discord или настройте кастомный вебхук за секунды."
     },
     {
       "src": "/features/feature-integrations-create.webp",
-      "alt": "Creating a webhook integration with URL, headers, and JavaScript transform",
-      "caption": "Create a webhook integration with a custom URL, headers, and a JavaScript transform to shape the payload exactly how you need it."
+      "alt": "Создание вебхук-интеграции с URL, заголовками и JavaScript-трансформацией",
+      "caption": "Создайте вебхук-интеграцию с кастомным URL, заголовками и JavaScript-трансформацией, чтобы payload был ровно таким, как нужно."
     }
   ],
   "how_it_works": {
-    "title": "How integrations work",
-    "intro": "Set up an integration in minutes, then let notification rules handle the rest.",
+    "title": "Как работают интеграции",
+    "intro": "Настройте интеграцию за минуты, а дальше правила уведомлений всё сделают сами.",
     "steps": [
       {
-        "title": "Pick an integration type",
-        "description": "Choose from Slack, Discord, or Webhook. Each type has its own setup - OAuth for Slack and Discord, URL + headers for webhooks."
+        "title": "Выберите тип интеграции",
+        "description": "Выберите Slack, Discord или вебхук. У каждого типа своя настройка — OAuth для Slack и Discord, URL и заголовки для вебхуков."
       },
       {
-        "title": "Configure the connection",
-        "description": "For Slack/Discord, connect your workspace or server. For webhooks, enter the target URL, add any custom headers, and optionally write a JavaScript transform to control the payload shape."
+        "title": "Настройте подключение",
+        "description": "Для Slack/Discord подключите воркспейс или сервер. Для вебхуков укажите целевой URL, добавьте кастомные заголовки и при желании напишите JavaScript-трансформацию для контроля над payload."
       },
       {
-        "title": "Create a notification rule",
-        "description": "In the Notifications section, create a rule that defines when the integration should fire - e.g. when a screen_view event has a path starting with /onboarding. Attach one or more integrations to the rule."
+        "title": "Создайте правило уведомлений",
+        "description": "В разделе уведомлений создайте правило, определяющее, когда срабатывать интеграции — например, когда у события screen_view путь начинается с /onboarding. Прикрепите к правилу одну или несколько интеграций."
       },
       {
-        "title": "Events trigger actions automatically",
-        "description": "When an event matches a rule, OpenPanel sends the data to every attached integration in real time. No polling, no delays."
+        "title": "События запускают действия автоматически",
+        "description": "Когда событие совпадает с правилом, OpenPanel в реальном времени отправляет данные во все прикреплённые интеграции. Без поллинга и задержек."
       }
     ]
   },
   "use_cases": {
-    "title": "How teams use integrations",
-    "intro": "From team alerts to full automation pipelines - integrations turn analytics into action.",
+    "title": "Как команды используют интеграции",
+    "intro": "От командных оповещений до полноценных автоматизаций — интеграции превращают аналитику в действие.",
     "items": [
       {
-        "title": "Real-time team alerts",
-        "description": "Post to Slack or Discord when a new user signs up, a high-value purchase happens, or a critical error fires. Keep the whole team aware without anyone needing to check a dashboard."
+        "title": "Оповещения команды в реальном времени",
+        "description": "Пишите в Slack или Discord при регистрации нового пользователя, крупной покупке или критической ошибке. Вся команда в курсе, и никому не нужно проверять дашборд."
       },
       {
-        "title": "Zapier and automation workflows",
-        "description": "Send webhook payloads to Zapier or Make to trigger downstream actions - send a welcome email, update a CRM, add a row to a spreadsheet, or kick off an onboarding drip campaign. All driven by real user behavior."
+        "title": "Zapier и автоматизации",
+        "description": "Отправляйте вебхуки в Zapier или Make, чтобы запускать дальнейшие действия — приветственное письмо, обновление CRM, строку в таблице или цепочку онбординг-писем. Всё на основе реального поведения пользователей."
       },
       {
-        "title": "Custom backend actions",
-        "description": "Point a webhook at your own API to run custom logic when specific events fire. Credit a referral, flag a suspicious session, or sync analytics data to an internal tool."
+        "title": "Кастомные действия на бэкенде",
+        "description": "Направьте вебхук на свой API, чтобы выполнять кастомную логику при конкретных событиях. Начисляйте реферальный бонус, помечайте подозрительную сессию или синхронизируйте аналитику с внутренним инструментом."
       },
       {
-        "title": "Data warehouse export",
-        "description": "With the upcoming S3 and GCS integrations, export events directly to your data warehouse. Load into BigQuery or Redshift for advanced SQL analysis, cross-referencing with other datasets, or long-term storage."
+        "title": "Экспорт в дата-warehouse",
+        "description": "С будущими интеграциями S3 и GCS экспортируйте события прямо в хранилище данных. Загружайте в BigQuery или Redshift для продвинутого SQL-анализа, сопоставления с другими датасетами или долгосрочного хранения."
       }
     ]
   },
   "related_features": [
     {
       "slug": "notifications",
-      "title": "Notifications",
-      "description": "Notification rules control when integrations fire. Define events, filters, and templates - then attach integrations to act on them."
+      "title": "Уведомления",
+      "description": "Правила уведомлений управляют тем, когда срабатывают интеграции. Определите события, фильтры и шаблоны — затем прикрепите интеграции."
     },
     {
       "slug": "event-tracking",
-      "title": "Event tracking",
-      "description": "Integrations are powered by the events you track. The richer your event data, the more precise your triggers can be."
+      "title": "Отслеживание событий",
+      "description": "Интеграции работают на отслеживаемых событиях. Чем богаче данные о событиях, тем точнее триггеры."
     },
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "Trigger integrations when a user completes an entire funnel - not just a single event."
+      "title": "Воронки",
+      "description": "Запускайте интеграции, когда пользователь проходит воронку целиком — а не просто одно событие."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about OpenPanel integrations.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы об интеграциях OpenPanel.",
     "items": [
       {
-        "question": "How do integrations and notifications work together?",
-        "answer": "Integrations are the destinations (Slack channel, webhook URL, Discord server). Notification rules are the triggers (when event X happens with filter Y). You create both, then attach integrations to rules. When a rule fires, all attached integrations receive the data."
+        "question": "Как интеграции работают вместе с уведомлениями?",
+        "answer": "Интеграции — это точки назначения (Slack-канал, URL вебхука, Discord-сервер). Правила уведомлений — триггеры (когда происходит событие X с фильтром Y). Вы создаёте и то, и другое, затем прикрепляете интеграции к правилам. Когда правило срабатывает, все прикреплённые интеграции получают данные."
       },
       {
-        "question": "Can I use webhooks with Zapier?",
-        "answer": "Yes. Create a webhook integration pointing to your Zapier webhook URL. You can use the JavaScript transform to shape the payload into whatever format your Zap expects. This lets you trigger any Zapier workflow based on real user events in OpenPanel."
+        "question": "Можно ли использовать вебхуки с Zapier?",
+        "answer": "Да. Создайте вебхук-интеграцию, указывающую на URL вашего Zapier-вебхука. С помощью JavaScript-трансформации можно сформировать payload в том формате, который ожидает ваш Zap. Так любой Zapier-сценарий можно запустить на реальных событиях OpenPanel."
       },
       {
-        "question": "What does the JavaScript transform do?",
-        "answer": "The JavaScript transform is a function that receives the raw event payload and returns a modified version. You can rename fields, filter out properties, add computed values, or completely restructure the data. It runs before the payload is sent to the webhook URL."
+        "question": "Что делает JavaScript-трансформация?",
+        "answer": "JavaScript-трансформация — функция, которая получает сырой payload события и возвращает изменённую версию. Можно переименовать поля, отфильтровать свойства, добавить вычисляемые значения или полностью переструктурировать данные. Она выполняется перед отправкой payload на URL вебхука."
       },
       {
-        "question": "When will S3 and GCS integrations be available?",
-        "answer": "S3-compatible storage and Google Cloud Storage integrations are on the near-term roadmap. These will let you automatically export events for import into BigQuery, Redshift, or any data warehouse without building custom ETL pipelines."
+        "question": "Когда появятся интеграции с S3 и GCS?",
+        "answer": "Интеграции с S3-совместимым хранилищем и Google Cloud Storage есть в ближайших планах. Они позволят автоматически экспортировать события для импорта в BigQuery, Redshift или любой дата-warehouse без построения кастомных ETL-пайплайнов."
       },
       {
-        "question": "Can one integration be used by multiple notification rules?",
-        "answer": "Yes. An integration is just a connection to a service. You can attach it to as many notification rules as you want. For example, a single Slack integration can be triggered by rules for signups, purchases, and errors - each with its own template and filters."
+        "question": "Можно ли использовать одну интеграцию в нескольких правилах уведомлений?",
+        "answer": "Да. Интеграция — это просто подключение к сервису. Прикрепляйте её к любому количеству правил. Например, одна Slack-интеграция может срабатывать по правилам для регистраций, покупок и ошибок — каждое со своим шаблоном и фильтрами."
       },
       {
-        "question": "Is there a limit to how many integrations I can create?",
-        "answer": "There's no hard limit. Create as many integrations and notification rules as you need to cover your workflows."
+        "question": "Есть ли ограничение на количество интеграций?",
+        "answer": "Жёсткого лимита нет. Создавайте столько интеграций и правил уведомлений, сколько нужно для ваших процессов."
       }
     ]
   },
   "cta": {
-    "label": "Set up your first integration",
+    "label": "Настройте свою первую интеграцию",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

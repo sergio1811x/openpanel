@@ -15,7 +15,7 @@ export function useColumns() {
   const columns: ColumnDef<IServiceEvent>[] = [
     {
       accessorKey: 'createdAt',
-      header: 'Created at',
+      header: 'Создано',
       size: ColumnCreatedAt.size,
       cell: ({ row }) => {
         const session = row.original;
@@ -25,7 +25,7 @@ export function useColumns() {
     {
       size: 300,
       accessorKey: 'name',
-      header: 'Name',
+      header: 'Название',
       cell({ row }) {
         const { name, path, revenue } = row.original;
         const fullTitle =
@@ -43,7 +43,7 @@ export function useColumns() {
 
             return (
               <>
-                <span className="text-muted-foreground">Screen: </span>
+                <span className="text-muted-foreground">Экран: </span>
                 {path}
               </>
             );
@@ -95,7 +95,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'profileId',
-      header: 'Profile',
+      header: 'Профиль',
       cell({ row }) {
         const { profile, profileId, deviceId } = row.original;
         if (profile) {
@@ -118,7 +118,7 @@ export function useColumns() {
               to="/profiles/$profileId"
               params={{ profileId }}
             >
-              Unknown
+              Неизвестно
             </ProjectLink>
           );
         }
@@ -130,7 +130,7 @@ export function useColumns() {
               to="/profiles/$profileId"
               params={{ profileId: deviceId }}
             >
-              Anonymous
+              Анонимный
             </ProjectLink>
           );
         }
@@ -140,7 +140,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'sessionId',
-      header: 'Session ID',
+      header: 'ID сессии',
       size: 100,
       meta: {
         hidden: true,
@@ -160,7 +160,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'deviceId',
-      header: 'Device ID',
+      header: 'ID устройства',
       size: 320,
       meta: {
         hidden: true,
@@ -168,7 +168,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'country',
-      header: 'Country',
+      header: 'Страна',
       size: 150,
       cell({ row }) {
         const { country, city } = row.original;
@@ -182,7 +182,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'os',
-      header: 'OS',
+      header: 'ОС',
       size: 130,
       cell({ row }) {
         const { os } = row.original;
@@ -196,7 +196,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'browser',
-      header: 'Browser',
+      header: 'Браузер',
       size: 110,
       cell({ row }) {
         const { browser } = row.original;
@@ -210,7 +210,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'groups',
-      header: 'Groups',
+      header: 'Группы',
       size: 200,
       meta: {
         hidden: true,
@@ -236,7 +236,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'properties',
-      header: 'Properties',
+      header: 'Свойства',
       size: 400,
       meta: {
         hidden: true,
@@ -257,7 +257,7 @@ export function useColumns() {
         if (items.length > limit) {
           data.push({
             name: '',
-            value: `${items.length - limit} more item${items.length - limit === 1 ? '' : 's'}`,
+            value: `Ещё ${items.length - limit}`,
           });
         }
 

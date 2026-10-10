@@ -4,8 +4,8 @@ import { Loader2Icon } from 'lucide-react';
 import { FullPageEmptyState } from './full-page-empty-state';
 
 const FullPageLoadingState = ({
-  title = 'Fetching...',
-  description = 'Please wait while we fetch your data...',
+  title = 'Загрузка...',
+  description = 'Пожалуйста, подождите, пока мы получим данные...',
 }: { title?: string; description?: string }) => {
   return (
     <FullPageEmptyState

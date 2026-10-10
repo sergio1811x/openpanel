@@ -14,37 +14,37 @@ import Link from 'next/link';
 const perks = [
   {
     icon: PackageIcon,
-    title: 'Latest Docker Images',
-    description: 'Access to bleeding-edge builds on every commit',
+    title: 'Свежие Docker-образы',
+    description: 'Доступ к сборкам с последними изменениями на каждый коммит',
     href: '/docs/self-hosting/supporter-access-latest-docker-images',
     highlight: true,
   },
   {
     icon: MessageSquareIcon,
-    title: 'Prioritized Support',
-    description: 'Get help faster with priority Discord support',
+    title: 'Приоритетная поддержка',
+    description: 'Помощь быстрее благодаря приоритетной поддержке в Discord',
     highlight: true,
   },
   {
     icon: RocketIcon,
-    title: 'Feature Requests',
-    description: 'Your ideas get prioritized in our roadmap',
+    title: 'Предложения по функциям',
+    description: 'Ваши идеи получают приоритет в нашем роадмапе',
     highlight: true,
   },
   {
     icon: StarIcon,
-    title: 'Exclusive Discord Role',
-    description: 'Special badge and recognition in our community',
+    title: 'Эксклюзивная роль в Discord',
+    description: 'Особый значок и признание в сообществе',
   },
   {
     icon: SparklesIcon,
-    title: 'Early Access',
-    description: 'Try new features before public release',
+    title: 'Ранний доступ',
+    description: 'Пробуйте новые функции до публичного релиза',
   },
   {
     icon: ZapIcon,
-    title: 'Direct Impact',
-    description: 'Your support directly funds development',
+    title: 'Прямое влияние',
+    description: 'Ваша поддержка напрямую финансирует разработку',
   },
 ];
 
@@ -60,10 +60,10 @@ export function SupporterPerks({ className }: { className?: string }) {
       <div className="col gap-2 mb-2">
         <div className="row gap-2 items-center">
           <HeartHandshakeIcon className="size-5 text-primary" />
-          <h3 className="font-semibold text-lg">Supporter Perks</h3>
+          <h3 className="font-semibold text-lg">Бонусы спонсора</h3>
         </div>
         <p className="text-sm text-muted-foreground">
-          Everything you get when you support OpenPanel
+          Всё, что вы получаете, поддерживая OpenPanel
         </p>
       </div>
 
@@ -109,7 +109,7 @@ export function SupporterPerks({ className }: { className?: string }) {
                       href={perk.href}
                       className="text-xs text-primary hover:underline mt-1"
                     >
-                      Learn more →
+                      Подробнее →
                     </Link>
                   )}
                 </div>
@@ -121,7 +121,7 @@ export function SupporterPerks({ className }: { className?: string }) {
 
       <div className="mt-4 pt-4 border-t">
         <p className="text-xs text-muted-foreground text-center">
-          Starting at <strong className="text-foreground">$20/month</strong>
+          От <strong className="text-foreground">$20 в месяц</strong>
         </p>
       </div>
     </div>

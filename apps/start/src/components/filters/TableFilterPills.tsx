@@ -29,24 +29,24 @@ interface TableFilterPillsProps {
 
 /** Friendly labels for the hard-coded session.* filter family. */
 const SESSION_LABELS: Record<string, string> = {
-  'session.is_bounce': 'Bounced',
-  'session.screen_view_count': 'Screen views',
-  'session.event_count': 'Events',
-  'session.duration': 'Duration',
-  'session.revenue': 'Revenue',
-  'session.performed_event': 'Performed event',
+  'session.is_bounce': 'Отказ',
+  'session.screen_view_count': 'Просмотры экранов',
+  'session.event_count': 'События',
+  'session.duration': 'Длительность',
+  'session.revenue': 'Доход',
+  'session.performed_event': 'Выполненное событие',
 };
 
 function humanizeFilterName(name: string): string {
-  if (name === 'cohort' || name.startsWith('cohort:')) return 'Cohort';
+  if (name === 'cohort' || name.startsWith('cohort:')) return 'Кохорта';
   if (SESSION_LABELS[name]) return SESSION_LABELS[name]!;
   if (name.startsWith('profile.')) {
     const rest = name.replace(/^profile\./, '');
-    return `Profile · ${rest.replace(/^properties\./, '')}`;
+    return `Профиль · ${rest.replace(/^properties\./, '')}`;
   }
   if (name.startsWith('group.')) {
     const rest = name.replace(/^group\./, '');
-    return `Group · ${rest.replace(/^properties\./, '')}`;
+    return `Группа · ${rest.replace(/^properties\./, '')}`;
   }
   return getPropertyLabel(name);
 }
@@ -57,7 +57,7 @@ function formatFilterValue(filter: IChartEventFilter): string {
     if (v === undefined) return '';
     const truthy =
       typeof v === 'boolean' ? v : String(v).toLowerCase() === 'true';
-    return truthy ? 'Yes' : 'No';
+    return truthy ? 'Да' : 'Нет';
   }
   return filter.value
     .filter((v) => v !== null && v !== undefined && v !== '')
@@ -100,7 +100,7 @@ export function TableFilterPills({
         icon={FilterIcon}
         onClick={openSheet}
       >
-        Filters
+        Фильтры
         {filters.length > 0 && (
           <Badge className="ml-2 rounded-full px-1.5 py-0 text-xs">
             {filters.length}
@@ -117,7 +117,7 @@ export function TableFilterPills({
                 (id) => cohortNames.get(id) ?? cohortNames.get(id.replace(/^cohort:/, '')),
               )
               .filter(Boolean)
-              .join(', ') || 'pick cohort'
+              .join(', ') || 'выберите кохорту'
           : formatFilterValue(filter);
 
         return (
@@ -152,7 +152,7 @@ export function TableFilterPills({
               type="button"
               onClick={() => removeAt(index)}
               className="px-2 hover:bg-destructive hover:text-destructive-foreground transition-colors border-l cursor-pointer"
-              aria-label="Remove filter"
+              aria-label="Удалить фильтр"
             >
               <X className="size-3" />
             </button>

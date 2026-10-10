@@ -28,7 +28,7 @@ export async function generateMetadata({
 
   if (!data) {
     return {
-      title: 'Page Not Found',
+      title: 'Страница не найдена',
     };
   }
 
@@ -82,8 +82,8 @@ export default async function ForPage({
 
       <div className="container my-16">
         <WindowImage
-          alt="OpenPanel Dashboard Overview"
-          caption="This is our web analytics dashboard, its an out-of-the-box experience so you can start understanding your traffic and engagement right away."
+          alt="Обзор дашборда OpenPanel"
+          caption="Это наш дашборд веб-аналитики — всё работает сразу после установки, так что вы можете начать понимать свой трафик и вовлечённость прямо сейчас."
           srcDark="/screenshots/overview-dark.webp"
           srcLight="/screenshots/overview-light.webp"
         />
@@ -99,8 +99,8 @@ export default async function ForPage({
 
       <div className="container my-16">
         <WindowImage
-          alt="OpenPanel Real-time Analytics"
-          caption="Track events in real-time as they happen with instant updates and live monitoring."
+          alt="Аналитика OpenPanel в реальном времени"
+          caption="Отслеживайте события в реальном времени по мере их появления — с мгновенными обновлениями и живым мониторингом."
           srcDark="/screenshots/realtime-dark.webp"
           srcLight="/screenshots/realtime-light.webp"
         />
@@ -112,8 +112,8 @@ export default async function ForPage({
 
       <div className="container my-16">
         <WindowImage
-          alt="OpenPanel Dashboard"
-          caption="Comprehensive analytics dashboard with real-time insights and customizable views."
+          alt="Дашборд OpenPanel"
+          caption="Многофункциональный дашборд аналитики с инсайтами в реальном времени и настраиваемыми представлениями."
           srcDark="/screenshots/dashboard-dark.webp"
           srcLight="/screenshots/dashboard-light.webp"
         />
@@ -130,8 +130,8 @@ export default async function ForPage({
       <CtaBanner
         ctaLink={data.ctas.primary.href}
         ctaText={data.ctas.primary.label}
-        description="Test OpenPanel free for 30 days, you'll not be charged anything unless you upgrade to a paid plan."
-        title="Ready to get started?"
+        description="Протестируйте OpenPanel бесплатно 30 дней — с вас не возьмут ни копейки, пока вы не перейдёте на платный план."
+        title="Готовы начать?"
       />
     </div>
   );

@@ -15,7 +15,7 @@ export const zOnboardingTrialEnding = z.object({
 });
 
 const formatEvents = (count: number) =>
-  new Intl.NumberFormat('en-US').format(count);
+  new Intl.NumberFormat('ru-RU').format(count);
 
 export type Props = z.infer<typeof zOnboardingTrialEnding>;
 export default OnboardingTrialEnding;
@@ -28,32 +28,32 @@ export function OnboardingTrialEnding({
   eventsCount,
   unsubscribeUrl,
 }: Props & { unsubscribeUrl?: string }) {
-  const endsOn = trialEndDate ? `on ${trialEndDate}` : 'in a few days';
+  const endsOn = trialEndDate ? `${trialEndDate}` : 'в ближайшие дни';
 
   if (!hasData) {
     return (
       <Layout unsubscribeUrl={unsubscribeUrl}>
-        <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+        <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
         <Text>
-          Your trial ends {endsOn}, and since your project never received any
-          events, there's nothing here for you to lose.
+          Ваш пробный период заканчивается {endsOn}. Поскольку Ваш проект так и
+          не получил событий, терять Вам нечего.
         </Text>
         <Text>
-          If the timing was just off, you can install now and use the last few
-          days to see if it's useful:{' '}
+          Если время просто не подошло, можно установить скрипт сейчас и за
+          оставшиеся дни проверить, полезен ли OpenPanel:{' '}
           <Link
             href={withUtm(
               'https://openpanel.dev/docs/get-started/install-openpanel',
               'onboarding-trial-ending',
             )}
           >
-            install guide
+            руководство по установке
           </Link>
           .
         </Text>
         <Text>
-          If you tried and something didn't work, reply and I'll help you sort
-          it out before the trial runs out.
+          Если Вы уже пробовали и что-то не заработало, ответьте на письмо —
+          помогу разобраться до конца пробного периода.
         </Text>
         <Text>Carl</Text>
       </Layout>
@@ -62,29 +62,29 @@ export function OnboardingTrialEnding({
 
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+      <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
       <Text>
-        Your trial ends {endsOn}.
+        Ваш пробный период заканчивается {endsOn}.
         {eventsCount
-          ? ` Here's where you stand: ${formatEvents(eventsCount)} events tracked during the trial.`
+          ? ` Итоги на сегодня: событий за пробный период — ${formatEvents(eventsCount)}.`
           : ''}
       </Text>
       <Text>
         {recommendedPlan
-          ? `At that volume, the plan that fits is ${recommendedPlan}.`
-          : 'Plans start at $2.50 a month.'}{' '}
-        If you upgrade, nothing changes: same dashboards, same data. If you
-        don't, your dashboard locks when the trial ends, and eventually the
-        workspace is removed.
+          ? `При таком объёме Вам подходит тариф ${recommendedPlan}.`
+          : 'Тарифы начинаются с $2.50 в месяц.'}{' '}
+        При переходе ничего не меняется: те же дашборды, те же данные. Если не
+        перейти, дашборд будет заблокирован по окончании пробного периода, а со
+        временем рабочее пространство будет удалено.
       </Text>
       <Text>
         <Button href={withUtm(billingUrl, 'onboarding-trial-ending')}>
-          Upgrade
+          Перейти на платный тариф
         </Button>
       </Text>
       <Text>
-        If something is holding you back, reply and tell me. I'd rather fix the
-        reason than send you another reminder.
+        Если что-то Вас останавливает, ответьте и расскажите. Я предпочту
+        устранить причину, чем отправлять Вам ещё одно напоминание.
       </Text>
       <Text>Carl</Text>
     </Layout>
@@ -94,8 +94,8 @@ export function OnboardingTrialEnding({
 OnboardingTrialEnding.PreviewProps = {
   firstName: 'Alex',
   billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
-  recommendedPlan: '100K events per month for $20.00',
-  trialEndDate: 'June 16',
+  recommendedPlan: '100 000 событий в месяц за $20.00',
+  trialEndDate: '16 июня',
   hasData: true,
   eventsCount: 84211,
 };

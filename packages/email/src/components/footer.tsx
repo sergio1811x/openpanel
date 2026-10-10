@@ -17,7 +17,7 @@ export function Footer({ unsubscribeUrl }: { unsubscribeUrl?: string }) {
       <Hr />
       <Section className="w-full p-6">
         <Text className="text-[21px] font-regular" style={{ margin: 0 }}>
-          An open-source alternative to Mixpanel
+          Альтернатива Mixpanel с открытым исходным кодом
         </Text>
 
         <br />
@@ -29,7 +29,7 @@ export function Footer({ unsubscribeUrl }: { unsubscribeUrl?: string }) {
                 src={`${baseUrl}/icons/github.png`}
                 width="22"
                 height="22"
-                alt="OpenPanel on Github"
+                alt="OpenPanel на GitHub"
               />
             </Link>
           </Column>
@@ -39,7 +39,7 @@ export function Footer({ unsubscribeUrl }: { unsubscribeUrl?: string }) {
                 src={`${baseUrl}/icons/x.png`}
                 width="22"
                 height="22"
-                alt="OpenPanel on X"
+                alt="OpenPanel на X"
               />
             </Link>
           </Column>
@@ -49,7 +49,7 @@ export function Footer({ unsubscribeUrl }: { unsubscribeUrl?: string }) {
                 src={`${baseUrl}/icons/discord.png`}
                 width="22"
                 height="22"
-                alt="OpenPanel on Discord"
+                alt="OpenPanel на Discord"
               />
             </Link>
           </Column>
@@ -59,7 +59,7 @@ export function Footer({ unsubscribeUrl }: { unsubscribeUrl?: string }) {
                 src={`${baseUrl}/icons/email.png`}
                 width="22"
                 height="22"
-                alt="Contact OpenPanel with email"
+                alt="Связаться с OpenPanel по email"
               />
             </Link>
           </Column>
@@ -76,9 +76,9 @@ export function Footer({ unsubscribeUrl }: { unsubscribeUrl?: string }) {
             <Link
               className="text-[#707070] text-[14px]"
               href={unsubscribeUrl}
-              title="Unsubscribe"
+              title="Отписаться"
             >
-              Notification preferences
+              Настройки уведомлений
             </Link>
           </Row>
         )}

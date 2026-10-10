@@ -23,8 +23,8 @@ function Component() {
   const router = useRouter();
 
   const { activeTab, tabs } = usePageTabs([
-    { id: 'installed', label: 'Installed' },
-    { id: 'available', label: 'Available' },
+    { id: 'installed', label: 'Установленные' },
+    { id: 'available', label: 'Доступные' },
   ]);
 
   const handleTabChange = (tabId: string) => {
@@ -37,8 +37,8 @@ function Component() {
   return (
     <div className="container p-8">
       <PageHeader
-        title="Integrations"
-        description="Manage your integrations here"
+        title="Интеграции"
+        description="Управляйте интеграциями здесь"
       />
 
       <Tabs

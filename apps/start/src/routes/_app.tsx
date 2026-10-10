@@ -23,9 +23,9 @@ function AppLayout() {
     return (
       <FullPageEmptyState
         className="min-h-screen"
-        description="We are currently performing maintenance on the system. Please check back later."
+        description="В данный момент мы проводим техническое обслуживание системы. Пожалуйста, зайдите позже."
         icon={ConstructionIcon}
-        title="Maintenance mode"
+        title="Режим технического обслуживания"
       >
         <a
           className={cn(buttonVariants())}

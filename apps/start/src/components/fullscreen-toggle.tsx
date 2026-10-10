@@ -42,7 +42,7 @@ export const FullscreenOpen = () => {
     return null;
   }
   return (
-    <Tooltiper content="Toggle fullscreen" asChild>
+    <Tooltiper content="Полный экран" asChild>
       <Button
         variant="outline"
         size="icon"
@@ -89,7 +89,7 @@ export const FullscreenClose = () => {
 
   return (
     <div className="fixed bottom-0 top-0 z-50 flex items-center">
-      <Tooltiper content="Exit full screen" asChild>
+      <Tooltiper content="Выйти из полного экрана" asChild>
         <button
           type="button"
           ref={ref}

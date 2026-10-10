@@ -1,157 +1,157 @@
 {
   "slug": "revenue-tracking",
-  "short_name": "Revenue tracking",
+  "short_name": "Отслеживание выручки",
   "seo": {
-    "title": "Revenue Tracking - Tie Every Dollar to Events",
-    "description": "Track revenue as events, not spreadsheets. Tie every dollar to a user, session, and conversion flow. Privacy-first product revenue analytics with OpenPanel.",
+    "title": "Отслеживание выручки — привяжите каждый доллар к событиям",
+    "description": "Отслеживайте выручку как события, а не в таблицах. Привяжите каждый доллар к пользователю, сессии и потоку конверсии. Продуктовая аналитика выручки с приоритетом приватности от OpenPanel.",
     "keywords": [
-      "revenue analytics",
-      "track revenue events",
-      "product revenue tracking"
+      "аналитика выручки",
+      "отслеживание событий выручки",
+      "отслеживание продуктовой выручки"
     ]
   },
   "hero": {
-    "heading": "Revenue tracking",
-    "subheading": "Attach a dollar value to any action - purchase, upgrade, renewal - and see exactly how money flows through your product. No spreadsheets, no stitching.",
+    "heading": "Отслеживание выручки",
+    "subheading": "Привяжите денежную ценность к любому действию — покупке, апгрейду, продлению — и точно увидите, как деньги движутся по продукту. Без таблиц и сшивания данных.",
     "badges": [
-      "Revenue as events",
-      "Tie revenue to users",
-      "Real-time metrics",
-      "No spreadsheets needed"
+      "Выручка как события",
+      "Привязка выручки к пользователям",
+      "Метрики в реальном времени",
+      "Таблицы не нужны"
     ]
   },
   "definition": {
-    "title": "What is event-based revenue tracking?",
-    "text": "Most teams track revenue in spreadsheets or payment dashboards that live completely separate from product analytics. You know *how much* you made, but not *why*.\n\nEvent-based revenue tracking flips this. Every revenue moment-a purchase, a plan upgrade, a subscription renewal-is captured as a **structured event** with a dollar amount, a user, and a session. That means you can answer questions like:\n\n- **Which signup source drives the most revenue?**\n- **How long after onboarding do users make their first purchase?**\n- **What features do high-LTV customers use that churning ones don't?**\n\nWith OpenPanel, you send a revenue event the same way you send any other event-just include an amount property. From there, revenue flows into **funnels**, **retention charts**, and **user profiles** alongside every other action.\n\nNo CSV exports. No stitching Stripe data to analytics data in a spreadsheet. Revenue becomes a first-class dimension of your product analytics, queryable and filterable like everything else.\n\nBecause OpenPanel is **privacy-first**, revenue data stays in your infrastructure (self-hosted) or in our cloud with no third-party sharing."
+    "title": "Что такое событийное отслеживание выручки?",
+    "text": "Большинство команд отслеживает выручку в таблицах или платёжных дашбордах, полностью отделённых от продуктовой аналитики. Вы знаете, *сколько* заработали, но не *почему*.\n\nСобытийное отслеживание выручки меняет это. Каждый момент выручки — покупка, апгрейд тарифа, продление подписки — фиксируется как **структурированное событие** с суммой, пользователем и сессией. Это позволяет отвечать на вопросы вроде:\n\n- **Какой источник регистрации приносит больше всего выручки?**\n- **Сколько времени проходит от онбординга до первой покупки?**\n- **Какими функциями пользуются клиенты с высоким LTV, но не пользуются уходящие?**\n\nВ OpenPanel вы отправляете событие выручки так же, как любое другое — просто добавьте свойство с суммой. Дальше выручка попадает в **воронки**, **графики удержания** и **профили пользователей** рядом со всеми остальными действиями.\n\nНикаких CSV-экспортов. Никакого сшивания данных Stripe с аналитикой в таблице. Выручка становится полноценным измерением продуктовой аналитики — запрашиваемым и фильтруемым, как всё остальное.\n\nПоскольку OpenPanel создана с **приоритетом приватности**, данные о выручке остаются в вашей инфраструктуре (self-hosted) или в нашем облаке без передачи третьим сторонам."
   },
   "capabilities_section": {
-    "title": "What you can measure",
-    "intro": "From single purchases to recurring subscriptions, every revenue signal becomes a queryable event."
+    "title": "Что можно измерять",
+    "intro": "От единичных покупок до регулярных подписок — каждый сигнал выручки становится запрашиваемым событием."
   },
   "capabilities": [
     {
-      "title": "Revenue events with custom amounts",
-      "description": "Attach a monetary value to any event. Track purchases, upgrades, add-ons, and refunds as structured data."
+      "title": "События выручки с кастомными суммами",
+      "description": "Добавляйте денежное значение к любому событию. Отслеживайте покупки, апгрейды, дополнения и возвраты как структурированные данные."
     },
     {
-      "title": "Revenue per user and session",
-      "description": "Every revenue event is linked to a user and session, so you can see lifetime value, average order value, and revenue per visit."
+      "title": "Выручка на пользователя и сессию",
+      "description": "Каждое событие выручки связано с пользователем и сессией, поэтому видны пожизненная ценность, средний чек и выручка за визит."
     },
     {
-      "title": "Revenue in funnels",
-      "description": "Add revenue events as funnel steps. See how much money flows through each stage-and how much you lose at every drop-off."
+      "title": "Выручка в воронках",
+      "description": "Добавляйте события выручки как шаги воронки. Смотрите, сколько денег проходит через каждый этап — и сколько теряется при каждом отсеивании."
     },
     {
-      "title": "Revenue over time",
-      "description": "Chart daily, weekly, or monthly revenue trends. Break down by plan, source, country, or any event property."
+      "title": "Выручка во времени",
+      "description": "Стройте графики выручки по дням, неделям или месяцам. Разбивайте по тарифу, источнику, стране или любому свойству события."
     },
     {
-      "title": "Segment by properties",
-      "description": "Filter revenue by plan tier, payment method, campaign source, or any custom property you attach to your events."
+      "title": "Сегментация по свойствам",
+      "description": "Фильтруйте выручку по тарифу, способу оплаты, источнику кампании или любому кастомному свойству, добавленному к событиям."
     },
     {
-      "title": "Real-time ingestion",
-      "description": "Revenue events appear in dashboards within seconds-no overnight processing or batch imports."
+      "title": "Приём в реальном времени",
+      "description": "События выручки появляются в дашбордах за секунды — без ночной обработки и пакетных импортов."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-revenue-1.webp",
-      "alt": "OpenPanel dashboard overview with key metrics",
-      "caption": "See revenue alongside engagement metrics in a single dashboard."
+      "alt": "Обзорный дашборд OpenPanel с ключевыми метриками",
+      "caption": "Смотрите выручку рядом с метриками вовлечённости на одном дашборде."
     },
     {
       "src": "/features/feature-revenue-2.webp",
-      "alt": "Funnel analysis showing conversion and revenue flow",
-      "caption": "Trace the path from first visit to purchase and measure revenue at every step."
+      "alt": "Анализ воронки с конверсией и потоком выручки",
+      "caption": "Прослеживайте путь от первого визита до покупки и измеряйте выручку на каждом шаге."
     },
     {
       "src": "/features/feature-revenue-2.webp",
-      "alt": "Retention chart for revenue cohorts",
-      "caption": "Understand how revenue retention changes across weekly cohorts."
+      "alt": "График удержания для когорт выручки",
+      "caption": "Понимайте, как меняется удержание выручки между недельными когортами."
     }
   ],
   "how_it_works": {
-    "title": "How revenue events work",
-    "intro": "Three steps to go from payment callbacks to full revenue analytics.",
+    "title": "Как работают события выручки",
+    "intro": "Три шага от платёжных колбэков до полной аналитики выручки.",
     "steps": [
       {
-        "title": "Send revenue events from your backend",
-        "description": "When a purchase, upgrade, or renewal happens, fire an event with the amount and any relevant properties (plan, currency, item)."
+        "title": "Отправляйте события выручки из бэкенда",
+        "description": "При покупке, апгрейде или продлении отправляйте событие с суммой и нужными свойствами (тариф, валюта, товар)."
       },
       {
-        "title": "Revenue ties to the user and session",
-        "description": "OpenPanel links the revenue event to the user who triggered it and the session they were in. No manual joins-context is automatic."
+        "title": "Выручка привязывается к пользователю и сессии",
+        "description": "OpenPanel связывает событие выручки с пользователем, который его вызвал, и его сессией. Без ручных JOIN — контекст подставляется автоматически."
       },
       {
-        "title": "Analyze in dashboards, funnels, and profiles",
-        "description": "Revenue shows up everywhere: aggregate charts, conversion funnels, user timelines. Filter and break down by any property."
+        "title": "Анализируйте в дашбордах, воронках и профилях",
+        "description": "Выручка видна везде: на агрегированных графиках, в воронках конверсии, в таймлайнах пользователей. Фильтруйте и разбивайте по любому свойству."
       }
     ]
   },
   "use_cases": {
-    "title": "Who uses revenue tracking",
-    "intro": "Teams that want to connect product behavior to business outcomes.",
+    "title": "Кто использует отслеживание выручки",
+    "intro": "Команды, которые хотят связать поведение в продукте с бизнес-результатами.",
     "items": [
       {
-        "title": "SaaS product teams",
-        "description": "Tie MRR and expansion revenue back to feature usage. Understand which product changes move the revenue needle."
+        "title": "SaaS-команды",
+        "description": "Привяжите MRR и выручку от расширения к использованию функций. Понимайте, какие продуктовые изменения двигают выручку."
       },
       {
-        "title": "E-commerce and marketplaces",
-        "description": "Track order value per session, revenue by traffic source, and purchase funnels without a separate BI tool."
+        "title": "E-commerce и маркетплейсы",
+        "description": "Отслеживайте средний чек за сессию, выручку по источникам трафика и воронки покупок без отдельного BI-инструмента."
       },
       {
-        "title": "Growth and marketing",
-        "description": "Measure campaign ROI by linking ad spend to actual revenue events. See which channels produce paying users, not just signups."
+        "title": "Growth и маркетинг",
+        "description": "Измеряйте ROI кампаний, связывая расходы на рекламу с реальными событиями выручки. Видите, какие каналы приводят платящих пользователей, а не только регистрации."
       }
     ]
   },
   "related_features": [
     {
       "slug": "event-tracking",
-      "title": "Event tracking",
-      "description": "Revenue events are built on the same event model. Learn how events work in OpenPanel."
+      "title": "Отслеживание событий",
+      "description": "События выручки построены на той же модели событий. Узнайте, как события работают в OpenPanel."
     },
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "Add revenue steps to conversion funnels and see where money drops off."
+      "title": "Воронки",
+      "description": "Добавляйте шаги выручки в воронки конверсии и смотрите, где теряются деньги."
     },
     {
       "slug": "session-tracking",
-      "title": "Session tracking",
-      "description": "Link revenue to the session that produced it-see the full journey from landing page to purchase."
+      "title": "Отслеживание сессий",
+      "description": "Свяжите выручку с сессией, которая её принесла, — весь путь от посадочной страницы до покупки."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about tracking revenue with OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы об отслеживании выручки в OpenPanel.",
     "items": [
       {
-        "question": "How do I send a revenue event?",
-        "answer": "Send a regular event (e.g. 'purchase_completed') with a numeric property for the amount. You can include additional properties like currency, plan, or item name. The same SDK or API you use for any other event works for revenue."
+        "question": "Как отправить событие выручки?",
+        "answer": "Отправьте обычное событие (например, 'purchase_completed') с числовым свойством суммы. Можно добавить дополнительные свойства: валюту, тариф или название товара. Тот же SDK или API, что и для любого другого события, подходит и для выручки."
       },
       {
-        "question": "Can I track recurring subscription revenue?",
-        "answer": "Yes. Fire a revenue event on each renewal or billing cycle. Over time you can chart MRR trends, retention by cohort, and expansion revenue-all from events."
+        "question": "Можно ли отслеживать регулярную подписочную выручку?",
+        "answer": "Да. Отправляйте событие выручки при каждом продлении или платёжном цикле. Со временем можно строить графики трендов MRR, удержания по когортам и выручки от расширения — всё из событий."
       },
       {
-        "question": "Do I need to integrate my payment provider?",
-        "answer": "No direct integration is needed. You send revenue events from your backend whenever a payment is confirmed (e.g. in a Stripe webhook handler). OpenPanel doesn't talk to Stripe-it just receives the event you send."
+        "question": "Нужно ли интегрировать платёжный провайдер?",
+        "answer": "Прямая интеграция не нужна. Вы отправляете события выручки из бэкенда при подтверждении платежа (например, в обработчике вебхука Stripe). OpenPanel не общается со Stripe — она просто получает событие, которое вы отправляете."
       },
       {
-        "question": "Can I track refunds?",
-        "answer": "Yes. Send a refund event with a negative amount or a separate event name (e.g. 'refund_issued'). You can then subtract refunds from gross revenue in your dashboards."
+        "question": "Можно ли отслеживать возвраты средств?",
+        "answer": "Да. Отправьте событие возврата с отрицательной суммой или отдельным именем события (например, 'refund_issued'). Затем можно вычитать возвраты из общей выручки на дашбордах."
       },
       {
-        "question": "Is revenue data shared with third parties?",
-        "answer": "No. OpenPanel is privacy-first. Self-host to keep revenue data entirely in your infrastructure, or use our cloud where data is never shared with third parties."
+        "question": "Передаются ли данные о выручке третьим сторонам?",
+        "answer": "Нет. OpenPanel создана с приоритетом приватности. Разверните у себя, чтобы данные о выручке полностью оставались в вашей инфраструктуре, или используйте наше облако — данные никогда не передаются третьим сторонам."
       }
     ]
   },
   "cta": {
-    "label": "Start tracking revenue",
+    "label": "Начните отслеживать выручку",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

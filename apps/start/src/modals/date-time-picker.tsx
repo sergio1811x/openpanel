@@ -44,7 +44,7 @@ type Props = {
 export default function DateTimePicker({
   onChange,
   initialDate,
-  title = 'Select Date & Time',
+  title = 'Выбор даты и времени',
 }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [selectedDate, setSelectedDate] = useState<Date>(
@@ -175,7 +175,7 @@ export default function DateTimePicker({
             className="flex-1"
             onClick={() => popModal()}
           >
-            Cancel
+            Отмена
           </Button>
           <Button
             className="flex-1"
@@ -184,7 +184,7 @@ export default function DateTimePicker({
               onChange(selectedDate);
             }}
           >
-            Confirm Selection
+            Подтвердить выбор
           </Button>
         </div>
       </div>

@@ -9,9 +9,9 @@ const difficultyColors = {
 };
 
 const difficultyLabels = {
-  beginner: 'Beginner',
-  intermediate: 'Intermediate',
-  advanced: 'Advanced',
+  beginner: 'Новичок',
+  intermediate: 'Средний уровень',
+  advanced: 'Продвинутый',
 };
 
 export function GuideCard({
@@ -52,7 +52,7 @@ export function GuideCard({
             {difficultyLabels[difficulty]}
           </span>
           <span className="text-xs text-muted-foreground">
-            {timeToComplete} min
+            {timeToComplete} мин
           </span>
         </div>
         <span className="flex-1 mb-6">

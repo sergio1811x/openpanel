@@ -8,6 +8,7 @@ import { SerieIcon } from '../report-chart/common/serie-icon';
 import {
   OVERVIEW_COLUMNS_NAME,
   OVERVIEW_COLUMNS_NAME_PLURAL,
+  OVERVIEW_COLUMNS_TOP,
 } from './overview-constants';
 import { OverviewListModal } from './overview-list-modal';
 import { useOverviewOptions } from './useOverviewOptions';
@@ -40,8 +41,8 @@ export default function OverviewTopGenericModal({
 
   return (
     <OverviewListModal
-      title={`Top ${columnNamePlural}`}
-      searchPlaceholder={`Search ${columnNamePlural.toLowerCase()}...`}
+      title={OVERVIEW_COLUMNS_TOP[column]}
+      searchPlaceholder={`Поиск: ${columnNamePlural}...`}
       data={query.data ?? []}
       keyExtractor={(item) => (item.prefix ?? '') + item.name}
       searchFilter={(item, query) =>
@@ -66,7 +67,7 @@ export default function OverviewTopGenericModal({
                 <ChevronRightIcon className="size-3" />
               </span>
             )}
-            {item.name || 'Not set'}
+            {item.name || 'Не задано'}
           </button>
         </div>
       )}

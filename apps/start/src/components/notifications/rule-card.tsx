@@ -33,7 +33,7 @@ function EventBadge({
       }
     >
       <Badge variant="outline" className="inline-flex">
-        {event.name === '*' ? 'Any event' : event.name}
+        {event.name === '*' ? 'Любое событие' : event.name}
         {Boolean(event.filters.length) && (
           <FilterIcon className="size-2 ml-1" />
         )}
@@ -50,7 +50,7 @@ export function RuleCard({
   const deletion = useMutation(
     trpc.notification.deleteRule.mutationOptions({
       onSuccess() {
-        toast.success('Rule deleted');
+        toast.success('Правило удалено');
         client.refetchQueries(
           trpc.notification.rules.queryOptions({
             projectId: rule.projectId,
@@ -64,17 +64,17 @@ export function RuleCard({
       case 'events':
         return (
           <div className="row gap-2 items-baseline flex-wrap">
-            <div>Get notified when</div>
+            <div>Получать уведомление, когда</div>
             {rule.config.events.map((event) => (
               <EventBadge key={event.id} event={event} />
             ))}
-            <div>occurs</div>
+            <div>происходит событие</div>
           </div>
         );
       case 'funnel':
         return (
           <div className="col gap-4">
-            <div>Get notified when a session has completed this funnel</div>
+            <div>Получать уведомление, когда сессия завершила эту воронку</div>
             <div className="col gap-2">
               {rule.config.events.map((event, index) => (
                 <div
@@ -108,8 +108,8 @@ export function RuleCard({
             className="text-destructive"
             onClick={() => {
               showConfirm({
-                title: `Delete ${rule.name}?`,
-                text: 'This action cannot be undone.',
+                title: `Удалить ${rule.name}?`,
+                text: 'Это действие нельзя отменить.',
                 onConfirm: () => {
                   deletion.mutate({
                     id: rule.id,
@@ -118,7 +118,7 @@ export function RuleCard({
               });
             }}
           >
-            Delete
+            Удалить
           </Button>
           <Button
             variant="ghost"
@@ -128,7 +128,7 @@ export function RuleCard({
               });
             }}
           >
-            Edit
+            Изменить
           </Button>
         </div>
       </IntegrationCardFooter>

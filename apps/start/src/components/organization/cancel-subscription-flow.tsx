@@ -25,14 +25,14 @@ interface Props {
 }
 
 const REASONS: { value: ICancellationReason; label: string }[] = [
-  { value: 'unused', label: "I'm not using it right now" },
-  { value: 'too_expensive', label: "It's too expensive" },
-  { value: 'missing_features', label: "It's missing features I need" },
-  { value: 'switched_service', label: 'I switched to another service' },
-  { value: 'too_complex', label: "It's too complicated" },
-  { value: 'low_quality', label: "Quality didn't meet my expectations" },
-  { value: 'customer_service', label: 'Unhappy with customer service' },
-  { value: 'other', label: 'Other' },
+  { value: 'unused', label: 'Я пока не пользуюсь сервисом' },
+  { value: 'too_expensive', label: 'Это слишком дорого' },
+  { value: 'missing_features', label: 'Не хватает нужных функций' },
+  { value: 'switched_service', label: 'Я перешёл на другой сервис' },
+  { value: 'too_complex', label: 'Это слишком сложно' },
+  { value: 'low_quality', label: 'Качество не оправдало ожиданий' },
+  { value: 'customer_service', label: 'Не доволен клиентской поддержкой' },
+  { value: 'other', label: 'Другое' },
 ];
 
 const PAUSE_MONTHS = [1, 2, 3] as const;
@@ -97,8 +97,8 @@ export default function CancelSubscriptionFlow({
       onSuccess(data) {
         outcomeRef.current = 'paused';
         invalidate();
-        toast.success('Subscription paused', {
-          description: `Billing stops at the end of your current period and resumes on ${formatDate(data.resumesAt)}. Your events keep flowing in.`,
+        toast.success('Подписка приостановлена', {
+          description: `Списание остановится в конце текущего периода и возобновится ${formatDate(data.resumesAt)}. Ваши события продолжают поступать.`,
         });
         onComplete();
       },
@@ -113,9 +113,9 @@ export default function CancelSubscriptionFlow({
       onSuccess() {
         outcomeRef.current = 'discounted';
         invalidate();
-        toast.success('Discount applied', {
+        toast.success('Скидка применена', {
           description:
-            '30% off for the next 12 months, starting with your next billing cycle.',
+            'Скидка 30% на следующие 12 месяцев, начиная со следующего расчётного цикла.',
         });
         onComplete();
       },
@@ -130,10 +130,10 @@ export default function CancelSubscriptionFlow({
       onSuccess() {
         outcomeRef.current = 'canceled';
         invalidate();
-        toast.success('Subscription canceled', {
+        toast.success('Подписка отменена', {
           description: organization.subscriptionEndsAt
-            ? `Your subscription stays active until ${formatDate(organization.subscriptionEndsAt)}.`
-            : 'It might take a few seconds to update',
+            ? `Ваша подписка останется активной до ${formatDate(organization.subscriptionEndsAt)}.`
+            : 'Обновление может занять несколько секунд',
         });
         onComplete();
       },
@@ -167,8 +167,8 @@ export default function CancelSubscriptionFlow({
     return (
       <>
         <ModalHeader
-          text="Before you go — what's the main reason? It genuinely helps us improve."
-          title="Cancel subscription"
+          text="Прежде чем уйти — какова основная причина? Это действительно помогает нам стать лучше."
+          title="Отмена подписки"
         />
         <div className="scrollbar-thin col min-h-0 flex-1 gap-4 overflow-y-auto">
           <div className="col shrink-0 divide-y divide-border overflow-hidden rounded-lg border">
@@ -194,7 +194,7 @@ export default function CancelSubscriptionFlow({
           <Textarea
             className="shrink-0"
             onChange={(event) => setComment(event.target.value)}
-            placeholder="Anything you want to add? (optional)"
+            placeholder="Хотите что-то добавить? (необязательно)"
             value={comment}
           />
         </div>
@@ -211,7 +211,7 @@ export default function CancelSubscriptionFlow({
             }}
             variant="outline"
           >
-            Never mind
+            Передумать
           </Button>
           <Button
             disabled={!reason}
@@ -224,7 +224,7 @@ export default function CancelSubscriptionFlow({
             }}
             variant="destructive"
           >
-            Continue
+            Продолжить
           </Button>
         </ButtonContainer>
       </>
@@ -235,8 +235,8 @@ export default function CancelSubscriptionFlow({
     return (
       <>
         <ModalHeader
-          text="Pause your subscription: billing stops at the end of your current period, we keep collecting your events, and everything is exactly where you left it when you come back."
-          title="Take a break instead?"
+          text="Приостановите подписку: списание остановится в конце текущего периода, мы продолжим собирать Ваши события, и всё останется точно так, как Вы оставили, когда вернётесь."
+          title="Может, сделать паузу?"
         />
         <div className="scrollbar-thin col min-h-0 flex-1 gap-3 overflow-y-auto">
           <div className="row shrink-0 gap-2">
@@ -247,13 +247,14 @@ export default function CancelSubscriptionFlow({
                 onClick={() => setPauseMonths(months)}
                 variant={pauseMonths === months ? 'default' : 'outline'}
               >
-                {months} {months === 1 ? 'month' : 'months'}
+                {months === 1 ? '1 месяц' : `${months} мес.`}
               </Button>
             ))}
           </div>
           <p className="shrink-0 text-muted-foreground text-sm">
-            Billing automatically resumes after the pause — or resume earlier
-            any time from the billing page. You pay nothing while paused.
+            Списание возобновится автоматически после паузы — либо возобновите
+            раньше в любой момент на странице биллинга. Во время паузы Вы ничего
+            не платите.
           </p>
         </div>
         <ButtonContainer className="shrink-0 gap-2 [&>*]:flex-1">
@@ -273,7 +274,7 @@ export default function CancelSubscriptionFlow({
             }}
             variant="outline"
           >
-            {discountAvailable ? 'No thanks' : 'No thanks, cancel'}
+            {discountAvailable ? 'Нет, спасибо' : 'Нет, спасибо, отменить'}
           </Button>
           <Button
             disabled={isPending}
@@ -290,7 +291,7 @@ export default function CancelSubscriptionFlow({
               });
             }}
           >
-            Pause for {pauseMonths} {pauseMonths === 1 ? 'month' : 'months'}
+            Приостановить на {pauseMonths === 1 ? '1 месяц' : `${pauseMonths} мес.`}
           </Button>
         </ButtonContainer>
       </>
@@ -300,15 +301,15 @@ export default function CancelSubscriptionFlow({
   return (
     <>
       <ModalHeader
-        text="We'd love to keep you around. Stay on your current plan and get 30% off for the next 12 months, starting with your next billing cycle."
-        title="One last thing — 30% off for a year"
+        text="Мы хотели бы, чтобы Вы остались. Оставайтесь на текущем тарифе и получите скидку 30% на следующие 12 месяцев, начиная со следующего расчётного цикла."
+        title="И последнее — скидка 30% на год"
       />
       <div className="scrollbar-thin col min-h-0 flex-1 overflow-y-auto">
         <div className="row shrink-0 items-center gap-3 rounded-lg border bg-def-100 p-4">
           <span className="font-bold font-mono text-3xl text-emerald-600 dark:text-emerald-500">
             −30%
           </span>
-          <span className="text-muted-foreground">for the next 12 months</span>
+          <span className="text-muted-foreground">на следующие 12 месяцев</span>
         </div>
       </div>
       <ButtonContainer className="shrink-0 gap-2 [&>*]:flex-1">
@@ -324,7 +325,7 @@ export default function CancelSubscriptionFlow({
           }}
           variant="outline"
         >
-          Cancel subscription
+          Отменить подписку
         </Button>
         <Button
           disabled={isPending}
@@ -337,7 +338,7 @@ export default function CancelSubscriptionFlow({
             discountMutation.mutate({ organizationId: organization.id });
           }}
         >
-          Apply 30% discount
+          Применить скидку 30%
         </Button>
       </ButtonContainer>
     </>

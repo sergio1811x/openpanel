@@ -37,25 +37,25 @@ const INSIGHT_CONFIG: Record<
   { label: string; icon: React.ElementType; color: string; bg: string }
 > = {
   low_ctr: {
-    label: 'Low CTR',
+    label: 'Низкий CTR',
     icon: MousePointerClickIcon,
     color: 'text-amber-600 dark:text-amber-400',
     bg: 'bg-amber-100 dark:bg-amber-900/30',
   },
   near_page_one: {
-    label: 'Near page 1',
+    label: 'Почти в топ-10',
     icon: TrendingUpIcon,
     color: 'text-blue-600 dark:text-blue-400',
     bg: 'bg-blue-100 dark:bg-blue-900/30',
   },
   invisible_clicks: {
-    label: 'Low visibility',
+    label: 'Низкая видимость',
     icon: EyeIcon,
     color: 'text-violet-600 dark:text-violet-400',
     bg: 'bg-violet-100 dark:bg-violet-900/30',
   },
   high_bounce: {
-    label: 'High bounce',
+    label: 'Высокие отказы',
     icon: AlertTriangleIcon,
     color: 'text-red-600 dark:text-red-400',
     bg: 'bg-red-100 dark:bg-red-900/30',
@@ -125,10 +125,10 @@ export function PagesInsights({ projectId }: PagesInsightsProps) {
           path,
           type: 'low_ctr',
           impact: gsc.impressions * (0.04 - gsc.ctr),
-          headline: `Ranking #${Math.round(gsc.position)} but only ${(gsc.ctr * 100).toFixed(1)}% CTR`,
+          headline: `Позиция #${Math.round(gsc.position)}, но CTR всего ${(gsc.ctr * 100).toFixed(1)}%`,
           suggestion:
-            'You are on page 1 but people rarely click. Rewrite your title tag and meta description to be more compelling and match search intent.',
-          metrics: `Pos ${Math.round(gsc.position)} · ${gsc.impressions.toLocaleString()} impr · ${(gsc.ctr * 100).toFixed(1)}% CTR`,
+            'Страница уже в топ-10, но по ней редко кликают. Перепишите title и meta description так, чтобы они были привлекательнее и точнее соответствовали поисковому интенту.',
+          metrics: `Поз. ${Math.round(gsc.position)} · Показы: ${gsc.impressions.toLocaleString()} · CTR: ${(gsc.ctr * 100).toFixed(1)}%`,
         });
       }
 
@@ -140,10 +140,10 @@ export function PagesInsights({ projectId }: PagesInsightsProps) {
           path,
           type: 'near_page_one',
           impact: gsc.impressions / gsc.position,
-          headline: `Position ${Math.round(gsc.position)} — one push from page 1`,
+          headline: `Позиция ${Math.round(gsc.position)} — совсем немного до топ-10`,
           suggestion:
-            'A content refresh, more internal links, or a few backlinks could move this into the top 10 and dramatically increase clicks.',
-          metrics: `Pos ${Math.round(gsc.position)} · ${gsc.impressions.toLocaleString()} impr · ${gsc.clicks} clicks`,
+            'Обновление контента, больше внутренних ссылок или несколько внешних ссылок могут вывести страницу в топ-10 и заметно увеличить клики.',
+          metrics: `Поз. ${Math.round(gsc.position)} · Показы: ${gsc.impressions.toLocaleString()} · Клики: ${gsc.clicks}`,
         });
       }
 
@@ -155,10 +155,10 @@ export function PagesInsights({ projectId }: PagesInsightsProps) {
           path,
           type: 'invisible_clicks',
           impact: gsc.impressions,
-          headline: `${gsc.impressions.toLocaleString()} impressions but only ${gsc.clicks} clicks`,
+          headline: `Кликов: ${gsc.clicks} при ${gsc.impressions.toLocaleString()} показах`,
           suggestion:
-            'Google shows this page a lot, but it almost never gets clicked. Consider whether the page targets the right queries or if a different format (e.g. listicle, how-to) would perform better.',
-          metrics: `${gsc.impressions.toLocaleString()} impr · ${gsc.clicks} clicks · Pos ${Math.round(gsc.position)}`,
+            'Google часто показывает эту страницу, но по ней почти не кликают. Проверьте, отвечает ли страница релевантным запросам, либо попробуйте другой формат (например, список или инструкцию).',
+          metrics: `Показы: ${gsc.impressions.toLocaleString()} · Клики: ${gsc.clicks} · Поз. ${Math.round(gsc.position)}`,
         });
       }
 
@@ -174,10 +174,10 @@ export function PagesInsights({ projectId }: PagesInsightsProps) {
           path,
           type: 'high_bounce',
           impact: analytics.sessions * (analytics.bounce_rate / 100),
-          headline: `${Math.round(analytics.bounce_rate)}% bounce rate on a page with ${analytics.sessions} sessions`,
+          headline: `Показатель отказов ${Math.round(analytics.bounce_rate)}% при ${analytics.sessions} сессиях`,
           suggestion:
-            'Visitors are leaving without engaging. Check if the page delivers on its title/meta promise, improve page speed, and make sure key content is above the fold.',
-          metrics: `${Math.round(analytics.bounce_rate)}% bounce · ${analytics.sessions} sessions · ${gsc.impressions.toLocaleString()} impr`,
+            'Посетители уходят без взаимодействия. Проверьте, соответствует ли контент обещанию в title/meta, ускорьте страницу и разместите ключевой контент в первом экране.',
+          metrics: `Отказы: ${Math.round(analytics.bounce_rate)}% · Сессии: ${analytics.sessions} · Показы: ${gsc.impressions.toLocaleString()}`,
         });
       }
     }
@@ -196,10 +196,10 @@ export function PagesInsights({ projectId }: PagesInsightsProps) {
           path: p.path,
           type: 'high_bounce',
           impact: p.sessions * (p.bounce_rate / 100),
-          headline: `${Math.round(p.bounce_rate)}% bounce rate with ${p.sessions} sessions`,
+          headline: `Показатель отказов ${Math.round(p.bounce_rate)}% при ${p.sessions} сессиях`,
           suggestion:
-            'High bounce rate with no search visibility. Review content quality and check if the page is indexed and targeting the right keywords.',
-          metrics: `${Math.round(p.bounce_rate)}% bounce · ${p.sessions} sessions`,
+            'Высокий показатель отказов при отсутствии поискового трафика. Оцените качество контента и проверьте, проиндексирована ли страница и по каким ключевым словам она продвигается.',
+          metrics: `Отказы: ${Math.round(p.bounce_rate)}% · Сессии: ${p.sessions}`,
         });
       }
     }
@@ -248,7 +248,7 @@ export function PagesInsights({ projectId }: PagesInsightsProps) {
       <div className="border-b">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
-            <h3 className="font-medium text-sm">Opportunities</h3>
+            <h3 className="font-medium text-sm">Возможности</h3>
             {filteredInsights.length > 0 && (
               <span className="rounded-full bg-muted px-2 py-0.5 font-medium text-muted-foreground text-xs">
                 {filteredInsights.length}
@@ -259,8 +259,8 @@ export function PagesInsights({ projectId }: PagesInsightsProps) {
             <div className="flex shrink-0 items-center gap-2">
               <span className="whitespace-nowrap text-muted-foreground text-xs">
                 {filteredInsights.length === 0
-                  ? '0 results'
-                  : `${rangeStart}-${rangeEnd} of ${filteredInsights.length}`}
+                  ? '0 результатов'
+                  : `${rangeStart}-${rangeEnd} из ${filteredInsights.length}`}
               </span>
               <Pagination
                 canNextPage={page < pageCount - 1}
@@ -280,7 +280,7 @@ export function PagesInsights({ projectId }: PagesInsightsProps) {
               setSearch(e.target.value);
               setPage(0);
             }}
-            placeholder="Search pages"
+            placeholder="Поиск по страницам"
             type="search"
             value={search}
           />

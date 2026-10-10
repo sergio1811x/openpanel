@@ -58,7 +58,7 @@ export function JsonEditor({
       } catch (e) {
         setIsValid(false);
         const errorMsg =
-          e instanceof Error ? e.message : 'Invalid JSON syntax';
+          e instanceof Error ? e.message : 'Некорректный синтаксис JSON';
         setError(errorMsg);
         onValidate?.(false, errorMsg);
       }
@@ -210,7 +210,7 @@ export function JsonEditor({
       />
       {!isValid && (
         <p className="mt-1 text-sm text-destructive">
-          {error || `Invalid ${language === 'javascript' ? 'JavaScript' : 'JSON'}. Please check your syntax.`}
+          {error || `Некорректный ${language === 'javascript' ? 'JavaScript' : 'JSON'}. Проверьте синтаксис.`}
         </p>
       )}
     </div>

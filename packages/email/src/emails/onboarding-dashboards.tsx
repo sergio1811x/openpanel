@@ -13,7 +13,7 @@ export const zOnboardingDashboards = z.object({
 });
 
 const formatEvents = (count: number) =>
-  new Intl.NumberFormat('en-US').format(count);
+  new Intl.NumberFormat('ru-RU').format(count);
 
 export type Props = z.infer<typeof zOnboardingDashboards>;
 export default OnboardingDashboards;
@@ -27,27 +27,28 @@ export function OnboardingDashboards({
   if (!hasData) {
     return (
       <Layout unsubscribeUrl={unsubscribeUrl}>
-        <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+        <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
         <Text>
-          It's been a week and your project hasn't received any events, so the
-          dashboard advice I'd normally send wouldn't help you yet.
+          Прошла неделя, но Ваш проект так и не получил ни одного события,
+          поэтому советы по дашбордам, которые я обычно отправляю, Вам пока не
+          пригодятся.
         </Text>
         <Text>
-          If you still want to try OpenPanel, the install is the only thing in
-          the way:{' '}
+          Если Вы всё ещё хотите попробовать OpenPanel, остаётся только
+          установка:{' '}
           <Link
             href={withUtm(
               'https://openpanel.dev/docs/get-started/install-openpanel',
               'onboarding-dashboards',
             )}
           >
-            install guide
+            руководство по установке
           </Link>
           .
         </Text>
         <Text>
-          If something about the product put you off, I'd like to know what.
-          One line is enough.
+          Если Вас что-то оттолкнуло в продукте, мне важно понять, что именно.
+          Достаточно одной строки.
         </Text>
         <Text>Carl</Text>
       </Layout>
@@ -56,39 +57,39 @@ export function OnboardingDashboards({
 
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+      <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
       <Text>
         {eventsCount
-          ? `You've tracked ${formatEvents(eventsCount)} events so far. The next step is making them useful.`
-          : 'Your events are coming in. The next step is making them useful.'}
+          ? `Вы уже отследили события: ${formatEvents(eventsCount)}. Следующий шаг — сделать их полезными.`
+          : 'Ваши события уже поступают. Следующий шаг — сделать их полезными.'}
       </Text>
       <Text>
-        Raw events don't tell you much on their own. A dashboard with two or
-        three reports does:
+        Сами по себе сырые события мало что говорят. А вот дашборд с двумя-тремя
+        отчётами — совсем другое:
       </Text>
       <List
         items={[
-          'a funnel for your main flow',
-          'a conversion trend over time',
-          'where your visitors come from',
+          'воронка для основного сценария',
+          'динамика конверсии во времени',
+          'откуда приходят Ваши посетители',
         ]}
       />
       <Text>
-        Takes about ten minutes:{' '}
+        Это займёт около десяти минут:{' '}
         <Link href={withUtm(dashboardUrl, 'onboarding-dashboards')}>
-          build a dashboard
+          создать дашборд
         </Link>
         .
       </Text>
       <Text>
-        Once it exists you'll actually open it. That's the difference between
-        having analytics and using them.
+        Когда он появится, Вы действительно будете его открывать. В этом
+        разница между наличием аналитики и её использованием.
       </Text>
       <Text>Carl</Text>
       <span style={{ margin: '0 -20px', display: 'block' }}>
         <img
           src="https://openpanel.dev/_next/image?url=%2Fscreenshots%2Fdashboard-dark.webp&w=3840&q=75"
-          alt="Dashboard"
+          alt="Дашборд"
           style={{
             width: '100%',
             height: 'auto',

@@ -39,7 +39,7 @@ export function OverviewFilterButton(props: OverviewFiltersProps) {
         })
       }
     >
-      Filters
+      Фильтры
     </Button>
   );
 }
@@ -84,21 +84,21 @@ function CohortFilterPill({
         onClick={() => pushModal('OverviewFilters', { nuqsOptions })}
         className="px-2 hover:bg-accent transition-colors cursor-pointer"
       >
-        Cohort
+        Кохорта
       </button>
       <DropdownMenuComposed
         onChange={onChangeOperator}
         items={[
-          { value: 'inCohort', label: 'In cohort' },
-          { value: 'notInCohort', label: 'Not in cohort' },
+          { value: 'inCohort', label: 'В кохорте' },
+          { value: 'notInCohort', label: 'Не в кохорте' },
         ]}
-        label="Operator"
+        label="Оператор"
       >
         <button
           type="button"
           className="px-2 opacity-50 lowercase hover:opacity-100 hover:bg-accent transition-colors border-l cursor-pointer"
         >
-          {filter.operator === 'inCohort' ? 'in cohort' : 'not in cohort'}
+          {filter.operator === 'inCohort' ? 'в кохорте' : 'не в кохорте'}
         </button>
       </DropdownMenuComposed>
       <ComboboxAdvanced
@@ -115,7 +115,7 @@ function CohortFilterPill({
           className="px-2 font-semibold hover:bg-accent transition-colors border-l cursor-pointer max-w-40 truncate"
         >
           {valueLabel || (
-            <span className="opacity-40 font-normal italic">pick cohort</span>
+            <span className="opacity-40 font-normal italic">выберите кохорту</span>
           )}
         </button>
       </ComboboxAdvanced>
@@ -123,7 +123,7 @@ function CohortFilterPill({
         type="button"
         onClick={onRemove}
         className="px-2 hover:bg-destructive hover:text-destructive-foreground transition-colors border-l cursor-pointer"
-        aria-label="Remove filter"
+        aria-label="Удалить фильтр"
       >
         <X className="size-3" />
       </button>
@@ -183,7 +183,7 @@ function FilterPill({
             {filter.value.length > 0 ? (
               filter.value.join(', ')
             ) : (
-              <span className="opacity-40 font-normal italic">pick value</span>
+              <span className="opacity-40 font-normal italic">выберите значение</span>
             )}
           </button>
         </ComboboxAdvanced>
@@ -194,7 +194,7 @@ function FilterPill({
         type="button"
         onClick={onRemove}
         className="px-2 hover:bg-destructive hover:text-destructive-foreground transition-colors border-l cursor-pointer"
-        aria-label="Remove filter"
+        aria-label="Удалить фильтр"
       >
         <X className="size-3" />
       </button>

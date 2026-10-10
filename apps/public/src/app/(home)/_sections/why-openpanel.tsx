@@ -47,17 +47,17 @@ const quotes: {
 }[] = [
   {
     quote:
-      'After testing several product analytics tools for Strackr, **we chose OpenPanel and we are very satisfied with the product**. We have been using it since the beta, and there are constant updates. Profiles and Conversion Events are our favorite features.',
+      'Протестировав несколько инструментов продуктовой аналитики для Strackr, **мы выбрали OpenPanel и очень довольны продуктом**. Пользуемся с беты-версии, обновления выходят постоянно. Профили и события конверсий — наши любимые функции.',
     author: 'Julien Hany',
     site: 'https://strackr.com',
   },
   {
-    quote: `Before OpenPanel, I was using Plausible, and it was ok. **But OpenPanel is like 10 leagues ahead!!** Better UX/UI, many more features, and incredible support from the founder. Bonus point: it's 1 click install on Coolify!! I won't switch to anything else 😎`,
+    quote: `До OpenPanel я пользовался Plausible — было неплохо. **Но OpenPanel на десять голов впереди!!** Лучший UX/UI, гораздо больше возможностей и невероятная поддержка от основателя. Бонус: установка в один клик на Coolify!! Я больше ни на что не перейду 😎`,
     author: 'Thomas Sanlis',
     site: 'https://uneed.best',
   },
   {
-    quote: `We've been using OpenPanel for almost three months and we're extremely happy with it. After paying a lot to PostHog for years, OpenPanel gives us the same, in many ways better, analytics while keeping full ownership of our data. It's truly self-hosted but surprisingly low maintenance: setup and ongoing upkeep are straightforward, so we spend less time managing tooling and more time acting on insights.\n\nOpenPanel delivers the metrics we need to understand our website and app performance and how users actually interact with them. The dashboards are clear, the data is reliable, and the feature set covers everything we relied on before. The support is absolutely fantastic: responsive, helpful, and knowledgeable, and that made the switch effortless. We honestly don’t want to run any business without OpenPanel anymore.`,
+    quote: `Мы используем OpenPanel уже почти три месяца и очень довольны. После многих лет больших затрат на PostHog OpenPanel даёт нам ту же — а во многом и лучшую — аналитику, сохраняя полное владение нашими данными. Это настоящий self-hosted, но на удивление простой в обслуживании: настройка и текущая поддержка не вызывают сложностей, поэтому мы меньше времени тратим на управление инструментами и больше — на работу с инсайтами.\n\nOpenPanel даёт метрики, необходимые для понимания работы сайта и приложения и того, как пользователи взаимодействуют с ними. Дашборды понятные, данные надёжные, а набор функций покрывает всё, на что мы опирались раньше. Поддержка просто великолепная: отзывчивая, полезная и знающая, — переход оказался лёгким. Честно говоря, мы больше не хотим вести бизнес без OpenPanel.`,
     author: 'Self-hosting users',
   },
 ];
@@ -65,10 +65,10 @@ const quotes: {
 export function WhyOpenPanel() {
   return (
     <Section className="container gap-16">
-      <SectionHeader label="Trusted by founders" title="Who uses OpenPanel?" />
+      <SectionHeader label="Нам доверяют основатели" title="Кто пользуется OpenPanel?" />
       <div className="col overflow-hidden">
         <SectionLabel className="z-5 -mb-2 self-start bg-background pr-4 text-muted-foreground">
-          USED BY
+          ИСПОЛЬЗУЮТ
         </SectionLabel>
         <div className="-mx-4 grid grid-cols-3 border-y py-4 md:grid-cols-6">
           {images.map((image) => (

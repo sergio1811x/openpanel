@@ -66,14 +66,14 @@ export function ChatDrawerBody() {
           ))}
           {isLoading && !isStreaming && (
             <div className="flex items-center gap-2 text-sm">
-              <span className="op-shimmer font-medium">Thinking…</span>
+              <span className="op-shimmer font-medium">Думаю…</span>
             </div>
           )}
           {status === 'error' && (
             <div className="flex items-start gap-2 rounded-md border border-destructive/30 bg-destructive/5 px-3 py-2 text-sm text-destructive">
               <AlertCircleIcon className="size-4 shrink-0 mt-0.5" />
               <span className="leading-[1.5]">
-                {error?.message ?? 'Something went wrong. Try again.'}
+                {error?.message ?? 'Что-то пошло не так. Попробуйте снова.'}
               </span>
             </div>
           )}
@@ -94,10 +94,10 @@ function ScrollToBottomButton() {
       variant="secondary"
       className="absolute bottom-3 left-1/2 -translate-x-1/2 h-7 px-2 shadow-md gap-1"
       onClick={() => scrollToBottom()}
-      aria-label="Scroll to bottom"
+      aria-label="Прокрутить вниз"
     >
       <ArrowDownIcon className="size-3" />
-      <span className="text-sm">Latest</span>
+      <span className="text-sm">Последние</span>
     </Button>
   );
 }

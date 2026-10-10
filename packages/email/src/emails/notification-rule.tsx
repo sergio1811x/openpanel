@@ -31,21 +31,22 @@ export function NotificationRule({
       {dashboardUrl && (
         <Text>
           <Button href={withUtm(dashboardUrl, 'notification-rule')}>
-            Open dashboard
+            Открыть дашборд
           </Button>
         </Text>
       )}
       <Text>
-        You're receiving this because a notification rule you set up matched.
-        Manage rules under Notifications in your project.
+        Вы получили это письмо, потому что сработало созданное Вами правило
+        уведомлений. Управлять правилами можно в разделе «Уведомления» Вашего
+        проекта.
       </Text>
     </Layout>
   );
 }
 
 NotificationRule.PreviewProps = {
-  title: 'Conversion: Sign up completed',
-  message: 'A user completed the sign-up funnel.',
-  projectName: 'My website',
+  title: 'Конверсия: регистрация завершена',
+  message: 'Пользователь прошёл воронку регистрации.',
+  projectName: 'Мой сайт',
   dashboardUrl: 'https://dashboard.openpanel.dev/org-id/project-id',
 };

@@ -160,7 +160,7 @@ export function KeyValueGrid({
 
       {data.length === 0 && (
         <div className="text-center text-muted-foreground py-8 col-span-full">
-          No data available
+          Нет данных
         </div>
       )}
     </div>

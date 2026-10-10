@@ -16,7 +16,7 @@ export const Route = createFileRoute('/_login/reset-password')({
     token: z.string(),
   }),
   errorComponent: () => (
-    <FullPageErrorState description="Missing reset password token" />
+    <FullPageErrorState description="Отсутствует токен сброса пароля" />
   ),
 });
 

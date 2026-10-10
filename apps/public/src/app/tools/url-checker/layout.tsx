@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = getPageMetadata({
   url: '/tools/url-checker',
-  title: 'URL Checker — Free SEO, Open Graph & Meta Tag Inspector',
+  title: 'Проверка URL — бесплатный инспектор SEO, Open Graph и мета-тегов',
   description:
-    "Inspect any URL's SEO, Open Graph, Twitter Cards, redirects, SSL, and tech stack. Free, instant, no signup. Built for developers and SEOs.",
+    'Проверьте SEO любого URL, Open Graph, Twitter Cards, редиректы, SSL и технический стек. Бесплатно, мгновенно, без регистрации. Для разработчиков и SEO-специалистов.',
 });
 
 export default function IPLookupLayout({

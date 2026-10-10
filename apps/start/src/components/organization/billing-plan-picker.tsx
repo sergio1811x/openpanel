@@ -115,8 +115,8 @@ export default function BillingPlanPicker({
               organizationId: organization.id,
             })
           );
-          toast.success('Subscription updated', {
-            description: 'It might take a few seconds to update',
+          toast.success('Подписка обновлена', {
+            description: 'Обновление может занять несколько секунд',
           });
           onComplete?.();
         }
@@ -192,7 +192,7 @@ export default function BillingPlanPicker({
           size="lg"
           variant="destructive"
         >
-          Cancel subscription
+          Отменить подписку
         </Button>
       );
     }
@@ -204,15 +204,15 @@ export default function BillingPlanPicker({
         organization.isExpired
       ) {
         return isCurrentProduct
-          ? 'Reactivate subscription'
-          : 'Change subscription';
+          ? 'Возобновить подписку'
+          : 'Изменить подписку';
       }
 
       if (currentProduct) {
-        return 'Change subscription';
+        return 'Изменить подписку';
       }
 
-      return 'Pay with Polar';
+      return 'Оплатить через Polar';
     })();
 
     // A checkout click charges the card via Polar, so the button must lock
@@ -262,13 +262,13 @@ export default function BillingPlanPicker({
       <div className="col shrink-0 gap-4">
         {currentProduct && (
           <div className="font-medium">
-            Your current usage is{' '}
-            {number.format(organization.subscriptionPeriodEventsCount)} out of{' '}
+            Ваше текущее использование —{' '}
+            {number.format(organization.subscriptionPeriodEventsCount)} из{' '}
             {number.format(Number(currentProduct?.metadata.eventsLimit))}{' '}
-            events.{' '}
+            событий.{' '}
             <span className="text-muted-foreground">
-              You cannot downgrade if your usage exceeds the limit of the new
-              plan.
+              Понизить тариф нельзя, если Ваше использование превышает лимит
+              нового тарифа.
             </span>
           </div>
         )}
@@ -276,17 +276,17 @@ export default function BillingPlanPicker({
           <div className="font-medium">
             {recurringInterval === 'year' ? (
               <>
-                Yearly billing —{' '}
-                <span className="text-emerald-500">2 months free</span>{' '}
+                Оплата за год —{' '}
+                <span className="text-emerald-500">2 месяца бесплатно</span>{' '}
                 <span className="font-normal text-muted-foreground">
-                  (pay for 10 months, get 12)
+                  (платите за 10 месяцев, получаете 12)
                 </span>
               </>
             ) : (
               <>
-                Switch to yearly and get{' '}
+                Перейдите на годовую оплату и получите{' '}
                 <span className="text-emerald-500 underline">
-                  2 months for free
+                  2 месяца бесплатно
                 </span>
               </>
             )}
@@ -298,7 +298,7 @@ export default function BillingPlanPicker({
             }
             variant="outline"
           >
-            {recurringInterval === 'year' ? 'Monthly' : 'Yearly'}
+            {recurringInterval === 'year' ? 'Помесячно' : 'За год'}
             <ShuffleIcon className="ml-2 size-4" />
           </Button>
         </div>
@@ -348,7 +348,7 @@ export default function BillingPlanPicker({
                   <span className="font-bold">
                     {number.currency(price)}
                     <span className="font-normal text-muted-foreground">
-                      /{recurringInterval === 'year' ? 'yr' : 'mo'}
+                      /{recurringInterval === 'year' ? 'год' : 'мес.'}
                     </span>
                   </span>
                   {renderRowIndicator(product)}

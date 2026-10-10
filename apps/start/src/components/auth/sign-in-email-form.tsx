@@ -25,7 +25,7 @@ export function SignInEmailForm({
           window.location.href = '/verify';
           return;
         }
-        toast.success('Successfully signed in');
+        toast.success('Вы успешно вошли в систему');
         window.location.href = '/';
       },
       onError(error) {
@@ -58,17 +58,17 @@ export function SignInEmailForm({
       <InputWithLabel
         {...form.register('password')}
         error={form.formState.errors.password?.message}
-        label="Password"
+        label="Пароль"
         type="password"
         className="bg-def-100/50 border-def-300 focus:border-highlight focus:ring-highlight/20"
       />
       <div className="relative">
         <Button type="submit" size="lg" className="w-full">
-          Sign in
+          Войти
         </Button>
         {isLastUsed && (
           <span className="absolute -top-2 right-3 text-[10px] font-medium bg-highlight text-white px-1.5 py-0.5 rounded-full leading-none">
-            Used last time
+            Использовалась в прошлый раз
           </span>
         )}
       </div>
@@ -81,7 +81,7 @@ export function SignInEmailForm({
         }
         className="text-sm text-muted-foreground hover:text-highlight hover:underline transition-colors duration-200 text-center mt-2"
       >
-        Forgot password?
+        Забыли пароль?
       </button>
     </form>
   );

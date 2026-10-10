@@ -41,8 +41,8 @@ export default function EditClient({ id, name }: EditClientProps) {
       onError: handleError,
       onSuccess() {
         reset();
-        toast('Success', {
-          description: 'Client updated.',
+        toast('Успешно', {
+          description: 'Клиент обновлён.',
         });
         popModal();
         queryClient.invalidateQueries(trpc.client.list.pathFilter());
@@ -52,15 +52,15 @@ export default function EditClient({ id, name }: EditClientProps) {
 
   return (
     <ModalContent>
-      <ModalHeader title="Edit client" />
+      <ModalHeader title="Изменение клиента" />
       <form onSubmit={handleSubmit((values) => mutation.mutate(values))}>
-        <InputWithLabel label="Name" placeholder="Name" {...register('name')} />
+        <InputWithLabel label="Название" placeholder="Название" {...register('name')} />
         <ButtonContainer>
           <Button type="button" variant="outline" onClick={() => popModal()}>
-            Cancel
+            Отмена
           </Button>
           <Button type="submit" disabled={!formState.isDirty}>
-            Save
+            Сохранить
           </Button>
         </ButtonContainer>
       </form>

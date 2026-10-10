@@ -38,7 +38,7 @@ export default function Syntax({
           }}
           type="button"
         >
-          <span>Copy</span>
+          <span>Копировать</span>
           <CopyIcon size={12} />
         </button>
       )}

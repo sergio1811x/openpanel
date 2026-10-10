@@ -26,9 +26,9 @@ const difficultyColors = {
 };
 
 const difficultyLabels = {
-  beginner: 'Beginner',
-  intermediate: 'Intermediate',
-  advanced: 'Advanced',
+  beginner: 'Новичок',
+  intermediate: 'Средний уровень',
+  advanced: 'Продвинутый',
 };
 
 export async function generateStaticParams() {
@@ -50,7 +50,7 @@ export async function generateMetadata({
 
   if (!guide) {
     return {
-      title: 'Guide Not Found',
+      title: 'Руководство не найдено',
     };
   }
 
@@ -112,7 +112,7 @@ export default async function Page({
             className="flex items-center gap-2 mb-4 text-muted-foreground"
           >
             <ArrowLeftIcon className="w-4 h-4" />
-            <span>Back to all guides</span>
+            <span>Ко всем руководствам</span>
           </Link>
           <SectionHeader
             as="h1"
@@ -141,7 +141,7 @@ export default async function Page({
                 </p>
                 {guide?.data.updated && (
                   <p className="text-muted-foreground text-sm italic">
-                    Updated on {guide?.data.updated.toLocaleDateString()}
+                    Обновлено {guide?.data.updated.toLocaleDateString()}
                   </p>
                 )}
               </div>
@@ -154,7 +154,7 @@ export default async function Page({
               </span>
               <div className="row gap-1 items-center text-muted-foreground text-sm">
                 <ClockIcon className="w-4 h-4" />
-                <span>{guide?.data.timeToComplete} min</span>
+                <span>{guide?.data.timeToComplete} мин</span>
               </div>
             </div>
           </div>
@@ -176,9 +176,9 @@ export default async function Page({
           <aside className="pl-12 pb-12 gap-8 col">
             <Toc toc={guide?.data.toc} />
             <FeatureCardContainer className="gap-2">
-              <span className="text-lg font-semibold">Try OpenPanel</span>
+              <span className="text-lg font-semibold">Попробуйте OpenPanel</span>
               <p className="text-muted-foreground text-sm mb-4">
-                Give it a spin for free. No credit card required.
+                Попробуйте бесплатно. Без кредитной карты.
               </p>
               <GetStartedButton />
             </FeatureCardContainer>
@@ -187,7 +187,7 @@ export default async function Page({
 
         {relatedGuides.length > 0 && (
           <div className="my-16">
-            <h3 className="text-2xl font-bold mb-8">Related guides</h3>
+            <h3 className="text-2xl font-bold mb-8">Похожие руководства</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedGuides.map((item) => (
                 <GuideCard

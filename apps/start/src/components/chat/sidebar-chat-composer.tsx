@@ -43,7 +43,7 @@ export function SidebarChatComposer() {
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Ask AI anything…"
+        placeholder="Спросите ИИ о чём угодно…"
         className={cn(
           'min-w-0 flex-1 bg-transparent py-2 text-[13px] font-medium text-foreground',
           'placeholder:font-normal placeholder:text-muted-foreground',
@@ -63,7 +63,7 @@ export function SidebarChatComposer() {
           size="icon"
           variant="default"
           className="size-6 shrink-0 rounded-sm"
-          aria-label="Send to AI"
+          aria-label="Отправить ИИ"
         >
           <ArrowUpIcon className="size-3.5" />
         </Button>
@@ -73,7 +73,7 @@ export function SidebarChatComposer() {
             'shrink-0 rounded border border-border bg-def-200 px-1.5 py-0.5 font-mono text-[11px]',
             'text-muted-foreground cursor-pointer',
           )}
-          aria-label="Keyboard shortcut: Cmd+J"
+          aria-label="Горячая клавиша: Cmd+J"
           onClick={() => openNewChat()}
         >
           ⌘J

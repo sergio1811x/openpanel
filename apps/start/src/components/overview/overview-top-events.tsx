@@ -37,23 +37,23 @@ export default function OverviewTopEvents({
 
   const [widget, setWidget, widgets] = useOverviewWidgetV2('ev', {
     your: {
-      title: 'Events',
-      btn: 'Events',
+      title: 'События',
+      btn: 'События',
       meta: {
         type: 'events' as const,
       },
     },
     conversions: {
-      title: 'Conversions',
-      btn: 'Conversions',
+      title: 'Конверсии',
+      btn: 'Конверсии',
       hide: !conversions || conversions.length === 0,
       meta: {
         type: 'conversions' as const,
       },
     },
     link_out: {
-      title: 'Link out',
-      btn: 'Link out',
+      title: 'Переходы по внешним ссылкам',
+      btn: 'Внешние ссылки',
       meta: {
         type: 'linkOut' as const,
       },
@@ -157,7 +157,7 @@ export default function OverviewTopEvents({
           onTabChange={setWidget}
           searchValue={searchQuery}
           onSearchChange={setSearchQuery}
-          searchPlaceholder={`Search ${widget.btn.toLowerCase()}`}
+          searchPlaceholder={`Поиск: ${widget.btn}`}
           className="border-b-0 pb-2"
         />
         <WidgetBody className="p-0">

@@ -31,15 +31,15 @@ export default function OverviewTopPagesModal({
 
   return (
     <OverviewListModal
-      title="Top Pages"
-      searchPlaceholder="Search pages..."
+      title="Топ страниц"
+      searchPlaceholder="Поиск: страницы..."
       data={query.data ?? []}
       keyExtractor={(item) => item.path + item.origin}
       searchFilter={(item, query) =>
         item.path.toLowerCase().includes(query) ||
         item.origin.toLowerCase().includes(query)
       }
-      columnName="Path"
+      columnName="Путь"
       renderItem={(item) => (
         <Tooltiper asChild content={item.origin + item.path} side="left">
           <div className="flex items-center gap-2 min-w-0">
@@ -52,7 +52,7 @@ export default function OverviewTopPagesModal({
                 setFilter('origin', item.origin);
               }}
             >
-              {item.path || <span className="opacity-40">Not set</span>}
+              {item.path || <span className="opacity-40">Не задано</span>}
             </button>
             <a
               href={item.origin + item.path}

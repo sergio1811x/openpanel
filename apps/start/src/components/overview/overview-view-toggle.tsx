@@ -29,7 +29,7 @@ export function OverviewViewToggle({
         onClick={() => {
           setView(view === 'table' ? 'chart' : 'table');
         }}
-        title={view === 'table' ? 'Switch to chart view' : 'Switch to table view'}
+        title={view === 'table' ? 'Показать график' : 'Показать таблицу'}
       >
         {view === 'table' ? (
           <LineChartIcon size={16} />

@@ -40,8 +40,8 @@ export default function AddReference({ datetime }: AddReferenceProps = {}) {
     trpc.reference.create.mutationOptions({
       onSuccess() {
         queryClient.invalidateQueries(trpc.reference.pathFilter());
-        toast('Success', {
-          description: 'Reference created.',
+        toast('Успешно', {
+          description: 'Точка отсчёта создана.',
         });
         popModal();
       },
@@ -51,26 +51,26 @@ export default function AddReference({ datetime }: AddReferenceProps = {}) {
 
   return (
     <ModalContent>
-      <ModalHeader title="Add reference" />
+      <ModalHeader title="Добавить точку отсчёта" />
       <form
         className="flex flex-col gap-4"
         onSubmit={handleSubmit((values) => mutation.mutate(values))}
       >
-        <InputWithLabel label="Title" {...register('title')} autoFocus />
-        <InputWithLabel label="Description" {...register('description')} />
+        <InputWithLabel label="Название" {...register('title')} autoFocus />
+        <InputWithLabel label="Описание" {...register('description')} />
         <Controller
           control={control}
           name="datetime"
           render={({ field }) => (
-            <InputDateTime {...field} label="Date and time" />
+            <InputDateTime {...field} label="Дата и время" />
           )}
         />
         <ButtonContainer>
           <Button type="button" variant="outline" onClick={() => popModal()}>
-            Cancel
+            Отмена
           </Button>
           <Button type="submit" disabled={!formState.isDirty}>
-            Create
+            Создать
           </Button>
         </ButtonContainer>
       </form>

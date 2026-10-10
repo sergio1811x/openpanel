@@ -26,10 +26,10 @@ export function NotificationRules() {
 
   if (!isLoading && data.length === 0) {
     return (
-      <FullPageEmptyState title="No rules yet" icon={PencilRulerIcon}>
+      <FullPageEmptyState title="Правил пока нет" icon={PencilRulerIcon}>
         <p>
-          You have not created any rules yet. Create a rule to start getting
-          notifications.
+          Вы ещё не создали ни одного правила. Создайте правило, чтобы начать
+          получать уведомления.
         </p>
         <Button
           className="mt-8"
@@ -40,7 +40,7 @@ export function NotificationRules() {
             })
           }
         >
-          Add Rule
+          Добавить правило
         </Button>
       </FullPageEmptyState>
     );
@@ -58,7 +58,7 @@ export function NotificationRules() {
             })
           }
         >
-          Add Rule
+          Добавить правило
         </Button>
       </div>
       <div className="col gap-4 w-full grid md:grid-cols-2">

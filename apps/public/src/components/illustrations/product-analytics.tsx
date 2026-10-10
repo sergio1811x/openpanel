@@ -11,21 +11,21 @@ function useFunnelSteps() {
   return [
     {
       id: 'Visitors',
-      label: 'Visitors',
+      label: 'Посетители',
       value: 10000,
       percentage: 100,
       color: resolvedTheme === 'dark' ? '#333' : '#888',
     },
     {
       id: 'Add to cart',
-      label: 'Add to cart',
+      label: 'Добавили в корзину',
       value: 7000,
       percentage: 32,
       color: resolvedTheme === 'dark' ? '#222' : '#999',
     },
     {
       id: 'Checkout',
-      label: 'Checkout',
+      label: 'Оформили заказ',
       value: 5000,
       percentage: 8.9,
       color: resolvedTheme === 'dark' ? '#111' : '#e1e1e1',

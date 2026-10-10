@@ -59,8 +59,8 @@ function Component() {
   const mutation = useMutation(
     trpc.email.updatePreferences.mutationOptions({
       onSuccess: async () => {
-        toast('Email preferences updated', {
-          description: 'Your email preferences have been saved.',
+        toast('Настройки email обновлены', {
+          description: 'Ваши настройки email были сохранены.',
         });
         await queryClient.invalidateQueries(
           trpc.email.getPreferences.pathFilter()
@@ -84,12 +84,12 @@ function Component() {
     >
       <Widget className="w-full max-w-screen-md">
         <WidgetHead>
-          <span className="title">Email Preferences</span>
+          <span className="title">Настройки email</span>
         </WidgetHead>
         <WidgetBody className="col gap-4">
           <p className="mb-4 text-muted-foreground text-sm">
-            Choose which types of emails you want to receive. Uncheck a category
-            to stop receiving those emails.
+            Выберите, какие типы писем Вы хотите получать. Снимите флажок с
+            категории, чтобы перестать получать такие письма.
           </p>
 
           <div className="space-y-4">
@@ -127,7 +127,7 @@ function Component() {
             size="sm"
             type="submit"
           >
-            Save
+            Сохранить
           </Button>
         </WidgetBody>
       </Widget>

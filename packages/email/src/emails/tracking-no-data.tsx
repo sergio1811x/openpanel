@@ -23,36 +23,36 @@ export function TrackingNoData({
   const names = projectNames.join(', ');
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+      <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
       <Text>
         {single
-          ? `Your project ${names} hasn't`
-          : `Your projects (${names}) haven't`}{' '}
-        received any events yet — which usually means the tracking snippet isn't
-        installed, or something is blocking it.
+          ? `Проект ${names} пока не получил`
+          : `Проекты (${names}) пока не получили`}{' '}
+        ни одного события — обычно это значит, что скрипт отслеживания не
+        установлен или что-то блокирует его.
       </Text>
       <Text>
-        The most common fixes: the snippet isn't on the page (or not deployed
-        yet), the client ID doesn't match, or the domain isn't in your allowed
-        origins.
+        Самые частые причины: скрипта нет на странице (или он ещё не задеплоен),
+        client ID не совпадает или домен не добавлен в список разрешённых
+        источников.
       </Text>
       <Text>
         <Button href={withUtm(dashboardUrl, 'tracking-no-data')}>
-          Verify your install
+          Проверить установку
         </Button>
       </Text>
       <Text>
-        Framework-specific instructions are in the{' '}
+        Инструкции для конкретных фреймворков есть в{' '}
         <Link
           href={withUtm(
             'https://openpanel.dev/docs/get-started/install-openpanel',
             'tracking-no-data'
           )}
         >
-          install guide
+          руководстве по установке
         </Link>
-        . And if you've tried and it still doesn't work, reply to this email —
-        I'll personally help you get it running.
+        . А если Вы уже пробовали и не заработало — ответьте на это письмо, я
+        лично помогу всё запустить.
       </Text>
       <Text>Carl</Text>
     </Layout>
@@ -61,6 +61,6 @@ export function TrackingNoData({
 
 TrackingNoData.PreviewProps = {
   firstName: 'Alex',
-  projectNames: ['My website'],
+  projectNames: ['Мой сайт'],
   dashboardUrl: 'https://dashboard.openpanel.dev/org-id',
 };

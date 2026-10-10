@@ -15,7 +15,7 @@ import { createEntityTitle, PAGE_TITLES } from '@/utils/title';
 export const Route = createFileRoute('/_steps/onboarding/$projectId/connect')({
   head: () => ({
     meta: [
-      { title: createEntityTitle('Connect data', PAGE_TITLES.ONBOARDING) },
+      { title: createEntityTitle('Подключение данных', PAGE_TITLES.ONBOARDING) },
     ],
   }),
   beforeLoad: ({ context }) => {
@@ -46,9 +46,9 @@ function Component() {
   if (!client) {
     return (
       <FullPageEmptyState
-        description="The project you are looking for does not exist. Please reload the page."
+        description="Проект, который вы ищете, не существует. Пожалуйста, перезагрузите страницу."
         icon={XIcon}
-        title="No project found"
+        title="Проект не найден"
       />
     );
   }
@@ -82,7 +82,7 @@ function Component() {
             <div className="row items-center justify-between gap-4">
               <div className="flex items-center gap-2 font-bold text-xl capitalize">
                 <LockIcon className="size-4" />
-                Client credentials
+                Учётные данные клиента
               </div>
               <div className="row gap-2">
                 <Button
@@ -90,34 +90,35 @@ function Component() {
                   onClick={() => clipboard(credentials)}
                   variant="outline"
                 >
-                  Copy all
+                  Копировать всё
                 </Button>
                 <Button
                   icon={DownloadIcon}
                   onClick={() => download()}
                   variant="outline"
                 >
-                  Save
+                  Сохранить
                 </Button>
               </div>
             </div>
             <div className="col gap-3">
-              <CopyInput label="Client ID" value={client.id} />
-              {hasSecret && <CopyInput label="Client secret" value={secret} />}
+              <CopyInput label="ID клиента" value={client.id} />
+              {hasSecret && <CopyInput label="Секрет клиента" value={secret} />}
               {mcpToken && (
                 <div className="w-full min-w-0">
-                  <CopyInput label="MCP token" value={mcpToken} />
+                  <CopyInput label="MCP-токен" value={mcpToken} />
                   <p className="mt-1 text-muted-foreground text-sm">
-                    Authenticates the MCP server (base64-encoded client ID and
-                    secret).
+                    Используется для аутентификации MCP-сервера (ID клиента и
+                    секрет в кодировке base64).
                   </p>
                 </div>
               )}
               {!hasSecret && (
                 <p className="text-muted-foreground text-sm">
-                  Your client secret (and the MCP token derived from it) is only
-                  shown once, right after the client is created. If you need it
-                  again, create a new client under Settings → Clients.
+                  Секрет клиента (и MCP-токен, созданный на его основе)
+                  показывается только один раз — сразу после создания клиента.
+                  Если он понадобится снова, создайте новый клиент в разделе
+                  Настройки → Клиенты.
                 </p>
               )}
             </div>
@@ -134,7 +135,7 @@ function Component() {
           params={{ projectId }}
           size="lg"
         >
-          Next
+          Далее
         </LinkButton>
       </ButtonContainer>
     </div>

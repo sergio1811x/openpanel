@@ -90,7 +90,7 @@ export function GscCannibalization({
       <div className="border-b">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
-            <h3 className="font-medium text-sm">Keyword Cannibalization</h3>
+            <h3 className="font-medium text-sm">Каннибализация запросов</h3>
             {items.length > 0 && (
               <span className="rounded-full bg-muted px-2 py-0.5 font-medium text-muted-foreground text-xs">
                 {items.length}
@@ -101,8 +101,8 @@ export function GscCannibalization({
             <div className="flex shrink-0 items-center gap-2">
               <span className="whitespace-nowrap text-muted-foreground text-xs">
                 {items.length === 0
-                  ? '0 results'
-                  : `${rangeStart}-${rangeEnd} of ${items.length}`}
+                  ? '0 результатов'
+                  : `${rangeStart}-${rangeEnd} из ${items.length}`}
               </span>
               <Pagination
                 canNextPage={page < pageCount - 1}
@@ -122,7 +122,7 @@ export function GscCannibalization({
               setSearch(e.target.value);
               setPage(0);
             }}
-            placeholder="Search keywords"
+            placeholder="Поиск по ключевым словам"
             type="search"
             value={search}
           />
@@ -156,7 +156,7 @@ export function GscCannibalization({
                     )}
                   >
                     <AlertCircleIcon className="size-3" />
-                    {item.pages.length} pages
+                    {item.pages.length} стр.
                   </div>
                   <span className="truncate font-medium text-sm">
                     {item.query}
@@ -164,8 +164,8 @@ export function GscCannibalization({
                 </div>
                 <div className="flex shrink-0 items-center gap-4">
                   <span className="whitespace-nowrap font-mono text-muted-foreground text-xs">
-                    {item.totalImpressions.toLocaleString()} impr ·{' '}
-                    {(avgCtr * 100).toFixed(1)}% avg CTR
+                    {item.totalImpressions.toLocaleString()} показ ·{' '}
+                    {(avgCtr * 100).toFixed(1)}% сред. CTR
                   </span>
                   <ChevronsUpDownIcon
                     className={cn(
@@ -179,12 +179,13 @@ export function GscCannibalization({
               {isOpen && (
                 <div className="border-t bg-muted/20 px-4 py-3">
                   <p className="mb-3 text-muted-foreground text-xs leading-normal">
-                    These pages all rank for{' '}
+                    Все эти страницы ранжируются по запросу{' '}
                     <span className="font-medium text-foreground">
                       "{item.query}"
                     </span>
-                    . Consider consolidating weaker pages into the top-ranking
-                    one to concentrate link equity and avoid splitting clicks.
+                    . Рекомендуем объединить более слабые страницы с самой
+                    сильной, чтобы сконцентрировать ссылочный вес и не дробить
+                    клики.
                   </p>
                   <div className="space-y-1.5">
                     {item.pages.map((page, idx) => {
@@ -236,9 +237,9 @@ export function GscCannibalization({
                             </span>
                           )}
                           <span className="shrink-0 whitespace-nowrap font-mono text-muted-foreground text-xs">
-                            pos {page.position.toFixed(1)} ·{' '}
+                            поз. {page.position.toFixed(1)} ·{' '}
                             {(page.ctr * 100).toFixed(1)}% CTR ·{' '}
-                            {page.impressions.toLocaleString()} impr
+                            {page.impressions.toLocaleString()} показ
                           </span>
                         </button>
                       );

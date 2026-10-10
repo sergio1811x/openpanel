@@ -35,7 +35,7 @@ function DefaultInner({
     return (
       <ResultCard title={getToolPhrase(toolName, 'done')}>
         <div className="px-3 py-2 text-sm text-muted-foreground">
-          No result.
+          Нет результата.
         </div>
       </ResultCard>
     );
@@ -64,8 +64,8 @@ function DefaultInner({
         />
         <span className="truncate">
           {Array.isArray(output)
-            ? `${output.length} item${output.length === 1 ? '' : 's'}`
-            : 'View raw output'}
+            ? `${output.length} ${output.length === 1 ? 'элемент' : output.length < 5 ? 'элемента' : 'элементов'}`
+            : 'Показать исходные данные'}
         </span>
       </button>
       {expanded && (

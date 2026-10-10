@@ -10,33 +10,33 @@ function wrap(child: React.ReactNode) {
 
 const features = [
   {
-    title: 'Revenue Tracking',
+    title: 'Отслеживание выручки',
     description:
-      'Connect payment events to track MRR and see which referrers drive the most revenue.',
+      'Подключите платёжные события, чтобы отслеживать MRR и видеть, какие источники приносят больше всего выручки.',
     illustration: wrap(<RevenueIllustration />),
     link: {
       href: '/features/revenue-tracking',
-      children: 'Track revenue',
+      children: 'Отслеживать выручку',
     },
   },
   {
-    title: 'Conversion Tracking',
+    title: 'Отслеживание конверсий',
     description:
-      'Monitor conversion rates over time and break down by A/B variant, country, or device. Catch regressions before they cost you.',
+      'Следите за конверсией во времени и разбивайте её по A/B-варианту, стране или устройству. Замечайте просадки до того, как они дорого обойдутся.',
     illustration: wrap(<ConversionsIllustration />),
     link: {
       href: '/features/conversion',
-      children: 'Track conversions',
+      children: 'Отслеживать конверсии',
     },
   },
   {
     title: 'Google Search Console',
     description:
-      'See which search queries bring organic traffic and how visitors convert after landing. Your SEO and product data, in one place.',
+      'Смотрите, какие поисковые запросы приводят органический трафик и как посетители конвертируются после перехода. SEO- и продуктовые данные — в одном месте.',
     illustration: wrap(<GoogleSearchConsoleIllustration />),
     link: {
       href: '/features/integrations',
-      children: 'View integrations',
+      children: 'Все интеграции',
     },
   },
 ];
@@ -46,9 +46,9 @@ export function FeatureSpotlight() {
     <Section className="container">
       <SectionHeader
         className="mb-16"
-        description="OpenPanel goes beyond page views. Track revenue, monitor conversions, and connect your SEO data — all without switching tools."
-        label="GROWTH TOOLS"
-        title="Built for teams who ship and measure"
+        description="OpenPanel — это больше, чем просмотры страниц. Отслеживайте выручку, следите за конверсиями и подключайте SEO-данные — без смены инструментов."
+        label="ИНСТРУМЕНТЫ РОСТА"
+        title="Создано для команд, которые делают продукт и измеряют результат"
       />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

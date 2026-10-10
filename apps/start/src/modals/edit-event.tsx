@@ -55,7 +55,7 @@ export default function EditEvent({ id }: Props) {
   const mutation = useMutation(
     trpc.event.updateEventMeta.mutationOptions({
       onSuccess() {
-        toast('Event updated');
+        toast('Событие обновлено');
         client.invalidateQueries(trpc.event.pathFilter());
         popModal();
       },
@@ -68,12 +68,12 @@ export default function EditEvent({ id }: Props) {
   return (
     <ModalContent>
       <ModalHeader
-        title={`Edit: ${event?.name}`}
-        text={`Changes here will affect all "${event?.name}" events`}
+        title={`Изменение: ${event?.name}`}
+        text={`Изменения затронут все события "${event?.name}"`}
       />
       <div className="col gap-4">
         <div>
-          <Label className="mb-4 block">Conversion</Label>
+          <Label className="mb-4 block">Конверсия</Label>
           <label className="flex cursor-pointer select-none items-center gap-4 rounded-md border border-border p-4">
             <Checkbox
               checked={conversion}
@@ -83,7 +83,7 @@ export default function EditEvent({ id }: Props) {
               }}
             />
             <div>
-              <span>Yes, this event is important!</span>
+              <span>Да, это важное событие!</span>
             </div>
           </label>
         </div>
@@ -97,11 +97,11 @@ export default function EditEvent({ id }: Props) {
               transition={{ duration: 0.15 }}
             >
               <div className="row mb-4 items-center justify-between">
-                <div className="font-medium leading-none">Pick an icon</div>
+                <div className="font-medium leading-none">Выберите иконку</div>
                 {
                   <button type="button" onClick={() => setStep('color')}>
                     <Badge variant="outline">
-                      Select color
+                      Выбрать цвет
                       <PaintBucketIcon className="ml-1 h-3 w-3" />
                     </Badge>
                   </button>
@@ -111,7 +111,7 @@ export default function EditEvent({ id }: Props) {
                 className="mb-4"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search for an icon"
+                placeholder="Поиск иконки"
               />
               <div className={iconGrid}>
                 {Object.entries(EventIconMapper)
@@ -147,10 +147,10 @@ export default function EditEvent({ id }: Props) {
               transition={{ duration: 0.15 }}
             >
               <div className="row mb-4 items-center justify-between">
-                <div className="font-medium leading-none">Pick a color</div>
+                <div className="font-medium leading-none">Выберите цвет</div>
                 <button type="button" onClick={() => setStep('icon')}>
                   <Badge variant="outline">
-                    Select icon
+                    Выбрать иконку
                     <UndoIcon className="ml-1 h-3 w-3" />
                   </Badge>
                 </button>
@@ -206,7 +206,7 @@ export default function EditEvent({ id }: Props) {
             })
           }
         >
-          Update event
+          Обновить событие
         </Button>
       </div>
     </ModalContent>

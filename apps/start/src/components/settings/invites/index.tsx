@@ -33,7 +33,7 @@ export const InvitesTable = ({ query }: Props) => {
             pushModal('CreateInvite');
           }}
         >
-          Invite user
+          Пригласить пользователя
         </Button>
       </DataTableToolbar>
       <DataTable table={table} loading={isLoading} />

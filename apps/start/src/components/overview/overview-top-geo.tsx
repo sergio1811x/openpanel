@@ -47,16 +47,16 @@ export default function OverviewTopGeo({
   const isPageFilter = filters.find((filter) => filter.name === 'path');
   const [widget, setWidget, widgets] = useOverviewWidgetV2('geo', {
     country: {
-      title: 'Top countries',
-      btn: 'Countries',
+      title: 'Топ стран',
+      btn: 'Страны',
     },
     region: {
-      title: 'Top regions',
-      btn: 'Regions',
+      title: 'Топ регионов',
+      btn: 'Регионы',
     },
     city: {
-      title: 'Top cities',
-      btn: 'Cities',
+      title: 'Топ городов',
+      btn: 'Города',
     },
   });
 
@@ -123,7 +123,7 @@ export default function OverviewTopGeo({
           onTabChange={setWidget}
           searchValue={searchQuery}
           onSearchChange={setSearchQuery}
-          searchPlaceholder={`Search ${widget.btn.toLowerCase()}`}
+          searchPlaceholder={`Поиск: ${widget.btn}`}
           className="border-b-0 pb-2"
         />
         <WidgetBody className="p-0">
@@ -179,7 +179,7 @@ export default function OverviewTopGeo({
                         )}
                         {(countries[item.name as keyof typeof countries] ??
                           item.name) ||
-                          'Not set'}
+                          'Не задано'}
                       </button>
                     </div>
                   );
@@ -200,7 +200,7 @@ export default function OverviewTopGeo({
           <div className="flex-1" />
           <OverviewViewToggle />
           <span className="text-sm text-muted-foreground pr-2 ml-2">
-            Geo data provided by{' '}
+            Геоданные предоставлены сервисом{' '}
             <a
               href="https://ipdata.co"
               target="_blank"
@@ -214,7 +214,7 @@ export default function OverviewTopGeo({
       </Widget>
       <Widget className="col-span-6 md:col-span-3">
         <WidgetHead>
-          <div className="title">Map</div>
+          <div className="title">Карта</div>
         </WidgetHead>
         <WidgetBody>
           <OverviewMap projectId={projectId} shareId={shareId} />

@@ -53,13 +53,13 @@ type SortOption =
 
 function getModuleDisplayName(moduleKey: string): string {
   const displayNames: Record<string, string> = {
-    geo: 'Geographic',
-    devices: 'Devices',
-    referrers: 'Referrers',
-    'entry-pages': 'Entry Pages',
-    'page-trends': 'Page Trends',
-    'exit-pages': 'Exit Pages',
-    'traffic-anomalies': 'Anomalies',
+    geo: 'География',
+    devices: 'Устройства',
+    referrers: 'Источники',
+    'entry-pages': 'Страницы входа',
+    'page-trends': 'Тренды страниц',
+    'exit-pages': 'Страницы выхода',
+    'traffic-anomalies': 'Аномалии',
   };
   return displayNames[moduleKey] || moduleKey.replace('-', ' ');
 }
@@ -261,7 +261,7 @@ function Component() {
   if (isLoading) {
     return (
       <PageContainer>
-        <PageHeader title="Insights" className="mb-8" />
+        <PageHeader title="Инсайты" className="mb-8" />
         <div className="space-y-8">
           {Array.from({ length: 3 }, (_, i) => `section-${i}`).map((key) => (
             <div key={key} className="space-y-4">
@@ -290,13 +290,13 @@ function Component() {
   return (
     <PageContainer>
       <PageHeader
-        title="Insights"
-        description="Discover trends and changes in your analytics"
+        title="Инсайты"
+        description="Отслеживайте тренды и изменения в Вашей аналитике"
         className="mb-8"
       />
       <TableButtons className="mb-8">
         <Input
-          placeholder="Search insights..."
+          placeholder="Поиск инсайтов..."
           value={search ?? ''}
           onChange={(e) => void setSearch(e.target.value || null)}
           className="max-w-xs"
@@ -308,13 +308,13 @@ function Component() {
           }
         >
           <SelectTrigger className="w-[140px]">
-            <SelectValue placeholder="Time Window" />
+            <SelectValue placeholder="Период" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Windows</SelectItem>
-            <SelectItem value="yesterday">Yesterday</SelectItem>
-            <SelectItem value="rolling_7d">7 Days</SelectItem>
-            <SelectItem value="rolling_30d">30 Days</SelectItem>
+            <SelectItem value="all">Все периоды</SelectItem>
+            <SelectItem value="yesterday">Вчера</SelectItem>
+            <SelectItem value="rolling_7d">7 дней</SelectItem>
+            <SelectItem value="rolling_30d">30 дней</SelectItem>
           </SelectContent>
         </Select>
         <Select
@@ -324,14 +324,14 @@ function Component() {
           }
         >
           <SelectTrigger className="w-[140px]">
-            <SelectValue placeholder="Severity" />
+            <SelectValue placeholder="Критичность" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Severity</SelectItem>
-            <SelectItem value="severe">Severe</SelectItem>
-            <SelectItem value="moderate">Moderate</SelectItem>
-            <SelectItem value="low">Low</SelectItem>
-            <SelectItem value="none">No Severity</SelectItem>
+            <SelectItem value="all">Любая критичность</SelectItem>
+            <SelectItem value="severe">Высокая</SelectItem>
+            <SelectItem value="moderate">Средняя</SelectItem>
+            <SelectItem value="low">Низкая</SelectItem>
+            <SelectItem value="none">Без критичности</SelectItem>
           </SelectContent>
         </Select>
         <Select
@@ -341,13 +341,13 @@ function Component() {
           }
         >
           <SelectTrigger className="w-[140px]">
-            <SelectValue placeholder="Direction" />
+            <SelectValue placeholder="Направление" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Directions</SelectItem>
-            <SelectItem value="up">Increasing</SelectItem>
-            <SelectItem value="down">Decreasing</SelectItem>
-            <SelectItem value="flat">Flat</SelectItem>
+            <SelectItem value="all">Все направления</SelectItem>
+            <SelectItem value="up">Рост</SelectItem>
+            <SelectItem value="down">Снижение</SelectItem>
+            <SelectItem value="flat">Без изменений</SelectItem>
           </SelectContent>
         </Select>
         <Select
@@ -355,26 +355,26 @@ function Component() {
           onValueChange={(v) => void setSortBy(v as SortOption)}
         >
           <SelectTrigger className="w-[160px]">
-            <SelectValue placeholder="Sort by" />
+            <SelectValue placeholder="Сортировка" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="relevance">Relevance (AI)</SelectItem>
-            <SelectItem value="impact-desc">Impact (High → Low)</SelectItem>
-            <SelectItem value="impact-asc">Impact (Low → High)</SelectItem>
-            <SelectItem value="severity-desc">Severity (High → Low)</SelectItem>
-            <SelectItem value="severity-asc">Severity (Low → High)</SelectItem>
-            <SelectItem value="recent">Most Recent</SelectItem>
+            <SelectItem value="relevance">Релевантность (AI)</SelectItem>
+            <SelectItem value="impact-desc">Влияние (по убыванию)</SelectItem>
+            <SelectItem value="impact-asc">Влияние (по возрастанию)</SelectItem>
+            <SelectItem value="severity-desc">Критичность (по убыванию)</SelectItem>
+            <SelectItem value="severity-asc">Критичность (по возрастанию)</SelectItem>
+            <SelectItem value="recent">Сначала новые</SelectItem>
           </SelectContent>
         </Select>
       </TableButtons>
 
       {filteredAndSorted.length === 0 && !isLoading && (
         <FullPageEmptyState
-          title="No insights found"
+          title="Инсайты не найдены"
           description={
             search || moduleFilter !== 'all' || windowKindFilter !== 'all'
-              ? 'Try adjusting your filters to see more insights.'
-              : 'Insights will appear here as trends are detected in your analytics.'
+              ? 'Измените фильтры, чтобы увидеть больше инсайтов.'
+              : 'Здесь появятся инсайты, когда в Вашей аналитике будут обнаружены тренды.'
           }
         />
       )}
@@ -388,8 +388,7 @@ function Component() {
                   {getModuleDisplayName(moduleKey)}
                 </h2>
                 <span className="text-sm text-muted-foreground">
-                  {moduleInsights.length}{' '}
-                  {moduleInsights.length === 1 ? 'insight' : 'insights'}
+                  Инсайтов: {moduleInsights.length}
                 </span>
               </div>
               <div className="-mx-8">
@@ -442,7 +441,7 @@ function Component() {
 
       {filteredAndSorted.length > 0 && (
         <div className="mt-8 text-sm text-muted-foreground text-center">
-          Showing {filteredAndSorted.length} of {insights?.length ?? 0} insights
+          Показано {filteredAndSorted.length} из {insights?.length ?? 0} инсайтов
         </div>
       )}
     </PageContainer>

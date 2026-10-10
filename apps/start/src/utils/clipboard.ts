@@ -48,14 +48,14 @@ export async function clipboard(
   }
 
   if (!copied) {
-    toast.error('Failed to copy to clipboard', {
-      description: 'Please copy it manually.',
+    toast.error('Не удалось скопировать в буфер обмена', {
+      description: 'Пожалуйста, скопируйте вручную.',
     });
     return;
   }
 
   toast(
-    'Copied to clipboard',
+    'Скопировано в буфер обмена',
     description !== null
       ? {
           description: description ?? text,

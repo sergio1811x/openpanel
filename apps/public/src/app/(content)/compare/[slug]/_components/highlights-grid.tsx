@@ -22,8 +22,8 @@ export function HighlightsGrid({ highlights }: HighlightsGridProps) {
   return (
     <Section className="container">
       <SectionHeader
-        title="Key differences"
-        description="See how OpenPanel compares at a glance"
+        title="Ключевые отличия"
+        description="Посмотрите, как OpenPanel сравнивается с первого взгляда"
         align="center"
       />
       <div className="mt-12 border rounded-3xl overflow-hidden">

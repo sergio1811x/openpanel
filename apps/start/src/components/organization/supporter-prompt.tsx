@@ -15,33 +15,33 @@ import { useCookieStore } from '@/hooks/use-cookie-store';
 const PERKS = [
   {
     icon: RocketIcon,
-    text: 'Latest Docker Images',
-    description: 'Bleeding-edge builds on every commit',
+    text: 'Свежие Docker-образы',
+    description: 'Сборки последней версии при каждом коммите',
   },
   {
     icon: MessageCircleIcon,
-    text: 'Prioritized Support',
-    description: 'Get help faster with priority Discord support',
+    text: 'Приоритетная поддержка',
+    description: 'Получайте помощь быстрее с приоритетной поддержкой в Discord',
   },
   {
     icon: SparklesIcon,
-    text: 'Feature Requests',
-    description: 'Your ideas get prioritized in our roadmap',
+    text: 'Запросы функций',
+    description: 'Ваши идеи получают приоритет в нашем роадмапе',
   },
   {
     icon: AwardIcon,
-    text: 'Exclusive Discord Role',
-    description: 'Special badge and recognition in our community',
+    text: 'Эксклюзивная роль в Discord',
+    description: 'Особый бейдж и признание в нашем сообществе',
   },
   {
     icon: ZapIcon,
-    text: 'Early Access',
-    description: 'Try new features before public release',
+    text: 'Ранний доступ',
+    description: 'Пробуйте новые функции до публичного релиза',
   },
   {
     icon: HeartIcon,
-    text: 'Direct Impact',
-    description: 'Your support directly funds development',
+    text: 'Прямое влияние',
+    description: 'Ваша поддержка напрямую финансирует разработку',
   },
 ] as const;
 
@@ -81,8 +81,8 @@ export default function SupporterPrompt() {
       gradientColor="rgb(16 185 129)"
       onClose={() => setSupporterPromptClosed(true)}
       show={!supporterPromptClosed}
-      subtitle="Help us build the future of open analytics"
-      title="Support OpenPanel"
+      subtitle="Помогите нам строить будущее открытой аналитики"
+      title="Поддержите OpenPanel"
     >
       <div className="col gap-3 px-6">
         {PERKS.map((perk) => (
@@ -100,17 +100,17 @@ export default function SupporterPrompt() {
           className="w-full"
           href="https://buy.polar.sh/polar_cl_Az1CruNFzQB2bYdMOZmGHqTevW317knWqV44W1FqZmV"
         >
-          Become a Supporter
+          Стать сторонником
         </LinkButton>
         <p className="mt-4 text-center text-muted-foreground text-xs">
-          Starting at $20/month • Cancel anytime •{' '}
+          От $20 в месяц • Отмена в любой момент •{' '}
           <a
             className="text-primary underline-offset-4 hover:underline"
             href="https://openpanel.dev/supporter"
             rel="noreferrer"
             target="_blank"
           >
-            Learn more
+            Подробнее
           </a>
         </p>
       </div>

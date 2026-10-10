@@ -38,7 +38,7 @@ export async function generateMetadata({
 
   if (!article) {
     return {
-      title: 'Article Not Found',
+      title: 'Статья не найдена',
     };
   }
 
@@ -111,7 +111,7 @@ export default async function Page({
             className="flex items-center gap-2 mb-4 text-muted-foreground"
           >
             <ArrowLeftIcon className="w-4 h-4" />
-            <span>Back to all articles</span>
+            <span>Ко всем статьям</span>
           </Link>
           <SectionHeader
             as="h1"
@@ -140,7 +140,7 @@ export default async function Page({
                 </p>
                 {article?.data.updated && (
                   <p className="text-muted-foreground text-sm italic">
-                    Updated on {article?.data.updated.toLocaleDateString()}
+                    Обновлено {article?.data.updated.toLocaleDateString()}
                   </p>
                 )}
               </div>
@@ -164,9 +164,9 @@ export default async function Page({
           <aside className="pl-12 pb-12 gap-8 col">
             <Toc toc={article?.data.toc} />
             <FeatureCardContainer className="gap-2">
-              <span className="text-lg font-semibold">Try OpenPanel</span>
+              <span className="text-lg font-semibold">Попробуйте OpenPanel</span>
               <p className="text-muted-foreground text-sm mb-4">
-                Give it a spin for free. No credit card required.
+                Попробуйте бесплатно. Без кредитной карты.
               </p>
               <GetStartedButton />
             </FeatureCardContainer>
@@ -175,7 +175,7 @@ export default async function Page({
 
         {relatedArticles.length > 0 && (
           <div className="my-16">
-            <h3 className="text-2xl font-bold mb-8">Related articles</h3>
+            <h3 className="text-2xl font-bold mb-8">Похожие статьи</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedArticles.map((item) => (
                 <ArticleCard

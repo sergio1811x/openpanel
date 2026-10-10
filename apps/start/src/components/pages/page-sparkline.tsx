@@ -80,10 +80,10 @@ function SparklineBars({ data }: SparklineBarsProps) {
       <Tooltiper
         content={
           trend === '↑'
-            ? 'Upward trend'
+            ? 'Восходящий тренд'
             : trend === '↓'
-              ? 'Downward trend'
-              : 'Stable trend'
+              ? 'Нисходящий тренд'
+              : 'Стабильный тренд'
         }
       >
         <span className={`shrink-0 font-medium text-xs ${trendColor}`}>

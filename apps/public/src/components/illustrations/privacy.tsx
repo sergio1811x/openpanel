@@ -19,7 +19,7 @@ export function PrivacyIllustration({ className = '' }: IllustrationProps) {
           "
         >
           <div className="flex items-center justify-between px-4 pt-3 text-xs text-muted-foreground">
-            <span>Session duration</span>
+            <span>Длительность сессии</span>
             <span className="flex items-center gap-1">
               3m 12s
               <span className="text-[10px] text-blue-400">+8%</span>
@@ -56,27 +56,27 @@ export function PrivacyIllustration({ className = '' }: IllustrationProps) {
           "
         >
           <div className="flex items-center justify-between px-4 pt-3 text-xs text-foreground">
-            <span>Anonymous visitors</span>
+            <span>Анонимные посетители</span>
             <span className="text-[10px] rounded-full bg-card px-2 py-0.5 text-muted-foreground">
-              No cookies
+              Без cookies
             </span>
           </div>
 
           <div className="flex items-end justify-between px-4 pt-4 pb-3">
             <div>
               <p className="text-[11px] text-muted-foreground mb-1">
-                Active now
+                Сейчас онлайн
               </p>
               <p className="text-2xl font-semibold text-foreground">128</p>
             </div>
             <div className="space-y-1.5 text-[10px] text-muted-foreground">
               <div className="flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
-                <span>IP + UA hashed daily</span>
+                <span>IP + UA хешируются ежедневно</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
-                <span>No fingerprinting</span>
+                <span>Без фингерпринтинга</span>
               </div>
             </div>
           </div>
@@ -84,11 +84,11 @@ export function PrivacyIllustration({ className = '' }: IllustrationProps) {
           {/* "Sources" row */}
           <div className="mt-auto flex gap-2 border-t border-border px-3 py-2.5 text-[11px]">
             <div className="flex-1 rounded-xl bg-card/90 px-3 py-1.5 flex items-center justify-between">
-              <span className="text-muted-foreground">Direct</span>
+              <span className="text-muted-foreground">Прямые</span>
               <span className="text-foreground">42%</span>
             </div>
             <div className="flex-1 rounded-xl bg-card/90 px-3 py-1.5 flex items-center justify-between">
-              <span className="text-muted-foreground">Organic</span>
+              <span className="text-muted-foreground">Органика</span>
               <span className="text-foreground">58%</span>
             </div>
           </div>

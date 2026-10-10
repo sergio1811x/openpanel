@@ -23,7 +23,7 @@ export function ReportTableToolbar({
         <div className="relative flex-1 w-full md:max-w-sm">
           <Search className="absolute left-2 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
           <Input
-            placeholder="Search..."
+            placeholder="Поиск..."
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             className="pl-8"
@@ -38,12 +38,12 @@ export function ReportTableToolbar({
             onClick={onToggleGrouped}
             icon={grouped ? Rows3 : List}
           >
-            {grouped ? 'Grouped' : 'Flat'}
+            {grouped ? 'Группировка' : 'Без группировки'}
           </Button>
         )}
         {onUnselectAll && (
           <Button variant="outline" size="sm" onClick={onUnselectAll} icon={X}>
-            Unselect All
+            Снять выделение
           </Button>
         )}
       </div>

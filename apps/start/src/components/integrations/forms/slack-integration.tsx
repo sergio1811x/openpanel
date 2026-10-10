@@ -37,7 +37,7 @@ export function SlackIntegrationForm({
         onSuccess();
       },
       onError() {
-        toast.error('Failed to create integration');
+        toast.error('Не удалось создать интеграцию');
       },
     }),
   );
@@ -47,7 +47,7 @@ export function SlackIntegrationForm({
   };
 
   const handleError = () => {
-    toast.error('Validation error');
+    toast.error('Ошибка валидации');
   };
 
   return (
@@ -56,12 +56,12 @@ export function SlackIntegrationForm({
       className="col gap-4"
     >
       <InputWithLabel
-        label="Name"
-        placeholder="Eg. My personal slack"
+        label="Название"
+        placeholder="Например, Мой личный Slack"
         {...form.register('name')}
         error={form.formState.errors.name?.message}
       />
-      <Button type="submit">Create</Button>
+      <Button type="submit">Создать</Button>
     </form>
   );
 }

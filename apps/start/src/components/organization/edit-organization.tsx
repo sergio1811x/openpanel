@@ -34,8 +34,8 @@ export default function EditOrganization({
   const mutation = useMutation(
     trpc.organization.update.mutationOptions({
       onSuccess(res: any) {
-        toast('Organization updated', {
-          description: 'Your organization has been updated.',
+        toast('Организация обновлена', {
+          description: 'Ваша организация была обновлена.',
         });
         reset({
           ...res,
@@ -55,12 +55,12 @@ export default function EditOrganization({
     >
       <Widget>
         <WidgetHead className="flex items-center justify-between">
-          <span className="title">Details</span>
+          <span className="title">Детали</span>
         </WidgetHead>
         <WidgetBody className="gap-4 col">
           <InputWithLabel
             className="flex-1"
-            label="Name"
+            label="Название"
             {...register('name')}
             defaultValue={organization?.name}
           />
@@ -68,9 +68,9 @@ export default function EditOrganization({
             name="timezone"
             control={control}
             render={({ field }) => (
-              <WithLabel label="Timezone">
+              <WithLabel label="Часовой пояс">
                 <Combobox
-                  placeholder="Select timezone"
+                  placeholder="Выберите часовой пояс"
                   items={Intl.supportedValuesOf('timeZone').map((item) => ({
                     value: item,
                     label: item,
@@ -88,7 +88,7 @@ export default function EditOrganization({
             disabled={!formState.isDirty}
             className="self-end"
           >
-            Save
+            Сохранить
           </Button>
         </WidgetBody>
       </Widget>

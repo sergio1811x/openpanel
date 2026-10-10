@@ -47,7 +47,7 @@ export function OverviewMap({ projectId, shareId }: OverviewMapProps) {
   if (query.isLoading) {
     return (
       <div className="h-full w-full flex items-center justify-center">
-        <div className="text-muted-foreground">Loading map...</div>
+        <div className="text-muted-foreground">Загрузка карты...</div>
       </div>
     );
   }
@@ -55,7 +55,7 @@ export function OverviewMap({ projectId, shareId }: OverviewMapProps) {
   if (query.isError) {
     return (
       <div className="h-full w-full flex items-center justify-center">
-        <div className="text-muted-foreground">Error loading map</div>
+        <div className="text-muted-foreground">Ошибка загрузки карты</div>
       </div>
     );
   }
@@ -63,7 +63,7 @@ export function OverviewMap({ projectId, shareId }: OverviewMapProps) {
   if (!query.data || mapData.length === 0) {
     return (
       <div className="h-full w-full flex items-center justify-center">
-        <div className="text-muted-foreground">No data available</div>
+        <div className="text-muted-foreground">Нет данных</div>
       </div>
     );
   }

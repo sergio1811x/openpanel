@@ -56,8 +56,8 @@ function ImportsSettings() {
   const deleteImport = useMutation(
     trpc.import.delete.mutationOptions({
       onSuccess: () => {
-        toast.success('Import deleted', {
-          description: 'The import has been successfully deleted.',
+        toast.success('Импорт удалён', {
+          description: 'Импорт успешно удалён.',
         });
         queryClient.invalidateQueries(trpc.import.list.pathFilter());
       },
@@ -67,8 +67,8 @@ function ImportsSettings() {
   const retryImport = useMutation(
     trpc.import.retry.mutationOptions({
       onSuccess: () => {
-        toast.success('Import retried', {
-          description: 'The import has been queued for processing again.',
+        toast.success('Импорт перезапущен', {
+          description: 'Импорт снова поставлен в очередь на обработку.',
         });
         queryClient.invalidateQueries(trpc.import.list.pathFilter());
       },
@@ -144,7 +144,7 @@ function ImportsSettings() {
                   variant="ghost"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Import Data
+                  Импортировать данные
                 </Button>
               </IntegrationCardFooter>
             </IntegrationCard>
@@ -153,18 +153,18 @@ function ImportsSettings() {
       </div>
 
       <div>
-        <h3 className="mb-4 font-medium text-lg">Import History</h3>
+        <h3 className="mb-4 font-medium text-lg">История импортов</h3>
 
         <div className="rounded-lg border">
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Provider</TableHead>
-                <TableHead>Created</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Progress</TableHead>
-                <TableHead>Config</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
+                <TableHead>Провайдер</TableHead>
+                <TableHead>Создан</TableHead>
+                <TableHead>Статус</TableHead>
+                <TableHead>Прогресс</TableHead>
+                <TableHead>Конфигурация</TableHead>
+                <TableHead className="text-right">Действия</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -172,8 +172,8 @@ function ImportsSettings() {
                 <TableRow>
                   <TableCell colSpan={6}>
                     <FullPageEmptyState
-                      description="Your import history will appear here."
-                      title="No imports yet"
+                      description="Ваша история импортов появится здесь."
+                      title="Импортов пока нет"
                     />
                   </TableCell>
                 </TableRow>
@@ -233,7 +233,7 @@ function ImportsSettings() {
                           {imp.processedEvents.toLocaleString()}
                           {' / '}
                           <Tooltiper
-                            content="Estimated number of events. Can be inaccurate depending on the provider."
+                            content="Оценочное число событий. Может быть неточным в зависимости от провайдера."
                             tooltipClassName="max-w-xs"
                           >
                             {imp.totalEvents.toLocaleString()}{' '}
@@ -271,7 +271,7 @@ function ImportsSettings() {
                       }
                       tooltipClassName="max-w-xs"
                     >
-                      <Badge>Config</Badge>
+                      <Badge>Конфигурация</Badge>
                     </Tooltiper>
                   </TableCell>
                   <TableCell className="space-x-2 text-right">
@@ -281,7 +281,7 @@ function ImportsSettings() {
                         size="sm"
                         variant="outline"
                       >
-                        Retry
+                        Повторить
                       </Button>
                     )}
                     <Button
@@ -289,7 +289,7 @@ function ImportsSettings() {
                       size="sm"
                       variant="ghost"
                     >
-                      Delete
+                      Удалить
                     </Button>
                   </TableCell>
                 </TableRow>

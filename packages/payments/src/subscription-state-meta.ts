@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { ru } from 'date-fns/locale';
 import type { SubscriptionState } from './subscription-state.js';
 
 type BadgeVariant =
@@ -26,7 +27,7 @@ export type SubscriptionStateMeta = {
 };
 
 const fmt = (date: Date | null | undefined) =>
-  date ? format(date, 'PPP') : null;
+  date ? format(date, 'PPP', { locale: ru }) : null;
 
 /**
  * Single source of truth for how every subscription state is presented across
@@ -52,56 +53,56 @@ export function getSubscriptionStateMeta(
         badge: null,
         banner: null,
         statusLine: endsAt
-          ? { text: `Your subscription renews on ${endsAt}`, tone: 'default' }
+          ? { text: `Ваша подписка автоматически продлится ${endsAt}`, tone: 'default' }
           : null,
         blockType: null,
       };
 
     case 'trialing':
       return {
-        badge: { label: 'Trial', variant: 'secondary' },
+        badge: { label: 'Триал', variant: 'secondary' },
         banner: {
-          title: 'Free trial',
+          title: 'Бесплатный триал',
           description: endsAt
-            ? `Your organization is on a free trial. It ends on ${endsAt}.`
-            : 'Your organization is on a free trial.',
-          cta: 'Upgrade from $2.5/month',
+            ? `Ваша организация использует бесплатный триал. Он закончится ${endsAt}.`
+            : 'Ваша организация использует бесплатный триал.',
+          cta: 'Улучшить — от $2.5/мес',
           tone: 'default',
         },
         statusLine: endsAt
-          ? { text: `Your trial ends on ${endsAt}`, tone: 'default' }
+          ? { text: `Ваш триал закончится ${endsAt}`, tone: 'default' }
           : null,
         blockType: null,
       };
 
     case 'trial_expired':
       return {
-        badge: { label: 'Trial ended', variant: 'destructive' },
+        badge: { label: 'Триал окончен', variant: 'destructive' },
         banner: {
-          title: 'Trial ended',
+          title: 'Триал окончен',
           description:
-            'Your free trial has ended. Upgrade to keep using OpenPanel.',
-          cta: 'Upgrade',
+            'Бесплатный триал завершён. Перейдите на платный тариф, чтобы продолжить пользоваться OpenPanel.',
+          cta: 'Улучшить тариф',
           tone: 'destructive',
         },
-        statusLine: { text: 'Your free trial has ended.', tone: 'destructive' },
+        statusLine: { text: 'Бесплатный триал завершён.', tone: 'destructive' },
         blockType: 'trialEnded',
       };
 
     case 'canceling':
       return {
-        badge: { label: 'Canceling', variant: 'warning' },
+        badge: { label: 'Отменяется', variant: 'warning' },
         banner: {
-          title: 'Subscription will be canceled',
+          title: 'Подписка будет отменена',
           description: endsAt
-            ? `You have canceled your subscription. It will be canceled on ${endsAt} — reactivate it to keep your access.`
-            : 'You have canceled your subscription. Reactivate it to keep your access.',
-          cta: 'Reactivate',
+            ? `Вы отменили подписку. Она будет отменена ${endsAt} — повторно активируйте её, чтобы сохранить доступ.`
+            : 'Вы отменили подписку. Повторно активируйте её, чтобы сохранить доступ.',
+          cta: 'Возобновить',
           tone: 'warning',
         },
         statusLine: endsAt
           ? {
-              text: `Your subscription will be canceled on ${endsAt}`,
+              text: `Ваша подписка будет отменена ${endsAt}`,
               tone: 'destructive',
             }
           : null,
@@ -110,19 +111,19 @@ export function getSubscriptionStateMeta(
 
     case 'canceled':
       return {
-        badge: { label: 'Canceled', variant: 'destructive' },
+        badge: { label: 'Отменена', variant: 'destructive' },
         banner: {
-          title: 'Subscription canceled',
+          title: 'Подписка отменена',
           description: canceledAt
-            ? `Your subscription was canceled on ${canceledAt}. Choose a plan to regain access.`
-            : 'Your subscription was canceled. Choose a plan to regain access.',
-          cta: 'Choose a plan',
+            ? `Ваша подписка была отменена ${canceledAt}. Выберите тариф, чтобы вернуть доступ.`
+            : 'Ваша подписка была отменена. Выберите тариф, чтобы вернуть доступ.',
+          cta: 'Выбрать тариф',
           tone: 'destructive',
         },
         statusLine: {
           text: canceledAt
-            ? `Your subscription was canceled on ${canceledAt}`
-            : 'Your subscription was canceled',
+            ? `Ваша подписка была отменена ${canceledAt}`
+            : 'Ваша подписка была отменена',
           tone: 'destructive',
         },
         blockType: 'expired',
@@ -130,22 +131,22 @@ export function getSubscriptionStateMeta(
 
     case 'pausing':
       return {
-        badge: { label: 'Pausing', variant: 'warning' },
+        badge: { label: 'Приостанавливается', variant: 'warning' },
         banner: {
-          title: 'Subscription will be paused',
+          title: 'Подписка будет приостановлена',
           description: endsAt
-            ? `Your subscription pauses on ${endsAt}. We keep collecting your events while it's paused${resumesAt ? `, and billing resumes on ${resumesAt}` : ''}.`
-            : `Your subscription is scheduled to pause at the end of the current period. We keep collecting your events while it's paused.`,
-          cta: 'Keep subscription',
+            ? `Ваша подписка будет приостановлена ${endsAt}. Мы продолжаем собирать ваши события во время паузы${resumesAt ? `, списания возобновятся ${resumesAt}` : ''}.`
+            : `Подписка будет приостановлена в конце текущего периода. Мы продолжаем собирать ваши события во время паузы.`,
+          cta: 'Оставить подписку',
           tone: 'warning',
         },
         statusLine: endsAt
           ? {
-              text: `Your subscription will be paused on ${endsAt}`,
+              text: `Ваша подписка будет приостановлена ${endsAt}`,
               tone: 'warning',
             }
           : {
-              text: 'Your subscription will be paused at the end of the current period',
+              text: 'Подписка будет приостановлена в конце текущего периода',
               tone: 'warning',
             },
         blockType: null,
@@ -153,19 +154,19 @@ export function getSubscriptionStateMeta(
 
     case 'paused':
       return {
-        badge: { label: 'Paused', variant: 'warning' },
+        badge: { label: 'Приостановлена', variant: 'warning' },
         banner: {
-          title: 'Subscription paused',
+          title: 'Подписка приостановлена',
           description: resumesAt
-            ? `Your subscription is paused and resumes on ${resumesAt}. Your events are still being collected.`
-            : 'Your subscription is paused. Your events are still being collected — resume any time to pick up where you left off.',
-          cta: 'Resume subscription',
+            ? `Подписка приостановлена и возобновится ${resumesAt}. События продолжают собираться.`
+            : 'Подписка приостановлена. События продолжают собираться — возобновите её в любой момент, чтобы продолжить с того же места.',
+          cta: 'Возобновить подписку',
           tone: 'warning',
         },
         statusLine: {
           text: resumesAt
-            ? `Your subscription is paused until ${resumesAt}`
-            : 'Your subscription is paused',
+            ? `Подписка приостановлена до ${resumesAt}`
+            : 'Подписка приостановлена',
           tone: 'warning',
         },
         blockType: 'paused',
@@ -173,16 +174,16 @@ export function getSubscriptionStateMeta(
 
     case 'past_due':
       return {
-        badge: { label: 'Past due', variant: 'warning' },
+        badge: { label: 'Просрочено', variant: 'warning' },
         banner: {
-          title: 'Payment past due',
+          title: 'Платёж просрочен',
           description:
-            'Your last payment failed. Update your payment method to avoid losing access.',
-          cta: 'Update payment',
+            'Последний платёж не прошёл. Обновите способ оплаты, чтобы не потерять доступ.',
+          cta: 'Обновить оплату',
           tone: 'warning',
         },
         statusLine: {
-          text: 'Your last payment failed — please update your payment method.',
+          text: 'Последний платёж не прошёл — обновите способ оплаты.',
           tone: 'destructive',
         },
         blockType: null,
@@ -190,16 +191,16 @@ export function getSubscriptionStateMeta(
 
     case 'unpaid':
       return {
-        badge: { label: 'Unpaid', variant: 'destructive' },
+        badge: { label: 'Не оплачено', variant: 'destructive' },
         banner: {
-          title: 'Subscription unpaid',
+          title: 'Подписка не оплачена',
           description:
-            'Your subscription is unpaid. Update your payment method to restore access.',
-          cta: 'Update payment',
+            'Подписка не оплачена. Обновите способ оплаты, чтобы восстановить доступ.',
+          cta: 'Обновить оплату',
           tone: 'destructive',
         },
         statusLine: {
-          text: 'Your subscription is unpaid.',
+          text: 'Подписка не оплачена.',
           tone: 'destructive',
         },
         blockType: 'unpaid',
@@ -207,16 +208,16 @@ export function getSubscriptionStateMeta(
 
     case 'incomplete':
       return {
-        badge: { label: 'Incomplete', variant: 'warning' },
+        badge: { label: 'Не завершено', variant: 'warning' },
         banner: {
-          title: 'Finish setting up your subscription',
+          title: 'Завершите настройку подписки',
           description:
-            'Your subscription setup is incomplete. Complete checkout to activate it.',
-          cta: 'Complete checkout',
+            'Настройка подписки не завершена. Завершите оформление, чтобы активировать её.',
+          cta: 'Завершить оформление',
           tone: 'warning',
         },
         statusLine: {
-          text: 'Your subscription setup is incomplete.',
+          text: 'Настройка подписки не завершена.',
           tone: 'destructive',
         },
         blockType: null,
@@ -224,19 +225,19 @@ export function getSubscriptionStateMeta(
 
     case 'expired':
       return {
-        badge: { label: 'Expired', variant: 'destructive' },
+        badge: { label: 'Истекла', variant: 'destructive' },
         banner: {
-          title: 'Subscription expired',
+          title: 'Подписка истекла',
           description: endsAt
-            ? `Your subscription expired on ${endsAt}. Choose a plan to regain access.`
-            : 'Your subscription expired. Choose a plan to regain access.',
-          cta: 'Choose a plan',
+            ? `Ваша подписка истекла ${endsAt}. Выберите тариф, чтобы вернуть доступ.`
+            : 'Ваша подписка истекла. Выберите тариф, чтобы вернуть доступ.',
+          cta: 'Выбрать тариф',
           tone: 'destructive',
         },
         statusLine: {
           text: endsAt
-            ? `Your subscription expired on ${endsAt}`
-            : 'Your subscription expired',
+            ? `Ваша подписка истекла ${endsAt}`
+            : 'Ваша подписка истекла',
           tone: 'destructive',
         },
         blockType: 'expired',

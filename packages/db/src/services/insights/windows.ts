@@ -25,7 +25,7 @@ export function resolveWindow(kind: WindowKind, now: Date): WindowRange {
     // Here we just define the candidate range; module queries last 28 days and filters weekday.
     const baselineStart = addDays(yesterday0, -28);
     const baselineEnd = addDays(yesterday0, -1);
-    return { kind, start, end, baselineStart, baselineEnd, label: 'Yesterday' };
+    return { kind, start, end, baselineStart, baselineEnd, label: 'Вчера' };
   }
   if (kind === 'rolling_7d') {
     const end = yesterday0;
@@ -38,7 +38,7 @@ export function resolveWindow(kind: WindowKind, now: Date): WindowRange {
       end,
       baselineStart,
       baselineEnd,
-      label: 'Last 7 days',
+      label: 'Последние 7 дней',
     };
   }
   // rolling_30d
@@ -53,7 +53,7 @@ export function resolveWindow(kind: WindowKind, now: Date): WindowRange {
       end,
       baselineStart,
       baselineEnd,
-      label: 'Last 30 days',
+      label: 'Последние 30 дней',
     };
   }
 }

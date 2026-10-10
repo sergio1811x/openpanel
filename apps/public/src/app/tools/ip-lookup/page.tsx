@@ -56,18 +56,18 @@ export default function IPLookupPage() {
           if (response.status === 429) {
             setIsRateLimited(true);
             throw new Error(
-              'Rate limit exceeded. Please wait a minute before trying again.',
+              'Превышен лимит запросов. Подождите минуту и попробуйте снова.',
             );
           }
           setIsRateLimited(false);
-          throw new Error(data.error || 'Failed to detect IP');
+          throw new Error(data.error || 'Не удалось определить IP');
         }
 
         setIsRateLimited(false);
         setResult(data);
         setIp(data.ip);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to detect IP');
+        setError(err instanceof Error ? err.message : 'Не удалось определить IP');
       } finally {
         setAutoDetecting(false);
       }
@@ -94,18 +94,18 @@ export default function IPLookupPage() {
         if (response.status === 429) {
           setIsRateLimited(true);
           throw new Error(
-            'Rate limit exceeded. Please wait a minute before trying again.',
+            'Превышен лимит запросов. Подождите минуту и попробуйте снова.',
           );
         }
         setIsRateLimited(false);
-        throw new Error(data.error || 'Failed to lookup IP');
+        throw new Error(data.error || 'Не удалось найти IP');
       }
 
       setIsRateLimited(false);
 
       setResult(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      setError(err instanceof Error ? err.message : 'Произошла ошибка');
     } finally {
       setLoading(false);
     }
@@ -150,8 +150,8 @@ export default function IPLookupPage() {
   return (
     <div className="max-w-4xl">
       <SectionHeader
-        title="IP Lookup Tool"
-        description="Find detailed information about any IP address including geolocation, ISP, and network details."
+        title="Инструмент проверки IP"
+        description="Подробная информация о любом IP-адресе: геолокация, провайдер и данные сети."
         variant="default"
         as="h1"
       />
@@ -160,7 +160,7 @@ export default function IPLookupPage() {
         <div className="flex gap-2">
           <Input
             type="text"
-            placeholder="Enter IP address or leave empty to detect yours"
+            placeholder="Введите IP-адрес или оставьте поле пустым, чтобы определить свой"
             value={ip}
             onChange={(e) => setIp(e.target.value)}
             className="flex-1"
@@ -170,12 +170,12 @@ export default function IPLookupPage() {
             {loading || autoDetecting ? (
               <>
                 <Loader2 className="size-4 animate-spin" />
-                {autoDetecting ? 'Detecting...' : 'Looking up...'}
+                {autoDetecting ? 'Определяем...' : 'Проверяем...'}
               </>
             ) : (
               <>
                 <Search className="size-4" />
-                Lookup
+                Проверить
               </>
             )}
           </Button>
@@ -197,8 +197,8 @@ export default function IPLookupPage() {
               <div className="font-medium">{error}</div>
               {isRateLimited && (
                 <div className="text-sm mt-1 opacity-90">
-                  You can make up to 20 requests per minute. Please try again
-                  shortly.
+                  Вы можете делать до 20 запросов в минуту. Пожалуйста,
+                  попробуйте позже.
                 </div>
               )}
             </div>
@@ -214,7 +214,7 @@ export default function IPLookupPage() {
               <Globe className="size-6" />
               <div>
                 <div className="text-sm text-muted-foreground">
-                  {autoDetecting ? 'Detected IP Address' : 'IP Address'}
+                  {autoDetecting ? 'Определённый IP-адрес' : 'IP-адрес'}
                 </div>
                 <div className="text-2xl font-bold font-mono">{result.ip}</div>
               </div>
@@ -224,8 +224,8 @@ export default function IPLookupPage() {
                 <AlertCircle className="size-4" />
                 <span>
                   {result.isLocalhost
-                    ? 'This is a localhost address'
-                    : 'This is a private IP address'}
+                    ? 'Это локальный адрес (localhost)'
+                    : 'Это частный IP-адрес'}
                 </span>
               </div>
             )}
@@ -236,12 +236,12 @@ export default function IPLookupPage() {
             <div>
               <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 <MapPin className="size-5" />
-                Location Information
+                Информация о местоположении
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <InfoCard
                   icon={<Globe className="size-5" />}
-                  label="Country"
+                  label="Страна"
                   value={
                     <span className="flex items-center gap-2">
                       <span className="text-2xl">
@@ -254,21 +254,21 @@ export default function IPLookupPage() {
                 {result.location.city && (
                   <InfoCard
                     icon={<MapPin className="size-5" />}
-                    label="City"
+                    label="Город"
                     value={result.location.city}
                   />
                 )}
                 {result.location.region && (
                   <InfoCard
                     icon={<MapPin className="size-5" />}
-                    label="Region/State"
+                    label="Регион/область"
                     value={result.location.region}
                   />
                 )}
                 {result.location.latitude && result.location.longitude && (
                   <InfoCard
                     icon={<MapPin className="size-5" />}
-                    label="Coordinates"
+                    label="Координаты"
                     value={`${result.location.latitude.toFixed(4)}, ${result.location.longitude.toFixed(4)}`}
                   />
                 )}
@@ -281,7 +281,7 @@ export default function IPLookupPage() {
             <div>
               <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 <MapPin className="size-5" />
-                Map Location
+                Местоположение на карте
               </h3>
               <div className="border border-border rounded-lg overflow-hidden bg-card">
                 <iframe
@@ -293,7 +293,7 @@ export default function IPLookupPage() {
                   marginWidth={0}
                   src={`https://www.openstreetmap.org/export/embed.html?bbox=${result.location.longitude - 0.1},${result.location.latitude - 0.1},${result.location.longitude + 0.1},${result.location.latitude + 0.1}&layer=mapnik&marker=${result.location.latitude},${result.location.longitude}`}
                   className="w-full aspect-video"
-                  title="Map location"
+                  title="Местоположение на карте"
                 />
                 <div className="p-2 bg-muted border-t border-border text-xs text-center text-muted-foreground flex items-center justify-between gap-4">
                   <div>
@@ -314,7 +314,7 @@ export default function IPLookupPage() {
                     rel="noopener noreferrer"
                     className="text-primary hover:underline"
                   >
-                    View Larger Map
+                    Открыть большую карту
                   </a>
                 </div>
               </div>
@@ -324,7 +324,7 @@ export default function IPLookupPage() {
           {/* Attribution */}
           <div className="pt-4 border-t text-xs text-muted-foreground space-y-2">
             <div>
-              <strong>Location data:</strong> Powered by{' '}
+              <strong>Данные о местоположении:</strong> предоставлено{' '}
               <a
                 href="https://www.maxmind.com/en/geoip2-services-and-databases"
                 target="_blank"
@@ -333,11 +333,11 @@ export default function IPLookupPage() {
               >
                 MaxMind GeoLite2
               </a>{' '}
-              database
+              (база данных GeoLite2)
             </div>
             {(result.isp || result.asn) && (
               <div>
-                <strong>Network data:</strong> ISP/ASN information from{' '}
+                <strong>Данные о сети:</strong> информация об ISP/ASN из{' '}
                 <a
                   href="https://ip-api.com"
                   target="_blank"
@@ -357,34 +357,34 @@ export default function IPLookupPage() {
         <article className="space-y-8">
           <div>
             <h2 className="text-3xl font-bold mb-4">
-              Free IP Lookup Tool - Find Your IP Address and Geolocation
+              Бесплатный инструмент проверки IP — узнайте свой IP-адрес и геолокацию
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Discover your IP address instantly and get detailed geolocation
-              information including country, city, ISP, ASN, and network
-              details. Our free IP lookup tool provides accurate location data
-              powered by MaxMind GeoLite2 database.
+              Узнайте свой IP-адрес мгновенно и получите подробную информацию о
+              геолокации: страна, город, провайдер, ASN и данные сети. Наш
+              бесплатный инструмент проверки IP даёт точные данные о
+              местоположении на основе базы MaxMind GeoLite2.
             </p>
           </div>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              What is an IP Address?
+              Что такое IP-адрес?
             </h3>
             <p className="mb-4">
-              An IP (Internet Protocol) address is a unique numerical identifier
-              assigned to every device connected to a computer network. Think of
-              it as a mailing address for your device on the internet. There are
-              two main types:
+              IP-адрес (Internet Protocol) — уникальный числовой идентификатор,
+              который присваивается каждому устройству в компьютерной сети.
+              Представьте его как почтовый адрес вашего устройства в интернете.
+              Есть два основных типа:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
               <li>
-                <strong>IPv4:</strong> The most common format, consisting of
-                four numbers separated by dots (e.g., 192.168.1.1)
+                <strong>IPv4:</strong> самый распространённый формат — четыре
+                числа, разделённые точками (например, 192.168.1.1)
               </li>
               <li>
-                <strong>IPv6:</strong> The newer format designed to replace
-                IPv4, using hexadecimal notation (e.g.,
+                <strong>IPv6:</strong> более новый формат, созданный на замену
+                IPv4, — шестнадцатеричная запись (например,
                 2001:0db8:85a3:0000:0000:8a2e:0370:7334)
               </li>
             </ul>
@@ -392,263 +392,261 @@ export default function IPLookupPage() {
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              How IP Geolocation Works
+              Как работает геолокация по IP
             </h3>
             <p className="mb-4">
-              IP geolocation determines the approximate physical location of an
-              IP address by analyzing routing information and regional IP
-              address allocations. Our tool uses:
+              Геолокация по IP определяет приблизительное физическое
+              местоположение IP-адреса, анализируя маршрутизацию и региональное
+              распределение IP-адресов. Наш инструмент использует:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
               <li>
-                <strong>MaxMind GeoLite2 Database:</strong> Industry-standard
-                geolocation database providing accurate city and country-level
-                data
+                <strong>База данных MaxMind GeoLite2:</strong>
+                отраслевой стандарт геолокации — точные данные до города и страны
               </li>
               <li>
-                <strong>ISP Information:</strong> Internet Service Provider
-                details from ip-api.com
+                <strong>Информация об ISP:</strong> данные провайдера с
+                ip-api.com
               </li>
               <li>
-                <strong>ASN Data:</strong> Autonomous System Number identifying
-                the network operator
+                <strong>Данные ASN:</strong> номер автономной системы,
+                идентифицирующий оператора сети
               </li>
               <li>
-                <strong>Reverse DNS:</strong> Hostname lookup for additional
-                network information
+                <strong>Обратный DNS:</strong> поиск имени хоста для
+                дополнительных данных о сети
               </li>
             </ul>
             <p className="mb-4">
-              <strong>Important Note:</strong> IP geolocation provides an
-              approximate location, typically accurate to the city level. It
-              shows where your ISP's network infrastructure is located, not
-              necessarily your exact physical address.
+              <strong>Важно:</strong> геолокация по IP даёт приблизительное
+              местоположение, обычно с точностью до города. Она показывает, где
+              расположена сетевая инфраструктура вашего провайдера, а не ваш
+              точный физический адрес.
             </p>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              Understanding IP Lookup Results
+              Как читать результаты проверки IP
             </h3>
 
-            <h4 className="text-xl font-semibold mt-6 mb-3">Location Data</h4>
+            <h4 className="text-xl font-semibold mt-6 mb-3">Данные о местоположении</h4>
             <p className="mb-4">
-              Our IP lookup provides detailed geographic information:
+              Проверка IP даёт подробную географическую информацию:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
               <li>
-                <strong>Country:</strong> The country where the IP address is
-                registered or routed through
+                <strong>Страна:</strong> страна, в которой зарегистрирован или
+                через которую маршрутизируется IP-адрес
               </li>
               <li>
-                <strong>City:</strong> The city-level location (when available)
+                <strong>Город:</strong> местоположение до города (если доступно)
               </li>
               <li>
-                <strong>Region/State:</strong> State or province information
+                <strong>Регион/область:</strong> информация об области или штате
               </li>
               <li>
-                <strong>Coordinates:</strong> Latitude and longitude for mapping
-                purposes
+                <strong>Координаты:</strong> широта и долгота для отображения на
+                карте
               </li>
             </ul>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">
-              Network Information
+              Информация о сети
             </h4>
-            <p className="mb-4">Technical details about the network:</p>
+            <p className="mb-4">Технические данные о сети:</p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
               <li>
-                <strong>ISP (Internet Service Provider):</strong> The company
-                providing internet service for this IP address
+                <strong>ISP (провайдер):</strong> компания, предоставляющая
+                доступ в интернет для этого IP-адреса
               </li>
               <li>
-                <strong>ASN (Autonomous System Number):</strong> A unique number
-                identifying the network operator's routing domain
+                <strong>ASN (номер автономной системы):</strong> уникальный номер,
+                идентифицирующий домен маршрутизации оператора сети
               </li>
               <li>
-                <strong>Organization:</strong> The registered organization name
-                for the IP address
+                <strong>Организация:</strong> зарегистрированное название
+                организации для IP-адреса
               </li>
               <li>
-                <strong>Hostname:</strong> Reverse DNS lookup result showing the
-                domain name associated with the IP
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h3 className="text-2xl font-semibold mb-4">
-              Common Use Cases for IP Lookup
-            </h3>
-            <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
-              <li>
-                <strong>Security:</strong> Identify suspicious login attempts or
-                track potential security threats
-              </li>
-              <li>
-                <strong>Content Localization:</strong> Display region-specific
-                content based on user location
-              </li>
-              <li>
-                <strong>Analytics:</strong> Understand where your website
-                visitors are located
-              </li>
-              <li>
-                <strong>Compliance:</strong> Ensure content restrictions based
-                on geographic regulations
-              </li>
-              <li>
-                <strong>Network Troubleshooting:</strong> Diagnose routing
-                issues and network problems
-              </li>
-              <li>
-                <strong>Fraud Prevention:</strong> Detect unusual patterns or
-                verify user locations
+                <strong>Имя хоста:</strong> результат обратного DNS-запроса,
+                показывающий домен, связанный с IP
               </li>
             </ul>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              Public vs Private IP Addresses
+              Для чего используют проверку IP
+            </h3>
+            <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
+              <li>
+                <strong>Безопасность:</strong> выявляйте подозрительные попытки
+                входа и отслеживайте потенциальные угрозы
+              </li>
+              <li>
+                <strong>Локализация контента:</strong> показывайте
+                региональный контент в зависимости от местоположения пользователя
+              </li>
+              <li>
+                <strong>Аналитика:</strong> понимайте, откуда ваши посетители
+              </li>
+              <li>
+                <strong>Соответствие требованиям:</strong> соблюдайте
+                географические ограничения на контент
+              </li>
+              <li>
+                <strong>Диагностика сети:</strong> находите проблемы с
+                маршрутизацией и сетью
+              </li>
+              <li>
+                <strong>Защита от мошенничества:</strong> обнаруживайте
+                необычные паттерны и проверяйте местоположение пользователей
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="text-2xl font-semibold mb-4">
+              Публичные и частные IP-адреса
             </h3>
             <p className="mb-4">
-              Understanding the difference between public and private IP
-              addresses:
+              Разница между публичными и частными IP-адресами:
             </p>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">
-              Public IP Address
+              Публичный IP-адрес
             </h4>
             <p className="mb-4">
-              A public IP address is assigned by your ISP and is visible to the
-              internet. This is what websites see when you visit them. Our tool
-              detects your public IP address automatically.
+              Публичный IP-адрес назначается вашим провайдером и виден всему
+              интернету. Именно его видят сайты, когда вы их посещаете. Наш
+              инструмент определяет ваш публичный IP-адрес автоматически.
             </p>
 
             <h4 className="text-xl font-semibold mt-6 mb-3">
-              Private IP Address
+              Частный IP-адрес
             </h4>
             <p className="mb-4">
-              Private IP addresses are used within local networks (home, office,
-              etc.) and are not routable on the public internet. Common private
-              IP ranges include:
+              Частные IP-адреса используются внутри локальных сетей (дом, офис и
+              т.д.) и не маршрутизируются в публичном интернете. Типичные диапазоны
+              частных IP:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
-              <li>10.0.0.0 to 10.255.255.255</li>
-              <li>172.16.0.0 to 172.31.255.255</li>
-              <li>192.168.0.0 to 192.168.255.255</li>
+              <li>10.0.0.0 — 10.255.255.255</li>
+              <li>172.16.0.0 — 172.31.255.255</li>
+              <li>192.168.0.0 — 192.168.255.255</li>
               <li>127.0.0.1 (localhost)</li>
             </ul>
             <p className="mb-4">
-              Our tool will indicate if an IP address is private or localhost.
+              Наш инструмент укажет, если IP-адрес частный или локальный.
             </p>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              Privacy and IP Addresses
+              Приватность и IP-адреса
             </h3>
             <p className="mb-4">
-              Your IP address reveals some information about your location and
-              network, but it doesn't expose your exact physical address or
-              personal identity. Here's what you should know:
+              Ваш IP-адрес раскрывает некоторую информацию о вашем
+              местоположении и сети, но не выдаёт ваш точный адрес или личность.
+              Вот что стоит знать:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-6 ml-4">
               <li>
-                IP addresses show general location (city/region level), not
-                exact addresses
+                IP-адреса показывают общее местоположение (уровень города/региона),
+                а не точный адрес
               </li>
               <li>
-                Your ISP assigns IP addresses, which may change periodically
+                IP-адреса назначает ваш провайдер, и они могут периодически
+                меняться
               </li>
-              <li>Using a VPN can mask your real IP address and location</li>
-              <li>Websites can see your IP address when you visit them</li>
+              <li>VPN может скрыть ваш реальный IP-адрес и местоположение</li>
+              <li>Сайты видят ваш IP-адрес, когда вы их посещаете</li>
               <li>
-                IP addresses alone cannot identify individual users without
-                additional data
+                Сам по себе IP-адрес не может идентифицировать конкретного
+                пользователя без дополнительных данных
               </li>
             </ul>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              How to Use Our IP Lookup Tool
+              Как пользоваться нашим инструментом проверки IP
             </h3>
             <ol className="list-decimal list-inside space-y-3 mb-6 ml-4">
               <li>
-                <strong>Auto-Detection:</strong> When you visit the page, your
-                IP address is automatically detected and displayed
+                <strong>Автоопределение:</strong> при открытии страницы ваш
+                IP-адрес определяется и показывается автоматически
               </li>
               <li>
-                <strong>Manual Lookup:</strong> Enter any IP address (IPv4 or
-                IPv6) in the input field to look up its details
+                <strong>Ручная проверка:</strong> введите любой IP-адрес (IPv4 или
+                IPv6) в поле, чтобы узнать его детали
               </li>
               <li>
-                <strong>View Results:</strong> See comprehensive information
-                including location, ISP, ASN, and network details
+                <strong>Результаты:</strong> смотрите подробную информацию:
+                местоположение, провайдер, ASN и данные сети
               </li>
               <li>
-                <strong>Map View:</strong> Click on the map preview to view the
-                location on Google Maps
+                <strong>Карта:</strong> нажмите на превью карты, чтобы открыть
+                местоположение на Google Maps
               </li>
             </ol>
           </section>
 
           <section>
             <h3 className="text-2xl font-semibold mb-4">
-              Frequently Asked Questions
+              Часто задаваемые вопросы
             </h3>
 
             <Faqs>
-              <FaqItem question="How accurate is IP geolocation?">
-                IP geolocation is typically accurate to the city level, with
-                accuracy varying by region. It shows where your ISP's network
-                infrastructure is located, not your exact physical address.
+              <FaqItem question="Насколько точна геолокация по IP?">
+                Геолокация по IP обычно точна до уровня города, точность
+                различается по регионам. Она показывает, где расположена
+                сетевая инфраструктура вашего провайдера, а не ваш точный адрес.
               </FaqItem>
 
-              <FaqItem question="Can I hide my IP address?">
-                Yes, you can use a VPN (Virtual Private Network) or proxy
-                service to mask your real IP address. This will show the VPN
-                server's IP address instead of yours.
+              <FaqItem question="Можно ли скрыть свой IP-адрес?">
+                Да, вы можете использовать VPN (виртуальную частную сеть) или
+                прокси-сервис, чтобы скрыть свой реальный IP-адрес. Вместо вашего
+                будет показан IP-адрес сервера VPN.
               </FaqItem>
 
-              <FaqItem question="Why does my IP location seem wrong?">
-                Your IP location reflects where your ISP's network equipment is
-                located, which may be in a different city than your actual
-                location. This is especially common with mobile networks or
-                certain ISPs.
+              <FaqItem question="Почему местоположение по IP кажется неверным?">
+                Местоположение по IP отражает, где находится сетевое
+                оборудование вашего провайдера, — это может быть другой город,
+                чем ваш реальный. Особенно часто это встречается в мобильных
+                сетях и у некоторых провайдеров.
               </FaqItem>
 
-              <FaqItem question="Is IP lookup free?">
-                Yes, our IP lookup tool is completely free to use. We limit
-                requests to 20 per minute per IP to ensure fair usage.
+              <FaqItem question="Проверка IP бесплатная?">
+                Да, наш инструмент проверки IP полностью бесплатен. Мы ограничиваем
+                запросы до 20 в минуту с одного IP, чтобы обеспечить честное
+                использование.
               </FaqItem>
 
-              <FaqItem question="What is ASN?">
-                ASN (Autonomous System Number) is a unique identifier for a
-                network operator's routing domain on the internet. It helps
-                identify which organization controls a particular IP address
-                range.
+              <FaqItem question="Что такое ASN?">
+                ASN (номер автономной системы) — уникальный идентификатор домена
+                маршрутизации оператора сети в интернете. Он помогает определить,
+                какая организация контролирует конкретный диапазон IP-адресов.
               </FaqItem>
             </Faqs>
           </section>
 
           <section className="border-t pt-8 mt-8">
             <h3 className="text-2xl font-semibold mb-4">
-              Start Using Our Free IP Lookup Tool
+              Начните пользоваться бесплатным инструментом проверки IP
             </h3>
             <p className="mb-6">
-              Discover your IP address and explore detailed geolocation
-              information instantly. Our tool automatically detects your IP when
-              you visit, or you can look up any IP address manually. Get
-              comprehensive network and location data powered by
-              industry-leading databases.
+              Узнайте свой IP-адрес и мгновенно получите подробную информацию о
+              геолокации. Наш инструмент автоматически определяет ваш IP при
+              открытии страницы, а любой IP-адрес можно проверить вручную.
+              Полные данные о сети и местоположении на основе ведущих баз
+              данных.
             </p>
             <p className="text-muted-foreground">
-              <strong>Tip:</strong> Bookmark this page to quickly check your IP
-              address anytime. Useful for troubleshooting network issues or
-              understanding your online presence.
+              <strong>Совет:</strong> добавьте страницу в закладки, чтобы быстро
+              проверять свой IP-адрес в любой момент. Полезно для диагностики
+              сетевых проблем и понимания своей видимости в сети.
             </p>
           </section>
         </article>

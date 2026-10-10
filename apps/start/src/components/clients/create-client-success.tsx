@@ -36,18 +36,19 @@ export function CreateClientSuccess({ id, secret, type }: Props) {
       <CopyInput label="Client ID" value={id} />
       {hasSecret && (
         <div className="w-full min-w-0">
-          <CopyInput label="Secret" value={secret} />
+          <CopyInput label="Секрет" value={secret} />
           <p className="mt-1 text-muted-foreground text-sm">
-            You will only need the secret if you want to send server events.
+            Секрет понадобится только если Вы хотите отправлять серверные
+            события.
           </p>
         </div>
       )}
       {showMcpToken && (
         <div className="w-full min-w-0">
-          <CopyInput label="MCP Token" value={mcpToken} />
+          <CopyInput label="MCP-токен" value={mcpToken} />
           <p className="mt-1 text-muted-foreground text-sm">
-            Use this token to authenticate with the MCP server (base64 encoded
-            client ID and secret).
+            Используйте этот токен для аутентификации на MCP-сервере (client ID
+            и секрет в кодировке base64).
           </p>
         </div>
       )}
@@ -57,26 +58,26 @@ export function CreateClientSuccess({ id, secret, type }: Props) {
           onClick={() => clipboard(credentials)}
           variant="outline"
         >
-          Copy all
+          Копировать всё
         </Button>
         <Button icon={DownloadIcon} onClick={download} variant="outline">
-          Save credentials
+          Сохранить учётные данные
         </Button>
       </div>
       <Alert>
         <RocketIcon className="h-4 w-4" />
-        <AlertTitle>Get started!</AlertTitle>
+        <AlertTitle>Начните работу!</AlertTitle>
         <AlertDescription>
-          Read our{' '}
+          Прочитайте нашу{' '}
           <a
             className="underline"
             href="https://openpanel.dev/docs"
             rel="noreferrer"
             target="_blank"
           >
-            documentation
+            документацию
           </a>{' '}
-          to get started. Easy peasy!
+          чтобы начать. Всё просто!
         </AlertDescription>
       </Alert>
     </div>

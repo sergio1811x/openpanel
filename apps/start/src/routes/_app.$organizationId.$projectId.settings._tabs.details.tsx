@@ -24,7 +24,7 @@ function Component() {
   }
 
   if (!query.data) {
-    return <div>Project not found</div>;
+    return <div>Проект не найден</div>;
   }
 
   return (

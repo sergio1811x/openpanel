@@ -58,8 +58,8 @@ export default function Billing({ organization }: Props) {
       onSuccess() {
         queryClient.invalidateQueries(trpc.organization.pathFilter());
         queryClient.invalidateQueries(trpc.subscription.pathFilter());
-        toast.success('Subscription resumed', {
-          description: 'It might take a few seconds to update',
+        toast.success('Подписка возобновлена', {
+          description: 'Обновление может занять несколько секунд',
         });
       },
       onError(error) {
@@ -133,10 +133,10 @@ export default function Billing({ organization }: Props) {
     }
     const duration =
       discount.duration === 'repeating' && discount.durationInMonths
-        ? `for the next ${discount.durationInMonths} months`
+        ? `следующие ${discount.durationInMonths} мес.`
         : discount.duration === 'forever'
-          ? 'on every invoice'
-          : 'on your next invoice';
+          ? 'каждый счёт'
+          : 'следующий счёт';
     // Deliberately no discount name here: names are often the redeemable code
     // itself, and the save offer's name would advertise what the cancel flow
     // grants. The value + duration is all the customer needs.
@@ -206,7 +206,7 @@ export default function Billing({ organization }: Props) {
                 </span>
                 <span className="text-muted-foreground">
                   {' / '}
-                  {recurringInterval === 'year' ? 'year' : 'month'}
+                  {recurringInterval === 'year' ? 'год' : 'месяц'}
                 </span>
               </div>
             </WidgetHead>
@@ -257,7 +257,7 @@ export default function Billing({ organization }: Props) {
                         </clipPath>
                       </defs>
                     </svg>
-                    Customer portal
+                    Клиентский портал
                   </Button>
                   <div className="row gap-2">
                     {isPauseState && (
@@ -271,8 +271,8 @@ export default function Billing({ organization }: Props) {
                         size="sm"
                       >
                         {organization.subscriptionState === 'paused'
-                          ? 'Resume subscription'
-                          : 'Keep subscription'}
+                          ? 'Возобновить подписку'
+                          : 'Сохранить подписку'}
                       </Button>
                     )}
                     <Button
@@ -286,8 +286,8 @@ export default function Billing({ organization }: Props) {
                       variant={isPauseState ? 'outline' : 'default'}
                     >
                       {organization.isWillBeCanceled
-                        ? 'Reactivate subscription'
-                        : 'Change subscription'}
+                        ? 'Возобновить подписку'
+                        : 'Изменить подписку'}
                     </Button>
                   </div>
                 </div>
@@ -316,17 +316,19 @@ export default function Billing({ organization }: Props) {
         <WidgetBody className="col gap-2">
           <div className="row items-center gap-2">
             <Badge variant={organization.isTrial ? 'secondary' : 'destructive'}>
-              {organization.isTrial ? 'Free trial' : 'No active plan'}
+              {organization.isTrial ? 'Бесплатный trial' : 'Нет активного тарифа'}
             </Badge>
             {organization.isTrial && daysLeft !== null && (
-              <span className="font-semibold">{daysLeft} days left</span>
+              <span className="font-semibold">
+                осталось дней: {daysLeft}
+              </span>
             )}
           </div>
           {organization.isTrial && organization.subscriptionEndsAt ? (
             <p className="text-muted-foreground">
-              Your trial ends on {formatDate(organization.subscriptionEndsAt)}.
-              When it ends, your dashboards pause until you choose a plan — your
-              data keeps flowing in.
+              Ваш trial заканчивается {formatDate(organization.subscriptionEndsAt)}.
+              После его окончания ваши дашборды приостановятся, пока Вы не
+              выберете тариф — данные продолжат поступать.
             </p>
           ) : (
             renderStatus()
@@ -337,7 +339,7 @@ export default function Billing({ organization }: Props) {
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <Widget className="w-full self-start">
           <WidgetHead>
-            <div className="title">Choose a plan</div>
+            <div className="title">Выберите тариф</div>
           </WidgetHead>
           <WidgetBody className="col gap-4">
             <BillingPlanPicker

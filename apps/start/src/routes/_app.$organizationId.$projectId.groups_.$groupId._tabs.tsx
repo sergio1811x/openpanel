@@ -43,7 +43,7 @@ export const Route = createFileRoute(
   },
   pendingComponent: FullPageLoadingState,
   head: () => ({
-    meta: [{ title: createProjectTitle('Group') }],
+    meta: [{ title: createProjectTitle('Группа') }],
   }),
 });
 
@@ -83,9 +83,9 @@ function Component() {
   );
 
   const { activeTab, tabs } = usePageTabs([
-    { id: '/$organizationId/$projectId/groups/$groupId', label: 'Overview' },
-    { id: 'members', label: 'Members' },
-    { id: 'events', label: 'Events' },
+    { id: '/$organizationId/$projectId/groups/$groupId', label: 'Обзор' },
+    { id: 'members', label: 'Участники' },
+    { id: 'events', label: 'События' },
   ]);
 
   const handleTabChange = (tabId: string) => {
@@ -102,7 +102,7 @@ function Component() {
       <PageContainer>
         <div className="flex flex-col items-center justify-center gap-3 py-24 text-muted-foreground">
           <Building2Icon className="size-10 opacity-30" />
-          <p className="text-sm">Group not found</p>
+          <p className="text-sm">Группа не найдена</p>
         </div>
       </PageContainer>
     );
@@ -127,13 +127,13 @@ function Component() {
               variant="outline"
             >
               <PencilIcon className="mr-2 size-4" />
-              Edit
+              Изменить
             </Button>
             <Button
               onClick={() =>
                 showConfirm({
-                  title: 'Delete group',
-                  text: `Are you sure you want to delete "${g.name}"? This action cannot be undone.`,
+                  title: 'Удаление группы',
+                  text: `Вы уверены, что хотите удалить «${g.name}»? Это действие нельзя отменить.`,
                   onConfirm: () =>
                     deleteMutation.mutate({ id: g.id, projectId }),
                 })
@@ -142,7 +142,7 @@ function Component() {
               variant="outline"
             >
               <Trash2Icon className="mr-2 size-4" />
-              Delete
+              Удалить
             </Button>
           </div>
         }

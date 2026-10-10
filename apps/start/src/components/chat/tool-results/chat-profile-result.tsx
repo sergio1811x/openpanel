@@ -35,7 +35,7 @@ function Inner({ output }: { output: unknown }) {
     return (
       <ResultCard>
         <div className="px-3 py-2 text-sm text-muted-foreground">
-          No profile
+          Профиль не найден
         </div>
       </ResultCard>
     );
@@ -64,32 +64,32 @@ function SuccessCard({ value }: { value: ProfileFullSuccess }) {
       profile.id);
 
   return (
-    <ResultCard title={title || 'Profile'}>
+    <ResultCard title={title || 'Профиль'}>
       {metrics && (
         <div className="border-b">
           {typeof metrics.sessions === 'number' && (
             <ResultRow>
-              <ResultLabel>Sessions</ResultLabel>
+              <ResultLabel>Сессии</ResultLabel>
               <ResultValue>{metrics.sessions}</ResultValue>
             </ResultRow>
           )}
           {typeof metrics.totalEvents === 'number' && (
             <ResultRow>
-              <ResultLabel>Total events</ResultLabel>
+              <ResultLabel>Всего событий</ResultLabel>
               <ResultValue>{metrics.totalEvents}</ResultValue>
             </ResultRow>
           )}
           {typeof metrics.avgSessionDurationMin === 'number' && (
             <ResultRow>
-              <ResultLabel>Avg session</ResultLabel>
+              <ResultLabel>Средняя сессия</ResultLabel>
               <ResultValue>
-                {metrics.avgSessionDurationMin.toFixed(1)} min
+                {metrics.avgSessionDurationMin.toFixed(1)} мин
               </ResultValue>
             </ResultRow>
           )}
           {typeof metrics.bounceRate === 'number' && (
             <ResultRow>
-              <ResultLabel>Bounce rate</ResultLabel>
+              <ResultLabel>Показатель отказов</ResultLabel>
               <ResultValue>
                 {(metrics.bounceRate * 100).toFixed(0)}%
               </ResultValue>
@@ -97,7 +97,7 @@ function SuccessCard({ value }: { value: ProfileFullSuccess }) {
           )}
           {typeof metrics.revenue === 'number' && metrics.revenue > 0 && (
             <ResultRow>
-              <ResultLabel>Revenue</ResultLabel>
+              <ResultLabel>Выручка</ResultLabel>
               <ResultValue>{number.currency(metrics.revenue / 100)}</ResultValue>
             </ResultRow>
           )}
@@ -110,7 +110,7 @@ function SuccessCard({ value }: { value: ProfileFullSuccess }) {
           rel="noopener noreferrer"
           className="block px-3 py-1.5 text-sm text-muted-foreground hover:underline"
         >
-          Open profile →
+          Открыть профиль →
         </a>
       )}
     </ResultCard>

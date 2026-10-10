@@ -12,13 +12,13 @@ export function SummaryComparison({ summary, competitorName }: SummaryComparison
   return (
     <Section className="container">
       <SectionHeader
-        title="Quick comparison"
+        title="Быстрое сравнение"
         description={summary.one_liner}
         align="center"
       />
       <div className="grid md:grid-cols-2 gap-6 mt-12">
         <FeatureCard
-          title="Best for OpenPanel"
+          title="OpenPanel лучше подходит, если"
           description=""
           className="border-green-500/20 bg-green-500/5"
         >

@@ -50,7 +50,7 @@ export default function EditReference({
   const mutation = useMutation(
     trpc.reference.update.mutationOptions({
       onSuccess() {
-        toast('Success', { description: 'Reference updated.' });
+        toast('Успешно', { description: 'Точка отсчёта обновлена.' });
         reset();
         queryClient.invalidateQueries(
           trpc.reference.getReferences.pathFilter(),
@@ -66,28 +66,28 @@ export default function EditReference({
 
   return (
     <ModalContent>
-      <ModalHeader title="Edit reference" />
+      <ModalHeader title="Изменение точки отсчёта" />
       <form
         className="flex flex-col gap-4"
         onSubmit={handleSubmit((values) => {
           mutation.mutate(values);
         })}
       >
-        <InputWithLabel label="Title" {...register('title')} />
-        <InputWithLabel label="Description" {...register('description')} />
+        <InputWithLabel label="Название" {...register('title')} />
+        <InputWithLabel label="Описание" {...register('description')} />
         <Controller
           control={control}
           name="datetime"
           render={({ field }) => (
-            <InputDateTime {...field} label="Date and time" />
+            <InputDateTime {...field} label="Дата и время" />
           )}
         />
         <ButtonContainer>
           <Button type="button" variant="outline" onClick={() => popModal()}>
-            Cancel
+            Отмена
           </Button>
           <Button type="submit" disabled={!formState.isDirty}>
-            Update
+            Обновить
           </Button>
         </ButtonContainer>
       </form>

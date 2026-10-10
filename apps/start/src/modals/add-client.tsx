@@ -40,7 +40,7 @@ export default function AddClient() {
   const mutation = useMutation(
     trpc.client.create.mutationOptions({
       onSuccess() {
-        toast.success('Client created successfully');
+        toast.success('Клиент успешно создан');
         queryClient.invalidateQueries(
           trpc.project.getProjectWithClients.pathFilter(),
         );
@@ -65,7 +65,7 @@ export default function AddClient() {
     <ModalContent>
       {mutation.isSuccess ? (
         <>
-          <ModalHeader title="Success" text={'Your client is created'} />
+          <ModalHeader title="Успешно" text={'Ваш клиент создан'} />
           <CreateClientSuccess {...mutation.data} />
           <div className="mt-4 flex gap-4">
             <a
@@ -74,24 +74,24 @@ export default function AddClient() {
               target="_blank"
               rel="noreferrer"
             >
-              Read docs
+              Документация
             </a>
             <Button className="flex-1" onClick={() => popModal()}>
-              Close
+              Закрыть
             </Button>
           </div>
         </>
       ) : (
         <>
-          <ModalHeader title="Create a client" />
+          <ModalHeader title="Создание клиента" />
           <form
             className="flex flex-col gap-4"
             onSubmit={form.handleSubmit(onSubmit)}
           >
             <div>
-              <Label>Client name</Label>
+              <Label>Название клиента</Label>
               <Input
-                placeholder="Eg. My App Client"
+                placeholder="Например: Клиент моего приложения"
                 error={form.formState.errors.name?.message}
                 {...form.register('name')}
               />
@@ -104,7 +104,7 @@ export default function AddClient() {
                 render={({ field }) => {
                   return (
                     <div>
-                      <Label>Type of client</Label>
+                      <Label>Тип клиента</Label>
                       <Combobox
                         {...field}
                         className="w-full"
@@ -114,26 +114,26 @@ export default function AddClient() {
                         items={[
                           {
                             value: 'write',
-                            label: 'Write (for ingestion)',
+                            label: 'Запись (для приёма данных)',
                           },
                           {
                             value: 'read',
-                            label: 'Read (access export API)',
+                            label: 'Чтение (доступ к API экспорта)',
                           },
                           {
                             value: 'root',
-                            label: 'Root (access export API)',
+                            label: 'Root (доступ к API экспорта)',
                           },
                         ]}
-                        placeholder="Select a project"
+                        placeholder="Выберите тип"
                       />
                       <p className="mt-2 text-sm text-muted-foreground">
                         {field.value === 'write' &&
-                          'Write: Is the default client type and is used for ingestion of data'}
+                          'Запись: тип клиента по умолчанию, используется для приёма данных'}
                         {field.value === 'read' &&
-                          'Read: You can access the current projects data from the export API'}
+                          'Чтение: доступ к данным текущего проекта через API экспорта'}
                         {field.value === 'root' &&
-                          'Root: You can access any projects data from the export API'}
+                          'Root: доступ к данным любого проекта через API экспорта'}
                       </p>
                     </div>
                   );
@@ -146,14 +146,14 @@ export default function AddClient() {
                 variant={'secondary'}
                 onClick={() => popModal()}
               >
-                Cancel
+                Отмена
               </Button>
               <Button
                 type="submit"
                 icon={SaveIcon}
                 loading={mutation.isPending}
               >
-                Create
+                Создать
               </Button>
             </DialogFooter>
           </form>

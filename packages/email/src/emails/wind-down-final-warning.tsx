@@ -16,7 +16,7 @@ export const zWindDownFinalWarning = z.object({
 });
 
 const formatEvents = (count: number) =>
-  new Intl.NumberFormat('en-US').format(count);
+  new Intl.NumberFormat('ru-RU').format(count);
 
 export type Props = z.infer<typeof zWindDownFinalWarning>;
 export default WindDownFinalWarning;
@@ -31,47 +31,48 @@ export function WindDownFinalWarning({
 }: Props & { unsubscribeUrl?: string }) {
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
+      <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
       <Text>
-        This is the last email I'll send about this, and it's the one with real
-        consequences, so I'll keep it short.
+        Это последнее письмо по этому поводу, и именно оно влечёт реальные
+        последствия, поэтому буду краток.
       </Text>
       <Text>
         <strong>
-          On {deleteDate} your OpenPanel organization and everything in it will
-          be permanently deleted.
+          {deleteDate} Ваша организация OpenPanel и всё её содержимое будут
+          безвозвратно удалены.
         </strong>{' '}
-        That means your projects, your settings, and
+        Это значит, что Ваши проекты, настройки и
         {hasData && eventsCount
-          ? ` all ${formatEvents(eventsCount)} events you've collected.`
-          : ' any data associated with the account.'}{' '}
-        This cannot be undone, and I won't be able to recover it afterwards.
+          ? ` все собранные события (${formatEvents(eventsCount)}).`
+          : ' любые данные, связанные с аккаунтом.'}{' '}
+        Отменить это невозможно, и после удаления я не смогу ничего
+        восстановить.
       </Text>
       {stillTracking ? (
         <Text>
-          Worth flagging: your SDKs are still installed and still calling us.
-          After {deleteDate} those calls will fail against a workspace that no
-          longer exists, so it's worth either subscribing or removing the
-          tracking code.
+          Обратите внимание: Ваши SDK всё ещё установлены и продолжают
+          отправлять запросы. После {deleteDate} эти запросы будут завершаться
+          с ошибкой, поскольку рабочее пространство перестанет существовать,
+          так что стоит либо оформить подписку, либо удалить код отслеживания.
         </Text>
       ) : null}
       <Text>
-        It's been six weeks since your trial ended and I've written three times
-        before this, so I don't want it to land as a surprise.
+        С окончания пробного периода прошло шесть недель, и до этого письма я
+        писал Вам трижды, поэтому не хочу, чтобы оно стало неожиданностью.
       </Text>
       <Text>
-        Starting a plan before {deleteDate} cancels the deletion and restores
-        everything immediately.
+        Оформление тарифа до {deleteDate} отменит удаление и мгновенно всё
+        восстановит.
       </Text>
       <Text>
         <Button href={withUtm(billingUrl, 'wind-down-final-warning')}>
-          Keep my data
+          Сохранить мои данные
         </Button>
       </Text>
       <Text>
-        If you want the data but not the subscription, reply before {deleteDate}{' '}
-        and I'll export it for you. If you'd rather it were gone, you don't need
-        to do anything at all.
+        Если данные нужны, а подписка — нет, ответьте до {deleteDate}{' '}
+        и я экспортирую их для Вас. Если хотите, чтобы всё было удалено, делать
+        ничего не нужно.
       </Text>
       <Text>Carl</Text>
     </Layout>
@@ -81,7 +82,7 @@ export function WindDownFinalWarning({
 WindDownFinalWarning.PreviewProps = {
   firstName: 'Alex',
   billingUrl: 'https://dashboard.openpanel.dev/org-id/billing',
-  deleteDate: 'April 10',
+  deleteDate: '10 апреля',
   hasData: true,
   stillTracking: true,
   eventsCount: 842_110,

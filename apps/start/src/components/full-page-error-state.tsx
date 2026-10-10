@@ -3,8 +3,8 @@ import { ServerCrashIcon } from 'lucide-react';
 import { FullPageEmptyState } from './full-page-empty-state';
 
 export const FullPageErrorState = ({
-  title = 'Error...',
-  description = 'Something went wrong...',
+  title = 'Ошибка...',
+  description = 'Что-то пошло не так...',
   children,
 }: { title?: string; description?: string; children?: React.ReactNode }) => {
   return (

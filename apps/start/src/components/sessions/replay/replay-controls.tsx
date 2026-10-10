@@ -25,7 +25,7 @@ export function ReplayPlayPauseButton() {
       variant={isPlaying ? 'outline' : 'default'}
       size="icon"
       onClick={toggle}
-      aria-label={isPlaying ? 'Pause' : 'Play'}
+      aria-label={isPlaying ? 'Пауза' : 'Воспроизвести'}
     >
       {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
     </Button>

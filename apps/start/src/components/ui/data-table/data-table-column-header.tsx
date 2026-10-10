@@ -65,7 +65,7 @@ export function DataTableColumnHeader<TData, TValue>({
               onClick={() => column.toggleSorting(false)}
             >
               <ChevronUpIcon className="size-4" />
-              Asc
+              По возрастанию
             </DropdownMenuCheckboxItem>
             <DropdownMenuCheckboxItem
               className="relative pr-8 pl-2 [&>span:first-child]:right-2 [&>span:first-child]:left-auto [&_svg]:text-muted-foreground"
@@ -73,7 +73,7 @@ export function DataTableColumnHeader<TData, TValue>({
               onClick={() => column.toggleSorting(true)}
             >
               <ChevronDownIcon className="size-4" />
-              Desc
+              По убыванию
             </DropdownMenuCheckboxItem>
             {column.getIsSorted() && (
               <DropdownMenuItem
@@ -81,7 +81,7 @@ export function DataTableColumnHeader<TData, TValue>({
                 onClick={() => column.clearSorting()}
               >
                 <XIcon className="size-4" />
-                Reset
+                Сбросить
               </DropdownMenuItem>
             )}
           </>
@@ -93,7 +93,7 @@ export function DataTableColumnHeader<TData, TValue>({
             onClick={() => column.toggleVisibility(false)}
           >
             <EyeOffIcon className="size-4" />
-            Hide
+            Скрыть
           </DropdownMenuCheckboxItem>
         )}
       </DropdownMenuContent>

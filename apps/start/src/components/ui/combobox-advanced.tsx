@@ -88,7 +88,7 @@ export function ComboboxAdvanced({
         : [
             {
               value: inputValue,
-              label: `Pick '${inputValue}'`,
+              label: `Выбрать '${inputValue}'`,
             },
           ]),
       ...value.map((val) => {
@@ -124,7 +124,7 @@ export function ComboboxAdvanced({
         <PopoverContent className="w-full max-w-md p-0" align="start">
           <Command shouldFilter={false}>
             <CommandInput
-              placeholder="Search"
+              placeholder="Поиск"
               value={inputValue}
               onValueChange={setInputValue}
             />

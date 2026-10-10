@@ -113,7 +113,7 @@ export function ReportSeriesItem({
                   onClick={() => setOpen((p) => !p)}
                   icon={FilterIcon}
                 >
-                  Add filter
+                  Добавить фильтр
                 </SmallButton>
               )}
             </PropertiesCombobox>
@@ -139,8 +139,8 @@ export function ReportSeriesItem({
                   onClick={() => setOpen((p) => !p)}
                 >
                   {chartEvent.property
-                    ? `Property: ${chartEvent.property}`
-                    : 'Select property'}
+                    ? `Свойство: ${chartEvent.property}`
+                    : 'Выберите свойство'}
                 </SmallButton>
               )}
             </PropertiesCombobox>

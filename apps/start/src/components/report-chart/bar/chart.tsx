@@ -124,7 +124,7 @@ export function Chart({ data }: Props) {
             <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground pointer-events-none" />
             <Input
               type="text"
-              placeholder="Filter by name"
+              placeholder="Фильтр по названию"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-9"
@@ -139,15 +139,15 @@ export function Chart({ data }: Props) {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="count-desc">Count (High → Low)</SelectItem>
-              <SelectItem value="count-asc">Count (Low → High)</SelectItem>
-              <SelectItem value="name-asc">Name (A → Z)</SelectItem>
-              <SelectItem value="name-desc">Name (Z → A)</SelectItem>
+              <SelectItem value="count-desc">Количество (по убыванию)</SelectItem>
+              <SelectItem value="count-asc">Количество (по возрастанию)</SelectItem>
+              <SelectItem value="name-asc">Название (А → Я)</SelectItem>
+              <SelectItem value="name-desc">Название (Я → А)</SelectItem>
               <SelectItem value="percent-desc">
-                Percentage (High → Low)
+                Процент (по убыванию)
               </SelectItem>
               <SelectItem value="percent-asc">
-                Percentage (Low → High)
+                Процент (по возрастанию)
               </SelectItem>
             </SelectContent>
           </Select>
@@ -215,7 +215,7 @@ export function Chart({ data }: Props) {
                             style={{ backgroundColor: color }}
                           />
                           <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-                            Rank {serie.originalRank}
+                            Место {serie.originalRank}
                           </span>
                         </div>
 

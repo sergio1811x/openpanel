@@ -50,7 +50,7 @@ export const Route = createFileRoute(
     return {
       meta: [
         {
-          title: createProjectTitle('Dashboard'),
+          title: createProjectTitle('Дашборд'),
         },
       ],
     };
@@ -110,7 +110,7 @@ function Component() {
       onError: handleErrorToastOptions({}),
       onSuccess() {
         queryClient.invalidateQueries(trpc.dashboard.list.pathFilter());
-        toast('Dashboard deleted');
+        toast('Дашборд удалён');
         router.navigate({
           to: '/$organizationId/$projectId/dashboards',
           params: {
@@ -153,7 +153,7 @@ function Component() {
       onSuccess() {
         queryClient.invalidateQueries(trpc.dashboard.list.pathFilter());
         reportsQuery.refetch();
-        toast('Report deleted');
+        toast('Отчёт удалён');
       },
     }),
   );
@@ -164,7 +164,7 @@ function Component() {
       onSuccess() {
         queryClient.invalidateQueries(trpc.dashboard.list.pathFilter());
         reportsQuery.refetch();
-        toast('Report duplicated');
+        toast('Копия отчёта создана');
       },
     }),
   );
@@ -183,7 +183,7 @@ function Component() {
     trpc.report.resetLayout.mutationOptions({
       onError: handleErrorToastOptions({}),
       onSuccess() {
-        toast('Layout reset to default');
+        toast('Раскладка сброшена по умолчанию');
         reportsQuery.refetch();
       },
     }),
@@ -285,7 +285,7 @@ function Component() {
     <PageContainer>
       <PageHeader
         title={dashboard.name}
-        description="View and manage your reports"
+        description="Просмотр и управление Вашими отчётами"
         className="mb-4"
         actions={
           <>
@@ -294,7 +294,7 @@ function Component() {
                 <SearchIcon className="absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground pointer-events-none" />
                 <Input
                   type="search"
-                  placeholder="Search reports..."
+                  placeholder="Поиск отчётов..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="pl-8 w-[180px] sm:w-[220px]"
@@ -308,8 +308,8 @@ function Component() {
               to={'/$organizationId/$projectId/reports'}
               icon={PlusIcon}
             >
-              <span className="max-sm:hidden">Create report</span>
-              <span className="sm:hidden">Report</span>
+              <span className="max-sm:hidden">Создать отчёт</span>
+              <span className="sm:hidden">Отчёт</span>
             </LinkButton>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -325,34 +325,34 @@ function Component() {
                     }
                   >
                     <ShareIcon className="mr-2 size-4" />
-                    Share dashboard
+                    Поделиться дашбордом
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={() =>
                       showConfirm({
-                        title: 'Reset layout',
-                        text: 'Are you sure you want to reset the layout to default? This will clear all custom positioning and sizing.',
+                        title: 'Сброс раскладки',
+                        text: 'Вы уверены, что хотите сбросить раскладку до значений по умолчанию? Все пользовательские позиции и размеры будут удалены.',
                         onConfirm: () =>
                           resetLayout.mutate({ dashboardId, projectId }),
                       })
                     }
                   >
                     <RotateCcw className="mr-2 size-4" />
-                    Reset layout
+                    Сбросить раскладку
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     variant="destructive"
                     onClick={() =>
                       showConfirm({
-                        title: 'Delete dashboard',
-                        text: 'Are you sure you want to delete this dashboard? All your reports will be deleted!',
+                        title: 'Удаление дашборда',
+                        text: 'Вы уверены, что хотите удалить этот дашборд? Все Ваши отчёты будут удалены!',
                         onConfirm: () =>
                           dashboardDeletion.mutate({ id: dashboardId }),
                       })
                     }
                   >
                     <TrashIcon className="mr-2 size-4" />
-                    Delete dashboard
+                    Удалить дашборд
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
@@ -362,15 +362,15 @@ function Component() {
       />
 
       {reports.length === 0 ? (
-        <FullPageEmptyState title="No reports" icon={LayoutPanelTopIcon}>
-          <p>You can visualize your data with a report</p>
+        <FullPageEmptyState title="Нет отчётов" icon={LayoutPanelTopIcon}>
+          <p>Вы можете визуализировать свои данные с помощью отчёта</p>
           <LinkButton
             from={Route.fullPath}
             to={'/$organizationId/$projectId/reports'}
             className="mt-14"
             icon={PlusIcon}
           >
-            Create report
+            Создать отчёт
           </LinkButton>
         </FullPageEmptyState>
       ) : !isGridReady || reportsQuery.isLoading ? (
@@ -383,8 +383,8 @@ function Component() {
           <ReportItemSkeleton />
         </div>
       ) : filteredReports.length === 0 ? (
-        <FullPageEmptyState title="No matching reports" icon={SearchIcon}>
-          <p>No reports match "{search}". Try a different search.</p>
+        <FullPageEmptyState title="Отчёты не найдены" icon={SearchIcon}>
+          <p>Отчётов по запросу «{search}» не найдено. Попробуйте изменить поисковый запрос.</p>
         </FullPageEmptyState>
       ) : (
         <GrafanaGrid

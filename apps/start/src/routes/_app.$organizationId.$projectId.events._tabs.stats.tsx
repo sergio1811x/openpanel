@@ -27,7 +27,7 @@ function Component() {
     {
       id: 'A',
       name: '*',
-      displayName: 'All events',
+      displayName: 'Все события',
       segment: 'event',
       filters: filters ?? [],
       type: 'event',
@@ -43,7 +43,7 @@ function Component() {
       <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
         <Widget className="w-full">
           <WidgetHead>
-            <span className="title">Events per day</span>
+            <span className="title">События по дням</span>
           </WidgetHead>
           <WidgetBody>
             <ReportChartShortcut
@@ -67,7 +67,7 @@ function Component() {
         </Widget>
         <Widget className="w-full">
           <WidgetHead>
-            <span className="title">Event distribution</span>
+            <span className="title">Распределение событий</span>
           </WidgetHead>
           <WidgetBody>
             <ReportChartShortcut
@@ -99,7 +99,7 @@ function Component() {
                       {
                         id: 'A',
                         name: '*',
-                        displayName: 'All events',
+                        displayName: 'Все события',
                         segment: 'event',
                         filters: filters ?? [],
                         type: 'event',
@@ -111,7 +111,7 @@ function Component() {
         </Widget>
         <Widget className="w-full">
           <WidgetHead>
-            <span className="title">Event distribution</span>
+            <span className="title">Распределение событий</span>
           </WidgetHead>
           <WidgetBody>
             <ReportChartShortcut
@@ -143,7 +143,7 @@ function Component() {
                       {
                         id: 'A',
                         name: '*',
-                        displayName: 'All events',
+                        displayName: 'Все события',
                         segment: 'event',
                         filters: filters ?? [],
                         type: 'event',
@@ -155,7 +155,7 @@ function Component() {
         </Widget>
         <Widget className="w-full">
           <WidgetHead>
-            <span className="title">Event distribution</span>
+            <span className="title">Распределение событий</span>
           </WidgetHead>
           <WidgetBody>
             <ReportChartShortcut
@@ -187,7 +187,7 @@ function Component() {
                       {
                         id: 'A',
                         name: '*',
-                        displayName: 'All events',
+                        displayName: 'Все события',
                         segment: 'event',
                         filters: filters ?? [],
                         type: 'event',

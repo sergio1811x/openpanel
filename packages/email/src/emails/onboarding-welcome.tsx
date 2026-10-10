@@ -21,29 +21,29 @@ export function OnboardingWelcome({
 }: Props & { unsubscribeUrl?: string }) {
   return (
     <Layout unsubscribeUrl={unsubscribeUrl}>
-      <Text>Hi{firstName ? ` ${firstName}` : ''},</Text>
-      <Text>Carl here. I build OpenPanel. Thanks for signing up.</Text>
+      <Text>Здравствуйте{firstName ? `, ${firstName}` : ''}!</Text>
+      <Text>Меня зовут Carl, я создаю OpenPanel. Спасибо за регистрацию.</Text>
       <Text>
-        Your trial runs for 30 days with everything included. No card needed
-        until you decide to stay.
+        Ваш пробный период длится 30 дней и включает все возможности. Карта
+        понадобится только тогда, когда Вы решите остаться.
       </Text>
       {hasData ? (
         <>
           <Text>
-            Events are already coming in, so you're past the hard part. Have a
-            look around your dashboard and reply if anything looks off.
+            События уже поступают — самое сложное позади. Осмотритесь в своём
+            дашборде и ответьте на это письмо, если что-то выглядит странно.
           </Text>
           <Text>
             <Link href={withUtm(dashboardUrl, 'onboarding-welcome')}>
-              Open your dashboard
+              Открыть дашборд
             </Link>
           </Text>
         </>
       ) : (
         <>
           <Text>
-            First step is getting data in. The install usually takes a few
-            minutes:
+            Первый шаг — начать собирать данные. Установка обычно занимает
+            несколько минут:
           </Text>
           <List
             items={[
@@ -54,7 +54,7 @@ export function OnboardingWelcome({
                   'onboarding-welcome',
                 )}
               >
-                Install the tracking script
+                Установить скрипт отслеживания
               </Link>,
               <Link
                 key="track"
@@ -63,11 +63,11 @@ export function OnboardingWelcome({
                   'onboarding-welcome',
                 )}
               >
-                Track custom events
+                Отслеживать пользовательские события
               </Link>,
             ]}
           />
-          <Text>If you get stuck, just reply to this email.</Text>
+          <Text>Если возникнут сложности, просто ответьте на это письмо.</Text>
         </>
       )}
       <Text>Carl</Text>

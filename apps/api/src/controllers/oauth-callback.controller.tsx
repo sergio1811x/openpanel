@@ -128,7 +128,7 @@ async function handleNewUser({
 
   if (existingUser) {
     throw new LogError(
-      'Please sign in using your original authentication method',
+      'Войдите, используя исходный способ аутентификации',
       {
         existingUser,
         oauthUser,
@@ -145,7 +145,7 @@ async function handleNewUser({
     // so their email and name shouldn't land in application logs. The redirect
     // carries `correlationId` (the request id), which is what ties a user's
     // error page back to this log line if an operator needs to investigate.
-    throw new LogError('Registrations are not allowed', {
+    throw new LogError('Регистрация новых пользователей запрещена', {
       providerName,
       inviteId,
     });
@@ -197,7 +197,7 @@ async function handleNewUser({
 async function fetchGithubUser(accessToken: string): Promise<OAuthUser> {
   const email = await getGithubEmail(accessToken);
   if (!email) {
-    throw new LogError('GitHub email not found or not verified');
+    throw new LogError('Email в GitHub не найден или не подтверждён');
   }
 
   const userRequest = new Request('https://api.github.com/user');
@@ -216,7 +216,7 @@ async function fetchGithubUser(accessToken: string): Promise<OAuthUser> {
 
   const userResult = userSchema.safeParse(userJson);
   if (!userResult.success) {
-    throw new LogError('Error fetching Github user', {
+    throw new LogError('Ошибка при получении пользователя GitHub', {
       error: userResult.error,
       githubUser: userJson,
     });
@@ -242,14 +242,14 @@ async function fetchGoogleUser(tokens: OAuth2Tokens): Promise<OAuthUser> {
 
   const claimsResult = claimsSchema.safeParse(claims);
   if (!claimsResult.success) {
-    throw new LogError('Error fetching Google user', {
+    throw new LogError('Ошибка при получении пользователя Google', {
       error: claimsResult.error,
       claims,
     });
   }
 
   if (!claimsResult.data.email_verified) {
-    throw new LogError('Email not verified with Google');
+    throw new LogError('Email не подтверждён в Google');
   }
 
   return {
@@ -276,7 +276,7 @@ async function validateOAuthCallback(
 
   const query = schema.safeParse(req.query);
   if (!query.success) {
-    throw new LogError('Invalid callback query params', {
+    throw new LogError('Неверные параметры callback-запроса', {
       error: query.error,
       query: req.query,
       provider,
@@ -294,7 +294,7 @@ async function validateOAuthCallback(
     storedState === null ||
     (provider === 'google' && codeVerifier === null)
   ) {
-    throw new LogError('Missing oauth parameters', {
+    throw new LogError('Отсутствуют параметры OAuth', {
       code: code === null,
       state: state === null,
       storedState: storedState === null,
@@ -304,7 +304,7 @@ async function validateOAuthCallback(
   }
 
   if (state !== storedState) {
-    throw new LogError('OAuth state mismatch', {
+    throw new LogError('Несовпадение OAuth state', {
       state,
       storedState,
       provider,
@@ -409,7 +409,7 @@ function redirectWithError(reply: FastifyReply, error: LogError | unknown) {
   if (error instanceof LogError) {
     url.searchParams.set('error', error.message);
   } else {
-    url.searchParams.set('error', 'An error occurred');
+    url.searchParams.set('error', 'Произошла ошибка');
   }
   url.searchParams.set('correlationId', reply.request.id);
   return reply.redirect(url.toString());

@@ -99,18 +99,18 @@ export function PricingSection({
             >
               <div className="row gap-2 items-center p-3 rounded-lg bg-muted/30 border border-emerald-500/10">
                 <span className="text-xs font-medium text-muted-foreground">
-                  Free tier:
+                  Бесплатный тариф:
                 </span>
                 <span className="text-xs text-muted-foreground">
-                  Self-hosting (unlimited events)
+                  Self-hosting (без лимита событий)
                 </span>
               </div>
               <div className="row gap-2 items-center p-3 rounded-lg bg-muted/30 border border-emerald-500/10">
                 <span className="text-xs font-medium text-muted-foreground">
-                  Free trial:
+                  Пробный период:
                 </span>
                 <span className="text-xs text-muted-foreground">
-                  30 days
+                  30 дней
                 </span>
               </div>
             </motion.div>
@@ -156,7 +156,7 @@ export function PricingSection({
                 className="row gap-2 items-center mt-2 p-3 rounded-lg bg-muted/30 border border-orange-500/10"
               >
                 <span className="text-xs font-medium text-muted-foreground">
-                  Free tier:
+                  Бесплатный тариф:
                 </span>
                 <span className="text-xs text-muted-foreground">
                   {pricing.competitor.free_tier}
@@ -176,7 +176,7 @@ export function PricingSection({
                   rel="noopener noreferrer"
                   className="row gap-2 items-center text-xs text-primary hover:text-primary/80 transition-colors duration-300 mt-2 group/link"
                 >
-                  <span>View pricing</span>
+                  <span>Посмотреть тарифы</span>
                   <ArrowRightIcon className="size-3 group-hover/link:translate-x-1 transition-transform duration-300" />
                 </Link>
               </motion.div>

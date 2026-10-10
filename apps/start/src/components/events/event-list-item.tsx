@@ -21,7 +21,7 @@ export function EventListItem(props: EventListItemProps) {
         return path;
       }
 
-      return `Route: ${path}`;
+      return `Маршрут: ${path}`;
     }
 
     return name.replace(/_/g, ' ');

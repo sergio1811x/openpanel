@@ -33,24 +33,24 @@ export default function OverviewTopPages({
   const [searchQuery, setSearchQuery] = useState('');
   const [widget, setWidget, widgets] = useOverviewWidgetV2('pages', {
     page: {
-      title: 'Top pages',
-      btn: 'Pages',
+      title: 'Топ страниц',
+      btn: 'Страницы',
     },
     entry: {
-      title: 'Entry Pages',
-      btn: 'Entries',
+      title: 'Страницы входа',
+      btn: 'Входы',
       meta: {
         columns: {
-          sessions: 'Entries',
+          sessions: 'Входы',
         },
       },
     },
     exit: {
-      title: 'Exit Pages',
-      btn: 'Exits',
+      title: 'Страницы выхода',
+      btn: 'Выходы',
       meta: {
         columns: {
-          sessions: 'Exits',
+          sessions: 'Выходы',
         },
       },
     },
@@ -96,7 +96,7 @@ export default function OverviewTopPages({
           onTabChange={setWidget}
           searchValue={searchQuery}
           onSearchChange={setSearchQuery}
-          searchPlaceholder={`Search ${widget.btn.toLowerCase()}`}
+          searchPlaceholder={`Поиск: ${widget.btn}`}
           className="border-b-0 pb-2"
         />
         <WidgetBody className="p-0">
@@ -131,7 +131,7 @@ export default function OverviewTopPages({
             }}
             icon={Globe2Icon}
           >
-            {domain ? 'Hide domain' : 'Show domain'}
+            {domain ? 'Скрыть домен' : 'Показать домен'}
           </Button>
         </WidgetFooter>
       </Widget>

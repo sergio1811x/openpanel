@@ -33,7 +33,7 @@ export async function generateMetadata({
 
   if (!data) {
     return {
-      title: 'Feature Not Found',
+      title: 'Функция не найдена',
     };
   }
 
@@ -59,7 +59,7 @@ export default async function FeaturePage({
 
   const pageUrl = url(`/features/${slug}`);
   const capabilitiesSection = data.capabilities_section ?? {
-    title: 'What you can do',
+    title: 'Что вы можете делать',
     intro: undefined,
   };
 
@@ -132,8 +132,8 @@ export default async function FeaturePage({
       </div>
 
       <CtaBanner
-        title="Ready to get started?"
-        description="Track events in minutes. Free 30-day trial, no credit card required."
+        title="Готовы начать?"
+        description="Начните отслеживать события за считанные минуты. 30 дней бесплатно, без кредитной карты."
         ctaText={data.cta.label}
         ctaLink={data.cta.href}
       />

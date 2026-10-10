@@ -2,153 +2,171 @@
   "slug": "nextjs",
   "audience": "nextjs",
   "seo": {
-    "title": "Next.js Analytics — OpenPanel SDK for App Router & Pages Router",
-    "description": "Add analytics to your Next.js app in minutes. OpenPanel's Next.js SDK supports App Router, Pages Router, server-side events, and automatic route change tracking. Open source, cookieless, from $2.50/month.",
+    "title": "Аналитика для Next.js — SDK OpenPanel для App Router и Pages Router",
+    "description": "Добавьте аналитику в Next.js-приложение за минуты. SDK OpenPanel для Next.js поддерживает App Router, Pages Router, серверные события и автоматическое отслеживание смены маршрутов. Открытый код, без cookies, от $2.50/месяц.",
     "noindex": false
   },
   "hero": {
-    "heading": "Analytics built for Next.js",
-    "subheading": "Most analytics tools treat Next.js like a static site. OpenPanel was built for how Next.js actually works: App Router, server components, API routes, and route changes all tracked correctly. Install in 5 minutes and get events, funnels, and user profiles that work with SSR.",
+    "heading": "Аналитика, созданная для Next.js",
+    "subheading": "Большинство инструментов аналитики воспринимают Next.js как статический сайт. OpenPanel создавалась с учётом гидрации и App Router.",
     "badges": [
-      "App Router support",
-      "Server-side events",
-      "Auto route tracking",
-      "2.3 KB client bundle"
+      "Поддержка App Router",
+      "Серверные события",
+      "Автотрекинг маршрутов",
+      "2.3 КБ клиентский бандл"
     ]
   },
   "problem": {
-    "title": "Why standard analytics breaks in Next.js",
-    "intro": "Next.js is not a traditional website. Most analytics tools were built before App Router existed and show it.",
+    "title": "Почему стандартная аналитика ломается в Next.js",
+    "intro": "Next.js — не традиционный сайт. Большинство инструментов аналитики созданы до появления App Router, и это видно.",
     "items": [
       {
-        "title": "GA4 breaks with App Router route changes",
-        "description": "Google Analytics was designed for traditional page loads. In Next.js App Router, client-side navigation doesn't trigger GA4's page view events unless you add custom workarounds. Your analytics misses a significant portion of page views."
+        "title": "GA4 ломается на смене маршрутов в App Router",
+        "description": "Google Analytics спроектирован под традиционные загрузки страниц. В Next.js App Router клиентская навигация не вызывает события просмотров GA4 без кастомных обходов. Аналитика теряет заметную часть просмотров страниц."
       },
       {
-        "title": "Cookie consent is painful in Next.js",
-        "description": "Implementing a GDPR-compliant cookie consent flow in a Next.js app requires next/script, consent state management, and conditional script loading. It's a non-trivial engineering task just to run analytics."
+        "title": "Согласие на cookies — боль в Next.js",
+        "description": "GDPR-совместимый flow согласия на cookies в Next.js требует next/script, управления состоянием согласия и условной загрузки скриптов. Непростая инженерная задача только ради аналитики."
       },
       {
-        "title": "No server-side tracking",
-        "description": "Most analytics SDKs are client-only. Server-side events — API route completions, background jobs, server actions — are invisible. You're missing half the picture."
+        "title": "Нет серверного отслеживания",
+        "description": "Большинство SDK работают только на клиенте. Серверные события — завершение API-роутов, фоновые задачи, server actions — невидимы. Половина картины теряется."
       },
       {
-        "title": "Analytics libraries bloat your bundle",
-        "description": "Many analytics SDKs add 20–50 KB to your JavaScript bundle. In a performance-conscious Next.js app, that overhead matters for Core Web Vitals."
+        "title": "Библиотеки аналитики раздувают бандл",
+        "description": "Многие аналитические SDK добавляют 20–50 КБ в JavaScript-бандл. В производительном Next.js-приложении это сказывается на Core Web Vitals."
       }
     ]
   },
   "features": {
-    "title": "Analytics that works the way Next.js works",
-    "intro": "OpenPanel's Next.js SDK was designed for modern Next.js patterns — not adapted from a legacy client-only library.",
+    "title": "Аналитика, работающая так, как работает Next.js",
+    "intro": "SDK OpenPanel для Next.js спроектирован под современные паттерны Next.js — а не адаптирован из legacy клиентской библиотеки.",
     "items": [
       {
-        "title": "Next.js SDK with App Router support",
-        "description": "Install @openpanel/nextjs, add the <OpenPanelComponent> to your root layout, and automatic route change tracking works immediately across App Router and Pages Router."
+        "title": "SDK для Next.js с поддержкой App Router",
+        "description": "Установите @openpanel/nextjs, добавьте <OpenPanelComponent> в корневой layout — и автотрекинг смены маршрутов сразу работает в App Router и Pages Router."
       },
       {
-        "title": "Automatic route change tracking",
-        "description": "Every router.push(), <Link> navigation, and back/forward browser action is captured as a page view. No custom useEffect or router event listeners needed."
+        "title": "Автоматическое отслеживание смены маршрутов",
+        "description": "Каждый router.push(), навигация через <Link> и кнопки вперёд/назад фиксируются как просмотр страницы. Без кастомных useEffect и слушателей событий роутера."
       },
       {
-        "title": "Server-side event tracking",
-        "description": "Import openPanel in any server component, API route, or server action to track events server-side. Track form submissions, payment completions, and background jobs without any client involvement."
+        "title": "Серверное отслеживание событий",
+        "description": "Импортируйте openPanel в любом серверном компоненте, API-роуте или server action, чтобы отслеживать события на сервере. Формы, оплаты и фоновые задачи — без участия клиента."
       },
       {
-        "title": "Cookieless by default",
-        "description": "The OpenPanel SDK uses no cookies. No consent management library, no conditional script loading, no GDPR consent modal needed — just install and track."
+        "title": "Без cookies по умолчанию",
+        "description": "SDK OpenPanel не использует cookies. Ни библиотеки управления согласием, ни условной загрузки скриптов, ни GDPR-модалки — просто установите и отслеживайте."
       },
       {
-        "title": "Identify users across sessions",
-        "description": "Call op.identify({ profileId, name, email }) after authentication to tie anonymous events to known users. Works with any auth solution including NextAuth.js, Clerk, and custom implementations."
+        "title": "Идентификация пользователей между сессиями",
+        "description": "Вызовите op.identify({ profileId, name, email }) после аутентификации, чтобы связать анонимные события с известными пользователями. Работает с любой аутентификацией, включая NextAuth.js, Clerk и кастомные решения."
       },
       {
-        "title": "TypeScript-first SDK",
-        "description": "Full TypeScript types for all methods. Autocomplete for event names and properties. Zero runtime errors from mistyped event calls."
+        "title": "SDK с приоритетом TypeScript",
+        "description": "Полные типы TypeScript для всех методов. Автодополнение имён событий и свойств. Ноль ошибок времени выполнения из-за опечаток в вызовах."
       },
       {
-        "title": "2.3 KB gzipped client bundle",
-        "description": "The smallest full-featured analytics SDK for Next.js. No impact on Lighthouse scores or Core Web Vitals."
+        "title": "2.3 КБ gzipped клиентского бандла",
+        "description": "Самый компактный полнофункциональный аналитический SDK для Next.js. Без влияния на Lighthouse и Core Web Vitals."
       }
     ]
   },
   "benefits": {
-    "title": "Why Next.js developers choose OpenPanel",
-    "intro": "OpenPanel fits naturally into a modern Next.js codebase — not as an afterthought.",
+    "title": "Почему Next.js-разработчики выбирают OpenPanel",
+    "intro": "OpenPanel естественно вписывается в современную кодовую базу Next.js — не как запоздалое дополнение.",
     "items": [
       {
-        "title": "Works exactly how Next.js works",
-        "description": "Built for App Router, server components, and modern Next.js patterns. Not bolted onto a client-only library."
+        "title": "Работает ровно так, как работает Next.js",
+        "description": "Создана для App Router, серверных компонентов и современных паттернов Next.js. Не прикручена к клиентской библиотеке."
       },
       {
-        "title": "No consent infrastructure needed",
-        "description": "Cookieless tracking means no consent modal, no next/script loading gymnastics, no conditional initialization. Install once, works everywhere."
+        "title": "Инфраструктура согласия не нужна",
+        "description": "Отслеживание без cookies — без модалки согласия, без трюков с next/script и условной инициализации. Установите один раз — работает везде."
       },
       {
-        "title": "Track server and client events in the same dashboard",
-        "description": "Server actions, API endpoints, and client interactions all show up together. Full picture of what your app is doing."
+        "title": "Серверные и клиентские события в одном дашборде",
+        "description": "Server actions, API-эндпоинты и клиентские взаимодействия отображаются вместе. Полная картина работы вашего приложения."
       },
       {
-        "title": "Open source and self-hostable",
-        "description": "Run OpenPanel on your own infrastructure. Your Next.js app's analytics data never leaves your servers."
+        "title": "Открытый код и self-hosting",
+        "description": "Запустите OpenPanel на своей инфраструктуре. Аналитические данные Next.js-приложения никогда не покидают ваши серверы."
       },
       {
-        "title": "From $2.50/month",
-        "description": "No enterprise contract, no per-seat fees. Pay for events, get all features. Start free with 30-day trial."
+        "title": "От $2.50/месяц",
+        "description": "Без enterprise-контрактов и платы за место. Платите за события — получаете все функции. Начните бесплатно с 30-дневным триалом."
       }
     ]
   },
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions from Next.js developers evaluating OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы от Next.js-разработчиков, оценивающих OpenPanel.",
     "items": [
       {
-        "question": "How do I install OpenPanel in a Next.js app?",
-        "answer": "Install @openpanel/nextjs, add <OpenPanelComponent clientId=\"...\" /> to your root layout.tsx, and you're tracking page views. For custom events, import and call op.track('event_name', { properties }) anywhere. See the full step-by-step guide at /guides/nextjs-analytics."
+        "question": "Как установить OpenPanel в Next.js-приложение?",
+        "answer": "Установите @openpanel/nextjs, добавьте <OpenPanelComponent clientId=\"...\" /> в корневой layout.tsx — и просмотры страниц уже отслеживаются. Для кастомных событий импортируйте и вызывайте op.track('event_name', { properties }) где угодно. Пошаговое руководство: /guides/nextjs-analytics."
       },
       {
-        "question": "Does OpenPanel support Next.js App Router?",
-        "answer": "Yes. The <OpenPanelComponent> handles App Router route changes automatically using the usePathname hook internally. No custom setup is needed for client-side navigation tracking."
+        "question": "Поддерживает ли OpenPanel Next.js App Router?",
+        "answer": "Да. <OpenPanelComponent> обрабатывает смену маршрутов App Router автоматически, используя хук usePathname. Никакой дополнительной настройки для отслеживания клиентской навигации не нужно."
       },
       {
-        "question": "Can I track events in Server Components and API Routes?",
-        "answer": "Yes. Import { openPanel } from @openpanel/nextjs/server and call openPanel.track() in any server context including Server Components, Route Handlers, and Server Actions."
+        "question": "Можно ли отслеживать события в Server Components и API Routes?",
+        "answer": "Да. Импортируйте { openPanel } из @openpanel/nextjs/server и вызывайте openPanel.track() в любом серверном контексте, включая Server Components, Route Handlers и Server Actions."
       },
       {
-        "question": "Does OpenPanel work with NextAuth.js or Clerk?",
-        "answer": "Yes. Call op.identify({ profileId: session.user.id, ... }) after authentication to link events to user identities. Works with any auth solution that gives you a user ID."
+        "question": "Работает ли OpenPanel с NextAuth.js или Clerk?",
+        "answer": "Да. Вызовите op.identify({ profileId: session.user.id, ... }) после аутентификации, чтобы связать события с личностью пользователя. Работает с любым решением, дающим ID пользователя."
       },
       {
-        "question": "Does OpenPanel add significant bundle size to my Next.js app?",
-        "answer": "No. The client-side SDK is 2.3 KB gzipped. For reference, GA4 adds 50+ KB. OpenPanel has negligible impact on your bundle size or Core Web Vitals."
+        "question": "Заметно ли увеличивает ли OpenPanel размер бандла Next.js-приложения?",
+        "answer": "Нет. Клиентский SDK весит 2.3 КБ в gzip. Для сравнения: GA4 добавляет 50+ КБ. Влияние OpenPanel на размер бандла и Core Web Vitals ничтожно."
       },
       {
-        "question": "Can I self-host OpenPanel for my Next.js app?",
-        "answer": "Yes. OpenPanel is fully open source and can be self-hosted with Docker. Your Next.js app sends events to your own server. The self-hosted version has no event limits and is free to run."
+        "question": "Можно ли развернуть OpenPanel для своего Next.js-приложения самостоятельно?",
+        "answer": "Да. OpenPanel полностью open source и разворачивается через Docker. Ваше Next.js-приложение отправляет события на ваш сервер. Self-hosted версия без лимитов событий и бесплатна в эксплуатации."
       }
     ]
   },
   "related_links": {
     "guides": [
-      { "title": "Next.js analytics setup", "url": "/guides/nextjs-analytics" },
-      { "title": "React analytics setup", "url": "/guides/react-analytics" },
-      { "title": "Track custom events", "url": "/guides/track-custom-events" }
+      {
+        "title": "Настройка аналитики Next.js",
+        "url": "/guides/nextjs-analytics"
+      },
+      {
+        "title": "Настройка аналитики React",
+        "url": "/guides/react-analytics"
+      },
+      {
+        "title": "Отслеживание кастомных событий",
+        "url": "/guides/track-custom-events"
+      }
     ],
     "articles": [
-      { "title": "Self-hosted web analytics", "url": "/articles/self-hosted-web-analytics" }
+      {
+        "title": "Self-hosted веб-аналитика",
+        "url": "/articles/self-hosted-web-analytics"
+      }
     ],
     "comparisons": [
-      { "title": "OpenPanel vs Google Analytics", "url": "/compare/google-analytics-alternative" },
-      { "title": "OpenPanel vs PostHog", "url": "/compare/posthog-alternative" }
+      {
+        "title": "OpenPanel против Google Analytics",
+        "url": "/compare/google-analytics-alternative"
+      },
+      {
+        "title": "OpenPanel против PostHog",
+        "url": "/compare/posthog-alternative"
+      }
     ]
   },
   "ctas": {
     "primary": {
-      "label": "Try OpenPanel Free",
+      "label": "Попробуйте OpenPanel бесплатно",
       "href": "https://dashboard.openpanel.dev/onboarding"
     },
     "secondary": {
-      "label": "View Source on GitHub",
+      "label": "Исходный код на GitHub",
       "href": "https://github.com/Openpanel-dev/openpanel"
     }
   }

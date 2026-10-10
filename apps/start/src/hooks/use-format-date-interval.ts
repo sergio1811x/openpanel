@@ -27,14 +27,14 @@ export function formatDateInterval(options: {
     }
 
     if (interval === 'month') {
-      return new Intl.DateTimeFormat('en-GB', { month: 'short' }).format(date);
+      return new Intl.DateTimeFormat('ru-RU', { month: 'short' }).format(date);
     }
 
     if (interval === 'week') {
       if (short) {
-        return `W${getISOWeek(date)}`;
+        return `Нед. ${getISOWeek(date)}`;
       }
-      return new Intl.DateTimeFormat('en-GB', {
+      return new Intl.DateTimeFormat('ru-RU', {
         weekday: 'short',
         day: '2-digit',
         month: '2-digit',
@@ -43,12 +43,12 @@ export function formatDateInterval(options: {
 
     if (interval === 'day') {
       if (short) {
-        return new Intl.DateTimeFormat('en-GB', {
+        return new Intl.DateTimeFormat('ru-RU', {
           day: 'numeric',
           month: 'short',
         }).format(date);
       }
-      return new Intl.DateTimeFormat('en-GB', {
+      return new Intl.DateTimeFormat('ru-RU', {
         weekday: 'short',
         day: '2-digit',
         month: '2-digit',

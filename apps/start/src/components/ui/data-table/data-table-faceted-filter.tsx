@@ -85,7 +85,7 @@ export function DataTableFacetedFilter<TData, TValue>({
           {selectedValues?.size > 0 ? (
             <div
               role="button"
-              aria-label={`Clear ${title} filter`}
+              aria-label={`Очистить фильтр: ${title}`}
               tabIndex={0}
               onClick={onReset}
               onKeyDown={onReset}
@@ -115,7 +115,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                     variant="secondary"
                     className="rounded-sm px-1 font-normal"
                   >
-                    {selectedValues.size} selected
+                    {selectedValues.size} выбрано
                   </Badge>
                 ) : (
                   options
@@ -139,7 +139,7 @@ export function DataTableFacetedFilter<TData, TValue>({
         <Command>
           <CommandInput placeholder={title} />
           <CommandList className="max-h-full">
-            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandEmpty>Ничего не найдено.</CommandEmpty>
             <CommandGroup className="max-h-[18.75rem] overflow-y-auto overflow-x-hidden">
               {options.map((option) => {
                 const isSelected = selectedValues.has(option.value);
@@ -178,7 +178,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                     onSelect={() => onReset()}
                     className="justify-center text-center"
                   >
-                    Clear filters
+                    Очистить фильтры
                   </CommandItem>
                 </CommandGroup>
               </>

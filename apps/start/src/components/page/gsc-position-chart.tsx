@@ -36,7 +36,7 @@ const { TooltipProvider, Tooltip } = createChartTooltip<
       </ChartTooltipHeader>
       <ChartTooltipItem color={getChartColor(2)}>
         <div className="flex justify-between gap-8 font-medium font-mono">
-          <span>Avg Position</span>
+          <span>Ср. позиция</span>
           <span>{item.position.toFixed(1)}</span>
         </div>
       </ChartTooltipItem>
@@ -64,8 +64,8 @@ export function GscPositionChart({ data, isLoading }: GscPositionChartProps) {
   return (
     <div className="card p-4">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="font-medium text-sm">Avg Position</h3>
-        <span className="text-muted-foreground text-xs">Lower is better</span>
+        <h3 className="font-medium text-sm">Ср. позиция</h3>
+        <span className="text-muted-foreground text-xs">Чем ниже, тем лучше</span>
       </div>
       {isLoading ? (
         <Skeleton className="h-40 w-full" />

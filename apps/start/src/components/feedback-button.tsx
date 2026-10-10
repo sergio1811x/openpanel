@@ -22,7 +22,7 @@ export function FeedbackButton({ className }: { className?: string }) {
       }}
       type="button"
     >
-      Give feedback
+      Оставить отзыв
     </button>
   );
 }

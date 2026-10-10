@@ -53,10 +53,10 @@ function Component() {
   const { activeTab, tabs } = usePageTabs([
     {
       id: '/$organizationId/$projectId/profiles/$profileId',
-      label: 'Overview',
+      label: 'Обзор',
     },
-    { id: 'events', label: 'Events' },
-    { id: 'sessions', label: 'Sessions' },
+    { id: 'events', label: 'События' },
+    { id: 'sessions', label: 'Сессии' },
   ]);
 
   const handleTabChange = (tabId: string) => {
@@ -75,7 +75,7 @@ function Component() {
             <span className="truncate">
               {profile.data
                 ? getProfileName(profile.data, false)
-                : 'User not identified'}
+                : 'Пользователь не идентифицирован'}
             </span>
           </div>
         }

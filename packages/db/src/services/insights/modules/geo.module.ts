@@ -218,7 +218,7 @@ export const geoModule: InsightModule = {
     const displayName = getCountry(country);
 
     const title = isNew
-      ? `New traffic from: ${displayName}`
+      ? `Новый источник трафика: ${displayName}`
       : `${displayName} ${isIncrease ? '↑' : '↓'} ${Math.abs(changePct * 100).toFixed(0)}%`;
 
     const sessionsCurrent = result.currentValue ?? 0;
@@ -228,7 +228,7 @@ export const geoModule: InsightModule = {
 
     return {
       title,
-      summary: `${ctx.window.label}. Traffic change from ${displayName}.`,
+      summary: `${ctx.window.label}. Изменение трафика: ${displayName}.`,
       displayName,
       payload: {
         kind: 'insight_v1',

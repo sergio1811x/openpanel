@@ -1,105 +1,105 @@
 {
   "slug": "session-tracking",
-  "short_name": "Session tracking",
+  "short_name": "Отслеживание сессий",
   "seo": {
-    "title": "Session Tracking - Understand User Journeys | OpenPanel",
-    "description": "Understand user sessions from entry to exit. See pages visited, events fired, and session duration. Optionally add session replay to watch exactly what users did.",
+    "title": "Отслеживание сессий — понимайте пути пользователей | OpenPanel",
+    "description": "Понимайте сессии пользователей от входа до выхода. Смотрите посещённые страницы, сработавшие события и длительность сессии. При желании включите session replay, чтобы увидеть точные действия.",
     "keywords": [
-      "session tracking analytics",
-      "user session tracking",
-      "session analysis",
-      "session replay analytics"
+      "аналитика отслеживания сессий",
+      "отслеживание сессий пользователей",
+      "анализ сессий",
+      "session replay аналитика"
     ]
   },
   "hero": {
-    "heading": "What happened in the session",
-    "subheading": "Pages visited, events fired, time spent. Full structured session data, plus optional session replay when you need to go deeper.",
+    "heading": "Что произошло в сессии",
+    "subheading": "Посещённые страницы, сработавшие события, проведённое время. Полные структурированные данные сессии плюс опциональный session replay, когда нужно копнуть глубже.",
     "badges": [
-      "Privacy-first by design",
-      "Entry-to-exit visibility",
-      "Sessions linked to events",
-      "Optional session replay"
+      "Приватность по умолчанию",
+      "Видимость от входа до выхода",
+      "Сессии связаны с событиями",
+      "Опциональный session replay"
     ]
   },
   "definition": {
-    "title": "What is session tracking?",
-    "text": "A session is the **window of activity** between a user arriving on your site and leaving. It starts with an entry page, includes every page view and event along the way, and ends when the user goes idle or closes the tab.\n\nMost analytics tools either give you **too little** (aggregated page-view counts with no sense of flow) or **too much** (full session recordings that can be slow to review). OpenPanel gives you both options:\n\n- **Session tracking** (always on) — a structured timeline of what happened in each session: pages visited, events fired, duration, referrer, and device context\n- **[Session replay](/features/session-replay)** (opt-in) — a playable recording of the session built on [rrweb](https://www.rrweb.io/), so you can see exactly what the user clicked and where they got confused\n\nFor every session, OpenPanel captures:\n\n- **Entry page and exit page** - where the user started and where they left\n- **Pages visited in order** - the path through your site or app\n- **Events fired** - signups, clicks, feature usage, or any custom event\n- **Session duration** - how long the session lasted\n- **Referrer and UTM parameters** - how the user got there\n- **Device, browser, and location** - context without fingerprinting\n\nThis means you can answer questions like:\n\n- **What pages do users visit before signing up?**\n- **Do users from organic search behave differently than paid traffic?**\n- **How long are sessions for users who convert vs. those who don't?**\n\nSession replay is **opt-in and off by default**. When disabled, the replay script is never loaded and adds no overhead. When enabled, it loads asynchronously as a separate script so your main analytics bundle stays lean.\n\nSessions in OpenPanel connect directly to **events and user profiles**. Every event belongs to a session, and every session belongs to a user. This means funnels, retention, and user timelines all have session context built in."
+    "title": "Что такое отслеживание сессий?",
+    "text": "Сессия — это **окно активности** между приходом пользователя на сайт и его уходом. Она начинается со страницы входа, включает каждое событие и просмотр страницы по пути и заканчивается, когда пользователь уходит в простой или закрывает вкладку.\n\nБольшинство инструментов аналитики даёт либо **слишком мало** (агрегированные просмотры страниц без понимания потока), либо **слишком много** (полные записи сессий, которые долго просматривать). OpenPanel даёт обе опции:\n\n- **Отслеживание сессий** (всегда включено) — структурированный таймлайн каждой сессии: посещённые страницы, сработавшие события, длительность, реферер и контекст устройства\n- **[Session replay](/features/session-replay)** (по включению) — воспроизводимая запись сессии на базе [rrweb](https://www.rrweb.io/), чтобы увидеть, на что именно нажал пользователь и где запутался\n\nДля каждой сессии OpenPanel фиксирует:\n\n- **Страницу входа и страницу выхода** — где пользователь начал и где закончил\n- **Посещённые страницы по порядку** — путь по сайту или приложению\n- **Сработавшие события** — регистрации, клики, использование функций или любые кастомные события\n- **Длительность сессии** — сколько она длилась\n- **Реферер и UTM-параметры** — откуда пользователь пришёл\n- **Устройство, браузер и местоположение** — контекст без фингерпринтинга\n\nЭто позволяет отвечать на вопросы вроде:\n\n- **Какие страницы пользователи посещают перед регистрацией?**\n- **Отличается ли поведение пользователей из органики от платного трафика?**\n- **Насколько длинны сессии у конвертирующихся пользователей по сравнению с не конвертирующимися?**\n\nSession replay **включается вручную и по умолчанию выключен**. При выключенном состоянии скрипт записи не загружается и не добавляет нагрузки. При включённом — загружается асинхронно отдельным скриптом, поэтому основной аналитический бандл остаётся лёгким.\n\nСессии в OpenPanel напрямую связаны с **событиями и профилями пользователей**. Каждое событие принадлежит сессии, каждая сессия — пользователю. Поэтому воронки, удержание и таймлайны пользователей имеют встроенный контекст сессий."
   },
   "capabilities_section": {
-    "title": "What you get with session tracking",
-    "intro": "Structured session data that answers real questions—with optional replay when you need to see the full picture."
+    "title": "Что даёт отслеживание сессий",
+    "intro": "Структурированные данные сессий, отвечающие на реальные вопросы, — с опциональной записью, когда нужна полная картина."
   },
   "capabilities": [
     {
-      "title": "Entry and exit pages",
-      "description": "See where users land and where they leave. Identify your strongest entry points and the pages that lose visitors."
+      "title": "Страницы входа и выхода",
+      "description": "Смотрите, куда пользователи приходят и откуда уходят. Находите сильнейшие точки входа и страницы, теряющие посетителей."
     },
     {
-      "title": "Page flow per session",
-      "description": "View the ordered sequence of pages a user visited in a session. Understand navigation patterns at a glance."
+      "title": "Поток страниц в сессии",
+      "description": "Просматривайте упорядоченную последовательность страниц, которые пользователь посетил за сессию. Понимайте паттерны навигации с одного взгляда."
     },
     {
-      "title": "Events within a session",
-      "description": "Every event (signup, click, purchase) is tied to a session. See exactly what a user did and in what order."
+      "title": "События внутри сессии",
+      "description": "Каждое событие (регистрация, клик, покупка) привязано к сессии. Точно видите, что сделал пользователь и в каком порядке."
     },
     {
-      "title": "Session duration and engagement",
-      "description": "Measure how long sessions last and how many pages or events they include. Spot high-engagement and bounce sessions."
+      "title": "Длительность и вовлечённость",
+      "description": "Измеряйте, сколько длятся сессии и сколько страниц или событий включают. Находите вовлечённые сессии и отказные."
     },
     {
-      "title": "Referrer and UTM attribution",
-      "description": "Know how users arrived-organic search, paid campaign, direct link-and compare session quality across sources."
+      "title": "Атрибуция по рефереру и UTM",
+      "description": "Знайте, откуда пришли пользователи — органика, платная кампания, прямой переход, — и сравнивайте качество сессий между источниками."
     },
     {
-      "title": "Session replay (opt-in)",
-      "description": "Enable session replay to record and play back real user sessions. Privacy controls built in—inputs masked by default. Loads async so it never bloats your bundle."
+      "title": "Session replay (по включению)",
+      "description": "Включите session replay, чтобы записывать и воспроизводить реальные сессии. Настройки приватности встроены — поля ввода маскируются по умолчанию. Асинхронная загрузка не раздувает бандл."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-sessions.webp",
-      "alt": "Session overview showing user sessions with entry pages and duration",
-      "caption": "See session activity at a glance-entry pages, duration, and event counts."
+      "alt": "Обзор сессий с страницами входа и длительностью",
+      "caption": "Активность сессий с одного взгляда — страницы входа, длительность и количество событий."
     },
     {
       "src": "/features/feature-sessions-details.webp",
-      "alt": "Session events timeline showing user actions in order",
-      "caption": "Every event tied to its session. Drill into the timeline or open the replay."
+      "alt": "Таймлайн событий сессии с действиями пользователя по порядку",
+      "caption": "Каждое событие привязано к своей сессии. Углубляйтесь в таймлайн или открывайте запись."
     }
   ],
   "how_it_works": {
-    "title": "How session tracking works",
-    "intro": "Sessions are created automatically from the events you already send.",
+    "title": "Как работает отслеживание сессий",
+    "intro": "Сессии создаются автоматически из событий, которые вы уже отправляете.",
     "steps": [
       {
-        "title": "Events create sessions",
-        "description": "When a user triggers their first event (page view, click, etc.), OpenPanel starts a session. No extra tracking code needed-sessions are derived from your events."
+        "title": "События создают сессии",
+        "description": "Когда пользователь совершает первое событие (просмотр страницы, клик и т.д.), OpenPanel начинает сессию. Без дополнительного кода — сессии выводятся из ваших событий."
       },
       {
-        "title": "Activity is grouped automatically",
-        "description": "Subsequent events from the same user are grouped into the active session. If the user goes idle (30 minutes by default), the session ends and a new one begins on the next interaction."
+        "title": "Активность группируется автоматически",
+        "description": "Последующие события того же пользователя группируются в активную сессию. Если пользователь уходит в простой (по умолчанию 30 минут), сессия завершается, а новая начинается при следующем взаимодействии."
       },
       {
-        "title": "Sessions connect to everything",
-        "description": "Each session links to the user profile, the events fired, and the pages visited. Enable session replay to also record a playable recording of the session."
+        "title": "Сессии связаны со всем",
+        "description": "Каждая сессия связана с профилем пользователя, сработавшими событиями и посещёнными страницами. Включите session replay, чтобы также записать воспроизводимую запись сессии."
       }
     ]
   },
   "use_cases": {
-    "title": "Who uses session tracking",
-    "intro": "Teams that need to understand user journeys, from structured data to full session replay.",
+    "title": "Кто использует отслеживание сессий",
+    "intro": "Команды, которым нужно понимать пути пользователей — от структурированных данных до полной записи сессий.",
     "items": [
       {
-        "title": "Product teams",
-        "description": "Understand how users navigate your product. See the page flow and events in a session, then open a replay to see exactly where users got stuck."
+        "title": "Продуктовые команды",
+        "description": "Понимайте, как пользователи двигаются по продукту. Смотрите поток страниц и события в сессии, затем открывайте запись, чтобы увидеть, где именно пользователи застряли."
       },
       {
-        "title": "Support and success teams",
-        "description": "When a user reports an issue, pull up their recent sessions to see what pages they visited and what events they triggered. Open the replay for the full picture."
+        "title": "Поддержка и customer success",
+        "description": "Когда пользователь сообщает о проблеме, откройте его недавние сессии, чтобы увидеть посещённые страницы и сработавшие события. Откройте запись для полной картины."
       },
       {
-        "title": "Privacy-conscious teams",
-        "description": "Session tracking works without cookies or recordings. Session replay is opt-in, with inputs masked by default and granular controls to block or mask any sensitive element."
+        "title": "Команды, заботящиеся о приватности",
+        "description": "Отслеживание сессий работает без cookies и записей. Session replay включается вручную: поля ввода маскируются по умолчанию, есть гранулярные настройки блокировки и маскирования любых чувствительных элементов."
       }
     ]
   },
@@ -107,47 +107,47 @@
     {
       "slug": "session-replay",
       "title": "Session replay",
-      "description": "Watch real user sessions. See clicks, scrolls, and form interactions played back in the dashboard."
+      "description": "Смотрите реальные сессии пользователей: клики, прокрутки и взаимодействия с формами в воспроизведении в дашборде."
     },
     {
       "slug": "event-tracking",
-      "title": "Event tracking",
-      "description": "Events are the building blocks of sessions. Track user actions that feed into session timelines."
+      "title": "Отслеживание событий",
+      "description": "События — кирпичики сессий. Отслеживайте действия пользователей, которые наполняют таймлайны сессий."
     },
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "Combine session data with funnel analysis to see where users drop off in multi-step flows."
+      "title": "Воронки",
+      "description": "Сочетайте данные сессий с анализом воронок, чтобы увидеть, где пользователи отсеиваются в многошаговых потоках."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about session tracking with OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы об отслеживании сессий в OpenPanel.",
     "items": [
       {
-        "question": "Does OpenPanel have session replay?",
-        "answer": "Yes. Session replay is available as an opt-in feature. Enable it by setting `sessionReplay: { enabled: true }` in your init config. When disabled, the replay script is never loaded. See the [session replay docs](/docs/session-replay) for setup and privacy options."
+        "question": "Есть ли в OpenPanel session replay?",
+        "answer": "Да. Session replay доступен как опциональная функция. Включите его, установив `sessionReplay: { enabled: true }` в конфиге инициализации. При выключенном состоянии скрипт записи не загружается. Настройку и опции приватности смотрите в [документации session replay](/docs/session-replay)."
       },
       {
-        "question": "Do I need to set up session tracking separately?",
-        "answer": "No. Sessions are created automatically from the events and page views you already send. There's no separate session SDK or configuration step."
+        "question": "Нужно ли настраивать отслеживание сессий отдельно?",
+        "answer": "Нет. Сессии создаются автоматически из событий и просмотров страниц, которые вы уже отправляете. Отдельного session SDK или шага конфигурации нет."
       },
       {
-        "question": "How does OpenPanel define a session?",
-        "answer": "A session starts when a user triggers their first event and ends after 30 minutes of inactivity. If the user returns after the timeout, a new session begins. This is consistent with how most analytics tools define sessions."
+        "question": "Как OpenPanel определяет сессию?",
+        "answer": "Сессия начинается, когда пользователь совершает первое событие, и заканчивается после 30 минут неактивности. Если пользователь возвращается после таймаута, начинается новая сессия. Это согласуется с тем, как сессии определяют большинство инструментов аналитики."
       },
       {
-        "question": "Can I see individual user sessions?",
-        "answer": "Yes. You can view a user's session history, including the pages they visited and events they triggered in each session. This is available in the user profile view. If session replay is enabled, you can also play back the session."
+        "question": "Можно ли смотреть сессии конкретного пользователя?",
+        "answer": "Да. Доступна история сессий пользователя: посещённые страницы и события в каждой сессии. Это видно в представлении профиля пользователя. Если включён session replay, сессию можно и воспроизвести."
       },
       {
-        "question": "Does session tracking require cookies?",
-        "answer": "No. OpenPanel can run without cookies. Sessions can be tracked using a lightweight session identifier that doesn't require cookie consent. If you enable first-party cookies, session continuity improves but it's not required."
+        "question": "Требует ли отслеживание сессий cookies?",
+        "answer": "Нет. OpenPanel может работать без cookies. Сессии отслеживаются через лёгкий идентификатор сессии, не требующий согласия на cookies. Если включить first-party cookies, непрерывность сессий улучшится, но это не обязательно."
       }
     ]
   },
   "cta": {
-    "label": "Start tracking sessions",
+    "label": "Начните отслеживать сессии",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

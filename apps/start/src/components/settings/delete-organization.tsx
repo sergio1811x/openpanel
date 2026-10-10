@@ -24,7 +24,7 @@ export default function DeleteOrganization({ organization }: Props) {
     trpc.organization.cancelDeletion.mutationOptions({
       onError: handleError,
       onSuccess: () => {
-        toast.success('Organization deletion cancelled');
+        toast.success('Удаление организации отменено');
         queryClient.invalidateQueries(
           trpc.organization.get.queryFilter({
             organizationId: organization.id,
@@ -46,34 +46,34 @@ export default function DeleteOrganization({ organization }: Props) {
   return (
     <Widget className="max-w-screen-md w-full">
       <WidgetHead>
-        <span className="title">Delete Organization</span>
+        <span className="title">Удаление организации</span>
       </WidgetHead>
       <WidgetBody className="space-y-4">
         <p>
-          Deleting this organization will remove it and all of its projects and
-          their data. It will be permanently deleted after 24 hours.
+          Удаление этой организации приведёт к удалению её самой, всех её
+          проектов и их данных. Она будет безвозвратно удалена через 24 часа.
         </p>
         {organization.deleteAt && (
           <Alert variant="destructive">
-            <AlertTitle>Organization scheduled for deletion</AlertTitle>
+            <AlertTitle>Организация запланирована к удалению</AlertTitle>
             <AlertDescription>
-              This organization will be deleted on{' '}
+              Эта организация будет удалена{' '}
               <span className="font-medium">
                 {format(
                   startOfHour(addHours(organization.deleteAt, 1)),
                   'yyyy-MM-dd HH:mm:ss',
                 )}
               </span>
-              . All of its projects and their events will be deleted.
+              . Все её проекты и их события будут удалены.
             </AlertDescription>
           </Alert>
         )}
         {blockDeletion && !organization.deleteAt && (
           <Alert variant="destructive">
-            <AlertTitle>Cancel your subscription first</AlertTitle>
+            <AlertTitle>Сначала отмените подписку</AlertTitle>
             <AlertDescription>
-              This organization has an active subscription. Cancel it from the
-              billing settings before you delete the organization.
+              У этой организации есть активная подписка. Отмените её в
+              настройках биллинга, прежде чем удалять организацию.
             </AlertDescription>
           </Alert>
         )}
@@ -88,7 +88,7 @@ export default function DeleteOrganization({ organization }: Props) {
               }}
               variant="outline"
             >
-              Cancel deletion
+              Отменить удаление
             </Button>
           )}
           <Button
@@ -102,7 +102,7 @@ export default function DeleteOrganization({ organization }: Props) {
             }}
             variant="destructive"
           >
-            Delete Organization
+            Удалить организацию
           </Button>
         </div>
       </WidgetBody>

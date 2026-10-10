@@ -234,12 +234,12 @@ export function OverviewWidgetTableLoading({
       getColumnPercentage={() => 0}
       columns={[
         {
-          name: 'Path',
+          name: 'Путь',
           render: () => <Skeleton className="h-4 w-1/3" />,
           width: 'w-full',
         },
         {
-          name: 'Sessions',
+          name: 'Сессии',
           render: () => <Skeleton className="h-4 w-[30px]" />,
           width: '84px',
         },
@@ -288,7 +288,7 @@ export function OverviewWidgetTablePages({
       getColumnPercentage={(item) => item.sessions / maxSessions}
       columns={[
         {
-          name: 'Path',
+          name: 'Путь',
           width: 'w-full',
           responsive: { priority: 1 }, // Always visible
           render(item) {
@@ -316,7 +316,7 @@ export function OverviewWidgetTablePages({
                         )}
                       </>
                     ) : (
-                      <span className="opacity-40">Not set</span>
+                      <span className="opacity-40">Не задано</span>
                     )}
                   </button>
                   <a
@@ -334,7 +334,7 @@ export function OverviewWidgetTablePages({
         ...(hasRevenue
           ? [
               {
-                name: 'Revenue',
+                name: 'Доход',
                 width: '100px',
                 responsive: { priority: 3 }, // Always show if possible
                 getSortValue: (item: (typeof data)[number]) =>
@@ -359,7 +359,7 @@ export function OverviewWidgetTablePages({
             ]
           : []),
         {
-          name: 'Views',
+          name: 'Просмотры',
           width: '84px',
           responsive: { priority: 2 }, // Always show if possible
           getSortValue: (item: (typeof data)[number]) => item.pageviews,
@@ -374,7 +374,7 @@ export function OverviewWidgetTablePages({
           },
         },
         {
-          name: 'Sess.',
+          name: 'Сессии',
           width: '84px',
           responsive: { priority: 2 }, // Always show if possible
           getSortValue: (item: (typeof data)[number]) => item.sessions,
@@ -423,7 +423,7 @@ export function OverviewWidgetTableEntries({
       getColumnPercentage={(item) => item.sessions / maxSessions}
       columns={[
         {
-          name: 'Path',
+          name: 'Путь',
           width: 'w-full',
           responsive: { priority: 1 }, // Always visible
           render(item) {
@@ -451,7 +451,7 @@ export function OverviewWidgetTableEntries({
                         )}
                       </>
                     ) : (
-                      <span className="opacity-40">Not set</span>
+                      <span className="opacity-40">Не задано</span>
                     )}
                   </button>
                   <a
@@ -469,7 +469,7 @@ export function OverviewWidgetTableEntries({
         ...(hasRevenue
           ? [
               {
-                name: 'Revenue',
+                name: 'Доход',
                 width: '100px',
                 responsive: { priority: 3 }, // Always show if possible
                 getSortValue: (item: (typeof data)[number]) =>
@@ -538,7 +538,7 @@ export function OverviewWidgetTableBots({
       getColumnPercentage={(item) => item.sessions / maxSessions}
       columns={[
         {
-          name: 'Path',
+          name: 'Путь',
           width: 'w-full',
           render(item) {
             return (
@@ -567,7 +567,7 @@ export function OverviewWidgetTableBots({
           },
         },
         {
-          name: 'Bot',
+          name: 'Бот',
           width: '60px',
           render(item) {
             return (
@@ -578,7 +578,7 @@ export function OverviewWidgetTableBots({
           },
         },
         {
-          name: 'Date',
+          name: 'Дата',
           width: '60px',
           render(item) {
             return (
@@ -627,7 +627,7 @@ export function OverviewWidgetTableGeneric({
         ...(hasRevenue
           ? [
               {
-                name: 'Revenue',
+                name: 'Доход',
                 width: '100px',
                 responsive: { priority: 3 },
                 getSortValue: (
@@ -657,7 +657,7 @@ export function OverviewWidgetTableGeneric({
         ...(hasPageviews
           ? [
               {
-                name: 'Views',
+                name: 'Просмотры',
                 width: '84px',
                 responsive: { priority: 2 },
                 getSortValue: (
@@ -676,7 +676,7 @@ export function OverviewWidgetTableGeneric({
             ]
           : []),
         {
-          name: 'Sess.',
+          name: 'Сессии',
           width: '84px',
           responsive: { priority: 2 },
           getSortValue: (
@@ -722,7 +722,7 @@ export function OverviewWidgetTableEvents({
       getColumnPercentage={(item) => item.count / maxCount}
       columns={[
         {
-          name: 'Event',
+          name: 'Событие',
           width: 'w-full',
           responsive: { priority: 1 },
           render(item) {
@@ -734,14 +734,14 @@ export function OverviewWidgetTableEvents({
                   className="truncate"
                   onClick={() => onItemClick?.(item.name)}
                 >
-                  {item.name || 'Not set'}
+                  {item.name || 'Не задано'}
                 </button>
               </div>
             );
           },
         },
         {
-          name: 'Count',
+          name: 'Количество',
           width: '84px',
           responsive: { priority: 2 },
           getSortValue: (item: EventTableItem) => item.count,

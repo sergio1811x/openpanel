@@ -90,7 +90,7 @@ export function ModalHeader({
             variant="ghost"
           >
             <X className="h-4 w-4" />
-            <span className="sr-only">Close</span>
+            <span className="sr-only">Закрыть</span>
           </Button>
         )}
       </div>

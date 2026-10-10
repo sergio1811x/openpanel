@@ -75,17 +75,17 @@ export default function OverviewFilters({
   };
   return (
     <SheetContent className="[&>button.absolute]:hidden">
-      <ModalHeader title="Filters" />
+      <ModalHeader title="Фильтры" />
       <div className="flex flex-col gap-4">
-        <Heading icon={SparklesIcon} title="Ask AI" />
+        <Heading icon={SparklesIcon} title="Спросить ИИ" />
         <OverviewAICommand className="w-full" />
         <Seperator />
-        <Heading icon={GlobeIcon} title="Origins" />
+        <Heading icon={GlobeIcon} title="Источники" />
         <OriginFilter />
         <Seperator />
         {enableEventsFilter && (
           <>
-        <Heading icon={GanttChartIcon} title="Events" />
+        <Heading icon={GanttChartIcon} title="События" />
           <ComboboxEvents
             size="lg"
             className="w-full"
@@ -93,7 +93,7 @@ export default function OverviewFilters({
             onChange={setEvent}
             multiple
             items={eventNames}
-            placeholder="Select event"
+            placeholder="Выберите событие"
             maxDisplayItems={2}
             searchable
             />
@@ -101,7 +101,7 @@ export default function OverviewFilters({
           </>
         )}
       </div>
-        <Heading icon={SlidersHorizontal} title="Filters" />
+        <Heading icon={SlidersHorizontal} title="Фильтры" />
       <div className="flex flex-col gap-2">
         <div
           className={cn(
@@ -110,7 +110,7 @@ export default function OverviewFilters({
         >
           {selectedFilters.length === 0 && (
             <div className="p-4 text-center text-sm text-muted-foreground">
-              No filters selected
+              Фильтры не выбраны
             </div>
           )}
           {selectedFilters.map((filter) => {
@@ -201,7 +201,7 @@ export default function OverviewFilters({
               className="w-full"
               icon={FilterIcon}
             >
-              Add filter
+              Добавить фильтр
             </Button>
           )}
         </PropertiesCombobox>
@@ -230,7 +230,7 @@ export function FilterOptionProfile({
       <Combobox
         className="flex-1"
         onChange={(value) => setFilter(filter.name, value, filter.operator)}
-        placeholder={'Select a value'}
+        placeholder={'Выберите значение'}
         items={values.map((value) => ({
           value,
           label: value,

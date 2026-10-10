@@ -47,7 +47,7 @@ export function OverviewShare({ projectId }: OverviewShareProps) {
           responsive
           loading={query.isLoading}
         >
-          {data?.public ? 'Public' : 'Private'}
+          {data?.public ? 'Публичный' : 'Приватный'}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -55,7 +55,7 @@ export function OverviewShare({ projectId }: OverviewShareProps) {
           {(!data || data.public === false) && (
             <DropdownMenuItem onClick={() => pushModal('ShareOverviewModal')}>
               <Globe2Icon size={16} className="mr-2" />
-              Make public
+              Сделать публичным
             </DropdownMenuItem>
           )}
           {data?.public && (
@@ -65,7 +65,7 @@ export function OverviewShare({ projectId }: OverviewShareProps) {
                 params={{ shareId: data.id }}
               >
                 <EyeIcon size={16} className="mr-2" />
-                View
+                Просмотр
               </Link>
             </DropdownMenuItem>
           )}
@@ -81,7 +81,7 @@ export function OverviewShare({ projectId }: OverviewShareProps) {
               }}
             >
               <LockIcon size={16} className="mr-2" />
-              Make private
+              Сделать приватным
             </DropdownMenuItem>
           )}
         </DropdownMenuGroup>

@@ -55,10 +55,10 @@ export const LatestEvents = ({
   return (
     <Widget className="w-full overflow-hidden h-full" ref={ref}>
       <WidgetHead>
-        <WidgetTitle icon={ActivityIcon}>Latest Events</WidgetTitle>
+        <WidgetTitle icon={ActivityIcon}>Последние события</WidgetTitle>
         <WidgetAbsoluteButtons>
           <Button variant="outline" size="sm" onClick={handleShowMore}>
-            All
+            Все
           </Button>
         </WidgetAbsoluteButtons>
       </WidgetHead>

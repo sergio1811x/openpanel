@@ -125,14 +125,14 @@ export function BreakdownList({
                 <span className="font-medium truncate">
                   {hasBreakdownName
                     ? item.breakdowns.join(' > ')
-                    : 'Funnel'}
+                    : 'Воронка'}
                 </span>
               </button>
 
               <div className="flex items-center gap-6 shrink-0">
                 <div className="text-right row gap-2 items-center">
                   <div className="text-muted-foreground text-sm">
-                    Conversion
+                    Конверсия
                   </div>
                   <div className="font-mono font-semibold text-sm">
                     {number.formatWithUnit(
@@ -151,7 +151,7 @@ export function BreakdownList({
                 </div>
                 <div className="text-right row gap-2 items-center">
                   <div className="text-muted-foreground text-sm">
-                    Completed
+                    Завершено
                   </div>
                   <div className="font-mono font-semibold text-sm">
                     {number.format(item.lastStep.count)}

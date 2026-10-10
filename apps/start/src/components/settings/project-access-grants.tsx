@@ -51,7 +51,7 @@ export function ProjectAccessGrants({
   return (
     <div className="col gap-2">
       <ComboboxAdvanced
-        placeholder="Restrict access to projects"
+        placeholder="Ограничить доступ к проектам"
         value={selectedIds}
         onChange={(ids) => handleSelectionChange(ids as string[])}
         items={projects.map((project) => ({
@@ -81,8 +81,8 @@ export function ProjectAccessGrants({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="write">Can edit</SelectItem>
-                  <SelectItem value="read">Read-only</SelectItem>
+                  <SelectItem value="write">Может изменять</SelectItem>
+                  <SelectItem value="read">Только чтение</SelectItem>
                 </SelectContent>
               </Select>
             </div>

@@ -105,7 +105,7 @@ function EventRuleItem({
       <div className="flex items-center gap-2 p-4">
         <div className="flex-1">
           <ComboboxEvents
-            placeholder="Select event name..."
+            placeholder="Выберите название события..."
             items={eventNames}
             value={rule.name}
             onChange={(name) => onChange({ ...rule, name })}
@@ -143,7 +143,7 @@ function EventRuleItem({
               onClick={() => setOpen(true)}
               icon={PlusIcon}
             >
-              Add property filter
+              Добавить фильтр по свойству
             </Button>
           )}
         </PropertiesCombobox>
@@ -181,7 +181,7 @@ export default function EditProjectFilters({ project }: Props) {
     trpc.project.update.mutationOptions({
       onError: handleError,
       onSuccess: () => {
-        toast.success('Project filters updated');
+        toast.success('Фильтры проекта обновлены');
       },
     }),
   );
@@ -230,9 +230,9 @@ export default function EditProjectFilters({ project }: Props) {
   return (
     <Widget className="max-w-screen-md w-full">
       <WidgetHead className="space-y-2">
-        <span className="title">Exclude events</span>
+        <span className="title">Исключение событий</span>
         <p className="text-muted-foreground">
-          Exclude events from being tracked by adding filters.
+          Исключайте события из отслеживания, добавляя фильтры.
         </p>
       </WidgetHead>
       <WidgetBody>
@@ -249,12 +249,12 @@ export default function EditProjectFilters({ project }: Props) {
             name="ips"
             control={form.control}
             render={({ field }) => (
-              <WithLabel label="IP addresses">
+              <WithLabel label="IP-адреса">
                 <TagInput
                   {...field}
                   id="IP addresses"
                   error={form.formState.errors.ips?.message}
-                  placeholder="Exclude IP addresses"
+                  placeholder="Исключить IP-адреса"
                   value={field.value}
                   onChange={field.onChange}
                 />
@@ -266,12 +266,12 @@ export default function EditProjectFilters({ project }: Props) {
             name="profileIds"
             control={form.control}
             render={({ field }) => (
-              <WithLabel label="Profile IDs">
+              <WithLabel label="ID профилей">
                 <TagInput
                   {...field}
                   id="Profile IDs"
                   error={form.formState.errors.profileIds?.message}
-                  placeholder="Exclude Profile IDs"
+                  placeholder="Исключить ID профилей"
                   value={field.value}
                   onChange={field.onChange}
                 />
@@ -279,7 +279,7 @@ export default function EditProjectFilters({ project }: Props) {
             )}
           />
 
-          <WithLabel label="Event rules">
+          <WithLabel label="Правила событий">
             <div className="space-y-3">
               {eventRules.map((rule, index) => (
                 <EventRuleItem
@@ -298,7 +298,7 @@ export default function EditProjectFilters({ project }: Props) {
                 onClick={addEventRule}
                 icon={PlusIcon}
               >
-                Add event rule
+                Добавить правило события
               </Button>
             </div>
           </WithLabel>
@@ -309,7 +309,7 @@ export default function EditProjectFilters({ project }: Props) {
             icon={SaveIcon}
             className="self-end"
           >
-            Save
+            Сохранить
           </Button>
         </form>
       </WidgetBody>

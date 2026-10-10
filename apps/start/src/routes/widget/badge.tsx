@@ -59,7 +59,7 @@ function BadgeWidget({ visitors, isLoading, color }: BadgeWidgetProps) {
       {/* Center text */}
       <div className="flex flex-col gap-0.5 flex-1 min-w-0 items-start -mt-px">
         <div className="text-[10px] font-medium uppercase tracking-wide text-white/80">
-          ANALYTICS FROM
+          АНАЛИТИКА ОТ
         </div>
         <div className="font-semibold text-white leading-tight">OpenPanel</div>
       </div>

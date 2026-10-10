@@ -14,9 +14,9 @@ function Component() {
   const router = useRouter();
   const { organizationId } = Route.useParams();
   const { activeTab, tabs } = usePageTabs([
-    { id: 'account', label: 'Profile' },
-    { id: 'email-preferences', label: 'Email preferences' },
-    { id: 'two-factor', label: 'Two-factor auth' },
+    { id: 'account', label: 'Профиль' },
+    { id: 'email-preferences', label: 'Настройки email' },
+    { id: 'two-factor', label: 'Двухфакторная аутентификация' },
   ]);
 
   const handleTabChange = (tabId: string) => {
@@ -35,7 +35,7 @@ function Component() {
 
   return (
     <PageContainer>
-      <PageHeader title="Your account" />
+      <PageHeader title="Ваш аккаунт" />
       <Tabs
         value={activeTab}
         onValueChange={handleTabChange}

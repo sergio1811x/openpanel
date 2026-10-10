@@ -16,7 +16,7 @@ export function ReportChartError() {
         className="mb-4 size-10 animate-pulse text-muted-foreground"
       />
       <div className="text-sm font-medium text-muted-foreground">
-        There was an error loading this chart.
+        Не удалось загрузить этот график.
       </div>
     </div>
   );

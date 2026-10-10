@@ -1,175 +1,175 @@
 {
   "slug": "data-visualization",
-  "short_name": "Data visualization",
+  "short_name": "Визуализация данных",
   "seo": {
-    "title": "Dashboards and Data Visualization",
-    "description": "Turn raw product events into charts. Funnels, retention, time series, Sankey diagrams, histograms, maps, and more, all in real time.",
+    "title": "Дашборды и визуализация данных",
+    "description": "Превращайте сырые продуктовые события в графики. Воронки, удержание, временные ряды, диаграммы Санкея, гистограммы, карты и многое другое — всё в реальном времени.",
     "keywords": [
-      "analytics dashboards",
-      "product analytics charts",
-      "visualize event data",
-      "funnel chart",
-      "retention chart",
-      "conversion chart",
-      "sankey diagram analytics",
-      "time series analytics",
-      "histogram analytics",
-      "data visualization tool"
+      "дашборды аналитики",
+      "графики продуктовой аналитики",
+      "визуализация событий",
+      "график воронки",
+      "график удержания",
+      "график конверсии",
+      "диаграмма санкея в аналитике",
+      "временные ряды в аналитике",
+      "гистограммы в аналитике",
+      "инструмент визуализации данных"
     ]
   },
   "hero": {
-    "heading": "From events to charts - in real time",
-    "subheading": "Build dashboards with funnels, retention curves, time series, Sankey diagrams, and maps. No SQL, no data team required.",
+    "heading": "От событий к графикам — в реальном времени",
+    "subheading": "Стройте дашборды с воронками, кривыми удержания, временными рядами, диаграммами Санкея и картами. Без SQL и без команды дата-инженеров.",
     "badges": [
-      "7+ chart types",
-      "Real-time dashboards",
-      "No SQL required",
-      "Export & share"
+      "7+ типов графиков",
+      "Дашборды в реальном времени",
+      "Без SQL",
+      "Экспорт и шаринг"
     ]
   },
   "definition": {
-    "title": "What is data visualization?",
-    "text": "Tracking events is step one. Turning those events into charts and dashboards is where decisions happen.\n\nProduct analytics dashboards let you see trends, spot problems, and measure experiments. Without visualization, you're staring at raw event logs. With it, you can answer questions like:\n\n- **Is signup conversion improving this month?** → Check the **funnel** chart\n- **Are users coming back after week one?** → Check the **retention** curve\n- **Where do users go after the pricing page?** → Check the **Sankey** diagram\n- **How are page load times distributed?** → Check the **histogram**\n- **Where are my users located?** → Check the **map** chart\n- **How does daily active usage trend?** → Check the **time series** chart\n\nOpenPanel gives you all of these chart types out of the box. Every chart is powered by the same events you already track-no extra instrumentation, no data pipelines, no SQL.\n\n### Chart types in OpenPanel\n\n- **Funnels** - Visualize step-by-step conversion. See exactly where users drop off in signup, onboarding, or purchase flows.\n- **Retention** - Measure how many users come back after day 1, week 1, month 1. Understand whether your product is sticky.\n- **Conversion** - Track goal completion rates over time. Compare conversion across segments, campaigns, or product changes.\n- **Sankey diagrams** - Map user journeys visually. See every path users take through your product and where they branch or exit.\n- **Maps** - See where your users are, geographically. Understand regional adoption and plan localization.\n- **Time series** - Plot any metric over time. Track daily active users, event volume, revenue, or any custom metric with flexible date ranges.\n- **Histograms** - Understand distributions. How long do sessions last? How many actions do users take? See the full shape of your data.\n\nYou can combine these charts into **dashboards** that update in real time. Pin the reports that matter, share them with your team, and check them daily-no waiting for a weekly report email."
+    "title": "Что такое визуализация данных?",
+    "text": "Отслеживать события — это только первый шаг. Превращать их в графики и дашборды — вот где принимаются решения.\n\nДашборды продуктовой аналитики позволяют видеть тренды, замечать проблемы и измерять эксперименты. Без визуализации вы смотрите в сырые логи событий. С ней вы можете отвечать на вопросы вроде:\n\n- **Растёт ли конверсия в регистрацию в этом месяце?** → Смотрите график **воронки**\n- **Возвращаются ли пользователи после первой недели?** → Смотрите кривую **удержания**\n- **Куда пользователи уходят со страницы тарифов?** → Смотрите диаграмму **Санкея**\n- **Как распределено время загрузки страниц?** → Смотрите **гистограмму**\n- **Где находятся мои пользователи?** → Смотрите график **карты**\n- **Как меняется дневная активность?** → Смотрите график **временного ряда**\n\nOpenPanel даёт все эти типы графиков из коробки. Каждый график построен на тех же событиях, которые вы уже отслеживаете — без дополнительной инструментировки, дата-пайплайнов и SQL.\n\n### Типы графиков в OpenPanel\n\n- **Воронки** — визуализируйте многошаговую конверсию. Точно видите, где пользователи отсеиваются в потоках регистрации, онбординга или покупки.\n- **Удержание** — измеряйте, сколько пользователей возвращается через день, неделю, месяц. Понимайте, «прилипает» ли ваш продукт.\n- **Конверсии** — отслеживайте достижение целей во времени. Сравнивайте конверсию между сегментами, кампаниями или версиями продукта.\n- **Диаграммы Санкея** — наглядно отображайте пути пользователей. Видите каждый маршрут по продукту, места ветвления и выхода.\n- **Карты** — смотрите, где географически находятся пользователи. Понимайте региональное adoption и планируйте локализацию.\n- **Временные ряды** — стройте график любой метрики во времени. Отслеживайте дневных активных пользователей, объём событий, выручку или любую кастомную метрику с гибкими диапазонами дат.\n- **Гистограммы** — понимайте распределения. Сколько длятся сессии? Сколько действий совершают пользователи? Видите полную форму данных.\n\nКомбинируйте эти графики в **дашборды**, которые обновляются в реальном времени. Закрепляйте важные отчёты, делитесь ими с командой и проверяйте ежедневно — без ожидания еженедельной рассылки."
   },
   "capabilities_section": {
-    "title": "Charts and dashboards built for product teams",
-    "intro": "Every chart type is designed to answer a specific product question. Pick the right one and get answers in seconds."
+    "title": "Графики и дашборды для продуктовых команд",
+    "intro": "Каждый тип графика создан, чтобы отвечать на конкретный продуктовый вопрос. Выберите подходящий — и получите ответ за секунды."
   },
   "capabilities": [
     {
-      "title": "Funnels",
-      "description": "Visualize multi-step conversion flows. See drop-off at each step, compare segments, and find where users abandon signup, onboarding, or purchase."
+      "title": "Воронки",
+      "description": "Визуализируйте многошаговые потоки конверсии. Видите отсеивание на каждом шаге, сравнивайте сегменты и находите, где пользователи бросают регистрацию, онбординг или покупку."
     },
     {
-      "title": "Retention curves",
-      "description": "Measure user stickiness over days, weeks, or months. See cohort-level return rates and understand long-term engagement."
+      "title": "Кривые удержания",
+      "description": "Измеряйте «прилипчивость» пользователей по дням, неделям или месяцам. Смотрите возвраты на уровне когорт и понимайте долгосрочную вовлечённость."
     },
     {
-      "title": "Conversion charts",
-      "description": "Track goal completion rates over time. Compare conversion across campaigns, plans, or product versions."
+      "title": "Графики конверсий",
+      "description": "Отслеживайте достижение целей во времени. Сравнивайте конверсию между кампаниями, тарифами или версиями продукта."
     },
     {
-      "title": "Sankey diagrams",
-      "description": "Map user journeys as flow diagrams. See every path through your product-where users go, where they branch, and where they exit."
+      "title": "Диаграммы Санкея",
+      "description": "Отображайте пути пользователей в виде потоковых диаграмм. Видите каждый маршрут по продукту — куда идут пользователи, где ветвятся и где выходят."
     },
     {
-      "title": "Maps",
-      "description": "Visualize user geography on an interactive map. Understand where your users are and how behavior varies by region."
+      "title": "Карты",
+      "description": "Визуализируйте географию пользователей на интерактивной карте. Понимайте, где находятся пользователи и как поведение различается по регионам."
     },
     {
-      "title": "Time series",
-      "description": "Plot any event or metric over time with flexible intervals. Track trends, spot anomalies, and compare date ranges."
+      "title": "Временные ряды",
+      "description": "Стройте график любого события или метрики во времени с гибкими интервалами. Отслеживайте тренды, замечайте аномалии и сравнивайте диапазоны дат."
     },
     {
-      "title": "Histograms",
-      "description": "See distributions of session length, event counts, load times, or any numeric property. Understand the shape of your data, not just the average."
+      "title": "Гистограммы",
+      "description": "Смотрите распределения длительности сессий, количества событий, времени загрузки или любого числового свойства. Понимайте форму данных, а не только среднее."
     },
     {
-      "title": "Real-time dashboards",
-      "description": "Combine any chart types into dashboards that update as events arrive. Pin the reports your team checks daily."
+      "title": "Дашборды в реальном времени",
+      "description": "Комбинируйте любые типы графиков в дашборды, которые обновляются по мере поступления событий. Закрепляйте отчёты, которые команда проверяет ежедневно."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-data-vis-line.webp",
-      "alt": "Analytics report with time series chart in OpenPanel",
-      "caption": "Build reports with time series, funnels, retention, and more-all from the same event data."
+      "alt": "Аналитический отчёт с графиком временного ряда в OpenPanel",
+      "caption": "Стройте отчёты с временными рядами, воронками, удержанием и не только — всё из одних и тех же данных о событиях."
     },
     {
       "src": "/features/feature-data-vis-dashboard.webp",
-      "alt": "Product analytics dashboard with multiple chart types",
-      "caption": "Pin charts to dashboards and monitor key metrics in real time."
+      "alt": "Дашборд продуктовой аналитики с несколькими типами графиков",
+      "caption": "Закрепляйте графики на дашбордах и следите за ключевыми метриками в реальном времени."
     },
     {
       "src": "/features/feature-data-vis-bar.webp",
-      "alt": "Overview dashboard showing event trends and key metrics",
-      "caption": "Get a high-level view of product health: active users, event volume, and conversion at a glance."
+      "alt": "Обзорный дашборд с трендами событий и ключевыми метриками",
+      "caption": "Получайте общую картину здоровья продукта: активные пользователи, объём событий и конверсия с одного взгляда."
     }
   ],
   "how_it_works": {
-    "title": "How data visualization works",
-    "intro": "From raw events to shareable dashboards in three steps.",
+    "title": "Как работает визуализация данных",
+    "intro": "От сырых событий до дашбордов, которыми можно поделиться, — за три шага.",
     "steps": [
       {
-        "title": "Track events from your product",
-        "description": "Send events with our SDK or API. Page views, signups, purchases, feature usage-every event becomes a data point you can chart."
+        "title": "Отслеживайте события продукта",
+        "description": "Отправляйте события через наш SDK или API. Просмотры страниц, регистрации, покупки, использование функций — каждое событие становится точкой данных для графика."
       },
       {
-        "title": "Pick a chart type and build a report",
-        "description": "Choose funnels, retention, time series, Sankey, maps, histograms, or conversion charts. Select your events, add filters, and see results instantly."
+        "title": "Выберите тип графика и создайте отчёт",
+        "description": "Выберите воронки, удержание, временные ряды, Санкея, карты, гистограммы или графики конверсий. Укажите события, добавьте фильтры — результат сразу на экране."
       },
       {
-        "title": "Pin to dashboards and share",
-        "description": "Save reports to dashboards your team can access. Charts update in real time as new events arrive-no manual refresh or export needed."
+        "title": "Закрепите на дашборде и поделитесь",
+        "description": "Сохраняйте отчёты на дашборды, доступные вашей команде. Графики обновляются в реальном времени по мере поступления событий — без ручного обновления и экспорта."
       }
     ]
   },
   "use_cases": {
-    "title": "Who uses analytics dashboards",
-    "intro": "Anyone who needs to turn product data into action.",
+    "title": "Кто использует дашборды аналитики",
+    "intro": "Все, кому нужно превращать продуктовые данные в действия.",
     "items": [
       {
-        "title": "Product managers",
-        "description": "Build dashboards with funnels, retention, and conversion charts to track feature launches and measure whether product changes move the needle."
+        "title": "Продакт-менеджеры",
+        "description": "Стройте дашборды с воронками, удержанием и графиками конверсий, чтобы отслеживать запуски функций и измерять, двигают ли продуктовые изменения метрику."
       },
       {
-        "title": "Growth teams",
-        "description": "Use Sankey diagrams to map user journeys, funnels to optimize conversion, and time series to measure campaign impact over time."
+        "title": "Growth-команды",
+        "description": "Используйте диаграммы Санкея для карты путей пользователей, воронки для оптимизации конверсии и временные ряды для измерения влияния кампаний во времени."
       },
       {
-        "title": "Founders and operators",
-        "description": "Get a single dashboard with the metrics that matter: active users, conversion, retention, and revenue trends. Check it once a day instead of running ad-hoc queries."
+        "title": "Основатели и операционные команды",
+        "description": "Получите один дашборд с важными метриками: активные пользователи, конверсия, удержание и тренды выручки. Проверяйте раз в день вместо ad-hoc запросов."
       },
       {
-        "title": "Engineers",
-        "description": "Use histograms and time series to monitor event volume, track performance distributions, and spot anomalies without setting up a separate observability stack."
+        "title": "Инженеры",
+        "description": "Используйте гистограммы и временные ряды, чтобы следить за объёмом событий, отслеживать распределения производительности и замечать аномалии без отдельного observability-стека."
       }
     ]
   },
   "related_features": [
     {
       "slug": "event-tracking",
-      "title": "Event tracking",
-      "description": "Events are the data behind every chart. Track user actions to power your dashboards."
+      "title": "Отслеживание событий",
+      "description": "События — это данные за каждым графиком. Отслеживайте действия пользователей, чтобы питать ваши дашборды."
     },
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "Dive deeper into conversion analysis with step-by-step funnel reports."
+      "title": "Воронки",
+      "description": "Углубитесь в анализ конверсии с пошаговыми отчётами-воронками."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about data visualization and analytics dashboards in OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы о визуализации данных и дашбордах аналитики в OpenPanel.",
     "items": [
       {
-        "question": "What chart types does OpenPanel support?",
-        "answer": "OpenPanel supports funnels, retention curves, conversion charts, Sankey diagrams, geographic maps, time series, and histograms. All chart types are available on every plan."
+        "question": "Какие типы графиков поддерживает OpenPanel?",
+        "answer": "OpenPanel поддерживает воронки, кривые удержания, графики конверсий, диаграммы Санкея, географические карты, временные ряды и гистограммы. Все типы графиков доступны на каждом тарифе."
       },
       {
-        "question": "Do I need to write SQL to build charts?",
-        "answer": "No. You build reports by selecting events, filters, and chart type from the UI. No SQL, no data pipelines-just pick your events and see results."
+        "question": "Нужно ли писать SQL, чтобы строить графики?",
+        "answer": "Нет. Отчёты собираются выбором событий, фильтров и типа графика в интерфейсе. Без SQL и дата-пайплайнов — просто выберите события и получите результат."
       },
       {
-        "question": "Can I share dashboards with my team?",
-        "answer": "Yes. Dashboards are accessible to your team members. Pin charts, arrange them however you like, and everyone sees the same real-time data."
+        "question": "Можно ли делиться дашбордами с командой?",
+        "answer": "Да. Дашборды доступны участникам вашей команды. Закрепляйте графики, располагайте их как удобно — и все видят одни и те же данные в реальном времени."
       },
       {
-        "question": "How often do charts update?",
-        "answer": "Charts update in real time as new events arrive. There's no overnight processing or batch delay-data appears within seconds of being tracked."
+        "question": "Как часто обновляются графики?",
+        "answer": "Графики обновляются в реальном времени по мере поступления событий. Никакой ночной обработки или пакетной задержки — данные появляются на экране через секунды после отслеживания."
       },
       {
-        "question": "What is a Sankey diagram?",
-        "answer": "A Sankey diagram is a flow visualization that shows how users move through your product. Each path is drawn as a flow between steps, so you can see common journeys, unexpected branches, and exit points at a glance."
+        "question": "Что такое диаграмма Санкея?",
+        "answer": "Диаграмма Санкея — это потоковая визуализация того, как пользователи движутся по продукту. Каждый путь нарисован как поток между шагами, поэтому общие сценарии, неожиданные ветвления и точки выхода видны с одного взгляда."
       },
       {
-        "question": "Can I use retention and funnel charts together?",
-        "answer": "Yes. You can build funnels to find where users drop off and retention charts to see if the users who do convert come back. Combining both gives you a complete picture of activation and engagement."
+        "question": "Можно ли совмещать графики удержания и воронки?",
+        "answer": "Да. Стройте воронки, чтобы найти, где пользователи отсеиваются, и графики удержания, чтобы увидеть, возвращаются ли конвертировавшие пользователи. Вместе они дают полную картину активации и вовлечённости."
       }
     ]
   },
   "cta": {
-    "label": "Start visualizing your data",
+    "label": "Начните визуализировать данные",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

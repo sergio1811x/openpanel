@@ -6,7 +6,7 @@ import { createEntityTitle, PAGE_TITLES } from '@/utils/title';
 export const Route = createFileRoute('/_steps')({
   component: OnboardingLayout,
   head: () => ({
-    meta: [{ title: createEntityTitle('Project', PAGE_TITLES.ONBOARDING) }],
+    meta: [{ title: createEntityTitle('Проект', PAGE_TITLES.ONBOARDING) }],
   }),
 });
 
@@ -32,15 +32,15 @@ function OnboardingLayout() {
 function Progress() {
   const steps = [
     {
-      name: 'Create project',
+      name: 'Создание проекта',
       match: '/onboarding/project',
     },
     {
-      name: 'Connect data',
+      name: 'Подключение данных',
       match: '/onboarding/$projectId/connect',
     },
     {
-      name: 'Verify',
+      name: 'Проверка',
       match: '/onboarding/$projectId/verify',
     },
   ];
@@ -56,7 +56,7 @@ function Progress() {
 
   return (
     <div className="row w-full flex-shrink-0 items-center justify-between gap-4 p-4">
-      <div className="font-bold">{currentStep?.name ?? 'Onboarding'}</div>
+      <div className="font-bold">{currentStep?.name ?? 'Начало работы'}</div>
       <div className="row gap-4">
         {steps.map((step) => (
           <div

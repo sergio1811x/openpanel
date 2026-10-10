@@ -32,7 +32,7 @@ const ConnectWeb = ({ client }: Props) => {
         <div className="row items-center justify-between gap-4">
           <div className="flex items-center gap-2 font-bold text-xl capitalize">
             <PlugIcon className="size-4" />
-            Quick start
+            Быстрый старт
           </div>
           <div className="row gap-2">
             <Button
@@ -40,7 +40,7 @@ const ConnectWeb = ({ client }: Props) => {
               onClick={() => clipboard(code, null)}
               variant="outline"
             >
-              Copy
+              Копировать
             </Button>
           </div>
         </div>
@@ -48,7 +48,7 @@ const ConnectWeb = ({ client }: Props) => {
       </div>
       <div className="col gap-4">
         <p className="text-center text-muted-foreground text-sm">
-          Or pick a framework below to get started.
+          Или выберите фреймворк ниже, чтобы начать.
         </p>
         <div className="grid gap-4 md:grid-cols-2">
           {frameworks.map((framework) => (
@@ -71,12 +71,12 @@ const ConnectWeb = ({ client }: Props) => {
           ))}
         </div>
         <p className="text-center text-muted-foreground text-sm">
-          Missing a framework?{' '}
+          Не нашли нужный фреймворк?{' '}
           <a
             className="text-foreground underline"
             href="mailto:hello@openpanel.dev"
           >
-            Let us know!
+            Сообщите нам!
           </a>
         </p>
       </div>

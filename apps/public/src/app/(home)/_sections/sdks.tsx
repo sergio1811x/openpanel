@@ -8,8 +8,8 @@ export function Sdks() {
   return (
     <Section className="container">
       <SectionHeader
-        title="Get started in minutes"
-        description="Integrate OpenPanel with your favorite framework using our lightweight SDKs. A few lines of code and you're tracking."
+        title="Начните за считанные минуты"
+        description="Подключите OpenPanel к любимому фреймворку с помощью наших легковесных SDK. Несколько строк кода — и отслеживание работает."
         className="mb-16"
       />
       <div className="grid grid-cols-2 md:grid-cols-5 gap-6">

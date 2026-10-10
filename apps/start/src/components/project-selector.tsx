@@ -84,13 +84,13 @@ export default function ProjectSelector({
               ? projects.find((p) => p.id === projectId)?.name
               : organizationId
                 ? organizations?.find((o) => o.id === organizationId)?.name
-                : 'Select project'}
+                : 'Выберите проект'}
           </span>
           <ChevronsUpDownIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align={align} className="w-[200px]">
-        <DropdownMenuLabel>Projects</DropdownMenuLabel>
+        <DropdownMenuLabel>Проекты</DropdownMenuLabel>
         <DropdownMenuGroup>
           {projects.slice(0, 10).map((project) => (
             <DropdownMenuItem
@@ -113,7 +113,7 @@ export default function ProjectSelector({
                 }}
                 to={'/$organizationId'}
               >
-                All projects
+                Все проекты
               </Link>
             </DropdownMenuItem>
           )}
@@ -124,7 +124,7 @@ export default function ProjectSelector({
                 pushModal('AddProject');
               }}
             >
-              Create new project
+              Создать новый проект
               <DropdownMenuShortcut>
                 <PlusIcon size={16} />
               </DropdownMenuShortcut>
@@ -134,7 +134,7 @@ export default function ProjectSelector({
         {!!organizations && (
           <>
             <DropdownMenuSeparator />
-            <DropdownMenuLabel>Organizations</DropdownMenuLabel>
+            <DropdownMenuLabel>Организации</DropdownMenuLabel>
             <DropdownMenuGroup>
               {organizations.map((organization) => (
                 <DropdownMenuItem
@@ -152,7 +152,7 @@ export default function ProjectSelector({
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
                 <Link to={'/onboarding/project'}>
-                  New organization
+                  Новая организация
                   <DropdownMenuShortcut>
                     <PlusIcon size={16} />
                   </DropdownMenuShortcut>

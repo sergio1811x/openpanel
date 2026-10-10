@@ -28,7 +28,7 @@ export function useColumns({
       {
         id: 'page',
         accessorFn: (row) => `${row.origin}${row.path} ${row.title ?? ''}`,
-        header: createHeaderColumn('Page'),
+        header: createHeaderColumn('Страница'),
         size: 400,
         meta: { bold: true },
         cell: ({ row }) => {
@@ -71,7 +71,7 @@ export function useColumns({
       },
       {
         id: 'trend',
-        header: 'Trend',
+        header: 'Тренд',
         enableSorting: false,
         size: 96,
         cell: ({ row }) => (
@@ -84,7 +84,7 @@ export function useColumns({
       },
       {
         accessorKey: 'pageviews',
-        header: createHeaderColumn('Views'),
+        header: createHeaderColumn('Просмотры'),
         size: 80,
         cell: ({ row }) => (
           <span className="font-mono text-sm tabular-nums">
@@ -94,7 +94,7 @@ export function useColumns({
       },
       {
         accessorKey: 'sessions',
-        header: createHeaderColumn('Sessions'),
+        header: createHeaderColumn('Сессии'),
         size: 90,
         cell: ({ row }) => {
           const prev = previousMap?.get(
@@ -109,7 +109,7 @@ export function useColumns({
                 <span className="font-mono text-sm tabular-nums">
                   {number.short(row.original.sessions)}
                 </span>
-                <span className="text-muted-foreground">new</span>
+                <span className="text-muted-foreground">новые</span>
               </div>
             );
           }
@@ -134,7 +134,7 @@ export function useColumns({
       },
       {
         accessorKey: 'bounce_rate',
-        header: createHeaderColumn('Bounce'),
+        header: createHeaderColumn('Отказы'),
         size: 80,
         cell: ({ row }) => (
           <span className="font-mono text-sm tabular-nums">
@@ -144,7 +144,7 @@ export function useColumns({
       },
       {
         accessorKey: 'avg_duration',
-        header: createHeaderColumn('Duration'),
+        header: createHeaderColumn('Длительность'),
         size: 90,
         cell: ({ row }) => (
           <span className="whitespace-nowrap font-mono text-sm tabular-nums">
@@ -159,7 +159,7 @@ export function useColumns({
         {
           id: 'gsc_impressions',
           accessorFn: (row) => row.gsc?.impressions ?? 0,
-          header: createHeaderColumn('Impr.'),
+          header: createHeaderColumn('Показы'),
           size: 80,
           cell: ({ row }) =>
             row.original.gsc ? (
@@ -187,7 +187,7 @@ export function useColumns({
         {
           id: 'gsc_clicks',
           accessorFn: (row) => row.gsc?.clicks ?? 0,
-          header: createHeaderColumn('Clicks'),
+          header: createHeaderColumn('Клики'),
           size: 80,
           cell: ({ row }) =>
             row.original.gsc ? (

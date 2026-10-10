@@ -1,138 +1,138 @@
 {
   "slug": "retention",
-  "short_name": "Retention",
+  "short_name": "Удержание",
   "seo": {
-    "title": "Retention & Cohort Analysis",
-    "description": "User retention analytics and cohort analysis that show who comes back. See product stickiness at a glance-no sampling, no guesswork. Built on your events.",
+    "title": "Удержание и когортный анализ",
+    "description": "Аналитика удержания пользователей и когортный анализ, показывающие, кто возвращается. «Прилипчивость» продукта с одного взгляда — без сэмплирования и догадок. Строится на ваших событиях.",
     "keywords": [
-      "user retention analytics",
-      "cohort analysis"
+      "аналитика удержания пользователей",
+      "когортный анализ"
     ]
   },
   "hero": {
-    "heading": "Retention: Who comes back?",
-    "subheading": "See who returns after signup, activation, or any key action. Cohort-based retention that shows real stickiness - not vanity metrics.",
+    "heading": "Удержание: кто возвращается?",
+    "subheading": "Смотрите, кто возвращается после регистрации, активации или любого ключевого действия. Когортное удержание, показывающее реальную «прилипчивость», а не показные метрики.",
     "badges": [
-      "Cohort-based retention",
-      "Any start and return event",
-      "No sampling",
-      "Compare segments"
+      "Когортное удержание",
+      "Любые стартовое и возвратное события",
+      "Без сэмплирования",
+      "Сравнение сегментов"
     ]
   },
   "definition": {
-    "title": "What retention means",
-    "text": "**Retention** is the share of users who come back after doing something once. It answers: *Of the people who did X in a given week, how many did Y later?*\n\nThat's it. No session thresholds, no arbitrary \"active\" definitions, just a clear picture of who sticks and who doesn't.\n\nTraffic and signups can look great while the product fails to stick. Retention tells you what those numbers can't:\n\n- **Whether your product is habit-forming** - Do users return after the first use?\n- **When churn happens** - Do they leave after day 1, week 1, or month 1?\n- **Which segments stick** - Do certain cohorts (e.g. by plan, source, or feature) retain better?\n\nIn OpenPanel, retention is built on your **events**. You choose an initial event (e.g. `signup_completed`, `first_purchase`) and a return event (e.g. `feature_used`, `session_started`). OpenPanel groups users into cohorts by when they did the initial event and shows what percentage did the return event in subsequent periods. No extra instrumentation-the same events that power funnels and user profiles power retention."
+    "title": "Что означает удержание",
+    "text": "**Удержание** — это доля пользователей, которые возвращаются после первого действия. Оно отвечает на вопрос: *из тех, кто сделал X в определённую неделю, сколько сделали Y позже?*\n\nЭто всё. Никаких порогов сессий и произвольных определений «активности» — просто ясная картина, кто остаётся, а кто нет.\n\nТрафик и регистрации могут выглядеть отлично, при этом продукт не «прилипает». Удержание говорит то, чего не скажут эти цифры:\n\n- **Формирует ли продукт привычку** — возвращаются ли пользователи после первого использования?\n- **Когда происходит отток** — уходят после первого дня, первой недели или первого месяца?\n- **Какие сегменты остаются** — удерживаются ли отдельные когорты (по тарифу, источнику или функции) лучше?\n\nВ OpenPanel удержание строится на ваших **событиях**. Вы выбираете начальное событие (например, `signup_completed`, `first_purchase`) и возвратное (например, `feature_used`, `session_started`). OpenPanel группирует пользователей в когорты по времени начального события и показывает, какой процент совершил возвратное событие в последующие периоды. Без дополнительной инструментировки — те же события, что питают воронки и профили, питают и удержание."
   },
   "capabilities_section": {
-    "title": "What you can do with retention",
-    "intro": "From weekly cohorts to segment comparison, retention gives you the stickiness signal."
+    "title": "Что можно делать с удержанием",
+    "intro": "От недельных когорт до сравнения сегментов — удержание даёт сигнал о «прилипчивости»."
   },
   "capabilities": [
     {
-      "title": "Cohort-based retention",
-      "description": "Group users by when they did an initial event (e.g. signup week). See what percentage return in week 1, 2, 3, and beyond."
+      "title": "Когортное удержание",
+      "description": "Группируйте пользователей по времени начального события (например, неделя регистрации). Смотрите, какой процент возвращается на 1-й, 2-й, 3-й неделе и далее."
     },
     {
-      "title": "Any start and return event",
-      "description": "Define retention your way: signup → login, first purchase → repeat purchase, feature_used → feature_used again. No fixed definitions."
+      "title": "Любые стартовое и возвратное события",
+      "description": "Определите удержание по-своему: регистрация → вход, первая покупка → повторная покупка, feature_used → снова feature_used. Никаких фиксированных определений."
     },
     {
-      "title": "Read the grid at a glance",
-      "description": "Retention grids show cohorts in rows and time periods in columns. High numbers = stickiness; drop-off patterns show where to focus."
+      "title": "Читаемая сетка с одного взгляда",
+      "description": "Сетки удержания показывают когорты строками, а периоды времени — столбцами. Высокие числа = «прилипчивость»; паттерны отсеивания показывают, куда смотреть."
     },
     {
-      "title": "Compare segments",
-      "description": "Filter or segment by plan, source, or custom properties. See which cohorts retain better and why."
+      "title": "Сравнение сегментов",
+      "description": "Фильтруйте и сегментируйте по тарифу, источнику или кастомным свойствам. Смотрите, какие когорты удерживаются лучше и почему."
     },
     {
-      "title": "No sampling",
-      "description": "Retention is computed over every event. No sampling or estimates-you see real stickiness."
+      "title": "Без сэмплирования",
+      "description": "Удержание считается по каждому событию. Без сэмплирования и оценок — вы видите реальную «прилипчивость»."
     },
     {
-      "title": "Dashboards and sharing",
-      "description": "Add retention charts to dashboards next to funnels and other reports. Share with PMs and founders."
+      "title": "Дашборды и шаринг",
+      "description": "Добавляйте графики удержания на дашборды рядом с воронками и другими отчётами. Делитесь с продактами и основателями."
     }
   ],
   "screenshots": [
     {
       "src": "/features/feature-retention.webp",
-      "alt": "Retention cohort grid showing stickiness over time",
-      "caption": "Cohort retention at a glance. Rows = cohorts, columns = time periods. See who comes back."
+      "alt": "Когортная сетка удержания, показывающая «прилипчивость» во времени",
+      "caption": "Когортное удержание с одного взгляда. Строки — когорты, столбцы — периоды. Видно, кто возвращается."
     },
     {
       "src": "/features/feature-retention.webp",
-      "alt": "Choosing initial and return events for retention",
-      "caption": "Pick the start and return events that define retention for your product."
+      "alt": "Выбор начального и возвратного событий для удержания",
+      "caption": "Выберите стартовое и возвратное события, которые определяют удержание для вашего продукта."
     }
   ],
   "how_it_works": {
-    "title": "How to read a retention chart",
-    "intro": "Retention charts are simple once you know what to look for.",
+    "title": "Как читать график удержания",
+    "intro": "Графики удержания просты, когда знаешь, на что смотреть.",
     "steps": [
       {
-        "title": "Pick your initial and return events",
-        "description": "The initial event defines the cohort (e.g. signup_completed). The return event defines \"came back\" (e.g. session_started or feature_used). Every user who did the initial event in a given period is one cohort."
+        "title": "Выберите начальное и возвратное события",
+        "description": "Начальное событие задаёт когорту (например, signup_completed). Возвратное событие определяет «вернулся» (например, session_started или feature_used). Каждый пользователь, совершивший начальное событие в определённый период, образует когорту."
       },
       {
-        "title": "Read the grid",
-        "description": "Rows are cohorts (e.g. \"Week of Jan 6\"). Columns are time periods after the initial event (e.g. Week 1, Week 2). Each cell is the percentage of that cohort that did the return event in that period. Higher = stickier."
+        "title": "Читайте сетку",
+        "description": "Строки — когорты (например, «Неделя 6 января»). Столбцы — периоды после начального события (например, Неделя 1, Неделя 2). Каждая ячейка — процент когорты, совершившей возвратное событие в этом периоде. Выше = «прилипчивее»."
       },
       {
-        "title": "Spot patterns",
-        "description": "Look for cohorts that retain well vs. those that drop off fast. Compare segments (e.g. by plan or source) to see which users stick and use that to prioritize product and growth work."
+        "title": "Ищите паттерны",
+        "description": "Смотрите, какие когорты удерживаются хорошо, а какие быстро отсеиваются. Сравнивайте сегменты (по тарифу или источнику), чтобы понять, какие пользователи остаются, и использовать это для приоритизации продуктовой и growth-работы."
       }
     ]
   },
   "use_cases": {
-    "title": "How teams use retention",
-    "intro": "PMs and founders use retention to separate signal from noise.",
+    "title": "Как команды используют удержание",
+    "intro": "Продакты и основатели используют удержание, чтобы отделить сигнал от шума.",
     "items": [
       {
-        "title": "Product managers",
-        "description": "See which features and flows lead to repeat use. Prioritize work that improves retention, not just signups. Compare cohorts to learn what separates sticky users from churned ones."
+        "title": "Продакт-менеджеры",
+        "description": "Смотрите, какие функции и потоки приводят к повторному использованию. Приоритизируйте работу, улучшающую удержание, а не только регистрации. Сравнивайте когорты, чтобы понять, что отличает «прилипших» пользователей от ушедших."
       },
       {
-        "title": "Founders",
-        "description": "Retention is the truth about product-market fit. One number-e.g. week-2 or week-4 retention-often tells you more than top-line growth. Use it in board updates and strategy."
+        "title": "Основатели",
+        "description": "Удержание — правда о product-market fit. Одно число — например, удержание на 2-й или 4-й неделе — часто говорит больше, чем общие темпы роста. Используйте его в отчётах для совета и в стратегии."
       },
       {
-        "title": "Growth and analytics",
-        "description": "Measure impact of onboarding or activation changes on retention. Segment by acquisition source or plan to invest in the channels and segments that retain best."
+        "title": "Growth и аналитика",
+        "description": "Измеряйте влияние изменений онбординга или активации на удержание. Сегментируйте по источнику привлечения или тарифу, чтобы инвестировать в каналы и сегменты с лучшим удержанием."
       }
     ]
   },
   "related_features": [
     {
       "slug": "event-tracking",
-      "title": "Event tracking",
-      "description": "Retention is built on events. Track signups, sessions, and feature use first."
+      "title": "Отслеживание событий",
+      "description": "Удержание строится на событиях. Сначала отслеживайте регистрации, сессии и использование функций."
     },
     {
       "slug": "funnels",
-      "title": "Funnels",
-      "description": "See where users drop off before they can retain. Funnels and retention go hand in hand."
+      "title": "Воронки",
+      "description": "Смотрите, где пользователи отсеиваются, прежде чем удержаться. Воронки и удержание идут рука об руку."
     }
   ],
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions about retention analytics with OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы об аналитике удержания в OpenPanel.",
     "items": [
       {
-        "question": "What's the difference between retention and funnel analysis?",
-        "answer": "Funnels answer \"where do users drop off in a sequence?\" Retention answers \"of the users who did X, how many came back to do Y?\" Both use the same events; retention focuses on repeat behavior over time, funnels on one-time flows."
+        "question": "Чем удержание отличается от анализа воронок?",
+        "answer": "Воронки отвечают на вопрос «где пользователи отсеиваются в последовательности?». Удержание — «из тех, кто сделал X, сколько вернулось сделать Y?». Оба используют одни события; удержание фокусируется на повторном поведении во времени, воронки — на разовых потоках."
       },
       {
-        "question": "Can I use any events for retention?",
-        "answer": "Yes. You choose an initial event (e.g. signup_completed, first_purchase) and a return event (e.g. session_started, feature_used). OpenPanel cohorts users by when they did the initial event and shows what percentage did the return event in later periods."
+        "question": "Можно ли использовать любые события для удержания?",
+        "answer": "Да. Вы выбираете начальное событие (например, signup_completed, first_purchase) и возвратное (например, session_started, feature_used). OpenPanel формирует когорты по времени начального события и показывает, какой процент совершил возвратное событие в последующих периодах."
       },
       {
-        "question": "How do I know if my retention is good?",
-        "answer": "There's no universal benchmark; it depends on your product and cohort. What matters is trend and segment comparison: improving over time and understanding which cohorts retain better. Retention gives you the numbers; you decide what \"good\" is for your product."
+        "question": "Как понять, что удержание хорошее?",
+        "answer": "Универсального эталона нет — всё зависит от продукта и когорты. Важны тренд и сравнение сегментов: рост во времени и понимание, какие когорты удерживаются лучше. Удержание даёт цифры, а что такое «хорошо» для вашего продукта — решаете вы."
       }
     ]
   },
   "cta": {
-    "label": "See your retention in minutes",
+    "label": "Смотрите своё удержание уже через минуты",
     "href": "https://dashboard.openpanel.dev/onboarding"
   }
 }

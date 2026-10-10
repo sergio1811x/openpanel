@@ -10,7 +10,7 @@ interface Props {
 export const Toc: React.FC<Props> = ({ toc }) => {
   return (
     <FeatureCardContainer className="gap-2">
-      <span className="text-lg font-semibold">Table of contents</span>
+      <span className="text-lg font-semibold">Содержание</span>
       <ul>
         {toc.map((item) => (
           <li

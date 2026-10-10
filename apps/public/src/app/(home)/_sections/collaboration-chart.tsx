@@ -17,13 +17,13 @@ import {
 
 // Sample data for the last 7 days
 const data = [
-  { day: 'Mon', visitors: 1200, revenue: 1250 },
-  { day: 'Tue', visitors: 1450, revenue: 1890 },
-  { day: 'Wed', visitors: 1320, revenue: 1520 },
-  { day: 'Thu', visitors: 1580, revenue: 2100 },
-  { day: 'Fri', visitors: 1420, revenue: 1750 },
-  { day: 'Sat', visitors: 1180, revenue: 1100 },
-  { day: 'Sun', visitors: 1250, revenue: 1380 },
+  { day: 'Пн', visitors: 1200, revenue: 1250 },
+  { day: 'Вт', visitors: 1450, revenue: 1890 },
+  { day: 'Ср', visitors: 1320, revenue: 1520 },
+  { day: 'Чт', visitors: 1580, revenue: 2100 },
+  { day: 'Пт', visitors: 1420, revenue: 1750 },
+  { day: 'Сб', visitors: 1180, revenue: 1100 },
+  { day: 'Вс', visitors: 1250, revenue: 1380 },
 ];
 
 // Custom tooltip component
@@ -41,13 +41,13 @@ const CustomTooltip = ({ active, payload, label }: any) => {
           <div className="row gap-2 items-center flex-1">
             <div className="h-6 bg-foreground w-1 rounded-full" />
             <div className="font-medium row items-center gap-2 justify-between flex-1">
-              <span>Visitors</span> <span>{visitors.toLocaleString()}</span>
+              <span>Посетители</span> <span>{visitors.toLocaleString()}</span>
             </div>
           </div>
           <div className="row gap-2 items-center flex-1">
             <div className="h-6 bg-emerald-500 w-1 rounded-full" />
             <div className="font-medium row items-center gap-2 justify-between flex-1">
-              <span>Revenue</span> <span>${revenue.toLocaleString()}</span>
+              <span>Выручка</span> <span>${revenue.toLocaleString()}</span>
             </div>
           </div>
         </div>
@@ -73,8 +73,8 @@ export function CollaborationChart() {
       {/* Header */}
       <div className="row items-center justify-between">
         <div>
-          <h3 className="font-semibold">Product page views</h3>
-          <p className="text-sm text-muted-foreground">Last 7 days</p>
+          <h3 className="font-semibold">Просмотры страниц продукта</h3>
+          <p className="text-sm text-muted-foreground">Последние 7 дней</p>
         </div>
         <button
           type="button"
@@ -157,13 +157,13 @@ export function CollaborationChart() {
           <div className="text-2xl font-semibold font-mono">
             {totalVisitors.toLocaleString()}
           </div>
-          <div className="text-xs text-muted-foreground">Visitors</div>
+          <div className="text-xs text-muted-foreground">Посетители</div>
         </div>
         <div>
           <div className="text-2xl font-semibold font-mono text-emerald-500">
             ${totalRevenue.toLocaleString()}
           </div>
-          <div className="text-xs text-muted-foreground">Revenue</div>
+          <div className="text-xs text-muted-foreground">Выручка</div>
         </div>
       </div>
     </FeatureCardContainer>

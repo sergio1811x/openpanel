@@ -2,163 +2,187 @@
   "slug": "saas",
   "audience": "saas",
   "seo": {
-    "title": "SaaS Analytics — Track Events, Funnels & Retention Without Enterprise Pricing",
-    "description": "OpenPanel gives SaaS teams the product analytics they need to reduce churn and grow — events, funnels, retention, cohorts, and user profiles. Open source, from $2.50/month.",
+    "title": "Аналитика для SaaS — события, воронки и удержание без enterprise-цен",
+    "description": "OpenPanel даёт SaaS-командам продуктовую аналитику, чтобы снижать отток и расти, — события, воронки, удержание, когорты и профили пользователей. Открытый исходный код, от $2.50/месяц.",
     "noindex": false
   },
   "hero": {
-    "heading": "Product analytics for SaaS teams",
-    "subheading": "See why users churn, where trials drop off, and which features drive retention. OpenPanel gives you events, funnels, retention analysis, and user profiles — the core analytics stack for SaaS — without Mixpanel or Amplitude's enterprise pricing.",
+    "heading": "Продуктовая аналитика для SaaS-команд",
+    "subheading": "Узнайте, почему пользователи уходят, где отсеиваются триалы и какие функции удерживают.",
     "badges": [
-      "Funnel analysis",
-      "Retention tracking",
-      "User profiles",
-      "From $2.50/month"
+      "Анализ воронок",
+      "Отслеживание удержания",
+      "Профили пользователей",
+      "От $2.50/месяц"
     ]
   },
   "problem": {
-    "title": "Why SaaS teams outgrow their analytics tools",
-    "intro": "The analytics tools most SaaS teams start with either can't answer the right questions or become unaffordable as you grow.",
+    "title": "Почему SaaS-команды перерастают свои инструменты аналитики",
+    "intro": "Инструменты, с которых чаще всего начинают SaaS-команды, либо не отвечают на нужные вопросы, либо становятся недоступными по цене по мере роста.",
     "items": [
       {
-        "title": "Mixpanel and Amplitude become unaffordable at scale",
-        "description": "Event-based pricing sounds cheap at 10K events, but SaaS products are event-heavy. At 1M events/month you're paying $300–800/month. At 10M, it's thousands. Your analytics bill grows faster than your revenue."
+        "title": "Mixpanel и Amplitude становятся недоступными при масштабировании",
+        "description": "Оплата за события кажется дешёвой на 10 тыс. событий, но SaaS-продукты насыщены событиями. При 1 млн событий/месяц вы платите $300–800 в месяц. При 10 млн — тысячи. Счёт за аналитику растёт быстрее вашей выручки."
       },
       {
-        "title": "GA4 doesn't answer SaaS questions",
-        "description": "Google Analytics tells you pageviews. It can't tell you which users completed your onboarding flow, how feature adoption correlates with retention, or why your trial-to-paid conversion dropped last month."
+        "title": "GA4 не отвечает на вопросы SaaS",
+        "description": "Google Analytics показывает просмотры страниц. Но не скажет, какие пользователи прошли ваш онбординг, как adoption функций связан с удержанием или почему конверсия из триала в оплату упала в прошлом месяце."
       },
       {
-        "title": "Complex tools slow down your team",
-        "description": "Mixpanel's interface is powerful but has a steep learning curve. When it takes 30 minutes to build a simple funnel, your team stops using analytics to make decisions."
+        "title": "Сложные инструменты замедляют команду",
+        "description": "Интерфейс Mixpanel мощный, но с крутой кривой обучения. Когда на построение простой воронки уходит 30 минут, команда перестаёт использовать аналитику для решений."
       },
       {
-        "title": "Cloud-only means full vendor dependence",
-        "description": "If Mixpanel raises prices, your data is hostage. No export path, no self-hosting option, and a pricing model that punishes growth."
+        "title": "Только облако — значит полная зависимость от вендора",
+        "description": "Если Mixpanel поднимет цены, ваши данные — заложники. Нет пути экспорта, нет self-hosting, а модель ценообразования наказывает за рост."
       }
     ]
   },
   "features": {
-    "title": "The full product analytics stack for SaaS",
-    "intro": "Everything your team needs to understand users, reduce churn, and grow — without the enterprise pricing.",
+    "title": "Полный стек продуктовой аналитики для SaaS",
+    "intro": "Всё, что нужно команде, чтобы понимать пользователей, снижать отток и расти, — без enterprise-цен.",
     "items": [
       {
-        "title": "Event tracking",
-        "description": "Track any user action — feature used, button clicked, settings changed, plan upgraded. One line of code. Works across web, mobile, and your backend."
+        "title": "Отслеживание событий",
+        "description": "Отслеживайте любое действие пользователя — использование функции, клик по кнопке, изменение настроек, апгрейд тарифа. Одна строка кода. Работает на вебе, мобильных и бэкенде."
       },
       {
-        "title": "Funnel analysis",
-        "description": "Build conversion funnels for trial signup, onboarding, activation, and upgrade flows. See the exact step losing you the most conversions and fix it."
+        "title": "Анализ воронок",
+        "description": "Стройте воронки конверсии для регистрации триала, онбординга, активации и апгрейдов. Видите точный шаг, теряющий больше всего конверсий, и исправляйте его."
       },
       {
-        "title": "Retention analysis",
-        "description": "Cohort-based retention charts show you whether users activated in week 1 are still active in week 8. Identify which actions predict long-term retention."
+        "title": "Анализ удержания",
+        "description": "Когортные графики удержания показывают, остаются ли активными на 8-й неделе те, кто активировался на первой. Найдите действия, предсказывающие долгосрочное удержание."
       },
       {
-        "title": "User profiles",
-        "description": "See every event a specific user triggered since they signed up. Walk through their session to diagnose support issues or understand power user behavior."
+        "title": "Профили пользователей",
+        "description": "Смотрите каждое событие конкретного пользователя с момента регистрации. Разберите его сессию, чтобы диагностировать проблемы поддержки или понять поведение самого активного пользователя."
       },
       {
-        "title": "Cohort analysis",
-        "description": "Group users by signup date, plan, or any property and compare their behavior over time. Understand how product changes affect different user segments."
+        "title": "Когортный анализ",
+        "description": "Группируйте пользователей по дате регистрации, тарифу или любому свойству и сравнивайте их поведение во времени. Понимайте, как продуктовые изменения влияют на разные сегменты."
       },
       {
-        "title": "Real-time dashboard",
-        "description": "See new signups, trial activations, and feature usage as they happen. Know immediately when a new deployment changes user behavior."
+        "title": "Дашборд в реальном времени",
+        "description": "Видите новые регистрации, активации триалов и использование функций по мере их появления. Сразу узнавайте, когда новый релиз меняет поведение пользователей."
       },
       {
-        "title": "Revenue tracking",
-        "description": "Send MRR, payment events, and plan upgrade data to OpenPanel. Correlate feature usage with revenue without a separate BI tool."
+        "title": "Отслеживание выручки",
+        "description": "Отправляйте MRR, платёжные события и данные об апгрейдах в OpenPanel. Сопоставляйте использование функций с выручкой без отдельного BI-инструмента."
       },
       {
-        "title": "Multi-platform SDKs",
-        "description": "Track across web app, marketing site, iOS, Android, and backend in one unified analytics view. Events from all platforms share the same user profiles."
+        "title": "SDK для всех платформ",
+        "description": "Отслеживайте веб-приложение, маркетинговый сайт, iOS, Android и бэкенд в едином виде аналитики. События со всех платформ имеют общие профили пользователей."
       }
     ]
   },
   "benefits": {
-    "title": "Why SaaS teams choose OpenPanel",
-    "intro": "OpenPanel gives you the analytics depth of Mixpanel at a price that makes sense for growing SaaS products.",
+    "title": "Почему SaaS-команды выбирают OpenPanel",
+    "intro": "OpenPanel даёт глубину аналитики уровня Mixpanel по цене, разумной для растущих SaaS-продуктов.",
     "items": [
       {
-        "title": "Predictable pricing as you scale",
-        "description": "Flat event tiers from $2.50 to $900/month. No per-seat fees, no MTU limits. Know exactly what you'll pay as your user base grows."
+        "title": "Предсказуемые тарифы при масштабировании",
+        "description": "Фиксированные уровни событий от $2.50 до $900 в месяц. Без оплаты за место и лимитов MTU. Точно знайте, сколько заплатите при росте пользовательской базы."
       },
       {
-        "title": "Answer the questions SaaS teams actually ask",
-        "description": "Which onboarding step has the highest drop-off? Which features are used by retained users vs churned users? OpenPanel is built for these questions."
+        "title": "Ответы на вопросы, которые реально задают SaaS-команды",
+        "description": "Какой шаг онбординга имеет самый большой отвал? Какими функциями пользуются удержанные пользователи, а какими — ушедшие? OpenPanel создана для таких вопросов."
       },
       {
-        "title": "Self-host to eliminate per-event costs",
-        "description": "Large SaaS products generate millions of events. Self-hosting eliminates the cost entirely — pay only for your server infrastructure."
+        "title": "Self-hosting убирает плату за события",
+        "description": "Крупные SaaS-продукты генерируют миллионы событий. Самостоятельный хостинг полностью убирает эти расходы — платите только за серверную инфраструктуру."
       },
       {
-        "title": "All features from day one",
-        "description": "Funnels, retention, cohorts, user profiles, and dashboards are available at every pricing tier. No feature gating that forces upgrades."
+        "title": "Все функции с первого дня",
+        "description": "Воронки, удержание, когорты, профили пользователей и дашборды доступны на каждом тарифе. Никаких блокировок функций, вынуждающих к апгрейду."
       },
       {
-        "title": "Open source and auditable",
-        "description": "Your product data is sensitive. OpenPanel's open source codebase means you can audit exactly what's tracked and how it's stored."
+        "title": "Открытый код и проверяемость",
+        "description": "Продуктовые данные чувствительны. Открытый исходный код OpenPanel означает, что вы можете проверить, что именно отслеживается и как хранится."
       }
     ]
   },
   "faqs": {
-    "title": "Frequently asked questions",
-    "intro": "Common questions from SaaS founders and product teams evaluating OpenPanel.",
+    "title": "Часто задаваемые вопросы",
+    "intro": "Частые вопросы от основателей SaaS и продуктовых команд, оценивающих OpenPanel.",
     "items": [
       {
-        "question": "How is OpenPanel different from Mixpanel for SaaS?",
-        "answer": "OpenPanel covers the same core analytics (events, funnels, retention, cohorts, user profiles) at a fraction of the cost. Mixpanel adds features like Metric Trees and advanced experimentation, but most SaaS teams don't use them. OpenPanel focuses on the analytics that actually drive decisions."
+        "question": "Чем OpenPanel отличается от Mixpanel для SaaS?",
+        "answer": "OpenPanel покрывает ту же ключевую аналитику (события, воронки, удержание, когорты, профили пользователей) за малую долю цены. Mixpanel добавляет Metric Trees и продвинутое экспериментирование, но большинство SaaS-команд этим не пользуются. OpenPanel фокусируется на аналитике, которая реально двигает решения."
       },
       {
-        "question": "Can OpenPanel replace both GA4 and Mixpanel?",
-        "answer": "Yes. OpenPanel includes web analytics (pageviews, referrers, UTM campaigns) alongside product analytics. Most SaaS teams can replace both tools with one OpenPanel deployment."
+        "question": "Может ли OpenPanel заменить и GA4, и Mixpanel?",
+        "answer": "Да. OpenPanel включает веб-аналитику (просмотры страниц, рефереры, UTM-кампании) вместе с продуктовой аналитикой. Большинство SaaS-команд могут заменить оба инструмента одним развёртыванием OpenPanel."
       },
       {
-        "question": "How do I track trial-to-paid conversions?",
-        "answer": "Track a trial_started event on signup and a plan_upgraded event on conversion. Build a funnel in OpenPanel between those two events. See conversion rate by cohort, traffic source, or any user property."
+        "question": "Как отслеживать конверсию из триала в оплату?",
+        "answer": "Отправляйте событие trial_started при регистрации и plan_upgraded при конверсии. Постройте в OpenPanel воронку между этими событиями. Смотрите конверсию по когортам, источникам трафика или любому свойству пользователя."
       },
       {
-        "question": "Does OpenPanel support multi-product or multi-tenant SaaS?",
-        "answer": "Yes. Use the profileId to identify individual users and pass organization or workspace IDs as properties. You can filter analytics by any property you send."
+        "question": "Поддерживает ли OpenPanel мультипродуктовый или multi-tenant SaaS?",
+        "answer": "Да. Используйте profileId для идентификации отдельных пользователей и передавайте ID организаций или воркспейсов как свойства. Аналитику можно фильтровать по любому отправленному свойству."
       },
       {
-        "question": "What happens to my data if I stop paying for OpenPanel cloud?",
-        "answer": "You can export all your event data via the API at any time. Alternatively, migrate to self-hosting — OpenPanel has no lock-in and no proprietary data format."
+        "question": "Что произойдёт с данными, если я перестану платить за OpenPanel Cloud?",
+        "answer": "Все данные о событиях можно экспортировать через API в любой момент. Либо переезжайте на self-hosting — у OpenPanel нет привязки и проприетарных форматов данных."
       },
       {
-        "question": "Can I track backend events from my SaaS API?",
-        "answer": "Yes. OpenPanel has server-side SDKs for Node.js, Python, and a REST API. Track subscription webhooks, background jobs, and server-side logic alongside client events."
+        "question": "Можно ли отслеживать события бэкенда из API моего SaaS?",
+        "answer": "Да. У OpenPanel есть серверные SDK для Node.js и Python, а также REST API. Отслеживайте вебхуки подписок, фоновые задачи и серверную логику вместе с клиентскими событиями."
       },
       {
-        "question": "Is OpenPanel GDPR compliant for SaaS?",
-        "answer": "Yes. Cookieless tracking by default, EU-only cloud hosting, and the option to self-host for complete data sovereignty. No consent banner required for product analytics."
+        "question": "Соответствует ли OpenPanel требованиям GDPR для SaaS?",
+        "answer": "Да. Отслеживание без cookies по умолчанию, облако только в ЕС и возможность self-hosting для полного суверенитета над данными. Баннер согласия для продуктовой аналитики не нужен."
       }
     ]
   },
   "related_links": {
     "guides": [
-      { "title": "Track custom events", "url": "/guides/track-custom-events" },
-      { "title": "Next.js analytics setup", "url": "/guides/nextjs-analytics" },
-      { "title": "React analytics setup", "url": "/guides/react-analytics" }
+      {
+        "title": "Отслеживание кастомных событий",
+        "url": "/guides/track-custom-events"
+      },
+      {
+        "title": "Настройка аналитики Next.js",
+        "url": "/guides/nextjs-analytics"
+      },
+      {
+        "title": "Настройка аналитики React",
+        "url": "/guides/react-analytics"
+      }
     ],
     "articles": [
-      { "title": "How to create a funnel", "url": "/articles/how-to-create-a-funnel" },
-      { "title": "Self-hosted web analytics", "url": "/articles/self-hosted-web-analytics" }
+      {
+        "title": "Как создать воронку",
+        "url": "/articles/how-to-create-a-funnel"
+      },
+      {
+        "title": "Self-hosted веб-аналитика",
+        "url": "/articles/self-hosted-web-analytics"
+      }
     ],
     "comparisons": [
-      { "title": "OpenPanel vs Mixpanel", "url": "/compare/mixpanel-alternative" },
-      { "title": "OpenPanel vs PostHog", "url": "/compare/posthog-alternative" },
-      { "title": "OpenPanel vs Amplitude", "url": "/compare/amplitude-alternative" }
+      {
+        "title": "OpenPanel против Mixpanel",
+        "url": "/compare/mixpanel-alternative"
+      },
+      {
+        "title": "OpenPanel против PostHog",
+        "url": "/compare/posthog-alternative"
+      },
+      {
+        "title": "OpenPanel против Amplitude",
+        "url": "/compare/amplitude-alternative"
+      }
     ]
   },
   "ctas": {
     "primary": {
-      "label": "Try OpenPanel Free",
+      "label": "Попробуйте OpenPanel бесплатно",
       "href": "https://dashboard.openpanel.dev/onboarding"
     },
     "secondary": {
-      "label": "View Source on GitHub",
+      "label": "Исходный код на GitHub",
       "href": "https://github.com/Openpanel-dev/openpanel"
     }
   }

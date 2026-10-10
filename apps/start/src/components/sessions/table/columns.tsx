@@ -31,7 +31,7 @@ export function useColumns() {
   const columns: ColumnDef<IServiceSession>[] = [
     {
       accessorKey: 'createdAt',
-      header: 'Started',
+      header: 'Начало',
       size: ColumnCreatedAt.size,
       cell: ({ row }) => {
         const item = row.original;
@@ -40,7 +40,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'id',
-      header: 'Session ID',
+      header: 'ID сессии',
       size: 120,
       cell: ({ row }) => {
         const session = row.original;
@@ -56,12 +56,12 @@ export function useColumns() {
             </ProjectLink>
             {session.hasReplay && (
               <ProjectLink
-                aria-label="View replay"
+                aria-label="Смотреть запись"
                 className="text-muted-foreground hover:text-foreground"
                 to="/sessions/$sessionId"
                 params={{ sessionId: session.id }}
                 hash="replay"
-                title="View replay"
+                title="Смотреть запись"
               >
                 <Video className="size-4" />
               </ProjectLink>
@@ -72,7 +72,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'profileId',
-      header: 'Profile',
+      header: 'Профиль',
       size: 150,
       cell: ({ row }) => {
         const session = row.original;
@@ -101,7 +101,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'entryPath',
-      header: 'Entry Page',
+      header: 'Страница входа',
       size: 200,
       cell: ({ row }) => {
         const session = row.original;
@@ -114,7 +114,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'exitPath',
-      header: 'Exit Page',
+      header: 'Страница выхода',
       size: 200,
       cell: ({ row }) => {
         const session = row.original;
@@ -129,7 +129,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'duration',
-      header: 'Duration',
+      header: 'Длительность',
       size: 100,
       cell: ({ row }) => {
         const session = row.original;
@@ -140,16 +140,16 @@ export function useColumns() {
     },
     {
       accessorKey: 'isBounce',
-      header: 'Bounce',
+      header: 'Отказ',
       size: 80,
       cell: ({ row }) => {
         const session = row.original;
         return (
           <div className="text-center">
             {session.isBounce ? (
-              <span className="text-orange-600">Yes</span>
+              <span className="text-orange-600">Да</span>
             ) : (
-              <span className="text-green-600">No</span>
+              <span className="text-green-600">Нет</span>
             )}
           </div>
         );
@@ -157,11 +157,11 @@ export function useColumns() {
     },
     {
       accessorKey: 'referrerName',
-      header: 'Referrer',
+      header: 'Реферер',
       size: 150,
       cell: ({ row }) => {
         const session = row.original;
-        const ref = session.referrerName || session.referrer || 'Direct';
+        const ref = session.referrerName || session.referrer || 'Прямой';
         return (
           <div className="flex min-w-0 items-center gap-2">
             <SerieIcon name={ref} />
@@ -172,7 +172,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'country',
-      header: 'Location',
+      header: 'Местоположение',
       size: 150,
       cell: ({ row }) => {
         const session = row.original;
@@ -186,7 +186,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'os',
-      header: 'OS',
+      header: 'ОС',
       size: 120,
       cell: ({ row }) => {
         const session = row.original;
@@ -200,7 +200,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'browser',
-      header: 'Browser',
+      header: 'Браузер',
       size: 120,
       cell: ({ row }) => {
         const session = row.original;
@@ -214,7 +214,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'device',
-      header: 'Device',
+      header: 'Устройство',
       size: 150,
       cell: ({ row }) => {
         const session = row.original;
@@ -235,7 +235,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'screenViewCount',
-      header: 'Page views',
+      header: 'Просмотры страниц',
       size: 100,
       cell: ({ row }) => {
         const session = row.original;
@@ -248,7 +248,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'eventCount',
-      header: 'Events',
+      header: 'События',
       size: 90,
       cell: ({ row }) => {
         const session = row.original;
@@ -259,7 +259,7 @@ export function useColumns() {
     },
     {
       accessorKey: 'revenue',
-      header: 'Revenue',
+      header: 'Выручка',
       size: 100,
       cell: ({ row }) => {
         const session = row.original;
@@ -274,12 +274,12 @@ export function useColumns() {
     },
     {
       accessorKey: 'deviceId',
-      header: 'Device ID',
+      header: 'ID устройства',
       size: 120,
     },
     {
       accessorKey: 'groups',
-      header: 'Groups',
+      header: 'Группы',
       size: 200,
       cell: ({ row }) => {
         const { groups } = row.original;

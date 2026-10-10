@@ -18,7 +18,7 @@ import { popModal } from '.';
 import { ModalContent, ModalHeader } from './Modal/Container';
 
 const validator = z.object({
-  name: z.string().min(1, 'Required'),
+  name: z.string().min(1, 'Обязательное поле'),
   description: z.string().optional(),
   definition: z.any(),
   isStatic: z.boolean().default(false),
@@ -50,7 +50,7 @@ export default function AddCohort() {
   const mutation = useMutation(
     trpc.cohort.create.mutationOptions({
       onSuccess() {
-        toast('Success', { description: 'Cohort created.' });
+        toast('Успешно', { description: 'Кохорта создана.' });
         queryClient.invalidateQueries(trpc.cohort.pathFilter());
         popModal();
       },
@@ -60,7 +60,7 @@ export default function AddCohort() {
 
   return (
     <ModalContent className="max-w-3xl">
-      <ModalHeader title="Create cohort" />
+      <ModalHeader title="Создание кохорты" />
       <form
         className="flex flex-col gap-4"
         onSubmit={handleSubmit((data) => {
@@ -72,14 +72,14 @@ export default function AddCohort() {
         })}
       >
         <InputWithLabel
-          label="Name"
-          placeholder="Name of the cohort"
+          label="Название"
+          placeholder="Название кохорты"
           {...register('name')}
         />
 
-        <WithLabel label="Description">
+        <WithLabel label="Описание">
           <Textarea
-            placeholder="Optional description"
+            placeholder="Необязательное описание"
             {...register('description')}
           />
         </WithLabel>
@@ -97,12 +97,12 @@ export default function AddCohort() {
             )}
           />
           <Label htmlFor="isStatic" className="cursor-pointer text-sm mb-0">
-            Freeze snapshot (don&apos;t auto-refresh)
+            Зафиксировать снимок (без автообновления)
           </Label>
         </div>
 
         <div>
-          <Label className="mb-2 block">Cohort Criteria</Label>
+          <Label className="mb-2 block">Критерии кохорты</Label>
           <Controller
             name="definition"
             control={control}
@@ -117,10 +117,10 @@ export default function AddCohort() {
 
         <ButtonContainer>
           <Button type="button" variant="outline" onClick={() => popModal()}>
-            Cancel
+            Отмена
           </Button>
           <Button type="submit" disabled={!formState.isDirty}>
-            Create
+            Создать
           </Button>
         </ButtonContainer>
       </form>
