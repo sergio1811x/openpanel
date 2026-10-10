@@ -96,7 +96,9 @@ describe('GCSAdapter credential validation', () => {
   it('refuses a document that is not JSON', async () => {
     const result = await adapter({ serviceAccountKey: 'nope' }).testConnection();
     expect(result.success).toBe(false);
-    expect(result.error).toContain('not valid JSON');
+    // FORK: точное сообщение zod локализовано (RU) — проверяем стабильный
+    // префикс адаптера, а не текст ошибки парсинга.
+    expect(result.error).toContain('Invalid service account key');
   });
 
   it('accepts a real service account key', async () => {
@@ -148,7 +150,8 @@ describe.skipIf(!available)('GCSAdapter (fake-gcs-server)', () => {
       }).testConnection();
 
       expect(res.success).toBe(false);
-      expect(res.error).toBe('Invalid service account key: not valid JSON');
+      // FORK: см. выше — не привязываемся к локализованному тексту zod.
+      expect(res.error).toContain('Invalid service account key');
     });
   });
 
