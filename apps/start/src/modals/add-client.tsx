@@ -70,7 +70,7 @@ export default function AddClient() {
           <div className="mt-4 flex gap-4">
             <a
               className={cn(buttonVariants({ variant: 'secondary' }), 'flex-1')}
-              href="https://openpanel.dev/docs"
+              href="#"
               target="_blank"
               rel="noreferrer"
             >

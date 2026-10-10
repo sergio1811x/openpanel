@@ -20,7 +20,7 @@ export const Route = createFileRoute(
 });
 
 const TOKEN_PLACEHOLDER = 'BASE64_TOKEN';
-const DOCS_URL = 'https://openpanel.dev/docs/mcp';
+const DOCS_URL = '#';
 
 type AiClient = {
   id: string;

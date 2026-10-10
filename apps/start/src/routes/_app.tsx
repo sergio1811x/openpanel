@@ -29,7 +29,7 @@ function AppLayout() {
       >
         <a
           className={cn(buttonVariants())}
-          href="https://status.openpanel.dev/"
+          href="#"
           rel="noopener noreferrer"
           target="_blank"
         >

@@ -5,4 +5,4 @@ Allow: /llms.txt
 Allow: /llms-full.txt
 Allow: /*.md
 
-Sitemap: https://openpanel.dev/sitemap.xml
+Sitemap: /sitemap.xml

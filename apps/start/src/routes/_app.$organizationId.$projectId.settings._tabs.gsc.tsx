@@ -24,7 +24,7 @@ export const Route = createFileRoute(
 });
 
 const GSC_SELF_HOSTING_DOCS_URL =
-  'https://openpanel.dev/docs/self-hosting/google-search-console';
+  '#';
 
 function GscSettings() {
   const { projectId } = useAppParams();

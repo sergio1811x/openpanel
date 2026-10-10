@@ -391,7 +391,7 @@ function BadgeWidgetSection({ widget, dashboardUrl }: BadgeWidgetSectionProps) {
       ? `${dashboardUrl}/widget/badge?shareId=${widget.id}`
       : null;
   const badgeEmbedCode = badgeUrl
-    ? `<a href="https://openpanel.dev" style="display: inline-block; overflow: hidden; border-radius: 8px;">
+    ? `<a href="#" style="display: inline-block; overflow: hidden; border-radius: 8px;">
   <iframe src="${badgeUrl}" height="48" width="250" style="border: none; overflow: hidden; pointer-events: none;" title="Openpanel RU"></iframe>
 </a>`
     : null;
@@ -434,7 +434,7 @@ function BadgeWidgetSection({ widget, dashboardUrl }: BadgeWidgetSectionProps) {
           <h3 className="text-sm font-medium">Предпросмотр</h3>
           <div className="border rounded-lg p-4 bg-muted/30">
             <a
-              href="https://openpanel.dev"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               style={{

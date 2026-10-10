@@ -50,7 +50,7 @@ const ConnectWeb = ({ clients }: Props) => {
     // },
   });
 </script>
-<script src="https://openpanel.dev/op1.js" defer async></script>`;
+<script src="${context.isSelfHosted ? context.apiUrl : 'https://openpanel.dev'}/op1.js" defer async></script>`;
   return (
     <div className="col gap-4">
       <div className="col gap-2">

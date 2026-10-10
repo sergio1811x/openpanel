@@ -71,7 +71,7 @@ function Component() {
           Создавая аккаунт, вы принимаете{' '}
           <a
             className="underline transition-colors hover:text-foreground"
-            href="https://openpanel.dev/terms"
+            href="/terms"
             rel="noreferrer"
             target="_blank"
           >
@@ -80,7 +80,7 @@ function Component() {
           и{' '}
           <a
             className="underline transition-colors hover:text-foreground"
-            href="https://openpanel.dev/privacy"
+            href="/privacy"
             rel="noreferrer"
             target="_blank"
           >
