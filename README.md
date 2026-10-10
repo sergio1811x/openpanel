@@ -1,7 +1,7 @@
 ![hero](apps/public/public/ogimage.png)
 
 <p align="center">
-	<h1 align="center"><b>Openpanel</b></h1>
+        <h1 align="center"><b>Openpanel</b></h1>
 <p align="center">
     An open-source alternative to Mixpanel
     <br />
@@ -22,7 +22,14 @@
   <br />
   <br />
 </p>
-  
+
+> [!NOTE]
+> **🇷🇺 Русский форк Openpanel** от [@sergio1811x](https://github.com/sergio1811x)
+>
+> - **Весь интерфейс переведён на русский язык** — дашборды, отчёты, события, профили, сессии, настройки, письма и лендинг
+> - **Добавлена интеграция Яндекс Вебмастер** — подключается в настройках проекта рядом с Google Search Console и работает в разделе SEO: клики, показы, CTR, средняя позиция и топ запросов из поиска Яндекса
+> - Руководство для агентов и контрибьюторов — см. [AGENTS.md](AGENTS.md)
+
 Openpanel is an open-source web and product analytics platform that combines the power of Mixpanel with the ease of Plausible and one of the best Google Analytics replacements.
 
 ## ✨ Features
@@ -40,7 +47,7 @@ Openpanel is an open-source web and product analytics platform that combines the
 - **📱 Multi-Platform**: Web, mobile (iOS/Android), and server-side tracking
 - **🤖 MCP Server**: Ask Claude, Cursor, or any MCP client about your users — 38 tools, hosted, no install
 - **💰 Revenue Tracking**: Monitor purchases, subscriptions, and LTV alongside product events
-- **🔌 Integrations**: Connect Google Search Console, and more to enrich your data
+- **🔌 Integrations**: Connect Google Search Console, Yandex Webmaster, and more to enrich your data
 
 ## 📊 Analytics Platform Comparison
 
