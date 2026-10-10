@@ -22,6 +22,22 @@
 > - **Добавлена интеграция Яндекс Вебмастер** — подключается в настройках проекта рядом с Google Search Console и работает в разделе SEO: клики, показы, CTR, средняя позиция и топ запросов из поиска Яндекса
 > - Руководство для агентов и контрибьюторов — см. [AGENTS.md](AGENTS.md)
 
+## 🐳 Docker-образы
+
+Собирать образы локально не нужно: GitHub Actions собирает и публикует их автоматически
+(с кэшем слоёв и smoke-тестом полного стека перед публикацией).
+
+| Компонент | Образ |
+|---|---|
+| Дашборд | `ghcr.io/sergio1811x/openpanel-dashboard:latest` |
+| API | `ghcr.io/sergio1811x/openpanel-api:latest` |
+| Воркер | `ghcr.io/sergio1811x/openpanel-worker:latest` |
+
+- **Деплой без сборки**: `self-hosting/setup` использует эти образы — обновление через `./update` или `docker compose pull && ./restart`
+- **Быстрая локальная сборка** (amd64-only, с кэшем слоёв): `./sh/build-local <dashboard|api|worker|all>`
+- Теги: `latest` и `main-<sha>` для каждого пуша в `main`
+- После первого запуска CI сделайте пакеты публичными (Packages → пакет → Package settings → Change visibility → Public), чтобы тянуть образы без `docker login`
+
 Openpanel is an open-source web and product analytics platform that combines the power of Mixpanel with the ease of Plausible and one of the best Google Analytics replacements.
 
 ## ✨ Features

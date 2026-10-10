@@ -10,3 +10,13 @@ README.md
 .git
 docker
 converage
+# Не участвуют в сборке образов — меньше контекст, быстрее билд
+self-hosting
+.github
+sh
+bklit-upstream-issues.md
+bklit-issues.md
+# Из apps/public при сборке нужен только трекинг-скрипт op1.js
+# (исключаем детей, не саму папку — иначе !-ре-включение не сработает)
+apps/public/public/*
+!apps/public/public/op1.js

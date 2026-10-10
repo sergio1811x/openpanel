@@ -90,7 +90,9 @@ pnpm dock:ch / dock:redis   # CLI внутрь ClickHouse/Redis
 ```
 
 Pre-push hook (`simple-git-hooks`): `typecheck && test`.
-CI (`.github/workflows/docker-build.yml`): lint-and-test в сервис-контейнерах + сборка Docker-образов.
+CI (`.github/workflows/docker-build.yml`): юнит-тесты и сборка образов идут параллельно;
+публикация `ghcr.io/sergio1811x/openpanel-{api,dashboard,worker}` (теги `main-<sha>` и `latest`)
+— только после smoke-теста полного стека. Локальная сборка — `./sh/build-local <app>`.
 
 ### docker-compose (dev-инфра)
 
@@ -102,7 +104,7 @@ CI (`.github/workflows/docker-build.yml`): lint-and-test в сервис-кон�
 | op-rp | redpanda v25.1 (Kafka API) | 19092, консоль 8091 |
 
 Self-hosting: `self-hosting/coolify.yml` (postgres:16, redis:7.4, clickhouse:24.3,
-образы `lindesvard/openpanel-{api,dashboard,worker}:latest`).
+образы `ghcr.io/sergio1811x/openpanel-{api,dashboard,worker}:latest`).
 
 ---
 

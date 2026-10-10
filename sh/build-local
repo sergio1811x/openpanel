@@ -1,0 +1,63 @@
+#!/bin/bash
+#
+# Быстрая локальная сборка образов форка (Openpanel RU).
+#
+# Чем быстрее апстримного sh/docker-build:
+#   - только linux/amd64 (без arm64 через QEMU-эмуляцию) — вдвое-втрое быстрее;
+#   - без --push: образ остаётся в локальном Docker, ничего не публикуется;
+#   - кэш слоёв Docker переиспользуется между запусками: pnpm install
+#     пересобирается только при изменении pnpm-lock.yaml / package.json,
+#     исходники — только изменившиеся шаги.
+#
+# Публикация образов в ghcr.io/sergio1811x/* делается CI
+# (.github/workflows/docker-build.yml) при пуше в main — локально
+# собирать для деплоя не обязательно: проще `docker compose pull`.
+#
+# Использование:
+#   ./sh/build-local <dashboard|api|worker|all> [тег]
+#
+# Примеры:
+#   ./sh/build-local dashboard          # openpanel-dashboard:latest
+#   ./sh/build-local api 1.0.0          # openpanel-api:1.0.0
+#   ./sh/build-local all                # все три образа
+
+set -euo pipefail
+
+APP=${1:-}
+TAG=${2:-latest}
+
+if [ -z "$APP" ]; then
+    echo "Использование: $0 <dashboard|api|worker|all> [тег]"
+    exit 1
+fi
+
+cd "$(dirname "$0")/.."
+
+build_image() {
+    local app=$1
+    local dockerfile="apps/$app/Dockerfile"
+    if [ "$app" = "dashboard" ]; then
+        dockerfile="apps/start/Dockerfile"
+    fi
+
+    local args=(docker buildx build --platform linux/amd64 --load -t "openpanel-$app:$TAG")
+    # api и worker требуют DATABASE_URL на этапе сборки (prisma generate) —
+    # реальная БД не нужна, подставляем заглушку, как в CI.
+    if [ "$app" = "api" ] || [ "$app" = "worker" ]; then
+        args+=(--build-arg DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy")
+    fi
+    args+=(-f "$dockerfile" .)
+
+    echo "==> Сборка openpanel-$app:$TAG (amd64, с кэшем слоёв)"
+    "${args[@]}"
+    echo "==> Готово: openpanel-$app:$TAG"
+    echo
+}
+
+case "$APP" in
+    dashboard) build_image dashboard ;;
+    api)       build_image api ;;
+    worker)    build_image worker ;;
+    all)       build_image dashboard; build_image api; build_image worker ;;
+    *) echo "Неизвестное приложение: $APP (допустимо: dashboard, api, worker, all)"; exit 1 ;;
+esac

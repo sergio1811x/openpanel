@@ -90,7 +90,7 @@ services:
         max-file: "3"
 
   op-api:
-    image: lindesvard/openpanel-api:2
+    image: ghcr.io/sergio1811x/openpanel-api:latest
     restart: always
     command: >
       sh -c "
@@ -120,7 +120,7 @@ services:
         max-file: "3"
 
   op-dashboard:
-    image: lindesvard/openpanel-dashboard:2
+    image: ghcr.io/sergio1811x/openpanel-dashboard:latest
     restart: always
     depends_on:
       op-api:
@@ -140,7 +140,7 @@ services:
         max-file: "3"
 
   op-worker:
-    image: lindesvard/openpanel-worker:2
+    image: ghcr.io/sergio1811x/openpanel-worker:latest
     restart: always
     depends_on:
       op-api:

@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# Релизная multi-arch сборка образов форка (amd64 + arm64) с пушем в GHCR:
+#   ghcr.io/sergio1811x/openpanel-{api,dashboard,worker}
+#
+# Требует: docker login ghcr.io (PAT с правом write:packages).
+# Для быстрой ЛОКАЛЬНОЙ сборки (amd64-only, без пуша) используйте sh/build-local.
+# Публикация образов для деплоя обычно делается CI (.github/workflows/docker-build.yml).
 
 # Check for --dry-run flag anywhere in arguments
 DRY_RUN=false
@@ -77,7 +84,7 @@ fi
 # Function to build a multi-architecture image
 build_image() {
     local app=$1
-    local image_name="lindesvard/openpanel-$app"
+    local image_name="ghcr.io/sergio1811x/openpanel-$app"
     
     # Use apps/start/Dockerfile for dashboard app
     local dockerfile="apps/$app/Dockerfile"
@@ -109,6 +116,7 @@ build_image() {
         echo "(pre-release) Building multi-architecture image: $tag"
         docker buildx build \
             --platform linux/amd64,linux/arm64 \
+            --cache-from type=registry,ref=$image_name:latest \
             -t "$tag" \
             --build-arg DATABASE_URL="postgresql://p@p:5432/p" \
             -f "$dockerfile" \
@@ -120,6 +128,7 @@ build_image() {
         echo "  Tags: $VERSION, $MINOR, $MAJOR, latest"
         docker buildx build \
             --platform linux/amd64,linux/arm64 \
+            --cache-from type=registry,ref=$image_name:latest \
             -t "$image_name:$VERSION" \
             -t "$image_name:$MINOR" \
             -t "$image_name:$MAJOR" \
